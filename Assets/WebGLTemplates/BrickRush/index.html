@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#070d1c">
+  <meta name="description" content="A burst of color. A perfect bounce. Play Brick Rush, the 90-second neon arcade challenge.">
+  <title>BRICK RUSH / The 90-second challenge</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23e9ff83' d='M16 2 30 16 16 30 2 16Z'/%3E%3C/svg%3E">
+  <style>
+    *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#070d1c;color:#edf5ff;font-family:system-ui,sans-serif;overscroll-behavior:none}
+    #game{position:fixed;inset:0;touch-action:none;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}canvas{display:block;width:100%;height:100%;outline:none;touch-action:none}
+    #loading,#error{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 50% 30%,#1b1740,#070d1c 70%);z-index:3;text-align:center;padding:30px}
+    .kicker{color:#50f5e3;letter-spacing:.24em;font-size:11px;font-weight:600}.logo{font-size:clamp(48px,10vw,92px);letter-spacing:-.06em;font-weight:900;line-height:.91;margin:30px 0}.logo span{color:#e9ff83}
+    #track{width:min(280px,70vw);height:3px;background:#23304a;margin:24px 0}#progress{height:100%;width:0;background:#e9ff83;transition:width .15s}#status{font-size:12px;color:#8193b2}
+    #fullscreen{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));background:#101a2e;border:1px solid #23304a;color:#8193b2;border-radius:6px;width:36px;height:30px;font-size:18px;cursor:pointer;z-index:2}
+    #fullscreen:focus-visible{outline:2px solid #e9ff83}#error{display:none}#error p{max-width:460px;line-height:1.7;color:#8193b2}#retry{background:#e9ff83;color:#070d1c;border:0;padding:15px 30px;border-radius:8px;font-weight:700;cursor:pointer}
+  </style>
+</head>
+<body>
+  <main id="game"><canvas id="unity-canvas" tabindex="0" aria-label="Brick Rush arcade game. Move with mouse, touch, A D or arrow keys. Escape pauses."></canvas></main>
+  <div id="loading"><div class="kicker">ARCADE / 001</div><div class="logo">BRICK<br><span>RUSH.</span></div><div class="kicker">YOUR NEXT HIGH SCORE IS LOADING</div><div id="track"><div id="progress"></div></div><div id="status">Warming up the neon...</div></div>
+  <button id="fullscreen" aria-label="Enter fullscreen" title="Fullscreen">&#x26F6;</button>
+  <div id="error" role="alert"><div class="kicker">LET'S TRY THAT AGAIN</div><h1>The rush couldn't start.</h1><p id="error-message"></p><button id="retry" onclick="location.reload()">RELOAD GAME</button></div>
+  <script>
+    const canvas=document.getElementById('unity-canvas');
+    const fail=message=>{document.getElementById('loading').style.display='none';document.getElementById('error').style.display='flex';document.getElementById('error-message').textContent=message;};
+    const config={
+      dataUrl:'Build/{{{ DATA_FILENAME }}}',frameworkUrl:'Build/{{{ FRAMEWORK_FILENAME }}}',codeUrl:'Build/{{{ CODE_FILENAME }}}',
+      streamingAssetsUrl:'StreamingAssets',companyName:'Neon Current',productName:'Brick Rush',productVersion:'1.0.0',
+      matchWebGLToCanvasSize:true,devicePixelRatio:Math.min(window.devicePixelRatio||1,1.6),
+      autoSyncPersistentDataPath:true,
+      showBanner:(message,type)=>{if(type==='error')fail(message);else console.warn(message);}
+    };
+    if(!document.createElement('canvas').getContext('webgl2'))fail('This browser needs WebGL 2 support. Enable hardware acceleration or try a current browser.');
+    else{
+      const script=document.createElement('script');script.src='Build/{{{ LOADER_FILENAME }}}';script.onerror=()=>fail('The game loader is unavailable. Check your connection and reload.');
+      script.onload=()=>createUnityInstance(canvas,config,p=>{document.getElementById('progress').style.width=Math.round(p*100)+'%';document.getElementById('status').textContent=p<.9?'Loading the good stuff... '+Math.round(p*100)+'%':'Almost ready. Make every bounce count.';}).then(instance=>{window.unityInstance=instance;document.getElementById('loading').style.display='none';canvas.focus();}).catch(error=>fail(String(error)));
+      document.body.appendChild(script);
+    }
+    document.getElementById('fullscreen').onclick=()=>{if(window.unityInstance)window.unityInstance.SetFullscreen(1);};
+    if(!document.fullscreenEnabled)document.getElementById('fullscreen').style.display='none';
+    document.addEventListener('visibilitychange',()=>{if(document.hidden&&window.unityInstance)window.unityInstance.SendMessage('Brick Rush','BrowserHidden');});
+    canvas.addEventListener('contextmenu',e=>e.preventDefault());canvas.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
+    canvas.addEventListener('touchcancel',()=>{if(window.unityInstance)window.unityInstance.SendMessage('Brick Rush','BrowserHidden');});
+    window.addEventListener('blur',()=>{if(window.unityInstance)window.unityInstance.SendMessage('Brick Rush','BrowserHidden');});
+  </script>
+</body></html>

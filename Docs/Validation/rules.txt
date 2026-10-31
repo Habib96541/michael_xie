@@ -1,0 +1,29 @@
+Combo boundaries
+Third brick earns x2
+Double-score armored reward
+Shared paddle reset
+Life bonus
+Replay reset
+No horizontal or vertical loops (1000 headings)
+Paddle aims left, center, right
+Layout 0 has reachable destructible bricks
+Layout 1 has reachable destructible bricks
+Layout 2 has reachable destructible bricks
+Layout 3 has reachable destructible bricks
+Layout 4 has reachable destructible bricks
+Layout 5 has reachable destructible bricks
+Layout 6 has reachable destructible bricks
+Layout 7 has reachable destructible bricks
+Wave completion tracking
+Completion counted before transition
+20-second evolution adds armor
+45-second evolution adds explosives
+70-second evolution preserves solvability
+Evolution is idempotent
+Swept high-speed cast hits brick
+Armor takes two hits
+No duplicate destruction
+Destroyed collider removed immediately
+Indestructible obstacle
+Diagonal corner cast returns a valid normal
+Adjacent-brick seam reports both contacts
