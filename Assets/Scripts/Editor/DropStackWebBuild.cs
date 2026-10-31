@@ -1,0 +1,67 @@
+using System.IO;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.Build;
+using UnityEditor.Build.Reporting;
+
+namespace DropStack.Editor
+{
+    public static class DropStackWebBuild
+    {
+        public static void Configure()
+        {
+            PlayerSettings.productName="Drop Stack";
+            PlayerSettings.bundleVersion="1.1.0";
+            PlayerSettings.runInBackground=false;
+            PlayerSettings.WebGL.template="PROJECT:DropStack";
+            PlayerSettings.WebGL.compressionFormat=WebGLCompressionFormat.Gzip;
+            PlayerSettings.WebGL.decompressionFallback=true;
+            PlayerSettings.WebGL.dataCaching=true;
+            PlayerSettings.WebGL.nameFilesAsHashes=true;
+            PlayerSettings.WebGL.initialMemorySize=128;
+            PlayerSettings.WebGL.maximumMemorySize=512;
+            PlayerSettings.WebGL.exceptionSupport=WebGLExceptionSupport.ExplicitlyThrownExceptionsOnly;
+            PlayerSettings.stripEngineCode=true;
+            var pipeline=UnityEngine.Rendering.GraphicsSettings.defaultRenderPipeline as UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset;
+            if(pipeline!=null) { pipeline.supportsHDR=false; pipeline.msaaSampleCount=1; pipeline.supportsCameraDepthTexture=false; pipeline.supportsCameraOpaqueTexture=false; UnityEditor.EditorUtility.SetDirty(pipeline); }
+        }
+        [MenuItem("Drop Stack/Build WebGL")]
+        public static void Build()
+        {
+            Configure();
+            if(!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.WebGL,BuildTarget.WebGL))
+                throw new BuildFailedException("Install WebGL Build Support for Unity "+Application.unityVersion+" in Unity Hub, then run Drop Stack/Build WebGL.");
+            string staging=System.IO.Path.GetFullPath("Builds/WebGL-Staging");
+            string release=System.IO.Path.GetFullPath("Builds/WebGL");
+            ArchiveBuild(staging);
+            Directory.CreateDirectory(staging);
+            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions {scenes=new[]{"Assets/Scenes/SampleScene.unity"}, locationPathName=staging, target=BuildTarget.WebGL, options=BuildOptions.None});
+            if(report.summary.result!=BuildResult.Succeeded) throw new BuildFailedException("WebGL build failed: "+report.summary.result);
+            ArchiveBuild(release);
+            Directory.Move(staging,release);
+            Debug.Log("[DropStack] WebGL ready at Builds/WebGL/index.html. Upload the full folder to a static host or zip its contents for itch.io.");
+        }
+        private static void ArchiveBuild(string directory)
+        {
+            if(!Directory.Exists(directory)) return;
+            string buildsRoot=System.IO.Path.GetFullPath("Builds")+System.IO.Path.DirectorySeparatorChar;
+            string source=System.IO.Path.GetFullPath(directory);
+            string target=source+"-backup-"+System.DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff");
+            if(!source.StartsWith(buildsRoot,System.StringComparison.OrdinalIgnoreCase)||!target.StartsWith(buildsRoot,System.StringComparison.OrdinalIgnoreCase))
+                throw new BuildFailedException("Build archive must remain inside this project's Builds directory.");
+            Directory.Move(source,target);
+        }
+        public static void BuildSmokePlayer()
+        {
+            Directory.CreateDirectory("Builds/Smoke");
+            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions {scenes=new[]{"Assets/Scenes/SampleScene.unity"}, locationPathName="Builds/Smoke/DropStack.exe", target=BuildTarget.StandaloneWindows64, options=BuildOptions.Development});
+            if(report.summary.result!=BuildResult.Succeeded) throw new BuildFailedException("Smoke player build failed: "+report.summary.result);
+        }
+        public static void VerifyAndBuildSmoke()
+        {
+            DropStackSceneSetup.SetupScene();
+            DropStackGameTests.RunAllTests();
+            BuildSmokePlayer();
+        }
+    }
+}

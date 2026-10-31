@@ -10,6 +10,9 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/.wrangler/
+/.cloudflare-deployment.json
+/Tools/.cache/
 *.log
 
 # MemoryCaptures can get excessive in size.
