@@ -19,11 +19,11 @@ namespace DropStack.Editor
         [MenuItem("Drop Stack/Setup Scene")]
         public static void SetupScene()
         {
-            DropStackReferenceThemeGenerator.GenerateThemeSprites();
+            DropStackArtGenerator.GenerateBackdrop();
             var scene=EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
             foreach(string name in new[]{"DropStackGameManager","DropStackBoard","BoardRenderer","ActivePieceRenderer","DropStackAudioManager","JuiceEffects","Canvas","EventSystem","BoardBorder","DangerLine","ArcadeBackdrop"}) { var old=GameObject.Find(name); if(old!=null) Object.DestroyImmediate(old); }
             display=AssetDatabase.LoadAssetAtPath<Font>("Assets/Fonts/StackDisplay.ttf"); body=AssetDatabase.LoadAssetAtPath<Font>("Assets/Fonts/StackUI.ttf");
-            if(display==null||body==null) throw new System.Exception("Run Tools/Generate-Arcade-Assets.py to create the fixed-weight UI fonts.");
+            if(display==null||body==null) throw new System.Exception("The required StackDisplay.ttf and StackUI.ttf fonts are missing from Assets/Fonts.");
             var cam=Camera.main; if(cam==null) { var go=new GameObject("Main Camera"); go.tag="MainCamera"; cam=go.AddComponent<Camera>(); }
             cam.orthographic=true; cam.orthographicSize=11.25f; cam.transform.position=new Vector3(0,0,-10); cam.clearFlags=CameraClearFlags.SolidColor; cam.backgroundColor=new Color(.018f,.035f,.065f);
             if(cam.GetComponent<AudioListener>()==null) cam.gameObject.AddComponent<AudioListener>();
@@ -97,9 +97,8 @@ namespace DropStack.Editor
             var soft=Btn("SoftDrop",controls,"V",new Vector2(-185,0),new Vector2(64,60),Cyan,22); var reserve=Btn("Hold",controls,"HOLD",new Vector2(-89,0),new Vector2(108,60),Green,18);
             var ccw=Btn("RotateLeft",controls,"Z / CCW",new Vector2(31,0),new Vector2(112,60),Purple,16); var cw=Btn("RotateRight",controls,"X / CW",new Vector2(153,0),new Vector2(112,60),Purple,16);
             var hard=Btn("HardDrop",controls,"DROP",new Vector2(295,0),new Vector2(150,60),Amber,22,true);
-            Set(touch,"controller",piece); Set(touch,"gameManager",game); Set(touch,"btnLeft",left); Set(touch,"btnRight",right); Set(touch,"btnSoftDrop",soft); Set(touch,"btnHold",reserve); Set(touch,"btnHardDrop",hard); Set(touch,"btnRotateCW",cw); Set(touch,"btnRotateCCW",ccw);
+            Set(touch,"controller",piece); Set(touch,"btnLeft",left); Set(touch,"btnRight",right); Set(touch,"btnSoftDrop",soft); Set(touch,"btnHold",reserve); Set(touch,"btnHardDrop",hard); Set(touch,"btnRotateCW",cw); Set(touch,"btnRotateCCW",ccw);
             var footer=T("KeyboardGuide",root.transform,"ARROWS / WASD  MOVE     Z / X  ROTATE     SPACE  DROP     C  HOLD     ESC  PAUSE",11,Vector2.zero,new Vector2(1050,28),Muted).rectTransform;
-            var popups=Obj("ScorePopups",root.transform).GetComponent<RectTransform>(); popups.sizeDelta=new Vector2(700,600); juice.SetContainer(popups);
             var toast=Panel("ActionToast",root.transform,new Vector2(400,68),new Vector2(0,356),Cyan); var toastGroup=toast.gameObject.AddComponent<CanvasGroup>(); toastGroup.alpha=0; toastGroup.blocksRaycasts=false;
             var toastTitle=T("Title",toast,"LET'S STACK",24,new Vector2(0,11),new Vector2(380,36),Cyan); var toastDetail=T("Detail",toast,"90 SECONDS",13,new Vector2(0,-18),new Vector2(380,26),White);
             Set(ui,"toastGroup",toastGroup); Set(ui,"toastTitle",toastTitle); Set(ui,"toastDetail",toastDetail); Set(ui,"toastSurface",toast.GetComponent<ArcadeSurface>());
@@ -163,7 +162,8 @@ namespace DropStack.Editor
             start.SetActive(true); settings.SetActive(false); restartModal.SetActive(false); results.SetActive(false); helpModal.SetActive(false);
             var layout=root.AddComponent<ResponsiveGameLayout>(); Set(layout,"scaler",scaler); Set(layout,"gameCamera",cam); Set(layout,"backdrop",bg); Set(layout,"boardFrame",frame); Set(layout,"header",header);
             Set(layout,"holdPanel",hold); Set(layout,"statsPanel",stats); Set(layout,"nextPanel",next); Set(layout,"timerPanel",timer); Set(layout,"goalPanel",goal); Set(layout,"dangerPanel",danger); Set(layout,"controls",controls); Set(layout,"footer",footer);
-            layout.ApplyLayout(); EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(scene.path,true)}; DropStackWebBuild.Configure();
+            layout.ApplyLayout(); EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(scene.path,true)};
+            EditorBuildSettings.RemoveConfigObject("com.unity.input.settings.actions"); DropStackWebBuild.Configure();
             EditorSceneManager.MarkSceneDirty(scene); EditorSceneManager.SaveScene(scene); AssetDatabase.SaveAssets(); Debug.Log("[DropStack] Arcade UI, difficulty selector and responsive layouts saved.");
         }
         private static GameObject Obj(string name,Transform parent) { var go=new GameObject(name,typeof(RectTransform)); if(parent!=null) go.transform.SetParent(parent,false); return go; }

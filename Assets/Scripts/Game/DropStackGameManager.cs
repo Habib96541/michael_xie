@@ -364,22 +364,12 @@ namespace DropStack.Game
 
             // Register score
             bool isPerfect = board.IsCompletelyEmpty();
-            int awardedPoints = scoreManager.RegisterLineClear(lineCount, isPerfect);
+            scoreManager.RegisterLineClear(lineCount, isPerfect);
 
             if (scoreManager.CurrentStreak >= 2)
             {
                 DropStackAudioManager.Instance?.PlayCombo(scoreManager.CurrentStreak);
             }
-
-            // Show floating score text
-            string label = lineCount == 1 ? $"+{awardedPoints} SINGLE!" :
-                           lineCount == 2 ? $"+{awardedPoints} DOUBLE! x{scoreManager.CurrentMultiplier:F1}" :
-                           lineCount == 3 ? $"+{awardedPoints} TRIPLE! x{scoreManager.CurrentMultiplier:F1}" :
-                           lineCount == 4 ? $"+{awardedPoints} DROP STACK! x{scoreManager.CurrentMultiplier:F1}" :
-                                            $"+{awardedPoints} PENTRIS! x{scoreManager.CurrentMultiplier:F1}";
-
-            Color popupColor = lineCount >= 4 ? new Color(1f, 0.85f, 0.1f) :
-                               lineCount >= 2 ? new Color(0.2f, 0.95f, 1f) : Color.white;
 
             if (!targetAwarded && scoreManager.TotalLinesCleared >= TargetLines) {
                 targetAwarded=true;

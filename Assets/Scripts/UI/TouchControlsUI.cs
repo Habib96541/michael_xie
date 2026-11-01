@@ -9,7 +9,6 @@ namespace DropStack.UI
     {
         [Header("References")]
         [SerializeField] private ActivePieceController controller;
-        [SerializeField] private DropStackGameManager gameManager;
 
         [Header("Buttons")]
         [SerializeField] private Button btnLeft;
@@ -19,15 +18,6 @@ namespace DropStack.UI
         [SerializeField] private Button btnRotateCW;
         [SerializeField] private Button btnRotateCCW;
         [SerializeField] private Button btnHold;
-        [SerializeField] private Button btnPause;
-
-        public void Bind(ActivePieceController pieceCtrl, DropStackGameManager gm)
-        {
-            controller = pieceCtrl;
-            gameManager = gm;
-
-            SetupButtonListeners();
-        }
 
         private void Start() => SetupButtonListeners();
         private void OnDisable() { controller?.ResetInput(); }
@@ -73,11 +63,6 @@ namespace DropStack.UI
                 btnHold.onClick.AddListener(() => controller?.RequestHold());
             }
 
-            if (btnPause != null)
-            {
-                btnPause.onClick.RemoveAllListeners();
-                btnPause.onClick.AddListener(() => gameManager?.TogglePause());
-            }
         }
 
         private void AddPointerDownUp(Button btn, System.Action onDown, System.Action onUp)

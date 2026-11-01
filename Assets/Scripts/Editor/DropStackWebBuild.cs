@@ -33,23 +33,36 @@ namespace DropStack.Editor
                 throw new BuildFailedException("Install WebGL Build Support for Unity "+Application.unityVersion+" in Unity Hub, then run Drop Stack/Build WebGL.");
             string staging=System.IO.Path.GetFullPath("Builds/WebGL-Staging");
             string release=System.IO.Path.GetFullPath("Builds/WebGL");
-            ArchiveBuild(staging);
+            string previous=System.IO.Path.GetFullPath("Builds/WebGL-Previous");
+            ValidateBuildPath(staging); ValidateBuildPath(release); ValidateBuildPath(previous);
+            if(!Directory.Exists(release)&&Directory.Exists(previous)) Directory.Move(previous,release);
+            DeleteTemporaryBuild(staging);
             Directory.CreateDirectory(staging);
             var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions {scenes=new[]{"Assets/Scenes/SampleScene.unity"}, locationPathName=staging, target=BuildTarget.WebGL, options=BuildOptions.None});
             if(report.summary.result!=BuildResult.Succeeded) throw new BuildFailedException("WebGL build failed: "+report.summary.result);
-            ArchiveBuild(release);
-            Directory.Move(staging,release);
+            DeleteTemporaryBuild(previous);
+            if(Directory.Exists(release)) Directory.Move(release,previous);
+            try { Directory.Move(staging,release); }
+            catch {
+                if(!Directory.Exists(release)&&Directory.Exists(previous)) Directory.Move(previous,release);
+                throw;
+            }
+            DeleteTemporaryBuild(previous);
             Debug.Log("[DropStack] WebGL ready at Builds/WebGL/index.html. Upload the full folder to a static host or zip its contents for itch.io.");
         }
-        private static void ArchiveBuild(string directory)
+        private static void ValidateBuildPath(string directory)
         {
-            if(!Directory.Exists(directory)) return;
             string buildsRoot=System.IO.Path.GetFullPath("Builds")+System.IO.Path.DirectorySeparatorChar;
-            string source=System.IO.Path.GetFullPath(directory);
-            string target=source+"-backup-"+System.DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff");
-            if(!source.StartsWith(buildsRoot,System.StringComparison.OrdinalIgnoreCase)||!target.StartsWith(buildsRoot,System.StringComparison.OrdinalIgnoreCase))
-                throw new BuildFailedException("Build archive must remain inside this project's Builds directory.");
-            Directory.Move(source,target);
+            if(!System.IO.Path.GetFullPath(directory).StartsWith(buildsRoot,System.StringComparison.OrdinalIgnoreCase))
+                throw new BuildFailedException("Build output must remain inside this project's Builds directory.");
+        }
+        private static void DeleteTemporaryBuild(string directory)
+        {
+            ValidateBuildPath(directory);
+            string target=System.IO.Path.GetFullPath(directory);
+            if(target!=System.IO.Path.GetFullPath("Builds/WebGL-Staging")&&target!=System.IO.Path.GetFullPath("Builds/WebGL-Previous"))
+                throw new BuildFailedException("Only generated staging and previous-build directories can be removed.");
+            if(Directory.Exists(target)) Directory.Delete(target,true);
         }
         public static void BuildSmokePlayer()
         {

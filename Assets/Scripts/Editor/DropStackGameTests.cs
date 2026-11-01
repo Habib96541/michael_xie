@@ -318,6 +318,10 @@ namespace DropStack.Editor
         {
             var scene = EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
 
+            foreach(var root in scene.GetRootGameObjects())
+                foreach(var child in root.GetComponentsInChildren<Transform>(true))
+                    Assert(GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(child.gameObject)==0,$"No missing scripts on {child.name}");
+
             var gameMgr = Object.FindFirstObjectByType<DropStackGameManager>();
             Assert(gameMgr != null, "DropStackGameManager must exist in scene");
 

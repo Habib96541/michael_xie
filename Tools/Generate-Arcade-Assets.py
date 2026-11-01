@@ -1,18 +1,7 @@
 from pathlib import Path
-import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent / '.cache' / 'python'))
-from fontTools.ttLib import TTFont
-from fontTools.varLib.instancer import instantiateVariableFont
 root = Path(__file__).resolve().parent.parent
-for source, target, family, weight in [('Oxanium.ttf','StackDisplay.ttf','Stack Display',750),('Nunito.ttf','StackUI.ttf','Stack UI',800)]:
-    font = TTFont(root/'Assets/Fonts'/source)
-    font = instantiateVariableFont(font, {'wght': weight}, inplace=True)
-    for record in font['name'].names:
-        replacements = {1:family, 2:'Regular', 3:family+'-Regular', 4:family, 6:family.replace(' ','')+'-Regular', 16:family, 17:'Regular'}
-        if record.nameID in replacements:
-            record.string = replacements[record.nameID].encode(record.getEncoding(), errors='replace')
-    font.save(root/'Assets/Fonts'/target)
-    print('Created', target, 'at fixed weight', weight)
+# The game ships only its finished static fonts. This dependency-free helper
+# regenerates the web logo and favicon without retaining source fonts or tooling.
 glyphs = {
 'D':['11110','11011','11001','11001','11001','11011','11110'],
 'R':['11110','11011','11011','11110','11100','11010','11011'],

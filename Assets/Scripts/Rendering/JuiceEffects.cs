@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace DropStack.Rendering
 {
@@ -18,10 +16,6 @@ namespace DropStack.Rendering
         private ParticleSystem lineClearParticles;
         private ParticleSystem dropParticles;
         [SerializeField] private Material particleMaterial;
-
-        [Header("Floating Text Pool")]
-        [SerializeField] private RectTransform floatingTextContainer;
-        private readonly List<FloatingScoreText> textPool = new();
 
         private void Awake()
         {
@@ -128,7 +122,6 @@ namespace DropStack.Rendering
             shakeCoroutine=null;
             if(lineClearParticles!=null) lineClearParticles.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
             if(dropParticles!=null) dropParticles.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
-            foreach(var item in textPool) if(item!=null) item.gameObject.SetActive(false);
             DropStack.UI.ArcadeFeedback.Cancel();
         }
 
@@ -180,47 +173,5 @@ namespace DropStack.Rendering
             TriggerScreenShake(0.12f, 0.14f);
         }
 
-        public void ShowScorePopup(string text, Color color, Vector2 localPos)
-        {
-            if (floatingTextContainer == null) return;
-
-            FloatingScoreText item = null;
-            foreach (var t in textPool)
-            {
-                if (!t.gameObject.activeInHierarchy)
-                {
-                    item = t;
-                    break;
-                }
-            }
-
-            if (item == null)
-            {
-                GameObject go = new GameObject("FloatingScoreText", typeof(RectTransform), typeof(Text), typeof(CanvasGroup), typeof(FloatingScoreText));
-                go.transform.SetParent(floatingTextContainer, false);
-
-                Text txt = go.GetComponent<Text>();
-                txt.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-                txt.fontSize = 28;
-                txt.fontStyle = FontStyle.Bold;
-                txt.alignment = TextAnchor.MiddleCenter;
-                txt.raycastTarget = false;
-                txt.rectTransform.sizeDelta = new Vector2(650,100);
-
-                Outline outline = go.AddComponent<Outline>();
-                outline.effectColor = new Color(0f, 0f, 0f, 0.9f);
-                outline.effectDistance = new Vector2(2f, -2f);
-
-                item = go.GetComponent<FloatingScoreText>();
-                textPool.Add(item);
-            }
-
-            item.Play(text, color, localPos);
-        }
-
-        public void SetContainer(RectTransform container)
-        {
-            floatingTextContainer = container;
-        }
     }
 }

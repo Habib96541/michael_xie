@@ -84,8 +84,10 @@ namespace DropStack.Diagnostics
             var right=GameObject.Find("Canvas").transform.Find("Controls/Right").gameObject;
             var before=piece.BoardPosition;
             ExecuteEvents.Execute(right,eventData,ExecuteEvents.pointerDownHandler);
-            yield return new WaitForSecondsRealtime(.34f);
-            Check(piece.BoardPosition.x>=before.x+2,"Touch horizontal auto-repeat survives keyboard polling");
+            // Allow a bounded warm-up hitch without depending on a single frame's timing.
+            float repeatDeadline=Time.realtimeSinceStartup+1f;
+            while(piece.BoardPosition.x<before.x+2&&gm.CurrentState==GameState.Playing&&Time.realtimeSinceStartup<repeatDeadline) yield return null;
+            Check(piece.BoardPosition.x>=before.x+2,$"Touch horizontal auto-repeat survives keyboard polling (state={gm.CurrentState}, from={before.x}, to={piece.BoardPosition.x})");
             ExecuteEvents.Execute(right,eventData,ExecuteEvents.pointerUpHandler);
             Click("Controls/HardDrop"); yield return null;
             Check(score.CurrentScore>0&&gm.CanHold,"Hard drop scores, locks, and unlocks hold");

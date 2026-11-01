@@ -82,9 +82,6 @@ namespace DropStack.Audio
             }
         }
 
-        public void ToggleSound() => SetSoundEnabled(!IsSoundEnabled);
-        public void ToggleMusic() => SetMusicEnabled(!IsMusicEnabled);
-
         public void PlayMove() => PlaySound(moveClip, 0.4f, UnityEngine.Random.Range(0.95f, 1.05f));
         public void PlayRotate() => PlaySound(rotateClip, 0.5f, UnityEngine.Random.Range(0.95f, 1.05f));
         public void PlaySoftDrop() => PlaySound(softDropClip, 0.25f, 1.1f);
@@ -129,11 +126,6 @@ namespace DropStack.Audio
                 bgmSource.volume = 0.20f;
                 bgmSource.Play();
             }
-        }
-
-        public void StopBGM()
-        {
-            bgmSource.Stop();
         }
 
         #region Procedural Audio Synthesis
