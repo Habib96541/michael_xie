@@ -1,0 +1,2 @@
+PASS in Unity Editor manual Physics2D simulation: 50 concurrent balls; capacity rejection/no charge; active row/profile locking; physical pocket resolution; 5 pool reuse cycles; modal blocking; leave/drain/home; escaped refund; duplicate completion guard; stuck and timeout refunds; timer reset on reuse; actual peg/pocket counts for every row 8..16.
+Manual simulation does not measure real-time performance; stuck and timeout conditions are injected through reflection.

@@ -1,0 +1,240 @@
+PEGRUSH — PHASE 1, SPRINT 1
+Date: 2026-11-01
+
+ACCEPTANCE / SCOPE
+Original virtual-coin Plinko arcade game in the existing Unity project. Real 2D
+collisions, 8–16 rows (12 default), R+1 physical pockets, 50 pooled independent
+balls, rapid discrete drops, Green/Gold/Red profiles, 1/5/10/25/50 amounts,
+1,000 starting coins, durable pending transactions, interruption refunds,
+home/game/settings/help, responsive WebGL page and local HTTP delivery.
+Required viewport targets: 360x800, 720x1280, 768x1024, 1280x720, 1600x900.
+No real money, purchases, auto-drop, music, vibration, shops or metagame.
+
+INSPECTION / BASELINE
+Existing project: Unity 6000.3.10f1, URP 3D template, SampleScene, tutorial assets.
+Input System 1.18.0 and uGUI 2.0.0 already present; activeInputHandler=1.
+Matching installed Editor and WebGL module present; Unity Personal license
+successfully resolved. No applicable AGENTS.md found. No previous playable
+build found. Existing staged files and modified URP/tutorial settings preserved.
+No attached inspiration screenshots were supplied with the text request.
+BaselineSource.tar is the single requested baseline snapshot of Assets,
+Packages, ProjectSettings and git ignore/attributes; archive listing verified.
+Original SampleScene, input actions, URP settings and tutorial assets retained.
+Initial game implementation compilation found a local variable naming conflict;
+fixed before validation. Full logs are in Logs/PegRushSetup.log / PegRushBuild.log.
+
+ARCHITECTURE / AFFECTED FILES
+Assets/PegRush/Scripts:
+  GameConfig: ScriptableObject tuning and all 27 symmetric reward tables.
+  Board: peg, pocket, boundary generation; geometry changes only when clear.
+  Ball: Pooled -> Falling -> Resolving -> Pooled, timeout/escape/stuck recovery.
+  Pocket: actual Collider2D trigger entry, no predetermined landing reward.
+  PegFlash: collision-driven flash, bounded to one timer per peg.
+  Wallet: fixed-point coins, pending IDs, durable reserve/settlement/recovery.
+  GameSession: Home/Playing/Modal/Draining, input, pooling and navigation.
+  GameUI: home, board controls, help/settings/modals, responsive presentation.
+  AudioEffects: synthesized short chime; 90ms throttle, mute, no music.
+  BrowserStatus: read-only browser status for verification.
+Assets/PegRush/Generated: connected PegRush.unity, Ball/Peg/Pocket/UI prefabs,
+  GameConfig.asset, Bounce.physicsMaterial2D, original procedural sprite PNGs.
+Assets/PegRush/Editor/PegRushAuthoring.cs: separate one-time setup, validation,
+  WebGL build menus. Setup refuses to overwrite an existing authored scene.
+Assets/PegRush/Plugins/BrowserStatus.jslib: sync browser save and diagnostics.
+Assets/WebGLTemplates/PegRush/index.html: responsive loader and fullscreen.
+Assets/PegRush/.editorconfig: scoped C# conventions.
+Tools/Build-WebGL.ps1 and Tools/Serve-WebGL.ps1: repeatable build and HTTP server.
+Build settings point to the new connected PegRush scene. Template scene retained.
+
+BOARD RULES
+For row r=0..R-1, generate r+1 pegs at x=c-r/2, y=R-r+1, c=0..r.
+Pocket i=0..R is centered x=i-R/2, trigger y=0.65. Bottom pegs align with
+separators between pockets. Peg spacing is 1 world unit horizontally/vertically.
+Outer boundaries are vertical; bottom dividers prevent crossing pocket sensors.
+An orthographic camera frames geometry independently of overlay UI.
+Viewport changes only camera and UI, never the active physics geometry.
+Portrait multiplier labels alternate vertically to preserve label width.
+
+REWARDS / ROUNDING
+Each row/profile table is stored as R+1 integer hundredths in GameConfig.asset.
+Tables were authored once with e=abs(2*i/R-1):
+  Green: round(70 + 130*e^2), range 0.70x–2.00x.
+  Gold:  round(40 + 760*e^3), range 0.40x–8.00x.
+  Red:   round(15 + 2485*e^5), range 0.15x–25.00x.
+Odd row counts have two central values slightly above each formula's minimum.
+Actual serialized integer values are authoritative; build only validates them.
+Intended arcade balancing: Green flatter, Gold intermediate, Red edge-heavy.
+No casino-equivalent odds, expected return or fairness-verification claims.
+Wallet and amounts use long integer hundredths of a virtual coin.
+Payout in hundredths = (reservedHundredths * multiplierHundredths + 50)/100,
+using integer division: nearest hundredth, ties rounded upward.
+Per-ball transaction clones the table, cost, row count and profile.
+
+PHYSICS / POOLING
+Only Rigidbody2D/Collider2D; no gameplay 3D physics.
+Ball diameter 0.28, peg diameter 0.21 world units. Gravity scale 1.6.
+PhysicsMaterial2D friction .05, restitution .58, Continuous collision detection,
+interpolated rigidbodies. Ball layer 8 ignores itself. Pool capacity 50.
+Spawn x uniform [-.16,.16], y=R+2.1, symmetric, zero initial velocity.
+Timeout 35 seconds; speed squared below .01 for 4 seconds is stuck.
+Escaped if y<-3 or abs(x)>13. These conditions refund rather than reward.
+Every launch resets velocity, angular velocity, age, stuck timer, transform,
+color and transaction. Terminal state guards duplicate triggers and pool reuse.
+No animation callback owns rewards. Results history capped at 5 entries.
+Settings and leave modals block all Drop activations; physics can continue.
+Leaving with active balls offers Stay or Home when clear; draining blocks drops.
+Focus loss/suspension freezes simulation; resume restores simulation.
+
+SAVE SCHEMA / INTERRUPTIONS
+Browser key: PegRush.Save.v1, same-origin localStorage, synchronous writes.
+JSON: Version=1; Coins (hundredths); Muted; Reduced; Pending array.
+Pending entries: stable GUID Id, Amount, Rows, Profile, cloned Table.
+Reserve persists deduction plus pending entry before spawn/feedback.
+Resolve persists removal plus credit before result effects/recycle.
+On reopening, unresolved valid pending amounts refund once; pending clears in
+that same save. Completed rewards remain in Coins. No pending landing rewards
+are reconstructed or awarded. Invalid/missing/outdated saves reset to 1,000.
+Failed writes reject reservations without charge; failed settlement retains the
+pending transaction for retry/recovery. Editor uses PlayerPrefs instead.
+Browser storage is local to origin, browser and profile; not a cloud account,
+not tamper-resistant. Clearing site data/private sessions/storage restrictions
+can erase progress or disable saving. No reliance on unload or quit callbacks.
+
+ASSETS / LICENSES
+All PegRush artwork is original procedural C# output: 64x64 RGBA orb and
+rounded rectangle. Center pivots, bilinear filtering, no mipmaps, lossless sprite
+imports. Rounded panel borders are 14 pixels and use Image.Type.Sliced.
+No source art overwritten; generation source remains in PegRushAuthoring.cs.
+Text uses Unity's builtin LegacyRuntime font. Audio is an original synthesized
+sine chime. Existing Unity template/package assets retain their own licenses.
+No third-party art or copied branding.
+
+BUILD / RUN / DEPLOY
+Use Unity 6000.3.10f1 with WebGL module and an active Unity license.
+Open Assets/PegRush/Generated/PegRush.unity to edit/play.
+Menu PegRush/2 validates config and deterministic transactions.
+Menu PegRush/3 builds without regenerating assets or editing configuration.
+Close this project's Editor before batch building:
+  powershell -ExecutionPolicy Bypass -File Tools/Build-WebGL.ps1
+Run HTTP server from project root:
+  powershell -ExecutionPolicy Bypass -File Tools/Serve-WebGL.ps1
+Then browse http://127.0.0.1:8080 . Never open index.html using file://.
+Deploy the whole Builds/WebGL folder, keeping Build/ and loader paths intact.
+Compression is Disabled: no gzip/Brotli Content-Encoding required. Serve .wasm
+as application/wasm, .js as JavaScript, .data as application/octet-stream.
+A static HTTPS host with WebAssembly/WebGL2 support is sufficient. No server
+backend or cross-origin isolation required. Large uncompressed downloads are
+an intentional simple-hosting tradeoff. Saves are scoped to the hosting origin.
+Fullscreen requires a browser user gesture and browser/device support.
+
+CONTROLS
+Mouse click or touch: Play, selectors, Drop, settings, navigation.
+Space: one ball per discrete key press; holding does not auto-drop.
+Tab/Shift+Tab navigation, Enter activation (InputSystemUIInputModule).
+Rows +/- clamp 8..16. Profile cycles Green/Gold/Red. Amount cycles allowed coins.
+Rows/profile stay locked until all active balls resolve. Amount applies only to
+future balls. Sound/reduced-effects options persist. Free refill only when no
+pending balls and wallet below 1 coin. No forced per-ball result popup.
+
+VERIFICATION
+See DeterministicTests.txt, BrowserVerification.json and Screenshots/ for actual
+results of the delivered build. Browser/device coverage and limitations recorded
+below after execution. No emulated test should be treated as physical testing.
+
+REPEATING ENGINE VERIFICATION
+Close this project's Editor, then run:
+  powershell -ExecutionPolicy Bypass -File Tools/Verify-Engine.ps1
+The harness enters Play mode and manually advances Physics2D and ball lifecycle
+ticks. It injects stuck/timeout conditions using reflection. It exits the Editor
+with a failure code on any failed assertion. It uses this project's Editor-side
+PlayerPrefs wallet; browser saves are separate. Browser checks use Playwright
+Chromium 156.0.8078.4 on Windows, HTTP loopback, Intel UHD 730 via D3D11.
+
+VERIFIED ENGINE RESULTS
+DeterministicTests.txt: all 27 table combinations and transaction tests PASS.
+EngineTests.txt: 50 active balls; capacity/no charge; locks; actual physics pocket
+resolution; reuse; modals; drain/home; escape/stuck/timeout refunds; duplicate
+completion; reset timers; actual peg and pocket counts for every row 8..16 PASS.
+Stuck/timeout conditions are injected in the Editor harness, not observations of
+spontaneous browser failures. Manual physics advances are not performance data.
+The first harness omitted lifecycle ticks; corrected before the passing run.
+
+BROWSER METHODS / COVERAGE
+Chromium is automated with Playwright using real mouse/key event injection.
+50-ball saturation is a separate synchronous engine-call stress, not a claim of
+50 human clicks in one frame. Real repeated mouse and emulated touchscreen taps
+are also tested. Browser read-only status is available at window.pegrushStatus.
+Wallet snapshots are inspected directly from the same-origin localStorage key.
+CDP frozen/active transitions test browser suspension. Fullscreen uses the HTML
+button's user gesture. Resizing/rotation changes only viewport and camera/UI.
+Physical touch hardware, Safari, Firefox, iOS and Android have NOT been tested.
+Browser audio context activation is checked; subjective speaker quality is not.
+The initial software-renderer inspection was excluded from hardware FPS results.
+The initial invisible sprites were diagnosed as spriteMode=Multiple with no
+frames; switched to Single and explicitly rewired prefab sprite references.
+Default skybox clear, overlapping landscape labels and crowded phone footer
+were corrected and their affected layouts rebuilt and captured again.
+
+REMAINING LIMITATIONS
+Browser-local progress is not cloud-synced and can be edited or cleared by the
+player. Saves do not survive origin/profile changes or guaranteed private-mode
+storage eviction. Unknown save versions reset rather than migrating an unknown
+schema. No legacy PegRush save schema existed before Sprint 1.
+Performance numbers are short local samples on the stated hardware, not mobile
+performance guarantees, long soak tests or memory-leak certification.
+Touch emulation does not establish physical-device usability/performance.
+Fonts and individual multipliers are necessarily compact at 360 CSS pixels.
+Input automation sequences faster than an engine frame can coalesce pointer
+positions; real rapid-input checks use discrete press durations/frame spacing.
+No cross-browser matrix, installed-app/PWA support or cloud service is included.
+
+FINAL DELIVERY RESULTS
+Unity 6000.3.10f1 compile and WebGL build: SUCCESS.
+Authoritative build log: Logs/PegRushDeliveryBuild.log.
+BuildManifest.json records exact SHA-256 hashes and byte counts for all 5 files:
+index.html, WebGL.loader.js, WebGL.framework.js, WebGL.data and WebGL.wasm.
+Required files exist; Unity asset metadata exists; HTTP serves WASM correctly as
+application/wasm. No additional source delivery ZIP was necessary.
+
+BrowserVerification.json: 46 passing browser assertions, including 19 explicit
+retests on the delivered build. Earlier tests preceded final UI-only layout
+refinements; affected keyboard, mouse, touch, layout, locking, snapshots,
+navigation, persistence, capacity and fullscreen checks were repeated.
+20 rapid mouse presses produced exactly 20 active drops. Ten emulated touch
+taps produced exactly ten drops, with no duplicate mouse handling observed.
+Tab/Enter traversal and held Space protection passed. A 51st synchronous engine
+Drop call was rejected with 50 balls active and without an additional charge.
+All 50 balls physically settled and the pending journal cleared.
+Final performance: 12 samples, all with 50 active balls, effects enabled and
+sound unmuted. Mean Unity frame delta 17.5ms (~57.1 FPS); sampled range 17–18ms.
+Hardware: Intel UHD Graphics 730, ANGLE/D3D11; Chromium 156.0.8078.4; Windows.
+This is a short local frame-delta sample, not a percentile GPU benchmark.
+No browser page/console errors observed in final verification.
+
+12 actual screenshots are in SprintDoc/Screenshots. Required gameplay captures
+are exactly 360x800, 720x1280, 768x1024, 1280x720 and 1600x900, and were inspected.
+Extra captures cover 16-row Red at phone/desktop, home, help, settings, emulated
+touch and 50-ball stress. All rows and reward labels remain visible. Rounded
+controls use sliced sprites; portrait primary controls are approximately 44px
+high at 360x800. No observed UI clipping or decorative-image stretching remains.
+
+IMPORTANT VISIBILITY TEST LIMIT
+Headless Chromium kept document.hidden=false during tab switching and window
+minimization. Those attempts establish transaction continuity, NOT genuine
+hidden-tab verification. Controlled CDP frozen/active suspension and resume were
+tested; actual browser tab-hiding visibility transitions remain unverified.
+Physical-device and non-Chromium coverage remain untested as stated above.
+
+Local HTTP server remains running at http://127.0.0.1:8080 at handoff.
+To restart later, use Tools/Serve-WebGL.ps1. Full instructions above cover static
+hosting and required MIME types. Source scene: Assets/PegRush/Generated/PegRush.unity.
+Phase 1 scope remains unchanged; no Phase 2 features added.
+
+SOURCE PRESERVATION CHECK
+Compared every baseline source file against the final workspace. Unity altered
+build-derived m_Prefilter* shader cache fields in the existing Mobile/PC pipeline
+assets during WebGL authoring. Restored those two assets byte-for-byte from the
+baseline, preserving all pre-existing user edits. These fields are recomputed
+by Unity's build pipeline, not gameplay tuning or runtime source changes.
+The remaining baseline changes are the intended build/player settings and
+Unity-generated graphics/runtime-settings serialization. Original tutorial art,
+SampleScene, input actions, package manifest and other user source remain intact.

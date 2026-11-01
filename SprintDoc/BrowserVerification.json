@@ -1,0 +1,881 @@
+{
+  "environment": {
+    "browser": "156.0.8078.4",
+    "renderer": "ANGLE Intel UHD Graphics 730 / Direct3D11",
+    "os": "Windows",
+    "http": "http://127.0.0.1:8080",
+    "physicalDevice": false
+  },
+  "checks": [
+    {
+      "name": "Keyboard Enter starts game",
+      "passed": true
+    },
+    {
+      "name": "One mouse click reserves one drop",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 1,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 1,
+        "Coins": 99000,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "Held Space creates one drop",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 2,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 2,
+        "Coins": 98000,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "50-ball capacity and rejection without charge",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 50,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 52,
+        "Coins": 51020,
+        "Notice": "Board full — wait for a ball to land. No coins charged.",
+        "FrameMilliseconds": 18
+      }
+    },
+    {
+      "name": "50-ball run resolves independently",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 0,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 52,
+        "Coins": 134600,
+        "Notice": "Pocket 5 • earned 8.4 coins",
+        "FrameMilliseconds": 17.0000057220459
+      }
+    },
+    {
+      "name": "Completed rewards persisted with no pending entries",
+      "passed": true,
+      "details": 134600
+    },
+    {
+      "name": "Three rapid real mouse activations",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 3,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 55,
+        "Coins": 131600,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 17.0000057220459
+      }
+    },
+    {
+      "name": "Reload refunds unresolved reservations once",
+      "passed": true,
+      "details": {
+        "pending": 3,
+        "recoveredBrowser": {
+          "State": "Home",
+          "Active": 0,
+          "Rows": 12,
+          "Profile": 0,
+          "Drops": 0,
+          "Coins": 134600,
+          "Notice": "Choose your rhythm. Drop into possibility.",
+          "FrameMilliseconds": 2055
+        }
+      }
+    },
+    {
+      "name": "Second reload does not repeat refunds",
+      "passed": true
+    },
+    {
+      "name": "Modal blocks gameplay keyboard input",
+      "passed": true
+    },
+    {
+      "name": "Mute and reduced effects persist",
+      "passed": true,
+      "details": {
+        "Version": 1,
+        "Coins": 134600,
+        "Muted": true,
+        "Reduced": true,
+        "Pending": []
+      }
+    },
+    {
+      "name": "Rows and profile controls rebuild when clear",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 0,
+        "Rows": 16,
+        "Profile": 1,
+        "Drops": 0,
+        "Coins": 134600,
+        "Notice": "Choose your rhythm. Drop into possibility.",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "Rows/profile locked during active drop",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 1,
+        "Rows": 16,
+        "Profile": 1,
+        "Drops": 1,
+        "Coins": 133600,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 18
+      }
+    },
+    {
+      "name": "Pending transaction snapshots rows/profile/table",
+      "passed": true,
+      "details": {
+        "Id": "8881a4950a1c47b9b39ea56c349c9ed4",
+        "Amount": 1000,
+        "Rows": 16,
+        "Profile": 1,
+        "Table": [
+          800,
+          549,
+          361,
+          226,
+          135,
+          80,
+          52,
+          41,
+          40,
+          41,
+          52,
+          80,
+          135,
+          226,
+          361,
+          549,
+          800
+        ]
+      }
+    },
+    {
+      "name": "Live portrait resize preserves paid ball",
+      "passed": true,
+      "details": {
+        "beforeResize": [
+          "8b23bd358e4147b8a91e252c574147c2"
+        ],
+        "afterResize": [
+          "8b23bd358e4147b8a91e252c574147c2"
+        ]
+      }
+    },
+    {
+      "name": "Leaving with active balls opens confirmation",
+      "passed": true
+    },
+    {
+      "name": "Draining blocks new drops",
+      "passed": true,
+      "details": {
+        "State": "Draining",
+        "Active": 1,
+        "Rows": 16,
+        "Profile": 1,
+        "Drops": 3,
+        "Coins": 140400,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 19
+      }
+    },
+    {
+      "name": "Home transition waits for resolution",
+      "passed": true
+    },
+    {
+      "name": "Browser freeze/resume retains transaction",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 1,
+        "Rows": 16,
+        "Profile": 1,
+        "Drops": 4,
+        "Coins": 139800,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "Emulated touch produces one ball without mouse duplicate",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 1,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 1,
+        "Coins": 99000,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 18
+      }
+    },
+    {
+      "name": "Emulated rotation preserves drop",
+      "passed": true
+    },
+    {
+      "name": "Emulated touch run settles without page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Browser fullscreen via user gesture",
+      "passed": true,
+      "details": {
+        "active": true,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "name": "Insufficient funds rejects without charge",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 0,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 0,
+        "Coins": 50,
+        "Notice": "Not enough coins. Choose a smaller amount or use free refill.",
+        "FrameMilliseconds": 16
+      }
+    },
+    {
+      "name": "Free refill below minimum on clear board",
+      "passed": true
+    },
+    {
+      "name": "Outdated browser save resets safely",
+      "passed": true
+    },
+    {
+      "name": "Unavailable browser storage rejects paid drops",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 0,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 0,
+        "Coins": 100000,
+        "Notice": "Browser storage unavailable. Enable site storage and reload.",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "Delivered build: 20 rapid mouse activations",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 20,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 20,
+        "Coins": 127800,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "Delivered build: Tab navigation and Enter drop",
+      "passed": true,
+      "details": {
+        "status": {
+          "State": "Playing",
+          "Active": 1,
+          "Rows": 12,
+          "Profile": 0,
+          "Drops": 21,
+          "Coins": 157000,
+          "Notice": "In flight • controls unlock when the board clears",
+          "FrameMilliseconds": 17
+        },
+        "domFocus": "CANVAS"
+      }
+    },
+    {
+      "name": "Delivered build: 50 balls and 51st rejection",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 50,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 71,
+        "Coins": 109000,
+        "Notice": "Board full — wait for a ball to land. No coins charged.",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "Delivered build: 50 balls settle and pending journal clears",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: holding Space creates one ball",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: reload recovery once",
+      "passed": true,
+      "details": {
+        "State": "Home",
+        "Active": 0,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 0,
+        "Coins": 180000,
+        "Notice": "Choose your rhythm. Drop into possibility.",
+        "FrameMilliseconds": 2040.9998779296875
+      }
+    },
+    {
+      "name": "Delivered build: repeat reload stable",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: 16-row Red configuration",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: ten rapid emulated taps without duplicate mouse drops",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 10,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 10,
+        "Coins": 90000,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 16
+      }
+    },
+    {
+      "name": "Delivered build: active touch drops survive rotation",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: touch player settles with no console errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Delivered build: tab focus loss retains transaction",
+      "passed": true,
+      "details": {
+        "hidden": false,
+        "status": {
+          "State": "Playing",
+          "Active": 1,
+          "Rows": 12,
+          "Profile": 0,
+          "Drops": 1,
+          "Coins": 179000,
+          "Notice": "In flight • controls unlock when the board clears",
+          "FrameMilliseconds": 17
+        },
+        "save": {
+          "Version": 1,
+          "Coins": 179000,
+          "Muted": false,
+          "Reduced": false,
+          "Pending": [
+            {
+              "Id": "f5c287626fa54d39ab1484123644638f",
+              "Amount": 1000,
+              "Rows": 12,
+              "Profile": 0,
+              "Table": [
+                200,
+                160,
+                128,
+                102,
+                84,
+                74,
+                70,
+                74,
+                84,
+                102,
+                128,
+                160,
+                200
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delivered build: in-flight configuration lock",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: cost snapshot independent of amount selector",
+      "passed": true,
+      "details": {
+        "Id": "02d26de0521b4619bdbfed29d50c1e1b",
+        "Amount": 2500,
+        "Rows": 12,
+        "Profile": 0,
+        "Table": [
+          200,
+          160,
+          128,
+          102,
+          84,
+          74,
+          70,
+          74,
+          84,
+          102,
+          128,
+          160,
+          200
+        ]
+      }
+    },
+    {
+      "name": "Delivered build: modal blocks drops",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: draining blocks new drops",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: drains all balls before home",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: fullscreen user gesture",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: no browser console errors",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "screenshots": [
+    "C:/Project-Files_Rahat/Projects/PegRush/SprintDoc/Screenshots/Gameplay-360x800.png",
+    "C:/Project-Files_Rahat/Projects/PegRush/SprintDoc/Screenshots/Gameplay-720x1280.png",
+    "C:/Project-Files_Rahat/Projects/PegRush/SprintDoc/Screenshots/Gameplay-768x1024.png",
+    "C:/Project-Files_Rahat/Projects/PegRush/SprintDoc/Screenshots/Gameplay-1280x720.png",
+    "C:/Project-Files_Rahat/Projects/PegRush/SprintDoc/Screenshots/Gameplay-1600x900.png"
+  ],
+  "performance": {
+    "method": "15 Unity frame-time samples at 100ms intervals during 50-ball stress; engine calls issued 51 drops synchronously",
+    "samplesMs": [
+      18,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      17,
+      16.0000057220459,
+      16.0000057220459,
+      16.0000057220459
+    ],
+    "meanMs": 16.866667811075846
+  },
+  "harnessNotes": [
+    "Settings clicks were retested with 50ms press duration and frame separation after an initial sub-frame automation sequence coalesced events."
+  ],
+  "consoleErrors": [],
+  "deliveryBuildRetests": [
+    {
+      "name": "Delivered build: 20 rapid mouse activations",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 20,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 20,
+        "Coins": 127800,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "Delivered build: Tab navigation and Enter drop",
+      "passed": true,
+      "details": {
+        "status": {
+          "State": "Playing",
+          "Active": 1,
+          "Rows": 12,
+          "Profile": 0,
+          "Drops": 21,
+          "Coins": 157000,
+          "Notice": "In flight • controls unlock when the board clears",
+          "FrameMilliseconds": 17
+        },
+        "domFocus": "CANVAS"
+      }
+    },
+    {
+      "name": "Delivered build: 50 balls and 51st rejection",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 50,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 71,
+        "Coins": 109000,
+        "Notice": "Board full — wait for a ball to land. No coins charged.",
+        "FrameMilliseconds": 17
+      }
+    },
+    {
+      "name": "Delivered build: 50 balls settle and pending journal clears",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: holding Space creates one ball",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: reload recovery once",
+      "passed": true,
+      "details": {
+        "State": "Home",
+        "Active": 0,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 0,
+        "Coins": 180000,
+        "Notice": "Choose your rhythm. Drop into possibility.",
+        "FrameMilliseconds": 2040.9998779296875
+      }
+    },
+    {
+      "name": "Delivered build: repeat reload stable",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: 16-row Red configuration",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: ten rapid emulated taps without duplicate mouse drops",
+      "passed": true,
+      "details": {
+        "State": "Playing",
+        "Active": 10,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 10,
+        "Coins": 90000,
+        "Notice": "In flight • controls unlock when the board clears",
+        "FrameMilliseconds": 16
+      }
+    },
+    {
+      "name": "Delivered build: active touch drops survive rotation",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: touch player settles with no console errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Delivered build: tab focus loss retains transaction",
+      "passed": true,
+      "details": {
+        "hidden": false,
+        "status": {
+          "State": "Playing",
+          "Active": 1,
+          "Rows": 12,
+          "Profile": 0,
+          "Drops": 1,
+          "Coins": 179000,
+          "Notice": "In flight • controls unlock when the board clears",
+          "FrameMilliseconds": 17
+        },
+        "save": {
+          "Version": 1,
+          "Coins": 179000,
+          "Muted": false,
+          "Reduced": false,
+          "Pending": [
+            {
+              "Id": "f5c287626fa54d39ab1484123644638f",
+              "Amount": 1000,
+              "Rows": 12,
+              "Profile": 0,
+              "Table": [
+                200,
+                160,
+                128,
+                102,
+                84,
+                74,
+                70,
+                74,
+                84,
+                102,
+                128,
+                160,
+                200
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delivered build: in-flight configuration lock",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: cost snapshot independent of amount selector",
+      "passed": true,
+      "details": {
+        "Id": "02d26de0521b4619bdbfed29d50c1e1b",
+        "Amount": 2500,
+        "Rows": 12,
+        "Profile": 0,
+        "Table": [
+          200,
+          160,
+          128,
+          102,
+          84,
+          74,
+          70,
+          74,
+          84,
+          102,
+          128,
+          160,
+          200
+        ]
+      }
+    },
+    {
+      "name": "Delivered build: modal blocks drops",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: draining blocks new drops",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: drains all balls before home",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: fullscreen user gesture",
+      "passed": true
+    },
+    {
+      "name": "Delivered build: no browser console errors",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "deliveryPerformance": {
+    "effects": "enabled",
+    "muted": false,
+    "method": "Unity frame delta sampled every 75ms during peak 50-ball run",
+    "samples": [
+      {
+        "active": 50,
+        "ms": 17
+      },
+      {
+        "active": 50,
+        "ms": 17
+      },
+      {
+        "active": 50,
+        "ms": 17
+      },
+      {
+        "active": 50,
+        "ms": 17
+      },
+      {
+        "active": 50,
+        "ms": 17
+      },
+      {
+        "active": 50,
+        "ms": 17
+      },
+      {
+        "active": 50,
+        "ms": 18
+      },
+      {
+        "active": 50,
+        "ms": 18
+      },
+      {
+        "active": 50,
+        "ms": 18
+      },
+      {
+        "active": 50,
+        "ms": 18
+      },
+      {
+        "active": 50,
+        "ms": 18
+      },
+      {
+        "active": 50,
+        "ms": 18
+      }
+    ],
+    "meanMs": 17.5
+  },
+  "visibilityObservation": {
+    "hidden": false,
+    "status": {
+      "State": "Playing",
+      "Active": 1,
+      "Rows": 12,
+      "Profile": 0,
+      "Drops": 1,
+      "Coins": 179000,
+      "Notice": "In flight • controls unlock when the board clears",
+      "FrameMilliseconds": 17
+    },
+    "save": {
+      "Version": 1,
+      "Coins": 179000,
+      "Muted": false,
+      "Reduced": false,
+      "Pending": [
+        {
+          "Id": "f5c287626fa54d39ab1484123644638f",
+          "Amount": 1000,
+          "Rows": 12,
+          "Profile": 0,
+          "Table": [
+            200,
+            160,
+            128,
+            102,
+            84,
+            74,
+            70,
+            74,
+            84,
+            102,
+            128,
+            160,
+            200
+          ]
+        }
+      ]
+    }
+  },
+  "minimizedObservation": {
+    "hidden": false,
+    "state": {
+      "State": "Playing",
+      "Active": 1,
+      "Rows": 12,
+      "Profile": 0,
+      "Drops": 2,
+      "Coins": 179280,
+      "Notice": "In flight • controls unlock when the board clears",
+      "FrameMilliseconds": 18.00000762939453
+    }
+  },
+  "completedAt": "2026-11-01 Asia/Dhaka",
+  "buildManifest": [
+    {
+      "Path": "Builds\\WebGL\\index.html",
+      "Bytes": 1536,
+      "SHA256": "40781D83E26FDC4445E1180A0445251D9405B46579B1BFB757FBC95824A19E14"
+    },
+    {
+      "Path": "Builds\\WebGL\\Build\\WebGL.data",
+      "Bytes": 12621402,
+      "SHA256": "16EA0006FB2E61A722210CC89FA9F47D8C881F534603703C49E7A00DCCB254F3"
+    },
+    {
+      "Path": "Builds\\WebGL\\Build\\WebGL.framework.js",
+      "Bytes": 456547,
+      "SHA256": "C4B9E61146C950AC7CBF49D5E827EC9DB7136E2560FB15DBF788D8C51841407A"
+    },
+    {
+      "Path": "Builds\\WebGL\\Build\\WebGL.loader.js",
+      "Bytes": 26982,
+      "SHA256": "2C373121AA0907869F3F107E041BC933D33F40363B8B126C8A5C6914E7ED24BE"
+    },
+    {
+      "Path": "Builds\\WebGL\\Build\\WebGL.wasm",
+      "Bytes": 46787648,
+      "SHA256": "C0257CDFADCDDDD70DA3004B1A752E91E446A915F9184A3CCBE282CED1BC036A"
+    }
+  ],
+  "coverageLimits": [
+    "Physical devices, Safari, Firefox, iOS and Android untested.",
+    "Headless tab switches and window minimization kept document.hidden=false; genuine hidden-tab visibility is unverified. CDP frozen/active suspension and transaction continuity were tested.",
+    "Short frame-time sample is not a long-duration benchmark.",
+    "Earlier checks without Delivered build prefix preceded final UI-only refinements; affected UI/physics/input/persistence checks were repeated on the delivery build."
+  ],
+  "visualQA": {
+    "requiredResolutions": [
+      "360x800",
+      "720x1280",
+      "768x1024",
+      "1280x720",
+      "1600x900"
+    ],
+    "inspected": true,
+    "additional": [
+      "16-row Red at phone and desktop",
+      "Phone settings and help"
+    ],
+    "findings": "All rows/pockets/multipliers visible; portrait controls enlarged; no observed clipping or stretched rounded corners."
+  }
+}
