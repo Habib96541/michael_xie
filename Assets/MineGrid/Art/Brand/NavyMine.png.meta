@@ -1,0 +1,1677 @@
+fileFormatVersion: 2
+guid: 1f1766095fa817745b6e412b6b1876c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1889247720235407590
+    second: NavyMine_0
+  - first:
+      213: 7880494476614119882
+    second: NavyMine_1
+  - first:
+      213: 5240232757967555330
+    second: NavyMine_2
+  - first:
+      213: -7732963323469418895
+    second: NavyMine_3
+  - first:
+      213: 8761183501030841903
+    second: NavyMine_4
+  - first:
+      213: -5598513714696864820
+    second: NavyMine_5
+  - first:
+      213: -456010238174957493
+    second: NavyMine_6
+  - first:
+      213: -585999561254053638
+    second: NavyMine_7
+  - first:
+      213: -6835883658021520627
+    second: NavyMine_8
+  - first:
+      213: 8515152650177575801
+    second: NavyMine_9
+  - first:
+      213: 2291079770742796576
+    second: NavyMine_10
+  - first:
+      213: -3793659793337157240
+    second: NavyMine_11
+  - first:
+      213: 3852532173541630676
+    second: NavyMine_12
+  - first:
+      213: -4447123274015870008
+    second: NavyMine_13
+  - first:
+      213: -7219079268741935152
+    second: NavyMine_14
+  - first:
+      213: 5410071140101818856
+    second: NavyMine_15
+  - first:
+      213: -8169435148997112344
+    second: NavyMine_16
+  - first:
+      213: -1094945703676018626
+    second: NavyMine_17
+  - first:
+      213: -7954122764627202627
+    second: NavyMine_18
+  - first:
+      213: 683395203456798901
+    second: NavyMine_19
+  - first:
+      213: 8879555014825341031
+    second: NavyMine_20
+  - first:
+      213: -5833366926038903519
+    second: NavyMine_21
+  - first:
+      213: -7986653941583478800
+    second: NavyMine_22
+  - first:
+      213: 2706136263721178630
+    second: NavyMine_23
+  - first:
+      213: 7795458977584070604
+    second: NavyMine_24
+  - first:
+      213: -3293270401949620743
+    second: NavyMine_25
+  - first:
+      213: 8116897881606265712
+    second: NavyMine_26
+  - first:
+      213: -1359280016513599264
+    second: NavyMine_27
+  - first:
+      213: 4443764212081472364
+    second: NavyMine_28
+  - first:
+      213: -8045750320656443626
+    second: NavyMine_29
+  - first:
+      213: -17136602107801694
+    second: NavyMine_30
+  - first:
+      213: 6593523819701833120
+    second: NavyMine_31
+  - first:
+      213: 1185168172515801053
+    second: NavyMine_32
+  - first:
+      213: -720533039458778296
+    second: NavyMine_33
+  - first:
+      213: 5698806316247935159
+    second: NavyMine_34
+  - first:
+      213: 2503380729483318982
+    second: NavyMine_35
+  - first:
+      213: 1483896475179193902
+    second: NavyMine_36
+  - first:
+      213: 2388407912042546585
+    second: NavyMine_37
+  - first:
+      213: 788912601107779189
+    second: NavyMine_38
+  - first:
+      213: 3284424809601533407
+    second: NavyMine_39
+  - first:
+      213: 3287135823102537055
+    second: NavyMine_40
+  - first:
+      213: -9177170813964357569
+    second: NavyMine_41
+  - first:
+      213: 6387817436961967899
+    second: NavyMine_42
+  - first:
+      213: 2054460941836022825
+    second: NavyMine_43
+  - first:
+      213: -3074274729363730585
+    second: NavyMine_44
+  - first:
+      213: 7463757355903890118
+    second: NavyMine_45
+  - first:
+      213: -2436101703929639902
+    second: NavyMine_46
+  - first:
+      213: -3903894178797284267
+    second: NavyMine_47
+  - first:
+      213: -7183960169201895684
+    second: NavyMine_48
+  - first:
+      213: -261410913064150454
+    second: NavyMine_49
+  - first:
+      213: 701280085250109891
+    second: NavyMine_50
+  - first:
+      213: -993260984427804147
+    second: NavyMine_51
+  - first:
+      213: 4681595181129755275
+    second: NavyMine_52
+  - first:
+      213: 6981767525599767799
+    second: NavyMine_53
+  - first:
+      213: -7951468811994953544
+    second: NavyMine_54
+  - first:
+      213: -8735820795286868466
+    second: NavyMine_55
+  - first:
+      213: 7797708528678652900
+    second: NavyMine_56
+  - first:
+      213: -8985100897589288366
+    second: NavyMine_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NavyMine_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1254
+        height: 1233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e81959bac4f73a10800000000000000
+      internalID: 1889247720235407590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1211
+        width: 81
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1330d49f32d5d60800000000000000
+      internalID: 7880494476614119882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_2
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1202
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b850fedeb09b840800000000000000
+      internalID: 5240232757967555330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1223
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17e2b7b04defea490800000000000000
+      internalID: -7732963323469418895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1223
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ed4f6b9f9f59970800000000000000
+      internalID: 8761183501030841903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_5
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 1220
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb375d40751e42b0800000000000000
+      internalID: -5598513714696864820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_6
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1221
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40f3abba1deba9f0800000000000000
+      internalID: -456010238174957493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_7
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 1224
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af8dae8f08c1ed7f0800000000000000
+      internalID: -585999561254053638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_8
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1229
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0bbab5f7001221a0800000000000000
+      internalID: -6835883658021520627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1191
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b7f0a5836eb2670800000000000000
+      internalID: 8515152650177575801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_10
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1197
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 021353fa9ec8bcf10800000000000000
+      internalID: 2291079770742796576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_11
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1197
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889f47384863a5bc0800000000000000
+      internalID: -3793659793337157240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_12
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1206
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d266b9a991f67530800000000000000
+      internalID: 3852532173541630676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_13
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1181
+        width: 44
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c379e3b1f4a842c0800000000000000
+      internalID: -4447123274015870008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_14
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 1199
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df004547ada0db90800000000000000
+      internalID: -7219079268741935152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_15
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1205
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e98c53c90f641b40800000000000000
+      internalID: 5410071140101818856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_16
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 1208
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8edcf68f30650ae80800000000000000
+      internalID: -8169435148997112344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_17
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1189
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e300d0c0fa8fdc0f0800000000000000
+      internalID: -1094945703676018626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_18
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1190
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd2c820d774d9190800000000000000
+      internalID: -7954122764627202627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_19
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 114
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b09f371158eb7900800000000000000
+      internalID: 683395203456798901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_20
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 103
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 760f3367d348a3b70800000000000000
+      internalID: 8879555014825341031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_21
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 117
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12550f0ffa7bb0fa0800000000000000
+      internalID: -5833366926038903519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_22
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 95
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ff71f32e84b92190800000000000000
+      internalID: -7986653941583478800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_23
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 77
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60657e818902e8520800000000000000
+      internalID: 2706136263721178630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_24
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 93
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf370453a80f2c60800000000000000
+      internalID: 7795458977584070604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_25
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 99
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f52c769404fb42d0800000000000000
+      internalID: -3293270401949620743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_26
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 97
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b134f3e9305a070800000000000000
+      internalID: 8116897881606265712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_27
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 93
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e87b69d60ed22de0800000000000000
+      internalID: -1359280016513599264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_28
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 81
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c63b5beb10c6bad30800000000000000
+      internalID: 4443764212081472364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_29
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 90
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61799c926b0c75090800000000000000
+      internalID: -8045750320656443626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_30
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 79
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af05b6e95e13cff0800000000000000
+      internalID: -17136602107801694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_31
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 79
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad8763eaf6e08b50800000000000000
+      internalID: 6593523819701833120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_32
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 79
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd737e17c20927010800000000000000
+      internalID: 1185168172515801053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_33
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 81
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8438026a4072006f0800000000000000
+      internalID: -720533039458778296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_34
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 79
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8e5bba62a361f40800000000000000
+      internalID: 5698806316247935159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_35
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 109
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c6596e828bcdb220800000000000000
+      internalID: 2503380729483318982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_36
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 63
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26928e6bfbd79410800000000000000
+      internalID: 1483896475179193902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_37
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 63
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99547087754552120800000000000000
+      internalID: 2388407912042546585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_38
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 71
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ecbd3b4d7c2fa00800000000000000
+      internalID: 788912601107779189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_39
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 0
+        width: 108
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd587c376fe949d20800000000000000
+      internalID: 3284424809601533407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_40
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 43
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5dec787d904e9d20800000000000000
+      internalID: 3287135823102537055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_41
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 13
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f30729674c324a080800000000000000
+      internalID: -9177170813964357569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_42
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 31
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f0a246d1616a850800000000000000
+      internalID: 6387817436961967899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_43
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 7
+        width: 51
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924fc037759e28c10800000000000000
+      internalID: 2054460941836022825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_44
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 39
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f805efb6bf555d0800000000000000
+      internalID: -3074274729363730585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_45
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 39
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c23c5045c7949760800000000000000
+      internalID: 7463757355903890118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_46
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 11
+        width: 70
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ccc84486a313ed0800000000000000
+      internalID: -2436101703929639902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_47
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 47
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55492189de492d9c0800000000000000
+      internalID: -3903894178797284267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_48
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 33
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf67a22d9427d4c90800000000000000
+      internalID: -7183960169201895684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_49
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 15
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a966ad8284f5cf0800000000000000
+      internalID: -261410913064150454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_50
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c17361a5827bb900800000000000000
+      internalID: 701280085250109891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_51
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a0deda56a3732f0800000000000000
+      internalID: -993260984427804147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_52
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 7
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a6b69530e58f040800000000000000
+      internalID: 4681595181129755275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_53
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 13
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc6bb3d29834e060800000000000000
+      internalID: 6981767525599767799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_54
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 20
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b881728e35b6a190800000000000000
+      internalID: -7951468811994953544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_55
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 12
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ea473654124c680800000000000000
+      internalID: -8735820795286868466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_56
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 15
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ebcce1c796073c60800000000000000
+      internalID: 7797708528678652900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NavyMine_57
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 0
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252a528b6528e4380800000000000000
+      internalID: -8985100897589288366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NavyMine_0: 1889247720235407590
+      NavyMine_1: 7880494476614119882
+      NavyMine_10: 2291079770742796576
+      NavyMine_11: -3793659793337157240
+      NavyMine_12: 3852532173541630676
+      NavyMine_13: -4447123274015870008
+      NavyMine_14: -7219079268741935152
+      NavyMine_15: 5410071140101818856
+      NavyMine_16: -8169435148997112344
+      NavyMine_17: -1094945703676018626
+      NavyMine_18: -7954122764627202627
+      NavyMine_19: 683395203456798901
+      NavyMine_2: 5240232757967555330
+      NavyMine_20: 8879555014825341031
+      NavyMine_21: -5833366926038903519
+      NavyMine_22: -7986653941583478800
+      NavyMine_23: 2706136263721178630
+      NavyMine_24: 7795458977584070604
+      NavyMine_25: -3293270401949620743
+      NavyMine_26: 8116897881606265712
+      NavyMine_27: -1359280016513599264
+      NavyMine_28: 4443764212081472364
+      NavyMine_29: -8045750320656443626
+      NavyMine_3: -7732963323469418895
+      NavyMine_30: -17136602107801694
+      NavyMine_31: 6593523819701833120
+      NavyMine_32: 1185168172515801053
+      NavyMine_33: -720533039458778296
+      NavyMine_34: 5698806316247935159
+      NavyMine_35: 2503380729483318982
+      NavyMine_36: 1483896475179193902
+      NavyMine_37: 2388407912042546585
+      NavyMine_38: 788912601107779189
+      NavyMine_39: 3284424809601533407
+      NavyMine_4: 8761183501030841903
+      NavyMine_40: 3287135823102537055
+      NavyMine_41: -9177170813964357569
+      NavyMine_42: 6387817436961967899
+      NavyMine_43: 2054460941836022825
+      NavyMine_44: -3074274729363730585
+      NavyMine_45: 7463757355903890118
+      NavyMine_46: -2436101703929639902
+      NavyMine_47: -3903894178797284267
+      NavyMine_48: -7183960169201895684
+      NavyMine_49: -261410913064150454
+      NavyMine_5: -5598513714696864820
+      NavyMine_50: 701280085250109891
+      NavyMine_51: -993260984427804147
+      NavyMine_52: 4681595181129755275
+      NavyMine_53: 6981767525599767799
+      NavyMine_54: -7951468811994953544
+      NavyMine_55: -8735820795286868466
+      NavyMine_56: 7797708528678652900
+      NavyMine_57: -8985100897589288366
+      NavyMine_6: -456010238174957493
+      NavyMine_7: -585999561254053638
+      NavyMine_8: -6835883658021520627
+      NavyMine_9: 8515152650177575801
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

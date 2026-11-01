@@ -1,0 +1,1 @@
+PASS: 18 Sprint 3 wired UI checks. Setup; selection locking; zero finish; popup; leave/cancel/forfeit; popup callback blocking; duplicate reveal; direct banking; duplicate completion; loss; post-result input; auto-win; milestones; settings and reduced effects.

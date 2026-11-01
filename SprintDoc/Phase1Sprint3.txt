@@ -1,0 +1,416 @@
+MINEGRID - PHASE 1 / SPRINT 3
+UI Polish, Branding, Artwork, and Verification Record
+Date: 31 October 2026 (Asia/Dhaka)
+Engine: Unity 6000.3.10f1
+Phase: 1. Sprint: 3.
+
+1. REQUEST AND SPRINT GOAL
+--------------------------
+Polish the existing game so it looks like a finished casual mobile game rather
+than a functional demo. The main requested changes were cooler fonts, coin
+sprites, an original game logo, and a cohesive game-style interface. The full
+supplied request is appended to this record.
+
+Preserve the playable Mines rules, scoring, saves, daily rewards, progression,
+mute, reduced effects, and existing Unity conventions. Keep Phase 1 unchanged.
+Preserve Sprint 1 and Sprint 2 documentation.
+
+2. BASELINE INSPECTION
+----------------------
+Inspected the request, existing runtime UI, tile view, audio/feedback code,
+configuration, responsive grid, scene generator, custom Editor verification,
+Play Mode smoke tools, scene, and earlier screenshot evidence.
+
+Retained Unity 6000.3.10f1, URP 2D, uGUI/TextMeshPro, the new Input System, the
+720x1280 Canvas reference, portrait content fitting, and SafeArea handling.
+No third-party Unity package was installed for this sprint.
+
+3. VISUAL IDENTITY
+------------------
+Replaced the bright prototype-like presentation with a darker treasure-game
+palette: midnight indigo backgrounds, restrained cyan accents, warm gold
+currency, emerald primary actions, and blue secondary/banking actions.
+
+The main logo uses glossy cyan/ice MINE lettering and gold GRID lettering,
+deep indigo depth, a faceted gem, and a grid/mine emblem. It is an original
+transparent illustration generated for this project.
+
+The title and home screens show the full logo prominently. Other screens use
+a smaller header logo. Duplicate compact branding is hidden on title/home.
+
+Background decoration is subtle and noninteractive. Layered surfaces, rims,
+recesses, and shadows give panels and controls a consistent family appearance.
+
+4. TYPOGRAPHY
+--------------
+Display: Lilita One Regular.
+Used for buttons, headings, and prominent numeric values.
+
+Body: Varela Round Regular.
+Used for instructions, status, settings, descriptions, and supporting labels.
+
+Both original TTF files are bundled. TextMeshPro SDF assets are generated and
+saved in Assets/MineGrid/Fonts. A shared theme supplies the font assets.
+The display font falls back to the body font; the body font retains the
+existing LiberationSans TMP fallback for exceptional glyph coverage.
+
+Changed most player-facing headings and controls to sentence/title case.
+Removed generic COINS prefixes where actual coin illustrations are shown.
+Display text uses restrained shadowing. Automatic sizing remains bounded.
+
+Source/license details:
+- Lilita One: copyright Juan Montoreano, reserved font name Lilita.
+- Varela Round: copyright The Varela Round Project Authors, reserved font names
+  Varela and Varela Round.
+- Both bundled source licenses are SIL Open Font License 1.1.
+- Original fonts were downloaded from the google/fonts repository.
+- Full licenses and copyright notices are retained alongside the fonts.
+- Original font outlines were not modified.
+
+5. ORIGINAL ILLUSTRATED ASSETS
+------------------------------
+Created with the built-in image_gen tool, using transparent_background=true:
+
+Assets/MineGrid/Art/Brand/MineGridLogo.png
+  Glossy cyan/gold logo with treasure gem and grid/mine motif.
+Assets/MineGrid/Art/Brand/GoldCoin.png
+  Gold coin with shaded rim, cyan diamond emblem, and bright glint.
+Assets/MineGrid/Art/Brand/CyanGem.png
+  Faceted cyan gem with white highlights and an indigo outline.
+Assets/MineGrid/Art/Brand/NavyMine.png
+  Friendly glossy navy mine with golden spikes and a red cap.
+
+Inspected all four generated assets before integrating them. Game references
+point to workspace copies, not the Codex generated_images directory.
+Transparent alpha is preserved. Unity imports them as individual sprites,
+with preserved aspect, bilinear filtering, no mipmaps, and no compression.
+Unity import size is capped at 2048 pixels.
+
+The exact generation prompts are saved in:
+Assets/MineGrid/Art/Brand/GenerationPrompts.txt.
+
+No fallback generation CLI or API key was used. These illustrations were
+created for this project rather than copied from the reference screenshots.
+No claim of exclusive copyright or trademark clearance is made here.
+
+6. HOME AND TITLE
+------------------
+- Added a prominent full logo.
+- Replaced the large generic text heading with the branded logo and subtitle.
+- Added a central illustrated gem with accompanying coins.
+- Added subtle idle float, suppressed when reduced effects are enabled.
+- Made Play Mines the clear primary action.
+- Turned daily rewards and milestones into illustrated entry cards.
+- Kept How to Play and Settings as secondary controls.
+- Retained a compact next-milestone HUD and claim action.
+- Enlarged smaller secondary controls during visual review.
+- Put wallet coins in a dark capsule with an illustrated coin and formatted value.
+
+7. GAMEPLAY PRESENTATION
+------------------------
+- Added an outer board frame and a recessed inner well.
+- Created new hidden, safe, and mine background sprites with depth and highlights.
+- Separated revealed treasure illustrations from tile backgrounds.
+- Added a mine illustration to the risk selector.
+- Kept exact mine/safe counts and the functional selection slider.
+- Added illustrated currency to the bankable HUD, next-gem preview, and Finish.
+- Preserved square tiles, spacing, input lock, and the existing reveal rules.
+- Retained a clear triggered-mine state and dimmed unselected safe results.
+
+The board remains the gameplay focus. No merge, tool inventory, or unrelated
+mechanics were introduced.
+
+8. POPUPS, RESULTS, WHEEL, AND PROGRESSION
+----------------------------------------
+Popups:
+- Rebuilt the card with a coordinated rim, depth, typography, and button family.
+- Reduced the excessive empty area of the earlier presentation.
+- Adjusted body bounds for instructions and settings.
+- Added an outcome illustration: mine for loss, gem for perfect grid, coin for
+  banking and reward claims.
+- Used a distinct muted red/purple treatment for mine-hit results.
+- Emphasized the earned value using larger gold-colored text.
+- Preserved blocking behavior and existing action callbacks.
+
+Daily wheel:
+- Added an illustrated coin to every segment.
+- Generated a matching gold rim and contrasting six-segment face.
+- Added a gem pointer and gem center hub.
+- Preserved six rewards, segment mapping, cooldown, pending claim, and payout.
+
+Progression:
+- Added coin illustrations and progress bars to milestone rows.
+- Preserved thresholds, rewards, eligibility, and duplicate-claim rejection.
+- Clearly displayed locked, ready, and claimed states.
+
+9. MOTION AND FEEDBACK
+----------------------
+Added CoinFeedback for brief coin flight toward the wallet and a small wallet
+pulse when the displayed saved wallet increases. The value is updated from
+saved data immediately; animations never grant coins or determine rewards.
+
+Coin images have timed cleanup, including when a newer pulse interrupts a
+previous animation. Reduced effects suppress coin flight and wallet pulsing.
+IdleFloat provides a restrained gem idle motion and respects reduced effects.
+Existing button feedback, reveal effects, screen shake, transitions, reward
+sounds, confetti, and mute behavior are retained.
+
+10. SHARED THEME AND REGENERATION
+--------------------------------
+New shared theme asset: Assets/MineGrid/UITheme.asset.
+New theme class: Assets/Scripts/MineGrid/UITheme.cs.
+
+The theme holds fonts, illustrations, tile backgrounds, surface, backdrop,
+wheel art, and palette values. GameConfig remains responsible for rules and
+reward values; visual settings are kept separate.
+
+MineGridSetup now generates the branded scene, cards, board frame, wheel,
+settings, milestone rows/bars, prefab references, and coin feedback wiring.
+Imported brand artwork is reused. Fonts/SDF assets are reused rather than
+recreated on every generation. Generated scene objects are replaced rather
+than duplicated.
+
+Main scene: Assets/Scenes/MineGrid.unity.
+Build settings retain this playable scene.
+
+The generator replaces generated scene/artwork/prefab files. Preserve custom
+scene edits separately before running it. Wheel artwork remains authored for
+six rewards. Milestone threshold/reward arrays must stay compatible.
+
+11. FILES ADDED OR UPDATED
+--------------------------
+New runtime components:
+- Assets/Scripts/MineGrid/UITheme.cs
+- Assets/Scripts/MineGrid/CoinFeedback.cs
+- Assets/Scripts/MineGrid/IdleFloat.cs
+
+Updated runtime presentation:
+- Assets/Scripts/MineGrid/GameUI.cs
+- Assets/Scripts/MineGrid/TileView.cs
+
+Updated Editor authoring/verification:
+- Assets/Editor/MineGridSetup.cs
+- Assets/Editor/MineGridCapture.cs
+- Assets/Editor/MineGridSmoke.cs
+- Assets/Editor/MineGridVisualAudit.cs (new)
+
+New assets and records:
+- Assets/MineGrid/UITheme.asset
+- Assets/MineGrid/Fonts: TTF files, SDF assets, OFL texts.
+- Assets/MineGrid/Art/Brand: four PNG illustrations and generation prompts.
+- Assets/MineGrid/Art: new backdrop, wheel, surfaces, and tile backgrounds.
+- Assets/MineGrid/ASSET-SOURCES.txt
+- SprintDoc/Phase1Sprint3-Captures/Before and After.
+- SprintDoc/Phase1Sprint3.txt.
+
+Regenerated MineGrid.unity and relevant prefabs. Updated README.
+The Board, Round, SaveService, and GameConfig rule/economy implementation was
+not changed for this visual sprint.
+
+12. VERIFICATION RESULTS
+------------------------
+Unity compiled the updated scripts and regenerated the playable scene. Earlier
+incomplete generated-reference/tool sequencing issues were corrected during
+implementation before the final scene was tested.
+
+Rule/save verification:
+PASS: 26,912 assertions using the existing custom deterministic verifier.
+Includes unique/fixed mines, scoring, finishing, wins/losses, duplicate banking,
+saves, migration, progression claims, pending rewards, and cooldowns.
+The large count includes repeated cell-level assertions, not that many separate
+player scenarios.
+
+Play Mode UI smoke:
+PASS: 18 checks.
+Covers setup, selection locking, zero finish, result popup, leave/cancel/forfeit,
+blocked popup callbacks, duplicate reveal, banking, repeated completion, loss,
+post-result input, victory, progression, settings, reduced effects, and mute
+state matching the AudioSource. Test save state is restored.
+
+Resolution/animation capture:
+PASS: 102 checks.
+Square, onscreen tiles checked at 360x800, 720x1280, 1280x720, and 1600x900.
+Normal daily wheel animation, popup, and claim were exercised.
+
+Typography/artwork audit:
+PASS: 157 active text checks for overflow and glyph coverage.
+PASS: 4 alpha checks confirming each generated illustration has both transparent
+and opaque pixels.
+
+Screenshots were visually reviewed, including home, gameplay, settings, wheel,
+milestones, loss, banking, leave confirmation, and daily reward presentation.
+A four-gem active round shows 120 bankable coins at 3 mines, preserving scoring.
+The original Sprint 2 screenshots are copied under Before for comparison.
+Screenshot currency values can differ because tests exercise temporary rewards;
+QA restores the pre-test local save afterward.
+
+Reports:
+- MineGrid-verification.txt
+- MineGrid-playmode-verification.txt
+- MineGrid-sprint3-layout-verification.txt
+- MineGrid-sprint3-visual-verification.txt
+
+13. RUN AND REVIEW
+-------------------
+Open the project in Unity 6000.3.10f1.
+Open Assets/Scenes/MineGrid.unity and press Play.
+Choose Let's play, then Play Mines.
+Explore Settings, Daily treasure, and Milestones from Home.
+No manual scene wiring or new package installation is required.
+
+Authoring: MineGrid > Generate Complete Game (outside Play Mode).
+Rules: MineGrid > Verify Gameplay Rules.
+UI smoke: MineGrid > Run Play Mode Smoke Test (in Play Mode).
+
+14. LIMITATIONS
+----------------
+- Layout and input checks were run in the Editor, not on physical phones.
+- Actual device safe areas, touch feel, frame rate, and accessibility testing
+  remain follow-up work.
+- No mobile signing, release build, or store submission was performed.
+- No music track was added; existing mute controls synthesized feedback sounds.
+- Existing local-save and device-clock limitations remain unchanged.
+- The generator's wheel face is authored for six reward segments.
+- Some small secondary text still merits device review despite passing overflow
+  and glyph tests; those checks do not prove every accessibility requirement.
+- Generated assets and bundled fonts must retain their associated provenance
+  and license records when distributing the project.
+
+15. SPRINT OUTCOME AND NUMBERING
+--------------------------------
+Delivered the UI polish pass: distinctive fonts, illustrated currency, original
+logo, cohesive screens, framed board, themed rewards, and visual feedback.
+Phase remains Phase 1. The next record is Phase1Sprint4.txt unless the user
+explicitly changes the phase. Earlier sprint documents are preserved.
+
+APPENDIX A - EXACT SUPPLIED REQUEST
+===================================
+Polish the existing MineGrid Unity UI so it feels like a finished casual mobile game. Work directly in the project and preserve its working gameplay, scoring, saves, daily rewards, and progression.
+
+This is Phase 1, Sprint 3. Keep Phase 1 unchanged. When finished, create SprintDoc/Phase1Sprint3.txt with detailed changes, affected files, asset sources/licenses, verification results, and remaining work. Preserve previous sprint documents.
+
+FIRST INSPECT
+Read applicable AGENTS.md instructions and inspect the current scene, UI generator, prefabs, artwork, TextMeshPro setup, and responsive layout. Build on the existing project.
+
+MAIN GOAL
+The interface currently looks like a functional demo. Give it a cohesive game identity through better typography, original branding, illustrated currency, richer panels, and stronger visual hierarchy.
+
+Use the previously supplied screenshots as references for the quality of casual-game presentation. Create an original MineGrid identity.
+
+1. BETTER TYPOGRAPHY
+Replace the current generic font with a more distinctive, playful game font.
+
+- Choose a bold, rounded display font for titles, buttons, and major rewards.
+- Pair it with a highly readable font for instructions, settings, and smaller labels.
+- Use fonts with licenses suitable for commercial game distribution.
+- Import the actual font files and create proper TextMeshPro font assets.
+- Include required characters, punctuation, and number formatting.
+- Use consistent font sizes and weights.
+- Apply subtle outlines or shadows where they improve contrast.
+- Avoid making every label uppercase or giving every element the same emphasis.
+- Keep small text readable on mobile.
+- Ensure missing glyphs or fallback fonts do not break the visual style.
+
+2. COIN SPRITES AND CURRENCY PRESENTATION
+Create or import a cohesive original gold coin sprite.
+
+- Use a recognizable illustrated coin with a bright rim, shaded face, and small sparkle or gem emblem.
+- Give it a transparent background and clean edges.
+- Replace plain “COINS” text prefixes with a coin icon and formatted balance where appropriate.
+- Place the balance in a compact, attractive currency capsule.
+- Use the same coin artwork consistently in the HUD, result popups, reward wheel, milestone cards, and reward buttons.
+- Add coin-stack variants for larger rewards if useful.
+- Preserve sprite proportions and readability at small sizes.
+- Add a brief coin pop or collection effect when rewards are credited.
+- Respect reduced-effects settings.
+- Keep currency values accurate; animation must never control awarding coins.
+
+3. ORIGINAL GAME LOGO
+Design an original “MineGrid” logo that looks like a real game title.
+
+Direction:
+- Bold, playful lettering with depth and a clear silhouette.
+- Combine a cyan gem and a small mine/grid motif.
+- Gold highlights with purple or deep-blue outlines.
+- A transparent background.
+- Readable at both title-screen size and smaller UI sizes.
+
+Use the full logo prominently on the title/home screen and a compact logo or emblem during gameplay. Avoid stretching the logo or using oversized branding that pushes the board out of focus.
+
+If image-generation tools are available, use them for original illustrated assets. Otherwise create polished assets using available local tools. Save the actual assets in the project and connect them to the scene.
+
+4. MAKE THE UI FEEL LIKE A FINISHED GAME
+Apply a consistent visual treatment across all screens.
+
+HOME / TITLE
+- Create a stronger focal point with the logo, a gem illustration, and a clear Play button.
+- Improve spacing and grouping.
+- Give daily rewards and progression their own illustrated icons.
+- Make the coin balance feel integrated into the header.
+- Reduce generic text-heavy presentation.
+- Keep secondary actions easy to find.
+
+GAMEPLAY
+- Place the grid inside an attractive board frame or recessed panel.
+- Improve tile depth, highlights, borders, and pressed states.
+- Make safe gems and mines feel like part of the same art style.
+- Give the mine selector a polished control with a mine icon and clear value.
+- Present bankable coins and next-gem reward as compact, readable HUD elements.
+- Make Start Game and Finish Game visually prominent.
+- Preserve square tiles and comfortable touch targets.
+- Keep the board as the main focus.
+
+BUTTONS AND PANELS
+- Create a consistent family of primary, secondary, and reward buttons.
+- Use layered shading, borders, restrained highlights, and clean shadows.
+- Make disabled controls look intentionally unavailable.
+- Avoid excessive gradients, glow, clutter, or decorative effects.
+- Make popup layouts compact and purposeful instead of leaving large empty areas.
+
+RESULTS AND REWARDS
+- Add a clear outcome illustration or emblem.
+- Emphasize the earned coin amount with coin artwork.
+- Use distinct visual treatments for a mine hit, successful finish, and full-board victory.
+- Polish the daily wheel with coin illustrations, a clear pointer, a center hub, and matching frame.
+- Improve milestone cards with icons, progress indicators, and clear locked/ready/claimed states.
+- Keep the selected wheel segment consistent with the reward awarded.
+
+MOTION AND FEEDBACK
+- Refine button press feedback and panel transitions.
+- Add restrained logo/gem idle motion where appropriate.
+- Use short reward celebrations and coin collection feedback.
+- Respect reduced-effects and mute settings.
+- Keep all interactions responsive.
+
+UNITY IMPLEMENTATION
+- Follow the existing Unity version, render pipeline, input system, and UI conventions.
+- Use reusable prefabs and shared styling assets.
+- Update the existing scene generator so regeneration preserves the new visual design.
+- Save all required artwork, fonts, materials, and prefabs in the project.
+- Configure sprite import settings appropriately.
+- Avoid unnecessary packages and unrelated code changes.
+- Record third-party asset attribution and licenses.
+- Do not include editor/tool implementation details in player-facing text.
+
+VERIFICATION
+- Compile and inspect the actual scene in Play Mode.
+- Check title, home, gameplay, results, settings, daily rewards, and milestones.
+- Verify layouts at 360×800, 720×1280, 1280×720, and 1600×900.
+- Check text readability, missing glyphs, sprite proportions, clipping, overlap, contrast, and touch targets.
+- Verify the existing gameplay and reward flows still work.
+- Confirm reduced-effects and mute settings remain functional.
+- Capture before-and-after screenshots when possible.
+- Fix issues discovered during visual review.
+- Clearly report checks you could not perform.
+
+DELIVERY
+Implement the polished UI directly rather than stopping at design suggestions.
+
+At completion, provide:
+- A concise summary of visual improvements.
+- The scene to open.
+- Screenshots of the updated home and gameplay screens.
+- Verification results and any limitations.
+- SprintDoc/Phase1Sprint3.txt documenting the completed work.
+
+Make reasonable design decisions independently and continue through implementation and visual verification.

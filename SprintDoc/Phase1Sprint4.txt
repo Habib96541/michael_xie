@@ -1,0 +1,75 @@
+PHASE 1 - SPRINT 4: CODE QUALITY AND ARCHITECTURE
+Date: 1 November 2026 (Asia/Dhaka)
+Project: MineGrid. Unity: 6000.3.10f1.
+
+Scope
+Refactor and format existing project-owned C# without changing gameplay,
+economy, reward eligibility, saving, branding, or the screen layouts.
+
+Formatting
+Four-space indentation, Allman braces, one statement per line, one field per
+declaration, explicit access modifiers, PascalCase methods/properties and
+_camelCase private fields. Public serialized configuration and SaveData field
+names remain unchanged to preserve the asset/save contracts. Conventions are
+recorded in .editorconfig. Tools/CodeStyle is a local Roslyn-based formatting
+utility using the installed .NET SDK, with no extra Unity package dependency.
+Private-field renames use semantic symbols, not blind text replacement.
+
+Serialization
+FormerlySerializedAs attributes preserve previous serialized field names.
+Existing source .meta files and asset GUIDs are retained. Scene generation
+supports renamed fields and rewires the extracted components. Save v2 and its
+existing v1 migration are unchanged in this sprint. Test saves are restored.
+
+Runtime responsibilities
+GameUI coordinates round flow, gameplay HUD, settings, daily rewards, and
+presentation delegates. It is no longer responsible for all popup, navigation,
+wallet, and progression rendering logic.
+PopupPresenter owns modal rendering, cached action labels, action callbacks,
+and targeted listener cleanup.
+ScreenNavigator owns active-page switching and cancellable fade transitions.
+WalletView owns balance rendering and reward-feedback requests.
+ProgressionView owns milestone rendering, progress bars, cached labels and
+claim-button subscriptions, removed individually during cleanup.
+Board and Round continue to enforce rules independently from presentation.
+SaveService continues to own wallet/reward persistence.
+
+Editor architecture
+MineGridSetup.cs remains the generation entry point and scene orchestration.
+MineGridSetup.Assets.cs handles import, fonts and procedural assets.
+MineGridSetup.Factory.cs handles shared control/prefab construction.
+Separate Title, Home, Gameplay, Wheel, Progression and Popup builder files
+contain each screen's layout. Partial files share one authoring utility while
+keeping responsibilities independently readable. Existing menu remains.
+
+Verification interfaces
+Smoke/capture tools use typed GameUI properties and real control callbacks
+instead of reflecting into private fields. The compatibility lookup helper
+maps names to typed properties. Tests no longer invoke private EndRound.
+Public actions continue to reject invalid/ended-state input.
+
+Checks
+Unity compilation and connected scene regeneration succeeded.
+26,912 existing deterministic rule/save assertions passed.
+18 wired Play Mode checks passed, including scoring, once-only rewards,
+leave/cancel/forfeit, popup blocking, settings and AudioSource mute.
+Layout/animation and glyph reports are saved alongside this record after QA.
+The large assertion count includes repeated cell-level board checks.
+
+Files
+Project-owned runtime/Editor scripts formatted; four view components added;
+scene generator split into focused files; .editorconfig and Tools/CodeStyle
+added; scene/prefabs regenerated. No third-party package was reformatted.
+Source classes were kept in their original folders to avoid unnecessary GUID
+and folder churn; new responsibilities are separated by file/type.
+
+Limits
+GameUI still intentionally coordinates the round and daily reward flow.
+This is a practical refactor, not a rewrite into a generic framework. A future
+larger UI expansion may extract those presenters further. Physical mobile
+device, signing and distribution checks are outside this refactor.
+
+Sprint 5 starts only after the refactor checks pass. Phase remains 1.
+
+Exit checkpoint: 102 layout/animation checks, 157 active text checks and 4 alpha checks passed before Sprint 5 began.
+

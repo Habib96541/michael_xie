@@ -1,0 +1,335 @@
+MINEGRID - PHASE 1 / SPRINT 1
+Implementation and Completion Record
+Documentation date: 31 October 2026 (Asia/Dhaka)
+Project: MineGrid
+Engine: Unity 6000.3.10f1
+Status: Initial playable implementation delivered; additional polish remains.
+
+1. PURPOSE AND BASIS
+--------------------
+This sprint establishes a playable Unity Mines game based on the client's
+requirement: a 5x5 board, selectable mine count, tile reveals, and a Finish Game
+action available during a round. The detailed implementation prompt also called
+for a colorful casual-game presentation, rewards, progression, persistence,
+reusable Unity assets, and verification.
+
+The supplied screenshots guide visual direction: purple/blue backgrounds,
+prominent buttons, reward-wheel presentation, and celebratory panels. They do
+not change the core game into a merge or mining-drop game.
+
+This document describes the source and artifacts present at the end of this
+sprint. It does not treat every requested feature as completed. Verification
+results below come from existing saved reports; they were not rerun while
+preparing this document. No new gameplay code was changed for documentation.
+
+2. TECHNICAL BASELINE
+---------------------
+- Unity version: 6000.3.10f1.
+- Starting setup: URP 2D project.
+- UI: Unity uGUI with TextMeshPro.
+- UI input: InputSystemUIInputModule, using the new Input System.
+- Animation: Unity coroutines; no third-party tween dependency required.
+- Main playable scene: Assets/Scenes/MineGrid.unity.
+- Configuration asset: Assets/MineGrid/GameConfig.asset.
+- Generated artwork: Assets/MineGrid/Art.
+- Reusable assets: Assets/MineGrid/Prefabs.
+- Local persistence: JSON stored in PlayerPrefs.
+
+3. CORE GAMEPLAY IMPLEMENTED
+----------------------------
+3.1 Board creation
+The board contains exactly 25 cells arranged as a 5x5 grid. The player chooses
+1-24 mines, with 3 selected initially. A slider controls the selection and the
+UI displays both mine count and safe-cell count.
+
+Board generation uses System.Random and a partial shuffle of cell indices to
+select unique mine positions. Mine positions stay fixed for the round. No
+first-reveal protection is implemented, so the first tile can contain a mine.
+
+3.2 Starting and revealing
+Starting creates a new Round board, resets score and banked points, locks the
+mine slider, hides Start, and shows Finish Game. Safe reveals increment the
+safe-cell counter and update points. Repeated reveals are rejected.
+
+Tile buttons become unavailable once revealed. Round state also rejects reveal
+requests outside active play. These checks protect the rules independently of
+the button's interactable state.
+
+3.3 Losing
+Revealing a mine sets the round to Lost and clears its score. The banked value
+remains zero. The board is revealed and a result popup displays the outcome.
+Previously saved wallet coins are retained.
+
+3.4 Finishing voluntarily
+Finish Game ends an active round and transfers current points to its Banked
+value. Finishing without a safe reveal banks zero. The round state rejects
+subsequent finish requests. UI completion converts banked points to coins and
+updates persistence.
+
+3.5 Automatic victory
+Revealing all safe cells sets the round to Won and banks the accumulated score.
+For 24 mines, revealing the single safe cell completes the round automatically.
+
+3.6 Restarting and navigation
+Play Again creates a fresh setup round and resets the displayed board. The
+current mine selection is retained in the running UI. Home navigation is
+disabled during an active round and blocked during a wheel animation.
+
+Important scope detail: leaving an active round through a confirmation dialog
+is not implemented. The current approach prevents leaving through Home.
+
+4. IMPLEMENTED SCORING AND ECONOMY
+----------------------------------
+The implementation separates points from coins:
+
+Round points = safe cells revealed x pointsPerGem x selected mine count.
+Default pointsPerGem = 10.
+Coins awarded = floor(banked round points / pointsPerCoin).
+Default pointsPerCoin = 10.
+
+Example:
+- Selected mines: 3.
+- Each safe tile: 30 points.
+- Four safe reveals: 120 points.
+- Finish Game: 120 banked points and 12 wallet coins.
+- A mine before finishing: zero banked points and zero coins for the round.
+
+This differs from the later prompt's proposed direct 120-coin award. The current
+project uses the points-to-coins conversion above, which is also explained by
+its How to Play text and README. Future changes should decide explicitly which
+economy is intended before changing balancing or documentation.
+
+There is no entry fee. Coins have no monetary value. Lifetime progression uses
+banked gameplay points. Daily and milestone coin rewards do not add gameplay
+points, avoiding progression reward loops.
+
+The saved round counter increments when the round-completion bank method runs,
+including zero-point losses and zero-point finishes.
+
+5. SCREENS AND UI IMPLEMENTED
+-----------------------------
+- Title entry screen.
+- Home screen and navigation to gameplay and daily rewards.
+- Gameplay screen with mine slider, board, score, status, and round controls.
+- Coin balance and lifetime progression display.
+- Result popup for loss, successful finish, and full-board victory.
+- How to Play popup explaining risk, scoring, banking, and coin conversion.
+- Settings popup with a persisted sound mute control.
+- Daily reward wheel page, spin button, countdown, and result popup.
+- Milestone claim control and next-milestone display.
+
+GameUI uses serialized references for screen objects, labels, controls, tiles,
+effects, and configuration. A reusable popup is populated for different messages.
+
+ResponsiveGrid handles board sizing; SafeArea handles device safe-area layout.
+The README records a 720x1280 Canvas Scaler reference and a portrait play area
+fitted into desktop windows. Physical-device and broad aspect-ratio validation
+remain separate from the available rule and UI smoke reports.
+
+6. VISUALS, ANIMATION, AND AUDIO
+-------------------------------
+An Editor generator creates original procedural raster artwork, including
+background, hidden tiles, gems, mines, rounded UI artwork, and reward wheel art.
+Generated prefabs include tile, primary button, progression HUD, and popup style.
+
+Tile reveals use a scale-pop animation and eight small particle-like UI images.
+Safe reveals and mine reveals use different particle colors and sizes.
+Successful round endings and wheel rewards trigger a short confetti effect.
+
+The wheel rotates for approximately four seconds with an ease-out curve and
+lands at the selected reward segment.
+
+AudioService generates three short original tones at runtime for safe reveals,
+mine hits, and rewards. The saved mute setting controls the AudioSource.
+
+These effects form an initial presentation pass. The presence of effects does
+not establish that all polish requested in the prompt has been delivered.
+
+7. DAILY REWARDS IMPLEMENTED
+----------------------------
+- One free spin becomes available every 24 hours.
+- Eligibility uses a saved UTC Unix timestamp.
+- Default rewards are eight equal-probability segments:
+  25, 50, 75, 100, 150, 200, 300, and 500 coins.
+- A spin selects a segment using System.Random.
+- Coins and the next eligible timestamp are saved before wheel animation.
+- This prevents an interrupted animation from allowing another immediate award.
+- The visible countdown updates while the application runs.
+- A reward popup follows the animation.
+
+Differences from the proposed prompt:
+- Eight reward segments are implemented rather than the proposed six.
+- The reward is credited immediately at spin start; there is no separate saved
+  pending-claim flow or recovery popup after restarting.
+- Local clock or local save manipulation is not prevented.
+
+8. PROGRESSION IMPLEMENTED
+--------------------------
+Default lifetime-point milestones and coin rewards:
+
+Lifetime points required | Coin reward
+100                      | 50
+500                      | 150
+1,500                    | 400
+5,000                    | 1,000
+
+The HUD shows the next unclaimed milestone. Claim becomes available when its
+threshold is reached. Claimed milestone indices are saved and duplicate claims
+are rejected. After all claims, the UI displays completion and lifetime points.
+
+These defaults differ from the five thresholds proposed in the later prompt.
+The current UI is a next-milestone display rather than a full milestone-list
+screen showing every locked, available, and claimed reward.
+
+9. PERSISTENCE
+---------------
+Save key: MineGrid.Save.v1.
+Storage: JsonUtility JSON in PlayerPrefs.
+
+Saved fields:
+- coins: wallet balance.
+- totalPoints: lifetime banked gameplay points.
+- rounds: completed round count.
+- muted: sound setting.
+- nextSpin: next free-spin UTC timestamp.
+- claimed: claimed milestone indices.
+
+Missing or unparseable data falls back to default SaveData. A missing claimed
+list is initialized. Banking, spinning, claiming, and mute changes save data;
+application pause also requests a save.
+
+Active rounds are intentionally not saved. Last-selected mine count is not
+persisted across application launches. The version appears in the key name;
+an explicit migration system and robust validation of every saved field are
+not implemented. PlayerPrefs is suitable for this local prototype but does
+not provide trusted economy storage.
+
+10. SOURCE RESPONSIBILITIES
+---------------------------
+Assets/Scripts/MineGrid/Board.cs
+  Fixed board data, unique mine placement, reveal flags, safe-reveal counting.
+
+Assets/Scripts/MineGrid/Round.cs
+  Setup/Playing/Won/Lost/Finished state model, scoring, finish and win rules.
+
+Assets/Scripts/MineGrid/GameConfig.cs
+  Configurable points, coin conversion, daily rewards, and milestone arrays.
+
+Assets/Scripts/MineGrid/SaveService.cs
+  Local save/load, wallet banking, spin eligibility, and milestone claims.
+
+Assets/Scripts/MineGrid/GameUI.cs
+  Screen flow, input binding, board rendering, result panels, reward wheel,
+  progression display, and celebratory UI effects.
+
+Assets/Scripts/MineGrid/TileView.cs
+  Tile input binding, sprite state, reveal animation, and reveal sparkles.
+
+Assets/Scripts/MineGrid/AudioService.cs
+  Generated sound effects, playback, mute, and clip cleanup.
+
+Assets/Scripts/MineGrid/ResponsiveGrid.cs
+  Responsive board layout.
+
+Assets/Scripts/MineGrid/SafeArea.cs
+  Safe-area handling.
+
+Assets/Editor/MineGridSetup.cs
+  Scene/artwork/prefab generation and deterministic gameplay verification.
+
+Assets/Editor/MineGridSmoke.cs
+  Play Mode smoke checks using connected UI callbacks.
+
+README.md
+  Play instructions, configuration notes, structure, and verification menus.
+
+11. EXISTING VERIFICATION EVIDENCE
+----------------------------------
+MineGrid-verification.txt records:
+  PASS: 972 checks.
+  Coverage: all 24 mine counts across 40 seeds, unique placement, safe reveal,
+  duplicate input rejection, zero finish, banking, automatic win, loss,
+  restart, persistence, duplicate milestone claims, and daily cooldown.
+
+MineGrid-playmode-verification.txt records:
+  PASS: 10 Play Mode UI checks.
+  Coverage: setup, selection locking, zero finish, result popup, repeated tile
+  callback, banking, mine loss, post-result input rejection, automatic win,
+  and returning home.
+
+The verification utilities back up and restore the save around their checks.
+These are custom Editor verification tools, not evidence of a full automated
+device matrix or production release certification. The existing reports do not
+prove every visual requirement, mobile behavior, build target, or edge case.
+
+Documentation review confirmed these report files and inspected the relevant
+source. Unity compilation, Play Mode, and the checks were not rerun for this
+documentation task.
+
+12. HOW TO OPEN AND VERIFY
+--------------------------
+1. Open the project in Unity 6000.3.10f1.
+2. Open Assets/Scenes/MineGrid.unity.
+3. Enter Play Mode.
+4. Choose LET'S PLAY, then PLAY MINES.
+5. Select mines, press START GAME, and reveal tiles.
+6. Use FINISH GAME to bank points before hitting a mine.
+7. Use PLAY AGAIN to begin another setup.
+8. Inspect daily rewards, How to Play, mute, and progression from the UI.
+
+Gameplay verification menu:
+  MineGrid > Verify Gameplay Rules
+
+UI smoke menu (requires Play Mode in the generated scene):
+  MineGrid > Run Play Mode Smoke Test
+
+Scene generation menu (outside Play Mode):
+  MineGrid > Generate Complete Game
+
+Generation replaces generated scene/artwork/prefabs. Preserve custom scene
+changes separately before regeneration. If TMP Essential Resources import causes
+a domain reload, run generation again once import completes.
+
+13. REMAINING WORK AND LIMITATIONS
+----------------------------------
+The following requested features are absent, partial, or not proven by the
+available evidence and should not be described as completed:
+- Leave-active-round confirmation flow; Home currently stays unavailable.
+- Reduced-effects setting and separate music controls.
+- Saved last-selected mine count.
+- HUD preview of the next safe-tile reward.
+- Animated reward-number counting.
+- Dedicated screen shake and staggered end-of-round board reveals.
+- Persistent visual distinction for the triggered mine beyond its reveal effect.
+- Separate sound feedback for all buttons and dedicated background music.
+- Full milestone-list screen.
+- Pending daily reward claim/recovery presentation.
+- Comprehensive save validation and migrations.
+- Visual QA across physical devices, broad aspect ratios, and accessibility cases.
+- Target-platform build, signing, store submission, and publishing.
+
+The scoring conversion, eight wheel segments, and four milestone defaults also
+need reconciliation if the later detailed prompt is the final product contract.
+
+14. SPRINT OUTCOME
+------------------
+Phase 1 Sprint 1 establishes the initial playable Mines experience with fixed
+random boards, explicit round rules, score banking, generated UI/assets, local
+saving, a daily wheel, progression claims, and recorded verification tools.
+
+The core playable baseline is present. This record does not mark every item in
+the broader polish prompt as fulfilled. Remaining presentation, configuration,
+and validation work is listed above for subsequent sprint planning.
+
+15. DOCUMENTATION CONVENTION FOR FUTURE SPRINTS
+----------------------------------------------
+Store sprint records under SprintDoc using:
+  Phase1Sprint1.txt
+  Phase1Sprint2.txt
+  Phase2Sprint1.txt
+
+For each future record, document the supplied prompt, implemented changes,
+actual rules and configuration, affected files, setup instructions, tests and
+their evidence, deviations, limitations, and remaining work. Distinguish
+requested behavior from verified implementation. Do not overwrite prior sprint
+history unless correcting an explicitly identified documentation error.

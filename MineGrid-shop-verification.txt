@@ -1,0 +1,1 @@
+PASS: 32 shop rule checks. Defaults, affordability, exact spend, duplicate/rapid purchases, free equipment, category and ownership validation, reload, restore defaults, removed IDs, scoring, v2 migration, invalid catalog. Saves restored.

@@ -1,0 +1,1 @@
+PASS: 157 active text checks (overflow and glyph coverage), 4 transparent artwork alpha checks. Actual Play Mode screens captured and inspected.

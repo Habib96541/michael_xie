@@ -1,0 +1,602 @@
+MINEGRID - PHASE 1 / SPRINT 2
+Implementation, Polish, and Verification Record
+Date: 31 October 2026 (Asia/Dhaka)
+Engine: Unity 6000.3.10f1
+Phase remains Phase 1, as explicitly requested.
+
+1. SPRINT OBJECTIVE
+-------------------
+Continue the existing Phase 1 Sprint 1 game using the supplied complete build
+and polish prompt. Preserve the playable Mines baseline and close its documented
+gaps: economy mismatch, navigation, settings, daily reward recovery, progression,
+UI feedback, persistence, and verification.
+
+The exact supplied prompt is preserved in the appendix of this document.
+The source reference screenshots establish colorful casual-game direction;
+the gameplay remains Mines rather than merge or mining-drop gameplay.
+
+2. PROJECT BASELINE AND APPROACH
+--------------------------------
+Inspected ProjectSettings/ProjectVersion.txt, Packages/manifest.json, README,
+the existing generated scene/configuration, runtime scripts, scene generator,
+custom verification tools, and Sprint 1's implementation record.
+
+Retained Unity 6000.3.10f1, URP 2D, uGUI, TextMeshPro, and Input System UI input.
+No new third-party package was required. Kept the generated scene workflow and
+separation of board data, round rules, configuration, saving, view, and audio.
+Existing user project content outside this implementation was not reset.
+
+3. CORE RULES PRESERVED AND STRENGTHENED
+---------------------------------------
+- Exactly 25 cells, arranged in five rows and five columns.
+- Mine selection from 1 to 24; initial default remains 3.
+- Unique mine placement using a partial shuffle and injectable System.Random.
+- Mine positions fixed for the entire round.
+- First reveal can hit a mine.
+- Mine selector locked during play.
+- Repeated tile reveals and ended-round inputs rejected.
+- Finish Game available throughout active play.
+- Finish before revealing awards zero.
+- Full safe-board completion banks automatically.
+- Mine hit forfeits unbanked reward.
+- Play Again resets the board and round.
+
+Round now exposes a unique round ID and the triggered mine index. A separate
+Forfeit operation ends an active round without banking its potential reward.
+UI completion is guarded against repeated presentation, and wallet banking
+rejects a duplicate completion ID. Rewards are committed before effects run.
+
+4. ECONOMY CORRECTION
+---------------------
+Sprint 1 converted points into coins using a divisor of 10. This sprint follows
+the supplied prompt's direct-coin example instead:
+
+Reward per safe tile = pointsPerGem x selected mine count.
+Default pointsPerGem = 10.
+Banked wallet coins = current accumulated gameplay reward.
+Lifetime gameplay points increase by the same banked amount.
+
+Example:
+3 mines x 10 base reward = 30 coins for each safe reveal.
+4 safe reveals = 120 bankable coins.
+Finishing adds 120 wallet coins and 120 lifetime gameplay points.
+A mine awards zero coins for that round.
+
+There is no entry fee, hidden full-board bonus, or cash value.
+Removed the pointsPerCoin conversion field from the configuration source.
+Updated How to Play and README to explain the actual formula.
+
+5. HUD AND NAVIGATION
+---------------------
+- Current bankable reward is shown explicitly.
+- Next gem reward is previewed and changes with selected mine count.
+- Mine/safe totals and safe reveal progress remain visible.
+- Wallet balance refreshes after banking and reward claims.
+- Last-selected mine count now saves across restarts.
+- Play Again retains that selection during the running session.
+
+HOME is now usable during an active round. It opens a blocking confirmation:
+KEEP PLAYING dismisses the popup and preserves the round.
+LEAVE ROUND forfeits unbanked reward and returns home.
+The confirmation explicitly states how much will be lost.
+
+Reveal and Finish callbacks also check popup state, so invoking them directly
+while the modal is open cannot bypass its input blocking.
+
+Results show the outcome, mine count, safe reveals, earned coins, Play Again,
+and Home. Distinct outcomes are provided for a mine, voluntary bank, and victory.
+
+6. SETTINGS AND GAME FEEL
+-------------------------
+Added persisted reduced-effects control alongside sound mute.
+No background music track is included, so a music toggle is not shown.
+
+Normal effects:
+- Button press scaling, pointer feedback, and a short button sound.
+- Tile pop and colored reveal particles.
+- Animated bankable-reward count changes.
+- Mine-hit shake followed by a short staggered board reveal.
+- Persistent HIT label/tint on the triggered mine.
+- Dimmed unselected safe tiles after completion.
+- Confetti on successful round endings and reward claims.
+- Brief page fade transitions.
+- Approximately four-second wheel ease-out animation.
+
+Reduced effects:
+- Suppress tile particles/pop, screen shake, and confetti.
+- Show reward-number updates without animated counting.
+- Skip page fades and shorten wheel motion to about 0.1 seconds.
+- Reveal the end board without per-cell delay.
+
+Added ButtonFeedback as a reusable component. TileView cancels effects on
+reset/disable and removes its click listener on destruction. Runtime listeners
+and generated audio clips have cleanup paths.
+
+Original procedural artwork is retained and refreshed, with shaded UI surfaces,
+rounded controls, gradient background, and subtle ambient diamond decoration.
+The art remains a procedural casual-game treatment; it is not a literal copy of
+the reference game's branding or assets.
+
+7. DAILY WHEEL AND INTERRUPTION RECOVERY
+---------------------------------------
+Configured six equal-probability coin rewards:
+50, 75, 100, 150, 200, 300.
+
+Spin sequence:
+1. Check UTC cooldown and reject an existing pending reward.
+2. Choose a reward segment.
+3. Save pending coin amount and next eligible UTC timestamp.
+4. Animate the six-segment wheel beneath the fixed pointer.
+5. Present CLAIM REWARD.
+6. On claim, credit coins and clear pending state in the same saved snapshot.
+
+Wallet credit no longer happens before the animation as it did in Sprint 1.
+Restarting with pending coins presents the claim flow again. Repeating claim
+cannot award again because pending state is cleared after the first claim.
+Cooldown remains 24 hours from spin start. A saved reward amount is independent
+of later animation timing or wheel rotation.
+
+A clock function can be injected into SaveService for deterministic tests.
+The countdown is computed from UTC each time and survives restarts.
+This is a local prototype: device-clock changes and editing local save data
+are not prevented. Local PlayerPrefs is not a transactional backend.
+
+8. PROGRESSION PANEL
+--------------------
+Added a dedicated panel showing the complete milestone ladder.
+Each row displays threshold, coin reward, and LOCKED/READY/CLAIMED status.
+Claim controls are available only when eligible. Duplicate claims are rejected.
+A successful claim displays a reward popup and sound/effects.
+
+Lifetime gameplay threshold | Coin reward
+500                         | 100
+1,500                       | 200
+3,000                       | 350
+5,000                       | 500
+10,000                      | 1,000
+
+The home HUD retains a compact next-milestone summary and claim action.
+Daily and milestone rewards increase wallet coins without advancing lifetime
+banked gameplay points, so reward claims cannot trigger progression loops.
+
+9. VERSIONED SAVING AND MIGRATION
+---------------------------------
+Current key: MineGrid.Save.v2.
+Legacy key: MineGrid.Save.v1.
+Storage: JSON serialized with JsonUtility into PlayerPrefs.
+
+Saved data:
+- Explicit version number.
+- Wallet coins.
+- Lifetime banked gameplay points.
+- Completed round count.
+- Last banked completion ID.
+- Last-selected mine count.
+- Sound mute and reduced-effects settings.
+- Next daily UTC timestamp.
+- Pending daily reward coin amount.
+- Claimed milestone indices.
+
+If v2 is absent and v1 exists, retain old wallet/progression/round count/mute/
+cooldown values. Initialize mine selection to 3. Reset milestone claim flags
+for the new ladder because its thresholds differ; old awarded coins are kept.
+No historical balances are multiplied to match the new economy.
+
+Malformed or missing JSON falls back to defaults. Negative wallet/progression/
+round counts are clamped, mine selection is clamped to 1-24, and claim lists
+are initialized/deduplicated. Wallet additions use a long intermediate and
+saturate at int.MaxValue to avoid addition overflow.
+
+Active rounds remain unsaved by design. This implementation does not promise
+power-failure guarantees, anti-cheat, or cloud sync.
+
+10. SCENE AND ASSET DELIVERY
+----------------------------
+Main scene: Assets/Scenes/MineGrid.unity.
+Configuration: Assets/MineGrid/GameConfig.asset.
+Art: Assets/MineGrid/Art.
+Prefabs: Assets/MineGrid/Prefabs.
+
+The scene generator wires all new references, settings controls, popup actions,
+progression rows, page groups, next-reward label, and daily status indicator.
+It updates the playable scene in Editor build settings. Reusing the generator
+replaces generated scene/artwork/prefabs rather than appending duplicate UI.
+Preserve custom generated-scene edits separately before regeneration.
+
+Wheel artwork is generated for six segments. If configuration array lengths
+change, update corresponding generation logic and regenerate the scene. Keep
+milestone threshold/reward array lengths equal.
+
+11. SOURCE CHANGES
+-------------------
+Updated runtime files under Assets/Scripts/MineGrid:
+- GameConfig.cs: direct reward settings and new reward/milestone defaults.
+- Round.cs: round ID, triggered mine, and forfeiting.
+- SaveService.cs: v2, migration, direct banking, pending rewards, validation.
+- GameUI.cs: confirmation, popup callbacks, HUD, panels, effects, reward flow.
+- TileView.cs: triggered/unused states, reduced effects, animation cleanup.
+- AudioService.cs: extra button feedback sound.
+
+New runtime file:
+- ButtonFeedback.cs: pointer feedback and button sound.
+
+Updated/new Editor tooling under Assets/Editor:
+- MineGridSetup.cs: refreshed artwork and full scene/reference generation.
+- MineGridVerification.cs: deterministic gameplay/save/economy regression checks.
+- MineGridSmoke.cs: wired UI callback smoke checks.
+- MineGridCapture.cs: resolution capture and animation/claim inspection.
+- MineGridEditorTasks.cs: fixed local task requests for the open Editor.
+
+Updated README and regenerated scene, artwork, prefabs/configuration as needed.
+Phase1Sprint1.txt is preserved as historical documentation.
+
+12. VERIFICATION PERFORMED IN THIS SPRINT
+----------------------------------------
+Unity compiled the updated scripts, generated the connected scene, entered
+Play Mode, and ran custom rule and wired UI checks.
+
+Rule/save report: MineGrid-verification.txt.
+PASS: 26,912 assertions.
+This count includes cell-by-cell immutability checks across all 24 mine counts
+and 40 seeds each; it is not 26,912 independent player scenarios.
+Coverage includes fixed unique mines, safe counts, repeated input, zero finish,
+120-coin example, duplicate banking, win/loss/forfeit, milestones, interrupted
+reward recovery, duplicate claims, UTC cooldown, settings/selection, malformed
+JSON, invalid fields, and legacy migration.
+
+Wired UI report: MineGrid-playmode-verification.txt.
+PASS: 17 checks.
+Coverage includes setup, selection lock, zero finish/result popup, leave modal,
+blocked tile callbacks, cancel, reveal duplication, direct banking, duplicate
+completion, confirm-forfeit, loss, post-result input, win, milestone screen,
+settings controls, and reduced-effects toggle.
+
+The rule and smoke checks back up and restore save state. Layout/animation
+capture tooling also restores the runtime save after exercising rewards.
+Layout/animation report: MineGrid-layout-verification.txt.
+PASS: 102 checks: 25 square, onscreen tiles at each of 360x800, 720x1280,
+1280x720, and 1600x900, plus normal-animation daily reward popup and claim.
+Captured and visually reviewed gameplay, home, wheel, milestones, settings,
+leave confirmation, loss, and daily claim panels. Unity Console inspection
+showed zero warnings and zero errors at the review point.
+
+Additional capture results are recorded in MineGrid-layout-verification.txt.
+Screenshots are stored in SprintDoc/Phase1Sprint2-Captures.
+
+13. HOW TO RUN
+---------------
+1. Open the project with Unity 6000.3.10f1.
+2. Open Assets/Scenes/MineGrid.unity and enter Play Mode.
+3. Choose LET'S PLAY, then PLAY MINES.
+4. Select mines and START GAME.
+5. Reveal gems; FINISH GAME banks the shown reward.
+6. Try Home confirmation, Settings, daily rewards, and milestone progression.
+
+No new package installation or manual scene wiring is required.
+Regenerate outside Play Mode with MineGrid > Generate Complete Game if needed.
+Run rules with MineGrid > Verify Gameplay Rules.
+Run UI checks in Play Mode with MineGrid > Run Play Mode Smoke Test.
+
+14. PRACTICAL LIMITATIONS AND FOLLOW-UP
+---------------------------------------
+- No signed Android/iOS release or store publishing was performed.
+- Physical touch devices, real notch/safe-area hardware, and device performance
+  require follow-up testing beyond Editor resolution checks.
+- Audio uses synthesized feedback tones; no background music is included.
+- Save storage and daily timing are local and editable.
+- Active rounds intentionally restart after relaunch.
+- Procedural presentation can receive a future commissioned-art/audio pass.
+- Editor QA resolution tools use internal Game View APIs and may need adaptation
+  if upgrading Unity.
+- Wheel art assumes six segments; structural configuration edits need regeneration.
+
+15. SPRINT STATUS AND NEXT RECORD
+---------------------------------
+Phase 1 Sprint 2 implements the requested continuation and polish work with
+updated rules, connected UI, persistence, reward recovery, and recorded checks.
+Phase remains 1. The next sprint document is Phase1Sprint3.txt unless the user
+explicitly changes the phase. Do not rewrite Sprint 1 to describe Sprint 2.
+
+APPENDIX A - EXACT SUPPLIED IMPLEMENTATION PROMPT
+================================================
+You are a senior Unity game developer, UI artist, and game-feel designer. Build and polish a complete, playable game called “MineGrid” directly in this Unity project.
+
+Deliver an integrated game with connected scenes, prefabs, UI, gameplay, original visual assets, animations, audio, persistence, and verification. Continue through implementation and testing.
+
+PROJECT INSPECTION
+Before making changes:
+- Read applicable AGENTS.md files.
+- Inspect the Unity editor version, project structure, installed packages, render pipeline, input system, scenes, existing scripts, and assets.
+- Identify existing functionality and preserve useful work.
+- Follow the project’s established conventions.
+- Use installed packages where suitable. Avoid adding dependencies unless necessary.
+- Briefly explain your implementation approach, then begin.
+- Make reasonable decisions independently. Ask questions only when missing information materially blocks implementation.
+
+GAME CONCEPT
+MineGrid is a casual risk-and-reward tile game:
+1. Choose the number of hidden mines.
+2. Start a round.
+3. Reveal tiles to find gems and grow the potential reward.
+4. Press Finish Game to bank the reward before hitting a mine.
+
+Use virtual coins and points.
+
+Treat the attached screenshots as visual references for colorful casual-game presentation, chunky buttons, reward panels, and polished transitions. The Mines rules below define the gameplay.
+
+Do not introduce unrelated merge mechanics, tool inventories, or mining-drop gameplay from the screenshots.
+
+CORE RULES
+- The board is exactly 5 columns by 5 rows: 25 tiles.
+- The player selects between 1 and 24 mines before starting.
+- Default to 3 mines.
+- Provide a slider or stepper with an exact numeric value and optional quick presets.
+- Show the number of mines and total safe tiles.
+- Start Game creates the round and assigns the selected number of mines to unique randomly selected cells.
+- Generate mine positions once per round and keep them fixed.
+- Do not guarantee that the first reveal is safe.
+- Disable mine selection during an active round.
+- A tile can be revealed only once.
+- A safe tile reveals a gem, increments the safe-reveal count, and updates the potential reward.
+- A mine ends the round immediately and forfeits the unbanked reward.
+- After a loss, reveal remaining mines and distinguish the triggered mine.
+- Finish Game remains available throughout an active round.
+- Finishing banks the current reward exactly once and ends the round.
+- Finishing before revealing any safe tile awards zero coins.
+- Revealing all safe tiles automatically wins and banks the reward exactly once.
+- Play Again returns to setup with the previous mine count selected and a fresh hidden board.
+- Block tile input during setup, after the round ends, and while blocking popups are open.
+- Handle rapid input without duplicate reveals or duplicate rewards.
+
+SCORING AND ECONOMY
+Use a transparent arcade scoring system:
+- No entry fee.
+- Default reward per safe reveal = 10 × selected mine count.
+- Current bankable reward = safe tiles revealed × reward per safe reveal.
+- Example: with 3 mines, each safe tile adds 30 coins; revealing 4 safe tiles makes 120 coins available to bank.
+- A loss awards zero coins for that round.
+- A full-board victory banks the same accumulated reward, without a hidden bonus.
+- Make the base reward configurable in a central configuration asset.
+- Show the current bankable reward and the next safe-tile reward.
+- Clearly explain these rules in How to Play.
+- Persist banked coins and lifetime banked gameplay points.
+- Keep daily rewards and milestone coin rewards separate from lifetime gameplay points to avoid progression loops.
+
+APPLICATION FLOW
+Implement these screens or panels:
+
+1. TITLE / HOME
+- Original MineGrid logo or styled title.
+- Play button.
+- How to Play button.
+- Settings button.
+- Virtual coin balance.
+- Daily Reward entry with an availability indicator.
+- Progression entry.
+- A short, tasteful startup transition.
+
+2. GAMEPLAY
+- Large central 5×5 board.
+- Mine selector before starting.
+- Start Game button.
+- Finish Game button during play.
+- HUD showing:
+  - Coin balance.
+  - Selected mine count.
+  - Safe tiles revealed / total safe tiles.
+  - Current bankable reward.
+  - Next safe-reveal reward.
+- A home/back control.
+- Leaving during an active round opens a confirmation explaining that the unbanked reward will be forfeited.
+- Cancel resumes the round; confirm forfeits and returns home.
+
+3. RESULTS
+Provide clear variants for:
+- Mine hit: round lost, zero coins earned.
+- Voluntary finish: reward successfully banked.
+- Full-board victory: all safe tiles revealed, reward banked.
+
+Each result shows:
+- Outcome.
+- Safe tiles revealed.
+- Mine count.
+- Coins earned.
+- Play Again.
+- Home.
+
+4. HOW TO PLAY
+Explain the complete loop, scoring, mine risk, Finish Game, and automatic victory in concise language.
+
+5. SETTINGS
+- Sound effects toggle.
+- Music toggle if music is included.
+- Reduced-effects toggle.
+- Persist settings across restarts.
+
+VISUAL DIRECTION
+Create a cohesive, polished casual mobile-game aesthetic inspired by the references:
+- Purple, blue, and pink gradients.
+- Bright cyan highlights and gold reward accents.
+- Green primary buttons and blue secondary buttons.
+- Rounded panels with consistent borders and soft shadows.
+- Chunky raised buttons with clear pressed states.
+- Bold, readable TextMeshPro typography.
+- Glossy cartoon gems and mines.
+- Subtle decorative particles or background shapes.
+- Consistent spacing, icon treatment, corner radii, and typography.
+- Original branding and original or appropriately licensed assets.
+
+Keep the board visually dominant. Make the interface attractive without overwhelming the gameplay.
+
+TILE PRESENTATION
+Create clear states for:
+- Hidden.
+- Hovered where a pointer is available.
+- Pressed.
+- Revealed safe gem.
+- Triggered mine.
+- Other revealed mines.
+- Unselected safe tiles after round completion.
+- Disabled or temporarily noninteractive.
+
+Use consistent tile dimensions, spacing, and alignment. Do not expose mine locations through visible debug indicators.
+
+GAME FEEL
+Implement:
+- Responsive button press feedback.
+- Quick tile-flip or tile-pop reveals.
+- Small gem sparkles on safe reveals.
+- Animated reward-number changes.
+- A restrained explosion and brief screen shake on a mine hit.
+- A short staggered board reveal after loss.
+- Confetti or celebratory particles for full-board victory.
+- Smooth panel transitions.
+- Distinct sounds for buttons, safe reveals, mines, banking, and rewards.
+
+Resolve game rules immediately and let animations reflect the resulting state. Animation timing must never allow extra reveals or duplicate banking.
+
+Reduced-effects mode should disable screen shake and reduce unnecessary motion and particles.
+
+RESPONSIVE UI
+- Use Canvas UI and TextMeshPro unless the existing project has a suitable established alternative.
+- Use Canvas Scaler and appropriate anchors.
+- Respect device safe areas.
+- Design primarily for portrait mobile, while adapting cleanly to landscape and desktop windows.
+- Maintain square board tiles.
+- Keep labels readable and controls comfortably tappable.
+- Prevent text clipping, overlap, stretched sprites, offscreen buttons, and excessive empty space.
+- Support touch and mouse through the project’s existing input system.
+- Use icons and labels together where meaning could otherwise be unclear.
+
+DAILY REWARD WHEEL
+Implement after the core gameplay is working:
+- One free spin every 24 hours from the previous successful spin.
+- Six labeled virtual coin segments: 50, 75, 100, 150, 200, and 300.
+- Equal probability for each segment.
+- Select and persist the pending reward when the spin begins.
+- Animate the wheel to land accurately on the selected segment beneath a fixed pointer.
+- Disable additional spin input while spinning.
+- Show a reward confirmation popup.
+- Award each pending reward exactly once.
+- Recover a pending reward safely if the app closes during the animation or claim flow.
+- Show a live countdown when unavailable.
+- Save timestamps in UTC and calculate the remaining time when reopening.
+- Treat this as a local prototype feature; do not claim local timing is tamper-proof.
+
+PROGRESSION
+Add a simple milestone panel:
+- Track lifetime coins banked through Mines gameplay.
+- Use configurable milestone thresholds, initially:
+  500, 1,500, 3,000, 5,000, and 10,000.
+- Give each milestone a configurable virtual coin reward.
+- Display current progress, locked milestones, available claims, and claimed milestones.
+- Persist claims and prevent duplicate awards.
+- Daily rewards and milestone rewards do not advance this progression counter.
+- Use satisfying claim feedback consistent with the other reward panels.
+
+UNITY ARCHITECTURE
+Keep responsibilities clear without unnecessary abstraction:
+- Board generation and tile data.
+- Round state and rule enforcement.
+- Scoring.
+- Wallet and progression.
+- Save/load.
+- UI presentation.
+- Audio and effects.
+
+Use explicit round states:
+Setup, Playing, Won, Lost, Finished.
+
+Implementation requirements:
+- Keep core rules independently testable.
+- Use ScriptableObjects for central tunable configuration where appropriate.
+- Use reusable prefabs for tiles, buttons, HUD elements, and popups.
+- Prefer serialized references over repeated scene searches.
+- Clean up event subscriptions.
+- Avoid unnecessary per-frame work.
+- Make randomness replaceable or seedable in tests.
+- Do not use animation callbacks as the sole authority for granting rewards.
+- Keep state transitions and reward banking idempotent.
+- Ensure restarting clears the previous round completely.
+
+PERSISTENCE
+Persist:
+- Virtual coin balance.
+- Lifetime banked gameplay points.
+- Milestone claims.
+- Daily spin timestamps and pending reward state.
+- Settings.
+- Last selected mine count.
+
+Use a versioned save format. Handle missing, invalid, or outdated data gracefully. Save after important state changes. Do not persist a live Mines round unless existing project requirements call for it.
+
+ASSETS AND SCENE AUTHORING
+- Reuse suitable existing assets.
+- Create cohesive original substitutes for missing visual assets.
+- Avoid leaving mixed placeholder styles in the final interface.
+- Ensure required fonts and materials are available in the project.
+- Connect all buttons, references, prefabs, and scene transitions.
+- Add the playable scenes to the build configuration.
+- If direct scene or prefab authoring is unavailable, create a Unity Editor setup tool that generates and wires the required scenes and prefabs.
+- Keep Editor-only code in Editor folders.
+- Make any setup tool safe to rerun without duplicating generated objects.
+- If a tool is used to generate assets, save the generated assets in the project and connect them.
+
+IMPLEMENTATION ORDER
+1. Inspect the project and establish the playable scene.
+2. Implement and verify the Mines rules and scoring.
+3. Connect home, gameplay, settings, instructions, and results.
+4. Apply the full visual design.
+5. Add animations, effects, and audio.
+6. Add persistence, daily rewards, and progression.
+7. Test, inspect, fix issues, and complete delivery.
+
+Keep the project runnable as work progresses. Do not substitute a long plan for implementation.
+
+VERIFICATION
+Use available Unity compilation, Edit Mode tests, Play Mode tests, and direct inspection as appropriate.
+
+Verify:
+- Exactly 25 cells.
+- Correct unique mine counts for 1, 3, and 24 mines.
+- Mine positions do not change after reveals.
+- First-click mine losses work.
+- Repeated or rapid clicks cannot reveal a tile twice.
+- Mine selection is locked during play.
+- Finish before the first reveal awards zero.
+- Safe reveals calculate the expected reward.
+- Mine hits forfeit the unbanked reward.
+- Finishing banks exactly once.
+- Full safe-board completion banks exactly once.
+- Restarting resets all round state.
+- Leaving an active round requires confirmation and forfeits only after confirmation.
+- Popups block input to the board.
+- Save/load restores persistent data.
+- Invalid save data does not crash the game.
+- Daily reward cooldown and interrupted-spin recovery work.
+- Reward and milestone claims cannot be duplicated.
+- Audio and reduced-effects settings work.
+- UI fits narrow portrait, standard portrait, landscape, and desktop aspect ratios.
+
+When Unity tools are available, enter Play Mode, inspect the actual interface, review Console errors, and capture screenshots for visual review. Fix issues found during inspection. Clearly report checks that could not be run.
+
+COMPLETION REQUIREMENTS
+The finished project should open to a connected, playable experience with:
+- Working 5×5 Mines gameplay.
+- Correct rewards and state transitions.
+- Polished, consistent UI.
+- Responsive layouts.
+- Animations and sound.
+- Working persistence.
+- Daily reward and milestone flows.
+- No known compilation errors, missing script references, or broken visible controls.
+
+Provide a concise final report containing:
+- What was implemented.
+- Which scene to open.
+- Any required setup steps.
+- How to play.
+- Checks actually performed and their results.
+- Any remaining limitations.
+
+Be accurate about what you implemented and verified. Continue until the game is playable and polished within the available tools.

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cdd2b9c63fccd43a371f2c62a3b3fe, type: 3}
+  m_Name: reveal.classic
+  m_EditorClassIdentifier: Assembly-CSharp::MineGrid.CosmeticItem
+  _id: reveal.classic
+  _displayName: Classic Sparkle
+  _description: A light ring of gem sparkles.
+  _category: 3
+  _price: 0
+  _isDefault: 1
+  _artwork: {fileID: 21300000, guid: 54257284561190f4fac9bc8de0e7b21a, type: 3}
+  _material: {fileID: 0}
+  _primary: {r: 0.9, g: 1, b: 0.6, a: 1}
+  _secondary: {r: 1, g: 1, b: 1, a: 1}
+  _revealStyle: 0

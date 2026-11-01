@@ -1,0 +1,1 @@
+PASS: 26912 Sprint 2 checks. Fixed boards across 24 mine counts x 40 seeds; safe counts; duplicate input; direct-coin scoring; zero finish; idempotent banking; win/loss/forfeit; milestone eligibility; interrupted daily reward recovery; duplicate claims; UTC cooldown with injected clock; saved settings/selection; invalid JSON/fields; legacy migration.

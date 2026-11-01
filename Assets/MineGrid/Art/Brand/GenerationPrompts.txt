@@ -1,0 +1,13 @@
+Built-in image_gen prompts. All four requests set transparent_background=true.
+
+1. MineGridLogo.png
+Use case: logo-brand. Create a single original polished casual mobile game logo, exact text "MINEGRID", all letters spelled correctly, on genuine transparent background. Wide horizontal composition with tightly cropped artwork occupying most of the canvas, generous 5 percent margin. Chunky playful rounded custom 3D lettering: MINE in icy cyan white, GRID in warm rich golden yellow. Deep indigo/purple thick outlines, layered extruded shadows, crisp glossy beveled highlights. Small brilliant cyan faceted gem emerging above the word center and subtle small 3x3 grid badge with one friendly dark spherical mine tucked near the lower left. Friendly premium treasure arcade game identity, clean silhouette, readable at small sizes. No additional text, no scene, no background plate, no mockup, no watermark. Landscape 3:1 logo asset.
+
+2. GoldCoin.png
+Use case: stylized-concept. A single isolated polished gold coin sprite for a premium casual mobile treasure game, genuine transparent background. Centered coin fills 85 percent of square canvas, nearly front facing with slight visible right-side thickness. Thick golden rim, warm orange beveled edge, rich shaded face with a small embossed cyan faceted diamond emblem. Brilliant tasteful upper-left white glint, crisp deep indigo subtle outer contour, glossy 3D cartoon rendering, broad readable shapes, readable at 24 pixels. No text, no letters, no numbers, no second coin, no ground plane, no cast shadow outside coin, no background. Production game inventory icon.
+
+3. CyanGem.png
+A single brilliant cyan faceted diamond gem, polished glossy 3D cartoon mobile treasure game sprite. Thick deep-indigo contour, large clean facets in turquoise ice-blue and white, tasteful white specular glint upper left. Upright diamond with pointed bottom and broad angular crown. Centered fills 85 percent of square image. Genuine transparent background, no scene no text no coin no frame no ground shadow. Readable at 48 pixels. Matches glossy cyan gold MineGrid casual arcade identity.
+
+4. NavyMine.png
+A single friendly dark navy spherical sea mine for a casual treasure mobile game sprite, glossy 3D cartoon illustration. Six short rounded golden spikes, thick deep indigo outline, cool blue sphere shading and tiny white reflection upper left, small warm red cap. Not frightening, no explosion. Centered fills 85 percent of square image. Genuine transparent background, no text, no frame, no scene, no ground plane or ground shadow. Clean readable at 48 pixels, matches premium casual cyan/gold/indigo treasure game art.

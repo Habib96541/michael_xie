@@ -1,0 +1,1 @@
+PASS: 50 shop UI/application checks and 203 active text checks. Four screen sizes, categories, pure previews, exact purchase, duplicate/modal blocking, free equip, all tile material bindings, board/tile/effect application, scoring and restore. Save restored.
