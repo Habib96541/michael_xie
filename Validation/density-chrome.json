@@ -1,0 +1,69 @@
+{
+  "testedAt": "2026-11-01T03:55:10.736Z",
+  "buildHash": "553647d972c625c0eba4cecd6a3b7d81efbc8f4ff234b2036b8abd2ba5925387",
+  "browser": "Chrome",
+  "version": "156.0.8078.79",
+  "checks": [
+    {
+      "width": 844,
+      "height": 390,
+      "dpr": 2,
+      "canvas": [
+        1688,
+        780
+      ],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "dpr": 2,
+      "canvas": [
+        780,
+        1688
+      ],
+      "passed": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "dpr": 2,
+      "canvas": [
+        1536,
+        2048
+      ],
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "dpr": 2,
+      "canvas": [
+        2048,
+        1536
+      ],
+      "passed": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "dpr": 3,
+      "canvas": [
+        1688,
+        780
+      ],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "dpr": 3,
+      "canvas": [
+        780,
+        1688
+      ],
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,37 @@
+{
+  "createdUtc": "2026-11-01T03:57:03.027055+00:00",
+  "unity": "6000.3.10f1",
+  "wasmSha256": "553647d972c625c0eba4cecd6a3b7d81efbc8f4ff234b2036b8abd2ba5925387",
+  "files": [
+    {
+      "path": "Build/WebGL_Build.data.unityweb",
+      "bytes": 4940858,
+      "sha256": "1ac08c0f6128b6935095fc71ccc07133b6ecb117f21bff4060d01794c5bcc554"
+    },
+    {
+      "path": "Build/WebGL_Build.framework.js.unityweb",
+      "bytes": 87786,
+      "sha256": "63c604962f64cb870d8262e17c721f32a0ae67feed3d350b39f3c628c52501e7"
+    },
+    {
+      "path": "Build/WebGL_Build.loader.js",
+      "bytes": 47866,
+      "sha256": "01bd65fa89f7bb02aa0def89f008160ba32dde30feb877cb51cf80f9dfa76f9a"
+    },
+    {
+      "path": "Build/WebGL_Build.wasm.unityweb",
+      "bytes": 10409321,
+      "sha256": "553647d972c625c0eba4cecd6a3b7d81efbc8f4ff234b2036b8abd2ba5925387"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4763,
+      "sha256": "70616b4ef77c73bdcac3e8ed67eab321a5350347626efdd78c41b0f2223dcd27"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 9164,
+      "sha256": "1c35e912f0212c67e2718bbe0dbf13d8eaef593680190b10826053d98b44232e"
+    }
+  ]
+}

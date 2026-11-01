@@ -1,0 +1,1 @@
+{"name":"HiLo.Tests","references":["HiLo.Core","HiLo.Runtime"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"]}

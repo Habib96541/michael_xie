@@ -1,0 +1,13 @@
+{
+  "testedAt": "2026-11-01T03:56:20.801Z",
+  "buildHash": "553647d972c625c0eba4cecd6a3b7d81efbc8f4ff234b2036b8abd2ba5925387",
+  "browser": "Edge",
+  "version": "156.0.4314.50",
+  "rounds": 20,
+  "predictions": 48,
+  "bankruptBalance": "0|0",
+  "refilledBalance": "1|2",
+  "restartedBalance": "9|1",
+  "passed": true,
+  "errors": []
+}

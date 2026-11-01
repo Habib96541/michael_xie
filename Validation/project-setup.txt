@@ -1,0 +1,4 @@
+Unity 6000.3.10f1
+URP UniversalRP
+Scene: Assets/Scenes/HiLo.unity
+Prepared 2026-11-01T03:42:33.4764113Z

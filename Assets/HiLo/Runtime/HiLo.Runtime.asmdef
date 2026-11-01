@@ -1,0 +1,1 @@
+{"name":"HiLo.Runtime","rootNamespace":"HiLo","references":["HiLo.Core","Unity.TextMeshPro","Unity.ugui","Unity.InputSystem"]}

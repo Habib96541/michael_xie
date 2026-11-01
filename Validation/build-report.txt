@@ -1,0 +1,6 @@
+Result: Succeeded
+Size: 51804669
+Duration: 00:02:42.3731900
+Errors: 0
+Warnings: 0
+Unity: 6000.3.10f1

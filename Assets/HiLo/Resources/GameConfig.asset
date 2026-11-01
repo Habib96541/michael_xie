@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9266cc1bfecf299479c834f431bae365, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: HiLo.Runtime::HiLo.GameConfig
+  stake: 10
+  initialBalance: 200
+  freeRefill: 100
+  houseEdge: 0.04
+  minimumDecisionSeconds: 4.2
+  endlessSecondsPerTenWins: 0.3
+  stages:
+  - name: Beginner
+    startsAt: 0
+    decisionSeconds: 0
+    revealSeconds: 0.42
+  - name: Intermediate
+    startsAt: 5
+    decisionSeconds: 16
+    revealSeconds: 0.36
+  - name: Advanced
+    startsAt: 10
+    decisionSeconds: 11
+    revealSeconds: 0.3
+  - name: Expert
+    startsAt: 20
+    decisionSeconds: 8
+    revealSeconds: 0.25
+  - name: Endless
+    startsAt: 40
+    decisionSeconds: 7
+    revealSeconds: 0.22

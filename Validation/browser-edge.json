@@ -1,0 +1,315 @@
+{
+  "testedAt": "2026-11-01T03:56:05.637Z",
+  "buildHash": "553647d972c625c0eba4cecd6a3b7d81efbc8f4ff234b2036b8abd2ba5925387",
+  "browser": "Edge",
+  "version": "156.0.4314.50",
+  "executable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "loadMs": 6008,
+  "captures": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "scroll": false,
+      "canvas": [
+        1920,
+        1080
+      ],
+      "css": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "scroll": false,
+      "canvas": [
+        1366,
+        768
+      ],
+      "css": [
+        1366,
+        768
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scroll": false,
+      "canvas": [
+        1280,
+        720
+      ],
+      "css": [
+        1280,
+        720
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scroll": false,
+      "canvas": [
+        390,
+        844
+      ],
+      "css": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "scroll": false,
+      "canvas": [
+        360,
+        800
+      ],
+      "css": [
+        360,
+        800
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scroll": false,
+      "canvas": [
+        844,
+        390
+      ],
+      "css": [
+        844,
+        390
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "scroll": false,
+      "canvas": [
+        768,
+        1024
+      ],
+      "css": [
+        768,
+        1024
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "scroll": false,
+      "canvas": [
+        1024,
+        768
+      ],
+      "css": [
+        1024,
+        768
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Phone touch prediction",
+      "passed": true,
+      "detail": "Decision"
+    },
+    {
+      "name": "Phone touch cash out",
+      "passed": true
+    },
+    {
+      "name": "Higher/lower predictions and losing round",
+      "passed": true,
+      "detail": [
+        "Correct",
+        "Wrong",
+        "Push"
+      ]
+    },
+    {
+      "name": "Natural equal-rank push",
+      "passed": true,
+      "detail": [
+        "Correct",
+        "Wrong",
+        "Push"
+      ]
+    },
+    {
+      "name": "Progression to timed stage",
+      "passed": true,
+      "detail": {
+        "maxStreak": 6,
+        "attempts": 16
+      }
+    },
+    {
+      "name": "Settings opens",
+      "passed": true
+    },
+    {
+      "name": "Audio, reduced motion and timer settings toggle",
+      "passed": true,
+      "detail": {
+        "state": "Decision",
+        "streak": "1",
+        "balance": "1.6480000000447|2",
+        "multiplier": "1.19200000017881|0",
+        "outcome": "Push",
+        "predictions": "17",
+        "currentRank": 5,
+        "currentSuit": 0,
+        "higher": 36,
+        "lower": 11,
+        "equal": 2,
+        "stage": 0,
+        "modal": true,
+        "pressure": false,
+        "reducedMotion": true,
+        "sound": false,
+        "music": false
+      }
+    },
+    {
+      "name": "Settings closes",
+      "passed": true
+    },
+    {
+      "name": "Keyboard cash out",
+      "passed": true,
+      "detail": {
+        "state": "Ended",
+        "streak": "1",
+        "balance": "1.76720000006258|2",
+        "multiplier": "1.19200000017881|0",
+        "outcome": "CashOut",
+        "predictions": "17",
+        "currentRank": 5,
+        "currentSuit": 0,
+        "higher": 36,
+        "lower": 11,
+        "equal": 2,
+        "stage": 0,
+        "modal": true,
+        "pressure": false,
+        "reducedMotion": true,
+        "sound": false,
+        "music": false
+      }
+    },
+    {
+      "name": "Balance persists on reload",
+      "passed": true,
+      "detail": {
+        "expected": "1.76720000006258|2",
+        "actual": "1.76720000006258|2"
+      }
+    },
+    {
+      "name": "Preferences persist on reload",
+      "passed": true
+    },
+    {
+      "name": "Rapid clicking stays in valid round state",
+      "passed": true,
+      "detail": {
+        "state": "Decision",
+        "streak": "0",
+        "balance": "1.66720000006258|2",
+        "multiplier": "1|0",
+        "outcome": "Push",
+        "predictions": "18",
+        "currentRank": 4,
+        "currentSuit": 0,
+        "higher": 40,
+        "lower": 8,
+        "equal": 2,
+        "stage": 0,
+        "modal": false,
+        "pressure": false,
+        "reducedMotion": true,
+        "sound": false,
+        "music": false
+      }
+    },
+    {
+      "name": "Rapid clicking accepts exactly one prediction",
+      "passed": true,
+      "detail": {
+        "before": "17",
+        "after": "18"
+      }
+    },
+    {
+      "name": "Timed window reached in production deck",
+      "passed": true,
+      "detail": {
+        "state": "Decision",
+        "streak": "5",
+        "balance": "1.66720000006258|2",
+        "multiplier": "3.13492169523872|0",
+        "outcome": "Correct",
+        "predictions": "24",
+        "currentRank": 5,
+        "currentSuit": 3,
+        "higher": 32,
+        "lower": 9,
+        "equal": 3,
+        "stage": 1,
+        "modal": false,
+        "pressure": true,
+        "reducedMotion": true,
+        "sound": false,
+        "music": false
+      }
+    },
+    {
+      "name": "Settings pauses the live decision timer",
+      "passed": true
+    },
+    {
+      "name": "Timeout ends the round without auto-predicting",
+      "passed": true,
+      "detail": {
+        "state": "Ended",
+        "streak": "5",
+        "balance": "1.66720000006258|2",
+        "multiplier": "3.13492169523872|0",
+        "outcome": "Timeout",
+        "predictions": "24",
+        "currentRank": 5,
+        "currentSuit": 3,
+        "higher": 32,
+        "lower": 9,
+        "equal": 3,
+        "stage": 1,
+        "modal": true,
+        "pressure": true,
+        "reducedMotion": true,
+        "sound": false,
+        "music": false
+      }
+    }
+  ],
+  "frameStats": {
+    "samples": 120,
+    "averageMs": 8.302500000000752,
+    "maxMs": 8.5,
+    "heap": 66376125
+  },
+  "errors": [],
+  "warnings": [
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat"
+  ],
+  "outcomes": [
+    "Correct",
+    "Wrong",
+    "Push"
+  ],
+  "maxStreak": 6,
+  "predictions": 16
+}
