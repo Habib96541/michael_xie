@@ -1,0 +1,248 @@
+PEGRUSH — PHASE 1 POLISH PASS
+2026-11-01 / Asia-Dhaka
+
+SCOPE AND ACCEPTANCE
+Refine the existing Phase 1 Unity game: cohesive UI, licensed typography,
+physical drop distribution and gameplay feedback. Preserve the original economy
+transaction/recovery guarantees, rapid input, pooling, 8–16 rows, three profiles,
+responsive WebGL and virtual coins only. No new metagame, purchases or auto-drop.
+This is a quality pass, not a claim of completed cross-platform publishing QA.
+
+INSPECTION AND PRESERVATION
+No applicable AGENTS.md found at workspace/ancestor locations. Git was clean at
+start. Read Phase1Sprint1.txt, original runtime/editor code and verification.
+Played the previous HTTP build and captured Before-1600x900.png. Original UI was
+sparse, the board small, typography generic, controls visually undifferentiated,
+and pocket labels lacked explicit mapping. Observed outward-carrying motion;
+measured its distribution before changing physics.
+Unity 6000.3.10f1 retained; compatible installed Editor, WebGL module and license.
+Single source baseline: SprintDoc/Polish/BaselineSource.tar.
+Previous playable version: Builds/Phase1Sprint1 (complete former WebGL folder).
+Original sprites, font source, scenes, GUIDs and unrelated user files retained.
+
+DESIGN / TYPOGRAPHY
+Deep navy foundation, teal surfaces, fine rounded outlines and mint emphasis.
+Landscape: dominant board frame on the left, dedicated controls panel on right.
+Portrait/tablet: compact header, board, grouped controls and footer; independent
+camera framing. Canvas safe-area bounds determine layout. Viewport changes do
+not change physics geometry. Explicit Green/Gold/Red choices replace cycling.
+Buttons have distinct hover/pressed/disabled colors and focus/hover outlines.
+Pocket labels have vertical guide lines from their receiving lane, alternating
+label heights to preserve readable widths. Each physical pocket keeps its index.
+Bounded per-pocket earned text merges rapid arrivals, highlights the receiver,
+and expires after 1.15s. Reduced effects removes flashes and floating results.
+Release marker flashes briefly. Result history remains bounded to five; portrait
+shows the last three. Chime varies pitch across four steps without changing the
+physics random stream; 90ms throttle bounds overlap to roughly two short voices.
+
+Outfit Regular 400 and Bold 700: The Outfit Project Authors, SIL OFL 1.1.
+Source: https://github.com/google/fonts/tree/main/ofl/outfit
+License: Assets/PegRush/Fonts/OFL.txt. Original variable font retained alongside
+static instances created with fontTools and correct Regular/Bold names.
+TextMeshPro static SDF atlases include ASCII and every used UI symbol (multiply,
+arrows, middle dot, bullet, dashes and minus). Authoring fails on missing glyphs.
+TMP Essential Resources came from the installed uGUI package; its Liberation
+Sans SDF is the fallback and retains the package's included font license.
+All visible game typography uses Outfit; no third-party branding copied.
+Original procedural 128px glossy orb, luminous peg, filled rounded panel and
+thin hollow outline sprites are in Assets/PegRush/Polish. Source generation is
+in PegRushPolishAuthoring.cs. Center pivots, bilinear filtering, no mipmaps,
+uncompressed alpha sprites. Panel/outline sprites have 24px nine-slice borders.
+Original 64px assets remain unchanged in Generated.
+
+PHYSICS DIAGNOSIS AND CHOSEN CHANGES
+The old triangle began with one peg. First deflections could ride its expanding
+outer edge; the measured distribution had strong edge concentration.
+Default 12-row baseline: central-band share 26.10%, outer-four share 61.95%.
+Central band means |pocketIndex-R/2| <= R/4; outer four means 0,1,R-1,R.
+A larger-peg/lower-bounce candidate made edge concentration and trapping worse;
+it was rejected. Candidate data is retained for diagnosis rather than hidden.
+
+Chosen configuration (candidate-d, then rerun as after using authored assets):
+Top row has 3 pegs; row r has r+3 pegs centered x=c-(r+2)/2.
+For R rows: R*(R+5)/2 pegs, still R+1 pockets. Bottom-row pegs are the boundaries
+between the R+1 pocket centers x=i-R/2. No reward-directed forces or steering.
+Peg diameter .25; ball diameter .28; vertical row pitch .8; horizontal pitch 1.
+Last row y=2; top row y=2+(R-1)*.8. Spawn 1 unit above top peg with x uniform
+[-.22,.22], zero initial velocity. Gravity scale 1.6, friction .05, restitution
+.6, linear damping .35, Continuous 2D collision detection and interpolation.
+Outer wall centers +/-((R+1)/2+.1); bottom sensors/dividers retain alignment.
+All values are authored in GameConfig.asset and shared across profiles.
+Profiles change color and reward table only. No landing outcome is preselected.
+
+MEASUREMENT METHOD AND RESULTS
+PegRushDistribution.cs uses actual production board generation, ball prefab,
+colliders, materials and Rigidbody2D solver in an isolated PhysicsScene2D.
+Editor-only DistributionProbe observes trigger entry and uses the same lifecycle
+thresholds. It resets position, rotation, velocity, angular velocity, damping,
+age and stuck timer each sample. Batch size 50; ball-ball collisions disabled.
+Fixed step .02s. Recorded seed = 741923 + rows. Continue sampling until 2,000
+physical pocket completions, separately retaining every accepted/refunded drop.
+Rows 8–16 each have 2,000 before and 2,000 after completions: 36,000 completed
+comparison samples. Candidate experiments are additional independent runs.
+This is Editor-engine measurement, not 36,000 WebGL UI activations.
+Raw sample CSVs, per-row JSONs, Summary.csv/JSON and plots are in
+SprintDoc/Polish/Distribution. JSON includes frequencies, plug-in standard errors
+and 95% marginal Wilson intervals. Histograms show Wilson error bars.
+Recorded durations are simulation seconds with one-step .02s quantization.
+The before command explicitly restores baseline physics parameters for repeats.
+
+After: 18,000 pocket completions, 18,001 accepted, one stuck refund (14 rows),
+zero escaped balls, zero timeouts. At 12 rows: central-band 59.95%, outer-four
+26.25%, mean 4.778s, p95 6.78s. Edge pockets remain reachable in every row test.
+The shape is broadly center-weighted, not an exact binomial distribution.
+Left/right z statistics and individual mirrored bins are reported with sampling
+uncertainty. Finite counts are not perfectly symmetric; do not tune toward exact
+matching samples or claim statistical certification. R12 left/right z=-2.43.
+No casino-equivalent odds, guaranteed returns or fairness-certification claims.
+
+REWARD REVIEW
+Old Red 25x edges caused excessive virtual-wallet growth even after the physics
+fix. On the new R12 samples, old tables averaged approximately 1.15/2.52/5.53
+coins credited per coin reserved (Green/Gold/Red). This motivated an arcade
+balancing change, separate from solver tuning. These are observed sample ratios,
+not guaranteed future returns, casino odds or a payout certification.
+New symmetric tables use e=abs(2*i/R-1), with integer hundredths:
+ Green = round(75 + 75*e^2), range .75–1.5x.
+ Gold  = round(50 + 250*e^3), range .5–3x.
+ Red   = round(25 + 575*e^5), range .25–6x.
+Odd row counts have two centers slightly above the formulas' minima.
+Green is flatter; Gold intermediate; Red retains small center payouts and larger
+edge rewards. See ArcadeCoinPacing.json for all 27 actual tables and observed
+before/after table ratios on the same physical samples.
+Fixed-point wallet and half-up rounding to .01 coin are unchanged.
+Pending transactions still clone amount, rows, profile and complete reward table.
+Older valid pending saves still refund once; save schema/key unchanged.
+
+ARCHITECTURE / AFFECTED SOURCE
+GameConfig: authored physics fields plus original reward-table validation.
+Board: config-driven pitch, size, top count and runtime material cloned from the
+existing material. Static 2D board remains unchanged during active drops/resizes.
+Ball: applies shared config damping/size/material and resets Rigidbody position.
+GameSession: explicit profile selection, cached result strings, feedback hooks.
+GameUI: composition, responsive layout, input focus and read-only test rectangles.
+UIFactory: sliced panels, SDF typography, buttons and shared visual states.
+UITheme: font/sprite/color asset references.
+HomePresentation / ModalPresentation / PocketPresentation: focused screen/effect
+presentation. ButtonFocus: pointer and keyboard focus outline, no reward logic.
+AudioEffects: bounded pitch variation; BrowserStatus: read-only controls/settings.
+Wallet / Pocket remain the economy and physical result authorities unchanged.
+PegRushPolishAuthoring: one-time font/art/theme/config authoring, refuses to
+repeat after Applied.txt. Normal Build does not regenerate any of these assets.
+Original connected scene and Ball/Peg/UI prefabs reference new theme/sprites.
+HTML loader has matching palette, progress indicator and accessible fullscreen.
+
+BUILD / RUN / REPEAT
+Use Unity 6000.3.10f1 with WebGL module/license. Open
+Assets/PegRush/Generated/PegRush.unity. Use PegRush/3 Build WebGL or, with Editor
+closed: powershell -ExecutionPolicy Bypass -File Tools/Build-WebGL.ps1
+Output: Builds/WebGL (whole folder required).
+Run: powershell -ExecutionPolicy Bypass -File Tools/Serve-WebGL.ps1
+Browse http://127.0.0.1:8080; never use file://.
+No compression: serve .wasm as application/wasm, .js as JavaScript, .data as binary.
+Static HTTPS hosting works; no server backend or cross-origin isolation needed.
+Settings and wallet use browser-local, same-origin storage; clearing it erases
+progress. Interrupted reservations refund once; no unload dependence.
+
+Repeat engine regressions: Tools/Verify-Engine.ps1 (Editor closed).
+Repeat distributions using Unity -batchmode -projectPath <project> -executeMethod
+PegRushDistribution.Before or PegRushDistribution.After; omit -quit because the
+harness enters Play mode and exits itself. Add -logFile <path>. Before explicitly
+uses original physics; After reads the authored config. Candidate reads tuning.json
+with optional -distributionLabel candidate-name. It does not change saved config.
+Plot: python Tools/Plot-Distribution.py (Python with matplotlib/numpy installed).
+
+ACTUAL VERIFICATION / COVERAGE
+Configuration and deterministic transaction/refund/recovery tests: PASS.
+Editor engine regression: PASS for 50 active balls, capacity/no charge, actual
+pocket results, pool reuse, locks, modal blocking, draining/home, injected escaped,
+stuck and timeout refunds, duplicate completion and timer reset. Peg count formula
+updated and validated for every row; R+1 pockets validated for every row.
+These manual simulation checks are not performance measurements.
+Browser results, final build hashes and screenshots are appended after execution.
+
+BROWSER DIAGNOSTIC NOTE
+The first render exposed wrapped multiplier values at 768x1024 with 16 rows.
+Portrait scaling now reserves more board height, and multiplier text is explicitly
+single-line with bounded sizing. A release-flash hook was connected and phone Home
+uses a compact decorative peg illustration. Affected layouts are rebuilt/retested.
+Six WebGL capability warnings were observed at initialization. Instrumented
+getInternalformatParameter calls returned null for renderbuffer internal formats
+0x8f94, 0x8f95, 0x8f97, 0x8f98, 0x8f99, 0x8f9b. They are runtime capability
+queries, not missing-font warnings. Rendering continued; no suppression added.
+Final report distinguishes these warnings from JavaScript/application errors.
+
+DATA INTEGRITY / STATISTICAL CONTEXT
+Integrity.json validates each pocket-count sum, completion target and accepted =
+completed + refunded relationship. Baseline: 18,193 accepted, 18,000 completed,
+193 stuck refunds. After: 18,001 accepted, 18,000 completed, one stuck refund.
+No escapes or timeouts in either comparison. Combined left/right z after=-1.51;
+individual row statistics remain visible, including R12=-2.43. These figures
+are sampling diagnostics, not proof that physical or numeric symmetry is exact.
+On R12 samples, new table observed credit/cost ratios were Green 1.0101,
+Gold 1.1975 and Red 1.4940. Player outcomes vary and this is a virtual-coin arcade.
+
+REPEAT BROWSER CHECKS
+Install Playwright and Chromium in a separate test-tool directory. Set
+PEGRUSH_PLAYWRIGHT to that directory's node_modules/playwright path, then run
+node Tools/Verify-Polish.cjs while Tools/Serve-WebGL.ps1 is serving the build.
+The test uses isolated browser contexts, real mouse/key injection, emulated
+mobile touch and separate synchronous engine-call capacity saturation. It writes
+BrowserVerification.json and actual screenshots under SprintDoc/Polish.
+
+FINAL WEBGL AND BROWSER RESULTS
+Final build: SUCCESS, Unity 6000.3.10f1. Log: Logs/PolishWebGL.log.
+SprintDoc/Polish/BuildManifest.json records the five exact delivered file hashes.
+Total output is approximately 62 MB uncompressed. Required files exist, metadata
+exists for connected Unity assets, and HTTP serves WASM as application/wasm.
+Previous Builds/Phase1Sprint1 hashes match the original Sprint 1 manifest.
+Normal build and server commands above remain valid. Server runs at port 8080.
+
+BrowserVerification.json: all 24 assertions PASS against the final build.
+Covers mouse/Space, holding protection, 20 repeated real mouse activations,
+Tab/Enter navigation, 50-ball saturation and no charge for 51st call, settlement,
+snapshots, locks, modals, settings saves, drain/home, once-only reload recovery,
+16-row Red selection, emulated touch/rotation, controlled freeze/resume,
+fullscreen, insufficient-funds rejection, refill and missing-glyph checks.
+Capacity saturation uses synchronous engine calls; it is not a claim of 51 human
+clicks in one frame. Rapid mouse is separately checked with real event injection.
+Supplementary RapidTouchAudio.json: ten actual emulated taps 80ms apart accepted
+exactly ten balls, with 10 still active; audio context state was running after
+user gesture. This is touch emulation, not physical hardware verification.
+
+Performance: effects enabled/unmuted during saturation. Twenty samples at 75ms
+spacing, all with exactly 50 active balls. Mean Unity delta 17.4ms (~57.5 FPS),
+range 17–18ms. Chromium 156.0.8078.4, Windows, Intel UHD Graphics 730 / ANGLE D3D11.
+No application/JavaScript errors. Repeated startup warnings from GPU format
+capability queries are retained in the report (33 across the full multi-load
+suite); no missing-font-glyph warnings. No diagnostics were suppressed.
+This is a short local sample, not a mobile guarantee or long soak benchmark.
+
+19 screenshots include the before frame, after default and 16-row Red at all
+five requested resolutions, Home desktop/phone, settings, help, stress and touch.
+Required layouts and both longest-row sets were visually inspected: every row,
+pocket and multiplier visible; no observed clipping/wrapping of multipliers after
+the tablet correction. Font, guide-line mapping, focus states and rounded borders
+were inspected in actual WebGL renders, not mockups.
+
+Two automated test harness timing errors were diagnosed before reruns: control
+telemetry can precede first-frame Canvas scaling and can lag a viewport resize
+by one sample. The harness now waits for layout settlement before clicks. The
+final suite completed; diagnostic failure reports remain in Logs, not hidden.
+These corrections did not alter gameplay or the delivered wasm.
+
+COVERAGE LIMITS / REMAINING ISSUES
+Physical phones/tablets, Safari, Firefox and platform stores are untested.
+Genuine hidden-tab visibility transitions remain unverified in headless Chromium;
+controlled CDP frozen/active suspension was tested and is labeled separately.
+Rotation at 800x360 was checked for drop continuity; visual acceptance is the five
+specified resolutions. Very small landscape screens still use compact scaled
+controls and need physical-device UX review before publishing.
+Browser saves remain local/origin-specific, editable, and vulnerable to clearing
+or eviction. Version-1 save schema and interruption policy remain unchanged.
+No cloud sync, casino claims, exact distribution guarantee or release/store
+certification is implied by the polish target. One recoverable stuck sample
+occurred in 18,001 final physics drops; recovery refunded it without reward.
+Unity changed only build-derived shader-prefilter cache fields in unrelated
+Mobile/PC pipeline assets; those were restored byte-for-byte to the baseline.
+No unrelated user changes were discarded. Phase 1 scope remains unchanged.

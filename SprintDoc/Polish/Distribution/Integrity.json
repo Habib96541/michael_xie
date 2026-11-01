@@ -1,0 +1,19 @@
+{
+  "before": {
+    "Accepted": 18193,
+    "Completed": 18000,
+    "Refunds": 193,
+    "Escaped": 0,
+    "Stuck": 193,
+    "TimedOut": 0
+  },
+  "after": {
+    "Accepted": 18001,
+    "Completed": 18000,
+    "Refunds": 1,
+    "Escaped": 0,
+    "Stuck": 1,
+    "TimedOut": 0
+  },
+  "aggregateLeftRightZ": -1.5098112805215145
+}

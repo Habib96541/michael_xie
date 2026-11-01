@@ -116,3 +116,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PegRush.GameUI
   _rounded: {fileID: 21300000, guid: 1255e90835773304bbcafe6e22f59c82, type: 3}
   _font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  _theme: {fileID: 11400000, guid: 49136bc55e99690409e9f523c9b627d1, type: 2}

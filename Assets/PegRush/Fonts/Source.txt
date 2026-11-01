@@ -1,0 +1,2 @@
+Outfit by The Outfit Project Authors. Source: https://github.com/google/fonts/tree/main/ofl/outfit
+SIL Open Font License 1.1, see OFL.txt. Static 400/700 instances generated with fontTools; original variable font retained.

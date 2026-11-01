@@ -1,0 +1,855 @@
+{
+  "environment": {
+    "browser": "156.0.8078.4",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004692) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "http": "http://127.0.0.1:8080",
+    "physicalDevice": false
+  },
+  "checks": [
+    {
+      "name": "Keyboard Enter starts game",
+      "pass": true
+    },
+    {
+      "name": "Mouse click creates one ball",
+      "pass": true,
+      "details": {
+        "State": "Playing",
+        "Active": 1,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 1,
+        "Coins": 99000,
+        "Notice": "In flight \u2022 controls unlock when the board clears",
+        "FrameMilliseconds": 17,
+        "Muted": false,
+        "Reduced": false,
+        "Controls": [
+          {
+            "Name": "Home",
+            "X": 1116,
+            "Y": 33.60003662109375,
+            "Width": 75.199951171875,
+            "Height": 38.4000244140625,
+            "Interactable": true
+          },
+          {
+            "Name": "Settings",
+            "X": 1207.199951171875,
+            "Y": 33.60003662109375,
+            "Width": 88,
+            "Height": 38.4000244140625,
+            "Interactable": true
+          },
+          {
+            "Name": "Amount",
+            "X": 1121.5999755859375,
+            "Y": 206.4000244140625,
+            "Width": 227.199951171875,
+            "Height": 43.20001220703125,
+            "Interactable": true
+          },
+          {
+            "Name": "RowsMinus",
+            "X": 1029.5999755859375,
+            "Y": 293.6000061035156,
+            "Width": 43.199951171875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "RowsPlus",
+            "X": 1213.5999755859375,
+            "Y": 293.6000061035156,
+            "Width": 43.199951171875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGreen",
+            "X": 1043.7333984375,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGold",
+            "X": 1121.599853515625,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileRed",
+            "X": 1199.466796875,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "Drop",
+            "X": 1121.5999755859375,
+            "Y": 552,
+            "Width": 227.199951171875,
+            "Height": 57.600006103515625,
+            "Interactable": true
+          },
+          {
+            "Name": "FreeRefill",
+            "X": 1121.5999755859375,
+            "Y": 664,
+            "Width": 259.199951171875,
+            "Height": 38.400001525878906,
+            "Interactable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Held Space creates one ball",
+      "pass": true,
+      "details": {
+        "State": "Playing",
+        "Active": 2,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 2,
+        "Coins": 98000,
+        "Notice": "In flight \u2022 controls unlock when the board clears",
+        "FrameMilliseconds": 16,
+        "Muted": false,
+        "Reduced": false,
+        "Controls": [
+          {
+            "Name": "Home",
+            "X": 1116,
+            "Y": 33.60003662109375,
+            "Width": 75.199951171875,
+            "Height": 38.4000244140625,
+            "Interactable": true
+          },
+          {
+            "Name": "Settings",
+            "X": 1207.199951171875,
+            "Y": 33.60003662109375,
+            "Width": 88,
+            "Height": 38.4000244140625,
+            "Interactable": true
+          },
+          {
+            "Name": "Amount",
+            "X": 1121.5999755859375,
+            "Y": 206.4000244140625,
+            "Width": 227.199951171875,
+            "Height": 43.20001220703125,
+            "Interactable": true
+          },
+          {
+            "Name": "RowsMinus",
+            "X": 1029.5999755859375,
+            "Y": 293.6000061035156,
+            "Width": 43.199951171875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "RowsPlus",
+            "X": 1213.5999755859375,
+            "Y": 293.6000061035156,
+            "Width": 43.199951171875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGreen",
+            "X": 1043.7333984375,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGold",
+            "X": 1121.599853515625,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileRed",
+            "X": 1199.466796875,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "Drop",
+            "X": 1121.5999755859375,
+            "Y": 552,
+            "Width": 227.199951171875,
+            "Height": 57.600006103515625,
+            "Interactable": true
+          },
+          {
+            "Name": "FreeRefill",
+            "X": 1121.5999755859375,
+            "Y": 664,
+            "Width": 259.199951171875,
+            "Height": 38.400001525878906,
+            "Interactable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "20 rapid mouse activations",
+      "pass": true,
+      "details": {
+        "State": "Playing",
+        "Active": 20,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 22,
+        "Coins": 80350,
+        "Notice": "In flight \u2022 controls unlock when the board clears",
+        "FrameMilliseconds": 17,
+        "Muted": false,
+        "Reduced": false,
+        "Controls": [
+          {
+            "Name": "Home",
+            "X": 1116,
+            "Y": 33.60003662109375,
+            "Width": 75.199951171875,
+            "Height": 38.4000244140625,
+            "Interactable": true
+          },
+          {
+            "Name": "Settings",
+            "X": 1207.199951171875,
+            "Y": 33.60003662109375,
+            "Width": 88,
+            "Height": 38.4000244140625,
+            "Interactable": true
+          },
+          {
+            "Name": "Amount",
+            "X": 1121.5999755859375,
+            "Y": 206.4000244140625,
+            "Width": 227.199951171875,
+            "Height": 43.20001220703125,
+            "Interactable": true
+          },
+          {
+            "Name": "RowsMinus",
+            "X": 1029.5999755859375,
+            "Y": 293.6000061035156,
+            "Width": 43.199951171875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "RowsPlus",
+            "X": 1213.5999755859375,
+            "Y": 293.6000061035156,
+            "Width": 43.199951171875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGreen",
+            "X": 1043.7333984375,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGold",
+            "X": 1121.599853515625,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileRed",
+            "X": 1199.466796875,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "Drop",
+            "X": 1121.5999755859375,
+            "Y": 552,
+            "Width": 227.199951171875,
+            "Height": 57.600006103515625,
+            "Interactable": true
+          },
+          {
+            "Name": "FreeRefill",
+            "X": 1121.5999755859375,
+            "Y": 664,
+            "Width": 259.199951171875,
+            "Height": 38.400001525878906,
+            "Interactable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tab traversal and Enter activation",
+      "pass": true
+    },
+    {
+      "name": "50 active and 51st rejected without charge",
+      "pass": true,
+      "details": {
+        "State": "Playing",
+        "Active": 50,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 73,
+        "Coins": 53320,
+        "Notice": "Board full \u2014 wait for a ball to land. No coins charged.",
+        "FrameMilliseconds": 17,
+        "Muted": false,
+        "Reduced": false,
+        "Controls": [
+          {
+            "Name": "Home",
+            "X": 1116,
+            "Y": 33.60003662109375,
+            "Width": 75.199951171875,
+            "Height": 38.4000244140625,
+            "Interactable": true
+          },
+          {
+            "Name": "Settings",
+            "X": 1207.199951171875,
+            "Y": 33.60003662109375,
+            "Width": 88,
+            "Height": 38.4000244140625,
+            "Interactable": true
+          },
+          {
+            "Name": "Amount",
+            "X": 1121.5999755859375,
+            "Y": 206.4000244140625,
+            "Width": 227.199951171875,
+            "Height": 43.20001220703125,
+            "Interactable": true
+          },
+          {
+            "Name": "RowsMinus",
+            "X": 1029.5999755859375,
+            "Y": 293.6000061035156,
+            "Width": 43.199951171875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "RowsPlus",
+            "X": 1213.5999755859375,
+            "Y": 293.6000061035156,
+            "Width": 43.199951171875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGreen",
+            "X": 1043.7333984375,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGold",
+            "X": 1121.599853515625,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileRed",
+            "X": 1199.466796875,
+            "Y": 381.6000061035156,
+            "Width": 71.4666748046875,
+            "Height": 40,
+            "Interactable": false
+          },
+          {
+            "Name": "Drop",
+            "X": 1121.5999755859375,
+            "Y": 552,
+            "Width": 227.199951171875,
+            "Height": 57.600006103515625,
+            "Interactable": true
+          },
+          {
+            "Name": "FreeRefill",
+            "X": 1121.5999755859375,
+            "Y": 664,
+            "Width": 259.199951171875,
+            "Height": 38.400001525878906,
+            "Interactable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "50 balls clear pending journal",
+      "pass": true
+    },
+    {
+      "name": "Per-ball cost and table snapshot",
+      "pass": true,
+      "details": {
+        "Id": "ac741ffd337049be9a75af5d05317a9e",
+        "Amount": 2500,
+        "Rows": 12,
+        "Profile": 0,
+        "Table": [
+          150,
+          127,
+          108,
+          94,
+          83,
+          77,
+          75,
+          77,
+          83,
+          94,
+          108,
+          127,
+          150
+        ]
+      }
+    },
+    {
+      "name": "Rows and profiles disabled while active",
+      "pass": true
+    },
+    {
+      "name": "Modal blocks Space drop",
+      "pass": true
+    },
+    {
+      "name": "Settings persisted",
+      "pass": true
+    },
+    {
+      "name": "Draining rejects new drops",
+      "pass": true
+    },
+    {
+      "name": "Drain returns home after resolution",
+      "pass": true
+    },
+    {
+      "name": "Reload refunds pending once",
+      "pass": true,
+      "details": {
+        "State": "Home",
+        "Active": 0,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 0,
+        "Coins": 104095,
+        "Notice": "Choose your rhythm. Drop into possibility.",
+        "FrameMilliseconds": 17,
+        "Muted": true,
+        "Reduced": true,
+        "Controls": [
+          {
+            "Name": "Play",
+            "X": 260,
+            "Y": 464,
+            "Width": 264,
+            "Height": 48,
+            "Interactable": true
+          },
+          {
+            "Name": "HowToPlay",
+            "X": 191.60000610351562,
+            "Y": 520.7999877929688,
+            "Width": 127.20001220703125,
+            "Height": 40,
+            "Interactable": true
+          },
+          {
+            "Name": "HomeSettings",
+            "X": 328.3999938964844,
+            "Y": 520.7999877929688,
+            "Width": 127.20001220703125,
+            "Height": 40,
+            "Interactable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Repeat reload preserves balance",
+      "pass": true
+    },
+    {
+      "name": "16 rows and Red selected",
+      "pass": true
+    },
+    {
+      "name": "10 emulated taps without duplicate mouse events",
+      "pass": true,
+      "details": {
+        "State": "Playing",
+        "Active": 8,
+        "Rows": 12,
+        "Profile": 0,
+        "Drops": 10,
+        "Coins": 92210,
+        "Notice": "In flight \u2022 controls unlock when the board clears",
+        "FrameMilliseconds": 17,
+        "Muted": false,
+        "Reduced": false,
+        "Controls": [
+          {
+            "Name": "Home",
+            "X": 41.77777099609375,
+            "Y": 68.4444580078125,
+            "Width": 55.111114501953125,
+            "Height": 44.4444580078125,
+            "Interactable": true
+          },
+          {
+            "Name": "Settings",
+            "X": 110.22221374511719,
+            "Y": 68.4444580078125,
+            "Width": 71.1111068725586,
+            "Height": 44.4444580078125,
+            "Interactable": true
+          },
+          {
+            "Name": "Amount",
+            "X": 100,
+            "Y": 544,
+            "Width": 143.11111450195312,
+            "Height": 42.66667175292969,
+            "Interactable": true
+          },
+          {
+            "Name": "RowsMinus",
+            "X": 211.5555419921875,
+            "Y": 544,
+            "Width": 44.44444274902344,
+            "Height": 42.66667175292969,
+            "Interactable": false
+          },
+          {
+            "Name": "RowsPlus",
+            "X": 318.22222900390625,
+            "Y": 544,
+            "Width": 44.4444580078125,
+            "Height": 42.66667175292969,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGreen",
+            "X": 76.59259033203125,
+            "Y": 616.888916015625,
+            "Width": 96.29630279541016,
+            "Height": 42.66667175292969,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileGold",
+            "X": 180.00001525878906,
+            "Y": 616.888916015625,
+            "Width": 96.29629516601562,
+            "Height": 42.66667175292969,
+            "Interactable": false
+          },
+          {
+            "Name": "ProfileRed",
+            "X": 283.40740966796875,
+            "Y": 616.888916015625,
+            "Width": 96.29629516601562,
+            "Height": 42.66667175292969,
+            "Interactable": false
+          },
+          {
+            "Name": "Drop",
+            "X": 180,
+            "Y": 690.6666870117188,
+            "Width": 303.111083984375,
+            "Height": 44.44444274902344,
+            "Interactable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rotation preserves accepted drops",
+      "pass": true
+    },
+    {
+      "name": "Controlled freeze/resume retains drop",
+      "pass": true
+    },
+    {
+      "name": "Fullscreen user gesture",
+      "pass": true
+    },
+    {
+      "name": "Insufficient funds do not charge",
+      "pass": true
+    },
+    {
+      "name": "Free refill when clear and below minimum",
+      "pass": true
+    },
+    {
+      "name": "No console errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "No missing font glyph warnings",
+      "pass": true,
+      "details": [
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_OPERATION: drawBuffers: BACK or NONE",
+        "WebGL: INVALID_OPERATION: drawBuffers: BACK or NONE",
+        "WebGL: INVALID_OPERATION: drawArrays: no buffer is bound to enabled attribute",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+        "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat"
+      ]
+    }
+  ],
+  "performance": [
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 18
+    },
+    {
+      "active": 50,
+      "ms": 18
+    },
+    {
+      "active": 50,
+      "ms": 18
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 18
+    },
+    {
+      "active": 50,
+      "ms": 18
+    },
+    {
+      "active": 50,
+      "ms": 18
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 17
+    },
+    {
+      "active": 50,
+      "ms": 18
+    },
+    {
+      "active": 50,
+      "ms": 18
+    }
+  ],
+  "screenshots": [
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Home-1600x900.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Gameplay-360x800.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Gameplay-720x1280.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Gameplay-768x1024.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Gameplay-1280x720.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Gameplay-1600x900.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Stress50-1280x720.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Settings-1280x720.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Rows16-Red-360x800.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Rows16-Red-720x1280.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Rows16-Red-768x1024.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Rows16-Red-1280x720.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Rows16-Red-1600x900.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Settings-360x800.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-HowToPlay-360x800.png",
+    "C:\\Project-Files_Rahat\\Projects\\PegRush\\SprintDoc\\Polish\\Screenshots\\After-Touch-360x800.png"
+  ],
+  "errors": [],
+  "warnings": [
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_OPERATION: drawBuffers: BACK or NONE",
+    "WebGL: INVALID_OPERATION: drawBuffers: BACK or NONE",
+    "WebGL: INVALID_OPERATION: drawArrays: no buffer is bound to enabled attribute",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat"
+  ],
+  "complete": true,
+  "performanceMeanMs": 17.4,
+  "coverageLimits": [
+    "Physical devices, Safari and Firefox untested.",
+    "CDP freeze is controlled suspension, not proof of genuine tab hiding.",
+    "Short frame-time sample, not a long soak benchmark."
+  ],
+  "buildManifest": [
+    {
+      "Path": "Builds\\WebGL\\index.html",
+      "Bytes": 2565,
+      "SHA256": "2DDD3B9D8B59CA37526351C92B88A00072E72472CA743FFC3691EF6A0882FBE9"
+    },
+    {
+      "Path": "Builds\\WebGL\\Build\\WebGL.data",
+      "Bytes": 13783558,
+      "SHA256": "6A1D6F0F7EE8CF60E83380E0CEBD152C10A78814024BE289E9672CEED0498A60"
+    },
+    {
+      "Path": "Builds\\WebGL\\Build\\WebGL.framework.js",
+      "Bytes": 457254,
+      "SHA256": "E77CB166E458B544726A7AED94CEA8BD47F94D87E6E8778B3A40754AD77DF679"
+    },
+    {
+      "Path": "Builds\\WebGL\\Build\\WebGL.loader.js",
+      "Bytes": 26982,
+      "SHA256": "D8AB486529359329EFF24F4E7939F94078A1D712D33A7005F7AD42B655B3812B"
+    },
+    {
+      "Path": "Builds\\WebGL\\Build\\WebGL.wasm",
+      "Bytes": 47754706,
+      "SHA256": "2014C8B10DE78819DE931A9FFCEC4D7E64C3EA11C2C20C4AA51B11DC3CD1D272"
+    }
+  ],
+  "rapidTouchAudio": {
+    "tapCount": 10,
+    "spacingMs": 80,
+    "observedDrops": 10,
+    "passed": true,
+    "audioContexts": [
+      "running"
+    ],
+    "audioRunning": true
+  },
+  "visualInspection": {
+    "resolutions": [
+      "360x800",
+      "720x1280",
+      "768x1024",
+      "1280x720",
+      "1600x900"
+    ],
+    "defaultAnd16RowRed": true,
+    "inspected": true,
+    "phoneHomeSettingsHelp": true
+  }
+}

@@ -1,0 +1,1 @@
+Polish authored once. Menus Build and Validate do not regenerate assets or tuning.

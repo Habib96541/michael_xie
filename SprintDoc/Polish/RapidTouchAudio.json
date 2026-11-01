@@ -1,0 +1,10 @@
+{
+  "tapCount": 10,
+  "spacingMs": 80,
+  "observedDrops": 10,
+  "passed": true,
+  "audioContexts": [
+    "running"
+  ],
+  "audioRunning": true
+}

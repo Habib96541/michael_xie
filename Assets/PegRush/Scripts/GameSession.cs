@@ -26,6 +26,8 @@ namespace PegRush
         private SessionState _beforeModal;
         private readonly Queue<string> _history = new Queue<string>();
         public GameConfig Config => _config;
+        public PhysicsMaterial2D BoardMaterial => _board.Material;
+        public UIControlSnapshot[] Controls => _ui.Controls();
         public bool Reduced => _wallet.Data.Reduced;
         public int Rows => _rows;
         public int Profile => _profile;
@@ -36,7 +38,10 @@ namespace PegRush
         public bool Muted => _wallet.Data.Muted;
         public SessionState State { get; private set; }
         public string Notice { get; private set; } = "Choose your rhythm. Drop into possibility.";
-        public string History => string.Join("   •   ", _history);
+        private string _historyText = "";
+        private string _compactHistoryText = "";
+        public string History => _historyText;
+        public string CompactHistory => _compactHistoryText;
         public static readonly Color[] Colors = { new Color(0.22f, 1f, 0.66f), new Color(1f, 0.76f, 0.25f), new Color(1f, 0.35f, 0.4f) };
         public static readonly string[] Profiles = { "Green", "Gold", "Red" };
 
@@ -60,6 +65,7 @@ namespace PegRush
                 ball.gameObject.SetActive(false);
                 _pool.Add(ball);
             }
+            _board.Configure(_config);
             _board.Generate(_rows);
             _ui.Initialize(this, _camera);
             State = SessionState.Home;
@@ -90,7 +96,8 @@ namespace PegRush
             Ball ball = _pool.Find(item => !item.gameObject.activeSelf);
             _active++;
             _drops++;
-            ball.Launch(this, transaction, new Vector2(Random.Range(-0.16f, 0.16f), _rows + 2.1f), Colors[_profile], _config.Gravity);
+            ball.Launch(this, transaction, new Vector2(Random.Range(-_config.SpawnSpread, _config.SpawnSpread), _config.SpawnY(_rows)), Colors[_profile], _config.Gravity);
+            _ui.Released();
             Notice = "In flight • controls unlock when the board clears";
         }
         public bool Complete(Ball ball, string id, int pocket)
@@ -101,10 +108,13 @@ namespace PegRush
             string result = pocket < 0 ? "Recovered +" + Coins(reward) : "+" + Coins(reward);
             _history.Enqueue(result);
             while (_history.Count > 5) _history.Dequeue();
+            _historyText = string.Join("  /  ", _history);
+            string[] results = _history.ToArray();
+            _compactHistoryText = string.Join(" / ", results, System.Math.Max(0, results.Length - 3), System.Math.Min(3, results.Length));
             Notice = pocket < 0 ? "Ball recovered • reserved coins refunded" : "Pocket " + (pocket + 1) + " • earned " + Coins(reward) + " coins";
             if (pocket >= 0)
             {
-                _ui.Highlight(pocket);
+                _ui.ShowReward(pocket, reward);
                 _audio.Play(Muted);
             }
             if (_active == 0 && State == SessionState.Draining) State = SessionState.Home;
@@ -124,6 +134,11 @@ namespace PegRush
         {
             if (_active != 0 || State != SessionState.Playing) return;
             _profile = (_profile + 1) % 3;
+        }
+        public void SetProfile(int profile)
+        {
+            if (_active != 0 || State != SessionState.Playing) return;
+            _profile = Mathf.Clamp(profile, 0, 2);
         }
         public void ChangeAmount()
         {
@@ -182,5 +197,6 @@ namespace PegRush
         }
     }
 }
+
 
 

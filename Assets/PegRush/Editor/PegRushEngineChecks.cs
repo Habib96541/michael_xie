@@ -115,7 +115,7 @@ public static class PegRushEngineChecks
                 // inspect the generated root's newly active row settings here.
                 Check(session.Rows == rows, "Row control");
                 var parts = (System.Collections.Generic.List<GameObject>)typeof(Board).GetField("_parts", flags).GetValue(board);
-                Check(parts.Count(part => part.GetComponent<PegFlash>() != null) == rows * (rows + 1) / 2, "Peg count");
+                Check(parts.Count(part => part.GetComponent<PegFlash>() != null) == rows * (rows - 1) / 2 + rows * session.Config.TopPegCount, "Peg count");
                 Check(parts.Count(part => part.GetComponent<Pocket>() != null) == rows + 1, "Pocket count");
             }
             Directory.CreateDirectory("SprintDoc");

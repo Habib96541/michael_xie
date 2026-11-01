@@ -27,6 +27,11 @@ namespace PegRush
             _age = 0f;
             _stuck = 0f;
             transform.position = position;
+            transform.localScale = Vector3.one * session.Config.BallDiameter;
+            _body.position = position;
+            _body.rotation = 0f;
+            _body.linearDamping = session.Config.Damping;
+            GetComponent<Collider2D>().sharedMaterial = session.BoardMaterial;
             transform.rotation = Quaternion.identity;
             _visual.color = color;
             State = BallState.Falling;

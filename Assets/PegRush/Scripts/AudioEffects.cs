@@ -7,6 +7,7 @@ namespace PegRush
         private AudioSource _source;
         private AudioClip _tone;
         private float _last;
+        private int _sequence;
         private void Awake()
         {
             _source = gameObject.AddComponent<AudioSource>();
@@ -19,6 +20,7 @@ namespace PegRush
         {
             if (muted || Time.unscaledTime - _last < 0.09f) return;
             _last = Time.unscaledTime;
+            _source.pitch = 0.94f + (_sequence++ % 4) * 0.055f;
             _source.PlayOneShot(_tone);
         }
     }

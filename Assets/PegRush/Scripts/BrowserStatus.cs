@@ -21,6 +21,9 @@ namespace PegRush
             public long Coins;
             public string Notice;
             public float FrameMilliseconds;
+            public bool Muted;
+            public bool Reduced;
+            public UIControlSnapshot[] Controls;
         }
         private void Awake()
         {
@@ -40,7 +43,10 @@ namespace PegRush
                 Drops = _session.Drops,
                 Coins = _session.Balance,
                 Notice = _session.Notice,
-                FrameMilliseconds = Time.unscaledDeltaTime * 1000f
+                FrameMilliseconds = Time.unscaledDeltaTime * 1000f,
+                Muted = _session.Muted,
+                Reduced = _session.Reduced,
+                Controls = _session.Controls
             }));
 #endif
         }
