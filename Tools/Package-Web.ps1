@@ -3,8 +3,8 @@ $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $webRoot = Join-Path $projectRoot 'Builds\WebGL'
 if (!(Test-Path -LiteralPath (Join-Path $webRoot 'index.html'))) { throw 'Complete a WebGL build before packaging.' }
 Copy-Item -LiteralPath (Join-Path $projectRoot 'Assets\WebGLTemplates\DropStack\_headers') -Destination $webRoot
-foreach ($brandAsset in @('logo.svg', 'favicon.svg')) {
-    Copy-Item -LiteralPath (Join-Path $projectRoot "Assets\WebGLTemplates\DropStack\$brandAsset") -Destination $webRoot
+foreach ($webAsset in @('logo.svg', 'favicon.svg', 'viewport.js')) {
+    Copy-Item -LiteralPath (Join-Path $projectRoot "Assets\WebGLTemplates\DropStack\$webAsset") -Destination $webRoot
 }
 $licenses = Join-Path $webRoot 'Licenses'
 New-Item -ItemType Directory -Force $licenses | Out-Null
