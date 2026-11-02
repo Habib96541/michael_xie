@@ -1,0 +1,59 @@
+FINAL COMPILED WEB BUILD - SCREENSHOT EVIDENCE
+
+All required viewport-prefixed images have matching pixel dimensions.
+Visual review: next panels and preview markers visible; home/help/results readable; nine-slice panels retain shape; confirmation and pause screens fit. Slider handles were fixed and recaptured at all five sizes.
+Actual-tab-return-paused and world-touch-landed images supplement the automated reports.
+
+1280x720-confirm.png: 1280 x 720
+1280x720-gameplay.png: 1280 x 720
+1280x720-help.png: 1280 x 720
+1280x720-home.png: 1280 x 720
+1280x720-pause.png: 1280 x 720
+1280x720-preview.png: 1280 x 720
+1280x720-results-fall.png: 1280 x 720
+1280x720-results-timeout.png: 1280 x 720
+1280x720-results-win.png: 1280 x 720
+1280x720-settings-after-reload.png: 1280 x 720
+1280x720-settings.png: 1280 x 720
+1600x900-confirm.png: 1600 x 900
+1600x900-gameplay.png: 1600 x 900
+1600x900-help.png: 1600 x 900
+1600x900-home.png: 1600 x 900
+1600x900-pause.png: 1600 x 900
+1600x900-preview.png: 1600 x 900
+1600x900-results-fall.png: 1600 x 900
+1600x900-settings.png: 1600 x 900
+360x800-confirm.png: 360 x 800
+360x800-gameplay.png: 360 x 800
+360x800-help.png: 360 x 800
+360x800-home.png: 360 x 800
+360x800-pause.png: 360 x 800
+360x800-preview.png: 360 x 800
+360x800-results-fall.png: 360 x 800
+360x800-settings.png: 360 x 800
+360x800-world-touch-landed.png: 360 x 800
+720x1280-confirm.png: 720 x 1280
+720x1280-gameplay.png: 720 x 1280
+720x1280-help.png: 720 x 1280
+720x1280-home.png: 720 x 1280
+720x1280-pause.png: 720 x 1280
+720x1280-preview.png: 720 x 1280
+720x1280-results-fall.png: 720 x 1280
+720x1280-settings.png: 720 x 1280
+768x1024-confirm.png: 768 x 1024
+768x1024-gameplay.png: 768 x 1024
+768x1024-help.png: 768 x 1024
+768x1024-home.png: 768 x 1024
+768x1024-pause.png: 768 x 1024
+768x1024-preview.png: 768 x 1024
+768x1024-results-fall.png: 768 x 1024
+768x1024-settings.png: 768 x 1024
+abandon-confirm.png: 1280 x 720
+abandon-preview.png: 1280 x 720
+actual-tab-return-paused.png: 1280 x 720
+edge-gameplay.png: 1280 x 720
+edge-preview.png: 1280 x 720
+hard-preview.png: 1280 x 720
+normal-preview.png: 768 x 1024
+resize-portrait-to-landscape.png: 1280 x 720
+visibility-preview.png: 1280 x 720

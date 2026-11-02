@@ -1,0 +1,185 @@
+SHATTERLEAP - PHASE 1, SPRINT 1
+Delivery date: 2026-11-02 (Asia/Dhaka)
+Project: C:\Project-Files_Rahat\Projects\ShatterLeap
+Unity: 6000.3.10f1 / URP 17.3.0 / Input System 1.18.0
+
+IMPLEMENTED SCOPE AND ACCEPTANCE
+
+Delivered a playable single-player 3D glass-bridge memory game and a compiled Unity Web build. The final build completed with zero errors and zero build warnings. All difficulty presets, provisional round earnings, win-only banking, menus, confirmation dialogs, saving, audio controls, browser pause, and responsive input are implemented. No shop, account, wagering, cash-out, or real-money functionality is present.
+
+The initial acceptance checklist is in AcceptanceChecklist.txt. Each implementation item is complete. Device certification remains limited to the actual environment described below; physical mobile and macOS coverage is not claimed.
+
+Preservation: Baseline/pre-sprint.patch and Baseline/status.txt capture the initial tracked modifications and initial status. Baseline/PreservationCheck.txt records a final comparison: all ten pre-existing tracked changes match that baseline, including the original SampleScene, package modifications, supplied model metadata, and existing pipeline edits. New gameplay uses a separate scene. Existing asset originals and available attribution files remain in place. Unity also serialized new engine/build settings and global render settings while building. No archives, Library copies, or Temp copies were created.
+
+SOURCE STRUCTURE
+
+Playable scene:
+  Assets/ShatterLeap/Scenes/ShatterLeap.unity
+Original reference scene, preserved separately:
+  Assets/Scenes/SampleScene.unity
+Reusable prefabs:
+  Assets/ShatterLeap/Prefabs/Contestant.prefab
+  Assets/ShatterLeap/Prefabs/GlassPanel.prefab
+Configuration:
+  Assets/ShatterLeap/Config/Sprint1.asset
+  Assets/ShatterLeap/Config/WebPipeline.asset
+  Assets/ShatterLeap/Config/WebRenderer.asset
+
+Runtime components, under Assets/ShatterLeap/Scripts:
+  GameConfig: serialized difficulty, rewards, jump timing, effects, and asset references.
+  RunRules: deterministic state transitions, fixed safe-side layout, timer, provisional rewards, terminal outcome.
+  RunController: run authority and coordination of presentation, validated landings, pause, and payout.
+  GlassPanel / BridgeView: identical panel instances, preview markers, supports, and bridge construction.
+  ContestantMotor: controlled 3D jump arc, expected-collider spherecast, procedural pose rig, dynamic gravity fall.
+  BridgeCamera: orthographic memory overview and third-person following, independently adapted for aspect ratio.
+  ChoiceInput: new Input System keyboard actions, mouse/touch raycasts, UI exclusion.
+  SaveStore / SaveData: versioned wallet and preferences; guarded winning payout.
+  GameUi: responsive Canvas, sliced panels, screens, confirmations, and settings.
+  AudioEffects: bounded sound voice, looping music, optional vibration, pooled glass fragments.
+
+Editor tooling:
+  Assets/ShatterLeap/Editor/SprintWorkflow.cs
+  Assets/ShatterLeap/Editor/RuleChecks.cs
+  Assets/ShatterLeap/Editor/PlayChecks.cs
+Browser integration:
+  Assets/Plugins/WebGL/ShatterBrowser.jslib
+  Assets/WebGLTemplates/ShatterLeap/index.html
+
+The scene contains serialized references to the configuration, bridge, camera, input, UI, and audio components. The contestant and bridge instances are constructed from their saved prefabs when entering Home/a round. Scene and prefab references are validated before builds. Supplied scenery and guards are saved in the scene.
+
+RULES, STATES, AND CONTROLS
+
+Home -> Preview -> CameraTransition -> Playing -> Jumping -> Won/Falling/TimedOut -> Results.
+Pause and dialogs gate input separately while preserving the underlying run state.
+
+Each row has one safe side chosen once when the run is created. The entire safe path is shown during preview, then all safety markers are hidden. Both panels use identical visuals and support colliders until a fragile landing resolves. Only the immediately next row can be selected. The final safe panel is followed by an automatic jump to the finish platform.
+
+A / D selects the next left / right panel. Mouse clicks and touches work on valid next-row panels. Large left/right buttons provide easier targets on touch devices. Holding a key does not repeat a choice. Extra inputs during a jump are ignored, UI clicks do not select world panels, and preview, transitions, pause, results, and dialogs block gameplay choices. Escape opens pause.
+
+Jumps have a controlled visible arc. A 3D spherecast must find the expected support collider before landing resolves. Fragile support is disabled after contact, then the contestant falls with 3D gravity. Decorative shards have no gameplay authority. Physics uses no 2D components.
+
+The timer advances during jumps. It is evaluated before landing in the controller update. At the exact timeout/landing boundary, timeout takes priority. A landing completed while positive time remains may resolve; terminal states cannot be overwritten. A run identifier and terminal guard prevent duplicate winning payouts.
+
+DIFFICULTY AND REWARD CONFIGURATION
+
+             Rows   Preview   Timer   Completion bonus   Full winning payout
+  Easy        6       5s       30s           50                 260
+  Normal     10       4s       45s          100                 650
+  Hard       14       3s       60s          200                1250
+
+Successful step n adds 10 * n provisional coins. A win banks all provisional step coins plus the completion bonus once. Death, timeout, Restart, Home, closing the page, or reload pays zero for that round. Previously banked winnings remain saved. Retry is free. Tunable values live in Sprint1.asset; ordinary builds do not reset them. Deterministic default tests use an independent default configuration, and additional checks validate the currently serialized configuration.
+
+ASSET INVENTORY AND CREATED ASSETS
+
+AssetInspection.txt contains the executed model/material/scale/vertex and audio inspection.
+
+- Supplied GlassBridgeLevel/source/Squid Game.blend: reused arena walls, curtains, floor, and decorative elements. Scene-only overrides suppress its duplicate glass, overhead bridge structures, chandelier/lights, and obstructing geometry. Scene-specific dark materials improve readability. Original model and materials remain untouched.
+- Supplied squid-game-man/source/Squid.fbx, Squid 1.fbx, Squid 2.fbx: reused as antagonist guards on decorative balconies, normalized to approximately 2.2 units high. Existing materials use URP Lit.
+- Supplied standing walk/run/turn/idle FBX animations were inventoried. They are not compatible with the new procedural contestant rig and are preserved for future use.
+- New original Contestant 017: an actual 3D prefab assembled from lightweight mesh primitives, with green jacket/trousers, ivory stripes, skin, hair, shoes, and a procedural shoulder/hip pose rig. Includes CapsuleCollider and Rigidbody. No generated 2D character image is used as the player.
+- Existing ShatterLeapLogo.png: integrated into the Home screen and browser loading page.
+- Ravenmore StrategyGameResourceIcons/Icons/gold-coin.png: wallet coin icon. The supplied Docs/readme.txt remains available.
+- Supplied wooden button artwork: inspected in the asset inventory but not used because it does not match this interface. Original retained.
+- New ScalablePanel.png: a small code-generated rounded UI panel with a nine-slice border, used for scalable interface elements.
+- New procedural glass panels, framing, light ribbons, and pooled fragments: intentionally reusable lightweight geometry. The original whole-bridge glass mesh is unsuitable for independently resolving arbitrary row counts.
+
+The user identifies supplied assets as freely licensed. Included attribution/readme files were preserved. No paid assets, external replacement models, or replacement sounds were downloaded. The contestant and procedural geometry are the shipped Sprint 1 assets, not missing-model placeholders. Temporary audio substitutions are listed below.
+
+SAVING
+
+PlayerPrefs key: ShatterLeap.Save.v1, containing versioned JSON.
+Saved fields: banked integer coins, difficulty index, music/sound volumes, vibration, reduced camera effects, last paid run identifier.
+Defaults and validation recover from missing/malformed saves, unsupported versions, negative coins, invalid difficulty, and invalid volume values. Volumes are clamped. Preferences are saved on change. A win writes the wallet and payout identifier together, followed by PlayerPrefs.Save. Active runs and provisional earnings are never serialized.
+
+The Web template opts into automatic persistent-data synchronization. Browser storage is local to the origin/profile; clearing it removes the wallet. There is no cloud/account synchronization. Save/load and malformed-data recovery were exercised by deterministic checks; actual browser winning-wallet persistence was verified across reloads.
+
+AUDIO, VIBRATION, AND PAUSE
+
+Reused audio inventory:
+  UI_Button.mp3: UI cue, temporary pitched preview and jump cues.
+  CoinSpill.mp3: safe-step/reward feedback.
+  GlassBreaking.mp3: glass breaking/falling feedback.
+  Success.mp3: completion.
+  GameOver.mp3: timeout/failure cue.
+  Background Sound/luis_humanoide-macabre-choir-inspired-by-squid-game-287425.mp3: looping music.
+
+Missing dedicated sounds for later replacement:
+  1. Jump/takeoff.
+  2. Preview start/reveal.
+  3. Preview end/ready.
+  4. Timeout alarm/end.
+  5. Optional distinct falling cue (currently the glass-break cue covers the fall).
+
+Music begins on a UI user gesture; browser AudioContext running state was verified. Music and sound settings persist. One music source and one bounded effect source prevent accumulating overlapping voices. Vibration uses navigator.vibrate only if available and fails silently when unsupported. Physical vibration and human listening on devices were not verified; universal Safari/iPhone vibration support is not claimed.
+
+Manual pause, focus loss, and document visibility loss pause gameplay, jumping, preview, and the countdown. Returning requires explicit Resume. Restart/Home confirmations explain loss of provisional earnings. Both simulated focus events and actual headed Chrome tab activation were verified. The separate real-tab check disables the automation framework's default forced-visibility behavior; VisibilityCheck.json records document.hidden=true and the successful explicit-resume check.
+
+WEB BUILD AND HOSTING
+
+Delivered folder: Builds/Web
+Entry point: Builds/Web/index.html
+Files: index.html, logo.png, Build/Web.loader.js, Build/Web.framework.js, Build/Web.data, Build/Web.wasm.
+Complete size: 71,890,356 bytes (about 71.9 MB decimal / 68.6 MiB), uncompressed.
+BuildManifest.txt records SHA-256 hashes and lengths of the delivered files.
+
+Web settings: single-threaded WebAssembly, compression disabled, 128 MiB initial memory, 1024 MiB maximum growable memory, DPR capped at 1.5, browser caching enabled, custom responsive template. CSS safe-area insets protect the canvas on supporting browsers. Fullscreen is exposed where the browser supports it and gracefully hidden on failure/unsupported browsers.
+
+A separate Web forward renderer uses SDR, 2x MSAA, no renderer features, and no realtime shadow maps. This resolved WebGL sampler failures observed in the first compiled build. Existing PC/Mobile render-pipeline assets were preserved. Build tooling temporarily overrides the quality pipelines for the compiled player and restores the complete native quality settings afterward.
+
+Local launch, from the project directory:
+  python Tools/serve.py
+Then open:
+  http://127.0.0.1:8080
+For a phone on the same LAN:
+  python Tools/serve.py --bind 0.0.0.0
+Then browse to the computer's LAN address on port 8080. Network/firewall access must permit the connection. No physical phone LAN test was executed.
+
+Build an existing game:
+  powershell -File Tools/Build-Web.ps1
+Or use Unity menu ShatterLeap > Build Existing Web Game.
+Setup missing assets only:
+  powershell -File Tools/Build-Web.ps1 -Setup
+The setup command preserves existing scene/configuration/prefabs. Normal builds do not regenerate character art, scene contents, or user configuration. Tools/editor.py queues inspection, refresh, setup, validation-related, test, and build commands into the open editor. Assets > Refresh may be needed if the editor has not imported new scripts.
+
+Static hosting: upload every file under Builds/Web while preserving relative paths. Serve .wasm with application/wasm, .js with JavaScript MIME, .data with application/octet-stream. These files have no gzip/Brotli Content-Encoding; do not label raw bytes as compressed. This build needs no COOP/COEP headers because it uses no WebAssembly threads. HTTPS is recommended for public hosting. HostingChecks.txt records successful HTTP 200 HEAD responses and actual content types. Public deployment is outside this sprint's delivery.
+
+EXECUTED TESTS AND COVERAGE
+
+1. Compilation and build: executed in installed Unity 6000.3.10f1; final BuildReport.txt shows Succeeded, zero errors, zero build warnings.
+2. RuleChecks.txt: 49 passing checks, including 300 seeded complete runs, exactly one fixed safe side per row, defaults, rewards, bonuses, invalid transitions, duplicate landings/payouts, missing support, death, exact final-timeout boundary, finish just before timeout, abandonment, save/load, malformed saves, and serialized configuration.
+3. PlayChecks.txt: 17 passing real Unity Play Mode checks. Exercised all six safe landings and finish, rapid choices, 260-coin payout, actual support colliders, fragile fall and gravity, pause during a jump, abandonment, real countdown timeout during a jump, visibility hook, and explicit resume.
+4. WebChecks.json: final exact compiled build served through HTTP. 63 assertions/observations: 62 automated passing assertions plus settings persistence inspected visually. Includes keyboard, held/rapid input, real mouse panel raycast, touch buttons, provisional/banked distinction, win/reload, confirmation cancel/accept, Restart, Home abandonment, timeout during jump, Retry, difficulty persistence, 10/14-row previews, fullscreen, audio gesture, and live portrait-to-landscape resizing.
+5. VisibilityCheck.json: actual headed Chrome tab hiding and return, frozen countdown, explicit Resume; passed.
+6. TouchReloadCheck.json: three passing checks for touch on the actual next world panel, no duplicate touch/mouse step, and reload during an earned active round abandoning its provisional coins and run.
+7. HTTP headers and build hashes: HostingChecks.txt and BuildManifest.txt.
+
+Browser coverage:
+  Windows Chrome 156.0.8078.76: compiled gameplay and full behavioral checks.
+  Windows Edge 156.0.4314.58: compiled loading, preview/input gating, gameplay smoke check.
+  Chrome touch emulation: 360x800, 720x1280, 768x1024.
+  Desktop mouse layouts: 1280x720, 1600x900.
+  Physical Android, physical iPhone/Safari, macOS browsers: NOT TESTED in this Windows environment.
+
+Screenshots/ contains final-build evidence, with each resolution prefix followed by home, help, preview, gameplay, pause, settings, confirm, and results-fall. Additional images show a win, timeout, persisted settings, portrait-to-landscape resize, Normal/Hard previews, Edge gameplay, and actual tab-return pause. All five required dimensions were captured. Visual review checked readability, clipping, unobstructed next panels, touch controls, modal layout, and non-stretched panels; the overextended slider handles found during review were corrected, rebuilt, and recaptured.
+
+Performance observations, not physical-device benchmarks:
+  Local Chrome initial load: 3.538 seconds on the measured run.
+  1280x720 gameplay: 119 requestAnimationFrame intervals; median 16.7 ms, p95 16.8 ms (approximately 60 Hz browser presentation cadence).
+  Results: median 16.7 ms, p95 17.2 ms.
+  Renderer: Intel UHD Graphics 730 through ANGLE / D3D11.
+These are browser frame-cadence samples, not Unity GPU-profiler timings or Internet-download benchmarks. Mobile performance, sustained heat/battery behavior, and low-memory-device limits are unverified.
+
+KNOWN LIMITATIONS
+
+- Physical iPhone/Android and macOS browser certification remains to be performed. Touch emulation does not establish Safari compatibility or physical-device performance.
+- The uncompressed 71.9 MB distribution is straightforward to host but a substantial initial download. Public-host compression/network optimization can be evaluated after selecting a host.
+- Chrome/Edge logged WebGL capability/resize warnings (INVALID_ENUM getInternalformatParameter; drawBuffers BACK or NONE). No JavaScript, Unity runtime exception, or resource-load errors were observed in the final automated browser checks; inspected rendering remained correct. These warnings are retained in WebChecks.json.
+- Dedicated jump, preview, timeout, and optional falling sounds are not supplied. Temporary substitutions are functional and listed above.
+- Character animation is intentionally procedural, not a production motion-capture rig. The supplied walking/running FBX clips remain unused.
+- The Web renderer intentionally omits realtime shadow maps and expensive effects for compatibility and mobile cost.
+- PlayerPrefs is local browser persistence, not a secure or cloud wallet. Device vibration is optional and unverified on hardware.
+- No public deployment or physical-device launch is claimed. No current source-compilation or Web-build blocker remains.
+
+PROPOSED PHASE 1, SPRINT 2
+
+Add a cosmetic shop using only banked game coins: contestant color/appearance variants and lightweight jump trails, preview/equip UI, persistent owned/equipped items, and duplicate-purchase protection. Retain the existing no-real-money design. First perform physical iPhone/Android/macOS testing and replace temporary audio cues. Phase remains Phase 1 until explicitly changed by the user.

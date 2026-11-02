@@ -1,0 +1,18 @@
+ShatterLeap / Phase 1 / Sprint 1
+
+Acceptance checklist established before implementation:
+[x] Stable complete memory preview and difficulty configuration.
+[x] Actual 3D support validation, controlled jumps, fragile falling, and guarded outcomes.
+[x] Win-only, exactly-once wallet payout; failed/abandoned rounds pay nothing.
+[x] Original contestant prefab, supplied arena/guards, existing logo, cohesive UI.
+[x] New Input System keyboard/mouse/touch and large choice controls.
+[x] Home, HUD, pause, results, settings, help, and abandonment confirmation.
+[x] Versioned saves; settings and banked winnings persist; interrupted runs abandoned.
+[x] Supplied audio, optional vibration, visibility pause requiring explicit resume.
+[x] Saved scene, reusable prefabs, validation/setup/build tooling.
+[x] Deterministic checks, actual Play Mode checks, exact HTTP Web build checks.
+[x] Inspect screenshots at all five requested viewports; record real coverage/performance.
+[x] Complete Web files, launch instructions, SprintDoc/Phase1Sprint1.txt.
+
+Final results and any limitations are recorded in Phase1Sprint1.txt.
+

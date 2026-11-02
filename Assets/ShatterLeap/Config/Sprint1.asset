@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280ad0f50c4dd0248ba3ee580062e4f8, type: 3}
+  m_Name: Sprint1
+  m_EditorClassIdentifier: Assembly-CSharp::ShatterLeap.GameConfig
+  Difficulties:
+  - Name: Easy
+    Rows: 6
+    PreviewSeconds: 5
+    PlaySeconds: 30
+    Bonus: 50
+  - Name: Normal
+    Rows: 10
+    PreviewSeconds: 4
+    PlaySeconds: 45
+    Bonus: 100
+  - Name: Hard
+    Rows: 14
+    PreviewSeconds: 3
+    PlaySeconds: 60
+    Bonus: 200
+  StepValue: 10
+  JumpDuration: 0.65
+  JumpHeight: 1.5
+  CameraTransitionSeconds: 0.8
+  ResultDelay: 1.8
+  ShardCount: 20
+  ContestantPrefab: {fileID: 463038450279687274, guid: 33abd8227f53a8448ac06fdda667195c, type: 3}
+  PanelPrefab: {fileID: 9191822073934552024, guid: 597b2e13009a6714fac63bf7ae4dea23, type: 3}
+  Logo: {fileID: 21300000, guid: b022a65bd7b634345a03a39c63c8ce4e, type: 3}
+  CoinIcon: {fileID: 21300000, guid: 85390185c5a1b744c9d5588109fe4326, type: 3}
+  UiPanel: {fileID: 21300000, guid: bb04ad79eb112dc4fbbb7975e32b681c, type: 3}
+  Music: {fileID: 8300000, guid: 8d8c433bad0ab284bbec80b367a6a672, type: 3}
+  Click: {fileID: 8300000, guid: 602c0869c51b65d479b219a65b690b00, type: 3}
+  Success: {fileID: 8300000, guid: ab9ea9e8747ae844886a5a18592b3af6, type: 3}
+  Glass: {fileID: 8300000, guid: 0346660c17fda8648bf5847f2e70c5b1, type: 3}
+  Failure: {fileID: 8300000, guid: a2ce2faaffbb7e3479f89479de51fa8c, type: 3}
+  Coin: {fileID: 8300000, guid: 0352bc4dea5497741bc5d2f68cff5b9f, type: 3}

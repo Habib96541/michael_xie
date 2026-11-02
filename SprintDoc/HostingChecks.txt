@@ -1,0 +1,5 @@
+index.html: HTTP 200, Content-Type=text/html, Content-Encoding=none, Content-Length=3724
+Build/Web.wasm: HTTP 200, Content-Type=application/wasm, Content-Encoding=none, Content-Length=46839120
+Build/Web.framework.js: HTTP 200, Content-Type=application/javascript, Content-Encoding=none, Content-Length=457118
+Build/Web.data: HTTP 200, Content-Type=application/octet-stream, Content-Encoding=none, Content-Length=22944341
+logo.png: HTTP 200, Content-Type=image/png, Content-Encoding=none, Content-Length=1619071

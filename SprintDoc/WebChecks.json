@@ -1,0 +1,131 @@
+{
+  "started": "2026-11-02T08:29:36.560Z",
+  "checks": [
+    "PASS Browser fullscreen enters through the visible user control",
+    "PASS Browser audio context runs after a UI user gesture",
+    "OBSERVE Settings persisted across reload: compare settings screenshots",
+    "PASS 1280x720: all 6 preview markers are visible",
+    "PASS 1280x720: keyboard choices blocked during preview",
+    "PASS Safe markers are hidden during gameplay",
+    "PASS Held key and rapid extra inputs produce exactly one landing: {\"State\":\"Playing\",\"Steps\":1,\"Wallet\":0,\"RoundCoins\":10,\"Seconds\":26.465927124023438}",
+    "PASS Safe landing earns provisional coins without banking",
+    "PASS Manual pause freezes the browser countdown",
+    "PASS Cancel restart confirmation preserves paused round",
+    "PASS Mouse raycast on the actual next panel lands safely",
+    "PASS Compiled Web Easy win banks exactly 260 coins",
+    "PASS Results do not duplicate a payout",
+    "PASS Banked win persists after an actual browser reload",
+    "PASS abandon: all 6 preview markers are visible",
+    "PASS abandon: keyboard choices blocked during preview",
+    "PASS Confirmed Home abandons provisional earnings without changing wallet",
+    "PASS visibility: all 6 preview markers are visible",
+    "PASS visibility: keyboard choices blocked during preview",
+    "PASS Browser blur/focus event simulation pauses and requires explicit resume",
+    "PASS Confirmed Restart resets the round without charging or paying coins",
+    "PASS Real browser timeout during jump pays zero",
+    "PASS 360x800: all 6 preview markers are visible",
+    "PASS 360x800: keyboard choices blocked during preview",
+    "PASS 360x800: one safe mouse/touch action earns exactly one provisional step",
+    "PASS 360x800: fragile landing discards the round earnings",
+    "PASS 360x800: Retry starts a free fresh round",
+    "PASS 360x800: failed round never persists provisional coins",
+    "PASS 720x1280: all 6 preview markers are visible",
+    "PASS 720x1280: keyboard choices blocked during preview",
+    "PASS 720x1280: one safe mouse/touch action earns exactly one provisional step",
+    "PASS 720x1280: fragile landing discards the round earnings",
+    "PASS 720x1280: Retry starts a free fresh round",
+    "PASS 720x1280: failed round never persists provisional coins",
+    "PASS 768x1024: all 6 preview markers are visible",
+    "PASS 768x1024: keyboard choices blocked during preview",
+    "PASS 768x1024: one safe mouse/touch action earns exactly one provisional step",
+    "PASS 768x1024: fragile landing discards the round earnings",
+    "PASS 768x1024: Retry starts a free fresh round",
+    "PASS 768x1024: failed round never persists provisional coins",
+    "PASS 1280x720: all 6 preview markers are visible",
+    "PASS 1280x720: keyboard choices blocked during preview",
+    "PASS 1280x720: one safe mouse/touch action earns exactly one provisional step",
+    "PASS 1280x720: fragile landing discards the round earnings",
+    "PASS 1280x720: Retry starts a free fresh round",
+    "PASS 1280x720: failed round never persists provisional coins",
+    "PASS 1600x900: all 6 preview markers are visible",
+    "PASS 1600x900: keyboard choices blocked during preview",
+    "PASS 1600x900: one safe mouse/touch action earns exactly one provisional step",
+    "PASS 1600x900: fragile landing discards the round earnings",
+    "PASS 1600x900: Retry starts a free fresh round",
+    "PASS 1600x900: failed round never persists provisional coins",
+    "PASS normal: all 10 preview markers are visible",
+    "PASS normal: keyboard choices blocked during preview",
+    "PASS Normal difficulty persists after reload and starts at 45 seconds",
+    "PASS Live orientation/viewport change retains the active run",
+    "PASS hard: all 14 preview markers are visible",
+    "PASS hard: keyboard choices blocked during preview",
+    "PASS Hard preview shows all fourteen rows and a 60-second timer",
+    "PASS edge: all 6 preview markers are visible",
+    "PASS edge: keyboard choices blocked during preview",
+    "PASS Installed Edge loads the exact compiled build and reaches gameplay",
+    "PASS No JavaScript/runtime/resource errors in tested browser sessions"
+  ],
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "touchEmulation": true,
+      "loadMs": 3405,
+      "minimumUnityButtonCssHeight": 48
+    },
+    {
+      "width": 720,
+      "height": 1280,
+      "touchEmulation": true,
+      "loadMs": 3003,
+      "minimumUnityButtonCssHeight": 96
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "touchEmulation": true,
+      "loadMs": 2948,
+      "minimumUnityButtonCssHeight": 81.92
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "touchEmulation": false,
+      "loadMs": 2969,
+      "minimumUnityButtonCssHeight": 70.8923076923077
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "touchEmulation": false,
+      "loadMs": 3039,
+      "minimumUnityButtonCssHeight": 88.61538461538461
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_OPERATION: drawBuffers: BACK or NONE"
+  ],
+  "performance": {
+    "coldLoadMs": 3538,
+    "gameplayRaf": {
+      "medianMs": 16.69999999999891,
+      "p95Ms": 16.80000000000109,
+      "samples": 119
+    },
+    "resultsRaf": {
+      "medianMs": 16.69999999999709,
+      "p95Ms": 17.200000000004366,
+      "samples": 119
+    },
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004692) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "browser": "156.0.8078.76",
+  "audioContextStates": [
+    "running"
+  ],
+  "edge": "156.0.4314.58",
+  "result": "PASS",
+  "finished": "2026-11-02T08:32:52.718Z"
+}

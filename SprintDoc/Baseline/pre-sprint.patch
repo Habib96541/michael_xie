@@ -1,0 +1,618 @@
+diff --git a/Assets/Imports/GlassBridgeLevel/source/Squid Game.blend.meta b/Assets/Imports/GlassBridgeLevel/source/Squid Game.blend.meta
+index c5fc034..9e0f8d7 100644
+--- a/Assets/Imports/GlassBridgeLevel/source/Squid Game.blend.meta	
++++ b/Assets/Imports/GlassBridgeLevel/source/Squid Game.blend.meta	
+@@ -3,7 +3,72 @@ guid: 6e0eb20eb670d5247b8cbd6d19a1346e
+ ModelImporter:
+   serializedVersion: 24200
+   internalIDToNameTable: []
+-  externalObjects: {}
++  externalObjects:
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Door
++    second: {fileID: 2100000, guid: 7e7d6c8fef84f7c4baf57338df1e92bf, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Glass
++    second: {fileID: 2100000, guid: f62481fcb34b57e4b93f6a836ba6288b, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Gold
++    second: {fileID: 2100000, guid: 43ab8f00f8dfabe41b205e9fd5b2fe6a, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Material.002
++    second: {fileID: 2100000, guid: b5ba01d5b9d37e441b5010f08c0b81a0, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Material.003
++    second: {fileID: 2100000, guid: 2d267b81199fcb344b6f518b0812fc5c, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Material.004
++    second: {fileID: 2100000, guid: 0baab1af0d8c54847ba1a0237ed87168, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Material.005
++    second: {fileID: 2100000, guid: e432fcf59680b974aaa5c82dd30d8c82, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Material.006
++    second: {fileID: 2100000, guid: 1fad94a32a4ce4d439906b5b7675fc70, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Material.007
++    second: {fileID: 2100000, guid: f64c47a0b59cb8b4ca97674ed6ef9dbc, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Material.008
++    second: {fileID: 2100000, guid: 582bb03a1b3f20f4abbbdcc29a4b5339, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Metal
++    second: {fileID: 2100000, guid: 8565e5d88b66dcc4b87f62c1244306ba, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Wall lines
++    second: {fileID: 2100000, guid: 1f575df66a3eee04096c15a2ee349c10, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: lights
++    second: {fileID: 2100000, guid: fcf42f6dbdfcbb44aac56856d4e2c69e, type: 2}
+   materials:
+     materialImportMode: 2
+     materialName: 0
+diff --git a/Assets/Imports/GlassBridgeLevel/textures/DoorBump.png.meta b/Assets/Imports/GlassBridgeLevel/textures/DoorBump.png.meta
+index 4f9a94a..30cd391 100644
+--- a/Assets/Imports/GlassBridgeLevel/textures/DoorBump.png.meta
++++ b/Assets/Imports/GlassBridgeLevel/textures/DoorBump.png.meta
+@@ -7,7 +7,7 @@ TextureImporter:
+   mipmaps:
+     mipMapMode: 0
+     enableMipMap: 1
+-    sRGBTexture: 1
++    sRGBTexture: 0
+     linearTexture: 0
+     fadeOut: 0
+     borderMipMap: 0
+@@ -54,7 +54,7 @@ TextureImporter:
+   alphaUsage: 1
+   alphaIsTransparency: 0
+   spriteTessellationDetail: -1
+-  textureType: 0
++  textureType: 1
+   textureShape: 1
+   singleChannelComponent: 0
+   flipbookRows: 1
+diff --git a/Assets/Scenes/SampleScene.unity b/Assets/Scenes/SampleScene.unity
+index 1c63aa8..b33692b 100644
+--- a/Assets/Scenes/SampleScene.unity
++++ b/Assets/Scenes/SampleScene.unity
+@@ -38,12 +38,12 @@ RenderSettings:
+   m_ReflectionIntensity: 1
+   m_CustomReflection: {fileID: 0}
+   m_Sun: {fileID: 0}
+-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+   m_UseRadianceAmbientProbe: 0
+ --- !u!157 &3
+ LightmapSettings:
+   m_ObjectHideFlags: 0
+-  serializedVersion: 12
++  serializedVersion: 13
++  m_BakeOnSceneLoad: 0
+   m_GISettings:
+     serializedVersion: 2
+     m_BounceScale: 1
+@@ -119,6 +119,176 @@ NavMeshSettings:
+     debug:
+       m_Flags: 0
+   m_NavMeshData: {fileID: 0}
++--- !u!1001 &171904026
++PrefabInstance:
++  m_ObjectHideFlags: 0
++  serializedVersion: 2
++  m_Modification:
++    serializedVersion: 3
++    m_TransformParent: {fileID: 0}
++    m_Modifications:
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalPosition.x
++      value: 1.26999
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalPosition.y
++      value: -0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalPosition.z
++      value: 1.26999
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalRotation.w
++      value: 1
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalRotation.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalRotation.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalRotation.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalPosition.x
++      value: -0.1
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalPosition.y
++      value: 24.52
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalPosition.z
++      value: -35.71
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalRotation.w
++      value: 0.9945219
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalRotation.x
++      value: 0.10452846
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalRotation.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalRotation.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.x
++      value: 12
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -2021178655527167927, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -1853094968961178454, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: field of view
++      value: 43.60282
++      objectReference: {fileID: 0}
++    - target: {fileID: -1853094968961178454, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_FocalLength
++      value: 30
++      objectReference: {fileID: 0}
++    - target: {fileID: -1853094968961178454, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: far clip plane
++      value: 500
++      objectReference: {fileID: 0}
++    - target: {fileID: -1853094968961178454, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: near clip plane
++      value: 9
++      objectReference: {fileID: 0}
++    - target: {fileID: 919132149155446097, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++      propertyPath: m_Name
++      value: Squid Game
++      objectReference: {fileID: 0}
++    m_RemovedComponents: []
++    m_RemovedGameObjects: []
++    m_AddedGameObjects: []
++    m_AddedComponents: []
++  m_SourcePrefab: {fileID: 100100000, guid: 6e0eb20eb670d5247b8cbd6d19a1346e, type: 3}
++--- !u!1001 &256645188
++PrefabInstance:
++  m_ObjectHideFlags: 0
++  serializedVersion: 2
++  m_Modification:
++    serializedVersion: 3
++    m_TransformParent: {fileID: 0}
++    m_Modifications:
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalPosition.x
++      value: 5.14
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalPosition.y
++      value: 15.12
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalPosition.z
++      value: 26.6
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalRotation.w
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalRotation.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalRotation.y
++      value: 1
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalRotation.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.y
++      value: 180
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 919132149155446097, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
++      propertyPath: m_Name
++      value: Squid 2
++      objectReference: {fileID: 0}
++    m_RemovedComponents: []
++    m_RemovedGameObjects: []
++    m_AddedGameObjects: []
++    m_AddedComponents: []
++  m_SourcePrefab: {fileID: 100100000, guid: 4f98ea9a368e7ce4daed5ba2777e9e1a, type: 3}
+ --- !u!1 &330585543
+ GameObject:
+   m_ObjectHideFlags: 0
+@@ -248,14 +418,14 @@ MonoBehaviour:
+   m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+   m_RequiresDepthTexture: 0
+   m_RequiresColorTexture: 0
+-  m_Version: 2
+   m_TaaSettings:
+-    quality: 3
+-    frameInfluence: 0.1
+-    jitterScale: 1
+-    mipBias: 0
+-    varianceClampScale: 0.9
+-    contrastAdaptiveSharpening: 0
++    m_Quality: 3
++    m_FrameInfluence: 0.1
++    m_JitterScale: 1
++    m_MipBias: 0
++    m_VarianceClampScale: 0.9
++    m_ContrastAdaptiveSharpening: 0
++  m_Version: 2
+ --- !u!1 &410087039
+ GameObject:
+   m_ObjectHideFlags: 0
+@@ -282,14 +452,14 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 410087039}
+   m_Enabled: 1
+-  serializedVersion: 11
++  serializedVersion: 12
+   m_Type: 1
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_Intensity: 2
+   m_Range: 10
+   m_SpotAngle: 30
+   m_InnerSpotAngle: 21.80208
+-  m_CookieSize: 10
++  m_CookieSize2D: {x: 10, y: 10}
+   m_Shadows:
+     m_Type: 2
+     m_Resolution: -1
+@@ -336,6 +506,9 @@ Light:
+   m_ForceVisible: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
++  m_LightUnit: 1
++  m_LuxAtDistance: 1
++  m_EnableSpotReflector: 1
+ --- !u!4 &410087041
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -363,17 +536,23 @@ MonoBehaviour:
+   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+   m_Name: 
+   m_EditorClassIdentifier: 
+-  m_Version: 3
+   m_UsePipelineSettings: 1
+   m_AdditionalLightsShadowResolutionTier: 2
+-  m_LightLayerMask: 1
+-  m_RenderingLayers: 1
+   m_CustomShadowLayers: 0
+-  m_ShadowLayerMask: 1
+-  m_ShadowRenderingLayers: 1
+   m_LightCookieSize: {x: 1, y: 1}
+   m_LightCookieOffset: {x: 0, y: 0}
+   m_SoftShadowQuality: 1
++  m_RenderingLayersMask:
++    serializedVersion: 0
++    m_Bits: 1
++  m_ShadowRenderingLayersMask:
++    serializedVersion: 0
++    m_Bits: 1
++  m_Version: 4
++  m_LightLayerMask: 1
++  m_ShadowLayerMask: 1
++  m_RenderingLayers: 1
++  m_ShadowRenderingLayers: 1
+ --- !u!1 &832575517
+ GameObject:
+   m_ObjectHideFlags: 0
+@@ -423,6 +602,63 @@ Transform:
+   m_Children: []
+   m_Father: {fileID: 0}
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++--- !u!1001 &1327238942
++PrefabInstance:
++  m_ObjectHideFlags: 0
++  serializedVersion: 2
++  m_Modification:
++    serializedVersion: 3
++    m_TransformParent: {fileID: 0}
++    m_Modifications:
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalPosition.x
++      value: -2.99
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalPosition.y
++      value: 15.12
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalPosition.z
++      value: 26.599998
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalRotation.w
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalRotation.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalRotation.y
++      value: 1
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalRotation.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.y
++      value: 180
++      objectReference: {fileID: 0}
++    - target: {fileID: -8679921383154817045, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 919132149155446097, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
++      propertyPath: m_Name
++      value: Squid 1
++      objectReference: {fileID: 0}
++    m_RemovedComponents: []
++    m_RemovedGameObjects: []
++    m_AddedGameObjects: []
++    m_AddedComponents: []
++  m_SourcePrefab: {fileID: 100100000, guid: 73a779613b3db414c8d430e97c64f50c, type: 3}
+ --- !u!1660057539 &9223372036854775807
+ SceneRoots:
+   m_ObjectHideFlags: 0
+@@ -430,3 +666,6 @@ SceneRoots:
+   - {fileID: 330585546}
+   - {fileID: 410087041}
+   - {fileID: 832575519}
++  - {fileID: 171904026}
++  - {fileID: 256645188}
++  - {fileID: 1327238942}
+diff --git a/Assets/Settings/Mobile_RPAsset.asset b/Assets/Settings/Mobile_RPAsset.asset
+index 81babf8..fedee07 100644
+--- a/Assets/Settings/Mobile_RPAsset.asset
++++ b/Assets/Settings/Mobile_RPAsset.asset
+@@ -12,8 +12,8 @@ MonoBehaviour:
+   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
+   m_Name: Mobile_RPAsset
+   m_EditorClassIdentifier: 
+-  k_AssetVersion: 12
+-  k_AssetPreviousVersion: 12
++  k_AssetVersion: 13
++  k_AssetPreviousVersion: 13
+   m_RendererType: 1
+   m_RendererData: {fileID: 0}
+   m_RendererDataList:
+@@ -53,6 +53,7 @@ MonoBehaviour:
+   m_AdditionalLightsShadowResolutionTierHigh: 1024
+   m_ReflectionProbeBlending: 1
+   m_ReflectionProbeBoxProjection: 1
++  m_ReflectionProbeAtlas: 1
+   m_ShadowDistance: 50
+   m_ShadowCascadeCount: 1
+   m_Cascade2Split: 0.25
+@@ -127,10 +128,14 @@ MonoBehaviour:
+   m_PrefilterSoftShadowsQualityHigh: 1
+   m_PrefilterSoftShadows: 0
+   m_PrefilterScreenCoord: 1
++  m_PrefilterScreenSpaceIrradiance: 0
+   m_PrefilterNativeRenderPass: 1
+   m_PrefilterUseLegacyLightmaps: 0
++  m_PrefilterBicubicLightmapSampling: 0
++  m_PrefilterReflectionProbeRotation: 0
+   m_PrefilterReflectionProbeBlending: 0
+   m_PrefilterReflectionProbeBoxProjection: 0
++  m_PrefilterReflectionProbeAtlas: 0
+   m_ShaderVariantLogLevel: 0
+   m_ShadowCascades: 0
+   m_Textures:
+diff --git a/Assets/Settings/PC_RPAsset.asset b/Assets/Settings/PC_RPAsset.asset
+index e31c6e7..5c6dce7 100644
+--- a/Assets/Settings/PC_RPAsset.asset
++++ b/Assets/Settings/PC_RPAsset.asset
+@@ -12,8 +12,8 @@ MonoBehaviour:
+   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
+   m_Name: PC_RPAsset
+   m_EditorClassIdentifier: 
+-  k_AssetVersion: 12
+-  k_AssetPreviousVersion: 12
++  k_AssetVersion: 13
++  k_AssetPreviousVersion: 13
+   m_RendererType: 1
+   m_RendererData: {fileID: 0}
+   m_RendererDataList:
+@@ -53,6 +53,7 @@ MonoBehaviour:
+   m_AdditionalLightsShadowResolutionTierHigh: 1024
+   m_ReflectionProbeBlending: 1
+   m_ReflectionProbeBoxProjection: 1
++  m_ReflectionProbeAtlas: 1
+   m_ShadowDistance: 50
+   m_ShadowCascadeCount: 4
+   m_Cascade2Split: 0.25
+@@ -127,10 +128,14 @@ MonoBehaviour:
+   m_PrefilterSoftShadowsQualityHigh: 0
+   m_PrefilterSoftShadows: 0
+   m_PrefilterScreenCoord: 1
++  m_PrefilterScreenSpaceIrradiance: 0
+   m_PrefilterNativeRenderPass: 1
+   m_PrefilterUseLegacyLightmaps: 0
++  m_PrefilterBicubicLightmapSampling: 0
++  m_PrefilterReflectionProbeRotation: 0
+   m_PrefilterReflectionProbeBlending: 0
+   m_PrefilterReflectionProbeBoxProjection: 0
++  m_PrefilterReflectionProbeAtlas: 0
+   m_ShaderVariantLogLevel: 0
+   m_ShadowCascades: 0
+   m_Textures:
+diff --git a/Packages/manifest.json b/Packages/manifest.json
+index 43e4dbe..d4348d3 100644
+--- a/Packages/manifest.json
++++ b/Packages/manifest.json
+@@ -1,5 +1,6 @@
+ {
+   "dependencies": {
++    "com.unity.2d.sprite": "1.0.0",
+     "com.unity.ai.navigation": "2.0.10",
+     "com.unity.collab-proxy": "2.11.3",
+     "com.unity.ide.rider": "3.0.39",
+diff --git a/Packages/packages-lock.json b/Packages/packages-lock.json
+index 6de98f4..bd1d917 100644
+--- a/Packages/packages-lock.json
++++ b/Packages/packages-lock.json
+@@ -1,5 +1,11 @@
+ {
+   "dependencies": {
++    "com.unity.2d.sprite": {
++      "version": "1.0.0",
++      "depth": 0,
++      "source": "builtin",
++      "dependencies": {}
++    },
+     "com.unity.ai.navigation": {
+       "version": "2.0.10",
+       "depth": 0,
+diff --git a/ProjectSettings/PackageManagerSettings.asset b/ProjectSettings/PackageManagerSettings.asset
+index be4a797..7a9f903 100644
+--- a/ProjectSettings/PackageManagerSettings.asset
++++ b/ProjectSettings/PackageManagerSettings.asset
+@@ -12,11 +12,13 @@ MonoBehaviour:
+   m_Script: {fileID: 13964, guid: 0000000000000000e000000000000000, type: 0}
+   m_Name: 
+   m_EditorClassIdentifier: 
+-  m_EnablePreviewPackages: 0
+-  m_EnablePackageDependencies: 0
++  m_EnablePreReleasePackages: 0
+   m_AdvancedSettingsExpanded: 1
+   m_ScopedRegistriesSettingsExpanded: 1
++  m_SeeAllPackageVersions: 0
++  m_DismissPreviewPackagesInUse: 0
+   oneTimeWarningShown: 0
++  oneTimePackageErrorsPopUpShown: 0
+   m_Registries:
+   - m_Id: main
+     m_Name: 
+@@ -24,20 +26,15 @@ MonoBehaviour:
+     m_Scopes: []
+     m_IsDefault: 1
+     m_Capabilities: 7
++    m_ConfigSource: 0
++    m_Compliance:
++      m_Status: 0
++      m_Violations: []
+   m_UserSelectedRegistryName: 
+   m_UserAddingNewScopedRegistry: 0
+   m_RegistryInfoDraft:
+-    m_ErrorMessage: 
+-    m_Original:
+-      m_Id: 
+-      m_Name: 
+-      m_Url: 
+-      m_Scopes: []
+-      m_IsDefault: 0
+-      m_Capabilities: 0
+     m_Modified: 0
+-    m_Name: 
+-    m_Url: 
+-    m_Scopes:
+-    - 
+-    m_SelectedScopeIndex: 0
++    m_ErrorMessage: 
++    m_UserModificationsInstanceId: -920
++    m_OriginalInstanceId: -922
++  m_LoadAssets: -1
+diff --git a/ProjectSettings/ShaderGraphSettings.asset b/ProjectSettings/ShaderGraphSettings.asset
+index e66042a..ce8c243 100644
+--- a/ProjectSettings/ShaderGraphSettings.asset
++++ b/ProjectSettings/ShaderGraphSettings.asset
+@@ -13,6 +13,7 @@ MonoBehaviour:
+   m_Name: 
+   m_EditorClassIdentifier: 
+   shaderVariantLimit: 128
++  overrideShaderVariantLimit: 0
+   customInterpolatorErrorThreshold: 32
+   customInterpolatorWarningThreshold: 16
+   customHeatmapValues: {fileID: 0}
+diff --git a/ProjectSettings/URPProjectSettings.asset b/ProjectSettings/URPProjectSettings.asset
+index 64a8674..6ad5631 100644
+--- a/ProjectSettings/URPProjectSettings.asset
++++ b/ProjectSettings/URPProjectSettings.asset
+@@ -13,3 +13,4 @@ MonoBehaviour:
+   m_Name: 
+   m_EditorClassIdentifier: 
+   m_LastMaterialVersion: 10
++  m_ProjectSettingFolderPath: URPDefaultResources

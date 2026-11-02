@@ -1,0 +1,5 @@
+node_modules/
+editor-command.txt
+editor-result.txt
+server.log
+server-error.log

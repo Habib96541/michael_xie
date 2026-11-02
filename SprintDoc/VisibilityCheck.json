@@ -1,0 +1,18 @@
+{
+  "kind": "Headed installed Chrome, actual tab activation",
+  "result": "PASS",
+  "hidden": true,
+  "returnState": {
+    "State": "Paused",
+    "Steps": 0,
+    "Wallet": 0,
+    "RoundCoins": 0,
+    "Seconds": 29.787996292114258
+  },
+  "assertions": [
+    "Tab activation actually hides the game document",
+    "Tab change pauses the active run",
+    "Return keeps the timer paused",
+    "Explicit Resume returns to Playing"
+  ]
+}

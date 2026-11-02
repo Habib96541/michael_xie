@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "kind": "Chrome touch emulation, actual world-panel raycast and interrupted reload",
+  "landed": {
+    "State": "Playing",
+    "Steps": 1,
+    "Wallet": 0,
+    "RoundCoins": 10,
+    "Seconds": 27.815956115722656
+  },
+  "reloaded": {
+    "State": "Home",
+    "Steps": 0,
+    "Wallet": 0,
+    "RoundCoins": 0,
+    "Seconds": 0
+  },
+  "assertions": [
+    "Touch on the actual valid next panel lands safely",
+    "Touch plus mouse simulation does not duplicate a step",
+    "Reload during an earned active round abandons the provisional coins and run"
+  ]
+}
