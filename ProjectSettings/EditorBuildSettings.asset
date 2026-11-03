@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/PegRush/Generated/PegRush.unity
+    path: Assets/PegRush/PegRush.unity
     guid: b11d155196ae2844e89bce2380ae8370
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
