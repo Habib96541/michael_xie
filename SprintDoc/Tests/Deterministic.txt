@@ -1,0 +1,30 @@
+PASS: Countdown rejects shots
+PASS: Before deadline remains playing
+PASS: Exact 20-second deadline
+PASS: Deadline rejects bomb and preserves success
+PASS: Bomb immediately before deadline loses pending
+PASS: Terminal outcome cannot change
+PASS: Pause freezes clock and rejects hits
+PASS: Abandon discards pending
+PASS: New round has unique ID and no carried earnings
+PASS: Default configuration accepted
+PASS: Zero reward weights rejected
+PASS: Invalid target capacity rejected
+PASS: Missing save starts with empty wallet
+PASS: Pending earnings do not enter wallet
+PASS: Settlement save succeeds
+PASS: Duplicate settlement does not pay twice
+PASS: Wallet and settlement reload together
+PASS: Persisted settlement rejects repeated payout
+PASS: Bomb preserves previously banked wallet
+PASS: Restart/reload cannot bank unfinished earnings
+PASS: Corrupt save recovers safely
+PASS: Rising target rejects hit
+PASS: Duplicate target hit rejected immediately
+PASS: Hit disables collider before retreat
+PASS: Pool reuse clears reward and rejects old activation
+PASS: Pooled target resets collider and visibility
+PASS: Playable scene has three shelf reveal masks
+PASS: Shelf mask is restricted to its own target row
+PASS: Shelf mask is restricted to its own target row
+PASS: Shelf mask is restricted to its own target row

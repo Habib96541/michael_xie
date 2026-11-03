@@ -1,0 +1,1 @@
+UNAVAILABLE: Chrome automation kept the game document visible when switching tabs; actual hidden-tab pause was not verified. Blur/focus event handling passed in Browser.txt.

@@ -7,3 +7,5 @@ Builds/
 .vs/
 *.csproj
 *.sln
+__pycache__/
+*.pyc

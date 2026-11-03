@@ -1,6 +1,161 @@
-BULLSEYE BLITZ — PHASE 1, SPRINT 1
+BULLSEYE BLITZ â€” PHASE 1, SPRINT 1
 
-Status: Asset inventory established; gameplay implementation has not started.
+Status: Playable source and Web build implemented. Current build exercised through
+HTTP in Chrome. Executed results and remaining validation gaps are listed below.
+
+Acceptance criteria
+- Nine SpriteRenderer/Collider2D target slots on three shelves; explicit reveal,
+  exposure, retreat, pool, and hit eligibility states.
+- New Input System mouse/touch, one shot per press, UI blocking, single active
+  touch, and frontmost 2D hit resolution with intentional shelf blockers.
+- Countdown followed by exactly 20 active seconds, safe deadline ordering,
+  immediate bomb failure, pause/focus handling, and no early cash-out.
+- Separate pending/wallet earnings; one settlement per successful round,
+  persistence before completed payout, and safe abandonment/reload behavior.
+- Home, gameplay, pause, results, settings, and help screens; five requested
+  viewport sizes and resize without rerolling targets.
+- Saved scene, reusable prefabs, repeatable Web build and local HTTP launch,
+  executed checks and screenshots, documented gaps.
+
+Source baseline and environment
+- Git baseline commit: 4d89293 (imported project before gameplay implementation).
+- Unity 6000.3.10f1, existing URP 17.3.0, Input System 1.18.0 preserved.
+- Installed WebGLSupport found. Editor log confirmed licensing entitlement.
+- No AGENTS.md found in the project. Imported asset originals preserved.
+- Existing import-worker/package-manager messages and shader-worker errors were
+  present before gameplay work; they are not classified as game code failures.
+
+Rules and balance
+- Three-second countdown; 20-second authoritative active gameplay clock.
+- Default spawn interval 0.45-0.75 seconds; exposed life 1.4-2.1 seconds;
+  rise/retreat 0.15 seconds; maximum five active and two bombs.
+- Start with two coins; bombs available after one second, nominal 18% selection.
+- Coin values 10/20/50/100 weighted 45/30/18/7. Force a coin opportunity when
+  all exposed targets are bombs. Never replace occupied targets.
+- Unlimited shots and retries; misses have no penalty. Bomb removes current
+  round earnings only. Success automatically banks all pending earnings.
+- No entry costs, wagers, shops, upgrades, ads, combos, or multiplayer.
+
+Architecture and assets
+- Assets/Bullseye/Scenes/BullseyeBlitz.unity is the playable build scene.
+- Assets/Bullseye/BlitzConfig.asset stores timing, rewards, weights, and artwork.
+- RoundRules owns states/clock/pending earnings. BlitzGame coordinates terminal
+  transitions and screens. BoothSpawner owns scheduling and active limits.
+- BoothTarget owns a slot's lifecycle and activation ID; nine instances are
+  reused. Consume disables its collider and validates exposure at shot time.
+- BlitzPointer polls only the new Input System and processes input in LateUpdate.
+  UI blocking uses a fresh EventSystem raycast at the actual pointer position.
+- BlitzUI builds Canvas controls and safe-area menus. BlitzAudio owns two audio
+  sources. BlitzFeedback preallocates twenty cosmetic feedback objects.
+- WalletStore owns versioned save data. BlitzBrowser supplies browser storage,
+  optional vibration, and read-only QA telemetry when the URL contains ?qa=1.
+- Prefabs: BoothTarget and BoothDecoration, under Assets/Bullseye/Prefabs.
+- Initial setup refuses to overwrite an existing playable scene. Normal builds
+  do not regenerate scene/configuration/assets.
+
+Rendering and hit detection
+- Orthographic camera, unlit URP sprites, no 3D target physics.
+- Sorting layers: Backdrop, Targets, ShelfFronts, Effects, UI.
+- Reveal masks are restricted to each row's target sorting-order range.
+- Target labels render only while exposed; shelves cover retreating artwork.
+- Target layer 8; intentional shelf blocker layer 9. Physics2D.OverlapPointAll
+  queries only these layers. Frontmost eligible target uses explicit order;
+  overlap query enumeration order is never treated as rendering order.
+- Pointer conversion uses the gameplay camera and z=0 plane depth.
+- Camera size and slot spacing adapt independently of Canvas UI. Resizing does
+  not reset round state, target identity, type, value, or activation ID.
+- Crosshair and labels do not intercept Canvas raycasts.
+
+Timing, pause, wallet
+- RoundRules is the sole active gameplay clock. Spawn/target timing consumes it.
+- Every shot synchronizes the clock before resolving. At time >=20 success wins
+  and input is rejected. Earlier bomb hits immediately transition to failure.
+- Pause freezes clock/targets/spawning and uses a fully opaque overlay. Browser
+  focus/visibility loss requests pause; Resume consumes the interaction.
+- Restart/Home confirmation states the number of pending coins to discard.
+- Save format v1 contains integer wallet/best/completed counts, settlement ID,
+  music/sound volumes, reduced effects, and optional vibration.
+- Browser saves use one localStorage record and verify the written string before
+  completed payout is shown. Editor uses PlayerPrefs. Local saves are editable,
+  origin-specific, and have no backend security or tamper-proof guarantee.
+- A failed settlement rolls back the in-memory wallet and exposes Retry saving.
+  Pending earnings are never saved as a completed round. Missing/corrupt data
+  falls back safely to defaults. Save operations occur during settlement/settings,
+  not only on unload or application quit.
+
+Audio and artwork
+- Reuse and source paths are in SprintDoc/AssetInventory.md.
+- Coin/bomb/button artwork comes from Violet Theme UI. Originals unchanged.
+- Current music candidate is CASUAL THEME 2 - LOOP 1 (16 seconds, stereo).
+- POP 1 and SPECIAL COLECT 1 provide pitch-varied short feedback; a generated
+  short tone is a fallback. UI/countdown/hit/miss/bomb/results audio paths exist.
+- Playback begins after interaction; separate music and sound volumes persist.
+- Booth backdrop, stripes, shelf fronts, curtains, marquee diamonds, crosshair,
+  and simple feedback are original replaceable procedural placeholders.
+- LegacyRuntime.ttf is the built-in readable font. No imported font required.
+- Audio has not yet been perceptually auditioned; dedicated bomb/shot timbres
+  may need replacement after audition. Imported license notes are preserved.
+
+Build and hosting
+- Run Tools/build-web.ps1. Output: Builds/Web, with index.html and all Build files.
+- Compression disabled: do not apply Content-Encoding to raw build files.
+- Serve .wasm as application/wasm, .js as JavaScript, .data as octet-stream.
+- Local command: python -m http.server 8765 --bind 127.0.0.1 --directory Builds/Web
+- Open http://127.0.0.1:8765, not file://. Keep the same origin to retain wallet.
+- Responsive custom page includes fullscreen; device/browser restrictions apply.
+- No external deployment or archive is created.
+
+Executed tests and delivery status
+- 30 deterministic Editor checks passed: exact deadline, bomb-before-deadline,
+  terminal exclusivity, pause, pending versus wallet, settlement deduplication,
+  reload/corrupt save handling, target lifecycle, stale activation rejection,
+  pooled collider shutdown, and the three saved reveal-mask ranges.
+- 27 compiled Chrome browser checks passed against the final build through HTTP.
+  These cover audio activation, countdown input gating, two-coin start, spawn caps,
+  collider eligibility, deliberately failed storage and successful payout retry,
+  success timing/banking, post-deadline rejection, shelf blocking, circular hit
+  bounds, held mouse, pause, rotation identity, resume suppression, blur/focus
+  event handling, bomb loss, reload, settings, touch position, concurrent fingers,
+  held touch, viewport bounds, and minimum target diameter. No browser JS or
+  console errors were reported in the passing run.
+- Four extra compiled-browser checks passed: fullscreen enter/exit and DPR 2
+  touch sizing/coordinate accuracy. Minimum collider diameter at 360x800 is about
+  50 CSS pixels, including DPR 2 after converting render pixels to logical pixels.
+- Home and gameplay screenshots captured and inspected at 360x800, 720x1280,
+  768x1024, 1280x720, and 1600x900. Phone text size was increased after review.
+  A retreating-sprite leak was caught in screenshot review, corrected by restricting
+  each mask's back/front sorting layer, then rebuilt and browser checks repeated.
+- Screenshots/results are under SprintDoc/Tests. LayoutContactSheet.png compares
+  the five final gameplay layouts. Save-failure, success, bomb, pause, settings,
+  and DPR 2 screenshots provide additional evidence.
+- Tools/verify_delivery.py checks build files, HTTP responses, WASM MIME type,
+  screenshot dimensions, scene, configuration, prefabs, and sprint document;
+  DeliveryManifest.json records hashes for the delivered build.
+
+Performance observations and known limitations
+- Passing main run: software-rendered headless Chrome, FPS samples approximately
+  16.4 minimum / 29.4 median / 38.5 maximum. This is not a hardware-GPU or mobile
+  performance claim. Repeated rounds/retries were exercised; target allocation
+  is fixed at nine slots and feedback allocation at twenty pooled objects.
+- Extra-run memory sample: JS heap about 28.7 MB and WASM heap 107,085,824 bytes.
+  No long-duration heap/listener leak profile was performed.
+- Uncompressed Web delivery is about 63.4 MB. Compression is intentionally off
+  for straightforward local hosting; production transfer-size tuning is later work.
+- Touch and multiple fingers were emulated in Chromium. Physical phones/tablets,
+  hardware vibration, Safari/Firefox/Edge, and perceptual audio audition were not
+  tested. Playback activation and persisted volume behavior were browser-tested.
+- Blur/focus event handling passed. A separate visible Chrome automation attempt
+  did not make document.hidden true when switching tabs, so actual hidden-tab
+  lifecycle behavior remains a manual validation gap, not a reported pass.
+- Exact subframe deadline and bomb-before-timeout boundaries were tested in the
+  deterministic rules; the browser tested full duration and post-deadline input.
+  Artificially overlapping target colliders were not forced in engine testing;
+  explicit frontmost ordering is implemented and normal slot areas do not overlap.
+- Booth art and short feedback are intentionally replaceable placeholders.
+
+Later cosmetic shop proposal
+- A later sprint may spend banked coins on booth/target/crosshair cosmetics only.
+  No shop UI, purchases, power-ups, or functional upgrades are included now.
 
 Asset tracking
 - See SprintDoc/AssetInventory.md for exact reusable paths, visual direction,
@@ -12,17 +167,9 @@ Asset tracking
 - Create missing carnival booth art and original title; reuse existing components
   for game-specific UI and feedback.
 
-Executed checks
+Initial inventory checks (before implementation)
 - Enumerated imported assets and inspected representative artwork and metadata.
 - Read publisher text notes and RPG third-party notices.
 - Confirmed SampleScene still contains camera/light only.
 - No compilation, play tests, audio audition, Web build, or browser tests executed
   as part of this inventory task.
-
-Next implementation work
-- Establish acceptance criteria and source baseline; inspect Unity licensing and
-  Web Build Support, existing errors, and selected assets in the engine.
-- Implement the user-provided Phase 1 Sprint 1 specification and extend this
-  document with architecture, balancing, saving, build/hosting, actual validation
-  results, screenshots, performance observations, limitations, and future cosmetic
-  shop scope as those tasks are completed.

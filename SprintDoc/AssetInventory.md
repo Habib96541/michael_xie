@@ -58,6 +58,10 @@ Use Violet Theme UI's smooth cartoon artwork, purple panels, gold coins, and war
 
 Inspect transparency, padding, pivots, frame rectangles, Web compression, sprite sorting, UI slices, and mobile readability in Unity. Audition audio and review supplied license documentation. Test selected VFX in the current URP renderer. Inventory inspection alone does not establish compilation, browser compatibility, or performance.
 
-## Source baseline
+## Source baseline (before implementation)
 
 Main scene `Assets/Scenes/SampleScene.unity` still contains only Main Camera and Global Light 2D. It is the only enabled build scene. No game-specific code has been implemented; current C# scripts belong to the RPG demo import. No AGENTS.md or root Git metadata was found during this inventory pass.
+
+## Implementation selection
+
+The game now uses Violet UI's coin, bomb, and sliced purple button sprites, plus FREE CASUAL MUSIC PACK's CASUAL THEME 2 - LOOP 1, POP 1, and SPECIAL COLECT 1. Imported demo scripts are not attached to the game. Procedural booth art, crosshair, and pooled feedback keep the first sprint lightweight; the other VFX/weapon/RPG packs remain preserved optional resources. The current playable scene is `Assets/Bullseye/Scenes/BullseyeBlitz.unity`. See `SprintDoc/Phase1Sprint1.txt` for current validation and delivery status.

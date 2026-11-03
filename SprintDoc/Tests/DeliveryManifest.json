@@ -1,0 +1,64 @@
+{
+  "unity": "6000.3.10f1",
+  "date": "2026-11-03",
+  "compression": "Disabled",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 3161,
+      "sha256": "bcaefd3caf4e0d2bf8c6197d45b2c9f64a79e0eaa89dc9cc355dfad9c159af88",
+      "http": {
+        "contentType": "text/html",
+        "contentLength": "3161"
+      }
+    },
+    {
+      "path": "Build/Web.loader.js",
+      "bytes": 26982,
+      "sha256": "145739a9f8fadf75835f68810f4322396c3eaba89bb9f5b4743a9a5f4373cc7c",
+      "http": {
+        "contentType": "application/javascript",
+        "contentLength": "26982"
+      }
+    },
+    {
+      "path": "Build/Web.framework.js",
+      "bytes": 463064,
+      "sha256": "efa03fbb6628ba2f1d943b425b8e95482871a0e6ff984922cdec7a5ce16f845f",
+      "http": {
+        "contentType": "application/javascript",
+        "contentLength": "463064"
+      }
+    },
+    {
+      "path": "Build/Web.data",
+      "bytes": 13068644,
+      "sha256": "1f78962fa77f7963fefa00813c039fb0a698f24809c1073af4d92cafb5049319",
+      "http": {
+        "contentType": "application/octet-stream",
+        "contentLength": "13068644"
+      }
+    },
+    {
+      "path": "Build/Web.wasm",
+      "bytes": 49834213,
+      "sha256": "959184ea976ce3f1aebbc4c8af4df9e079ddd0a7e4dea01cfd463ac7ab749bd1",
+      "http": {
+        "contentType": "application/wasm",
+        "contentLength": "49834213"
+      }
+    }
+  ],
+  "screenshots": [
+    "home-360x800.png",
+    "gameplay-360x800.png",
+    "home-720x1280.png",
+    "gameplay-720x1280.png",
+    "home-768x1024.png",
+    "gameplay-768x1024.png",
+    "home-1280x720.png",
+    "gameplay-1280x720.png",
+    "home-1600x900.png",
+    "gameplay-1600x900.png"
+  ]
+}
