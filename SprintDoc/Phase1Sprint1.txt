@@ -1,0 +1,28 @@
+BULLSEYE BLITZ — PHASE 1, SPRINT 1
+
+Status: Asset inventory established; gameplay implementation has not started.
+
+Asset tracking
+- See SprintDoc/AssetInventory.md for exact reusable paths, visual direction,
+  audio candidates, missing pieces, and pending validation.
+- Prefer Violet Theme UI for menus, coin/bomb artwork, and controls.
+- Use Toon Muzzleflash selectively for cosmetic feedback.
+- Audition Casual Game Sounds U6 and FREE CASUAL MUSIC PACK before assigning roles.
+- Preserve all imported originals and licenses. Build game-owned assets separately.
+- Create missing carnival booth art and original title; reuse existing components
+  for game-specific UI and feedback.
+
+Executed checks
+- Enumerated imported assets and inspected representative artwork and metadata.
+- Read publisher text notes and RPG third-party notices.
+- Confirmed SampleScene still contains camera/light only.
+- No compilation, play tests, audio audition, Web build, or browser tests executed
+  as part of this inventory task.
+
+Next implementation work
+- Establish acceptance criteria and source baseline; inspect Unity licensing and
+  Web Build Support, existing errors, and selected assets in the engine.
+- Implement the user-provided Phase 1 Sprint 1 specification and extend this
+  document with architecture, balancing, saving, build/hosting, actual validation
+  results, screenshots, performance observations, limitations, and future cosmetic
+  shop scope as those tasks are completed.
