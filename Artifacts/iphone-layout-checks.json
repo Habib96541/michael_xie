@@ -1,0 +1,65 @@
+{
+  "kind": "Browser viewport checks; physical iPhone hardware not tested",
+  "checks": [
+    {
+      "fits": true,
+      "game": [
+        667,
+        307.359375
+      ],
+      "ratio": 2.1700981139748867,
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "fits": true,
+      "game": [
+        812,
+        374.1875
+      ],
+      "ratio": 2.170035075997996,
+      "viewport": [
+        812,
+        375
+      ]
+    },
+    {
+      "fits": true,
+      "game": [
+        852,
+        392.625
+      ],
+      "ratio": 2.170009551098376,
+      "viewport": [
+        852,
+        393
+      ]
+    },
+    {
+      "fits": true,
+      "game": [
+        932,
+        429.484375
+      ],
+      "ratio": 2.1700440208098373,
+      "viewport": [
+        932,
+        430
+      ]
+    },
+    {
+      "fits": true,
+      "game": [
+        390,
+        179.71875
+      ],
+      "ratio": 2.170057381324987,
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -60,32 +61,59 @@ namespace BackyardDojo
     {
         public Texture atlas;
         public Rect uv;
-        public int half; // 0 whole, -1 and 1 two actual clipped pieces
-        public float cutAngle;
+        // Each piece retains its own convex outline in original sprite/UV space.
+        public List<Vector2> polygon;
         public override Texture mainTexture => atlas != null ? atlas : Texture2D.whiteTexture;
         protected override void OnPopulateMesh(VertexHelper vh)
         {
             vh.Clear();
-            var poly = new System.Collections.Generic.List<Vector2> {
-                new Vector2(-.5f,-.5f),new Vector2(.5f,-.5f),new Vector2(.5f,.5f),new Vector2(-.5f,.5f) };
-            if(half!=0)
-            {
-                Vector2 n=new Vector2(Mathf.Cos(cutAngle),Mathf.Sin(cutAngle))*half;
-                var clipped=new System.Collections.Generic.List<Vector2>();
-                for(int i=0;i<poly.Count;i++)
-                {
-                    Vector2 a=poly[i],b=poly[(i+1)%poly.Count];
-                    float da=Vector2.Dot(a,n),db=Vector2.Dot(b,n);
-                    if(da>=0) clipped.Add(a);
-                    if((da>=0)!=(db>=0)) clipped.Add(Vector2.Lerp(a,b,da/(da-db)));
-                }
-                poly=clipped;
-            }
+            var poly=polygon ?? WholeShape();
             Rect r=rectTransform.rect;
             foreach(var p in poly) vh.AddVert(new Vector3(p.x*r.width,p.y*r.height),color,
                 new Vector2(uv.x+(p.x+.5f)*uv.width,uv.y+(p.y+.5f)*uv.height));
             for(int i=1;i<poly.Count-1;i++) vh.AddTriangle(0,i,i+1);
         }
+        public static List<Vector2> WholeShape() => new List<Vector2> {
+            new Vector2(-.5f,-.5f),new Vector2(.5f,-.5f),new Vector2(.5f,.5f),new Vector2(-.5f,.5f) };
+        public static List<Vector2> RoundHitShape()
+        {
+            var shape=new List<Vector2>(12);
+            for(int i=0;i<12;i++){float a=i*Mathf.PI/6;shape.Add(new Vector2(Mathf.Cos(a),Mathf.Sin(a))*.34f);}
+            return shape;
+        }
+        public static List<Vector2> Clip(List<Vector2> shape,Vector2 normal,float offset)
+        {
+            var clipped=new List<Vector2>(shape.Count+1);
+            for(int i=0;i<shape.Count;i++)
+            {
+                Vector2 a=shape[i],b=shape[(i+1)%shape.Count];
+                float da=Vector2.Dot(a,normal)-offset,db=Vector2.Dot(b,normal)-offset;
+                if(da>=0)clipped.Add(a);
+                if((da>=0)!=(db>=0))clipped.Add(Vector2.Lerp(a,b,da/(da-db)));
+            }
+            return clipped;
+        }
+        public static float Area(List<Vector2> shape)
+        {
+            float area=0;
+            for(int i=0;i<shape.Count;i++)area+=Cross(shape[i],shape[(i+1)%shape.Count]);
+            return Mathf.Abs(area)*.5f;
+        }
+        public static bool SegmentHits(List<Vector2> shape,Vector2 a,Vector2 b)
+        {
+            float enter=0,exit=1;Vector2 delta=b-a;
+            for(int i=0;i<shape.Count;i++)
+            {
+                Vector2 p=shape[i],edge=shape[(i+1)%shape.Count]-p;
+                float start=Cross(edge,a-p),slope=Cross(edge,delta);
+                if(Mathf.Abs(slope)<.000001f){if(start<0)return false;continue;}
+                float at=-start/slope;
+                if(slope>0)enter=Mathf.Max(enter,at);else exit=Mathf.Min(exit,at);
+                if(enter>exit)return false;
+            }
+            return true;
+        }
+        static float Cross(Vector2 a,Vector2 b) => a.x*b.y-a.y*b.x;
     }
 
     [RequireComponent(typeof(CanvasRenderer))]

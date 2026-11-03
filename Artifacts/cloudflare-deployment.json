@@ -1,0 +1,23 @@
+{
+  "provider": "Cloudflare Pages",
+  "project": "fruit-ninja-backyard-dojo",
+  "gameName": "Juice Dojo",
+  "version": "1.2",
+  "productionUrl": "https://fruit-ninja-backyard-dojo.pages.dev/",
+  "deploymentUrl": "https://61a4eead.fruit-ninja-backyard-dojo.pages.dev/",
+  "branch": "main",
+  "verifiedAtUtc": "2026-11-03T09:05:35.5326823Z",
+  "verification": {
+    "productionHttpStatus": 200,
+    "brotliResponseHeaders": true,
+    "unityGameplayAndUiChecks": "Artifacts/mobile-result.txt",
+    "iphoneViewportChecks": "Artifacts/iphone-layout-checks.json",
+    "browserSliceScore": 2,
+    "physicalIPhoneTested": false,
+    "browserMenuLoaded": true,
+    "browserConsoleErrors": 0,
+    "staggeredLaunchChecks": "Artifacts/mobile-result.txt",
+    "multiCutChecks": "First, second and third cuts; polygon conservation; unique harvest count; fragment miss rules"
+  },
+  "preview": "Artifacts/JuiceDojo-staggered-cloudflare-live.jpg"
+}

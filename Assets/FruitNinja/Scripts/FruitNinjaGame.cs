@@ -11,14 +11,15 @@ namespace BackyardDojo
     public sealed class FruitNinjaGame : MonoBehaviour
     {
         public enum GameMode { Classic, Arcade, Zen }
-        enum ScreenState { Menu, Playing, Paused, Results }
+        enum ScreenState { Loading, Menu, Playing, Paused, Results }
         sealed class Fruit
         {
             public RectTransform rect;
             public FruitSliceGraphic graphic;
             public Vector2 p,v;
-            public float radius,spin,angle,life=8;
+            public float radius,spin,angle,trail,cutCooldown,life=8;
             public int kind,half;
+            public List<Vector2> hitShape;
             public bool power;
         }
         sealed class Particle
@@ -27,6 +28,9 @@ namespace BackyardDojo
             public Graphic graphic;
             public Vector2 p,v;
             public float life,maxLife,spin;
+            public Vector2 size;
+            public Color tint;
+            public float endScale=1,drag,wobble,phase,fadeIn;
             public bool gravity;
         }
         sealed class FloatText { public RectTransform rect; public Text text; public Vector2 p; public float age; }
@@ -39,6 +43,7 @@ namespace BackyardDojo
         public string CurrentState => state.ToString();
         public GameMode Mode => mode;
         public int RoundCombo => roundCombo;
+        public bool IsReady => state!=ScreenState.Loading && loadingLayer==null;
 
         static readonly Color Ink=Hex("3C2B1B"),Cream=Hex("FFF0BE"),Paper=Hex("D6AF70"),Green=Hex("83AE35");
         readonly Color[] juice={Hex("E94F5E"),Hex("FFB52E"),Hex("F34F38"),Hex("FFE56C"),Hex("F7CF43"),Hex("AD76E6"),Hex("FF5D63"),Hex("EEAC3E")};
@@ -47,10 +52,19 @@ namespace BackyardDojo
         readonly List<Particle> particles=new List<Particle>();
         readonly List<FloatText> floats=new List<FloatText>();
         readonly List<Bob> bobs=new List<Bob>();
-        RectTransform root,menu,gameLayer,fruitLayer,effectLayer,hud,modal,bladeLayer;
+        readonly Queue<int> launchLanes=new Queue<int>();
+        static readonly int[][] LanePatterns={
+            new[]{1,1,0,2},new[]{0,1,2,1},new[]{2,2,1,0},new[]{0,0,2,1},
+            new[]{1,0,0,2},new[]{2,1,1,0},new[]{0,2,1,1},new[]{1,2,0,1} };
+        int previousPattern=-1;
+        bool openingLaunches=true,pendingBomb;
+        RectTransform frame,root,menu,gameLayer,fruitLayer,effectLayer,hud,modal,bladeLayer,ambientLayer,loadingLayer,loadingFill,loadingSpinner;
+        CanvasGroup loadingGroup;
+        RawImage orchardBackground;
         BladeGraphic blade;
         Font heading,body;
-        Texture2D orchard,atlas,paperNoise;
+        Texture2D orchard,atlas,paperNoise,logo;
+        Text loadingStatus,loadingPercent;
         Text scoreText,bestText,timeText,modeText,comboText,missText,noticeText;
         Image flash;
         AudioSource sfx,music;
@@ -58,15 +72,19 @@ namespace BackyardDojo
         ScreenState state;
         GameMode mode;
         int score,misses,totalFruit,roundFruit,roundCombo,strokeCount,bladeIndex;
-        float clock,elapsed,spawnTimer,countdown,comboWindow,strokeLastTime,shake,freeze,frenzy,ambientTimer;
+        float clock,elapsed,spawnTimer,countdown,comboWindow,strokeLastTime,shake,freeze,frenzy,ambientTimer,moteTimer,bladeSparkTimer;
+        const int ParticleBudget=360;
+        const int FragmentBudget=96;
+        public const float StageWidth=1953,StageHeight=900,StageInset=(StageWidth-1600)*.5f;
         float uiScale=1;
         bool soundOn,musicOn,hadPointer,verification;
         Vector2 lastPointer;
+        Vector2 stageCenter;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Bootstrap()
         {
-            if(FindFirstObjectByType<FruitNinjaGame>()==null) new GameObject("Fruit Ninja · Backyard Dojo").AddComponent<FruitNinjaGame>();
+            if(FindFirstObjectByType<FruitNinjaGame>()==null) new GameObject("Juice Dojo").AddComponent<FruitNinjaGame>();
         }
 
         void Awake()
@@ -75,11 +93,11 @@ namespace BackyardDojo
             Application.targetFrameRate=120;
             QualitySettings.vSyncCount=1;
             heading=Resources.Load<Font>("Fonts/LilitaOne");body=Resources.Load<Font>("Fonts/Lato");
-            orchard=Resources.Load<Texture2D>("Art/Orchard");atlas=Resources.Load<Texture2D>("Art/FruitAtlas");
+            logo=Resources.Load<Texture2D>("Art/JuiceDojoLogo");
             soundOn=PlayerPrefs.GetInt("Dojo.Sound",1)==1;musicOn=PlayerPrefs.GetInt("Dojo.Music",1)==1;
             bladeIndex=PlayerPrefs.GetInt("Dojo.Blade",0);totalFruit=PlayerPrefs.GetInt("Dojo.TotalFruit",0);
             paperNoise=MakePaper();
-            SetupCanvas();SetupAudio();ShowMenu();
+            SetupCanvas();StartCoroutine(LoadGame());
         }
         void OnDestroy() { if(Instance==this) Instance=null; }
         void OnApplicationFocus(bool focus) { if(!focus && state==ScreenState.Playing && countdown<=0) Pause(); }
@@ -97,10 +115,14 @@ namespace BackyardDojo
             var canvasObject=new GameObject("Backyard Dojo UI",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster));
             var c=canvasObject.GetComponent<Canvas>();c.renderMode=RenderMode.ScreenSpaceOverlay;c.sortingOrder=10;
             var scaler=canvasObject.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ConstantPixelSize;
-            root=Rect(canvasObject.transform,"1600 × 900 stage",0,0,1600,900);
+            frame=Rect(canvasObject.transform,"2.17 to 1 play area",0,0,StageWidth,StageHeight);
+            frame.anchorMin=frame.anchorMax=frame.pivot=new Vector2(.5f,.5f);frame.anchoredPosition=Vector2.zero;
+            frame.gameObject.AddComponent<RectMask2D>();
+            root=Rect(frame,"Centered interface",0,0,1600,900);
             root.anchorMin=root.anchorMax=new Vector2(.5f,.5f);root.pivot=new Vector2(.5f,.5f);root.anchoredPosition=Vector2.zero;
-            var bg=Raw(root,"Orchard",0,0,1600,900,orchard);bg.raycastTarget=false;
-            Fill(root,"Garden shade",0,0,1600,900,new Color(.02f,.08f,.045f,.13f));
+            orchardBackground=Raw(root,"Orchard",-StageInset,0,StageWidth,900,Texture2D.whiteTexture);orchardBackground.color=Hex("183D2C");
+            Fill(root,"Garden shade",-StageInset,0,StageWidth,900,new Color(.02f,.08f,.045f,.13f));
+            ambientLayer=Rect(root,"Garden fireflies",0,0,1600,900);
             gameLayer=Rect(root,"Game",0,0,1600,900);
             fruitLayer=Rect(gameLayer,"Flying fruit",0,0,1600,900);
             effectLayer=Rect(gameLayer,"Juice & sparks",0,0,1600,900);
@@ -108,7 +130,7 @@ namespace BackyardDojo
             menu=Rect(root,"Menu",0,0,1600,900);
             bladeLayer=Rect(root,"Blade layer",0,0,1600,900);
             blade=bladeLayer.gameObject.AddComponent<BladeGraphic>();blade.raycastTarget=false;blade.bladeColor=blades[bladeIndex];
-            flash=Fill(root,"Flash",0,0,1600,900,Color.clear);flash.raycastTarget=false;
+            flash=Fill(root,"Flash",-StageInset,0,StageWidth,900,Color.clear);flash.raycastTarget=false;
             if(FindFirstObjectByType<EventSystem>()==null)
             {
                 var es=new GameObject("EventSystem",typeof(EventSystem),typeof(InputSystemUIInputModule));
@@ -117,19 +139,85 @@ namespace BackyardDojo
             Resize();
         }
 
+        System.Collections.IEnumerator LoadGame()
+        {
+            state=ScreenState.Loading;gameLayer.gameObject.SetActive(false);menu.gameObject.SetActive(false);
+            ShowLoadingScreen();float start=Time.realtimeSinceStartup;
+            yield return null;SetLoadingProgress(.08f,"PICKING A FRESH BACKDROP...");
+            var garden=Resources.LoadAsync<Texture2D>("Art/Orchard");
+            while(!garden.isDone) {SetLoadingProgress(.08f+garden.progress*.35f,"OPENING THE GARDEN...");yield return null;}
+            orchard=garden.asset as Texture2D;orchardBackground.texture=orchard;orchardBackground.color=Color.white;
+            // Cover the wider stage without stretching the painted orchard.
+            float cropHeight=(orchard.width/(float)orchard.height)/(StageWidth/StageHeight);
+            orchardBackground.uvRect=new Rect(0,(1-cropHeight)*.5f,1,cropHeight);
+            SetLoadingProgress(.45f,"GATHERING THE JUICIEST FRUIT...");yield return null;
+            var fruit=Resources.LoadAsync<Texture2D>("Art/FruitAtlas");
+            while(!fruit.isDone) {SetLoadingProgress(.45f+fruit.progress*.35f,"GATHERING THE JUICIEST FRUIT...");yield return null;}
+            atlas=fruit.asset as Texture2D;SetLoadingProgress(.84f,"TUNING THE GARDEN MELODY...");yield return null;
+            SetupAudio();SetLoadingProgress(1,"FRESH FRUIT. SHARP BLADES. LET'S GO!");
+            while(Time.realtimeSinceStartup-start<1.6f)yield return null;
+            ShowMenu();
+            while(loadingGroup!=null && loadingGroup.alpha>0)
+            {loadingGroup.alpha=Mathf.Max(0,loadingGroup.alpha-Time.unscaledDeltaTime*3.5f);yield return null;}
+            DismissLoading();
+        }
+        void ShowLoadingScreen()
+        {
+            DismissLoading();loadingLayer=Rect(root,"Loading screen",0,0,1600,900);
+            loadingGroup=loadingLayer.gameObject.AddComponent<CanvasGroup>();loadingGroup.blocksRaycasts=true;
+            var backdrop=Fill(loadingLayer,"Garden veil",-StageInset,0,StageWidth,900,new Color(.025f,.095f,.065f,.9f));backdrop.raycastTarget=true;
+            Label(loadingLayer,"Dojo name","WELCOME TO THE DOJO",480,130,640,39,21,Hex("D7CA8C"));
+            CreateLogo(loadingLayer,420,184,760,300);
+            Label(loadingLayer,"Tagline","A LITTLE FOCUS. A LOT OF JUICE.",430,498,740,38,23,Cream);
+            var card=Board(loadingLayer,"Loading card",510,578,580,119,Paper,-.8f,true);Tape(card,240,-11,99,27,3);
+            loadingStatus=Label(card,"Loading stage","OPENING THE GARDEN...",22,15,536,33,21,Ink);
+            Shape(card,"Progress track",27,63,470,19,Ink);
+            loadingFill=Shape(card,"Fresh green progress",30,66,0,13,Green).rectTransform;
+            loadingFill.pivot=new Vector2(0,.5f);loadingFill.anchoredPosition=new Vector2(30,-72.5f);
+            loadingPercent=Label(card,"Percentage","0%",501,54,61,35,20,Ink);
+            var spinner=Rect(loadingLayer,"Citrus spinner",777,739,46,46);loadingSpinner=spinner;
+            var ring=spinner.gameObject.AddComponent<EffectGraphic>();ring.form=EffectGraphic.Form.Arc;ring.color=Hex("DDBE64");ring.raycastTarget=false;
+            Circle(spinner,"Citrus core",23,23,10,Hex("A2CD52"));
+            Label(loadingLayer,"Tip","DOJO TIP: Slice three fruit in one stroke for a combo bonus.",360,806,880,38,18,Hex("DDD3AF"),TextAnchor.MiddleCenter,false);
+        }
+        void SetLoadingProgress(float progress,string status)
+        {
+            if(loadingFill==null)return;
+            loadingFill.sizeDelta=new Vector2(464*Mathf.Clamp01(progress),13);
+            loadingStatus.text=status;loadingPercent.text=Mathf.RoundToInt(progress*100)+"%";
+        }
+        void DismissLoading()
+        {if(loadingLayer!=null)Destroy(loadingLayer.gameObject);loadingLayer=null;loadingGroup=null;loadingSpinner=null;}
+        void CreateLogo(Transform parent,float x,float y,float w,float h)
+        {
+            var container=Rect(parent,"Juice Dojo logo",x,y,w,h);
+            if(logo!=null)
+            {
+                float aspect=logo.width/(float)logo.height;
+                float drawW=Mathf.Min(w,h*aspect),drawH=drawW/aspect;
+                Raw(container,"Painted logo",(w-drawW)*.5f,(h-drawH)*.5f,drawW,drawH,logo);
+            }
+            else Label(container,"Logo fallback","JUICE DOJO",0,0,w,h,96,Cream,TextAnchor.MiddleCenter,true,4);
+        }
+
         void Update()
         {
             float dt=Mathf.Min(Time.unscaledDeltaTime,.04f);Resize();
             blade.Tick(dt);
+            bladeSparkTimer-=dt;
+            if(loadingSpinner!=null)loadingSpinner.Rotate(0,0,-160*Time.unscaledDeltaTime);
             if(flash.color.a>0) { Color c=flash.color;c.a=Mathf.Max(0,c.a-dt*1.7f);flash.color=c; }
             if(shake>0) { shake-=dt;root.anchoredPosition=UnityEngine.Random.insideUnitCircle*shake*15; }
             else root.anchoredPosition=Vector2.zero;
             foreach(var b in bobs) if(b.rect!=null) b.rect.anchoredPosition=b.start+new Vector2(0,Mathf.Sin(Time.unscaledTime*1.6f+b.phase)*6);
-            HandleKeyboard();HandlePointer();
+            if(state!=ScreenState.Loading && loadingGroup==null) {HandleKeyboard();HandlePointer();}
             TickRound(dt);
             if(state!=ScreenState.Paused) TickEffects(dt);
             ambientTimer-=dt;
             if(ambientTimer<=0 && state==ScreenState.Menu) { SpawnLeaf();ambientTimer=UnityEngine.Random.Range(.6f,1.6f); }
+            moteTimer-=dt;
+            if(moteTimer<=0 && state!=ScreenState.Paused && state!=ScreenState.Results)
+            {SpawnFirefly();moteTimer=UnityEngine.Random.Range(.18f,.4f);}
         }
 
         void TickRound(float dt)
@@ -152,7 +240,7 @@ namespace BackyardDojo
                         freeze=Mathf.Max(0,freeze-dt);frenzy=Mathf.Max(0,frenzy-dt);
                         float speed=freeze>0?.5f:1;
                         spawnTimer-=dt*speed;
-                        if(spawnTimer<=0) { SpawnWave();spawnTimer=frenzy>0?.32f:Mathf.Max(.65f,1.65f-elapsed*.009f); }
+                        if(spawnTimer<=0)SpawnNextFruit();
                         TickFruit(dt*speed);
                         if(comboWindow>0) { comboWindow-=dt;if(comboWindow<=0) FinishStroke(); }
                         UpdateHud();
@@ -163,8 +251,15 @@ namespace BackyardDojo
 
         void Resize()
         {
-            uiScale=Mathf.Min(Screen.width/1600f,Screen.height/900f);
-            if(root!=null) root.localScale=Vector3.one*uiScale;
+            var safe=Screen.safeArea;
+            if(safe.width<=0 || safe.height<=0)safe=new Rect(0,0,Screen.width,Screen.height);
+            stageCenter=safe.center;
+            uiScale=Mathf.Min(safe.width/StageWidth,safe.height/StageHeight);
+            if(frame!=null)
+            {
+                frame.localScale=Vector3.one*uiScale;
+                frame.anchoredPosition=stageCenter-new Vector2(Screen.width*.5f,Screen.height*.5f);
+            }
         }
         void HandleKeyboard()
         {
@@ -183,8 +278,8 @@ namespace BackyardDojo
             if(Touchscreen.current!=null && Touchscreen.current.primaryTouch.press.isPressed)
             { screen=Touchscreen.current.primaryTouch.position.ReadValue();held=true; }
             else if(Mouse.current!=null) { screen=Mouse.current.position.ReadValue();held=Mouse.current.leftButton.isPressed; }
-            Vector2 p=new Vector2((screen.x-Screen.width*.5f)/uiScale+800,450-(screen.y-Screen.height*.5f)/uiScale);
-            if(held && p.x>=0 && p.x<=1600 && p.y>=0 && p.y<=900)
+            Vector2 p=new Vector2((screen.x-stageCenter.x)/uiScale+800,450-(screen.y-stageCenter.y)/uiScale);
+            if(held && p.x>=-StageInset && p.x<=1600+StageInset && p.y>=0 && p.y<=900)
             {
                 if(!hadPointer) { lastPointer=p;blade.Clear();strokeCount=0; }
                 Vector2 delta=p-lastPointer;
@@ -193,12 +288,13 @@ namespace BackyardDojo
                     blade.Add(new Vector2(p.x-800,450-p.y));
                     if(state==ScreenState.Playing && countdown<=0 && p.y>138 && lastPointer.y>138)
                     {
+                        if(bladeSparkTimer<=0) {BladeSpark(p,delta.normalized);bladeSparkTimer=.025f;}
                         if(delta.sqrMagnitude>4500 && Time.unscaledTime-strokeLastTime>.13f) { Play(whooshClip,.15f);strokeLastTime=Time.unscaledTime; }
                         SliceSegment(lastPointer,p);
                     }
                     else if(state==ScreenState.Menu && modal==null && hadPointer && delta.magnitude>12)
                     {
-                        for(int i=0;i<3;i++) if(DistanceToSegment(new Vector2(410+i*390,462),lastPointer,p)<65)
+                        for(int i=0;i<3;i++) if(DistanceToSegment(new Vector2(410+i*390,501),lastPointer,p)<65)
                         { StartRound((GameMode)i);break; }
                     }
                 }
@@ -219,26 +315,15 @@ namespace BackyardDojo
             // Garden station header and hand-cut title.
             var brand=Rect(menu,"Dojo stamp",64,38,310,38);
             var leaf=Circle(brand,"Leaf",13,14,22,Green);leaf.rectTransform.sizeDelta=new Vector2(25,13);leaf.rectTransform.localEulerAngles=new Vector3(0,0,32);
-            Label(brand,"station","THE BACKYARD DOJO",38,0,275,34,19,Cream,TextAnchor.MiddleLeft,false);
+            Label(brand,"station","JUICE DOJO",38,0,275,34,19,Cream,TextAnchor.MiddleLeft,false);
             SmallButton(menu,"?",1396,35,55,52,ShowHelp);
             SmallButton(menu,soundOn?"SFX":"OFF",1464,35,74,52,()=>{ soundOn=!soundOn;SaveSettings();ShowMenu(); });
-            // A two-line painted wooden logo.
-            var sign=Board(menu,"Fruit Ninja sign",460,78,680,218,Hex("664222"),-2,false);
-            Fill(sign,"Top grain",25,27,630,2,new Color(.95f,.75f,.38f,.12f));
-            Fill(sign,"Bottom grain",36,189,610,2,new Color(.1f,.04f,0,.25f));
-            Nail(sign,26,26);Nail(sign,640,26);Nail(sign,30,178);Nail(sign,642,178);
-            Label(sign,"FRUIT","FRUIT",64,-4,550,112,112,Hex("FFE395"),TextAnchor.MiddleCenter,true,5);
-            Label(sign,"NINJA","NINJA",60,88,560,115,116,Hex("A6CF4C"),TextAnchor.MiddleCenter,true,5);
-            // Little slash and leaves break the silhouette of the sign.
-            var slash=Fill(sign,"Blade stroke",532,37,9,146,Hex("FFF6CB"));slash.rectTransform.localEulerAngles=new Vector3(0,0,-26);
-            FruitIcon(menu,2,390,182,133,-18,true);FruitIcon(menu,1,1125,218,128,14,true);
+            CreateLogo(menu,395,17,810,290);
             var strip=Board(menu,"Choose a mode",590,316,420,51,Hex("EFCD8D"),1.2f,true);
             Label(strip,"Choose","PICK YOUR CHALLENGE",15,4,390,41,25,Ink);
             CreateModeCard(0,245,390,-2.3f,"CLASSIC","THE ORIGINAL",0,"3 misses. One sharp blade.","Watch out for bombs!",Hex("759D37"));
             CreateModeCard(1,635,390,1.2f,"ARCADE","FAST & FRUITY",1,"60 seconds. Make it juicy.","Combos, frenzy & freeze.",Hex("C8782B"));
             CreateModeCard(2,1025,390,-1.5f,"ZEN","FIND YOUR FLOW",5,"90 seconds. Just fruit.","No bombs. No worries.",Hex("6C8D77"));
-            var hint=Label(menu,"Swipe hint","HOLD & SWIPE TO SLICE  ·  CLICK A CARD TO PLAY",400,746,800,34,18,Cream);
-            hint.color=new Color(1,.94f,.73f,.82f);
             var drawer=Board(menu,"Workbench drawer",510,819,580,55,Hex("B68B50"),-.8f,false);
             TextButton(drawer,"YOUR HARVEST",16,5,176,43,ShowStats);
             TextButton(drawer,"BLADES",205,5,130,43,ShowBlades);
@@ -254,7 +339,6 @@ namespace BackyardDojo
             var top=Board(card,"Painted label",20,20,290,39,accent,0,false);
             Label(top,"Mode tag",kicker,4,1,282,35,17,Cream);
             FruitIcon(card,fruit,165,111,122,-7,true);
-            if(index==1) FruitIcon(card,7,222,126,70,13,true);
             Label(card,"Mode name",name,20,161,290,55,48,Ink);
             Label(card,"Description",line1,18,217,294,29,18,Ink,TextAnchor.MiddleCenter,false);
             Label(card,"Rule",line2,18,244,294,25,16,Hex("705532"),TextAnchor.MiddleCenter,false);
@@ -286,8 +370,6 @@ namespace BackyardDojo
             SmallButton(hud,"II",1451,37,91,70,Pause);
             comboText=Label(hud,"Combo status","",500,166,600,42,27,Hex("FFE08A"));
             noticeText=Label(hud,"Countdown","",350,319,900,160,99,Cream,TextAnchor.MiddleCenter,true,5);
-            Label(hud,"Play hint","HOLD + SWIPE TO SLICE",565,837,470,31,18,Hex("FFE9B5"));
-            Label(hud,"Pause hint","ESC  PAUSE",1384,837,151,30,15,Hex("FFE9B5"),TextAnchor.MiddleRight,false);
         }
         void UpdateHud()
         {
@@ -297,20 +379,42 @@ namespace BackyardDojo
             comboText.text=freeze>0?"FROZEN TIME  "+freeze.ToString("0.0")+"s":frenzy>0?"FRUIT FRENZY!  "+frenzy.ToString("0.0")+"s":"";
         }
 
-        void SpawnWave()
+        void PlanLaunches()
         {
-            int count=mode==GameMode.Zen?UnityEngine.Random.Range(3,6):UnityEngine.Random.Range(2,5);
-            if(frenzy>0) count=4;
-            float baseX=UnityEngine.Random.Range(420,1180);
-            for(int i=0;i<count;i++)
+            if(openingLaunches)
             {
-                int kind=UnityEngine.Random.Range(0,7);
-                bool power=mode==GameMode.Arcade && elapsed>5 && UnityEngine.Random.value<.095f;
-                SpawnFruit(kind,new Vector2(Mathf.Clamp(baseX+(i-(count-1)*.5f)*118,170,1430),995+i*24),
-                    new Vector2(UnityEngine.Random.Range(-115,115)+(800-baseX)*.12f,UnityEngine.Random.Range(-1370,-1190)),power);
+                launchLanes.Enqueue(1);launchLanes.Enqueue(1);
+                int side=UnityEngine.Random.value<.5f?0:2;
+                launchLanes.Enqueue(side);launchLanes.Enqueue(2-side);openingLaunches=false;
             }
-            if(mode!=GameMode.Zen && elapsed>3 && UnityEngine.Random.value<(mode==GameMode.Classic?.45f:.36f))
-                SpawnFruit(7,new Vector2(UnityEngine.Random.Range(280,1320),1020),new Vector2(UnityEngine.Random.Range(-160,160),-UnityEngine.Random.Range(1190,1320)),false);
+            else
+            {
+                int pattern=UnityEngine.Random.Range(0,previousPattern<0?LanePatterns.Length:LanePatterns.Length-1);
+                if(previousPattern>=0 && pattern>=previousPattern)pattern++;
+                previousPattern=pattern;
+                bool mirror=UnityEngine.Random.value<.5f;
+                foreach(int lane in LanePatterns[pattern])launchLanes.Enqueue(mirror?2-lane:lane);
+            }
+            pendingBomb=mode!=GameMode.Zen && elapsed>3 && UnityEngine.Random.value<(mode==GameMode.Classic?.34f:.27f);
+        }
+        void SpawnNextFruit()
+        {
+            // One launch per beat, including bombs. Never release a whole row in one frame.
+            if(launchLanes.Count==0 && pendingBomb)
+            {
+                pendingBomb=false;
+                SpawnFruit(7,new Vector2(UnityEngine.Random.Range(280,1320),1020),new Vector2(UnityEngine.Random.Range(-110,110),-UnityEngine.Random.Range(1460,1530)));
+                spawnTimer=UnityEngine.Random.Range(.38f,.64f);return;
+            }
+            if(launchLanes.Count==0)PlanLaunches();
+            int laneIndex=launchLanes.Dequeue();
+            float x=290+laneIndex*510+UnityEngine.Random.Range(-115,115);
+            bool power=mode==GameMode.Arcade && elapsed>5 && UnityEngine.Random.value<.095f;
+            SpawnFruit(UnityEngine.Random.Range(0,7),new Vector2(x,965+UnityEngine.Random.Range(0,50)),
+                new Vector2((800-x)*.1f+UnityEngine.Random.Range(-35,35),UnityEngine.Random.Range(-1590,-1510)),power);
+            bool pair=launchLanes.Count>0 && launchLanes.Peek()==laneIndex;
+            spawnTimer=(pair?UnityEngine.Random.Range(.18f,.28f):UnityEngine.Random.Range(.44f,.78f))*
+                (frenzy>0?.62f:Mathf.Lerp(1,.85f,Mathf.Clamp01(elapsed/90)));
         }
         Fruit SpawnFruit(int kind,Vector2 p,Vector2 velocity,bool power=false)
         {
@@ -318,15 +422,27 @@ namespace BackyardDojo
             var r=Rect(fruitLayer,kind==7?"Bomb":"Fruit "+kind,p.x-size/2,p.y-size/2,size,size);
             var graphic=r.gameObject.AddComponent<FruitSliceGraphic>();graphic.atlas=atlas;graphic.uv=FruitUV(kind);graphic.raycastTarget=false;
             if(power) { var glow=Circle(r,"Power fruit glow",size*.5f,size*.5f,size*.94f,new Color(.5f,1,.9f,.22f));glow.transform.SetAsFirstSibling(); }
-            var f=new Fruit {rect=r,graphic=graphic,p=p,v=velocity,radius=size*.32f,kind=kind,spin=UnityEngine.Random.Range(-100,100),angle=UnityEngine.Random.Range(-30,30),power=power};
+            var f=new Fruit {rect=r,graphic=graphic,p=p,v=velocity,radius=size*.35f,kind=kind,spin=UnityEngine.Random.Range(-100,100),angle=UnityEngine.Random.Range(-30,30),power=power,hitShape=FruitSliceGraphic.RoundHitShape()};
             fruits.Add(f);return f;
         }
         void TickFruit(float dt)
         {
             for(int i=fruits.Count-1;i>=0;i--)
             {
-                Fruit f=fruits[i];f.v.y+=1650*dt;f.p+=f.v*dt;f.angle+=f.spin*dt;f.life-=dt;
+                Fruit f=fruits[i];f.v.y+=(f.half==0?1650:850)*dt;f.p+=f.v*dt;f.angle+=f.spin*dt;f.life-=dt;f.cutCooldown=Mathf.Max(0,f.cutCooldown-dt);
                 f.rect.anchoredPosition=new Vector2(f.p.x,-f.p.y);f.rect.localEulerAngles=new Vector3(0,0,f.angle);
+                if(f.half==0 && (f.power || f.kind==7) && f.p.y<930)
+                {
+                    f.trail-=dt;
+                    if(f.trail<=0)
+                    {
+                        f.trail=.075f;
+                        Vector2 at=f.power?f.p+UnityEngine.Random.insideUnitCircle*38:f.p+new Vector2(37,-42);
+                        Color tint=f.power?Hex("A6FFE3"):Hex("FFC457");
+                        SpawnFx(effectLayer,EffectGraphic.Form.Spark,at,UnityEngine.Random.insideUnitCircle*60+new Vector2(0,-65),new Vector2(11,18),tint,.38f,180,false,.1f);
+                        if(f.power)SpawnFx(effectLayer,EffectGraphic.Form.Glow,at,Vector2.zero,Vector2.one*40,new Color(.35f,1,.8f,.3f),.36f,0,false,1.6f);
+                    }
+                }
                 if(f.half!=0 && f.life<.55f) { Color c=f.graphic.color;c.a=Mathf.Clamp01(f.life/.55f);f.graphic.color=c; }
                 if(f.p.y>1110 || f.p.x<-250 || f.p.x>1850 || f.life<=0)
                 {
@@ -345,43 +461,79 @@ namespace BackyardDojo
             // Segment tests prevent fast swipes tunnelling through fruit between frames.
             for(int i=fruits.Count-1;i>=0;i--)
             {
-                Fruit f=fruits[i];if(f.half!=0 || DistanceToSegment(f.p,a,b)>f.radius) continue;
+                Fruit f=fruits[i];if(f.cutCooldown>0 || DistanceToSegment(f.p,a,b)>f.radius) continue;
                 if(f.kind==7)
                 {
                     Vector2 p=f.p;Destroy(f.rect.gameObject);fruits.RemoveAt(i);HitBomb(p);
                     if(state!=ScreenState.Playing) break;
                 }
-                else CutFruit(f,(b-a).normalized);
+                else CutFruit(f,a,b);
             }
         }
-        void CutFruit(Fruit f,Vector2 direction)
+        bool CutFruit(Fruit f,Vector2 a,Vector2 b)
         {
-            if(f.half!=0) return;
-            float angle=Mathf.Atan2(-direction.y,direction.x)+Mathf.PI*.5f-f.angle*Mathf.Deg2Rad;
-            f.half=-1;f.graphic.half=-1;f.graphic.cutAngle=angle;f.graphic.SetVerticesDirty();
-            var other=Rect(fruitLayer,"Sliced half",f.p.x-f.rect.sizeDelta.x/2,f.p.y-f.rect.sizeDelta.y/2,f.rect.sizeDelta.x,f.rect.sizeDelta.y);
-            var graphic=other.gameObject.AddComponent<FruitSliceGraphic>();graphic.atlas=atlas;graphic.uv=f.graphic.uv;graphic.half=1;graphic.cutAngle=angle;graphic.raycastTarget=false;
-            Vector2 n=new Vector2(-direction.y,direction.x);
-            fruits.Add(new Fruit {rect=other,graphic=graphic,p=f.p-n*8,v=f.v*.35f-n*180+new Vector2(0,-90),kind=f.kind,half=1,angle=f.angle,spin=f.spin+180,life=1.6f});
-            f.v=f.v*.35f+n*180+new Vector2(0,-90);f.p+=n*8;f.spin-=180;f.life=1.6f;
-            score++;roundFruit++;totalFruit++;strokeCount++;comboWindow=.24f;
-            Splash(f.p,juice[f.kind],18);
-            bool critical=!verification && UnityEngine.Random.value<.035f;
-            if(critical) { score+=9;Float("CRITICAL! +10",f.p+new Vector2(0,-68),Hex("FFE287"),36); }
-            if(f.power)
+            if(fruits.Count>=FragmentBudget || (b-a).sqrMagnitude<1)return false;
+            Vector2 localA=FruitLocalPoint(f,a),localB=FruitLocalPoint(f,b);
+            if(!FruitSliceGraphic.SegmentHits(f.hitShape,localA,localB))return false;
+            Vector2 localDirection=(localB-localA).normalized;
+            Vector2 normal=new Vector2(-localDirection.y,localDirection.x);
+            float offset=Vector2.Dot(localA,normal);
+            var hitA=FruitSliceGraphic.Clip(f.hitShape,normal,offset);
+            var hitB=FruitSliceGraphic.Clip(f.hitShape,-normal,-offset);
+            if(FruitSliceGraphic.Area(hitA)<.006f || FruitSliceGraphic.Area(hitB)<.006f)return false;
+            var shape=f.graphic.polygon ?? FruitSliceGraphic.WholeShape();
+            var shapeA=FruitSliceGraphic.Clip(shape,normal,offset);
+            var shapeB=FruitSliceGraphic.Clip(shape,-normal,-offset);
+            bool firstCut=f.half==0,wasPower=f.power;
+            Vector2 direction=(b-a).normalized,n=new Vector2(direction.y,-direction.x);
+            Vector2 center=Vector2.zero;foreach(var point in f.hitShape)center+=point;center/=f.hitShape.Count;
+            Vector2 at=FruitWorldPoint(f,center-normal*(Vector2.Dot(center,normal)-offset));
+            float life=firstCut?2.5f:Mathf.Min(2.5f,f.life+.25f),force=firstCut?120:85;
+            Vector2 motion=f.v*(firstCut?.3f:.55f)+new Vector2(0,firstCut?-150:-70);
+            var other=Rect(fruitLayer,"Fruit piece",f.p.x-f.rect.sizeDelta.x/2,f.p.y-f.rect.sizeDelta.y/2,f.rect.sizeDelta.x,f.rect.sizeDelta.y);
+            var graphic=other.gameObject.AddComponent<FruitSliceGraphic>();graphic.atlas=atlas;graphic.uv=f.graphic.uv;graphic.polygon=shapeB;graphic.raycastTarget=false;
+            fruits.Add(new Fruit {rect=other,graphic=graphic,p=f.p-n*6,v=motion-n*force,kind=f.kind,half=1,angle=f.angle,spin=f.spin+95,life=life,radius=f.radius,cutCooldown=.12f,hitShape=hitB});
+            other.localEulerAngles=new Vector3(0,0,f.angle);
+            f.half=1;f.power=false;f.graphic.polygon=shapeA;f.graphic.SetVerticesDirty();f.hitShape=hitA;
+            f.v=motion+n*force;f.p+=n*6;f.spin-=95;f.life=life;f.cutCooldown=.12f;
+            if(firstCut)
+            {
+                roundFruit++;totalFruit++;strokeCount++;comboWindow=.24f;
+                var glow=f.rect.Find("Power fruit glow");if(glow!=null)Destroy(glow.gameObject);
+            }
+            score++;
+            SliceBurst(at,juice[f.kind],direction,f.kind);
+            bool critical=firstCut && !verification && UnityEngine.Random.value<.035f;
+            if(critical) { score+=9;StarBurst(f.p,Hex("FFE287"),18);Float("CRITICAL! +10",f.p+new Vector2(0,-68),Hex("FFE287"),36); }
+            if(wasPower && firstCut)
             {
                 if(UnityEngine.Random.value<.5f) { freeze=5;Float("FREEZE!",f.p+new Vector2(0,-95),Hex("A0FFE6"),43); }
                 else { frenzy=6;Float("FRUIT FRENZY!",f.p+new Vector2(0,-95),Hex("FFE68C"),40); }
                 Play(comboClip,.5f);
+                StarBurst(f.p,freeze>0?Hex("9DFFE9"):Hex("FFCD57"),26);
             }
             Play(sliceClip,UnityEngine.Random.Range(.35f,.5f),UnityEngine.Random.Range(.85f,1.3f));
             UpdateHud();
+            return true;
+        }
+        static Vector2 RotatePoint(Vector2 point,float degrees)
+        {
+            float angle=degrees*Mathf.Deg2Rad,c=Mathf.Cos(angle),s=Mathf.Sin(angle);
+            return new Vector2(point.x*c-point.y*s,point.x*s+point.y*c);
+        }
+        static Vector2 FruitLocalPoint(Fruit fruit,Vector2 world) =>
+            RotatePoint(new Vector2(world.x-fruit.p.x,fruit.p.y-world.y),-fruit.angle)/fruit.rect.sizeDelta.x;
+        static Vector2 FruitWorldPoint(Fruit fruit,Vector2 local)
+        {
+            Vector2 point=RotatePoint(local*fruit.rect.sizeDelta.x,fruit.angle);
+            return fruit.p+new Vector2(point.x,-point.y);
         }
         void FinishStroke()
         {
             if(strokeCount>=3)
             {
                 int bonus=strokeCount*strokeCount;score+=bonus;roundCombo=Mathf.Max(roundCombo,strokeCount);
+                ComboBurst(new Vector2(800,350));
                 Float(strokeCount+" FRUIT COMBO!",new Vector2(800,330),Hex("FFE586"),48);
                 Float("+"+bonus+" BONUS",new Vector2(800,385),Cream,28);Play(comboClip,.45f,1+strokeCount*.045f);
             }
@@ -389,7 +541,7 @@ namespace BackyardDojo
         }
         void HitBomb(Vector2 p)
         {
-            FinishStroke();Splash(p,Hex("FFE29A"),35);Splash(p,Hex("5B554B"),22);
+            FinishStroke();BombBurst(p);
             flash.color=new Color(1,.54f,.24f,.55f);shake=.55f;Play(bombClip,.8f);
             if(mode==GameMode.Classic) EndRound("A sneaky bomb ended your harvest!");
             else { score=Mathf.Max(0,score-10);Float("BOMB! -10",p,Hex("FFAF77"),44); }
@@ -404,7 +556,6 @@ namespace BackyardDojo
             ActionButton(panel,"KEEP SLICING",100,199,420,69,Green,Resume);
             ActionButton(panel,"START FRESH",100,285,201,58,Paper,()=>StartRound(mode));
             ActionButton(panel,"MAIN MENU",319,285,201,58,Paper,ShowMenu);
-            Label(panel,"Shortcut","ESC / SPACE TO RESUME",80,367,460,29,16,Hex("7E613D"));
         }
         public void Resume()
         {
@@ -437,8 +588,8 @@ namespace BackyardDojo
 
         void ShowHelp()
         {
-            var p=OpenModal("A LITTLE NINJA KNOW-HOW",760,590);
-            HelpRow(p,1,127,"HOLD. SWIPE. SPLASH.","Drag your mouse or finger through airborne fruit.");
+            var p=OpenModal("A LITTLE DOJO KNOW-HOW",760,590);
+            HelpRow(p,1,127,"SWIPE. SLICE. SPLASH.","Swipe through airborne fruit to slice it.");
             HelpRow(p,2,229,"MORE FRUIT. BIGGER COMBOS.","Slice 3 or more in one stroke for a juicy bonus.");
             HelpRow(p,3,331,"THOSE BOMBS ARE TROUBLE.","Classic: game over. Arcade: lose 10 points. Zen: relax!");
             Label(p,"Tip","TIP: Glowing Arcade fruit brings freeze or a fruit frenzy.",45,438,670,40,19,Hex("70502B"),TextAnchor.MiddleCenter,false);
@@ -484,13 +635,12 @@ namespace BackyardDojo
             ActionButton(p,soundOn?"ON":"OFF",490,130,135,49,soundOn?Green:Paper,()=>{ soundOn=!soundOn;SaveSettings();ShowSettings(); });
             Label(p,"Music label","GARDEN MELODY",60,217,390,44,25,Ink,TextAnchor.MiddleLeft);
             ActionButton(p,musicOn?"ON":"OFF",490,215,135,49,musicOn?Green:Paper,()=>{ musicOn=!musicOn;SaveSettings();ShowSettings(); });
-            Label(p,"Control hint","Mouse or touch to slice  ·  Esc / P to pause",40,304,610,36,19,Hex("795D36"),TextAnchor.MiddleCenter,false);
             ActionButton(p,"ALL SET!",195,367,300,59,Green,CloseModal);
         }
         RectTransform OpenModal(string title,float w,float h)
         {
             CloseModal();modal=Rect(root,"Overlay",0,0,1600,900);
-            var dim=Fill(modal,"Dim garden",0,0,1600,900,new Color(.025f,.065f,.04f,.8f));dim.raycastTarget=true;
+            var dim=Fill(modal,"Dim garden",-StageInset,0,StageWidth,900,new Color(.025f,.065f,.04f,.8f));dim.raycastTarget=true;
             var p=Board(modal,"Cardboard panel",800-w*.5f,450-h*.5f,w,h,Paper,-.7f,true);
             Tape(p,w*.5f-63,-12,126,33,-3);
             var titleBoard=Board(p,"Painted heading",23,29,w-46,65,Hex("6D4929"),.3f,false);
@@ -510,10 +660,16 @@ namespace BackyardDojo
             {
                 var p=particles[i];p.life-=dt;
                 if(p.life<=0) { if(p.rect!=null) Destroy(p.rect.gameObject);particles.RemoveAt(i);continue; }
-                if(p.gravity) p.v.y+=950*dt;p.p+=p.v*dt;
+                if(p.gravity) p.v.y+=950*dt;
+                if(p.drag>0)p.v*=Mathf.Exp(-p.drag*dt);
+                p.p+=p.v*dt;
                 if(p.rect==null) { particles.RemoveAt(i);continue; }
-                p.rect.anchoredPosition=new Vector2(p.p.x,-p.p.y);p.rect.Rotate(0,0,p.spin*dt);
-                Color c=p.graphic.color;c.a=Mathf.Min(1,p.life/(p.maxLife*.5f));p.graphic.color=c;
+                float age=1-p.life/p.maxLife;
+                p.rect.anchoredPosition=new Vector2(p.p.x+Mathf.Sin(age*9+p.phase)*p.wobble,-p.p.y);
+                p.rect.Rotate(0,0,p.spin*dt);p.rect.sizeDelta=p.size*Mathf.Lerp(1,p.endScale,age);
+                Color c=p.tint;c.a*=Mathf.Clamp01(p.life/Mathf.Min(.55f,p.maxLife*.5f));
+                if(p.fadeIn>0)c.a*=Mathf.Clamp01((p.maxLife-p.life)/p.fadeIn);
+                p.graphic.color=c;
             }
             for(int i=floats.Count-1;i>=0;i--)
             {
@@ -524,27 +680,86 @@ namespace BackyardDojo
                 Color c=f.text.color;c.a=Mathf.Clamp01((1.15f-f.age)*3);f.text.color=c;
             }
         }
-        void Splash(Vector2 at,Color c,int count)
+        void SpawnFx(Transform layer,EffectGraphic.Form form,Vector2 at,Vector2 velocity,Vector2 size,Color tint,
+            float life,float spin=0,bool gravity=false,float endScale=.25f,float drag=0,float wobble=0,float fadeIn=0)
         {
-            // Juice spatters linger while the larger drops follow their own ballistic arcs.
+            if(particles.Count>=ParticleBudget)return;
+            var r=Rect(layer,form.ToString(),at.x-size.x*.5f,at.y-size.y*.5f,size.x,size.y);
+            var g=r.gameObject.AddComponent<EffectGraphic>();g.form=form;g.color=tint;g.raycastTarget=false;
+            r.localEulerAngles=new Vector3(0,0,UnityEngine.Random.Range(0,360));
+            particles.Add(new Particle {rect=r,graphic=g,p=at,v=velocity,size=size,tint=tint,life=life,maxLife=life,
+                spin=spin,gravity=gravity,endScale=endScale,drag=drag,wobble=wobble,phase=UnityEngine.Random.value*6,fadeIn=fadeIn});
+        }
+        void SliceBurst(Vector2 at,Color tint,Vector2 direction,int kind)
+        {
+            SpawnFx(effectLayer,EffectGraphic.Form.Glow,at,Vector2.zero,Vector2.one*130,new Color(tint.r,tint.g,tint.b,.6f),.3f,0,false,1.5f);
+            SpawnFx(effectLayer,EffectGraphic.Form.Ring,at,Vector2.zero,Vector2.one*35,new Color(tint.r,tint.g,tint.b,.75f),.34f,0,false,4.5f);
+            for(int i=0;i<26;i++)
+            {
+                Vector2 velocity=UnityEngine.Random.insideUnitCircle*UnityEngine.Random.Range(170,530)+direction*140+new Vector2(0,-130);
+                float w=UnityEngine.Random.Range(8,19);
+                SpawnFx(effectLayer,EffectGraphic.Form.Drop,at,velocity,new Vector2(w,w*1.8f),tint,UnityEngine.Random.Range(.5f,.95f),UnityEngine.Random.Range(-250,250),true,.1f,.5f);
+            }
+            for(int i=0;i<8;i++)
+            {
+                Vector2 p=at+UnityEngine.Random.insideUnitCircle*73;Color stain=tint;stain.a=.38f;
+                SpawnFx(effectLayer,EffectGraphic.Form.Glow,p,Vector2.zero,Vector2.one*UnityEngine.Random.Range(24,70),stain,1.5f,0,false,1.3f);
+                SpawnFx(effectLayer,EffectGraphic.Form.Seed,at,UnityEngine.Random.insideUnitCircle*300+new Vector2(0,-120),new Vector2(4,8),kind==0||kind==6?Ink:Cream,.8f,UnityEngine.Random.Range(-350,350),true,.35f);
+            }
+            for(int i=0;i<4;i++)SpawnFx(effectLayer,EffectGraphic.Form.Spark,at+UnityEngine.Random.insideUnitCircle*42,UnityEngine.Random.insideUnitCircle*130,new Vector2(13,22),Cream,.3f,180,false,.1f);
+        }
+        void BladeSpark(Vector2 at,Vector2 direction)
+        {
+            for(int i=0;i<2;i++)SpawnFx(effectLayer,EffectGraphic.Form.Spark,at,UnityEngine.Random.insideUnitCircle*55-direction*75,
+                new Vector2(6,14),blades[bladeIndex],.22f,140,false,.05f);
+        }
+        void StarBurst(Vector2 at,Color tint,int count)
+        {
+            SpawnFx(effectLayer,EffectGraphic.Form.Ring,at,Vector2.zero,Vector2.one*40,tint,.6f,0,false,7);
             for(int i=0;i<count;i++)
             {
-                float radius=UnityEngine.Random.Range(5,19);float life=UnityEngine.Random.Range(.4f,.9f);
-                var g=Circle(effectLayer,"Juice",at.x,at.y,radius,c);
-                particles.Add(new Particle {rect=g.rectTransform,graphic=g,p=at,v=UnityEngine.Random.insideUnitCircle*UnityEngine.Random.Range(130,470)+new Vector2(0,-150),life=life,maxLife=life,gravity=true,spin=UnityEngine.Random.Range(-180,180)});
+                float a=i*Mathf.PI*2/count;Vector2 dir=new Vector2(Mathf.Cos(a),Mathf.Sin(a));
+                SpawnFx(effectLayer,EffectGraphic.Form.Spark,at+dir*20,dir*UnityEngine.Random.Range(140,390),new Vector2(12,23),tint,UnityEngine.Random.Range(.5f,.9f),180,false,.08f,1.3f);
             }
-            for(int i=0;i<7;i++)
+        }
+        void ComboBurst(Vector2 at)
+        {
+            StarBurst(at,Hex("FFE28A"),22);
+            for(int i=0;i<26;i++)
             {
-                Vector2 p=at+UnityEngine.Random.insideUnitCircle*70;Color stain=c;stain.a=.5f;
-                var g=Circle(effectLayer,"Juice stain",p.x,p.y,UnityEngine.Random.Range(11,38),stain);
-                particles.Add(new Particle {rect=g.rectTransform,graphic=g,p=p,life=2,maxLife=2});
+                Color c=i%3==0?Green:i%3==1?Hex("FFC15C"):Cream;
+                SpawnFx(effectLayer,EffectGraphic.Form.Shard,at,new Vector2(UnityEngine.Random.Range(-400,400),UnityEngine.Random.Range(-360,-120)),
+                    new Vector2(8,15),c,UnityEngine.Random.Range(.8f,1.3f),UnityEngine.Random.Range(-440,440),true,.7f,.25f);
+            }
+        }
+        void BombBurst(Vector2 at)
+        {
+            SpawnFx(effectLayer,EffectGraphic.Form.Glow,at,Vector2.zero,Vector2.one*250,new Color(1,.59f,.12f,.85f),.45f,0,false,2);
+            for(int i=0;i<3;i++)SpawnFx(effectLayer,EffectGraphic.Form.Ring,at,Vector2.zero,Vector2.one*(70+i*45),
+                i==1?Hex("FFF0C2"):Hex("FFB54B"),.45f+i*.12f,0,false,5+i);
+            for(int i=0;i<42;i++)
+            {
+                Vector2 v=UnityEngine.Random.insideUnitCircle.normalized*UnityEngine.Random.Range(180,680);
+                SpawnFx(effectLayer,EffectGraphic.Form.Spark,at,v,new Vector2(9,27),i%3==0?Cream:Hex("FFB447"),UnityEngine.Random.Range(.45f,.9f),260,true,.05f,.6f);
+            }
+            for(int i=0;i<12;i++)
+            {
+                SpawnFx(effectLayer,EffectGraphic.Form.Glow,at+UnityEngine.Random.insideUnitCircle*50,UnityEngine.Random.insideUnitCircle*90+new Vector2(0,-100),
+                    Vector2.one*UnityEngine.Random.Range(60,110),new Color(.15f,.16f,.13f,.65f),1.1f,10,false,2.7f,.7f);
+                SpawnFx(effectLayer,EffectGraphic.Form.Shard,at,UnityEngine.Random.insideUnitCircle*410,new Vector2(12,17),Hex("5B5343"),1,220,true,.3f);
             }
         }
         void SpawnLeaf()
         {
-            var g=Circle(menu,"Falling petal",UnityEngine.Random.Range(90,1510),-20,10,Hex("C8CF6B"));
-            g.rectTransform.sizeDelta=new Vector2(16,7);
-            particles.Add(new Particle {rect=g.rectTransform,graphic=g,p=new Vector2(g.rectTransform.anchoredPosition.x,20),v=new Vector2(UnityEngine.Random.Range(-25,25),UnityEngine.Random.Range(40,70)),spin=80,life=16,maxLife=16});
+            SpawnFx(ambientLayer,EffectGraphic.Form.Leaf,new Vector2(UnityEngine.Random.Range(100,1500),-20),
+                new Vector2(UnityEngine.Random.Range(-24,24),UnityEngine.Random.Range(55,85)),new Vector2(11,22),Hex("ADB95D"),13,65,false,.8f,0,14,.6f);
+        }
+        void SpawnFirefly()
+        {
+            Vector2 p=new Vector2(UnityEngine.Random.Range(180,1420),UnityEngine.Random.Range(250,780));
+            Vector2 v=new Vector2(UnityEngine.Random.Range(-16,16),UnityEngine.Random.Range(-26,-8));
+            SpawnFx(ambientLayer,EffectGraphic.Form.Glow,p,v,Vector2.one*30,new Color(1,.86f,.35f,.5f),4,0,false,.8f,0,6,.6f);
+            SpawnFx(ambientLayer,EffectGraphic.Form.Spark,p,v,new Vector2(3,5),new Color(1,.95f,.64f,.85f),4,0,false,.8f,0,6,.6f);
         }
         void Float(string text,Vector2 p,Color color,int size)
         {
@@ -553,6 +768,7 @@ namespace BackyardDojo
         }
         void ClearRound()
         {
+            launchLanes.Clear();openingLaunches=true;pendingBomb=false;previousPattern=-1;
             foreach(var f in fruits) if(f.rect!=null) Destroy(f.rect.gameObject);fruits.Clear();
             foreach(var p in particles) if(p.rect!=null) Destroy(p.rect.gameObject);particles.Clear();
             foreach(var f in floats) if(f.rect!=null) Destroy(f.rect.gameObject);floats.Clear();
@@ -582,7 +798,7 @@ namespace BackyardDojo
         void Play(AudioClip clip,float volume=1,float pitch=1)
         { if(!soundOn || sfx==null || clip==null) return;sfx.pitch=pitch;sfx.PlayOneShot(clip,volume); }
 
-        // UI construction helpers. All layout uses a fixed 1600 × 900 design surface.
+        // Interface coordinates stay centered inside a clipped 1953 × 900 play area.
         static RectTransform Rect(Transform parent,string name,float x,float y,float w,float h)
         {
             var go=new GameObject(name,typeof(RectTransform));var r=go.GetComponent<RectTransform>();r.SetParent(parent,false);
@@ -661,6 +877,108 @@ namespace BackyardDojo
         static Color Hex(string hex) { ColorUtility.TryParseHtmlString("#"+hex,out var c);return c; }
 
         #if UNITY_EDITOR
+        public void RunMobileSmokeTest(Action<string> done)
+        {
+            verification=true;int originalTotal=totalFruit;var randomState=UnityEngine.Random.state;
+            UnityEngine.Random.InitState(217);
+            StartRound(GameMode.Zen);countdown=0;
+            var seen=new HashSet<Fruit>();var times=new List<float>();var lanes=new List<int>();
+            int[] laneCounts=new int[3];float peak=900;bool staggered=true;
+            // Exercise the real scheduler and physics for twenty seconds at 60 Hz.
+            for(int i=0;i<1200;i++)
+            {
+                TickRound(1f/60f);int launched=0;
+                foreach(var fruit in fruits)
+                {
+                    peak=Mathf.Min(peak,fruit.p.y);
+                    if(!seen.Add(fruit))continue;
+                    int lane=fruit.p.x<545?0:fruit.p.x>1055?2:1;
+                    times.Add(elapsed);lanes.Add(lane);laneCounts[lane]++;launched++;
+                }
+                if(launched>1)staggered=false;
+            }
+            float minDelay=10,maxDelay=0;
+            for(int i=1;i<times.Count;i++){float delay=times[i]-times[i-1];minDelay=Mathf.Min(minDelay,delay);maxDelay=Mathf.Max(maxDelay,delay);}
+            bool spread=laneCounts[0]>3 && laneCounts[1]>3 && laneCounts[2]>3;
+            bool opening=lanes.Count>4 && lanes[0]==1 && lanes[1]==1 && lanes[2]!=1 && lanes[3]==2-lanes[2];
+            bool delayed=staggered && minDelay>=.14f && maxDelay<=.82f && maxDelay-minDelay>.2f;
+            bool height=peak<350 && peak>145;
+            Pause();float timerBefore=spawnTimer;int countBefore=fruits.Count;TickRound(2);
+            bool pausedLaunches=spawnTimer==timerBefore && fruits.Count==countBefore;Resume();
+            StartRound(GameMode.Zen);countdown=0;TickRound(.11f);
+            bool reset=fruits.Count==1 && launchLanes.Count==3;
+            ShowMenu();int cardFruit=menu.Find("ARCADE mode card").GetComponentsInChildren<FruitSliceGraphic>().Length;
+            bool cleanMenu=cardFruit==1 && menu.Find("Swipe hint")==null && menu.Find("Juice Dojo logo/Painted logo")!=null;
+            StartRound(GameMode.Zen);bool cleanHud=hud.Find("Play hint")==null && hud.Find("Pause hint")==null;
+            bool aspect=Mathf.Abs(frame.rect.width/frame.rect.height-2.17f)<.0001f;
+            Vector3 local=new Vector3(800,450,0);Vector3 screen=root.TransformPoint(local-new Vector3(800,450,0));
+            bool pointerAligned=Vector2.Distance(new Vector2(screen.x,screen.y),stageCenter)<1;
+            UnityEngine.Random.state=randomState;totalFruit=originalTotal;verification=false;ShowMenu();
+            done("LaneCoverage="+spread+" HigherFruit="+height+" OpeningMiddlePair="+opening+" RandomDelays="+delayed+" OneLaunchPerBeat="+staggered+" PausedLaunches="+pausedLaunches+" PatternReset="+reset+
+                " MenuClean="+cleanMenu+" HudClean="+cleanHud+" AspectRatio="+aspect+" PointerAligned="+pointerAligned+
+                " Launches="+times.Count+" PeakY="+peak.ToString("0.0")+" MinDelay="+minDelay.ToString("0.000")+" MaxDelay="+maxDelay.ToString("0.000"));
+        }
+        public void RunRecutSmokeTest(Action<string> done)
+        {
+            verification=true;int originalTotal=totalFruit;
+            StartRound(GameMode.Zen);countdown=0;spawnTimer=100;
+            var fruit=SpawnFruit(0,new Vector2(800,450),Vector2.zero);fruit.angle=0;
+            SliceSegment(new Vector2(650,450),new Vector2(950,450));
+            bool first=fruits.Count==2 && roundFruit==1;
+            SliceSegment(new Vector2(650,450),new Vector2(950,450));bool noCascade=fruits.Count==2;
+            TickFruit(.14f);
+            var target=fruits[0];Vector2 center=Vector2.zero;
+            foreach(var point in target.hitShape)center+=point;center/=target.hitShape.Count;
+            SliceSegment(FruitWorldPoint(target,center+Vector2.left*.6f),FruitWorldPoint(target,center+Vector2.right*.6f));
+            bool second=fruits.Count==3;
+            TickFruit(.14f);target=fruits[0];center=Vector2.zero;
+            foreach(var point in target.hitShape)center+=point;center/=target.hitShape.Count;
+            bool thirdCut=CutFruit(target,FruitWorldPoint(target,center+Vector2.down*.6f),FruitWorldPoint(target,center+Vector2.up*.6f));
+            bool third=thirdCut && fruits.Count==4;
+            float area=0;foreach(var piece in fruits)area+=FruitSliceGraphic.Area(piece.graphic.polygon);
+            bool retainedShapes=Mathf.Abs(area-1)<.0001f && fruits.TrueForAll(piece=>piece.graphic.polygon!=null);
+            bool harvestOnce=roundFruit==1 && totalFruit==originalTotal+1 && strokeCount==1 && score==3;
+            // A swipe through a missing corner of a clipped piece must not hit it.
+            bool emptyCorner=!FruitSliceGraphic.SegmentHits(FruitSliceGraphic.Clip(FruitSliceGraphic.WholeShape(),Vector2.up,0),new Vector2(-.4f,-.2f),new Vector2(.4f,-.2f));
+            StartRound(GameMode.Classic);countdown=0;
+            var missedPiece=SpawnFruit(1,new Vector2(800,450),Vector2.zero);missedPiece.angle=0;
+            SliceSegment(new Vector2(650,450),new Vector2(950,450));
+            foreach(var piece in fruits)piece.p.y=1120;TickFruit(.01f);bool noPieceMisses=misses==0;
+            totalFruit=originalTotal;verification=false;ShowMenu();
+            done("FirstCut="+first+" SecondCut="+second+" ThirdCut="+third+" RetainedPieceShapes="+retainedShapes+
+                " HarvestCountedOnce="+harvestOnce+" NoSameSwipeCascade="+noCascade+" EmptyAreaMiss="+emptyCorner+" NoFragmentMissPenalty="+noPieceMisses);
+        }
+        public void RunPolishSmokeTest(Action<string> done) { StartCoroutine(PolishSmoke(done)); }
+        System.Collections.IEnumerator PolishSmoke(Action<string> done)
+        {
+            bool art=logo!=null && orchard!=null && atlas!=null;
+            int originalTotal=totalFruit;verification=true;ClearRound();CloseModal();
+            state=ScreenState.Loading;menu.gameObject.SetActive(false);gameLayer.gameObject.SetActive(false);
+            ShowLoadingScreen();SetLoadingProgress(.62f,"GATHERING THE JUICIEST FRUIT...");
+            bool loading=loadingGroup.blocksRaycasts && Mathf.Abs(loadingFill.sizeDelta.x-287.68f)<.1f;
+            yield return null;yield return null;
+            ScreenCapture.CaptureScreenshot(System.IO.Path.GetFullPath("Artifacts/LoadingScreen-v2.png"));
+            yield return new WaitForSecondsRealtime(.2f);SetLoadingProgress(1,"FRESH FRUIT. SHARP BLADES. LET'S GO!");
+            DismissLoading();ShowMenu();yield return null;yield return null;
+            bool menuLogo=menu.Find("Juice Dojo logo/Painted logo")!=null;
+            ScreenCapture.CaptureScreenshot(System.IO.Path.GetFullPath("Artifacts/MainMenu-v2.png"));
+            yield return new WaitForSecondsRealtime(.2f);
+            StartRound(GameMode.Zen);countdown=0;spawnTimer=100;
+            for(int i=0;i<3;i++)SpawnFruit(i,new Vector2(630+i*170,510),Vector2.zero);
+            SliceSegment(new Vector2(500,510),new Vector2(1150,510));FinishStroke();
+            bool sliceParticles=particles.Count>120;
+            TickEffects(.08f);yield return null;yield return null;
+            ScreenCapture.CaptureScreenshot(System.IO.Path.GetFullPath("Artifacts/SliceEffects-v2.png"));
+            yield return new WaitForSecondsRealtime(.2f);
+            ClearRound();BombBurst(new Vector2(800,510));bool bomb=particles.Count>=60;
+            TickEffects(.08f);yield return null;yield return null;
+            ScreenCapture.CaptureScreenshot(System.IO.Path.GetFullPath("Artifacts/BombEffects-v2.png"));
+            yield return new WaitForSecondsRealtime(.2f);
+            for(int i=0;i<500;i++)SpawnFx(effectLayer,EffectGraphic.Form.Spark,new Vector2(800,450),Vector2.zero,Vector2.one*9,Cream,.3f);
+            bool budget=particles.Count<=ParticleBudget;TickEffects(20);bool cleanup=particles.Count==0;
+            totalFruit=originalTotal;verification=false;ShowMenu();
+            done("LogoAsset="+art+" MenuLogo="+menuLogo+" LoadingProgress="+loading+" SliceBurst="+sliceParticles+" BombBurst="+bomb+" ParticleBudget="+budget+" ParticleCleanup="+cleanup);
+        }
         // Editor verification calls the same spawning, collision and UI event paths as normal play.
         public void RunSmokeTest(Action<string> done)
         {
@@ -707,7 +1025,7 @@ namespace BackyardDojo
         }
         string ClickDesign(Vector2 p)
         {
-            var pointer=new PointerEventData(EventSystem.current) { position=new Vector2((p.x-800)*uiScale+Screen.width*.5f,(450-p.y)*uiScale+Screen.height*.5f),button=PointerEventData.InputButton.Left };
+            var pointer=new PointerEventData(EventSystem.current) { position=new Vector2((p.x-800)*uiScale+stageCenter.x,(450-p.y)*uiScale+stageCenter.y),button=PointerEventData.InputButton.Left };
             var hits=new List<RaycastResult>();EventSystem.current.RaycastAll(pointer,hits);
             if(hits.Count>0)
             {

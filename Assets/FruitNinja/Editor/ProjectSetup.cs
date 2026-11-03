@@ -14,18 +14,22 @@ namespace BackyardDojo.Editor
         {
             ConfigureTexture("Assets/FruitNinja/Resources/Art/Orchard.png");
             ConfigureTexture("Assets/FruitNinja/Resources/Art/FruitAtlas.png");
+            ConfigureTexture("Assets/FruitNinja/Resources/Art/JuiceDojoLogo.png");
             PlayerSettings.companyName="Backyard Dojo";
-            PlayerSettings.productName="Fruit Ninja - Backyard Dojo";
-            PlayerSettings.defaultScreenWidth=1600;PlayerSettings.defaultScreenHeight=900;
+            PlayerSettings.productName="Juice Dojo";
+            PlayerSettings.defaultScreenWidth=1953;PlayerSettings.defaultScreenHeight=900;
+            PlayerSettings.defaultWebScreenWidth=1953;PlayerSettings.defaultWebScreenHeight=900;
             PlayerSettings.fullScreenMode=FullScreenMode.Windowed;
             PlayerSettings.resizableWindow=true;PlayerSettings.runInBackground=true;
-            PlayerSettings.defaultInterfaceOrientation=UIOrientation.LandscapeLeft;
+            PlayerSettings.defaultInterfaceOrientation=UIOrientation.AutoRotation;
+            PlayerSettings.allowedAutorotateToLandscapeLeft=true;PlayerSettings.allowedAutorotateToLandscapeRight=true;
+            PlayerSettings.allowedAutorotateToPortrait=false;PlayerSettings.allowedAutorotateToPortraitUpsideDown=false;
             Scene scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             var cameraObject=new GameObject("Main Camera",typeof(Camera),typeof(AudioListener));
             cameraObject.tag="MainCamera";cameraObject.transform.position=new Vector3(0,0,-10);
             var camera=cameraObject.GetComponent<Camera>();camera.orthographic=true;camera.orthographicSize=5;
             camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.04f,.09f,.065f);
-            new GameObject("Fruit Ninja · Backyard Dojo",typeof(FruitNinjaGame));
+            new GameObject("Juice Dojo",typeof(FruitNinjaGame));
             EditorSceneManager.SaveScene(scene,"Assets/Scenes/BackyardDojo.unity");
             EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene("Assets/Scenes/BackyardDojo.unity",true)};
             AssetDatabase.SaveAssets();
@@ -71,11 +75,15 @@ namespace BackyardDojo.Editor
             {
                 string cmd=File.ReadAllText(commandPath).Trim();File.Delete(commandPath);
                 if(cmd=="setup") ProjectSetup.Configure();
+                if(cmd=="refresh") AssetDatabase.Refresh();
+                if(cmd=="quit") {EditorSceneManager.SaveOpenScenes();EditorApplication.Exit(0);}
                 if(cmd=="play") { smokePending=false;SessionState.SetBool("Dojo.SmokePending",false);EditorApplication.isPlaying=true; }
                 if(cmd=="smoke") { smokePending=true;SessionState.SetBool("Dojo.SmokePending",true);EditorApplication.isPlaying=true; }
                 if(cmd=="stop") EditorApplication.isPlaying=false;
                 if(cmd=="capture" && Application.isPlaying) ScreenCapture.CaptureScreenshot(Path.GetFullPath("Artifacts/menu.png"));
                 if(cmd=="ui-smoke" && FruitNinjaGame.Instance!=null) FruitNinjaGame.Instance.RunUiSmokeTest(result=>File.WriteAllText("Artifacts/ui-result.txt",result));
+                if(cmd=="polish-smoke" && FruitNinjaGame.Instance!=null && FruitNinjaGame.Instance.IsReady)
+                    FruitNinjaGame.Instance.RunPolishSmokeTest(result=>File.WriteAllText("Artifacts/polish-result.txt",result));
                 if(cmd=="gameplay-capture" && FruitNinjaGame.Instance!=null)
                 {
                     FruitNinjaGame.Instance.StartRound(FruitNinjaGame.GameMode.Zen);
@@ -88,7 +96,7 @@ namespace BackyardDojo.Editor
             }
             if(captureAt>0 && EditorApplication.timeSinceStartup>=captureAt && Application.isPlaying)
             { captureAt=0;ScreenCapture.CaptureScreenshot(capturePath); }
-            if(smokePending && Application.isPlaying && FruitNinjaGame.Instance!=null)
+            if(smokePending && Application.isPlaying && FruitNinjaGame.Instance!=null && FruitNinjaGame.Instance.IsReady)
             {
                 smokePending=false;
                 SessionState.SetBool("Dojo.SmokePending",false);
