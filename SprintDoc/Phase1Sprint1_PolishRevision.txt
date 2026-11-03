@@ -1,0 +1,89 @@
+SHATTERLEAP - PHASE 1, SPRINT 1 POLISH REVISION
+Date: 2026-11-03 (Asia/Dhaka)
+Unity 6000.3.10f1. No commit or push performed.
+
+IMPLEMENTED
+
+UI: Redesigned desktop Home as a split composition with a large existing logo, concise trial identity, gold wallet display, segmented difficulty rail and a clear primary Play action. Portrait uses a compact single-column layout. All screens use a consistent charcoal panel, thin border, small teal accent, bold hierarchy, restrained pink actions and outlined secondary controls. Hover/pressed/focused/disabled colors transition over 0.09 seconds. Safe-step feedback fades briefly; reduced effects disables that fade. No new artwork or fonts were downloaded/generated.
+
+Dialogs now render their own opaque card without the previous Home/HUD text underneath. Settings handles remain inside the slider tracks. Results show only the outcome and payout hierarchy rather than competing with the HUD. Large controls remain at least 48 CSS pixels at 360x800. Choice controls were raised to clear the larger 44-pixel browser fullscreen control. Loading presentation uses the original logo, a restrained radial background and a thin progress track.
+
+A prototype entrance fade could leave dialog content transparent; it was removed. Final browser checks include foreground-text pixel assertions as well as normal input checks. The delivered dialogs appear immediately.
+
+Lighting: Cool directional key at intensity 1.15, teal directional fill at 0.55 and warm rim at 0.45; slate ambient light and exponential-squared fog at density 0.012. Scene-only curtain material overrides reduce saturation while retaining supplied textures. Glass keeps its transparent teal surface and bright edge framing; sharp specular highlights were disabled after compiled-browser screenshots exposed a washed-out reflection. All left/right panels share the same material. No lighting decision depends on safety.
+
+The dedicated Web forward renderer remains unchanged. No HDR, SSAO, deferred rendering, realtime shadow maps, expensive post-processing or replacement assets were introduced. Supplied PC/Mobile pipeline assets and original imported materials remain unchanged. The decorative arena floor was lowered to world Y=-32 to give the descending contestant an open void background.
+
+Falling: The valid fragile landing still resolves in RunController, disables the contacted panel support and triggers one break effect/sound. The contestant immediately descends at a low velocity while developing a startled, off-balance pose over 0.18 seconds. Gravity then takes over while the shoulder/hip rig blends into raised arms, bent asymmetric legs and a tilted torso over the next 0.5 seconds. This is an actual 3D procedural pose animation with Rigidbody descent, not a billboard or an expensive ragdoll.
+
+A fixed oblique camera on the broken-panel side looks back at the gap and lower body space. It does not chase the character into the void. The results delay for falling is now a separate FallResultDelay=2.6 seconds in Sprint1.asset; win/timeout timing remains unchanged. The fall notification sits beneath the HUD rather than across the descending body. Camera framing was iterated against actual frame captures to avoid departure-platform and balcony obstruction.
+
+Pause is now allowed during the terminal Falling presentation. It freezes pose time, Rigidbody motion, fragments, camera and results delay. Resume continues the same fall. Retry/Home resets the contestant's position, visual rotation, arm/leg pose, kinematic state and fall clock; pooled fragments are explicitly cleared. Animation has no authority over safety, coins or terminal outcomes. Timeout remains distinct and does not trigger this fall.
+
+PRESERVATION
+
+RunRules.cs, SaveStore.cs and ChoiceInput.cs are unchanged. Difficulty rows, preview times, countdowns, step rewards, bonuses, win-only banking, free Retry and save schema remain unchanged. The configuration diff adds only FallResultDelay. Existing banked balances use the same PlayerPrefs key/version.
+
+The user's pre-existing GlassPanel.prefab edit (active preview marker and marker scale) matches PolishRevision/baseline.patch exactly. It was not reset. Original Phase1Sprint1.txt is unchanged. Preservation.txt records these checks. Unity serialized the existing Input System actions into PlayerSettings.preloadedAssets during building; no alternate input system was introduced.
+
+SCENE / PREFAB / CODE
+
+Scene: Assets/ShatterLeap/Scenes/ShatterLeap.unity (saved lighting, fills, curtain overrides and floor position).
+New materials: Assets/ShatterLeap/Materials/Polish curtain 0.mat. Updated generated Teal glass.mat.
+The reusable Contestant.prefab retains its existing rig references; its ContestantMotor component now supplies the fall poses. Existing GlassPanel.prefab edits are preserved.
+Runtime changes: GameUi, ContestantMotor, BridgeCamera, RunController, AudioEffects and GameConfig.
+Editor changes: PolishRevision.Apply (explicit idempotent scene lighting command), SprintWorkflow command dispatch and expanded PlayChecks.
+Browser template: Assets/WebGLTemplates/ShatterLeap/index.html.
+Reproduction tools: Tools/polish-web-checks.cjs and Tools/polish-fall-check.cjs.
+
+BUILD / LAUNCH
+
+Updated complete player: Builds/Web (index.html, logo.png and all four Build files).
+Build result: Succeeded, zero errors, zero warnings. See PolishRevision/BuildReport.txt.
+SHA-256 file list: PolishRevision/BuildManifest.txt.
+Compression is disabled, as before. Serve .wasm as application/wasm and do not add gzip/Brotli Content-Encoding to the raw files. No new hosting dependencies or thread-isolation headers are required.
+
+From the project directory:
+  python Tools/serve.py
+Open:
+  http://127.0.0.1:8080
+Do not launch the game with file://.
+Rebuild existing assets:
+  powershell -File Tools/Build-Web.ps1
+Explicitly reapply this lighting preset only when desired:
+  python Tools/editor.py revision
+Normal builds do not reapply the lighting preset or overwrite edited scene/configuration values.
+
+One initial link attempt failed because an Emscripten temporary build.js file was missing. A retry succeeded without changing security settings or deleting project caches. Subsequent final builds succeeded; the delivered build is the successful final output.
+
+EXECUTED VERIFICATION
+
+- 49 passing deterministic rule checks, including 300 seeded complete runs and save/load/corrupt-data recovery. PolishRevision/RuleChecks.txt.
+- 20 passing real Unity Play Mode checks, expanded to freeze/resume the falling pose and physics and verify Retry clears the falling state. PolishRevision/PlayChecks.txt.
+- Final exact compiled Web build served over HTTP: 107 recorded assertions/observations, including visible-dialog text checks, keyboard/held/rapid inputs, actual mouse-panel raycasts, mobile touch buttons, safe/fragile landings, win-only payouts, winning wallet reload, settings persistence, confirmations, Restart, Retry, real timeout during a jump, simulated blur/focus, fullscreen, audio startup, difficulty settings and live resizing. PolishRevision/WebChecks.json.
+- Final dedicated fall sequence: PolishRevision/FallSequence/Sequence.json. Checks paused position/pose time, continued descent, rapid-input rejection, zero failure payout, results after at least 2.5 simulated seconds, and Retry reset.
+
+Final screenshots: PolishRevision/Screenshots. Each required resolution has Home, help, preview, gameplay, pause, settings, confirmation, falling and failure-results captures. Additional evidence covers win, timeout, saved settings, Normal/Hard paths, Edge and resizing. Screenshots were inspected for text readability, clipping, modal opacity, slider bounds, touch controls, panel visibility, glare and falling visibility. Shader glare, camera occlusion and the dialog fade issue were corrected, rebuilt and rechecked against compiled output.
+
+Clearly labeled fall frames: PolishRevision/FallSequence/01-...png through 09-...png, with actual state, fall time and root height in Sequence.json. index.html provides a local frame gallery. Frames show fragile approach, break/loss of balance, pause, resumed pose, falling, results and Retry. This is a frame sequence, not a physical-device video or an offline animation render.
+
+Actual coverage:
+  Windows Chrome 156.0.8078.80: full behavior and all five viewports.
+  Windows Edge 156.0.4314.58: final-build preview/gameplay smoke check.
+  Chrome touch emulation: 360x800, 720x1280, 768x1024.
+  Desktop layouts: 1280x720, 1600x900.
+  Physical iPhone/Safari, physical Android and macOS browsers: NOT TESTED.
+
+PERFORMANCE
+
+Local Chrome initial load: 4163 ms (previous sprint recorded 3538 ms).
+1280x720 browser requestAnimationFrame cadence, 119 intervals:
+  Gameplay median 16.7 ms; p95 16.8 ms.
+  Results median 16.7 ms; p95 16.8 ms.
+Previous sprint: gameplay median 16.7 ms, p95 16.8 ms. These observations indicate similar approximately 60 Hz presentation on the available Intel UHD Graphics 730 / ANGLE D3D11 environment. They are not a controlled GPU benchmark or a mobile performance claim; local load measurements vary with cache/system load.
+
+LIMITATIONS
+
+No physical mobile/macOS testing, device vibration validation, public deployment or Internet-download benchmark is claimed. The uncompressed build remains approximately 71.9 MB. The same WebGL capability/resize warnings as the previous sprint were logged (getInternalformatParameter INVALID_ENUM and drawBuffers BACK or NONE); final automated sessions recorded no JavaScript/runtime/resource errors and inspected rendering remained correct. Character motion is intentionally a lightweight procedural rig rather than motion capture. Existing temporary sound substitutions remain; no replacement audio was downloaded.
+
+Phase remains Phase 1, Sprint 1. Existing Phase1Sprint1.txt and its previous evidence folder were preserved. No shop or unrelated feature work was added. No commit or push was performed.

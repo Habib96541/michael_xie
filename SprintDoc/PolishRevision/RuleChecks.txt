@@ -1,0 +1,49 @@
+PASS Easy defaults
+PASS Easy 100 seeds: one safe panel per row, stable layout, full payout
+PASS Normal defaults
+PASS Normal 100 seeds: one safe panel per row, stable layout, full payout
+PASS Hard defaults
+PASS Hard 100 seeds: one safe panel per row, stable layout, full payout
+PASS Preview blocks choices and invalid transitions
+PASS Camera transition gates playing
+PASS Invalid side rejected
+PASS Step 1 rejects repeated inputs
+PASS Step 1 resolves once
+PASS Step 1 earnings
+PASS Step 2 rejects repeated inputs
+PASS Step 2 resolves once
+PASS Step 2 earnings
+PASS Step 3 rejects repeated inputs
+PASS Step 3 resolves once
+PASS Step 3 earnings
+PASS Step 4 rejects repeated inputs
+PASS Step 4 resolves once
+PASS Step 4 earnings
+PASS Step 5 rejects repeated inputs
+PASS Step 5 resolves once
+PASS Step 5 earnings
+PASS Step 6 rejects repeated inputs
+PASS Step 6 resolves once
+PASS Step 6 earnings
+PASS Only one terminal outcome
+PASS Finish payout includes bonus
+PASS Exactly-once wallet payout
+PASS Reload retains wallet and payout guard
+PASS Death discards round earnings, preserves banked wallet
+PASS Missing support fails landing
+PASS Timeout during jump prevents landing and payout
+PASS Exact final landing/time boundary: timeout takes priority
+PASS Finish before timeout wins once
+PASS Abandonment never pays or serializes an active run
+PASS Settings roundtrip
+PASS Corrupt/missing save recovery: 
+PASS Corrupt/missing save recovery: broken
+PASS Corrupt/missing save recovery: {
+PASS Corrupt/missing save recovery: null
+PASS Corrupt/missing save recovery: {"Version":99}
+PASS Corrupt/missing save recovery: {"Version":1,"Coins":-99}
+PASS Corrupt/missing save recovery: {"Version":1,"Difficulty":8}
+PASS Loaded volumes clamped
+PASS Serialized configuration plays correctly: Easy
+PASS Serialized configuration plays correctly: Normal
+PASS Serialized configuration plays correctly: Hard

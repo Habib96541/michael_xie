@@ -1,0 +1,20 @@
+PASS Real controller rejects rapid duplicate choice at step 1
+PASS Real controller rejects rapid duplicate choice at step 2
+PASS Real controller rejects rapid duplicate choice at step 3
+PASS Real controller rejects rapid duplicate choice at step 4
+PASS Real controller rejects rapid duplicate choice at step 5
+PASS Real controller rejects rapid duplicate choice at step 6
+PASS Real 3D supports validate all six safe landings and finish (outcome=Won, steps=6, remaining=25.35)
+PASS Actual controller banks exactly 260 on Easy win
+PASS Real panel prefab has active 3D support
+PASS Falling pose and physical descent freeze while paused
+PASS Fragile contact triggers falling with zero payout
+PASS Falling uses 3D gravity
+PASS Animated fall pause/resume completed before results
+PASS Retry resets fall animation and physics
+PASS Pause freezes timer and movement during jump
+PASS Abandoning after a real safe landing banks nothing
+PASS Actual timer expiration during jump prevents reward
+PASS Browser visibility hook pauses preview
+PASS Returning does not automatically resume
+PASS Explicit resume works

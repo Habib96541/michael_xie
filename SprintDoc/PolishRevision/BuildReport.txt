@@ -1,0 +1,5 @@
+Result: Succeeded
+Bytes: 71905741
+Duration: 00:02:20.8678273
+Errors: 0
+Warnings: 0

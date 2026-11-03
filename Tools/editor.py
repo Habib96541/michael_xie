@@ -6,7 +6,7 @@ from pathlib import Path
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["inspect", "setup", "tests", "integration", "refresh", "wire", "scenery", "polish", "webprofile", "restorequality", "build", "play", "stop"])
+    parser.add_argument("command", choices=["inspect", "setup", "tests", "integration", "refresh", "wire", "scenery", "polish", "webprofile", "restorequality", "revision", "build", "play", "stop"])
     parser.add_argument("--timeout", type=int, default=900)
     args = parser.parse_args()
     tools = Path(__file__).resolve().parent

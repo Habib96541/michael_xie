@@ -1,5 +1,5 @@
 Result: Succeeded
-Bytes: 71890356
-Duration: 00:02:18.9274705
+Bytes: 71588256
+Duration: 00:00:18.0293721
 Errors: 0
 Warnings: 0

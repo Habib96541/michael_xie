@@ -16,12 +16,13 @@ namespace ShatterLeap
         private float _phaseTime;
         private float _reportTime;
         private bool _terminalHandled;
+        private Vector3 _fallAnchor;
         public RunRules Run { get; private set; }
         public SaveStore Saves { get; private set; }
         public bool Paused { get; private set; }
         public bool DialogOpen { get; set; }
         public bool CanChoose => Run != null && Run.State == RunState.Playing && !Paused && !DialogOpen;
-        public bool Active => Run != null && !Run.IsTerminal;
+        public bool Active => Run != null && (!Run.IsTerminal || Run.State == RunState.Falling);
         public float PreviewRemaining => _phaseTime;
         public event Action Changed;
 
@@ -63,6 +64,7 @@ namespace ShatterLeap
             Paused = false;
             DialogOpen = false;
             _terminalHandled = false;
+            _effects.ResetPool();
             Run = new RunRules(_config.Difficulties[Saves.Data.Difficulty], _config.StepValue, Guid.NewGuid().GetHashCode());
             _bridge.Generate(Run);
             _bridge.Reveal(Run, true);
@@ -79,6 +81,7 @@ namespace ShatterLeap
             Paused = false;
             DialogOpen = false;
             Run = null;
+            _effects.ResetPool();
             RunRules display = new RunRules(_config.Difficulties[Saves.Data.Difficulty], _config.StepValue, 42);
             _bridge.Generate(display);
             _player.ResetAt(_bridge.StartPoint);
@@ -192,7 +195,11 @@ namespace ShatterLeap
                             Changed?.Invoke();
                         }
                     }
-                    if (Run.State != RunState.Preview && Run.State != RunState.Results)
+                    if (Run.State == RunState.Falling)
+                    {
+                        _camera.Falling(_fallAnchor, Saves.Data.ReducedEffects);
+                    }
+                    else if (Run.State != RunState.Preview && Run.State != RunState.Results)
                     {
                         // Stop following the vertical fall so the bridge remains legible.
                         Vector3 focus = _player.Position;
@@ -217,7 +224,8 @@ namespace ShatterLeap
                 {
                     State = Paused ? "Paused" : Run == null ? "Home" : Run.State.ToString(),
                     Steps = Run?.Steps ?? 0, Wallet = Saves.Data.Coins,
-                    RoundCoins = Run?.Earnings ?? 0, Seconds = Run?.Remaining ?? 0
+                    RoundCoins = Run?.Earnings ?? 0, Seconds = Run?.Remaining ?? 0,
+                    FallSeconds = _player.FallElapsed, PlayerY = _player.Position.y
                 }));
 #endif
             }
@@ -234,7 +242,12 @@ namespace ShatterLeap
             }
             else
             {
-                if (Run.Outcome == RunState.Falling) { _player.Fall(); }
+                if (Run.Outcome == RunState.Falling)
+                {
+                    _fallAnchor = _player.Position;
+                    _phaseTime = _config.FallResultDelay;
+                    _player.Fall();
+                }
                 _effects.Play(Run.Outcome == RunState.Falling ? Cue.Break : Cue.Lose);
             }
             Changed?.Invoke();
@@ -247,6 +260,8 @@ namespace ShatterLeap
             public int Wallet;
             public int RoundCoins;
             public float Seconds;
+            public float FallSeconds;
+            public float PlayerY;
         }
 #if UNITY_WEBGL && !UNITY_EDITOR
         [DllImport("__Internal")] private static extern void ShatterBindVisibility(string objectName);

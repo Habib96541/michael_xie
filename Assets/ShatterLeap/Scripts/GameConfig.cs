@@ -27,6 +27,7 @@ namespace ShatterLeap
         [Min(0.1f)] public float JumpHeight = 1.5f;
         [Min(0.1f)] public float CameraTransitionSeconds = 0.8f;
         [Min(0.1f)] public float ResultDelay = 1.8f;
+        [Min(1.5f)] public float FallResultDelay = 2.6f;
         [Min(1)] public int ShardCount = 20;
         public GameObject ContestantPrefab;
         public GameObject PanelPrefab;

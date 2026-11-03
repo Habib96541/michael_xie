@@ -1,0 +1,119 @@
+{
+  "result": "PASS",
+  "frames": [
+    {
+      "label": "01-approaching-fragile-contact",
+      "status": {
+        "State": "Jumping",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 29.265989303588867,
+        "FallSeconds": 0,
+        "PlayerY": 1.109245777130127
+      }
+    },
+    {
+      "label": "02-glass-break-and-loss-of-balance",
+      "status": {
+        "State": "Falling",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 29.115985870361328,
+        "FallSeconds": 0.11700000613927841,
+        "PlayerY": 0.07500022649765015
+      }
+    },
+    {
+      "label": "03-paused-fall",
+      "status": {
+        "State": "Paused",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 29.115985870361328,
+        "FallSeconds": 0.2160000205039978,
+        "PlayerY": 0.009228289127349854
+      }
+    },
+    {
+      "label": "04-resumed-stagger",
+      "status": {
+        "State": "Falling",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 29.115985870361328,
+        "FallSeconds": 0.2330000251531601,
+        "PlayerY": -0.011543691158294678
+      }
+    },
+    {
+      "label": "05-transition-to-falling-pose",
+      "status": {
+        "State": "Falling",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 29.115985870361328,
+        "FallSeconds": 0.7330000400543213,
+        "PlayerY": -1.8061423301696777
+      }
+    },
+    {
+      "label": "06-visible-descent",
+      "status": {
+        "State": "Falling",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 29.115985870361328,
+        "FallSeconds": 0.9830000400543213,
+        "PlayerY": -3.7085604667663574
+      }
+    },
+    {
+      "label": "07-falling-below-the-bridge",
+      "status": {
+        "State": "Falling",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 29.115985870361328,
+        "FallSeconds": 1.4989997148513794,
+        "PlayerY": -9.230956077575684
+      }
+    },
+    {
+      "label": "08-results-after-fall",
+      "status": {
+        "State": "Results",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 29.115985870361328,
+        "FallSeconds": 2.7489986419677734,
+        "PlayerY": -34.024723052978516
+      }
+    },
+    {
+      "label": "09-retry-reset",
+      "status": {
+        "State": "Preview",
+        "Steps": 0,
+        "Wallet": 0,
+        "RoundCoins": 0,
+        "Seconds": 30,
+        "FallSeconds": 0,
+        "PlayerY": 0.1199999451637268
+      }
+    }
+  ],
+  "assertions": [
+    "PASS Fall pose and physical position freeze while paused",
+    "PASS One fragile fall, no reward, delayed results, rapid keys ignored",
+    "PASS Player physically descends during the animated sequence",
+    "PASS Retry resets position, fall time, and run"
+  ]
+}

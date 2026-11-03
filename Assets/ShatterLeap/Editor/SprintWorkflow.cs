@@ -44,6 +44,7 @@ namespace ShatterLeap.Editor
                 else if (command == "polish") { CreateUiPanel(); }
                 else if (command == "webprofile") { CreateWebProfile(); }
                 else if (command == "restorequality") { RestoreProjectQualityReferences(); }
+                else if (command == "revision") { PolishRevision.Apply(); }
                 else if (command == "build") { BuildWeb(); }
                 else if (command == "play") { EditorSceneManager.OpenScene(ScenePath); EditorApplication.isPlaying = true; }
                 else if (command == "stop") { EditorApplication.isPlaying = false; }
@@ -533,6 +534,14 @@ namespace ShatterLeap.Editor
         [MenuItem("ShatterLeap/Build Existing Web Game")]
         public static void BuildWeb()
         {
+            var activeScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+            if (activeScene.path == ScenePath && activeScene.isDirty)
+            {
+                if (!EditorSceneManager.SaveScene(activeScene))
+                {
+                    throw new InvalidOperationException("Could not save the current game scene before building.");
+                }
+            }
             Validate();
             RuleChecks.Run();
             PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Disabled;

@@ -28,6 +28,17 @@ namespace ShatterLeap
             if (reduced) { Snap(); }
         }
         public void Snap() => transform.SetPositionAndRotation(_position, _rotation);
+        public void Falling(Vector3 landing, bool reduced)
+        {
+            _overview = false;
+            _camera.orthographic = false;
+            _camera.fieldOfView = 62;
+            float side = landing.x < 0 ? -1 : 1;
+            _position = landing + new Vector3(side * 8.5f, 0.3f, 5.5f);
+            _rotation = Quaternion.LookRotation(landing + new Vector3(0, -2f, 0.3f) - _position);
+            // A fixed anchor reveals the gap without following the body into the void.
+            if (reduced) { Snap(); }
+        }
         public void Advance(float delta)
         {
             float blend = 1 - Mathf.Exp(-delta * (_overview ? 12 : 7));

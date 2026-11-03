@@ -1,0 +1,1 @@
+Key: cool 1.15, teal vertex fill 0.55, warm rim 0.45; ambient slate; exponential-squared fog 0.012. No HDR, SSAO, deferred rendering or realtime shadows introduced. Scene-only curtain material overrides preserve originals.

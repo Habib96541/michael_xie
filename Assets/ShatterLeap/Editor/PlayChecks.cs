@@ -18,6 +18,10 @@ namespace ShatterLeap.Editor
         private static float _pausedSeconds;
         private static int _wallet;
         private static float _originalDuration;
+        private static bool _fallPauseTested;
+        private static bool _fallCheckStarted;
+        private static float _fallTime;
+        private static Vector3 _fallPosition;
         private static RunController _controller;
         private static GameConfig _config;
 
@@ -89,11 +93,29 @@ namespace ShatterLeap.Editor
                         }
                         break;
                     case 3:
+                        ContestantMotor motor = UnityEngine.Object.FindFirstObjectByType<ContestantMotor>();
+                        if (!_fallPauseTested && run.State == RunState.Falling && motor.FallElapsed > 0.35f)
+                        {
+                            if (!_fallCheckStarted)
+                            {
+                                _fallCheckStarted = true;
+                                _controller.Pause();
+                                _fallTime = motor.FallElapsed;
+                                _fallPosition = motor.Position;
+                                _pauseUntil = EditorApplication.timeSinceStartup + 0.5;
+                            }
+                            if (EditorApplication.timeSinceStartup < _pauseUntil) { return; }
+                            Check(_controller.Paused && motor.FallElapsed == _fallTime && Vector3.Distance(motor.Position, _fallPosition) < 0.001f, "Falling pose and physical descent freeze while paused");
+                            _controller.Resume();
+                            _fallPauseTested = true;
+                        }
                         if (run.State == RunState.Results)
                         {
                             Check(run.Outcome == RunState.Falling && run.Payout == 0 && _controller.Saves.Data.Coins == _wallet, "Fragile contact triggers falling with zero payout");
                             Check(UnityEngine.Object.FindFirstObjectByType<ContestantMotor>().GetComponent<Rigidbody>().useGravity, "Falling uses 3D gravity");
+                            Check(_fallPauseTested, "Animated fall pause/resume completed before results");
                             _controller.BeginRun();
+                            Check(!motor.IsFalling && motor.FallElapsed == 0 && motor.GetComponent<Rigidbody>().isKinematic, "Retry resets fall animation and physics");
                             _stage++;
                         }
                         break;

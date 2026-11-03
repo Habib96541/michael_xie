@@ -33,6 +33,7 @@ MonoBehaviour:
   JumpHeight: 1.5
   CameraTransitionSeconds: 0.8
   ResultDelay: 1.8
+  FallResultDelay: 2.6
   ShardCount: 20
   ContestantPrefab: {fileID: 463038450279687274, guid: 33abd8227f53a8448ac06fdda667195c, type: 3}
   PanelPrefab: {fileID: 9191822073934552024, guid: 597b2e13009a6714fac63bf7ae4dea23, type: 3}

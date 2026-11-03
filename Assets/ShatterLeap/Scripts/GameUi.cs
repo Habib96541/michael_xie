@@ -21,7 +21,9 @@ namespace ShatterLeap
         private Rect _safeArea;
         private string _page = "";
         private Action _confirmation;
-        private static readonly Color Ink = new Color(0.035f, 0.06f, 0.09f, 0.97f);
+        private int _displayedStep;
+        private float _rewardAt;
+        private static readonly Color Ink = new Color(0.035f, 0.052f, 0.075f, 1f);
         private static readonly Color Teal = new Color(0.25f, 0.92f, 0.85f);
         private static readonly Color Pink = new Color(0.91f, 0.19f, 0.42f);
         private static readonly Color Muted = new Color(0.65f, 0.75f, 0.8f);
@@ -40,6 +42,12 @@ namespace ShatterLeap
         public void Tick()
         {
             if (_width != Screen.width || _height != Screen.height || _safeArea != Screen.safeArea) { Rebuild(); }
+            if (_feedback)
+            {
+                Color feedbackColor = Teal;
+                feedbackColor.a = _run.Saves.Data.ReducedEffects ? (Time.time - _rewardAt < 1.6f ? 1 : 0) : Mathf.Clamp01(1 - (Time.time - _rewardAt - 1.2f) / 0.4f);
+                _feedback.color = feedbackColor;
+            }
             if (_timer && _run.Run != null)
             {
                 _timer.text = $"{Mathf.CeilToInt(_run.Run.Remaining):00}s";
@@ -78,8 +86,12 @@ namespace ShatterLeap
             _root.anchorMax = new Vector2(_safeArea.xMax / _width, _safeArea.yMax / _height);
             _root.offsetMin = Vector2.zero;
             _root.offsetMax = Vector2.zero;
-            if (_run.Run == null) { Home(); }
-            else { Hud(); }
+            if (_run.Run == null)
+            {
+                if (_page == "") { Home(); }
+            }
+            else if (_run.Run.State == RunState.Results && !_run.Paused) { Results(); }
+            else if (!_run.Paused && _page == "") { Hud(); }
             if (_run.Paused && _page == "") { PauseScreen(); }
             else if (_page == "settings") { Settings(); }
             else if (_page == "help") { Help(); }
@@ -87,29 +99,45 @@ namespace ShatterLeap
         }
         private void Home()
         {
-            RectTransform card = Card("Home", 440, 625);
-            Image logo = ImageAt("ShatterLeap logo", card, new Vector2(0, 190), new Vector2(420, 205), Color.white);
+            bool wide = Screen.width > Screen.height;
+            float column = wide ? 235 : 0;
+            RectTransform card = Card("Home", wide ? 980 : 440, 625);
+            Image logo = ImageAt("ShatterLeap logo", card, new Vector2(wide ? -235 : 0, wide ? 72 : 190), new Vector2(wide ? 455 : 410, wide ? 255 : 205), Color.white);
             logo.sprite = _config.Logo;
             logo.type = Image.Type.Simple;
             logo.preserveAspect = true;
-            Label(card, "ONE PATH. ONE CHANCE.", 0, 75, 380, 28, 18, Teal);
-            Image coin = ImageAt("Coin", card, new Vector2(-65, 26), new Vector2(32, 32), Color.white);
+            Label(card, "MEMORY  /  COURAGE  /  ONE WAY FORWARD", wide ? -235 : 0, wide ? -90 : 78, 430, 30, 14, Muted);
+            if (wide)
+            {
+                ImageAt("Divider", card, new Vector2(0, 0), new Vector2(1, 485), new Color(0.15f, 0.23f, 0.28f));
+                Label(card, "THE BRIDGE REMEMBERS.\nDO YOU?", -235, -159, 420, 75, 27, Color.white);
+                Label(card, "PHASE 01    /    THE GLASS TRIAL", -235, 250, 420, 28, 16, Teal);
+            }
+            float walletY = wide ? 216 : 27;
+            ImageAt("Wallet well", card, new Vector2(column, walletY), new Vector2(390, 66), new Color(0.07f, 0.095f, 0.12f));
+            Image coin = ImageAt("Coin", card, new Vector2(column - 142, walletY), new Vector2(32, 32), Color.white);
             coin.sprite = _config.CoinIcon;
             coin.type = Image.Type.Simple;
             coin.preserveAspect = true;
-            Label(card, $"{_run.Saves.Data.Coins:N0}  BANKED", 25, 26, 250, 36, 23, Color.white);
+            Label(card, $"{_run.Saves.Data.Coins:N0}", column - 52, walletY, 140, 40, 29, new Color(1, 0.82f, 0.46f));
+            Label(card, "BANKED COINS", column + 91, walletY, 150, 30, 14, Muted);
+            float difficultyY = wide ? 68 : -39;
+            if (wide) { Label(card, "SELECT YOUR TRIAL", column, 130, 390, 30, 17, Muted); }
+            ImageAt("Difficulty rail", card, new Vector2(column, difficultyY), new Vector2(402, 76), new Color(0.018f, 0.03f, 0.045f));
             string[] labels = { "EASY", "NORMAL", "HARD" };
             for (int i = 0; i < 3; i++)
             {
                 int index = i;
-                Button(card, labels[i], (i - 1) * 132, -34, 122, 48, () => _run.SelectDifficulty(index), _run.Saves.Data.Difficulty == i ? Teal * 0.65f : new Color(0.12f, 0.2f, 0.25f));
+                bool selected = _run.Saves.Data.Difficulty == i;
+                Button(card, labels[i], column + (i - 1) * 132, difficultyY, 122, 64, () => _run.SelectDifficulty(index), selected ? new Color(0.06f, 0.30f, 0.29f) : new Color(0.055f, 0.08f, 0.105f));
+                if (selected) { ImageAt("Selected difficulty", card, new Vector2(column + (i - 1) * 132, difficultyY - 29), new Vector2(70, 2), Teal); }
             }
             Difficulty difficulty = _config.Difficulties[_run.Saves.Data.Difficulty];
-            Label(card, $"{difficulty.Rows} rows  /  {difficulty.PreviewSeconds:0}s preview  /  {difficulty.PlaySeconds:0}s run", 0, -84, 400, 32, 18, Muted);
-            Button(card, "PLAY", 0, -144, 390, 62, _run.BeginRun, Pink);
-            Button(card, "SETTINGS", -100, -215, 190, 48, () => Open("settings"));
-            Button(card, "HOW TO PLAY", 100, -215, 190, 48, () => Open("help"));
-            Label(card, "Complete the bridge to bank your coins.", 0, -275, 410, 30, 17, Muted);
+            Label(card, $"{difficulty.Rows} ROWS     {difficulty.PreviewSeconds:0}s PREVIEW     {difficulty.PlaySeconds:0}s LIMIT", column, wide ? 7 : -94, 400, 28, 15, Muted);
+            Button(card, "PLAY", column, wide ? -75 : -150, 390, 72, _run.BeginRun, Pink);
+            Button(card, "SETTINGS", column - 100, wide ? -161 : -230, 190, 64, () => Open("settings"));
+            Button(card, "HOW TO PLAY", column + 100, wide ? -161 : -230, 190, 64, () => Open("help"));
+            Label(card, "Finish the bridge. Bank the reward.", column, wide ? -245 : -283, 410, 28, 16, Muted);
         }
         private void Hud()
         {
@@ -117,12 +145,13 @@ namespace ShatterLeap
             RectTransform top = Rect("HUD", _root);
             Place(top, new Vector2(0.5f, 1), new Vector2(0, -48), new Vector2(430, 86));
             ImageAt("HUD background", top, Vector2.zero, new Vector2(430, 86), Ink);
+            ImageAt("HUD rule", top, new Vector2(0, -42), new Vector2(400, 2), new Color(0.08f, 0.28f, 0.29f));
             _timer = Label(top, "", -155, 15, 100, 40, 31, Color.white);
             _status = Label(top, $"STEP {Mathf.Min(run.Steps + 1, run.Difficulty.Rows)} / {run.Difficulty.Rows}", -3, 19, 175, 30, 21, Teal);
             Label(top, $"{run.Earnings} ROUND  /  {_run.Saves.Data.Coins} BANKED", -20, -19, 340, 28, 16, Muted);
             Button(top, "II", 174, 8, 58, 58, _run.Pause);
             RectTransform bottom = Rect("Choices", _root);
-            Place(bottom, new Vector2(0.5f, 0), new Vector2(0, 84), new Vector2(430, 100));
+            Place(bottom, new Vector2(0.5f, 0), new Vector2(0, 104), new Vector2(430, 100));
             if (run.State == RunState.Preview)
             {
                 _preview = Label(bottom, "", 0, 22, 440, 44, 24, Teal);
@@ -141,13 +170,15 @@ namespace ShatterLeap
                 _instruction = Label(bottom, run.AtFinish ? "Reaching the finish..." : "Choose the next row", 0, 55, 430, 28, 18, Color.white);
                 if (run.Steps > 0)
                 {
-                    _feedback = Label(bottom, $"SAFE STEP   +{run.Steps * _config.StepValue} provisional coins", 0, 91, 430, 28, 18, Teal);
+                    if (_displayedStep != run.Steps) { _displayedStep = run.Steps; _rewardAt = Time.time; }
+                    _feedback = Label(top, $"SAFE STEP   +{run.Steps * _config.StepValue} provisional coins", 0, -62, 430, 28, 18, Teal);
                 }
             }
             else if (run.State == RunState.Results) { Results(); }
             else
             {
-                Label(bottom, run.Outcome == RunState.Won ? "BRIDGE CLEARED" : run.Outcome == RunState.Falling ? "GLASS BROKEN" : "TIME'S UP", 0, 0, 430, 60, 30, run.Outcome == RunState.Won ? Teal : Pink);
+                bool falling = run.Outcome == RunState.Falling;
+                Label(falling ? top : bottom, run.Outcome == RunState.Won ? "BRIDGE CLEARED" : falling ? "GLASS BROKEN" : "TIME'S UP", 0, falling ? -72 : 0, 430, 48, 26, run.Outcome == RunState.Won ? Teal : Pink);
             }
         }
         private void Results()
@@ -231,7 +262,7 @@ namespace ShatterLeap
         }
         private RectTransform Card(string name, float width, float height)
         {
-            Image dimmer = ImageAt(name + " backdrop", _root, Vector2.zero, Vector2.zero, new Color(0.015f, 0.025f, 0.04f, 0.7f));
+            Image dimmer = ImageAt(name + " backdrop", _root, Vector2.zero, Vector2.zero, new Color(0.008f, 0.016f, 0.026f, 0.93f));
             RectTransform backdrop = dimmer.rectTransform;
             backdrop.anchorMin = Vector2.zero;
             backdrop.anchorMax = Vector2.one;
@@ -239,8 +270,10 @@ namespace ShatterLeap
             dimmer.raycastTarget = true;
             RectTransform card = Rect(name, backdrop);
             Place(card, new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(width, height));
+            ImageAt("Card shadow", card, new Vector2(0, -8), new Vector2(width + 12, height + 12), new Color(0, 0, 0, 0.35f));
+            ImageAt("Card border", card, Vector2.zero, new Vector2(width + 2, height + 2), new Color(0.19f, 0.26f, 0.30f));
             ImageAt("Card", card, Vector2.zero, new Vector2(width, height), Ink);
-            ImageAt("Accent", card, new Vector2(0, height / 2), new Vector2(width, 3), Teal);
+            ImageAt("Accent", card, new Vector2(-width / 2 + 50, height / 2), new Vector2(56, 3), Teal);
             return card;
         }
         private RectTransform Rect(string name, Transform parent)
@@ -278,6 +311,7 @@ namespace ShatterLeap
             Text label = rect.gameObject.AddComponent<Text>();
             label.font = _font;
             label.fontSize = size;
+            if (size >= 27) { label.fontStyle = FontStyle.Bold; }
             label.color = color;
             label.text = text;
             label.alignment = alignment;
@@ -287,7 +321,7 @@ namespace ShatterLeap
         private Button Button(Transform parent, string label, float x, float y, float width, float height, Action action, Color? color = null)
         {
             height = Mathf.Max(height, 64);
-            Image background = ImageAt(label, parent, new Vector2(x, y), new Vector2(width, height), color ?? new Color(0.12f, 0.25f, 0.3f));
+            Image background = ImageAt(label, parent, new Vector2(x, y), new Vector2(width, height), color ?? new Color(0.085f, 0.12f, 0.155f));
             background.raycastTarget = true;
             Button button = background.gameObject.AddComponent<Button>();
             button.targetGraphic = background;
@@ -295,14 +329,20 @@ namespace ShatterLeap
             colors.highlightedColor = new Color(0.75f, 1, 0.96f);
             colors.pressedColor = new Color(0.5f, 0.75f, 0.7f);
             colors.disabledColor = new Color(0.3f, 0.35f, 0.38f, 0.8f);
+            colors.selectedColor = new Color(0.75f, 1f, 0.96f);
+            colors.fadeDuration = 0.09f;
             button.colors = colors;
+            Outline outline = background.gameObject.AddComponent<Outline>();
+            outline.effectColor = color.HasValue && color.Value == Pink ? new Color(1, 0.4f, 0.55f, 0.5f) : new Color(0.25f, 0.39f, 0.43f, 0.65f);
+            outline.effectDistance = new Vector2(1, -1);
             button.onClick.AddListener(() => { _run.Gesture(); action(); });
-            Label(background.transform, label, 0, 0, width - 12, height - 8, label.Length > 25 ? 16 : 22, Color.white);
+            Text caption = Label(background.transform, label, 0, 0, width - 12, height - 8, label.Length > 25 ? 16 : 20, Color.white);
+            caption.fontStyle = FontStyle.Bold;
             return button;
         }
         private void Slider(Transform parent, float y, float value, Action<float> change)
         {
-            Image track = ImageAt("Volume slider", parent, new Vector2(0, y), new Vector2(360, 64), new Color(0.12f, 0.25f, 0.3f));
+            Image track = ImageAt("Volume slider", parent, new Vector2(0, y), new Vector2(360, 64), new Color(0.085f, 0.12f, 0.155f));
             track.raycastTarget = true;
             // Slider stretches the handle along the cross axis; a zero height delta keeps it inside the track.
             Image handle = ImageAt("Handle", track.transform, Vector2.zero, new Vector2(26, 0), Teal);

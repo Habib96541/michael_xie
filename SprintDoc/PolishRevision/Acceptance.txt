@@ -1,0 +1,4 @@
+UI: charcoal opaque modal panels, split desktop home, segmented difficulty, typography hierarchy, responsive touch controls and slider bounds.
+Lighting: cool key / teal fill / warm rim, slate fog, subdued curtain overrides; preserve Web forward profile.
+Fall: contact -> descending stagger -> posed gravity fall -> delayed results; fixed camera, freeze/resume, clean retry.
+Verify unchanged rules and saves, all five HTTP Web viewport screenshots, falling frame sequence and performance. No commit/push.

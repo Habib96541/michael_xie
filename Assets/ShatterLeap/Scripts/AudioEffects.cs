@@ -82,6 +82,12 @@ namespace ShatterLeap
                 _velocity[i] = new Vector3(Mathf.Sin(i * 2.4f) * 2, 1 + i % 3, Mathf.Cos(i * 2.4f) * 2);
             }
         }
+        public void ResetPool()
+        {
+            _shardTime = 0;
+            if (_shards == null) { return; }
+            foreach (Transform shard in _shards) { shard.gameObject.SetActive(false); }
+        }
         public void Advance(float delta)
         {
             if (_shardTime <= 0) { return; }
