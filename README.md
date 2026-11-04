@@ -35,3 +35,5 @@ Click or tap exposed coin targets. Avoid bombs. Survive 20 seconds to bank round
 - Imported asset reuse: `SprintDoc/AssetInventory.md`.
 
 The initial generation menu refuses to overwrite an existing scene. Edit existing assets directly. Preserve imported assets and their licenses.
+
+Text visibility regression checks run with python Tools/verify_text_layout.py. They include the reported wide window and verify every generated Home/Settings label.

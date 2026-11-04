@@ -1,0 +1,1541 @@
+[
+  {
+    "size": [
+      1914,
+      909
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 39,
+        "Left": 0.3339674174785614,
+        "Bottom": 0.9031999111175537,
+        "Right": 0.666032612323761,
+        "Top": 0.9559999704360962
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 78,
+        "Left": 0.3143056333065033,
+        "Bottom": 0.7975999712944031,
+        "Right": 0.6856943368911743,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 51,
+        "Left": 0.3143056333065033,
+        "Bottom": 0.7025600671768188,
+        "Right": 0.6856943368911743,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 37,
+        "Left": 0.32522886991500854,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.6747711300849915,
+        "Top": 0.6920000314712524
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 40,
+        "Left": 0.3811556100845337,
+        "Bottom": 0.3989599943161011,
+        "Right": 0.6188443899154663,
+        "Top": 0.452239990234375
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 40,
+        "Left": 0.3811556100845337,
+        "Bottom": 0.3125600218772888,
+        "Right": 0.6188443899154663,
+        "Top": 0.36584001779556274
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 40,
+        "Left": 0.3811556100845337,
+        "Bottom": 0.22616003453731537,
+        "Right": 0.6188443899154663,
+        "Top": 0.2794400155544281
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 39,
+        "Left": 0.3339674174785614,
+        "Bottom": 0.9031999111175537,
+        "Right": 0.666032612323761,
+        "Top": 0.9559999704360962
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 78,
+        "Left": 0.3143056333065033,
+        "Bottom": 0.7975999712944031,
+        "Right": 0.6856943368911743,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 72,
+        "Left": 0.3143056333065033,
+        "Bottom": 0.7025600671768188,
+        "Right": 0.6856943368911743,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 51,
+        "Left": 0.32522886991500854,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.6747711300849915,
+        "Top": 0.6920000314712524
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 39,
+        "Left": 0.333967387676239,
+        "Bottom": 0.42319998145103455,
+        "Right": 0.4650457799434662,
+        "Top": 0.47600001096725464
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 39,
+        "Left": 0.333967387676239,
+        "Bottom": 0.3368000090122223,
+        "Right": 0.4650457799434662,
+        "Top": 0.3895999789237976
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 40,
+        "Left": 0.3811556100845337,
+        "Bottom": 0.22616003453731537,
+        "Right": 0.6188443899154663,
+        "Top": 0.2794400155544281
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 40,
+        "Left": 0.3811556100845337,
+        "Bottom": 0.13976000249385834,
+        "Right": 0.6188443899154663,
+        "Top": 0.19303999841213226
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 40,
+        "Left": 0.3811556100845337,
+        "Bottom": 0.053359996527433395,
+        "Right": 0.6188443899154663,
+        "Top": 0.10664000362157822
+      }
+    ],
+    "passed": true
+  },
+  {
+    "size": [
+      2560,
+      1080
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 48,
+        "Left": 0.35251250863075256,
+        "Bottom": 0.9031999707221985,
+        "Right": 0.6474875211715698,
+        "Top": 0.9559999704360962
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 93,
+        "Left": 0.3350468575954437,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.6649531126022339,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 61,
+        "Left": 0.3350468575954437,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.6649531126022339,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 45,
+        "Left": 0.34474998712539673,
+        "Bottom": 0.49039995670318604,
+        "Right": 0.6552499532699585,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 48,
+        "Left": 0.3944299817085266,
+        "Bottom": 0.3989599645137787,
+        "Right": 0.6055700182914734,
+        "Top": 0.452239990234375
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 48,
+        "Left": 0.3944299817085266,
+        "Bottom": 0.31255999207496643,
+        "Right": 0.6055700182914734,
+        "Top": 0.36584001779556274
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 48,
+        "Left": 0.3944299817085266,
+        "Bottom": 0.2261599898338318,
+        "Right": 0.6055700182914734,
+        "Top": 0.2794399857521057
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 48,
+        "Left": 0.35251253843307495,
+        "Bottom": 0.9031999707221985,
+        "Right": 0.647487461566925,
+        "Top": 0.9559999704360962
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 93,
+        "Left": 0.3350468575954437,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.6649531126022339,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 85,
+        "Left": 0.3350468575954437,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.6649531126022339,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 60,
+        "Left": 0.3447500169277191,
+        "Bottom": 0.49039995670318604,
+        "Right": 0.6552499532699585,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 48,
+        "Left": 0.35251253843307495,
+        "Bottom": 0.42320001125335693,
+        "Right": 0.46894997358322144,
+        "Top": 0.47599995136260986
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 48,
+        "Left": 0.35251253843307495,
+        "Bottom": 0.3368000090122223,
+        "Right": 0.46894997358322144,
+        "Top": 0.38960000872612
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 48,
+        "Left": 0.3944299817085266,
+        "Bottom": 0.2261599898338318,
+        "Right": 0.6055700182914734,
+        "Top": 0.2794399857521057
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 48,
+        "Left": 0.3944299817085266,
+        "Bottom": 0.13976000249385834,
+        "Right": 0.6055700182914734,
+        "Top": 0.19304001331329346
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 48,
+        "Left": 0.3944299817085266,
+        "Bottom": 0.05335996672511101,
+        "Right": 0.6055700182914734,
+        "Top": 0.10663995891809464
+      }
+    ],
+    "passed": true
+  },
+  {
+    "size": [
+      800,
+      360
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 48,
+        "Left": 0.35251250863075256,
+        "Bottom": 0.9032000303268433,
+        "Right": 0.6474874019622803,
+        "Top": 0.956000030040741
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 93,
+        "Left": 0.3350468873977661,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.6649529933929443,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 61,
+        "Left": 0.3350468873977661,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.6649529933929443,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 45,
+        "Left": 0.3447500169277191,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.6552499532699585,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 48,
+        "Left": 0.394430011510849,
+        "Bottom": 0.3989599943161011,
+        "Right": 0.6055700182914734,
+        "Top": 0.4522400200366974
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 48,
+        "Left": 0.394430011510849,
+        "Bottom": 0.31255999207496643,
+        "Right": 0.6055700182914734,
+        "Top": 0.36583998799324036
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 48,
+        "Left": 0.394430011510849,
+        "Bottom": 0.2261599898338318,
+        "Right": 0.6055700182914734,
+        "Top": 0.2794399857521057
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 16,
+        "Left": 0.3426799774169922,
+        "Bottom": 0.9032000303268433,
+        "Right": 0.6573200225830078,
+        "Top": 0.956000030040741
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 31,
+        "Left": 0.3240499794483185,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.6759499907493591,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 28,
+        "Left": 0.3240499794483185,
+        "Bottom": 0.7025600671768188,
+        "Right": 0.6759499907493591,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 20,
+        "Left": 0.3343999981880188,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.6656000018119812,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 16,
+        "Left": 0.3426799774169922,
+        "Bottom": 0.42319998145103455,
+        "Right": 0.4668799638748169,
+        "Top": 0.47599995136260986
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 16,
+        "Left": 0.3426799774169922,
+        "Bottom": 0.3368000090122223,
+        "Right": 0.4668799638748169,
+        "Top": 0.3895999789237976
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 16,
+        "Left": 0.38739195466041565,
+        "Bottom": 0.2261599898338318,
+        "Right": 0.612608015537262,
+        "Top": 0.2794399857521057
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 16,
+        "Left": 0.38739195466041565,
+        "Bottom": 0.13975997269153595,
+        "Right": 0.612608015537262,
+        "Top": 0.19303998351097107
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 16,
+        "Left": 0.38739195466041565,
+        "Bottom": 0.05335996299982071,
+        "Right": 0.612608015537262,
+        "Top": 0.10663996636867523
+      }
+    ],
+    "passed": true
+  },
+  {
+    "size": [
+      1920,
+      1080
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 48,
+        "Left": 0.3033500015735626,
+        "Bottom": 0.9032000303268433,
+        "Right": 0.6966499090194702,
+        "Top": 0.9559999704360962
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 93,
+        "Left": 0.2800624966621399,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.7199374437332153,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 61,
+        "Left": 0.2800624966621399,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.7199374437332153,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 45,
+        "Left": 0.2930000126361847,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.7069999575614929,
+        "Top": 0.6920000314712524
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 48,
+        "Left": 0.35924002528190613,
+        "Bottom": 0.3989599943161011,
+        "Right": 0.6407600045204163,
+        "Top": 0.4522400200366974
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 48,
+        "Left": 0.35924002528190613,
+        "Bottom": 0.31255999207496643,
+        "Right": 0.6407600045204163,
+        "Top": 0.36584001779556274
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 48,
+        "Left": 0.35924002528190613,
+        "Bottom": 0.2261599749326706,
+        "Right": 0.6407600045204163,
+        "Top": 0.2794399857521057
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 48,
+        "Left": 0.3033500015735626,
+        "Bottom": 0.9032000303268433,
+        "Right": 0.6966499090194702,
+        "Top": 0.9559999704360962
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 93,
+        "Left": 0.2800624966621399,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.7199374437332153,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 76,
+        "Left": 0.2800624966621399,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.7199374437332153,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 60,
+        "Left": 0.2930000126361847,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.7069999575614929,
+        "Top": 0.6920000314712524
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 48,
+        "Left": 0.3033500015735626,
+        "Bottom": 0.42320001125335693,
+        "Right": 0.4585999846458435,
+        "Top": 0.47599995136260986
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 48,
+        "Left": 0.3033500015735626,
+        "Bottom": 0.3368000090122223,
+        "Right": 0.4585999846458435,
+        "Top": 0.38960000872612
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 48,
+        "Left": 0.35924002528190613,
+        "Bottom": 0.2261599749326706,
+        "Right": 0.6407600045204163,
+        "Top": 0.2794399857521057
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 48,
+        "Left": 0.35924002528190613,
+        "Bottom": 0.13975997269153595,
+        "Right": 0.6407600045204163,
+        "Top": 0.19303998351097107
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 48,
+        "Left": 0.35924002528190613,
+        "Bottom": 0.0533599928021431,
+        "Right": 0.6407600045204163,
+        "Top": 0.10663999617099762
+      }
+    ],
+    "passed": true
+  },
+  {
+    "size": [
+      360,
+      800
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 9,
+        "Left": 0.13519999384880066,
+        "Bottom": 0.903200089931488,
+        "Right": 0.8648000359535217,
+        "Top": 0.9560000896453857
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 25,
+        "Left": 0.09199994057416916,
+        "Bottom": 0.7976000905036926,
+        "Right": 0.9079999923706055,
+        "Top": 0.9099200367927551
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 14,
+        "Left": 0.09199994057416916,
+        "Bottom": 0.7025601267814636,
+        "Right": 0.9079999923706055,
+        "Top": 0.7976000905036926
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 13,
+        "Left": 0.1159999817609787,
+        "Bottom": 0.4904000759124756,
+        "Right": 0.8839999437332153,
+        "Top": 0.6920000314712524
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 14,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.39896002411842346,
+        "Right": 0.761120080947876,
+        "Top": 0.45224007964134216
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 14,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.3125600516796112,
+        "Right": 0.761120080947876,
+        "Top": 0.36584004759788513
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 14,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.22616000473499298,
+        "Right": 0.761120080947876,
+        "Top": 0.2794400453567505
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 9,
+        "Left": 0.13519999384880066,
+        "Bottom": 0.903200089931488,
+        "Right": 0.8648000359535217,
+        "Top": 0.9560000896453857
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 25,
+        "Left": 0.09199994057416916,
+        "Bottom": 0.7976000905036926,
+        "Right": 0.9079999923706055,
+        "Top": 0.9099200367927551
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 14,
+        "Left": 0.09199994057416916,
+        "Bottom": 0.7025601267814636,
+        "Right": 0.9079999923706055,
+        "Top": 0.7976000905036926
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 13,
+        "Left": 0.1159999817609787,
+        "Bottom": 0.4904000759124756,
+        "Right": 0.8839999437332153,
+        "Top": 0.6920000314712524
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 14,
+        "Left": 0.13519996404647827,
+        "Bottom": 0.4232000410556793,
+        "Right": 0.42319998145103455,
+        "Top": 0.47600001096725464
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 14,
+        "Left": 0.13519996404647827,
+        "Bottom": 0.33680006861686707,
+        "Right": 0.42319998145103455,
+        "Top": 0.38960006833076477
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 14,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.22616000473499298,
+        "Right": 0.761120080947876,
+        "Top": 0.2794400453567505
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 14,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.13976003229618073,
+        "Right": 0.761120080947876,
+        "Top": 0.19304004311561584
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 14,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.05336003378033638,
+        "Right": 0.761120080947876,
+        "Top": 0.1066400408744812
+      }
+    ],
+    "passed": true
+  },
+  {
+    "size": [
+      720,
+      1280
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 18,
+        "Left": 0.13519999384880066,
+        "Bottom": 0.9032000303268433,
+        "Right": 0.8648000359535217,
+        "Top": 0.956000030040741
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 51,
+        "Left": 0.09199994057416916,
+        "Bottom": 0.7976000905036926,
+        "Right": 0.9079999923706055,
+        "Top": 0.9099200367927551
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 28,
+        "Left": 0.09199994057416916,
+        "Bottom": 0.7025600671768188,
+        "Right": 0.9079999923706055,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 26,
+        "Left": 0.1159999817609787,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.8839999437332153,
+        "Top": 0.6920000314712524
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 28,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.39896005392074585,
+        "Right": 0.761120080947876,
+        "Top": 0.45224007964134216
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 28,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.3125600218772888,
+        "Right": 0.761120080947876,
+        "Top": 0.36584001779556274
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 28,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.22616001963615417,
+        "Right": 0.761120080947876,
+        "Top": 0.2794400453567505
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 18,
+        "Left": 0.13519999384880066,
+        "Bottom": 0.9032000303268433,
+        "Right": 0.8648000359535217,
+        "Top": 0.956000030040741
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 51,
+        "Left": 0.09199994057416916,
+        "Bottom": 0.7976000905036926,
+        "Right": 0.9079999923706055,
+        "Top": 0.9099200367927551
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 28,
+        "Left": 0.09199994057416916,
+        "Bottom": 0.7025600671768188,
+        "Right": 0.9079999923706055,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 26,
+        "Left": 0.1159999817609787,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.8839999437332153,
+        "Top": 0.6920000314712524
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 28,
+        "Left": 0.13519996404647827,
+        "Bottom": 0.4232000410556793,
+        "Right": 0.42319998145103455,
+        "Top": 0.47600001096725464
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 28,
+        "Left": 0.13519996404647827,
+        "Bottom": 0.3368000388145447,
+        "Right": 0.42319998145103455,
+        "Top": 0.3896000385284424
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 28,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.22616001963615417,
+        "Right": 0.761120080947876,
+        "Top": 0.2794400453567505
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 28,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.13976003229618073,
+        "Right": 0.761120080947876,
+        "Top": 0.19304002821445465
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 28,
+        "Left": 0.23888002336025238,
+        "Bottom": 0.05336000770330429,
+        "Right": 0.761120080947876,
+        "Top": 0.10664002597332001
+      }
+    ],
+    "passed": true
+  },
+  {
+    "size": [
+      768,
+      1024
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 19,
+        "Left": 0.13519997894763947,
+        "Bottom": 0.9031999707221985,
+        "Right": 0.864799976348877,
+        "Top": 0.956000030040741
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 55,
+        "Left": 0.09200000762939453,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.9079999327659607,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 30,
+        "Left": 0.09200000762939453,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.9079999327659607,
+        "Top": 0.7975999712944031
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 28,
+        "Left": 0.11600001901388168,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.8839998841285706,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 30,
+        "Left": 0.23888005316257477,
+        "Bottom": 0.3989599943161011,
+        "Right": 0.7611200213432312,
+        "Top": 0.452239990234375
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 30,
+        "Left": 0.23888005316257477,
+        "Bottom": 0.3125600218772888,
+        "Right": 0.7611200213432312,
+        "Top": 0.36584001779556274
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 30,
+        "Left": 0.23888005316257477,
+        "Bottom": 0.22616001963615417,
+        "Right": 0.7611200213432312,
+        "Top": 0.2794400155544281
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 19,
+        "Left": 0.13519997894763947,
+        "Bottom": 0.9031999707221985,
+        "Right": 0.864799976348877,
+        "Top": 0.956000030040741
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 55,
+        "Left": 0.09200000762939453,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.9079999327659607,
+        "Top": 0.9099199771881104
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 30,
+        "Left": 0.09200000762939453,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.9079999327659607,
+        "Top": 0.7975999712944031
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 28,
+        "Left": 0.11600001901388168,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.8839998841285706,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 30,
+        "Left": 0.13519997894763947,
+        "Bottom": 0.42319998145103455,
+        "Right": 0.42319998145103455,
+        "Top": 0.47599998116493225
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 30,
+        "Left": 0.13519997894763947,
+        "Bottom": 0.3368000090122223,
+        "Right": 0.42319998145103455,
+        "Top": 0.38960000872612
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 30,
+        "Left": 0.23888005316257477,
+        "Bottom": 0.22616001963615417,
+        "Right": 0.7611200213432312,
+        "Top": 0.2794400155544281
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 30,
+        "Left": 0.23888005316257477,
+        "Bottom": 0.13976001739501953,
+        "Right": 0.7611200213432312,
+        "Top": 0.19304001331329346
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 30,
+        "Left": 0.23888005316257477,
+        "Bottom": 0.05336000770330429,
+        "Right": 0.7611200213432312,
+        "Top": 0.10664001852273941
+      }
+    ],
+    "passed": true
+  },
+  {
+    "size": [
+      1280,
+      720
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 31,
+        "Left": 0.303350031375885,
+        "Bottom": 0.9032000303268433,
+        "Right": 0.696649968624115,
+        "Top": 0.956000030040741
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 62,
+        "Left": 0.2800624966621399,
+        "Bottom": 0.7975999712944031,
+        "Right": 0.7199374437332153,
+        "Top": 0.9099199175834656
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 40,
+        "Left": 0.2800624966621399,
+        "Bottom": 0.7025600671768188,
+        "Right": 0.7199374437332153,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 30,
+        "Left": 0.2930000424385071,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.7069999575614929,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 31,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.3989599943161011,
+        "Right": 0.6407600045204163,
+        "Top": 0.4522400200366974
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 31,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.31255999207496643,
+        "Right": 0.6407600045204163,
+        "Top": 0.36583998799324036
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 31,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.22616000473499298,
+        "Right": 0.6407600045204163,
+        "Top": 0.2794400155544281
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 31,
+        "Left": 0.303350031375885,
+        "Bottom": 0.9032000303268433,
+        "Right": 0.696649968624115,
+        "Top": 0.956000030040741
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 62,
+        "Left": 0.2800624966621399,
+        "Bottom": 0.7975999712944031,
+        "Right": 0.7199374437332153,
+        "Top": 0.9099199175834656
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 51,
+        "Left": 0.2800624966621399,
+        "Bottom": 0.7025600671768188,
+        "Right": 0.7199374437332153,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 40,
+        "Left": 0.2930000424385071,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.7069999575614929,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 31,
+        "Left": 0.303350031375885,
+        "Bottom": 0.42320001125335693,
+        "Right": 0.4585999846458435,
+        "Top": 0.47600001096725464
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 31,
+        "Left": 0.303350031375885,
+        "Bottom": 0.3368000388145447,
+        "Right": 0.4585999846458435,
+        "Top": 0.3896000385284424
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 31,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.22616000473499298,
+        "Right": 0.6407600045204163,
+        "Top": 0.2794400155544281
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 31,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.13976001739501953,
+        "Right": 0.6407600045204163,
+        "Top": 0.19304002821445465
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 31,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.05335996299982071,
+        "Right": 0.6407600045204163,
+        "Top": 0.10663996636867523
+      }
+    ],
+    "passed": true
+  },
+  {
+    "size": [
+      1600,
+      900
+    ],
+    "home": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 39,
+        "Left": 0.3033500015735626,
+        "Bottom": 0.903200089931488,
+        "Right": 0.6966499090194702,
+        "Top": 0.9559999704360962
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 78,
+        "Left": 0.2800624668598175,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.7199374437332153,
+        "Top": 0.9099200367927551
+      },
+      {
+        "Text": "CARNIVAL COIN CHALLENGE",
+        "Vertices": 84,
+        "Characters": 23,
+        "FontSize": 51,
+        "Left": 0.2800624668598175,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.7199374437332153,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Shoot coin targets. Avoid bombs. Survive 20 seconds to keep your coins.\n\nWALLET  0     BEST ROUND  0",
+        "Vertices": 308,
+        "Characters": 100,
+        "FontSize": 37,
+        "Left": 0.2929999828338623,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.7069999575614929,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Play \u2014 Free",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 39,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.3989599943161011,
+        "Right": 0.6407599449157715,
+        "Top": 0.4522400200366974
+      },
+      {
+        "Text": "Settings",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 39,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.31255999207496643,
+        "Right": 0.6407599449157715,
+        "Top": 0.36584001779556274
+      },
+      {
+        "Text": "How to Play",
+        "Vertices": 36,
+        "Characters": 11,
+        "FontSize": 39,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.2261599898338318,
+        "Right": 0.6407599449157715,
+        "Top": 0.2794399857521057
+      }
+    ],
+    "settings": [
+      {
+        "Text": "STEP RIGHT UP  /  THE MIDWAY",
+        "Vertices": 84,
+        "Characters": 28,
+        "FontSize": 39,
+        "Left": 0.3033500015735626,
+        "Bottom": 0.903200089931488,
+        "Right": 0.6966499090194702,
+        "Top": 0.9559999704360962
+      },
+      {
+        "Text": "BULLSEYE BLITZ",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 78,
+        "Left": 0.2800624668598175,
+        "Bottom": 0.7976000308990479,
+        "Right": 0.7199374437332153,
+        "Top": 0.9099200367927551
+      },
+      {
+        "Text": "SETTINGS",
+        "Vertices": 32,
+        "Characters": 8,
+        "FontSize": 64,
+        "Left": 0.2800624668598175,
+        "Bottom": 0.7025600075721741,
+        "Right": 0.7199374437332153,
+        "Top": 0.7976000308990479
+      },
+      {
+        "Text": "Audio starts after interaction.\nSettings are saved on this device.",
+        "Vertices": 228,
+        "Characters": 66,
+        "FontSize": 50,
+        "Left": 0.2929999828338623,
+        "Bottom": 0.4904000163078308,
+        "Right": 0.7069999575614929,
+        "Top": 0.6919999718666077
+      },
+      {
+        "Text": "Music",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 39,
+        "Left": 0.30334994196891785,
+        "Bottom": 0.42320001125335693,
+        "Right": 0.4585999548435211,
+        "Top": 0.47599995136260986
+      },
+      {
+        "Text": "Sound",
+        "Vertices": 20,
+        "Characters": 5,
+        "FontSize": 39,
+        "Left": 0.30334994196891785,
+        "Bottom": 0.3368000090122223,
+        "Right": 0.4585999548435211,
+        "Top": 0.38960000872612
+      },
+      {
+        "Text": "Reduced effects: Off",
+        "Vertices": 72,
+        "Characters": 20,
+        "FontSize": 39,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.2261599898338318,
+        "Right": 0.6407599449157715,
+        "Top": 0.2794399857521057
+      },
+      {
+        "Text": "Vibration: Off",
+        "Vertices": 52,
+        "Characters": 14,
+        "FontSize": 39,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.13975997269153595,
+        "Right": 0.6407599449157715,
+        "Top": 0.19303996860980988
+      },
+      {
+        "Text": "Home",
+        "Vertices": 16,
+        "Characters": 4,
+        "FontSize": 39,
+        "Left": 0.35923999547958374,
+        "Bottom": 0.0533599928021431,
+        "Right": 0.6407599449157715,
+        "Top": 0.10664000362157822
+      }
+    ],
+    "passed": true
+  }
+]

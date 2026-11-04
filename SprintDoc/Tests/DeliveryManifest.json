@@ -15,7 +15,7 @@
     {
       "path": "Build/Web.loader.js",
       "bytes": 26982,
-      "sha256": "655fad0bd36404886446bd07ba3ad918d298616c92c49e407469d4edf99c36ba",
+      "sha256": "8572eae56bd497e864823a3044e2c5a8e3d405968ccd90af2803ce9406fb7f13",
       "http": {
         "contentType": "application/javascript",
         "contentLength": "26982"
@@ -23,29 +23,29 @@
     },
     {
       "path": "Build/Web.framework.js",
-      "bytes": 463064,
-      "sha256": "efa03fbb6628ba2f1d943b425b8e95482871a0e6ff984922cdec7a5ce16f845f",
+      "bytes": 463174,
+      "sha256": "6e6757f4b98f57bc810de5a2538db6cbc4044528366f35fd959744dc26955ae9",
       "http": {
         "contentType": "application/javascript",
-        "contentLength": "463064"
+        "contentLength": "463174"
       }
     },
     {
       "path": "Build/Web.data",
-      "bytes": 14437277,
-      "sha256": "1165146742f69c10da5ec72faea5d6b3c961e4d87ebb379367a29692f284adcd",
+      "bytes": 14438129,
+      "sha256": "e7eb11f71f1a051100330128dfc048f352bd47d45f56e3f44ff0c607f3e2c6eb",
       "http": {
         "contentType": "application/octet-stream",
-        "contentLength": "14437277"
+        "contentLength": "14438129"
       }
     },
     {
       "path": "Build/Web.wasm",
-      "bytes": 49839822,
-      "sha256": "ceebb7fdae95f1fdce912279596e768c065c57828d6491b597e6287f16b40d19",
+      "bytes": 49843201,
+      "sha256": "4665ff1454a7e8e9061f22cbbecf800a161d32c7a181267efd923056a21154d1",
       "http": {
         "contentType": "application/wasm",
-        "contentLength": "49839822"
+        "contentLength": "49843201"
       }
     }
   ],

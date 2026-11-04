@@ -1,4 +1,7 @@
 mergeInto(LibraryManager.library, {
+    BlitzIsQa: function () {
+        return new URLSearchParams(window.location.search).has('qa') ? 1 : 0;
+    },
     BlitzSave: function (key, value) {
         try {
             var k = UTF8ToString(key), v = UTF8ToString(value);

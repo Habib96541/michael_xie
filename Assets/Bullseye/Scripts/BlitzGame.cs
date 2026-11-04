@@ -195,6 +195,11 @@ namespace BullseyeBlitz
         public void BrowserHidden() { if (_ui != null) { Pause(); } }
         private void Publish()
         {
+            if (!BlitzBrowser.IsQa)
+            {
+                return;
+            }
+
             BlitzBrowser.Slot[] slots = new BlitzBrowser.Slot[_spawner.Slots.Length];
             for (int i = 0; i < slots.Length; i++)
             {
@@ -212,7 +217,7 @@ namespace BullseyeBlitz
             {
                 State = _rules.State.ToString(), Paused = _rules.Paused, Time = _rules.Time,
                 Pending = _rules.Pending, Wallet = _wallet.Data.Wallet, Completed = _wallet.Data.Completed,
-                Best = _wallet.Data.Best, Slots = slots, Frames = UnityEngine.Time.frameCount,
+                Best = _wallet.Data.Best, Slots = slots, Labels = _ui.GetTextDiagnostics(), Frames = UnityEngine.Time.frameCount,
                 Fps = 1f / Mathf.Max(.001f, UnityEngine.Time.unscaledDeltaTime)
             });
         }

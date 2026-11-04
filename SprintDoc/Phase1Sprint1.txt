@@ -135,7 +135,7 @@ Executed tests and delivery status
 
 Performance observations and known limitations
 - Passing main run: software-rendered headless Chrome, FPS samples approximately
-  12.8 minimum / 32.3 median / 83.3 maximum. This is not a hardware-GPU or mobile
+  27.8 minimum / 34.5 median / 500.0 maximum. This is not a hardware-GPU or mobile
   performance claim. Repeated rounds/retries were exercised; target allocation
   is fixed at nine slots and feedback allocation at twenty pooled objects.
 - Extra-run memory sample: JS heap about 30.3 MB and WASM heap 107,085,824 bytes.
@@ -193,3 +193,19 @@ Visual refresh on November 4, 2026
 - Visual-update verification passed 30 Editor checks, 27 main Chrome checks, and
   four fullscreen/DPR checks. The five required layouts were captured and reviewed.
   The current Tests files and DeliveryManifest.json describe the rebuilt delivery.
+
+Text visibility repair on November 4, 2026
+- The reported 1914x909 window exposed a width-scaled Canvas issue. Short text
+  rows could not fit Lato at the previous minimum size. Entire button/slider
+  labels disappeared, and the wallet portion of the Home message was clipped.
+- Shared labels now allow the best-fit generator to choose a smaller size for
+  those rows. Settings action spacing also keeps the footer inside the frame.
+- Tools/verify_text_layout.py validates generated glyph vertices, visible
+  character counts, and label bounds on Home and Settings at nine sizes.
+  This includes 1914x909, 2560x1080, 800x360, 1920x1080, and the five required
+  sprint layouts. All nine profiles passed against the rebuilt Web player.
+- TextLayout.json records the generated-label data. Screenshots beginning with
+  text-home and text-settings show the repaired desktop and phone layouts.
+- Label diagnostics are published only when the browser URL contains ?qa=1.
+- After this repair the rebuilt player passed the 27 main browser checks and
+  four fullscreen/DPR checks. Delivery hashes were refreshed.

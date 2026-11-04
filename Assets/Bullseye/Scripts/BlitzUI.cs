@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -7,6 +8,7 @@ namespace BullseyeBlitz
 {
     public sealed class BlitzUI : MonoBehaviour
     {
+        private readonly List<Text> _labels = new List<Text>();
         private RectTransform _safe;
         private RectTransform _hud;
         private GameObject _modal;
@@ -68,7 +70,19 @@ namespace BullseyeBlitz
             _coins.text = "ROUND COINS  " + pending;
             _countdown.text = countdown;
         }
-        public void Close() { if (_modal != null) { _modal.SetActive(false); Destroy(_modal); _modal = null; _content = null; } }
+        public void Close()
+        {
+            if (_modal == null)
+            {
+                return;
+            }
+
+            _labels.RemoveAll(label => label == null || label.transform.IsChildOf(_modal.transform));
+            _modal.SetActive(false);
+            Destroy(_modal);
+            _modal = null;
+            _content = null;
+        }
         public RectTransform Panel(string title, string message)
         {
             Close();
@@ -88,7 +102,7 @@ namespace BullseyeBlitz
         }
         public void Action(RectTransform panel, string label, int row, UnityAction callback)
         {
-            float top = .46f - row * .095f;
+            float top = .46f - row * .09f;
             Button(panel, label, new Vector2(.18f, top - .075f), new Vector2(.82f, top), callback);
         }
         public void Volume(RectTransform panel, string label, float y, float value, UnityAction<float> changed)
@@ -125,11 +139,42 @@ namespace BullseyeBlitz
             RectTransform rect = Rect(value.Length > 20 ? "Text" : value, parent, min, max);
             Text text = rect.gameObject.AddComponent<Text>();
             text.font = display ? _displayFont : _font; text.text = value; text.fontSize = size;
-            text.resizeTextForBestFit = true; text.resizeTextMinSize = 14; text.resizeTextMaxSize = size;
+            text.resizeTextForBestFit = true; // A width-scaled Canvas can make short rows smaller than 14 local units.
+            // Let the generator fit their glyphs instead of dropping the entire label.
+            text.resizeTextMinSize = 1; text.resizeTextMaxSize = size;
             text.alignment = TextAnchor.MiddleCenter;
             text.color = color ?? Color.white; text.raycastTarget = false;
+            _labels.Add(text);
             return text;
         }
+        public BlitzBrowser.UiLabel[] GetTextDiagnostics()
+        {
+            List<BlitzBrowser.UiLabel> diagnostics = new List<BlitzBrowser.UiLabel>();
+            foreach (Text label in _labels)
+            {
+                if (!label.isActiveAndEnabled || string.IsNullOrWhiteSpace(label.text))
+                {
+                    continue;
+                }
+
+                Vector3[] corners = new Vector3[4];
+                label.rectTransform.GetWorldCorners(corners);
+                diagnostics.Add(new BlitzBrowser.UiLabel
+                {
+                    Text = label.text,
+                    Vertices = label.cachedTextGenerator.vertexCount,
+                    Characters = label.cachedTextGenerator.characterCountVisible,
+                    FontSize = label.cachedTextGenerator.fontSizeUsedForBestFit,
+                    Left = corners[0].x / Screen.width,
+                    Bottom = corners[0].y / Screen.height,
+                    Right = corners[2].x / Screen.width,
+                    Top = corners[2].y / Screen.height
+                });
+            }
+
+            return diagnostics.ToArray();
+        }
+
         private RectTransform Plate(Transform parent, string name, Vector2 min, Vector2 max, Color tint)
         {
             RectTransform rect = Rect(name, parent, min, max);

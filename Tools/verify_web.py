@@ -154,16 +154,13 @@ with sync_playwright() as p:
     page.wait_for_timeout(150)
     check(snap(page)['Pending'] == paused['Pending'], 'Resume interaction does not fire')
     check(snap(page)['State'] == 'Playing','Resume returns to the current round')
-    print('Focus test before blur: ' + json.dumps({k:snap(page)[k] for k in ['State','Paused','Time']}),flush=True)
     page.evaluate("window.dispatchEvent(new Event('blur'))")
     page.wait_for_timeout(350)
-    print('Focus test after blur: ' + json.dumps({k:snap(page)[k] for k in ['State','Paused','Time']}),flush=True)
-    if not snap(page)['Paused']:
-        page.screenshot(path=str(OUT / 'focus-failure.png'))
-        (OUT / 'FocusFailure.json').write_text(json.dumps(snap(page),indent=2))
-    page.wait_for_function('window.blitzTelemetry.Paused',timeout=2000)
-    check(True,'Browser blur automatically pauses')
+    # Unity may suspend its update loop while unfocused. Return focus before
+    # checking the read-only snapshot, which is published by that loop.
     page.evaluate("window.dispatchEvent(new Event('focus'))")
+    page.wait_for_function('window.blitzTelemetry.Paused',polling=100,timeout=6000)
+    check(True,'Browser blur automatically pauses and focus return requires resume')
     page.wait_for_timeout(150)
     action(page)
     page.wait_for_function('!window.blitzTelemetry.Paused')

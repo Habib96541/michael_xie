@@ -10,9 +10,22 @@ namespace BullseyeBlitz
         [DllImport("__Internal")] private static extern void BlitzTelemetry(string json);
         [DllImport("__Internal")] private static extern void BlitzVibrate();
         [DllImport("__Internal")] private static extern int BlitzHasVibration();
+        [DllImport("__Internal")] private static extern int BlitzIsQa();
         [DllImport("__Internal")] private static extern int BlitzSave(string key, string value);
         [DllImport("__Internal")] private static extern string BlitzLoad(string key);
 #endif
+        public static bool IsQa
+        {
+            get
+            {
+#if UNITY_WEBGL && !UNITY_EDITOR
+                return BlitzIsQa() == 1;
+#else
+                return false;
+#endif
+            }
+        }
+
         public static string Load(string key)
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -66,6 +79,19 @@ namespace BullseyeBlitz
             public int Frames;
             public float Fps;
             public Slot[] Slots;
+            public UiLabel[] Labels;
+        }
+        [Serializable]
+        public sealed class UiLabel
+        {
+            public string Text;
+            public int Vertices;
+            public int Characters;
+            public int FontSize;
+            public float Left;
+            public float Bottom;
+            public float Right;
+            public float Top;
         }
         [Serializable]
         public sealed class Slot

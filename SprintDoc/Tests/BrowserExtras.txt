@@ -2,4 +2,4 @@ PASS: Fullscreen enters from a user gesture
 PASS: Fullscreen exit preserves game state
 PASS: DPR 2 target collider is at least 48 CSS pixels
 PASS: DPR 2 touch coordinates hit the rendered target
-Observed memory sample: {"jsHeap": 30259087, "wasmHeap": 107085824}
+Observed memory sample: {"jsHeap": 30279326, "wasmHeap": 107085824}
