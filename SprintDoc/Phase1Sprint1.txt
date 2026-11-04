@@ -90,9 +90,10 @@ Audio and artwork
 - POP 1 and SPECIAL COLECT 1 provide pitch-varied short feedback; a generated
   short tone is a fallback. UI/countdown/hit/miss/bomb/results audio paths exist.
 - Playback begins after interaction; separate music and sound volumes persist.
-- Booth backdrop, stripes, shelf fronts, curtains, marquee diamonds, crosshair,
-  and simple feedback are original replaceable procedural placeholders.
-- LegacyRuntime.ttf is the built-in readable font. No imported font required.
+- The midway backdrop is generated artwork. The awning, wood-grain shelf fronts,
+  uprights, crosshair, and simple feedback are project-owned procedural assets.
+- Rye Regular supplies carnival display lettering. Lato Bold supplies controls,
+  instructions, coin values, and feedback. Both font assets include their OFL texts.
 - Audio has not yet been perceptually auditioned; dedicated bomb/shot timbres
   may need replacement after audition. Imported license notes are preserved.
 
@@ -134,12 +135,12 @@ Executed tests and delivery status
 
 Performance observations and known limitations
 - Passing main run: software-rendered headless Chrome, FPS samples approximately
-  16.4 minimum / 29.4 median / 38.5 maximum. This is not a hardware-GPU or mobile
+  12.8 minimum / 32.3 median / 83.3 maximum. This is not a hardware-GPU or mobile
   performance claim. Repeated rounds/retries were exercised; target allocation
   is fixed at nine slots and feedback allocation at twenty pooled objects.
-- Extra-run memory sample: JS heap about 28.7 MB and WASM heap 107,085,824 bytes.
+- Extra-run memory sample: JS heap about 30.3 MB and WASM heap 107,085,824 bytes.
   No long-duration heap/listener leak profile was performed.
-- Uncompressed Web delivery is about 63.4 MB. Compression is intentionally off
+- Uncompressed Web delivery is about 64.8 MB. Compression is intentionally off
   for straightforward local hosting; production transfer-size tuning is later work.
 - Touch and multiple fingers were emulated in Chromium. Physical phones/tablets,
   hardware vibration, Safari/Firefox/Edge, and perceptual audio audition were not
@@ -151,7 +152,8 @@ Performance observations and known limitations
   deterministic rules; the browser tested full duration and post-deadline input.
   Artificially overlapping target colliders were not forced in engine testing;
   explicit frontmost ordering is implemented and normal slot areas do not overlap.
-- Booth art and short feedback are intentionally replaceable placeholders.
+- The illustrated environment and procedural booth textures are separate editable
+  scene elements. The scene and source asset files retain the art layers.
 
 Later cosmetic shop proposal
 - A later sprint may spend banked coins on booth/target/crosshair cosmetics only.
@@ -173,3 +175,21 @@ Initial inventory checks (before implementation)
 - Confirmed SampleScene still contains camera/light only.
 - No compilation, play tests, audio audition, Web build, or browser tests executed
   as part of this inventory task.
+
+Visual refresh on November 4, 2026
+- Continued Phase 1, Sprint 1 with a vintage carnival at dusk art direction.
+- Replaced the purple backdrop with MidwayTwilight.png, generated using the
+  built-in image tool. The saved prompt and asset sources are recorded in
+  Assets/Bullseye/Art/MidwayArtNotes.md.
+- Added a striped cream/crimson canvas awning, wood-grain shelves and upright
+  trim, warm brass edges, and a layered distant midway with ferris wheel/tents.
+- Added Rye Regular and Lato Bold font assets with the supplied OFL license files.
+- Reworked menus into framed tickets, with gold primary actions, crimson
+  secondary actions, and cream text. HUD plates use the same palette.
+- Wide-screen menu cards reveal more of the environment. Portrait cards expand
+  to retain readable text and controls. The gameplay HUD hides behind menus.
+- Target label and popup fonts use Lato Bold. The nine target slots retain their
+  existing collider eligibility, reveal masks, and gameplay rules.
+- Visual-update verification passed 30 Editor checks, 27 main Chrome checks, and
+  four fullscreen/DPR checks. The five required layouts were captured and reviewed.
+  The current Tests files and DeliveryManifest.json describe the rebuilt delivery.

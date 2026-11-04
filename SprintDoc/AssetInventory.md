@@ -65,3 +65,12 @@ Main scene `Assets/Scenes/SampleScene.unity` still contains only Main Camera and
 ## Implementation selection
 
 The game now uses Violet UI's coin, bomb, and sliced purple button sprites, plus FREE CASUAL MUSIC PACK's CASUAL THEME 2 - LOOP 1, POP 1, and SPECIAL COLECT 1. Imported demo scripts are not attached to the game. Procedural booth art, crosshair, and pooled feedback keep the first sprint lightweight; the other VFX/weapon/RPG packs remain preserved optional resources. The current playable scene is `Assets/Bullseye/Scenes/BullseyeBlitz.unity`. See `SprintDoc/Phase1Sprint1.txt` for current validation and delivery status.
+
+
+## November 4 carnival refresh
+
+- New font assets are under Assets/Bullseye/Art/Fonts. Rye Regular handles display lettering and Lato Bold handles readable gameplay and UI copy.
+- MidwayTwilight.png is the generated painted carnival environment. MidwayAwning.png, MidwayShelf.png, and MidwayRecess.png supply separate booth elements.
+- The UI now uses native sliced ticket graphics with crimson, cream, and brass colors.
+- Existing Violet Theme coin and bomb artwork remains the target artwork.
+- Art sources and the image-generation prompt are saved in Assets/Bullseye/Art/MidwayArtNotes.md.

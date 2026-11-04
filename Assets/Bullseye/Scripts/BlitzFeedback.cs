@@ -25,7 +25,7 @@ namespace BullseyeBlitz
         private float _touchUntil;
         private int _cursor;
 
-        public void Configure(Camera camera)
+        public void Configure(Camera camera, Font font)
         {
             _camera = camera;
             _ring = MakeSprite(true); _disc = MakeSprite(false);
@@ -43,6 +43,11 @@ namespace BullseyeBlitz
                 flash.sprite = _disc; flash.sharedMaterial = material; flash.sortingLayerName = "Effects";
                 GameObject textObject = new GameObject("Caption"); textObject.transform.SetParent(root.transform, false);
                 TextMesh label = textObject.AddComponent<TextMesh>();
+                if (font != null)
+                {
+                    label.font = font;
+                    label.GetComponent<MeshRenderer>().sharedMaterial = font.material;
+                }
                 label.fontSize = 64; label.characterSize = .08f; label.anchor = TextAnchor.MiddleCenter;
                 label.GetComponent<MeshRenderer>().sortingLayerName = "Effects";
                 label.GetComponent<MeshRenderer>().sortingOrder = 1;

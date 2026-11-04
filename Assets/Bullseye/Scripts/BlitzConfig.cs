@@ -17,6 +17,8 @@ namespace BullseyeBlitz
         public Sprite Coin;
         public Sprite Bomb;
         public Sprite Button;
+        public Font DisplayFont;
+        public Font BodyFont;
         public AudioClip Music;
         public AudioClip Pop;
         public AudioClip Reward;

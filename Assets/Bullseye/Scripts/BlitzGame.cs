@@ -35,10 +35,10 @@ namespace BullseyeBlitz
             if (_config == null || !_config.IsValid()) { Debug.LogError("Invalid Bullseye configuration."); enabled = false; return; }
             _wallet = new WalletStore();
             _ui = new GameObject("Bullseye UI").AddComponent<BlitzUI>();
-            _ui.Configure(_config.Button); _ui.PauseRequested = Pause;
+            _ui.Configure(_config); _ui.PauseRequested = Pause;
             _audio = gameObject.AddComponent<BlitzAudio>(); _audio.Configure(_config, _wallet);
             _ui.ActionInvoked = () => { _audio.Activate(); _audio.Play(); };
-            _feedback = gameObject.AddComponent<BlitzFeedback>(); _feedback.Configure(_camera);
+            _feedback = gameObject.AddComponent<BlitzFeedback>(); _feedback.Configure(_camera, _config.BodyFont);
             gameObject.AddComponent<BlitzPointer>().Configure(this);
             _lastReal = UnityEngine.Time.realtimeSinceStartupAsDouble;
             Home();

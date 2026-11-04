@@ -1,5 +1,6 @@
 """Verify required build files, HTTP headers, source artifacts, and screenshots."""
 import hashlib
+from datetime import datetime, timedelta, timezone
 import json
 import urllib.request
 from pathlib import Path
@@ -8,7 +9,7 @@ from PIL import Image
 root = Path(__file__).resolve().parents[1]
 build = root / 'Builds' / 'Web'
 required = ['index.html','Build/Web.loader.js','Build/Web.framework.js','Build/Web.data','Build/Web.wasm']
-manifest = {'unity':'6000.3.10f1','date':'2026-11-03','compression':'Disabled','files':[],'screenshots':[]}
+manifest = {'unity':'6000.3.10f1','date':datetime.now(timezone(timedelta(hours=6))).date().isoformat(),'compression':'Disabled','files':[],'screenshots':[]}
 for name in required:
     path = build / name
     assert path.is_file() and path.stat().st_size > 0, name

@@ -1,21 +1,21 @@
 {
   "unity": "6000.3.10f1",
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "compression": "Disabled",
   "files": [
     {
       "path": "index.html",
-      "bytes": 3161,
-      "sha256": "bcaefd3caf4e0d2bf8c6197d45b2c9f64a79e0eaa89dc9cc355dfad9c159af88",
+      "bytes": 3264,
+      "sha256": "c08b3ac81b099e238628f9b28643f10fca9a066dc77468e0c0d138af6c91abc5",
       "http": {
         "contentType": "text/html",
-        "contentLength": "3161"
+        "contentLength": "3264"
       }
     },
     {
       "path": "Build/Web.loader.js",
       "bytes": 26982,
-      "sha256": "145739a9f8fadf75835f68810f4322396c3eaba89bb9f5b4743a9a5f4373cc7c",
+      "sha256": "655fad0bd36404886446bd07ba3ad918d298616c92c49e407469d4edf99c36ba",
       "http": {
         "contentType": "application/javascript",
         "contentLength": "26982"
@@ -32,20 +32,20 @@
     },
     {
       "path": "Build/Web.data",
-      "bytes": 13068644,
-      "sha256": "1f78962fa77f7963fefa00813c039fb0a698f24809c1073af4d92cafb5049319",
+      "bytes": 14437277,
+      "sha256": "1165146742f69c10da5ec72faea5d6b3c961e4d87ebb379367a29692f284adcd",
       "http": {
         "contentType": "application/octet-stream",
-        "contentLength": "13068644"
+        "contentLength": "14437277"
       }
     },
     {
       "path": "Build/Web.wasm",
-      "bytes": 49834213,
-      "sha256": "959184ea976ce3f1aebbc4c8af4df9e079ddd0a7e4dea01cfd463ac7ab749bd1",
+      "bytes": 49839822,
+      "sha256": "ceebb7fdae95f1fdce912279596e768c065c57828d6491b597e6287f16b40d19",
       "http": {
         "contentType": "application/wasm",
-        "contentLength": "49834213"
+        "contentLength": "49839822"
       }
     }
   ],

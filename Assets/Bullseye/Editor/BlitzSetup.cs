@@ -24,6 +24,7 @@ namespace BullseyeBlitz.Editor
             {
                 if (command == "setup") { Setup(); }
                 if (command == "build") { Build(); }
+                if (command == "midway") { MidwayTheme.Apply(); BlitzChecks.Run(); }
                 if (command == "test") { BlitzChecks.Run(); }
                 if (command == "polish") { BoothPolish.Apply(); }
                 if (command == "prepare") { BoothPolish.Apply(); BlitzChecks.Run(); }
