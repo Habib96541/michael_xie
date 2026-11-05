@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad961fabebf2ee94bb8112eb17be968d, type: 3}
+  m_Name: CyberScratchConfig
+  m_EditorClassIdentifier: Assembly-CSharp::CyberScratch.Data.CyberScratchConfig
+  _startingBalance: 1250
+  _wagerTiers:
+  - 1
+  - 2
+  - 5
+  - 10
+  _defaultWagerIndex: 1
+  _cellRevealThreshold: 0.667
+  _cellFadeDuration: 0.15
+  _revealAllDuration: 0.8
+  _rowWinChance: 0.35
+  _nearMissRate: 0.45
+  _symbols:
+  - _type: 0
+    _displayName: Bronze Gear
+    _multiplier: 1
+    _weight: 35
+    _themeColor: {r: 0.85, g: 0.48, b: 0.22, a: 1}
+    _icon: {fileID: 7902324669610807684, guid: f8877b253ccdc8449b40c874b0dad0e8, type: 3}
+  - _type: 1
+    _displayName: Silver Ingot
+    _multiplier: 2
+    _weight: 22
+    _themeColor: {r: 0.78, g: 0.85, b: 0.95, a: 1}
+    _icon: {fileID: 7545828616028804325, guid: 14e53230c87b9b14a919c51e8ff92911, type: 3}
+  - _type: 2
+    _displayName: Gold Core
+    _multiplier: 5
+    _weight: 12
+    _themeColor: {r: 1, g: 0.82, b: 0.15, a: 1}
+    _icon: {fileID: 3917621256623368014, guid: 89e39f9892248754ca7d04b62b16e750, type: 3}
+  - _type: 3
+    _displayName: Plasma Gem
+    _multiplier: 15
+    _weight: 4.5
+    _themeColor: {r: 0.72, g: 0.25, b: 1, a: 1}
+    _icon: {fileID: 7654823679055322632, guid: 61790ebcb3524a64aaa36e0ba818c477, type: 3}
+  - _type: 4
+    _displayName: Cyber Crown
+    _multiplier: 50
+    _weight: 1
+    _themeColor: {r: 0.15, g: 0.85, b: 1, a: 1}
+    _icon: {fileID: -9122512795315616721, guid: fd16449cee65bc748bbeebe39bae980d, type: 3}
+  - _type: 5
+    _displayName: Lucky 777
+    _multiplier: 250
+    _weight: 0.1
+    _themeColor: {r: 1, g: 0.18, b: 0.35, a: 1}
+    _icon: {fileID: -1143754579074017509, guid: b3645c4de8f19e741aefca5f8fa641de, type: 3}
