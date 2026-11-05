@@ -7,6 +7,7 @@ namespace NeonDash
     /// <summary>Title screen: name, seed entry, best distance for the seed, and PLAY.</summary>
     public sealed class UiLobby : UiScreen
     {
+        protected override Vector2 PortraitSize => new Vector2(600f, 1200f);
         RectTransform title;
         Text seedStatus;
         Text recordLine;
@@ -16,6 +17,7 @@ namespace NeonDash
         readonly System.Collections.Generic.List<CanvasGroup> chips = new System.Collections.Generic.List<CanvasGroup>();
         float time;
         bool portrait;
+        bool layoutReady;
         readonly System.Collections.Generic.List<(RectTransform Item, Rect Wide, Rect Tall)> placements =
             new System.Collections.Generic.List<(RectTransform, Rect, Rect)>();
 
@@ -38,40 +40,40 @@ namespace NeonDash
             {
                 title = UiKit.Label(Root, "GEOMETRY DASH", 86, Palette.Cyan, TextAnchor.MiddleCenter, FontStyle.Bold).rectTransform;
             }
-            Adapt(title, 0f, 292f, 900f, 165f, 0f, 553f, 960f, 175f);
+            Adapt(title, 0f, 292f, 900f, 165f, 0f, 510f, 560f, 105f);
 
             var subtitle = UiKit.Label(Root, "SEED CHALLENGE  /  ARCADE TIME TRIAL", 23, Palette.Text, TextAnchor.MiddleCenter, FontStyle.Bold);
-            Adapt(subtitle.rectTransform, 0f, 187f, 900f, 32f, 0f, 455f, 950f, 36f);
+            Adapt(subtitle.rectTransform, 0f, 187f, 900f, 32f, 0f, 422f, 560f, 32f);
 
             card = UiKit.Frame(Root, "Launch console", Palette.Cyan);
             Put(card, 0f, -48f, 1040f, 398f);
             var divider = UiKit.Sprite9(card, "Console divider", Palette.PanelLine, UiKit.Chamfered);
             divider.raycastTarget = false;
-            Adapt(divider.rectTransform, 92f, 25f, 2f, 245f, 0f, -21f, 820f, 2f);
+            Adapt(divider.rectTransform, 92f, 25f, 2f, 245f, 0f, -86f, 488f, 2f);
 
             var setupHeading = UiKit.Label(card, "COURSE SETUP", 32, Palette.Cyan, TextAnchor.MiddleLeft, FontStyle.Bold);
-            Adapt(setupHeading.rectTransform, -199f, 144f, 552f, 48f, 0f, 372f, 820f, 52f);
+            Adapt(setupHeading.rectTransform, -199f, 144f, 552f, 48f, 0f, 365f, 488f, 44f);
             var launchHeading = UiKit.Label(card, "30 SECOND RUN", 32, Palette.Text, TextAnchor.MiddleCenter, FontStyle.Bold);
-            Adapt(launchHeading.rectTransform, 297f, 144f, 352f, 48f, 0f, -75f, 820f, 48f);
+            Adapt(launchHeading.rectTransform, 297f, 144f, 352f, 48f, 0f, -124f, 488f, 40f);
 
             var nameLabel = UiKit.Label(card, "PLAYER", 20, Palette.TextDim, TextAnchor.MiddleLeft, FontStyle.Bold);
-            Adapt(nameLabel.rectTransform, -199f, 88f, 552f, 25f, 0f, 300f, 820f, 30f);
+            Adapt(nameLabel.rectTransform, -199f, 88f, 552f, 25f, 0f, 304f, 488f, 30f);
             nameField = UiKit.Field(card, "YOUR NAME", App.PlayerName, out _);
-            Adapt((RectTransform)nameField.transform, -199f, 46f, 552f, 54f, 0f, 235f, 820f, 88f);
+            Adapt((RectTransform)nameField.transform, -199f, 46f, 552f, 54f, 0f, 243f, 488f, 80f);
             nameField.characterLimit = 12;
             nameField.onValueChanged.AddListener(App.SetPlayerName);
             nameField.onEndEdit.AddListener(_ => App.SaveProfile());
 
             var seedLabel = UiKit.Label(card, "COURSE SEED", 20, Palette.TextDim, TextAnchor.MiddleLeft, FontStyle.Bold);
-            Adapt(seedLabel.rectTransform, -199f, -8f, 552f, 25f, 0f, 167f, 820f, 30f);
+            Adapt(seedLabel.rectTransform, -199f, -8f, 552f, 25f, 0f, 180f, 488f, 30f);
             seedField = UiKit.Field(card, "ENTER A SEED", App.Seed, out Text seedEntry);
             seedEntry.fontSize = 24;
-            Adapt((RectTransform)seedField.transform, -323f, -48f, 304f, 54f, -192f, 103f, 436f, 88f);
+            Adapt((RectTransform)seedField.transform, -323f, -48f, 304f, 54f, 0f, 121f, 488f, 80f);
             seedField.characterLimit = 64;
             seedField.onEndEdit.AddListener(ApplySeed);
 
             Button randomButton = UiKit.Button(card, "NEW", Palette.PanelSoft, out Text randomLabel, 21);
-            Adapt((RectTransform)randomButton.transform, -110f, -48f, 106f, 54f, 119f, 103f, 164f, 88f);
+            Adapt((RectTransform)randomButton.transform, -110f, -48f, 106f, 54f, -127f, 22f, 234f, 76f);
             UiKit.AddButtonIcon(randomLabel, IconKind.Shuffle);
             randomButton.onClick.AddListener(delegate
             {
@@ -81,25 +83,25 @@ namespace NeonDash
             });
 
             Button copyButton = UiKit.Button(card, "COPY", Palette.PanelSoft, out Text copyLabel, 21);
-            Adapt((RectTransform)copyButton.transform, 7f, -48f, 106f, 54f, 314f, 103f, 192f, 88f);
+            Adapt((RectTransform)copyButton.transform, 7f, -48f, 106f, 54f, 127f, 22f, 234f, 76f);
             UiKit.AddButtonIcon(copyLabel, IconKind.Copy);
             copyButton.onClick.AddListener(CopySeed);
 
             seedStatus = UiKit.Label(card, "", 19, Palette.TextDim, TextAnchor.MiddleLeft);
-            Adapt(seedStatus.rectTransform, -199f, -94f, 552f, 27f, 0f, 30f, 820f, 33f);
+            Adapt(seedStatus.rectTransform, -199f, -94f, 552f, 27f, 0f, -42f, 488f, 42f);
 
             Button playButton = UiKit.Button(card, "PLAY", Palette.Action, out Text playLabel, 40);
-            Adapt((RectTransform)playButton.transform, 297f, 48f, 352f, 84f, 0f, -165f, 820f, 126f);
+            Adapt((RectTransform)playButton.transform, 297f, 48f, 352f, 84f, 0f, -192f, 488f, 88f);
             UiKit.AddButtonIcon(playLabel, IconKind.Play);
             playButton.onClick.AddListener(App.StartRun);
 
             Button recordsButton = UiKit.Button(card, "RECORDS", Palette.PanelSoft, out Text recordsLabel, 24);
-            Adapt((RectTransform)recordsButton.transform, 262f, -48f, 282f, 54f, -65f, -285f, 690f, 91f);
+            Adapt((RectTransform)recordsButton.transform, 262f, -48f, 282f, 54f, -46f, -286f, 396f, 80f);
             UiKit.AddButtonIcon(recordsLabel, IconKind.Records);
             recordsButton.onClick.AddListener(App.OpenRecords);
 
             var soundButton = UiKit.Button(card, "", Palette.PanelSoft, out _, 20, playClick: false);
-            Adapt((RectTransform)soundButton.transform, 446f, -48f, 54f, 54f, 365f, -285f, 90f, 91f);
+            Adapt((RectTransform)soundButton.transform, 446f, -48f, 54f, 54f, 204f, -286f, 80f, 80f);
             var soundIcon = UiIcon.Add(soundButton.transform, IconKind.Sound, Palette.Cyan, 28f);
             soundButton.onClick.AddListener(delegate
             {
@@ -110,11 +112,11 @@ namespace NeonDash
             soundIcon.SetKind(App.Audio.Muted ? IconKind.Muted : IconKind.Sound);
 
             var recordStrip = UiKit.Sprite9(card, "Seed record strip", Palette.PanelSoft, UiKit.Chamfered);
-            Adapt(recordStrip.rectTransform, 0f, -147f, 950f, 49f, 0f, -386f, 820f, 62f);
+            Adapt(recordStrip.rectTransform, 0f, -147f, 950f, 49f, 0f, -367f, 488f, 58f);
             var recordCaption = UiKit.Label(recordStrip.transform, "SEED RECORD", 19, Palette.Violet, TextAnchor.MiddleLeft, FontStyle.Bold);
-            Adapt(recordCaption.rectTransform, -376f, 0f, 150f, 30f, -315f, 0f, 150f, 30f);
+            Adapt(recordCaption.rectTransform, -376f, 0f, 150f, 30f, -165f, 0f, 140f, 44f);
             recordLine = UiKit.Label(recordStrip.transform, "", 23, Palette.Gold, TextAnchor.MiddleLeft);
-            Adapt(recordLine.rectTransform, 85f, 0f, 746f, 34f, 71f, 0f, 610f, 34f);
+            Adapt(recordLine.rectTransform, 85f, 0f, 746f, 34f, 82f, 0f, 310f, 44f);
 
             BuildChips();
             RefreshLayout();
@@ -129,17 +131,21 @@ namespace NeonDash
 
         void RefreshLayout()
         {
-            bool tall = Root.rect.height > Root.rect.width * 1.35f;
-            if (tall == portrait) return;
+            bool tall = Root.rect.height > Root.rect.width * 1.2f;
+            if (layoutReady && tall == portrait) return;
+            layoutReady = true;
             portrait = tall;
-            card.sizeDelta = portrait ? new Vector2(960f, 920f) : new Vector2(1040f, 398f);
+            card.sizeDelta = portrait ? new Vector2(560f, 840f) : new Vector2(1040f, 398f);
             foreach (var placement in placements)
             {
                 Rect frame = portrait ? placement.Tall : placement.Wide;
                 Put(placement.Item, frame.x, frame.y, frame.width, frame.height);
             }
-            nameField.textComponent.fontSize = portrait ? 34 : 26;
-            seedField.textComponent.fontSize = portrait ? 32 : 24;
+            nameField.textComponent.fontSize = portrait ? 32 : 26;
+            ((Text)nameField.placeholder).fontSize = portrait ? 32 : 26;
+            seedField.textComponent.fontSize = portrait ? 26 : 24;
+            ((Text)seedField.placeholder).fontSize = portrait ? 26 : 24;
+            recordLine.fontSize = portrait ? 20 : 23;
         }
 
         static void Put(RectTransform item, float x, float y, float width, float height)
@@ -199,13 +205,13 @@ namespace NeonDash
             for (int i = 0; i < titles.Length; i++)
             {
                 var chipImage = UiKit.Sprite9(Root, "Chip " + i, Palette.Alpha(Palette.Panel, 0.9f), UiKit.Chamfered);
-                Adapt(chipImage.rectTransform, offsets[i], -303f, 250f, 46f, offsets[i], -560f, 250f, 46f);
+                Adapt(chipImage.rectTransform, offsets[i], -303f, 250f, 46f, offsets[i] * (2f / 3f), -526f, 168f, 44f);
 
                 var accent = UiKit.Sprite9(chipImage.transform, "Accent", accents[i], UiKit.Chamfered);
                 UiKit.Place(accent.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(9f, 0f), new Vector2(4f, 24f));
 
                 var label = UiKit.Label(chipImage.transform, titles[i], 17, Palette.Alpha(Palette.Text, 0.92f), TextAnchor.MiddleCenter, FontStyle.Bold);
-                UiKit.Place(label.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(3f, 0f), new Vector2(220f, 30f));
+                Adapt(label.rectTransform, 3f, 0f, 220f, 30f, 3f, 0f, 142f, 36f);
 
                 chips.Add(chipImage.gameObject.AddComponent<CanvasGroup>());
             }

@@ -7,6 +7,7 @@ namespace NeonDash
     /// <summary>In-run HUD: seed, distance, timer, progress bar with the record marker, pause.</summary>
     public sealed class UiHud : UiScreen
     {
+        protected override Vector2 PortraitSize => new Vector2(1000f, 900f);
         Text seedText;
         Text distanceText;
         Text bestText;

@@ -71,6 +71,10 @@ def main() -> None:
     html = html.replace("__PRODUCT__", PRODUCT)
     html = html.replace("__COMPANY__", COMPANY)
     html = html.replace("__VERSION__", VERSION)
+    with open(os.path.join(ROOT, "Tools", "web_viewport.css"), encoding="utf-8") as handle:
+        html = html.replace("__VIEWPORT_STYLE__", handle.read())
+    with open(os.path.join(ROOT, "Tools", "web_viewport.js"), encoding="utf-8") as handle:
+        html = html.replace("__VIEWPORT_SCRIPT__", handle.read())
 
     with open(OUT, "w", encoding="utf-8", newline="\n") as handle:
         handle.write(html)
@@ -165,6 +169,7 @@ PAGE = r"""<!DOCTYPE html>
     background: rgba(255,45,149,.07); border-radius: 12px; padding: 14px 18px;
     display: none;
   }
+__VIEWPORT_STYLE__
 </style>
 </head>
 <body>
@@ -185,6 +190,7 @@ PAGE = r"""<!DOCTYPE html>
 </div>
 
 <!-- ===== payloads: base64 only, so nothing can terminate the tag early ===== -->
+<script>__VIEWPORT_SCRIPT__</script>
 <script type="application/octet-stream" id="p-framework">__FRAMEWORK_B64__</script>
 <script type="application/octet-stream" id="p-wasm">__WASM_GZ_B64__</script>
 <script type="application/octet-stream" id="p-data">__DATA_GZ_B64__</script>
@@ -298,6 +304,7 @@ __LOADER__
       productName: "__PRODUCT__",
       productVersion: "__VERSION__",
       devicePixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
+      matchWebGLToCanvasSize: true,
       showBanner: function (message, type) {
         if (type === "error") setStatus(String(message).split("\n")[0]);
       },

@@ -10,6 +10,7 @@ namespace NeonDash
     /// </summary>
     public sealed class UiResult : UiScreen
     {
+        protected override Vector2 PortraitSize => new Vector2(900f, 740f);
         Text titleText;
         Text subtitleText;
         Text distanceText;

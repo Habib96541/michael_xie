@@ -54,31 +54,20 @@ namespace NeonDash.EditorTools
             if (!File.Exists(indexPath)) return;
 
             string html = File.ReadAllText(indexPath);
-            html = html.Replace("fullscreenContainer.style.width = \"960px\";",
-                                "fullscreenContainer.style.width = window.innerWidth + \"px\";");
-            html = html.Replace("fullscreenContainer.style.height = \"600px\";",
-                                "fullscreenContainer.style.height = window.innerHeight + \"px\";");
-            html = html.Replace("<title>Unity Web Player | Geometry Dash</title>",
-                                "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Geometry Dash</title>");
+            html = System.Text.RegularExpressions.Regex.Replace(html, @"<title>.*?</title>",
+                "<title>Geometry Dash</title>");
+            html = System.Text.RegularExpressions.Regex.Replace(html,
+                @"<meta\s+name=[""']viewport[""'][^>]*>", "");
+            html = html.Replace("</head>",
+                "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">" +
+                "<style>" + File.ReadAllText("Tools/web_viewport.css") + "</style></head>");
+            html = html.Replace("var config = {",
+                "var config = { matchWebGLToCanvasSize: true, devicePixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),");
             html = html.Replace("document.getElementsByTagName('head')[0].appendChild(meta);",
-                                "if (!document.querySelector('meta[name=viewport]')) document.head.appendChild(meta);");
-            html = html.Replace("var config = {", "var config = { devicePixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),");
+                "if (!document.querySelector('meta[name=viewport]')) document.head.appendChild(meta);");
+            html = html.Replace("</body>", "<script>" + File.ReadAllText("Tools/web_viewport.js") + "</script></body>");
             File.WriteAllText(indexPath, html);
 
-            string cssPath = Path.Combine(outputPath, "TemplateData", "style.css");
-            if (File.Exists(cssPath))
-            {
-                File.AppendAllText(cssPath,
-                    "\nhtml,body{width:100%;height:100%;margin:0;padding:0;overflow:hidden;background:#050817;" +
-                    "}#unity-container,#unity-container.unity-desktop," +
-                    "#unity-container.unity-mobile{position:fixed;inset:0;" +
-                    "inset:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);" +
-                    "width:auto;height:auto;transform:none}" +
-                    "#unity-fullscreen-container,.unity-mobile #unity-fullscreen-container{position:absolute;inset:0;" +
-                    "width:100%!important;height:100%!important}#unity-canvas,#unity-canvas.unity-mobile{position:absolute;" +
-                    "inset:0;display:block;width:100%;height:100%;background:#050817;outline:none;touch-action:none}#unity-footer{display:none}" +
-                    "#unity-warning{z-index:20}\n");
-            }
         }
     }
 }

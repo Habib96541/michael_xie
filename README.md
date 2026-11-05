@@ -43,6 +43,24 @@ On iPhone and iPad, tap the course to jump and hold to chain jumps or fly. The p
 has its own touch target, and the HUD rearranges itself in narrow windows. Landscape gives
 the longest view of the upcoming course. The native Unity UI uses the device safe area.
 
+The portrait lobby has a compact single-column layout with full-width player and seed fields,
+separate New/Copy buttons, and larger Play/Records controls. Each screen fits its own layout
+against the actual canvas rect, independently of browser/device pixel density. Both web exports
+share `Tools/web_viewport.css` and `Tools/web_viewport.js`, which track the visible browser height
+as browser bars, the keyboard, and orientation change. CSS reserves the web safe area once.
+
+Mobile layout regression checks (Unity batch mode):
+
+```text
+Unity -batchmode -quit -projectPath . -executeMethod NeonDash.EditorTools.MobileLayoutChecks.Run -logFile Logs/mobile-layout-checks.log
+node Tools/test_web_viewport.cjs
+```
+
+The Unity check validates all five screens at 11 render sizes, including 320×480, 360×680,
+540×1020, 1080×2040, tablet, landscape, and rotation back to portrait. It writes reference menu
+renders to `Deliverables/MobileChecks/`. These are Unity render/layout checks; physical-device
+Safari/Chrome testing is separate.
+
 For Safari testing, serve `Deliverables/index.html` over HTTP on a local test network or over
 HTTPS on a web host and open the URL in Safari. The page reserves space for the notch and
 home indicator. For a native build, open the project on a Mac with Unity iOS Build Support

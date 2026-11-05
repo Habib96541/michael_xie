@@ -8,12 +8,14 @@ namespace NeonDash
         protected NeonDashApp App { get; private set; }
         protected RectTransform Root { get; private set; }
         protected CanvasGroup Group { get; private set; }
+        protected virtual Vector2 PortraitSize => new Vector2(1060f, 780f);
 
         public void Init(NeonDashApp app)
         {
             App = app;
             Root = (RectTransform)transform;
             UiKit.Stretch(Root);
+            Root.GetComponentInParent<ResponsiveCanvas>().Register(Root, PortraitSize);
             Group = gameObject.AddComponent<CanvasGroup>();
             Group.blocksRaycasts = true;
             Construct();
