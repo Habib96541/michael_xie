@@ -1,0 +1,58 @@
+{
+  "product": "Brick Rush",
+  "version": "1.0.0",
+  "unity": "6000.3.10f1",
+  "compression": "gzip with Unity decompression fallback",
+  "files": [
+    {
+      "path": "Barlow-LICENSE.txt",
+      "bytes": 4377,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
+    },
+    {
+      "path": "Build/BrickRush_WebGL.data.unityweb",
+      "bytes": 5579474,
+      "sha256": "d86ff7aacc5903acadef17496e79f2df7d93866900d6a6923bcabdc5dcbaf3c0"
+    },
+    {
+      "path": "Build/BrickRush_WebGL.framework.js.unityweb",
+      "bytes": 86661,
+      "sha256": "762c94bac55ca5e5689e0afe2f8b0ea98b219b99a0934974f2f969bafeeaa416"
+    },
+    {
+      "path": "Build/BrickRush_WebGL.loader.js",
+      "bytes": 47866,
+      "sha256": "012bab221fcf5ee96b803bb65fad21fc4f649cb29d59cd57311744a7d7410e65"
+    },
+    {
+      "path": "Build/BrickRush_WebGL.wasm.unityweb",
+      "bytes": 8193599,
+      "sha256": "a0d80629da80ea4ecd478a30119bb32e7bcc6cbc704e41195f1601a4f597c488"
+    },
+    {
+      "path": "EmojiOne-Attribution.txt",
+      "bytes": 185,
+      "sha256": "4b65f8960e4f4c5c8b35fd139e369265e9bb45667fc16461b2ba01188d464d93"
+    },
+    {
+      "path": "index.html",
+      "bytes": 5490,
+      "sha256": "895dc74f710556afa660d59a8f2920f748f372237ca01ad372231ff9fb753034"
+    },
+    {
+      "path": "LiberationSans-LICENSE.txt",
+      "bytes": 4469,
+      "sha256": "37f8552e9a874ec10710dc0ede6a9adf168e6609fbd02a507f35629373b85a48"
+    },
+    {
+      "path": "NOTICE.txt",
+      "bytes": 367,
+      "sha256": "6e034735ae43f59245cb494e6bf5c0a5040edf8ad838447351ed41c1d2bd3bea"
+    },
+    {
+      "path": "Rajdhani-LICENSE.txt",
+      "bytes": 4373,
+      "sha256": "f62ef357d3a1c3d27edd35a6e1ba350e8a8d13499797964eeadefbf0b3b15d1f"
+    }
+  ]
+}

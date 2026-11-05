@@ -13,3 +13,5 @@
 Builds/
 TestResults/
 Tools/node_modules/
+
+.wrangler/

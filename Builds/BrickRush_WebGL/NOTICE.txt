@@ -1,0 +1,5 @@
+Brick Rush 1.0.0
+Built with Unity.
+Original game code, sprites and synthesized audio created for this project.
+Rajdhani Bold, Barlow Medium and bundled TMP Liberation Sans resources are distributed under the SIL Open Font License; see included license files.
+Bundled TMP EmojiOne resources retain the included attribution. The game does not display EmojiOne artwork.

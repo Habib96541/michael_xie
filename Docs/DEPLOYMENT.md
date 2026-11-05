@@ -25,3 +25,10 @@ To remove the fallback and use native streaming decompression, rebuild with fall
 The supplied local server sets the WebAssembly MIME explicitly. It is a development server, not a production service.
 
 PlayerPrefs uses browser-local storage. A new origin, private browsing session, cleared site data, or blocked persistence may start with a fresh personal best. Assets require a network connection to load initially; gameplay itself makes no service calls. This distribution does not install an offline service worker.
+
+## Cloudflare deployment
+
+Live game: https://brick-rush-brick-buster.am-ome.workers.dev
+
+Deploy the committed WebGL distribution with: npx wrangler deploy. Configuration is in wrangler.jsonc. Cloudflare authentication is required; credentials are not stored in the repository.
+
