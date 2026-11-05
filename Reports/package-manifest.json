@@ -1,0 +1,43 @@
+{
+  "archive": "D:\\30 games\\Hole Arena\\Builds\\HoleArena_WebGL_Desktop_Mobile.zip",
+  "archiveBytes": 16175927,
+  "archiveSha256": "c951f7f3489e4b666ca0cd37e8073c0579c39066fea002902226389aedd5dc8a",
+  "uncompressedBytes": 16673339,
+  "files": [
+    {
+      "path": "Build/WebGL.data.unityweb",
+      "bytes": 5577596,
+      "sha256": "cc1dcd08927f168d279f842bb9b37230f42f298d1668df19ce24e1478b27de42"
+    },
+    {
+      "path": "Build/WebGL.framework.js.unityweb",
+      "bytes": 87716,
+      "sha256": "b1ad31e538a42134db338e537fb783b7bf783350546820615e893b259dd4e5f3"
+    },
+    {
+      "path": "Build/WebGL.loader.js",
+      "bytes": 47866,
+      "sha256": "64b01da6b97408512e9efe596e7b0443d323b54e4fa6852ee3956b8d75700375"
+    },
+    {
+      "path": "Build/WebGL.wasm.unityweb",
+      "bytes": 10950481,
+      "sha256": "464f638fb4be92bf19d95e20742de48bb4d9ddacd6d437f48ae007b0c72bf325"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4388,
+      "sha256": "a9c5432f9e4d0596cad4c3e8443f2bc401e13729aa02bb6940beedd7752fa2c1"
+    },
+    {
+      "path": "Licenses/ASSET_CREDITS.md",
+      "bytes": 823,
+      "sha256": "1120311a988be37eb219e413decb8a70fc9d6316943c226b87898cc5368304b8"
+    },
+    {
+      "path": "Licenses/LiberationSans-OFL.txt",
+      "bytes": 4469,
+      "sha256": "37f8552e9a874ec10710dc0ede6a9adf168e6609fbd02a507f35629373b85a48"
+    }
+  ]
+}

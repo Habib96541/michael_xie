@@ -1,0 +1,306 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78464bce3e470b5499ab890a3d7578ff, type: 3}
+  m_Name: BoroughCatalog
+  m_EditorClassIdentifier: PocketBorough::PocketBorough.BoroughCatalog
+  models:
+  - title: Gable cottage
+    prefab: {fileID: 5984420312282492117, guid: 4ac843bae05bb3f478a7d051b045035a, type: 3}
+    footprint: 2.7253923
+    mass: 65
+    points: 140
+    category: 0
+  - title: Garden duplex
+    prefab: {fileID: 8062554715941053901, guid: fe94bff6d47dd28409790b846452d0ac, type: 3}
+    footprint: 3.1239977
+    mass: 78
+    points: 185
+    category: 0
+  - title: Balcony apartments
+    prefab: {fileID: 1051862209044467612, guid: ce3d9da0bf9b772409c2e7fa235719c5, type: 3}
+    footprint: 3.1303551
+    mass: 91
+    points: 230
+    category: 0
+  - title: Corner market
+    prefab: {fileID: 3513652015574538613, guid: 7e8f9a0e7f327ed49aa80df6888dce8d, type: 3}
+    footprint: 3.0493631
+    mass: 104
+    points: 275
+    category: 0
+  - title: Noodle house
+    prefab: {fileID: 3217494676987119076, guid: 12477635a0d56b04ca4892ecb583a9ef, type: 3}
+    footprint: 2.98621
+    mass: 117
+    points: 320
+    category: 0
+  - title: Terraced offices
+    prefab: {fileID: 5807491501083535296, guid: 2884ea2479678ef408491a5d20e84f6f, type: 3}
+    footprint: 3.167898
+    mass: 130
+    points: 365
+    category: 0
+  - title: Sawtooth warehouse
+    prefab: {fileID: 8244439072570938276, guid: 1ea26970a87f4504c9423279ac6a6a2f, type: 3}
+    footprint: 3.7139788
+    mass: 143
+    points: 410
+    category: 0
+  - title: Foundry works
+    prefab: {fileID: 782361027792038611, guid: d215687d711aea84bb5b1c18ff108dc9, type: 3}
+    footprint: 3.7139788
+    mass: 156
+    points: 455
+    category: 0
+  - title: Borough arcade
+    prefab: {fileID: 3321971121376068922, guid: 877eb2773a95ae8488dc989d7ac633b8, type: 3}
+    footprint: 3.8998682
+    mass: 169
+    points: 500
+    category: 0
+  - title: Sunset hotel
+    prefab: {fileID: 8175644030283154420, guid: 5cd870d9247073545a8d8936de061155, type: 3}
+    footprint: 3.0493631
+    mass: 182
+    points: 545
+    category: 0
+  - title: Stepped studios
+    prefab: {fileID: 3711410165168791232, guid: 385d1eec8badb40428476ad0e681a455, type: 3}
+    footprint: 3.6806402
+    mass: 195
+    points: 590
+    category: 0
+  - title: Skygarden residences
+    prefab: {fileID: 766520138352266232, guid: 951abd6e6270cc342aa9f04b1b4f814e, type: 3}
+    footprint: 4.1711674
+    mass: 208
+    points: 635
+    category: 0
+  - title: Crown skyscraper
+    prefab: {fileID: 4794788474097296777, guid: 491e3f9f490b17441a674b036a8fb61d, type: 3}
+    footprint: 4.3128204
+    mass: 221
+    points: 680
+    category: 0
+  - title: Sail glass tower
+    prefab: {fileID: 8153192015072333634, guid: 3a74b65445ed8d84bb8c77edcec8b75d, type: 3}
+    footprint: 4.6289253
+    mass: 234
+    points: 725
+    category: 0
+  - title: Borough clock hall
+    prefab: {fileID: 1387024056954115034, guid: e5aa0d598a0cb874ba131e70bec57f03, type: 3}
+    footprint: 4.945037
+    mass: 247
+    points: 770
+    category: 0
+  - title: Sedan
+    prefab: {fileID: 3359405322248532594, guid: 6f17cfed6d6a51f4aaf224ed0b70e8e6, type: 3}
+    footprint: 1.586847
+    mass: 14
+    points: 40
+    category: 1
+  - title: Hatchback
+    prefab: {fileID: 3311071761079396289, guid: d7a7d2795dbeddc46994937058e8a3f7, type: 3}
+    footprint: 1.4261383
+    mass: 17
+    points: 48
+    category: 1
+  - title: SUV
+    prefab: {fileID: 5198642329085955984, guid: 7ee11d0d9694030418125e030cd3e9e1, type: 3}
+    footprint: 1.7854867
+    mass: 20
+    points: 56
+    category: 1
+  - title: Pickup
+    prefab: {fileID: 3823114935212517263, guid: 76bfe16d2fd26b64aae5ac81ee0f5f86, type: 3}
+    footprint: 1.7952031
+    mass: 23
+    points: 64
+    category: 1
+  - title: Taxi
+    prefab: {fileID: 3780985982361552849, guid: f337cdf4c55ac5b469158abc8d3bfedb, type: 3}
+    footprint: 1.586847
+    mass: 26
+    points: 72
+    category: 1
+  - title: Police cruiser
+    prefab: {fileID: 6944954688885490622, guid: 25e46c16b3f8b104bb4a43b72ec0d0f6, type: 3}
+    footprint: 1.586847
+    mass: 29
+    points: 80
+    category: 1
+  - title: Ambulance
+    prefab: {fileID: 8089005820576165406, guid: ab0f1eb9d8d8f95498d87f7a56f69753, type: 3}
+    footprint: 2.090375
+    mass: 32
+    points: 88
+    category: 1
+  - title: Fire engine
+    prefab: {fileID: 7779948258640320891, guid: f351a4ef214695c4ea55bd015817010e, type: 3}
+    footprint: 2.090375
+    mass: 35
+    points: 96
+    category: 1
+  - title: City bus
+    prefab: {fileID: 2776065391704999284, guid: 81410d54eef590a4b9e04591506c1028, type: 3}
+    footprint: 2.5249631
+    mass: 38
+    points: 104
+    category: 1
+  - title: Parcel van
+    prefab: {fileID: 2568253092279116668, guid: f536c7599d8a1a1448f742594f08869c, type: 3}
+    footprint: 2.090375
+    mass: 41
+    points: 112
+    category: 1
+  - title: Street lantern
+    prefab: {fileID: 8006568724647279804, guid: b958e3fe8c7fa524db3341a9db7999d9, type: 3}
+    footprint: 0.47240245
+    mass: 2
+    points: 8
+    category: 2
+  - title: Traffic signal
+    prefab: {fileID: 5092883088255547425, guid: 61c9f790bb6c8e44196ffde97459ad18, type: 3}
+    footprint: 0.22638199
+    mass: 3
+    points: 10
+    category: 2
+  - title: Traffic cone
+    prefab: {fileID: 1815549512041484485, guid: c8172b1703899004eb7a7638d7a1ce53, type: 3}
+    footprint: 0.3589274
+    mass: 4
+    points: 12
+    category: 2
+  - title: Litter bin
+    prefab: {fileID: 2530289650393189474, guid: 7655fab4a9890d7429f2c99e5d64ccfb, type: 3}
+    footprint: 0.4038227
+    mass: 5
+    points: 14
+    category: 2
+  - title: Fire hydrant
+    prefab: {fileID: 6543609951935889197, guid: 6df74a37e2c4cc64f98a4b1885675d16, type: 3}
+    footprint: 0.34664065
+    mass: 2
+    points: 16
+    category: 2
+  - title: Park bench
+    prefab: {fileID: 6689166823431894893, guid: f7443bf7dd906284f964e377c9e32323, type: 3}
+    footprint: 0.8577854
+    mass: 3
+    points: 18
+    category: 2
+  - title: Canopy tree
+    prefab: {fileID: 255836696336143989, guid: f82b986ee2680354ca2fcb28c8206054, type: 3}
+    footprint: 1.3293607
+    mass: 10
+    points: 20
+    category: 2
+  - title: Round shrub
+    prefab: {fileID: 1103046581584584754, guid: 52e9d7f5bf7ebe14bb6d217743a656ec, type: 3}
+    footprint: 0.75725174
+    mass: 5
+    points: 22
+    category: 2
+  - title: Flower planter
+    prefab: {fileID: 7185353591947659020, guid: 017b35a909a20324b8f16bd0dbe810fa, type: 3}
+    footprint: 0.7311484
+    mass: 2
+    points: 24
+    category: 2
+  - title: Picket fence
+    prefab: {fileID: 8676266589211770807, guid: 2bf9244aefe26e74ab2c528863c5a014, type: 3}
+    footprint: 0.9886101
+    mass: 3
+    points: 26
+    category: 2
+  - title: Postbox
+    prefab: {fileID: 1669090998810695232, guid: 82d611c9463b9de41b1f714919d96f89, type: 3}
+    footprint: 0.41551825
+    mass: 4
+    points: 28
+    category: 2
+  - title: Wayfinder
+    prefab: {fileID: 1873759634289034161, guid: 9cc09e6b48dadf443913fadc05e98457, type: 3}
+    footprint: 0.6141964
+    mass: 5
+    points: 30
+    category: 2
+  - title: Bus shelter
+    prefab: {fileID: 3534519975785973921, guid: cd0a745f9515bcc4c8bce5866b20dbf0, type: 3}
+    footprint: 1.3662375
+    mass: 10
+    points: 32
+    category: 2
+  - title: Noodle cart
+    prefab: {fileID: 3491126367206970120, guid: 8c185f892795a9e4fb7cb3010807b345, type: 3}
+    footprint: 1.0820212
+    mass: 3
+    points: 34
+    category: 2
+  - title: Picnic table
+    prefab: {fileID: 2078802988017598286, guid: f5ea2ec73bd0e4c448815966aaa147d9, type: 3}
+    footprint: 1.2369485
+    mass: 4
+    points: 36
+    category: 2
+  - title: Borough sculpture
+    prefab: {fileID: 7838804600655520159, guid: 1dcaa854cf6c89f4e9efaf555a055c92, type: 3}
+    footprint: 0.9305525
+    mass: 5
+    points: 38
+    category: 2
+  - title: Billboard
+    prefab: {fileID: 6401459042909974562, guid: b0b32acdb716e9447bba6e73021ddbb3, type: 3}
+    footprint: 1.4159116
+    mass: 12
+    points: 40
+    category: 2
+  - title: Road barrier
+    prefab: {fileID: 8042658196724492820, guid: df396ad3ed07b5147bbf422f6b4738f0, type: 3}
+    footprint: 0.90772074
+    mass: 3
+    points: 42
+    category: 2
+  - title: Utility pole
+    prefab: {fileID: 3682091701894099644, guid: e61042dac55fc4d41bf77aeb42f3dc43, type: 3}
+    footprint: 0.66759855
+    mass: 4
+    points: 44
+    category: 2
+  - title: Tiered fountain
+    prefab: {fileID: 6267325703753403448, guid: e251aa402cd38cd41a59ce7c29b6a2e4, type: 3}
+    footprint: 1.861105
+    mass: 18
+    points: 46
+    category: 2
+  cityMaterial: {fileID: 2100000, guid: 83b08c0100d4d4245948c615d5b72348, type: 2}
+  groundMaterial: {fileID: 2100000, guid: 3b97a934eb4900f4ea1264fe0ab8a151, type: 2}
+  bowlMaterial: {fileID: 2100000, guid: 850bbefd0c3a5b94b80ddb93e6ef64f9, type: 2}
+  rimMaterial: {fileID: 2100000, guid: d1f5ae41d5f7a6f4e86f6f7259c8f399, type: 2}
+  bowlMesh: {fileID: 4300000, guid: 13d3c6e789a47cb4ba4a00db44079159, type: 2}
+  rimMesh: {fileID: 4300000, guid: b5ea7ca2a4b5cdb4e928de42d8323577, type: 2}
+  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  panelSprite: {fileID: 21300000, guid: 19e6f3d0535b7624aa901cbb58d95daf, type: 3}
+  sounds:
+  - {fileID: 8300000, guid: 692643923f2b7414ebf3b067adf87d16, type: 3}
+  - {fileID: 8300000, guid: d57ac2195dfcacf4aa37bf686810111c, type: 3}
+  - {fileID: 8300000, guid: de1432846ff76574ab290eb1533dfaf8, type: 3}
+  - {fileID: 8300000, guid: 8517426fd06729a4cbfd46cea629bcf8, type: 3}
+  - {fileID: 8300000, guid: e2a394eb2a4b72548ba8f73ff446b115, type: 3}
+  - {fileID: 8300000, guid: 6466da31949a3a6469b05463b0bafad3, type: 3}
+  - {fileID: 8300000, guid: 54e67099e4044be44802e126657bff12, type: 3}
+  - {fileID: 8300000, guid: 8d45e78e5e51bf54d95d846a876bd563, type: 3}
+  - {fileID: 8300000, guid: 30080568c38771e4c8034361202f4a94, type: 3}
+  music: {fileID: 8300000, guid: d9d97d731e62ba84f982f820013c797e, type: 3}
+  desktopPipeline: {fileID: 11400000, guid: 4cc9de076be2ee14389440b0f1db56ef, type: 2}
+  mobilePipeline: {fileID: 11400000, guid: 315ee65393cf8ab4d93cebb500787a38, type: 2}

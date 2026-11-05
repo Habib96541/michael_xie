@@ -1,0 +1,46 @@
+category,name,vertices,triangles,footprint,mass,points
+building,Gable cottage,954,318,2.725,65,140
+building,Garden duplex,1602,534,3.124,78,185
+building,Balcony apartments,2352,784,3.130,91,230
+building,Corner market,2244,748,3.049,104,275
+building,Noodle house,2244,748,2.986,117,320
+building,Terraced offices,2532,844,3.168,130,365
+building,Sawtooth warehouse,1602,534,3.714,143,410
+building,Foundry works,1788,596,3.714,156,455
+building,Borough arcade,3180,1060,3.900,169,500
+building,Sunset hotel,2892,964,3.049,182,545
+building,Stepped studios,3564,1188,3.681,195,590
+building,Skygarden residences,6240,2080,4.171,208,635
+building,Crown skyscraper,5556,1852,4.313,221,680
+building,Sail glass tower,5634,1878,4.629,234,725
+building,Borough clock hall,5850,1950,4.945,247,770
+vehicle,Sedan,1584,528,1.587,14,40
+vehicle,Hatchback,1584,528,1.426,17,48
+vehicle,SUV,1584,528,1.785,20,56
+vehicle,Pickup,1620,540,1.795,23,64
+vehicle,Taxi,1620,540,1.587,26,72
+vehicle,Police cruiser,1656,552,1.587,29,80
+vehicle,Ambulance,1788,596,2.090,32,88
+vehicle,Fire engine,1968,656,2.090,35,96
+vehicle,City bus,1788,596,2.525,38,104
+vehicle,Parcel van,1572,524,2.090,41,112
+prop,Street lantern,312,104,0.472,2,8
+prop,Traffic signal,516,172,0.226,3,10
+prop,Traffic cone,252,84,0.359,4,12
+prop,Litter bin,276,92,0.404,5,14
+prop,Fire hydrant,276,92,0.347,2,16
+prop,Park bench,396,132,0.858,3,18
+prop,Canopy tree,222,74,1.329,10,20
+prop,Round shrub,204,68,0.757,5,22
+prop,Flower planter,432,144,0.731,2,24
+prop,Picket fence,396,132,0.989,3,26
+prop,Postbox,210,70,0.416,4,28
+prop,Wayfinder,192,64,0.614,5,30
+prop,Bus shelter,348,116,1.366,10,32
+prop,Noodle cart,570,190,1.082,3,34
+prop,Picnic table,144,48,1.237,4,36
+prop,Borough sculpture,132,44,0.931,5,38
+prop,Billboard,492,164,1.416,12,40
+prop,Road barrier,288,96,0.908,3,42
+prop,Utility pole,444,148,0.668,4,44
+prop,Tiered fountain,1044,348,1.861,18,46

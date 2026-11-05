@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-11-01T09:03:16.872Z",
+  "state": {
+    "stage": "Playing",
+    "timeLeft": 119.00009155273438,
+    "radius": 0.8799999952316284,
+    "fps": 44.322723388671875,
+    "score": 0,
+    "consumed": 0,
+    "rank": 8,
+    "available": 1018,
+    "falling": 7,
+    "opponents": 7,
+    "streetDrops": 0,
+    "managedBytes": 3973120,
+    "rivalScores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "x": -44.0847053527832,
+    "z": -26,
+    "targetX": -41.70000076293945,
+    "targetZ": -24
+  },
+  "errors": [],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:8767/Build/WebGL.loader.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8767/Build/WebGL.framework.js.unityweb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8767/Build/WebGL.wasm.unityweb",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8767/Build/WebGL.data.unityweb",
+      "status": 200
+    }
+  ],
+  "movementPassed": true
+}

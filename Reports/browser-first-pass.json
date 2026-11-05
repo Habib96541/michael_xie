@@ -1,0 +1,949 @@
+{
+  "started": "2026-10-31T03:03:15.196Z",
+  "checks": [
+    {
+      "name": "Chrome desktop loads over HTTP",
+      "pass": true,
+      "loadMs": 4259
+    },
+    {
+      "name": "Countdown enters live gameplay",
+      "pass": true
+    },
+    {
+      "name": "WASD moves player",
+      "pass": true,
+      "detail": {
+        "from": -38,
+        "to": -44.93422317504883
+      }
+    },
+    {
+      "name": "Pause freezes timer and player",
+      "pass": true
+    },
+    {
+      "name": "Complete 120-second match reaches results",
+      "pass": true
+    },
+    {
+      "name": "Consumption awards score and growth",
+      "pass": true,
+      "detail": {
+        "stage": "Results",
+        "timeLeft": 0,
+        "radius": 2.2940473556518555,
+        "fps": 59.25928497314453,
+        "score": 1218,
+        "consumed": 60,
+        "rank": 8,
+        "available": 17,
+        "falling": 0,
+        "opponents": 7,
+        "managedBytes": 5787648,
+        "rivalScores": [
+          2650,
+          1874,
+          13420,
+          14507,
+          13361,
+          9794,
+          5272
+        ],
+        "x": 52.70595169067383,
+        "z": -17.93303108215332,
+        "targetX": 52.70595169067383,
+        "targetZ": -17.93303108215332
+      }
+    },
+    {
+      "name": "Seven AI rivals score independently",
+      "pass": true,
+      "detail": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ]
+    },
+    {
+      "name": "Replay resets score timer radius and entire city",
+      "pass": true,
+      "detail": {
+        "stage": "Countdown",
+        "timeLeft": 120,
+        "radius": 0.8799999952316284,
+        "fps": 59.494327545166016,
+        "score": 0,
+        "consumed": 0,
+        "rank": 8,
+        "available": 1025,
+        "falling": 0,
+        "opponents": 7,
+        "managedBytes": 5795840,
+        "rivalScores": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "x": -38,
+        "z": -26,
+        "targetX": -41.70000076293945,
+        "targetZ": -24
+      }
+    },
+    {
+      "name": "Mouse drag steers on replay",
+      "pass": true
+    },
+    {
+      "name": "Android Chrome emulation loads over HTTP",
+      "pass": true,
+      "loadMs": 4046
+    },
+    {
+      "name": "Touch drag moves without keyboard",
+      "pass": true,
+      "detail": {
+        "before": {
+          "stage": "Playing",
+          "timeLeft": 119.5670394897461,
+          "radius": 0.8799999952316284,
+          "fps": 49.1071662902832,
+          "score": 0,
+          "consumed": 0,
+          "rank": 8,
+          "available": 1025,
+          "falling": 0,
+          "opponents": 7,
+          "managedBytes": 3964928,
+          "rivalScores": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "x": -38,
+          "z": -26,
+          "targetX": -41.70000076293945,
+          "targetZ": -24
+        },
+        "after": {
+          "stage": "Playing",
+          "timeLeft": 118.01715087890625,
+          "radius": 0.8799999952316284,
+          "fps": 59.990108489990234,
+          "score": 0,
+          "consumed": 0,
+          "rank": 8,
+          "available": 1004,
+          "falling": 11,
+          "opponents": 7,
+          "managedBytes": 4055040,
+          "rivalScores": [
+            22,
+            34,
+            40,
+            42,
+            28,
+            30,
+            22
+          ],
+          "x": -29.426605224609375,
+          "z": -26,
+          "targetX": -31.875,
+          "targetZ": -24
+        }
+      }
+    },
+    {
+      "name": "Touch cancellation releases steering",
+      "pass": true
+    },
+    {
+      "name": "Second touch does not take over steering",
+      "pass": true,
+      "detail": {
+        "multiBefore": {
+          "stage": "Playing",
+          "timeLeft": 117.00923919677734,
+          "radius": 0.940425455570221,
+          "fps": 59.494327545166016,
+          "score": 30,
+          "consumed": 1,
+          "rank": 8,
+          "available": 991,
+          "falling": 8,
+          "opponents": 7,
+          "managedBytes": 4087808,
+          "rivalScores": [
+            50,
+            102,
+            68,
+            80,
+            64,
+            102,
+            50
+          ],
+          "x": -29.40816307067871,
+          "z": -26,
+          "targetX": -31.875,
+          "targetZ": -24
+        },
+        "multiAfter": {
+          "stage": "Playing",
+          "timeLeft": 115.5003662109375,
+          "radius": 0.940425455570221,
+          "fps": 59.494327545166016,
+          "score": 30,
+          "consumed": 1,
+          "rank": 8,
+          "available": 970,
+          "falling": 8,
+          "opponents": 7,
+          "managedBytes": 4132864,
+          "rivalScores": [
+            92,
+            142,
+            110,
+            122,
+            92,
+            152,
+            92
+          ],
+          "x": -29.40816307067871,
+          "z": -19.27574348449707,
+          "targetX": -31.700000762939453,
+          "targetZ": -21.5
+        }
+      }
+    },
+    {
+      "name": "Touch pause works without moving player",
+      "pass": true
+    },
+    {
+      "name": "Portrait layout has no page scrolling",
+      "pass": true
+    },
+    {
+      "name": "Edge desktop loads over HTTP",
+      "pass": true,
+      "loadMs": 3911
+    },
+    {
+      "name": "Edge WebGL loads and arrow keys move",
+      "pass": true
+    },
+    {
+      "name": "No browser runtime errors",
+      "pass": false,
+      "detail": [
+        {
+          "label": "Android Chrome emulation",
+          "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted."
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "stage": "Playing",
+      "timeLeft": 117.83418273925781,
+      "radius": 0.8799999952316284,
+      "fps": 59.26297378540039,
+      "score": 0,
+      "consumed": 0,
+      "rank": 8,
+      "available": 1000,
+      "falling": 11,
+      "opponents": 7,
+      "managedBytes": 4534272,
+      "rivalScores": [
+        50,
+        34,
+        40,
+        42,
+        50,
+        58,
+        50
+      ],
+      "x": -44.936954498291016,
+      "z": -26,
+      "targetX": -41.70000076293945,
+      "targetZ": -24
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 113.217529296875,
+      "radius": 1.0297572612762451,
+      "fps": 59.44058609008789,
+      "score": 62,
+      "consumed": 3,
+      "rank": 8,
+      "available": 934,
+      "falling": 14,
+      "opponents": 7,
+      "managedBytes": 4677632,
+      "rivalScores": [
+        142,
+        208,
+        194,
+        174,
+        142,
+        188,
+        134
+      ],
+      "x": -44.856624603271484,
+      "z": -32.14143371582031,
+      "targetX": -45.480003356933594,
+      "targetZ": -31.524999618530273
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 108.09288787841797,
+      "radius": 1.344767689704895,
+      "fps": 59.02780532836914,
+      "score": 230,
+      "consumed": 12,
+      "rank": 8,
+      "available": 856,
+      "falling": 11,
+      "opponents": 7,
+      "managedBytes": 4788224,
+      "rivalScores": [
+        344,
+        394,
+        382,
+        340,
+        330,
+        338,
+        356
+      ],
+      "x": -53.65523147583008,
+      "z": -13.345346450805664,
+      "targetX": -50,
+      "targetZ": -15.5
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 102.96829223632812,
+      "radius": 1.4395833015441895,
+      "fps": 59.990108489990234,
+      "score": 266,
+      "consumed": 15,
+      "rank": 8,
+      "available": 790,
+      "falling": 14,
+      "opponents": 7,
+      "managedBytes": 4870144,
+      "rivalScores": [
+        606,
+        456,
+        646,
+        570,
+        520,
+        518,
+        534
+      ],
+      "x": -47.89669418334961,
+      "z": -15.814603805541992,
+      "targetX": -43.80000305175781,
+      "targetZ": -16.475000381469727
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 97.35177612304688,
+      "radius": 1.5640971660614014,
+      "fps": 59.26297378540039,
+      "score": 316,
+      "consumed": 19,
+      "rank": 8,
+      "available": 715,
+      "falling": 8,
+      "opponents": 7,
+      "managedBytes": 4952064,
+      "rivalScores": [
+        946,
+        768,
+        940,
+        814,
+        890,
+        1004,
+        920
+      ],
+      "x": -43.6216926574707,
+      "z": -15.335381507873535,
+      "targetX": -41.97999954223633,
+      "targetZ": -3.5
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 92.71917724609375,
+      "radius": 1.4039943218231201,
+      "fps": 59.73123550415039,
+      "score": 330,
+      "consumed": 20,
+      "rank": 8,
+      "available": 653,
+      "falling": 16,
+      "opponents": 7,
+      "managedBytes": 5091328,
+      "rivalScores": [
+        1312,
+        996,
+        1252,
+        1238,
+        1206,
+        1398,
+        1139
+      ],
+      "x": -31.461627960205078,
+      "z": -28.16887092590332,
+      "targetX": -31.875,
+      "targetZ": -26
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 87.60258483886719,
+      "radius": 1.3505628108978271,
+      "fps": 58.76496505737305,
+      "score": 412,
+      "consumed": 25,
+      "rank": 8,
+      "available": 591,
+      "falling": 10,
+      "opponents": 7,
+      "managedBytes": 5177344,
+      "rivalScores": [
+        1492,
+        1264,
+        1642,
+        1991,
+        1927,
+        2155,
+        1529
+      ],
+      "x": -30.005699157714844,
+      "z": -26.117826461791992,
+      "targetX": -25.05000114440918,
+      "targetZ": -31.524999618530273
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 82.50293731689453,
+      "radius": 1.206918716430664,
+      "fps": 59.701515197753906,
+      "score": 412,
+      "consumed": 25,
+      "rank": 8,
+      "available": 520,
+      "falling": 10,
+      "opponents": 7,
+      "managedBytes": 5259264,
+      "rivalScores": [
+        1644,
+        1404,
+        2263,
+        3400,
+        2897,
+        3491,
+        1731
+      ],
+      "x": 6.462957382202148,
+      "z": -17.034900665283203,
+      "targetX": 7.349999904632568,
+      "targetZ": -7.525000095367432
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 77.37834167480469,
+      "radius": 1.2516601085662842,
+      "fps": 58.76497268676758,
+      "score": 426,
+      "consumed": 26,
+      "rank": 8,
+      "available": 474,
+      "falling": 14,
+      "opponents": 7,
+      "managedBytes": 5328896,
+      "rivalScores": [
+        1688,
+        1426,
+        3443,
+        5159,
+        4651,
+        5596,
+        2376
+      ],
+      "x": 45.06745529174805,
+      "z": -33.47526931762695,
+      "targetX": 45.47999954223633,
+      "targetZ": -31.524999618530273
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 72.25279998779297,
+      "radius": 1.6262388229370117,
+      "fps": 59.9901123046875,
+      "score": 744,
+      "consumed": 39,
+      "rank": 8,
+      "available": 350,
+      "falling": 21,
+      "opponents": 7,
+      "managedBytes": 4493312,
+      "rivalScores": [
+        2030,
+        1566,
+        7000,
+        6557,
+        7786,
+        6196,
+        3621
+      ],
+      "x": 49.64967346191406,
+      "z": -41.373451232910156,
+      "targetX": 49,
+      "targetZ": -34.45000076293945
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 67.08726501464844,
+      "radius": 1.9689217805862427,
+      "fps": 59.990108489990234,
+      "score": 966,
+      "consumed": 49,
+      "rank": 8,
+      "available": 203,
+      "falling": 8,
+      "opponents": 7,
+      "managedBytes": 4558848,
+      "rivalScores": [
+        2060,
+        1642,
+        11435,
+        9399,
+        11333,
+        7533,
+        4699
+      ],
+      "x": 52.233821868896484,
+      "z": -12.728711128234863,
+      "targetX": 49,
+      "targetZ": -10.449999809265137
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 61.98771286010742,
+      "radius": 2.2406814098358154,
+      "fps": 60.01986312866211,
+      "score": 1152,
+      "consumed": 57,
+      "rank": 8,
+      "available": 135,
+      "falling": 3,
+      "opponents": 7,
+      "managedBytes": 4624384,
+      "rivalScores": [
+        2418,
+        1706,
+        13276,
+        12930,
+        13315,
+        8592,
+        5152
+      ],
+      "x": 45.649600982666016,
+      "z": -10.05505657196045,
+      "targetX": 48,
+      "targetZ": -15.5
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 56.93815994262695,
+      "radius": 2.2940473556518555,
+      "fps": 59.9901008605957,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 77,
+      "falling": 9,
+      "opponents": 7,
+      "managedBytes": 4702208,
+      "rivalScores": [
+        2514,
+        1744,
+        13276,
+        14083,
+        13315,
+        8864,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 51.90559387207031,
+      "radius": 2.2940473556518555,
+      "fps": 59.990108489990234,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 38,
+      "falling": 5,
+      "opponents": 7,
+      "managedBytes": 4780032,
+      "rivalScores": [
+        2592,
+        1854,
+        13332,
+        14399,
+        13329,
+        9000,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 46.8220329284668,
+      "radius": 2.2940473556518555,
+      "fps": 59.990108489990234,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 23,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 4853760,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14477,
+        13349,
+        9000,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 41.730438232421875,
+      "radius": 2.2940473556518555,
+      "fps": 58.53176498413086,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 2,
+      "opponents": 7,
+      "managedBytes": 4935680,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14485,
+        13361,
+        9032,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 36.63085174560547,
+      "radius": 2.2940473556518555,
+      "fps": 59.9901008605957,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 5005312,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 31.506206512451172,
+      "radius": 2.2940473556518555,
+      "fps": 59.26296615600586,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 5083136,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 26.389110565185547,
+      "radius": 2.2940473556518555,
+      "fps": 59.26296615600586,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 5160960,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 21.298009872436523,
+      "radius": 2.2940473556518555,
+      "fps": 59.49431228637695,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 5234688,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 16.205907821655273,
+      "radius": 2.2940473556518555,
+      "fps": 59.49431228637695,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 5312512,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 11.130891799926758,
+      "radius": 2.2940473556518555,
+      "fps": 59.47028732299805,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 5394432,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 6.01387882232666,
+      "radius": 2.2940473556518555,
+      "fps": 58.27162170410156,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 5468160,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    },
+    {
+      "stage": "Playing",
+      "timeLeft": 0.8968743681907654,
+      "radius": 2.2940473556518555,
+      "fps": 59.25928497314453,
+      "score": 1218,
+      "consumed": 60,
+      "rank": 8,
+      "available": 17,
+      "falling": 0,
+      "opponents": 7,
+      "managedBytes": 5550080,
+      "rivalScores": [
+        2650,
+        1874,
+        13420,
+        14507,
+        13361,
+        9794,
+        5272
+      ],
+      "x": 52.70595169067383,
+      "z": -17.93303108215332,
+      "targetX": 52.70595169067383,
+      "targetZ": -17.93303108215332
+    }
+  ],
+  "consoleErrors": [
+    {
+      "label": "Android Chrome emulation",
+      "message": "Ignored attempt to cancel a touchcancel event with cancelable=false, for example because scrolling is in progress and cannot be interrupted."
+    }
+  ],
+  "limitations": [
+    "Physical Android and iPhone hardware were not available. Mobile checks use Chromium touch and viewport emulation."
+  ],
+  "desktopFinal": {
+    "stage": "Results",
+    "timeLeft": 0,
+    "radius": 2.2940473556518555,
+    "fps": 59.25928497314453,
+    "score": 1218,
+    "consumed": 60,
+    "rank": 8,
+    "available": 17,
+    "falling": 0,
+    "opponents": 7,
+    "managedBytes": 5787648,
+    "rivalScores": [
+      2650,
+      1874,
+      13420,
+      14507,
+      13361,
+      9794,
+      5272
+    ],
+    "x": 52.70595169067383,
+    "z": -17.93303108215332,
+    "targetX": 52.70595169067383,
+    "targetZ": -17.93303108215332
+  },
+  "mobileFinal": {
+    "stage": "Paused",
+    "timeLeft": 115.21439361572266,
+    "radius": 0.940425455570221,
+    "fps": 59.73122787475586,
+    "score": 30,
+    "consumed": 1,
+    "rank": 8,
+    "available": 966,
+    "falling": 10,
+    "opponents": 7,
+    "managedBytes": 4276224,
+    "rivalScores": [
+      92,
+      142,
+      122,
+      122,
+      106,
+      152,
+      92
+    ],
+    "x": -29.40816307067871,
+    "z": -19.26561737060547,
+    "targetX": -31.700000762939453,
+    "targetZ": -21.5
+  },
+  "status": "failed",
+  "error": "AssertionError [ERR_ASSERTION]: No browser runtime errors\n    at check (D:\\30 games\\Hole Arena\\Tools\\browser-tests\\smoke.cjs:11:161)\n    at D:\\30 games\\Hole Arena\\Tools\\browser-tests\\smoke.cjs:48:60",
+  "finished": "2026-10-31T03:05:55.180Z"
+}

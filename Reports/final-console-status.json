@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "command": "command console status",
+  "data": {
+    "command": "console status",
+    "parameters": {},
+    "result": {
+      "entries": [],
+      "cursor": 86,
+      "session": "8ecc35d615f546fe8b32b52f8f74737e",
+      "returned": 0,
+      "dropped": false,
+      "reset": false,
+      "counts": {
+        "error": 9,
+        "warn": 23,
+        "log": 54
+      },
+      "groundTruth": {
+        "sampledUtc": "2026-10-31T03:11:30.0418401Z",
+        "ageMs": 69,
+        "compilationFailed": false,
+        "compiling": false,
+        "consoleErrors": 0,
+        "consoleWarnings": 0,
+        "consoleLogs": 3,
+        "seeded": true
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hole Arena"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "command": "command console get",
+  "data": {
+    "command": "console get",
+    "parameters": {
+      "level": "Error"
+    },
+    "result": {
+      "entries": [
+        {
+          "seq": 1,
+          "timestampUtc": "2026-10-31T02:40:26.300703Z",
+          "level": "error",
+          "logType": "Assert",
+          "message": "DisplayDialog: URP Material upgrade The Materials in your Project were created using an older version of the Universal Render Pipeline (URP). Unity must upgrade them to be compatible with your current version of URP. \n Unity will re-import all of the Materials in your project, save the upgraded Materials to disk, and check them out in source control if needed.\n Please see the Material upgrade guide in the URP documentation for more information.\nThis should not be called in batch mode.",
+          "stackTrace": "UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()\n",
+          "seeded": false
+        },
+        {
+          "seq": 2,
+          "timestampUtc": "2026-10-31T02:44:02.0450729Z",
+          "level": "error",
+          "logType": "Error",
+          "message": "Assets\\PocketBorough\\Editor\\BoroughBuilder.cs(122,252): error CS0266: Cannot implicitly convert type 'int' to 'uint'. An explicit conversion exists (are you missing a cast?)",
+          "stackTrace": "",
+          "seeded": false
+        },
+        {
+          "seq": 3,
+          "timestampUtc": "2026-10-31T02:44:02.0450729Z",
+          "level": "error",
+          "logType": "Error",
+          "message": "Assets\\PocketBorough\\Editor\\BoroughBuilder.cs(122,288): error CS0266: Cannot implicitly convert type 'int' to 'uint'. An explicit conversion exists (are you missing a cast?)",
+          "stackTrace": "",
+          "seeded": false
+        },
+        {
+          "seq": 4,
+          "timestampUtc": "2026-10-31T02:44:22.8669028Z",
+          "level": "error",
+          "logType": "Error",
+          "message": "Assembly has duplicate references: UnityEngine.TestRunner,UnityEditor.TestRunner (Assets/PocketBorough/Tests/Editor/PocketBorough.Tests.asmdef)",
+          "stackTrace": "",
+          "seeded": false
+        },
+        {
+          "seq": 5,
+          "timestampUtc": "2026-10-31T02:44:42.2692896Z",
+          "level": "error",
+          "logType": "Error",
+          "message": "Assets\\PocketBorough\\Tests\\Editor\\BoroughTests.cs(20,336): error CS0012: The type 'TMP_FontAsset' is defined in an assembly that is not referenced. You must add a reference to assembly 'Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null'.",
+          "stackTrace": "",
+          "seeded": false
+        },
+        {
+          "seq": 10,
+          "timestampUtc": "2026-10-31T02:46:28.6311603Z",
+          "level": "error",
+          "logType": "Error",
+          "message": "Command 'capture game_view' failed: No Game view render target to capture: open a Game view window, or pass source=\"camera\" to render a camera instead.",
+          "stackTrace": "UnityEngine.Debug:LogError (object)\nUnity.Pipeline.Commands.DefaultCommandQueue:InvokeDirect (Unity.Pipeline.Commands.CommandContext,Unity.Pipeline.Commands.CommandInfo,object[]) (at ./Library/PackageCache/com.unity.pipeline@363b8bb9e91d/Runtime/CommandExecution/CommandQueue/DefaultCommandQueue.cs:495)\nUnity.Pipeline.Commands.DefaultCommandQueue/<>c__DisplayClass19_0:<Invoke>b__1 () (at ./Library/PackageCache/com.unity.pipeline@363b8bb9e91d/Runtime/CommandExecution/CommandQueue/DefaultCommandQueue.cs:409)\nUnity.Pipeline.Threading.Dispatcher/WorkItem`1<object>:ExecuteCore () (at ./Library/PackageCache/com.unity.pipeline@363b8bb9e91d/Runtime/Common/Dispatcher.cs:342)\nUnity.Pipeline.Threading.Dispatcher/WorkItem:Execute () (at ./Library/PackageCache/com.unity.pipeline@363b8bb9e91d/Runtime/Common/Dispatcher.cs:285)\nUnity.Pipeline.Threading.Dispatcher:ProcessWorkQueue (int) (at ./Library/PackageCache/com.unity.pipeline@363b8bb9e91d/Runtime/Common/Dispatcher.cs:251)\nUnity.Pipeline.Threading.Dispatcher:ProcessWorkQueue () (at ./Library/PackageCache/com.unity.pipeline@363b8bb9e91d/Runtime/Common/Dispatcher.cs:266)\nUnityEditor.EditorApplication:Internal_CallUpdateFunctions ()\n",
+          "seeded": false
+        },
+        {
+          "seq": 37,
+          "timestampUtc": "2026-10-31T02:50:44.6854362Z",
+          "level": "error",
+          "logType": "Error",
+          "message": "Assets\\PocketBorough\\Editor\\BoroughBuilder.cs(56,35): error CS0200: Property or indexer 'UniversalRenderPipelineAsset.supportsSoftShadows' cannot be assigned to -- it is read only",
+          "stackTrace": "",
+          "seeded": false
+        },
+        {
+          "seq": 38,
+          "timestampUtc": "2026-10-31T02:50:44.6854362Z",
+          "level": "error",
+          "logType": "Error",
+          "message": "Assets\\PocketBorough\\Editor\\BoroughBuilder.cs(56,90): error CS0200: Property or indexer 'UniversalRenderPipelineAsset.supportsSoftShadows' cannot be assigned to -- it is read only",
+          "stackTrace": "",
+          "seeded": false
+        },
+        {
+          "seq": 43,
+          "timestampUtc": "2026-10-31T02:50:57.6362012Z",
+          "level": "error",
+          "logType": "Error",
+          "message": "Error building Player because scripts have compile errors in the editor",
+          "stackTrace": "",
+          "seeded": false
+        }
+      ],
+      "cursor": 43,
+      "session": "8ecc35d615f546fe8b32b52f8f74737e",
+      "returned": 9,
+      "dropped": false,
+      "reset": false,
+      "counts": {
+        "error": 9,
+        "warn": 15,
+        "log": 19
+      },
+      "groundTruth": {
+        "sampledUtc": "2026-10-31T02:51:10.8952452Z",
+        "ageMs": 123,
+        "compilationFailed": true,
+        "compiling": false,
+        "consoleErrors": 3,
+        "consoleWarnings": 0,
+        "consoleLogs": 0,
+        "seeded": true
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hole Arena"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

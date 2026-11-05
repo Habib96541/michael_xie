@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "command": "command test run",
+  "data": {
+    "command": "test run",
+    "parameters": {
+      "mode": "editor",
+      "filter": "PocketBorough.Tests",
+      "filter_type": "assembly"
+    },
+    "result": {
+      "Summary": {
+        "Total": 6,
+        "Passed": 6,
+        "Failed": 0,
+        "Skipped": 0,
+        "Inconclusive": 0
+      },
+      "Results": [
+        {
+          "FullName": "BoroughTests.AllFortyFiveOriginalMeshesHaveFiniteGeometryAndNormals",
+          "Status": "Passed",
+          "Duration": 0.0331538,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "BoroughTests.CatalogContainsModelsMaterialsAudioAndFont",
+          "Status": "Passed",
+          "Duration": 0.0540756,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "BoroughTests.EqualAndSlightlyLargerRivalsCannotEatEachOther",
+          "Status": "Passed",
+          "Duration": 0.0002629,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "BoroughTests.FootprintMustFitEntireOpening",
+          "Status": "Passed",
+          "Duration": 0.0000942,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "BoroughTests.GrowthIsMonotonicBoundedAndStartsSmall",
+          "Status": "Passed",
+          "Duration": 0.0036697,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "BoroughTests.PoolResetRestoresObjectsAndPreventsDuplicateRewards",
+          "Status": "Passed",
+          "Duration": 0.0502911,
+          "Message": null,
+          "StackTrace": null
+        }
+      ],
+      "Duration": 0.7,
+      "StatusPath": null,
+      "Mode": "EditMode",
+      "FilterApplied": "assembly: PocketBorough.Tests",
+      "success": true,
+      "result": null
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hole Arena"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

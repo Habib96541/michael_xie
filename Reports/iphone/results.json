@@ -1,0 +1,71 @@
+{
+  "coverage": "Chromium iPhone viewport/touch emulation on Windows; not Apple Simulator or real Safari",
+  "devices": [
+    {
+      "name": "SE",
+      "width": 667,
+      "height": 375,
+      "dpr": 3,
+      "mainMenu": true,
+      "pauseResume": true,
+      "portraitAutoPause": true,
+      "safeArea": true,
+      "fps": [
+        59.990108489990234,
+        59.990108489990234,
+        60.01986312866211,
+        60.01986312866211
+      ]
+    },
+    {
+      "name": "mini",
+      "width": 812,
+      "height": 375,
+      "dpr": 3,
+      "mainMenu": true,
+      "pauseResume": true,
+      "portraitAutoPause": true,
+      "safeArea": true,
+      "fps": [
+        59.9901123046875,
+        59.9901123046875,
+        60.019866943359375,
+        60.019866943359375
+      ]
+    },
+    {
+      "name": "14",
+      "width": 844,
+      "height": 390,
+      "dpr": 3,
+      "mainMenu": true,
+      "pauseResume": true,
+      "portraitAutoPause": true,
+      "safeArea": true,
+      "fps": [
+        59.9901123046875,
+        59.9901123046875,
+        60.01986312866211,
+        60.01986312866211
+      ]
+    },
+    {
+      "name": "ProMax",
+      "width": 932,
+      "height": 430,
+      "dpr": 3,
+      "mainMenu": true,
+      "pauseResume": true,
+      "portraitAutoPause": true,
+      "safeArea": true,
+      "fps": [
+        60.019866943359375,
+        60.019866943359375,
+        59.97003936767578,
+        59.97003936767578
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "passed"
+}

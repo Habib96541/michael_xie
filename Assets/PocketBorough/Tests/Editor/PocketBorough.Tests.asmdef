@@ -1,0 +1,1 @@
+{"name":"PocketBorough.Tests","references":["PocketBorough","Unity.TextMeshPro"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"]}
