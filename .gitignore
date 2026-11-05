@@ -1,0 +1,40 @@
+# Unity generated
+BottleFlipUnity/[Ll]ibrary/
+BottleFlipUnity/[Tt]emp/
+BottleFlipUnity/[Oo]bj/
+BottleFlipUnity/[Ll]ogs/
+BottleFlipUnity/[Uu]ser[Ss]ettings/
+BottleFlipUnity/[Mm]emoryCaptures/
+
+# Visual Studio / VS Code / JetBrains
+.vscode/
+.vs/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# OS generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local logs & capture files
+*.log
+.cloud-attachments/
+.freebuff/
+*.mov

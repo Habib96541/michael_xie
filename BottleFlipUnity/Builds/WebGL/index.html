@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#05060F">
+  <title>Bottle Flip</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 38%, #151838 0%, #090A18 55%, #05060F 100%);
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior: none;
+    }
+    #stage {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #frame {
+      position: relative;
+      width: min(100vw, calc(100vh * 9 / 16));
+      height: min(100vh, calc(100vw * 16 / 9));
+      overflow: hidden;
+      background: #0A0A1C;
+      touch-action: none;
+    }
+    @media (min-width: 800px) and (max-aspect-ratio: 4/5) {
+      #frame { border-radius: 26px; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.06); }
+    }
+    #unity-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      touch-action: none;
+      background: #0A0A1C;
+    }
+    #loader {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      background: radial-gradient(circle at 50% 45%, #191C40 0%, #0A0B1D 65%);
+      transition: opacity 0.45s ease;
+      z-index: 2;
+    }
+    #loader.done { opacity: 0; pointer-events: none; }
+    .logo {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      color: #ffffff;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+      margin-left: 0.22em;
+    }
+    .logo span { color: #FFC64B; display: block; text-align: center; font-size: 52px; letter-spacing: 0.14em; margin-top: 2px; margin-left: 0.14em; }
+    .bar {
+      width: min(64%, 320px);
+      height: 8px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+    .bar i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #FF9E2C, #FFC64B);
+      transition: width 0.18s ease-out;
+    }
+    .hint { font-size: 13px; letter-spacing: 0.16em; color: #9C99C4; text-transform: uppercase; }
+    #warning {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 3;
+      font-size: 13px;
+      color: #ffffff;
+    }
+    #warning div { background: rgba(255, 94, 91, 0.94); padding: 10px 14px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <div id="frame">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <div id="loader">
+        <div class="logo">BOTTLE<span>FLIP</span></div>
+        <div class="bar"><i id="bar-fill"></i></div>
+        <div class="hint" id="loader-hint">loading</div>
+      </div>
+      <div id="warning"></div>
+    </div>
+  </div>
+
+  <!-- @@PACKED_ASSETS@@ -->
+  <script>
+    var canvas = document.querySelector("#unity-canvas");
+    var loader = document.querySelector("#loader");
+    var barFill = document.querySelector("#bar-fill");
+    var hint = document.querySelector("#loader-hint");
+
+    function unityShowBanner(msg, type) {
+      var warningBanner = document.querySelector("#warning");
+      var div = document.createElement("div");
+      div.innerHTML = msg;
+      if (type === "warning") div.style.background = "rgba(255,198,75,0.95)", div.style.color = "#241503";
+      if (type === "error") div.style.background = "rgba(255,94,91,0.95)";
+      warningBanner.appendChild(div);
+      if (type !== "error") {
+        setTimeout(function () {
+          if (div.parentNode) div.parentNode.removeChild(div);
+        }, 6000);
+      }
+    }
+
+    // @@BOOTSTRAP_START@@
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/WebGL.loader.js";
+    var config = {
+      arguments: [],
+      dataUrl: buildUrl + "/WebGL.data.gz",
+      frameworkUrl: buildUrl + "/WebGL.framework.js.gz",
+      codeUrl: buildUrl + "/WebGL.wasm.gz",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Freebuff",
+      productName: "Bottle Flip",
+      productVersion: "1.0.0",
+      showBanner: unityShowBanner
+    };
+
+    // Keep the render resolution sane on high-DPI phones.
+    config.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+
+    window.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+    document.addEventListener("gesturestart", function (e) { e.preventDefault(); });
+
+    document.querySelector("#loader").style.display = "flex";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = function () {
+      createUnityInstance(canvas, config, function (progress) {
+        barFill.style.width = Math.round(progress * 100) + "%";
+        if (progress > 0.45) hint.textContent = "warming up";
+        if (progress > 0.9) hint.textContent = "almost there";
+      }).then(function (unityInstance) {
+        window.unityInstance = unityInstance;
+        loader.classList.add("done");
+        setTimeout(function () { loader.style.display = "none"; }, 500);
+        canvas.focus();
+      }).catch(function (message) {
+        hint.textContent = "failed to load";
+        unityShowBanner("Could not load the game: " + message, "error");
+      });
+    };
+    script.onerror = function () {
+      hint.textContent = "failed to load";
+      unityShowBanner("Could not load the game build files.", "error");
+    };
+    document.body.appendChild(script);
+    // @@BOOTSTRAP_END@@
+  </script>
+</body>
+</html>
