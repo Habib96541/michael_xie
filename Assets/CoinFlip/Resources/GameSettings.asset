@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97c4cf0681e74a48af2f382f3d8bd2e, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: CoinFlip.Runtime::CoinFlip.GameSettings
+  flipDuration: 1.55
+  launchHeight: 80
+  particlePoolSize: 32

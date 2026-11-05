@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-05 10:20:30Z" end-time="2026-11-05 10:20:34Z" duration="3.6344044">
+  <test-suite type="TestSuite" id="1008" name="Coinflip" fullname="Coinflip" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-05 10:20:30Z" end-time="2026-11-05 10:20:34Z" duration="3.634404" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1004" name="CoinFlip.PlayTests.dll" fullname="D:/30 games/Coin Flip/Library/ScriptAssemblies/CoinFlip.PlayTests.dll" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-05 10:20:30Z" end-time="2026-11-05 10:20:34Z" duration="3.617931" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="35464" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="CoinAnimationTests" fullname="CoinAnimationTests" classname="CoinAnimationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-05 10:20:30Z" end-time="2026-11-05 10:20:34Z" duration="3.616108" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1003" name="BothPredeterminedFacesSettleOnceWithinTwoSeconds" fullname="CoinAnimationTests.BothPredeterminedFacesSettleOnceWithinTwoSeconds" methodname="BothPredeterminedFacesSettleOnceWithinTwoSeconds" classname="CoinAnimationTests" runstate="Runnable" seed="1272379263" result="Passed" start-time="2026-11-05 10:20:30Z" end-time="2026-11-05 10:20:34Z" duration="3.541817" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+        </test-case>
+        <test-case id="1002" name="MainMenuPauseResumeAndReturnFlowsWork" fullname="CoinAnimationTests.MainMenuPauseResumeAndReturnFlowsWork" methodname="MainMenuPauseResumeAndReturnFlowsWork" classname="CoinAnimationTests" runstate="Runnable" seed="123005416" result="Passed" start-time="2026-11-05 10:20:34Z" end-time="2026-11-05 10:20:34Z" duration="0.056979" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+Saving results to: C:/Users/tahmi/AppData/LocalLow/Little Orbit/Coinflip\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

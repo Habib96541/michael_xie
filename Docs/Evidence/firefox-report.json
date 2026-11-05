@@ -1,0 +1,7 @@
+{
+  "browser": "Firefox",
+  "passed": false,
+  "errors": [],
+  "warnings": [],
+  "failure": "browserType.launch: spawn UNKNOWN\nCall log:\n\u001b[2m  - <launching> C:\\Users\\tahmi\\AppData\\Local\\ms-playwright\\firefox-1538\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\tahmi\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-UPTVVQ -juggler-pipe -silent\u001b[22m\n"
+}

@@ -1,0 +1,1 @@
+{"name":"CoinFlip.PlayTests","references":["CoinFlip.Runtime","Unity.TextMeshPro","Unity.ugui","Unity.InputSystem"],"optionalUnityReferences":["TestAssemblies"]}

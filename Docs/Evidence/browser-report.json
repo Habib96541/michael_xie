@@ -1,0 +1,201 @@
+{
+  "browser": "Chromium",
+  "viewports": [
+    {
+      "width": 390,
+      "height": 844,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 360,
+      "height": 780,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 428,
+      "height": 926,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 414,
+      "height": 896,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "mainMenuButtons": 2,
+      "gameButtons": 6,
+      "pauseButtons": 9,
+      "allWithinViewport": true
+    }
+  ],
+  "checks": [
+    "Rapid 15-tap flip input deducts and resolves once; side/wager inputs disabled during animation.",
+    "Pause freezes a live flip and Resume continues it without changing the outcome.",
+    "Returning to the main menu during a flip settles the saved round exactly once.",
+    "16 real random rounds: both faces rendered and matched history; every payout and final transform checked.",
+    "Real touchscreen tap events select a side and complete a round.",
+    "Portrait-to-landscape resize during a live flip settles centered.",
+    "Natural zero-balance outcome and one-tap restart.",
+    "Both volume sliders, mute and audio preferences survive reload through the pause menu.",
+    "Reload mid-flip settles saved outcome once; another reload causes no duplicate payout.",
+    "Visibility pause/resume preserves the active round and animation position.",
+    "Browser audio sources start after actual user interactions.",
+    "2× device pixel density preserves the same CSS layout and real touch targets."
+  ],
+  "errors": [],
+  "consoleWarnings": [
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat"
+  ],
+  "outcomes": {
+    "Heads": 8,
+    "Tails": 9
+  },
+  "roundDurationsMs": [
+    1655,
+    1583,
+    1597,
+    1581,
+    1595,
+    1599,
+    1642,
+    1593,
+    1619,
+    1597,
+    1621,
+    1627,
+    1615,
+    1621,
+    1617,
+    1656,
+    1631
+  ],
+  "animationSamples": [
+    {
+      "phase": "Flight",
+      "progress": 0.1487179398536682,
+      "width": 0.39123088121414185,
+      "y": 26.6635684967041,
+      "face": "Tails"
+    },
+    {
+      "phase": "Flight",
+      "progress": 0.2273504137992859,
+      "width": 0.9904478192329407,
+      "y": 38.7786750793457,
+      "face": "Tails"
+    },
+    {
+      "phase": "Flight",
+      "progress": 0.29829058051109314,
+      "width": 0.8346685767173767,
+      "y": 47.70624923706055,
+      "face": "Heads"
+    },
+    {
+      "phase": "Flight",
+      "progress": 0.3760683536529541,
+      "width": 0.1999112069606781,
+      "y": 54.7693977355957,
+      "face": "Tails"
+    },
+    {
+      "phase": "Flight",
+      "progress": 0.44786322116851807,
+      "width": 0.1641530990600586,
+      "y": 58.40766525268555,
+      "face": "Heads"
+    }
+  ],
+  "measuredIdleFPS": 116.7,
+  "audioSourcesStarted": 48,
+  "passed": true
+}
