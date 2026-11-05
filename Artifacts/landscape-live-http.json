@@ -1,0 +1,27 @@
+{
+  "url": "https://fruit-ninja-backyard-dojo.pages.dev/",
+  "indexMatchesLocalBuild": true,
+  "assets": [
+    {
+      "file": "Build/89a6785c2501dee0cb2578280ccc39a6.loader.js",
+      "status": 200,
+      "encoding": "br"
+    },
+    {
+      "file": "Build/e41a5caa2776f5d5ae9ddd77877257d2.data.br",
+      "status": 200,
+      "encoding": "br"
+    },
+    {
+      "file": "Build/df89a8bceaa47c32db4da9f52c925522.framework.js.br",
+      "status": 200,
+      "encoding": "br"
+    },
+    {
+      "file": "Build/a08b1fa643fba16bd0a9a353bb0506a7.wasm.br",
+      "status": 200,
+      "encoding": "br"
+    }
+  ],
+  "homeScreenManifest": true
+}

@@ -5,8 +5,8 @@
   "wasmValid": true,
   "cloudflareFileSizesPass": true,
   "compressionHeadersPresent": true,
-  "files": 10,
-  "totalBytes": 22467466,
-  "largestAssetBytes": 12240202,
-  "wasmBytes": 30793967
+  "files": 11,
+  "totalBytes": 22469464,
+  "largestAssetBytes": 12240445,
+  "wasmBytes": 30794381
 }

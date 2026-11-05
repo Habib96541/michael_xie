@@ -77,7 +77,7 @@ namespace BackyardDojo
         const int FragmentBudget=96;
         public const float StageWidth=1953,StageHeight=900,StageInset=(StageWidth-1600)*.5f;
         float uiScale=1;
-        bool soundOn,musicOn,hadPointer,verification;
+        bool soundOn,musicOn,hadPointer,verification,landscapeBlocked;
         Vector2 lastPointer;
         Vector2 stageCenter;
 
@@ -203,6 +203,12 @@ namespace BackyardDojo
         void Update()
         {
             float dt=Mathf.Min(Time.unscaledDeltaTime,.04f);Resize();
+#if UNITY_WEBGL && !UNITY_EDITOR
+            // In portrait the web template hides the canvas and sizes it to the viewport.
+            bool portrait=Screen.width<=Screen.height;
+            if(portrait!=landscapeBlocked)SetLandscapeBlocked(portrait);
+#endif
+            if(landscapeBlocked)return;
             blade.Tick(dt);
             bladeSparkTimer-=dt;
             if(loadingSpinner!=null)loadingSpinner.Rotate(0,0,-160*Time.unscaledDeltaTime);
@@ -218,6 +224,14 @@ namespace BackyardDojo
             moteTimer-=dt;
             if(moteTimer<=0 && state!=ScreenState.Paused && state!=ScreenState.Results)
             {SpawnFirefly();moteTimer=UnityEngine.Random.Range(.18f,.4f);}
+        }
+
+        void SetLandscapeBlocked(bool blocked)
+        {
+            landscapeBlocked=blocked;
+            if(!landscapeBlocked)return;
+            if(hadPointer && state==ScreenState.Playing)FinishStroke();
+            hadPointer=false;blade.Clear();
         }
 
         void TickRound(float dt)
@@ -316,18 +330,18 @@ namespace BackyardDojo
             var brand=Rect(menu,"Dojo stamp",64,38,310,38);
             var leaf=Circle(brand,"Leaf",13,14,22,Green);leaf.rectTransform.sizeDelta=new Vector2(25,13);leaf.rectTransform.localEulerAngles=new Vector3(0,0,32);
             Label(brand,"station","JUICE DOJO",38,0,275,34,19,Cream,TextAnchor.MiddleLeft,false);
-            SmallButton(menu,"?",1396,35,55,52,ShowHelp);
-            SmallButton(menu,soundOn?"SFX":"OFF",1464,35,74,52,()=>{ soundOn=!soundOn;SaveSettings();ShowMenu(); });
+            SmallButton(menu,"?",1312,24,114,105,ShowHelp);
+            SmallButton(menu,soundOn?"SFX":"OFF",1443,24,130,105,()=>{ soundOn=!soundOn;SaveSettings();ShowMenu(); });
             CreateLogo(menu,395,17,810,290);
             var strip=Board(menu,"Choose a mode",590,316,420,51,Hex("EFCD8D"),1.2f,true);
             Label(strip,"Choose","PICK YOUR CHALLENGE",15,4,390,41,25,Ink);
             CreateModeCard(0,245,390,-2.3f,"CLASSIC","THE ORIGINAL",0,"3 misses. One sharp blade.","Watch out for bombs!",Hex("759D37"));
             CreateModeCard(1,635,390,1.2f,"ARCADE","FAST & FRUITY",1,"60 seconds. Make it juicy.","Combos, frenzy & freeze.",Hex("C8782B"));
             CreateModeCard(2,1025,390,-1.5f,"ZEN","FIND YOUR FLOW",5,"90 seconds. Just fruit.","No bombs. No worries.",Hex("6C8D77"));
-            var drawer=Board(menu,"Workbench drawer",510,819,580,55,Hex("B68B50"),-.8f,false);
-            TextButton(drawer,"YOUR HARVEST",16,5,176,43,ShowStats);
-            TextButton(drawer,"BLADES",205,5,130,43,ShowBlades);
-            TextButton(drawer,"SETTINGS",350,5,205,43,ShowSettings);
+            var drawer=Board(menu,"Workbench drawer",424,788,752,93,Hex("B68B50"),-.8f,false);
+            TextButton(drawer,"YOUR HARVEST",16,5,230,80,ShowStats);
+            TextButton(drawer,"BLADES",260,5,230,80,ShowBlades);
+            TextButton(drawer,"SETTINGS",504,5,230,80,ShowSettings);
             Label(menu,"Edition","FRESHLY PICKED\nBACKYARD EDITION",70,811,240,57,17,Hex("FFF0C0"),TextAnchor.MiddleLeft,false);
             Label(menu,"Fruit counter",totalFruit+" FRUIT SLICED",1275,823,250,35,18,Hex("FFF0C0"),TextAnchor.MiddleRight,false);
         }
@@ -342,8 +356,8 @@ namespace BackyardDojo
             Label(card,"Mode name",name,20,161,290,55,48,Ink);
             Label(card,"Description",line1,18,217,294,29,18,Ink,TextAnchor.MiddleCenter,false);
             Label(card,"Rule",line2,18,244,294,25,16,Hex("705532"),TextAnchor.MiddleCenter,false);
-            var play=Board(card,"Start strip",30,283,270,35,accent,0,false);
-            Label(play,"Play","SLICE TO START  >",4,0,262,32,20,Cream);
+            var play=Board(card,"Start strip",26,274,278,46,accent,0,false);
+            Label(play,"Play","SLICE TO START  >",4,0,270,42,23,Cream);
             var target=card.gameObject.AddComponent<PaperButton>();target.action=()=>StartRound((GameMode)index);target.hoverSound=()=>Play(clickClip,.1f);
         }
 
@@ -367,7 +381,7 @@ namespace BackyardDojo
             var status=Board(hud,"Round status",1181,32,240,86,Hex("D8B474"),1.4f,true);
             timeText=Label(status,"Time",mode==GameMode.Classic?"MISSES":"TIME LEFT",10,4,220,27,16,Hex("795A32"));
             missText=Label(status,"Status","",12,30,216,45,36,Ink);
-            SmallButton(hud,"II",1451,37,91,70,Pause);
+            SmallButton(hud,"II",1440,20,137,116,Pause);
             comboText=Label(hud,"Combo status","",500,166,600,42,27,Hex("FFE08A"));
             noticeText=Label(hud,"Countdown","",350,319,900,160,99,Cream,TextAnchor.MiddleCenter,true,5);
         }
@@ -551,11 +565,11 @@ namespace BackyardDojo
         {
             if(state!=ScreenState.Playing) return;
             state=ScreenState.Paused;blade.Clear();Play(clickClip,.4f);
-            var panel=OpenModal("TAKE A BREATHER",620,435);
-            Label(panel,"Message","Your fruit will wait for you.",45,116,530,44,24,Ink,TextAnchor.MiddleCenter,false);
-            ActionButton(panel,"KEEP SLICING",100,199,420,69,Green,Resume);
-            ActionButton(panel,"START FRESH",100,285,201,58,Paper,()=>StartRound(mode));
-            ActionButton(panel,"MAIN MENU",319,285,201,58,Paper,ShowMenu);
+            var panel=OpenModal("TAKE A BREATHER",660,462);
+            Label(panel,"Message","Your fruit will wait for you.",45,116,570,44,24,Ink,TextAnchor.MiddleCenter,false);
+            ActionButton(panel,"KEEP SLICING",78,184,504,91,Green,Resume);
+            ActionButton(panel,"START FRESH",78,300,242,87,Paper,()=>StartRound(mode));
+            ActionButton(panel,"MAIN MENU",340,300,242,87,Paper,ShowMenu);
         }
         public void Resume()
         {
@@ -573,7 +587,7 @@ namespace BackyardDojo
                 PlayerPrefs.SetInt("Dojo.TotalFruit",totalFruit);
                 PlayerPrefs.SetInt("Dojo.Combo",Mathf.Max(PlayerPrefs.GetInt("Dojo.Combo",0),roundCombo));PlayerPrefs.Save();
             }
-            var panel=OpenModal(record?"A FRESH NEW RECORD!":"NICE SLICING!",680,620);
+            var panel=OpenModal(record?"A FRESH NEW RECORD!":"NICE SLICING!",680,655);
             Label(panel,"Mode",mode.ToString().ToUpper()+" HARVEST",80,98,520,36,21,Hex("76562E"));
             Label(panel,"Final score",score.ToString(),70,136,540,136,118,Ink);
             Label(panel,"Points","JUICY POINTS",80,266,520,35,20,Hex("76562E"));
@@ -581,8 +595,8 @@ namespace BackyardDojo
             Label(row,"Fruit",roundFruit+" FRUIT SLICED",15,7,260,50,22,Ink);
             Label(row,"Combo",roundCombo+" BEST COMBO",285,7,270,50,22,Ink);
             Label(panel,"Reason",reason,42,402,596,49,20,Ink,TextAnchor.MiddleCenter,false);
-            ActionButton(panel,"SLICE AGAIN  >",95,474,490,65,Green,()=>StartRound(mode));
-            TextButton(panel,"BACK TO THE GARDEN",120,551,440,42,ShowMenu);
+            ActionButton(panel,"SLICE AGAIN  >",95,467,490,84,Green,()=>StartRound(mode));
+            TextButton(panel,"BACK TO THE GARDEN",120,566,440,72,ShowMenu);
             Play(comboClip,.45f);
         }
 
@@ -593,7 +607,7 @@ namespace BackyardDojo
             HelpRow(p,2,229,"MORE FRUIT. BIGGER COMBOS.","Slice 3 or more in one stroke for a juicy bonus.");
             HelpRow(p,3,331,"THOSE BOMBS ARE TROUBLE.","Classic: game over. Arcade: lose 10 points. Zen: relax!");
             Label(p,"Tip","TIP: Glowing Arcade fruit brings freeze or a fruit frenzy.",45,438,670,40,19,Hex("70502B"),TextAnchor.MiddleCenter,false);
-            ActionButton(p,"GOT IT!",240,500,280,58,Green,CloseModal);
+            ActionButton(p,"GOT IT!",220,485,320,86,Green,CloseModal);
         }
         void HelpRow(RectTransform p,int n,float y,string title,string text)
         {
@@ -612,7 +626,7 @@ namespace BackyardDojo
                 Label(row,"Best",PlayerPrefs.GetInt("Dojo.Best."+(GameMode)i,0)+" pts",350,11,230,43,29,Ink,TextAnchor.MiddleRight);
             }
             Label(p,"Lifetime",totalFruit+" FRUIT SLICED   ·   "+PlayerPrefs.GetInt("Dojo.Combo",0)+" BEST COMBO",50,398,620,41,23,Ink);
-            ActionButton(p,"BACK TO THE GARDEN",155,480,410,61,Green,CloseModal);
+            ActionButton(p,"BACK TO THE GARDEN",132,469,456,86,Green,CloseModal);
         }
         void ShowBlades()
         {
@@ -626,22 +640,23 @@ namespace BackyardDojo
                 Label(card,"Select",i==bladeIndex?"EQUIPPED":"SELECT",10,169,176,29,17,Ink);
                 var b=card.gameObject.AddComponent<PaperButton>();b.action=()=>{ bladeIndex=pick;blade.bladeColor=blades[pick];SaveSettings();ShowBlades();Play(sliceClip,.3f); };
             }
-            ActionButton(p,"LOOKING SHARP!",200,392,350,61,Green,CloseModal);
+            ActionButton(p,"LOOKING SHARP!",170,381,410,86,Green,CloseModal);
         }
         void ShowSettings()
         {
-            var p=OpenModal("MAKE YOURSELF AT HOME",690,460);
-            Label(p,"Sound label","SPLASHES & SWISHES",60,132,390,44,25,Ink,TextAnchor.MiddleLeft);
-            ActionButton(p,soundOn?"ON":"OFF",490,130,135,49,soundOn?Green:Paper,()=>{ soundOn=!soundOn;SaveSettings();ShowSettings(); });
-            Label(p,"Music label","GARDEN MELODY",60,217,390,44,25,Ink,TextAnchor.MiddleLeft);
-            ActionButton(p,musicOn?"ON":"OFF",490,215,135,49,musicOn?Green:Paper,()=>{ musicOn=!musicOn;SaveSettings();ShowSettings(); });
-            ActionButton(p,"ALL SET!",195,367,300,59,Green,CloseModal);
+            var p=OpenModal("MAKE YOURSELF AT HOME",690,500);
+            Label(p,"Sound label","SPLASHES & SWISHES",60,140,390,44,25,Ink,TextAnchor.MiddleLeft);
+            ActionButton(p,soundOn?"ON":"OFF",475,117,156,88,soundOn?Green:Paper,()=>{ soundOn=!soundOn;SaveSettings();ShowSettings(); });
+            Label(p,"Music label","GARDEN MELODY",60,244,390,44,25,Ink,TextAnchor.MiddleLeft);
+            ActionButton(p,musicOn?"ON":"OFF",475,221,156,88,musicOn?Green:Paper,()=>{ musicOn=!musicOn;SaveSettings();ShowSettings(); });
+            ActionButton(p,"ALL SET!",160,366,370,92,Green,CloseModal);
         }
         RectTransform OpenModal(string title,float w,float h)
         {
             CloseModal();modal=Rect(root,"Overlay",0,0,1600,900);
             var dim=Fill(modal,"Dim garden",-StageInset,0,StageWidth,900,new Color(.025f,.065f,.04f,.8f));dim.raycastTarget=true;
             var p=Board(modal,"Cardboard panel",800-w*.5f,450-h*.5f,w,h,Paper,-.7f,true);
+            p.localScale=Vector3.one*1.18f;
             Tape(p,w*.5f-63,-12,126,33,-3);
             var titleBoard=Board(p,"Painted heading",23,29,w-46,65,Hex("6D4929"),.3f,false);
             Label(titleBoard,"Title",title,12,4,w-70,55,title.Length>22?31:37,Cream);
@@ -857,11 +872,14 @@ namespace BackyardDojo
         void TextButton(Transform p,string text,float x,float y,float w,float h,Action action)
         {
             var r=Rect(p,text,x,y,w,h);var bg=Shape(r,"Hit target",0,0,w,h,new Color(1,1,1,0),false,true);
-            Label(r,"Caption",text,0,0,w,h,18,Ink);var b=r.gameObject.AddComponent<PaperButton>();b.action=()=>{ Play(clickClip,.4f);action(); };
+            bg.raycastPadding=new Vector4(0,-9,0,-9);
+            Label(r,"Caption",text,0,0,w,h,24,Ink);var b=r.gameObject.AddComponent<PaperButton>();b.action=()=>{ Play(clickClip,.4f);action(); };
         }
         void ActionButton(Transform p,string text,float x,float y,float w,float h,Color color,Action action)
         {
-            var r=Board(p,text,x,y,w,h,color,-.35f,false);Label(r,"Caption",text,7,2,w-14,h-8,text.Length>23?19:w<100?21:25,color==Green?Cream:Ink);
+            var r=Board(p,text,x,y,w,h,color,-.35f,false);
+            r.Find("Paper face").GetComponent<PaperGraphic>().raycastPadding=new Vector4(-4,-10,-4,-10);
+            Label(r,"Caption",text,7,2,w-14,h-8,text.Length<=2?36:28,color==Green?Cream:Ink);
             var b=r.gameObject.AddComponent<PaperButton>();b.action=()=>{ Play(clickClip,.4f);action(); };b.hoverSound=()=>Play(clickClip,.08f);
         }
         static Rect FruitUV(int kind) { return new Rect((kind%4)*.25f,kind<4?.5f:0,.25f,.5f); }
@@ -1012,16 +1030,21 @@ namespace BackyardDojo
             ShowMenu();yield return null;yield return null;Canvas.ForceUpdateCanvases();
             string cardHit=ClickDesign(new Vector2(1190,570));bool modeClick=state==ScreenState.Playing && mode==GameMode.Zen;
             yield return null;Canvas.ForceUpdateCanvases();
-            string pauseHit=ClickDesign(new Vector2(1490,70));bool pauseClick=state==ScreenState.Paused;
+            string pauseHit=ClickDesign(new Vector2(1550,124));bool pauseClick=state==ScreenState.Paused;
             yield return null;Canvas.ForceUpdateCanvases();
             ClickDesign(new Vector2(800,466));bool resumeClick=state==ScreenState.Playing;
+            SetLandscapeBlocked(true);float heldCountdown=countdown;yield return null;yield return null;
+            bool portraitSuspended=state==ScreenState.Playing && countdown==heldCountdown;
+            SetLandscapeBlocked(false);yield return null;
+            bool landscapeResumed=state==ScreenState.Playing && countdown<heldCountdown;
             ShowMenu();yield return null;Canvas.ForceUpdateCanvases();
             ClickDesign(new Vector2(963,845));bool settingsClick=modal!=null;
             yield return null;Canvas.ForceUpdateCanvases();
             bool before=soundOn;ClickDesign(new Vector2(1012,374));bool soundClick=soundOn!=before;
             yield return null;Canvas.ForceUpdateCanvases();ClickDesign(new Vector2(1012,374));
             ShowMenu();
-            done("ModeCard="+modeClick+" PauseButton="+pauseClick+" ResumeButton="+resumeClick+" SettingsButton="+settingsClick+" SoundToggle="+soundClick+" SettingsRestored="+(before==soundOn)+"\nCard hit: "+cardHit+"\nPause hit: "+pauseHit);
+            done("ModeCard="+modeClick+" PauseButton="+pauseClick+" ResumeButton="+resumeClick+" PortraitSuspended="+portraitSuspended+" LandscapeResumed="+landscapeResumed+
+                " SettingsButton="+settingsClick+" SoundToggle="+soundClick+" SettingsRestored="+(before==soundOn)+"\nCard hit: "+cardHit+"\nPause hit: "+pauseHit);
         }
         string ClickDesign(Vector2 p)
         {

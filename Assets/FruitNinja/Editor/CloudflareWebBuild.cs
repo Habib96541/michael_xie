@@ -16,7 +16,7 @@ namespace BackyardDojo.Editor
             Directory.CreateDirectory(artifacts);
             Directory.CreateDirectory(output);
             PlayerSettings.productName="Juice Dojo";
-            PlayerSettings.bundleVersion="1.2";
+            PlayerSettings.bundleVersion="1.3";
             PlayerSettings.defaultWebScreenWidth=1953;PlayerSettings.defaultWebScreenHeight=900;
             PlayerSettings.WebGL.template="PROJECT:BackyardDojo";
             PlayerSettings.WebGL.compressionFormat=WebGLCompressionFormat.Brotli;
