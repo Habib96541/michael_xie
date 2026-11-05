@@ -7,9 +7,10 @@ namespace NeonDash
     {
         public static readonly Color Background = new Color(0.016f, 0.026f, 0.070f, 1f);
         public static readonly Color BackgroundGlow = new Color(0.10f, 0.03f, 0.28f, 1f);
-        public static readonly Color Panel = new Color(0.043f, 0.063f, 0.130f, 0.96f);
-        public static readonly Color PanelSoft = new Color(0.070f, 0.100f, 0.190f, 0.90f);
-        public static readonly Color PanelLine = new Color(0.18f, 0.32f, 0.52f, 0.55f);
+        public static readonly Color Panel = new Color(0.047f, 0.047f, 0.115f, 1f);
+        public static readonly Color PanelSoft = new Color(0.10f, 0.094f, 0.21f, 1f);
+        public static readonly Color PanelLine = new Color(0.25f, 0.24f, 0.48f, 1f);
+        public static readonly Color Action = new Color(0.47f, 0.22f, 0.86f, 1f);
 
         public static readonly Color Cyan = new Color(0.00f, 0.86f, 1.00f, 1f);
         public static readonly Color Magenta = new Color(1.00f, 0.05f, 0.56f, 1f);

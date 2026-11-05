@@ -33,6 +33,10 @@ namespace NeonDash
         readonly List<int> tris = new List<int>();
 
         float shake;
+        Vector2 impact;
+        Color impactColor;
+        float impactTime;
+        const float ImpactSeconds = 0.30f;
 
         public float ShakeAmount { get { return shake; } }
 
@@ -66,10 +70,39 @@ namespace NeonDash
             }
         }
 
-        public void Burst(Vector2 position, Color color, int count = 26)
+        public void ResetForRun()
         {
-            Emit(position, color, count, 8.5f, 0.24f, 0.75f, -9f);
-            Emit(position, Color.Lerp(color, Color.white, 0.6f), count / 2, 13f, 0.15f, 0.45f, -4f);
+            particles.Clear();
+            impactTime = 0f;
+            shake = 0f;
+            filter.mesh.Clear();
+        }
+
+        public void Shatter(Vector2 position, float angle, int gravitySign, Color color)
+        {
+            impact = position;
+            impactColor = color;
+            impactTime = ImpactSeconds;
+            AddShake(0.42f);
+
+            var rotation = Quaternion.Euler(0f, 0f, angle);
+            for (int row = 0; row < 4; row++)
+            for (int col = 0; col < 4; col++)
+            {
+                if (particles.Count >= MaxParticles) break;
+                Vector2 offset = rotation * new Vector3((col - 1.5f) * 0.21f, (row - 1.5f) * 0.21f, 0f);
+                float life = Random.Range(0.26f, 0.48f);
+                particles.Add(new Particle
+                {
+                    Position = position + offset,
+                    Velocity = offset.normalized * Random.Range(4.8f, 9.0f) + new Vector2(2.3f, 0.9f * gravitySign),
+                    Color = (row + col) % 3 == 0 ? Palette.Cyan : color,
+                    Life = life, MaxLife = life,
+                    Size = Random.Range(0.14f, 0.25f), Angle = angle,
+                    Spin = Random.Range(-690f, 690f), Drag = 2.4f, Gravity = -11f * gravitySign
+                });
+            }
+            Emit(position, Color.white, 9, 13f, 0.10f, 0.21f, -2f * gravitySign);
         }
 
         public void Trail(Vector2 position, Color color, float size)
@@ -135,6 +168,7 @@ namespace NeonDash
         {
             float dt = Mathf.Min(Time.deltaTime, 0.05f);
             shake = Mathf.Max(0f, shake - dt * 2.6f);
+            impactTime = Mathf.Max(0f, impactTime - dt);
 
             for (int i = particles.Count - 1; i >= 0; i--)
             {
@@ -160,6 +194,17 @@ namespace NeonDash
             verts.Clear();
             colors.Clear();
             tris.Clear();
+
+            if (impactTime > 0f)
+            {
+                float remaining = impactTime / ImpactSeconds;
+                float radius = Mathf.Lerp(2.8f, 0.48f, remaining * remaining);
+                MeshTools.AddRing(verts, colors, tris, impact.x, impact.y,
+                    radius - 0.07f * remaining, radius, 36, Palette.Alpha(impactColor, remaining * 0.9f));
+                if (remaining > 0.74f)
+                    MeshTools.AddCircle(verts, colors, tris, impact.x, impact.y, radius * 0.7f,
+                        24, Palette.Alpha(Color.white, (remaining - 0.74f) * 2.7f));
+            }
 
             for (int i = 0; i < particles.Count; i++)
             {

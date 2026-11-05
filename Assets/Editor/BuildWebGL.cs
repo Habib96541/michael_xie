@@ -59,7 +59,10 @@ namespace NeonDash.EditorTools
             html = html.Replace("fullscreenContainer.style.height = \"600px\";",
                                 "fullscreenContainer.style.height = window.innerHeight + \"px\";");
             html = html.Replace("<title>Unity Web Player | Geometry Dash</title>",
-                                "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\"><title>Geometry Dash</title>");
+                                "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><title>Geometry Dash</title>");
+            html = html.Replace("document.getElementsByTagName('head')[0].appendChild(meta);",
+                                "if (!document.querySelector('meta[name=viewport]')) document.head.appendChild(meta);");
+            html = html.Replace("var config = {", "var config = { devicePixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),");
             File.WriteAllText(indexPath, html);
 
             string cssPath = Path.Combine(outputPath, "TemplateData", "style.css");
@@ -67,11 +70,13 @@ namespace NeonDash.EditorTools
             {
                 File.AppendAllText(cssPath,
                     "\nhtml,body{width:100%;height:100%;margin:0;padding:0;overflow:hidden;background:#050817;" +
-                    "touch-action:manipulation}#unity-container,#unity-container.unity-desktop," +
-                    "#unity-container.unity-mobile{position:fixed;inset:0;width:100vw;height:100vh;left:0;top:0;transform:none}" +
+                    "}#unity-container,#unity-container.unity-desktop," +
+                    "#unity-container.unity-mobile{position:fixed;inset:0;" +
+                    "inset:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);" +
+                    "width:auto;height:auto;transform:none}" +
                     "#unity-fullscreen-container,.unity-mobile #unity-fullscreen-container{position:absolute;inset:0;" +
-                    "width:100vw!important;height:100vh!important}#unity-canvas,#unity-canvas.unity-mobile{position:absolute;" +
-                    "inset:0;display:block;width:100%;height:100%;background:#050817;outline:none}#unity-footer{display:none}" +
+                    "width:100%!important;height:100%!important}#unity-canvas,#unity-canvas.unity-mobile{position:absolute;" +
+                    "inset:0;display:block;width:100%;height:100%;background:#050817;outline:none;touch-action:none}#unity-footer{display:none}" +
                     "#unity-warning{z-index:20}\n");
             }
         }

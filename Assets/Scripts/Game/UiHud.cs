@@ -15,6 +15,14 @@ namespace NeonDash
         RectTransform fill;
         RectTransform bestMarker;
         Image fillImage;
+        RectTransform seedPlate;
+        RectTransform timerPlate;
+        RectTransform pausePlate;
+        RectTransform progressPlate;
+        bool compact;
+        float currentControlSize;
+        bool layoutReady;
+        float tutorialTop = -96f;
         float shownDistance;
         float barPulse;
 
@@ -38,12 +46,13 @@ namespace NeonDash
 
         protected override void Construct()
         {
-            var seedChip = UiKit.Sprite9(Root, "Seed Chip", Palette.Alpha(Palette.Panel, 0.92f), UiKit.Rounded);
-            UiKit.Place(seedChip.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(26f, -22f), new Vector2(250f, 56f));
-            seedText = UiKit.Label(seedChip.transform, "SEED", 22, Palette.Cyan, TextAnchor.MiddleCenter, FontStyle.Bold);
+            var seedChip = UiKit.Sprite9(Root, "Seed Chip", Palette.Alpha(Palette.Panel, 0.92f), UiKit.Chamfered);
+            UiKit.Place(seedChip.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(26f, -22f), new Vector2(320f, 56f));
+            seedPlate = seedChip.rectTransform;
+            seedText = UiKit.Label(seedChip.transform, "SEED", 19, Palette.Cyan, TextAnchor.MiddleCenter, FontStyle.Bold);
 
             // ---- earned multiplier - done here so it sits under the seed chip ----
-            var multChipImage = UiKit.Sprite9(Root, "Multiplier Chip", Palette.Alpha(Palette.Panel, 0.92f), UiKit.Rounded);
+            var multChipImage = UiKit.Sprite9(Root, "Multiplier Chip", Palette.Alpha(Palette.Panel, 0.92f), UiKit.Chamfered);
             multChip = multChipImage;
             UiKit.Place(multChipImage.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(26f, -88f), new Vector2(250f, 56f));
 
@@ -62,29 +71,27 @@ namespace NeonDash
             chainText = UiKit.Label(Root, "", 18, Palette.Alpha(Palette.Cyan, 0.95f), TextAnchor.MiddleLeft, FontStyle.Bold);
             UiKit.Place(chainText.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(26f, -176f), new Vector2(300f, 24f));
 
-            var timerChip = UiKit.Sprite9(Root, "Timer Chip", Palette.Alpha(Palette.Panel, 0.92f), UiKit.Rounded);
+            var timerChip = UiKit.Sprite9(Root, "Timer Chip", Palette.Alpha(Palette.Panel, 0.92f), UiKit.Chamfered);
             UiKit.Place(timerChip.rectTransform, new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(-96f, -22f), new Vector2(190f, 56f));
+            timerPlate = timerChip.rectTransform;
             timeText = UiKit.Label(timerChip.transform, "0:30.0", 26, Palette.Text, TextAnchor.MiddleCenter, FontStyle.Bold);
 
-            var pauseImage = UiKit.Sprite9(Root, "Pause", Palette.Alpha(Palette.Panel, 0.92f), UiKit.Rounded);
+            var pauseImage = UiKit.Sprite9(Root, "Pause", Palette.Alpha(Palette.Panel, 0.92f), UiKit.Chamfered);
             UiKit.Place(pauseImage.rectTransform, new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(-26f, -22f), new Vector2(56f, 56f));
-            var pauseButton = pauseImage.gameObject.AddComponent<Button>();
-            pauseButton.targetGraphic = pauseImage;
-            pauseButton.transition = Selectable.Transition.None;
-            pauseImage.gameObject.AddComponent<UiButtonFx>();
-            var pauseBars = UiKit.Label(pauseImage.transform, "II", 22, Palette.Cyan, TextAnchor.MiddleCenter, FontStyle.Bold);
-            pauseBars.raycastTarget = false;
+            pausePlate = pauseImage.rectTransform;
+            var pauseButton = UiKit.AttachButton(pauseImage);
+            UiIcon.Add(pauseImage.transform, IconKind.Pause, Palette.Cyan, 26f);
             pauseButton.onClick.AddListener(delegate
             {
-                App.Audio.PlayClick();
                 App.PauseRun();
             });
 
             // ---- progress bar ----
-            var bar = UiKit.Sprite9(Root, "Progress Bar", Palette.Alpha(Palette.Panel, 0.88f), UiKit.Rounded);
+            var bar = UiKit.Sprite9(Root, "Progress Bar", Palette.Alpha(Palette.Panel, 0.88f), UiKit.Chamfered);
             UiKit.Place(bar.rectTransform, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -34f), new Vector2(760f, 24f));
 
-            var fillImage = UiKit.Sprite9(bar.transform, "Fill", Palette.Cyan, UiKit.Rounded);
+            progressPlate = bar.rectTransform;
+            var fillImage = UiKit.Sprite9(bar.transform, "Fill", Palette.Cyan, UiKit.Chamfered);
             fill = fillImage.rectTransform;
             fill.anchorMin = new Vector2(0f, 0f);
             fill.anchorMax = new Vector2(0f, 1f);
@@ -94,7 +101,7 @@ namespace NeonDash
             fillImage = fill.GetComponent<Image>();
             this.fillImage = fillImage;
 
-            var markerImage = UiKit.Sprite9(bar.transform, "Best Marker", Palette.Gold, UiKit.Rounded);
+            var markerImage = UiKit.Sprite9(bar.transform, "Best Marker", Palette.Gold, UiKit.Chamfered);
             bestMarker = markerImage.rectTransform;
             bestMarker.anchorMin = new Vector2(0f, 0.5f);
             bestMarker.anchorMax = new Vector2(0f, 0.5f);
@@ -114,13 +121,13 @@ namespace NeonDash
             UiKit.Place(bestText.rectTransform, new Vector2(1f, 0f), new Vector2(1f, 0f), new Vector2(-30f, 42f), new Vector2(420f, 40f));
 
             // ---- mode tutorial banner (ship / gravity / cube) ----
-            var panelImage = UiKit.Sprite9(Root, "Tutorial", Palette.Alpha(Palette.Panel, 0.97f), UiKit.Rounded);
+            var panelImage = UiKit.Sprite9(Root, "Tutorial", Palette.Alpha(Palette.Panel, 0.97f), UiKit.Chamfered);
             tutorialPanel = panelImage.rectTransform;
             UiKit.Place(tutorialPanel, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -96f), new Vector2(660f, 84f));
             tutorialGroup = panelImage.gameObject.AddComponent<CanvasGroup>();
             tutorialGroup.blocksRaycasts = false;
 
-            tutorialAccent = UiKit.Sprite9(tutorialPanel, "Accent", Palette.Cyan, UiKit.Rounded);
+            tutorialAccent = UiKit.Sprite9(tutorialPanel, "Accent", Palette.Cyan, UiKit.Chamfered);
             UiKit.Place(tutorialAccent.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(14f, 0f), new Vector2(7f, 54f));
 
             tutorialTitle = UiKit.Label(tutorialPanel, "CUBE MODE", 30, Palette.Cyan, TextAnchor.MiddleLeft, FontStyle.Bold);
@@ -129,6 +136,33 @@ namespace NeonDash
             tutorialBody = UiKit.Label(tutorialPanel, "TAP TO JUMP", 21, Palette.Text, TextAnchor.MiddleLeft);
             UiKit.Place(tutorialBody.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(38f, -48f), new Vector2(600f, 30f));
             panelImage.gameObject.SetActive(false);
+            RefreshLayout();
+        }
+
+        void RefreshLayout()
+        {
+            bool narrow = Root.rect.width < 1450f || Root.rect.width < Root.rect.height * 1.45f;
+            bool touch = ResponsiveCanvas.TouchLayout || narrow;
+            float topHeight = Root.rect.height > Root.rect.width * 1.35f ? 126f : touch ? 92f : 56f;
+            if (layoutReady && compact == narrow && currentControlSize == topHeight) return;
+            layoutReady = true;
+            compact = narrow;
+            currentControlSize = topHeight;
+            var topLeft = new Vector2(0f, 1f);
+            var topRight = new Vector2(1f, 1f);
+            var top = new Vector2(0.5f, 1f);
+            UiKit.Place(pausePlate, topRight, topRight, new Vector2(-26f, -22f), Vector2.one * topHeight);
+            UiKit.Place(timerPlate, topRight, topRight, new Vector2(-40f - topHeight, -22f), new Vector2(160f, topHeight));
+            UiKit.Place(seedPlate, topLeft, topLeft, new Vector2(26f, -22f), new Vector2(320f, topHeight));
+            UiKit.Place(multChip.rectTransform, topLeft, topLeft, compact ? new Vector2(366f, -22f) : new Vector2(26f, -32f - topHeight),
+                new Vector2(compact ? 175f : 250f, compact ? topHeight : 56f));
+            UiKit.Place(progressPlate, top, top, new Vector2(compact ? -28f : 0f, compact ? -34f - topHeight : -34f),
+                new Vector2(compact ? 780f : 720f, 24f));
+            UiKit.Place(chainText.rectTransform, topLeft, topLeft, new Vector2(26f, compact ? -70f - topHeight : -120f - topHeight), new Vector2(200f, 24f));
+            tutorialTop = compact ? -112f - topHeight : (touch ? -124f : -96f);
+            tutorialPanel.anchoredPosition = new Vector2(0f, tutorialTop);
+            seedText.fontSize = touch ? 24 : 19;
+            timeText.fontSize = touch ? 34 : 26;
         }
 
         /// <summary>
@@ -141,7 +175,8 @@ namespace NeonDash
             tutorialToken++;
             int token = tutorialToken;
 
-            var target = new Vector2(0f, -96f);
+            RefreshLayout();
+            var target = new Vector2(0f, tutorialTop);
             tutorialPanel.gameObject.SetActive(true);
             tutorialTitle.text = title;
             tutorialTitle.color = accent;
@@ -154,7 +189,7 @@ namespace NeonDash
             TweenRunner.Run(0.34f, k =>
             {
                 if (tutorialPanel == null) return;
-                tutorialPanel.anchoredPosition = Vector2.LerpUnclamped(target + new Vector2(0f, 34f), target, k);
+                tutorialPanel.anchoredPosition = new Vector2(0f, tutorialTop + 34f * (1f - k));
                 tutorialPanel.localScale = Vector3.one * Mathf.LerpUnclamped(0.92f, 1f, k);
             }, 0f, Ease.OutBack);
             UiKit.FadeIn(tutorialGroup, 0.2f);
@@ -226,7 +261,8 @@ namespace NeonDash
             timeText.text = "0:" + seconds.ToString("00") + "." + tenths;
             timeText.color = remaining < 5f ? Palette.Magenta : Palette.Text;
 
-            float barWidth = 754f;
+            RefreshLayout();
+            float barWidth = progressPlate.rect.width - 6f;
             fill.sizeDelta = new Vector2(Mathf.Max(0f, barWidth * progress), -6f);
 
             barPulse = Mathf.Max(0f, barPulse - Time.unscaledDeltaTime * 2.5f);

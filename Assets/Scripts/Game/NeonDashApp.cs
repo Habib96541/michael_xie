@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using NeonDash.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace NeonDash
 {
@@ -35,12 +37,15 @@ namespace NeonDash
         UiPause pause;
 
         RecordStore store;
-        string seed = "2026";
+        string seed;
         float cameraX;
         float cameraY = 5.2f;
         float idleTime;
         int runToken;
         bool resultPresented;
+        readonly HashSet<int> gameplayTouches = new HashSet<int>();
+        readonly List<RaycastResult> touchHits = new List<RaycastResult>();
+        PointerEventData touchPointer;
 
         void Awake()
         {
@@ -54,6 +59,7 @@ namespace NeonDash
             store.Load();
             Store = store;
             seed = store.LastSeed;
+            store.Save();
 
             levelView = new GameObject("Level View").AddComponent<LevelView>();
             playerView = new GameObject("Player View").AddComponent<PlayerView>();
@@ -67,23 +73,37 @@ namespace NeonDash
 
             background = new GameObject("Background").AddComponent<BackgroundRig>();
             background.transform.SetParent(transform, false);
-            background.Build(cam, fx);
+            background.Build(cam);
 
             Session = new RunSession();
             BuildLevel(seed);
 
-            Canvas canvas = UiKit.CreateCanvas("Geometry Dash UI", 10);
-            lobby = UiScreen.Create<UiLobby>(this, canvas.transform, "Lobby Screen");
-            hud = UiScreen.Create<UiHud>(this, canvas.transform, "HUD Screen");
-            result = UiScreen.Create<UiResult>(this, canvas.transform, "Result Screen");
-            records = UiScreen.Create<UiRecords>(this, canvas.transform, "Records Screen");
-            pause = UiScreen.Create<UiPause>(this, canvas.transform, "Pause Screen");
+            RectTransform canvas = UiKit.CreateCanvas("NeonDash UI", 10);
+            lobby = UiScreen.Create<UiLobby>(this, canvas, "Lobby Screen");
+            hud = UiScreen.Create<UiHud>(this, canvas, "HUD Screen");
+            result = UiScreen.Create<UiResult>(this, canvas, "Result Screen");
+            records = UiScreen.Create<UiRecords>(this, canvas, "Records Screen");
+            pause = UiScreen.Create<UiPause>(this, canvas, "Pause Screen");
         }
 
         void Start()
         {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            NeonDash_InstallSeedPaste(gameObject.name);
+#endif
             EnterLobby();
         }
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        [System.Runtime.InteropServices.DllImport("__Internal")]
+        static extern void NeonDash_InstallSeedPaste(string target);
+
+        [UnityEngine.Scripting.Preserve]
+        public void PasteSeed(string value)
+        {
+            if (Phase == AppPhase.Lobby) lobby.PasteSeed(value);
+        }
+#endif
 
         void SetupCamera()
         {
@@ -95,6 +115,7 @@ namespace NeonDash
                 cam = cameraObject.AddComponent<Camera>();
             }
             cam.orthographic = true;
+            if (FindAnyObjectByType<AudioListener>() == null) cam.gameObject.AddComponent<AudioListener>();
             cam.orthographicSize = 6f;
             cam.clearFlags = CameraClearFlags.SolidColor;
             cam.backgroundColor = Palette.Background;
@@ -116,8 +137,9 @@ namespace NeonDash
             records.Hide();
             lobby.Show();
             lobby.Refresh();
-            playerView.ResetForRun(CurrentLevel);
+            playerView.ResetForRun();
             levelView.SetCeilingVisible(false);
+            background.SetMode(PlayerMode.Cube, false, true);
             Audio.StopMusic();
             idleTime = 0f;
         }
@@ -129,8 +151,10 @@ namespace NeonDash
             Session = new RunSession();
             Session.Begin(CurrentLevel);
 
-            playerView.ResetForRun(CurrentLevel);
-            levelView.SetCeilingVisible(true);
+            playerView.ResetForRun();
+            fx.ResetForRun();
+            levelView.SetCeilingVisible(false);
+            background.SetMode(PlayerMode.Cube, false, true);
             levelView.ResetPickups();
             lobby.Hide();
             result.Hide();
@@ -140,10 +164,12 @@ namespace NeonDash
             hud.ResetForRun();
 
             Phase = AppPhase.Playing;
+            gameplayTouches.Clear();
+            FitCamera();
             cameraX = Session.Player.X + CameraLead();
-            cameraY = 4.7f;
-            Audio.StartMusic();
-            ApplyCamera(0f);
+            cameraY = cam.orthographicSize * (2.9f / 6f);
+            Audio.RestartMusic();
+            ApplyCamera();
 
             hud.ShowTutorial("SEED " + seed, "TAP TO JUMP  ·  SURVIVE 30 SECONDS", Palette.Cyan);
         }
@@ -162,6 +188,8 @@ namespace NeonDash
         {
             if (Phase != AppPhase.Playing) return;
             Phase = AppPhase.Paused;
+            gameplayTouches.Clear();
+            Audio.PauseMusic();
             pause.Show();
         }
 
@@ -169,7 +197,13 @@ namespace NeonDash
         {
             if (Phase != AppPhase.Paused) return;
             Phase = AppPhase.Playing;
+            Audio.ResumeMusic();
             pause.Hide();
+        }
+
+        void OnApplicationPause(bool suspended)
+        {
+            if (suspended && Phase == AppPhase.Playing) PauseRun();
         }
 
         public void OpenRecords()
@@ -188,25 +222,23 @@ namespace NeonDash
             EnterLobby();
         }
 
-        public void SetSeed(string value)
+        public bool SetSeed(string value)
         {
-            string cleaned = RecordStore.SanitiseSeed(value);
-            if (cleaned == seed)
-            {
-                store.SetSeed(cleaned);
-                return;
-            }
+            if (!SeedCode.TryNormalize(value, out string cleaned)) return false;
+            if (cleaned == seed) return true;
             seed = cleaned;
             store.SetSeed(cleaned);
             store.Save();
             BuildLevel(seed);
-            lobby.Refresh();
-            playerView.ResetForRun(CurrentLevel);
+            playerView.ResetForRun();
+            return true;
         }
 
         public void RandomSeed()
         {
-            string next = Random.Range(1000, 99999).ToString();
+            string next;
+            do { next = SeedCode.Generate(); }
+            while (next == seed || store.Table.Find(next) != null);
             SetSeed(next);
             idleTime = 0f;
         }
@@ -234,7 +266,7 @@ namespace NeonDash
         {
             CurrentLevel = LevelBuilder.Build(levelSeed);
             levelView.Build(CurrentLevel);
-            levelView.SetCeilingVisible(Phase == AppPhase.Playing || Phase == AppPhase.Paused || Phase == AppPhase.Rolling);
+            levelView.SetCeilingVisible(false);
         }
 
         // ------------------------------------------------------------------
@@ -261,6 +293,9 @@ namespace NeonDash
                 case AppPhase.Playing:
                     UpdatePlaying();
                     break;
+                case AppPhase.Rolling:
+                    ApplyCamera();
+                    break;
                 case AppPhase.Results:
                     if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Return)) RetryRun();
                     break;
@@ -270,8 +305,7 @@ namespace NeonDash
         void UpdatePlaying()
         {
             float dt = Time.deltaTime;
-            bool held = JumpHeld();
-            bool pressed = JumpPressed();
+            ReadJumpInput(out bool held, out bool pressed);
 
             Session.Advance(dt, held, pressed);
             HandleEvents();
@@ -315,6 +349,11 @@ namespace NeonDash
                 fx.Ring(center, Palette.Violet, 22, 8f);
                 fx.AddShake(0.12f);
             }
+            if (events.ModeChanged || events.GravityChanged)
+            {
+                levelView.SetCeilingVisible(player.Mode == PlayerMode.Ship || player.GravitySign < 0);
+                background.SetMode(player.Mode, player.GravitySign < 0);
+            }
             if (events.ModeChanged)
             {
                 hud.FlashMode();
@@ -333,24 +372,25 @@ namespace NeonDash
             if (events.Gem)
             {
                 // One burst per gem: several can be touched inside a single step.
+                bool highPickup = false;
                 for (int i = 0; i < Session.FrameGems.Count; i++)
                 {
                     int index = Session.FrameGems[i];
                     bool high = IsHighGem(index);
+                    highPickup |= high;
                     Color gemColor = high ? Palette.Cyan : Palette.Gold;
                     levelView.CollectGem(index);
                     fx.Ring(new Vector2(LevelGemX(index), LevelGemY(index)), gemColor, 10, 4.5f);
                     hud.PulseProgress();
                 }
-                Audio.PlayOrb();
+                Audio.PlayCoin(highPickup);
             }
-            if (events.Landed) playerView.OnLanded(player, fx);
-            if (!player.Alive)
+            if (events.Landed && player.Alive) playerView.OnLanded(player, fx);
+            if (events.Died)
             {
                 Audio.PlayDeath();
-                fx.Burst(center, Palette.Lime, 34);
-                fx.Burst(center, Palette.Magenta, 18);
-                fx.AddShake(0.75f);
+                fx.Shatter(PlayerView.VisualCenter(player), player.Rotation, player.GravitySign,
+                    player.Mode == PlayerMode.Ship ? Palette.Cyan : Palette.Pink);
             }
         }
 
@@ -374,11 +414,12 @@ namespace NeonDash
 
         void UpdateIdleCamera()
         {
+            FitCamera();
             idleTime += Time.deltaTime;
             float targetX = 10f + Mathf.Sin(idleTime * 0.16f) * 6f;
             cameraX = Mathf.Lerp(cameraX, targetX, Time.deltaTime * 1.2f);
-            cameraY = Mathf.Lerp(cameraY, 5.4f, Time.deltaTime * 1.5f);
-            ApplyCamera(Time.deltaTime);
+            cameraY = Mathf.Lerp(cameraY, 4.3f, Time.deltaTime * 1.5f);
+            ApplyCamera();
         }
 
         /// <summary>
@@ -389,27 +430,33 @@ namespace NeonDash
         float CameraLead()
         {
             float halfWidth = cam.orthographicSize * Mathf.Max(0.1f, cam.aspect);
-            return Mathf.Clamp(halfWidth * 0.6f, 3.2f, 8.2f);
+            return Mathf.Min(halfWidth * 0.42f, 7f);
         }
 
         void UpdateCamera(float dt, PlayerSim player)
         {
-            float targetX = player.X + CameraLead();
-            cameraX = Mathf.Lerp(cameraX, targetX, 1f - Mathf.Exp(-9f * dt));
+            FitCamera();
+            cameraX = player.X + CameraLead();
 
             // Like Geometry Dash, the camera holds its height in cube mode so the floor stays put
             // instead of sliding out of frame on every jump. It only climbs for the ceiling run
             // (flipped gravity) or to follow a ship high in the corridor.
             float targetY;
-            if (player.GravitySign < 0) targetY = 8.5f;
-            else if (player.Mode == PlayerMode.Ship) targetY = Mathf.Clamp(player.CenterY + 3.4f, 5.2f, 7.2f);
-            else targetY = 4.7f;
+            if (player.GravitySign < 0) targetY = 6.1f;
+            else if (player.Mode == PlayerMode.Ship) targetY = CurrentLevel.Ceiling * 0.5f;
+            else targetY = cam.orthographicSize * (2.9f / 6f) + Mathf.Max(0f, player.CenterY - 3.5f) * 0.55f;
 
             cameraY = Mathf.Lerp(cameraY, targetY, 1f - Mathf.Exp(-3.4f * dt));
-            ApplyCamera(dt);
+            ApplyCamera();
         }
 
-        void ApplyCamera(float dt)
+        void FitCamera()
+        {
+            // Keep at least 7.6 world units visible ahead of the cube in portrait.
+            cam.orthographicSize = Mathf.Clamp(5.4f / Mathf.Max(0.1f, cam.aspect), 6f, 18f);
+        }
+
+        void ApplyCamera()
         {
             Vector3 offset = Vector3.zero;
             if (fx != null && fx.ShakeAmount > 0.001f)
@@ -445,6 +492,7 @@ namespace NeonDash
             }
             else
             {
+                if (Session.Result.Completed) Audio.PlayClear();
                 Present();
             }
 
@@ -462,37 +510,59 @@ namespace NeonDash
         // ------------------------------------------------------------------
         // Input
         // ------------------------------------------------------------------
-        bool JumpHeld()
+        void ReadJumpInput(out bool held, out bool pressed)
         {
-            if (Input.touchCount > 0)
-            {
-                for (int i = 0; i < Input.touchCount; i++)
-                    if (!PointerOverUi(Input.GetTouch(i).fingerId)) return true;
-            }
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) return true;
-            return Input.GetMouseButton(0) && !PointerOverUi(-1);
-        }
+            held = Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
+            pressed = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
 
-        bool JumpPressed()
-        {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) return true;
-            if (Input.touchCount > 0)
+            int touchCount = Input.touchCount;
+            if (touchCount == 0)
             {
-                for (int i = 0; i < Input.touchCount; i++)
+                gameplayTouches.Clear();
+                if (Input.GetMouseButton(0) && !OverControl(Input.mousePosition, -1))
                 {
-                    Touch touch = Input.GetTouch(i);
-                    if (touch.phase == TouchPhase.Began && !PointerOverUi(touch.fingerId)) return true;
+                    held = true;
+                    pressed |= Input.GetMouseButtonDown(0);
                 }
+                return;
             }
-            return Input.GetMouseButtonDown(0) && !PointerOverUi(-1);
+
+            for (int i = 0; i < touchCount; i++)
+            {
+                Touch touch = Input.GetTouch(i);
+                if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                {
+                    gameplayTouches.Remove(touch.fingerId);
+                    continue;
+                }
+                if (touch.phase == TouchPhase.Began)
+                {
+                    gameplayTouches.Remove(touch.fingerId);
+                    if (!OverControl(touch.position, touch.fingerId))
+                    {
+                        gameplayTouches.Add(touch.fingerId);
+                        pressed = true;
+                    }
+                }
+                held |= gameplayTouches.Contains(touch.fingerId);
+            }
         }
 
-        static bool PointerOverUi(int fingerId)
+        bool OverControl(Vector2 position, int pointerId)
         {
-            if (EventSystem.current == null) return false;
-            return fingerId >= 0
-                ? EventSystem.current.IsPointerOverGameObject(fingerId)
-                : EventSystem.current.IsPointerOverGameObject();
+            EventSystem events = EventSystem.current;
+            if (events == null) return false;
+            if (touchPointer == null) touchPointer = new PointerEventData(events);
+            touchPointer.Reset();
+            touchPointer.position = position;
+            touchPointer.pointerId = pointerId;
+            events.RaycastAll(touchPointer, touchHits);
+            foreach (RaycastResult hit in touchHits)
+            {
+                Selectable control = hit.gameObject.GetComponentInParent<Selectable>();
+                if (control != null && control.IsInteractable()) return true;
+            }
+            return false;
         }
     }
 }

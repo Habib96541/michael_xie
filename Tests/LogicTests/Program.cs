@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using NeonDash.Core;
 
 namespace NeonDash.Tests
@@ -23,6 +24,7 @@ namespace NeonDash.Tests
             Console.WriteLine("=======================================");
 
             SeedDeterminism();
+            ShareCodeDeterminism();
             SeedVariety();
             LayoutSanity();
             JumpArc();
@@ -38,7 +40,8 @@ namespace NeonDash.Tests
             RecordBook();
             ThirtySecondTiming();
             ChunkPlayability();
-            FullLevelPlayability();
+            FullLevelPlayability(false);
+            FullLevelPlayability(true);
             FrameRateIndependence();
 
             Console.WriteLine();
@@ -102,6 +105,29 @@ namespace NeonDash.Tests
             Check(minTiles > 15, "every seed has enough obstacles (min " + minTiles + ")");
             Check(maxTiles < 400, "levels stay within a sane object budget (max " + maxTiles + ")");
             Check(minLastTile > 250f, "obstacles cover most of the course (last tile at " + minLastTile.ToString("0.0") + ")");
+        }
+
+        static void ShareCodeDeterminism()
+        {
+            string code = SeedCode.Generate();
+            Level original = LevelBuilder.Build(code);
+            Level replay = LevelBuilder.Build(" " + code.ToLowerInvariant() + " ");
+            Check(replay.Seed == code && original.Tiles.SequenceEqual(replay.Tiles)
+                  && original.Gems.SequenceEqual(replay.Gems) && original.Pads.SequenceEqual(replay.Pads)
+                  && original.Portals.SequenceEqual(replay.Portals),
+                "a pasted share code reproduces the course and pickups exactly");
+
+            Check(!SeedCode.TryNormalize(code + "1", out _) && !SeedCode.TryNormalize("seed 2026", out _)
+                  && SeedCode.TryNormalize("0002026", out string legacy) && legacy == "0002026",
+                "invalid codes are rejected and legacy numeric seeds retain leading zeroes");
+
+            var generated = new HashSet<string>();
+            for (int i = 0; i < 1000; i++) generated.Add(SeedCode.Generate());
+            Check(generated.Count == 1000 && generated.All(s => SeedCode.TryNormalize(s, out _)),
+                "1000 generated share codes are valid and distinct");
+            Check(!LevelBuilder.Build("ND1-0123456700000000").Tiles.SequenceEqual(
+                    LevelBuilder.Build("ND1-8123456700000000").Tiles),
+                "changing the high bits of a share code changes the layout");
         }
 
         /// <summary>
@@ -226,6 +252,7 @@ namespace NeonDash.Tests
             Check(peak > 2.5f, "cube clears a two block wall (" + peak.ToString("0.00") + " blocks)");
             Check(airtime > 0.47f && airtime < 0.60f, "airtime is about half a second (" + airtime.ToString("0.000") + "s)");
             Check(Math.Abs(player.Y) < 0.001f && player.Grounded, "cube lands back on the floor");
+            Check(Math.Abs(player.Rotation + 180f) < 0.001f, "a full floor jump lands flat after a half-turn");
             Check(travelled > 5.0f && travelled < 5.8f, "one jump covers about five and a half blocks (" + travelled.ToString("0.00") + ")");
         }
 
@@ -561,7 +588,7 @@ namespace NeonDash.Tests
             Check(flipFails == 0, "all flipped-gravity chunks teach a survivable pattern (" + flipFails + " failed)");
         }
 
-        static void FullLevelPlayability()
+        static void FullLevelPlayability(bool shareCodes)
         {
             int cleared = 0;
             int total = 300;
@@ -575,7 +602,8 @@ namespace NeonDash.Tests
 
             for (int i = 0; i < total; i++)
             {
-                string seed = (1000 + i).ToString();
+                string seed = shareCodes ? "ND1-" + ((ulong)i * 0x45D9F3B163A94BUL).ToString("X16")
+                    : (1000 + i).ToString();
                 Level level = LevelBuilder.Build(seed);
                 var session = new RunSession();
                 session.Begin(level);
@@ -614,7 +642,8 @@ namespace NeonDash.Tests
                 Console.WriteLine("  deaths at '" + ranked[i].Key + "': " + ranked[i].Value);
 
             float average = totalProgress / total * 100f;
-            Console.WriteLine("  autopilot: " + cleared + "/" + total + " seeds cleared ("
+            Console.WriteLine("  autopilot (" + (shareCodes ? "share codes" : "numeric seeds") + "): "
+                              + cleared + "/" + total + " seeds cleared ("
                               + (cleared * 100f / total).ToString("0.0") + "%), average progress "
                               + average.ToString("0.0") + "%, worst " + worstSeed + " at "
                               + (worst * 100f).ToString("0.0") + "% (" + worstChunk + ")");

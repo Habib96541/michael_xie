@@ -26,17 +26,15 @@ namespace NeonDash.Core
         public const float PlayerStartX = 0f;
 
         // ---- Cube ----------------------------------------------------------
-        /// <summary>Jump impulse (blocks/sec). With gravity 76.9 this peaks at 2.6 blocks.</summary>
-        public const float CubeJumpVelocity = 20f;
-        public const float CubeGravity = 76.9f;
+        /// <summary>Jump impulse and gravity give a firm takeoff and a roughly half-second arc.</summary>
+        public const float CubeJumpVelocity = 20.4f;
+        public const float CubeGravity = 78.4f;
         public const float CubeTerminalSpeed = 34f;
         /// <summary>Hitbox is deliberately smaller than the sprite, like Geometry Dash.</summary>
         public const float CubeHalfWidth = 0.30f;
         public const float CubeHalfHeight = 0.30f;
         /// <summary>Cosmetic spin while airborne; the cube snaps flat on landing.</summary>
-        public const float CubeSpinSpeed = 720f;
-        /// <summary>Time the view takes to settle the cube onto a 90 degree multiple.</summary>
-        public const float CubeLandSnapSeconds = 0.07f;
+        public const float CubeSpinSpeed = 360f;
 
         // ---- Ship ----------------------------------------------------------
         public const float ShipGravity = 52f;

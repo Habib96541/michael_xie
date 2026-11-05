@@ -1,132 +1,147 @@
+using System.Collections.Generic;
 using NeonDash.Core;
 using UnityEngine;
 
 namespace NeonDash
 {
-    /// <summary>
-    /// The player cube / ship. Visuals only: every transform here is driven by the simulation,
-    /// with a small amount of smoothing so landings look snapped and the ship banks into motion.
-    /// </summary>
+    /// <summary>Draws the cube and ship from the simulation pose.</summary>
     public sealed class PlayerView : MonoBehaviour
     {
-        Transform root;
+        const float CubeRadius = 0.46f;
+        static readonly Color Ink = new Color(0.018f, 0.025f, 0.07f);
         GameObject cube;
         GameObject ship;
-        MeshFilter cubeFilter;
-        MeshFilter shipFilter;
-        float visualRotation;
         float trailTimer;
-        float landFlash;
-        Material cubeMaterial;
-        Material shipMaterial;
-
-        public Vector3 Position { get { return root.position; } }
 
         void Awake()
         {
-            root = transform;
-            BuildCube();
-            BuildShip();
+            cube = BuildCube();
+            ship = BuildShip();
+            ResetForRun();
         }
 
-        void BuildCube()
+        GameObject BuildCube()
         {
-            var verts = new System.Collections.Generic.List<Vector3>();
-            var colors = new System.Collections.Generic.List<Color>();
-            var tris = new System.Collections.Generic.List<int>();
+            var verts = new List<Vector3>();
+            var colors = new List<Color>();
+            var tris = new List<int>();
 
-            MeshTools.AddQuad(verts, colors, tris, -0.46f, -0.46f, 0.46f, 0.46f, Palette.Lime);
-            MeshTools.AddQuad(verts, colors, tris, -0.46f, 0.38f, 0.46f, 0.46f, Color.white);
-            MeshTools.AddQuad(verts, colors, tris, -0.46f, -0.46f, 0.46f, -0.38f, Palette.Alpha(Palette.Lime, 0.55f));
-            MeshTools.AddQuad(verts, colors, tris, -0.30f, -0.30f, 0.30f, 0.30f, new Color(0.05f, 0.16f, 0.08f, 1f));
-            MeshTools.AddQuad(verts, colors, tris, -0.22f, -0.06f, -0.06f, 0.12f, Color.white);
-            MeshTools.AddQuad(verts, colors, tris, 0.06f, -0.06f, 0.22f, 0.12f, Color.white);
+            void Facet(Color color, params Vector2[] outline)
+            {
+                Vector2 start = outline[0];
+                for (int i = 1; i < outline.Length - 1; i++)
+                {
+                    Vector2 edge = outline[i];
+                    Vector2 next = outline[i + 1];
+                    MeshTools.AddTriangle(verts, colors, tris, start.x, start.y, edge.x, edge.y, next.x, next.y, color);
+                }
+            }
 
-            cube = MeshTools.CreateRenderer("Cube", root, 1);
-            cubeFilter = cube.GetComponent<MeshFilter>();
-            cubeFilter.mesh = MeshTools.Build(verts, colors, tris);
-            cubeMaterial = cube.GetComponent<MeshRenderer>().material;
+            void Chassis(float r, float c, Color color)
+            {
+                Facet(color, new Vector2(-r + c, -r), new Vector2(r - c, -r),
+                    new Vector2(r, -r + c), new Vector2(r, r - c), new Vector2(r - c, r),
+                    new Vector2(-r + c, r), new Vector2(-r, r - c), new Vector2(-r, -r + c));
+            }
+
+            // An angled power cell echoes the NeonDash wordmark. The square base still reads at speed.
+            Chassis(CubeRadius, 0.12f, Ink);
+            Chassis(0.413f, 0.102f, new Color(0.29f, 0.14f, 0.57f));
+            MeshTools.AddLine(verts, colors, tris, -0.37f, -0.26f, -0.37f, 0.25f, 0.046f, Palette.Cyan);
+            MeshTools.AddLine(verts, colors, tris, -0.37f, 0.25f, -0.25f, 0.37f, 0.046f, Palette.Cyan);
+            MeshTools.AddLine(verts, colors, tris, -0.25f, 0.37f, 0.24f, 0.37f, 0.046f, Palette.Cyan);
+            MeshTools.AddLine(verts, colors, tris, 0.37f, 0.24f, 0.37f, -0.25f, 0.046f, Palette.Pink);
+            MeshTools.AddLine(verts, colors, tris, 0.37f, -0.25f, 0.25f, -0.37f, 0.046f, Palette.Pink);
+            MeshTools.AddLine(verts, colors, tris, 0.25f, -0.37f, -0.24f, -0.37f, 0.046f, Palette.Pink);
+            Facet(Ink, new Vector2(-0.30f, -0.035f), new Vector2(0.065f, 0.31f),
+                new Vector2(0.31f, 0.035f), new Vector2(-0.065f, -0.31f));
+            Vector2 joint = new Vector2(0.03f, 0.00f);
+            Vector2 tip = new Vector2(0.067f, 0.24f);
+            Vector2 left = new Vector2(-0.23f, -0.045f);
+            Vector2 right = new Vector2(0.24f, 0.035f);
+            Vector2 baseTip = new Vector2(-0.068f, -0.24f);
+            Facet(new Color(0.82f, 1f, 1f), tip, joint, left);
+            Facet(Palette.Cyan, tip, right, joint);
+            Facet(new Color(0.58f, 0.25f, 0.97f), joint, right, baseTip);
+            Facet(Palette.Pink, joint, baseTip, left);
+            MeshTools.AddQuad(verts, colors, tris, -0.29f, 0.11f, -0.235f, 0.165f, Color.white);
+            MeshTools.AddQuad(verts, colors, tris, 0.235f, -0.165f, 0.29f, -0.11f, Palette.Pink);
+            return MakeMesh("Cube", verts, colors, tris);
         }
 
-        void BuildShip()
+        GameObject BuildShip()
         {
-            var verts = new System.Collections.Generic.List<Vector3>();
-            var colors = new System.Collections.Generic.List<Color>();
-            var tris = new System.Collections.Generic.List<int>();
+            var verts = new List<Vector3>();
+            var colors = new List<Color>();
+            var tris = new List<int>();
 
-            MeshTools.AddTriangle(verts, colors, tris, -0.52f, -0.12f, 0.52f, 0f, -0.52f, 0.12f, Palette.Cyan);
-            MeshTools.AddTriangle(verts, colors, tris, -0.52f, -0.12f, 0.52f, 0f, -0.30f, -0.30f, Palette.Alpha(Palette.Cyan, 0.7f));
-            MeshTools.AddQuad(verts, colors, tris, -0.16f, 0.02f, 0.20f, 0.26f, new Color(0.04f, 0.10f, 0.18f, 1f));
-            MeshTools.AddCircle(verts, colors, tris, 0.02f, 0.14f, 0.07f, 12, Color.white);
-            MeshTools.AddTriangle(verts, colors, tris, -0.52f, 0.12f, -0.32f, 0.12f, -0.42f, 0.40f, Palette.Magenta);
-
-            ship = MeshTools.CreateRenderer("Ship", root, 1);
-            shipFilter = ship.GetComponent<MeshFilter>();
-            shipFilter.mesh = MeshTools.Build(verts, colors, tris);
-            shipMaterial = ship.GetComponent<MeshRenderer>().material;
-            ship.SetActive(false);
+            MeshTools.AddTriangle(verts, colors, tris, -0.60f, -0.26f, 0.65f, -0.10f, -0.47f, 0.27f, Ink);
+            MeshTools.AddTriangle(verts, colors, tris, -0.54f, -0.21f, 0.54f, -0.10f, -0.43f, 0.21f, Palette.Cyan);
+            MeshTools.AddTriangle(verts, colors, tris, -0.50f, -0.19f, 0.54f, -0.10f, -0.23f, -0.34f, Ink);
+            MeshTools.AddTriangle(verts, colors, tris, -0.42f, -0.18f, 0.42f, -0.12f, -0.23f, -0.28f, new Color(0.10f, 0.45f, 0.93f));
+            MeshTools.AddQuad(verts, colors, tris, -0.28f, 0.04f, 0.14f, 0.41f, Ink);
+            MeshTools.AddQuad(verts, colors, tris, -0.23f, 0.09f, 0.09f, 0.36f, Palette.Violet);
+            MeshTools.AddQuad(verts, colors, tris, -0.16f, 0.17f, 0.02f, 0.29f, Ink);
+            return MakeMesh("Ship", verts, colors, tris);
         }
 
-        public void ResetForRun(Level level)
+        GameObject MakeMesh(string name, List<Vector3> verts, List<Color> colors, List<int> tris)
         {
-            visualRotation = 0f;
+            GameObject icon = MeshTools.CreateRenderer(name, transform, 1);
+            icon.transform.localPosition = Vector3.zero;
+            icon.GetComponent<MeshFilter>().sharedMesh = MeshTools.Build(verts, colors, tris);
+            return icon;
+        }
+
+        public static Vector2 VisualCenter(PlayerSim player)
+        {
+            float y = player.CenterY;
+            if (player.Mode == PlayerMode.Cube)
+                y += player.GravitySign * (CubeRadius - player.HalfHeight);
+            return new Vector2(player.X, y);
+        }
+
+        public void ResetForRun()
+        {
             trailTimer = 0f;
-            landFlash = 0f;
-            root.position = new Vector3(0f, 0f, 1f);
+            transform.position = new Vector3(0f, CubeRadius, 1f);
+            cube.transform.localRotation = Quaternion.identity;
             cube.SetActive(true);
             ship.SetActive(false);
-            SetAlpha(1f);
-        }
-
-        public void SetAlpha(float alpha)
-        {
-            if (cubeMaterial != null) cubeMaterial.color = new Color(1f, 1f, 1f, alpha);
-            if (shipMaterial != null) shipMaterial.color = new Color(1f, 1f, 1f, alpha);
         }
 
         public void Tick(PlayerSim player, float dt, Fx fx, bool alive)
         {
-            if (player == null) return;
-
-            landFlash = Mathf.Max(0f, landFlash - dt * 4f);
-            float squash = 1f + landFlash * 0.22f;
-
-            root.position = new Vector3(player.X, player.Y + player.HalfHeight, 1f);
+            Vector2 center = VisualCenter(player);
+            transform.position = new Vector3(center.x, center.y, 1f);
             bool shipMode = player.Mode == PlayerMode.Ship;
-            cube.SetActive(!shipMode);
-            ship.SetActive(shipMode);
+            cube.SetActive(alive && !shipMode);
+            ship.SetActive(alive && shipMode);
+            if (!alive) return;
 
-            if (!shipMode)
+            if (shipMode)
             {
-                float target = player.Grounded ? Mathf.Round(player.Rotation / 90f) * 90f : player.Rotation;
-                visualRotation = Mathf.Lerp(visualRotation, target, 1f - Mathf.Exp(-26f * dt));
-                cube.transform.localRotation = Quaternion.Euler(0f, 0f, visualRotation);
-                cube.transform.localScale = new Vector3(1f / squash, squash, 1f);
+                float bank = Mathf.Clamp(Mathf.Atan2(player.VY, GameConstants.BlockSpeed) * Mathf.Rad2Deg, -36f, 36f);
+                ship.transform.localRotation = Quaternion.Euler(0f, 0f, bank);
             }
             else
             {
-                float bank = Mathf.Clamp(-player.VY * 2.4f, -30f, 30f);
-                ship.transform.localRotation = Quaternion.Euler(0f, 0f, bank);
-                ship.transform.localScale = Vector3.one;
+                cube.transform.localRotation = Quaternion.Euler(0f, 0f, player.Rotation);
             }
 
-            if (!alive) return;
-
-            // Trail: dust behind the cube, exhaust behind the ship.
             trailTimer -= dt;
             if (trailTimer <= 0f)
             {
-                trailTimer = shipMode ? 0.015f : 0.035f;
-                Vector2 back = new Vector2(player.X - 0.35f, player.Y + player.HalfHeight);
-                fx.Trail(back, shipMode ? Palette.Magenta : Palette.Alpha(Palette.Lime, 0.7f), shipMode ? 0.22f : 0.14f);
+                trailTimer = shipMode ? 0.018f : 0.031f;
+                var back = center + new Vector2(-0.43f, shipMode ? -0.10f : -player.GravitySign * 0.29f);
+                fx.Trail(back, shipMode ? Palette.Gold : Palette.Cyan, shipMode ? 0.18f : 0.12f);
             }
         }
 
-        /// <summary>Called when the cube lands so the view can squash and puff dust.</summary>
         public void OnLanded(PlayerSim player, Fx fx)
         {
-            landFlash = 1f;
-            fx.Emit(new Vector2(player.X, player.Y), Palette.Alpha(Palette.Cyan, 0.55f), 5, 2.4f, 0.12f, 0.3f);
+            float surface = player.GravitySign > 0 ? player.Y : player.Y + player.HalfHeight * 2f;
+            fx.Emit(new Vector2(player.X, surface), Palette.Alpha(Palette.Cyan, 0.72f), 6, 2.4f, 0.1f, 0.22f);
         }
     }
 }

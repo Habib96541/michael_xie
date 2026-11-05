@@ -3,10 +3,19 @@
 A complete, from-scratch Geometry Dash style game for Unity: one-button auto-runner, seeded
 levels, 30 second runs, a multiplier you earn by collecting gems, and a per-seed record book.
 
-Everything is generated at runtime — meshes, particles, UI sprites and even the music. There are
-no imported art or audio assets and no third-party packages beyond Unity's own UGUI module.
+The level meshes, particles, and button glyphs are generated at runtime. The lobby wordmark,
+original run theme, and licensed sound effects ship with the project. The interface uses Lilita One
+and Rajdhani, with both Open Font Licenses in [the fonts folder](Assets/Resources/Fonts).
+See [audio credits](Assets/Resources/Audio/AudioCredits.txt).
 
-![status](https://img.shields.io/badge/build-unity%206000.6.7f1-informational) ![tests](https://img.shields.io/badge/logic%20checks-85%20passing-brightgreen)
+<details>
+<summary>Geometry Dash logo edit prompt</summary>
+
+Built-in ImageGen. undefined
+
+</details>
+
+![status](https://img.shields.io/badge/build-unity%206000.6.7f1-informational) ![tests](https://img.shields.io/badge/logic%20checks-95%20passing-brightgreen)
 
 ---
 
@@ -30,6 +39,16 @@ no imported art or audio assets and no third-party packages beyond Unity's own U
 Holding the jump button makes the cube jump again the moment it lands — the classic Geometry Dash
 "hold to buffer jumps" trick.
 
+On iPhone and iPad, tap the course to jump and hold to chain jumps or fly. The pause button
+has its own touch target, and the HUD rearranges itself in narrow windows. Landscape gives
+the longest view of the upcoming course. The native Unity UI uses the device safe area.
+
+For Safari testing, serve `Deliverables/index.html` over HTTP on a local test network or over
+HTTPS on a web host and open the URL in Safari. The page reserves space for the notch and
+home indicator. For a native build, open the project on a Mac with Unity iOS Build Support
+and Xcode, select **File → Build Profiles → iOS**, and choose **Simulator SDK** in the iOS
+Player Settings before building the Xcode project. Use your own bundle identifier for a device build.
+
 ### Build a WebGL player
 
 **Geometry Dash → Build WebGL** writes a playable web build to `Build/WebGL` and patches the generated
@@ -48,8 +67,8 @@ Opening `index.html` via `file://` does not work — that is a Unity WebGL restr
 
 ### Share it as one file (no server, ever)
 
-`python Tools/make_single_file.py` packs the WebGL build into **one 16 MB HTML file**:
-[`Deliverables/GeometryDash.html`](Deliverables/GeometryDash.html). Double-click it, or drag it into
+`python Tools/make_single_file.py` packs the WebGL build into **one self-contained HTML file**:
+[`Deliverables/index.html`](Deliverables/index.html). Double-click it, or drag it into
 any browser — it runs straight from disk, and you can email it, drop it in Drive/Discord, or open a
 copy on a machine that has never seen this project.
 
@@ -98,8 +117,10 @@ The player has **cube** and **ship** modes, gravity portals, jump pads and three
 
 ### Seeding
 
-Enter any seed (digits) and the level is rebuilt from it. The same seed always produces exactly the
-same layout, on any machine, which is what makes the record book meaningful. Levels are assembled
+The first launch generates a random `ND1-` seed, and **New** generates another. Use **Copy** to
+share the code. Enter or paste a code in the seed field to replay the same obstacle, portal, and
+pickup layout. The lobby remembers your last seed, and earlier numeric seeds still open the same
+courses and records. Levels are assembled
 from hand-authored chunk patterns (single/double/triple spikes, block hops, stair steps, pad
 launches, orb chains, ceiling-spike corridors, ship gates and windows) shuffled by the seed. Because
 every chunk is authored to be clearable, any shuffle stays playable — but the order genuinely
@@ -197,8 +218,8 @@ dotnet build
 ```
 
 `Tests/LogicTests` includes an **autopilot** that plays levels with no knowledge of the chunk
-library — it only reacts to geometry. It clears the full course on **300/300 seeds**, which is the
-evidence that seeded levels are actually beatable. See
+library — it only reacts to geometry. It clears the full course on **300/300 share codes** and
+**300/300 numeric seeds** in the test sweep. See
 [Deliverables/TestResults.md](Deliverables/TestResults.md) for the full results and the comparison
 against the real Geometry Dash.
 

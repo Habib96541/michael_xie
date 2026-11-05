@@ -21,8 +21,7 @@ namespace NeonDash
             var glow = UiKit.Sprite9(Root, "Card Glow", new Color(0.1f, 0.55f, 0.95f, 0.09f), UiKit.Glow, false);
             UiKit.Place(glow.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(1260f, 940f));
 
-            var cardImage = UiKit.Sprite9(Root, "Card", Palette.Panel, UiKit.Rounded);
-            card = cardImage.rectTransform;
+            card = UiKit.Frame(Root, "Record archive", Palette.Violet);
             UiKit.Place(card, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(1000f, 700f));
 
             var title = UiKit.Label(card, "SEED RECORDS", 46, Palette.Cyan, TextAnchor.MiddleCenter, FontStyle.Bold);
@@ -31,9 +30,13 @@ namespace NeonDash
             var subtitle = UiKit.Label(card, "EVERY SEED KEEPS ITS OWN BEST DISTANCE AND PAYOUT", 18, Palette.TextDim);
             UiKit.Place(subtitle.rectTransform, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -78f), new Vector2(880f, 28f));
 
-            var header = UiKit.Label(card, "SEED            BEST      PLAYER           MULTIPLIER      SCORE", 20,
-                Palette.Alpha(Palette.TextDim, 0.9f), TextAnchor.MiddleLeft, FontStyle.Bold);
-            UiKit.Place(header.rectTransform, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -118f), new Vector2(880f, 28f));
+            var header = UiKit.Container(card, "Column headings");
+            UiKit.Place(header, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -116f), new Vector2(890f, 30f));
+            AddHeading(header, "SEED", 20f);
+            AddHeading(header, "BEST", 280f);
+            AddHeading(header, "PLAYER", 407f);
+            AddHeading(header, "MULTIPLIER", 618f);
+            AddHeading(header, "SCORE", 870f, true);
 
             var listRect = UiKit.Container(card, "List");
             list = listRect;
@@ -45,11 +48,20 @@ namespace NeonDash
             Text backLabel;
             Button back = UiKit.Button(card, "BACK", Palette.PanelSoft, out backLabel, 26);
             UiKit.Place((RectTransform)back.transform, new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 26f), new Vector2(240f, 62f));
+            UiKit.AddButtonIcon(backLabel, IconKind.Back);
             back.onClick.AddListener(delegate
             {
-                App.Audio.PlayClick();
                 App.CloseRecords();
             });
+        }
+
+        static void AddHeading(RectTransform row, string caption, float x, bool right = false)
+        {
+            var alignment = right ? TextAnchor.MiddleRight : TextAnchor.MiddleLeft;
+            var label = UiKit.Label(row, caption, 20, Palette.Violet, alignment, FontStyle.Bold);
+            var anchor = new Vector2(0f, 0.5f);
+            var pivot = right ? new Vector2(1f, 0.5f) : anchor;
+            UiKit.Place(label.rectTransform, anchor, pivot, new Vector2(x, 0f), new Vector2(160f, 28f));
         }
 
         public void Present(RecordTable table)
@@ -80,25 +92,25 @@ namespace NeonDash
                 SeedRecord record = best[i];
                 var rowImage = UiKit.Sprite9(list, "Row " + i, i % 2 == 0
                     ? Palette.Alpha(Palette.PanelSoft, 0.55f)
-                    : new Color(0.05f, 0.07f, 0.14f, 0.35f), UiKit.Rounded);
+                    : new Color(0.05f, 0.07f, 0.14f, 0.35f), UiKit.Chamfered);
                 UiKit.Place(rowImage.rectTransform, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f),
                     new Vector2(0f, -6f - i * 50f), new Vector2(890f, 44f));
 
-                var rowAccent = UiKit.Sprite9(rowImage.transform, "Accent", i == 0 ? Palette.Gold : Palette.Alpha(Palette.Cyan, 0.35f), UiKit.Rounded);
+                var rowAccent = UiKit.Sprite9(rowImage.transform, "Accent", i == 0 ? Palette.Gold : Palette.Alpha(Palette.Cyan, 0.35f), UiKit.Chamfered);
                 UiKit.Place(rowAccent.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(6f, 0f), new Vector2(3f, 22f));
 
                 Color textColor = i == 0 ? Palette.Gold : Palette.Text;
-                var seedLabel = UiKit.Label(rowImage.transform, record.Seed, 22, textColor, TextAnchor.MiddleLeft, FontStyle.Bold);
-                UiKit.Place(seedLabel.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(20f, 0f), new Vector2(180f, 34f));
+                var seedLabel = UiKit.Label(rowImage.transform, record.Seed, 18, textColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+                UiKit.Place(seedLabel.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(20f, 0f), new Vector2(245f, 34f));
 
                 var distanceLabel = UiKit.Label(rowImage.transform, record.BestDistance + " m", 22, Palette.Cyan, TextAnchor.MiddleLeft);
-                UiKit.Place(distanceLabel.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(210f, 0f), new Vector2(160f, 34f));
+                UiKit.Place(distanceLabel.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(280f, 0f), new Vector2(160f, 34f));
 
                 var nameLabel = UiKit.Label(rowImage.transform, record.Name, 22, Palette.Text, TextAnchor.MiddleLeft);
-                UiKit.Place(nameLabel.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(370f, 0f), new Vector2(200f, 34f));
+                UiKit.Place(nameLabel.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(407f, 0f), new Vector2(200f, 34f));
 
                 var multiplierLabel = UiKit.Label(rowImage.transform, record.BestMultiplier.ToString("0.00") + "x", 22, Palette.Magenta, TextAnchor.MiddleLeft);
-                UiKit.Place(multiplierLabel.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(570f, 0f), new Vector2(160f, 34f));
+                UiKit.Place(multiplierLabel.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(618f, 0f), new Vector2(160f, 34f));
 
                 var payoutLabel = UiKit.Label(rowImage.transform, record.BestPayout.ToString("N0"), 22, Palette.Gold, TextAnchor.MiddleRight);
                 UiKit.Place(payoutLabel.rectTransform, new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-20f, 0f), new Vector2(200f, 34f));

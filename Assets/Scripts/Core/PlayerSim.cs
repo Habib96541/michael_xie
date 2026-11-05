@@ -159,7 +159,7 @@ namespace NeonDash.Core
                 Airtime += dt;
                 // Negative Z is clockwise on screen, i.e. the cube rolls forward in the
                 // direction it is travelling.
-                Rotation -= GameConstants.CubeSpinSpeed * dt;
+                Rotation -= GravitySign * GameConstants.CubeSpinSpeed * dt;
                 ResolveLanding(level, dt);
             }
         }

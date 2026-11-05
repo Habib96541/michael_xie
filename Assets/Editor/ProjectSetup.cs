@@ -64,6 +64,7 @@ namespace NeonDash.EditorTools
             var cameraObject = new GameObject("Main Camera");
             cameraObject.tag = "MainCamera";
             Camera camera = cameraObject.AddComponent<Camera>();
+            cameraObject.AddComponent<AudioListener>();
             camera.orthographic = true;
             camera.orthographicSize = 6f;
             camera.clearFlags = CameraClearFlags.SolidColor;

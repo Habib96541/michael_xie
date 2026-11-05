@@ -1,0 +1,23 @@
+NeonDash audio credits
+
+RunTheme: original 128 BPM chiptune created for NeonDash.
+UiConfirm, RewardTick and RewardFinish: original synthesized effects created for NeonDash.
+
+Arcade effects: 8-Bit Sound Effect Pack (Vol. 001) by Deva (@Shades).
+CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://opengameart.org/content/8-bit-sound-effect-pack-vol-001
+Artist: https://soundcloud.com/noshades
+
+Jump: Jump 3.wav
+Coin: Coin 5.wav
+HighCoin: Coin 1.wav
+Orb: Coin 2.wav
+Pad: Powerup 3.wav
+Portal: Fly 3.wav
+Crash: Explosion 3.wav
+Clear: Exit 2.wav
+Best: Powerup 2.wav
+
+Click: Audio/click_003.ogg from Interface Sounds by Kenney (CC0 1.0).
+Source: https://kenney.nl/assets/interface-sounds
+See Kenney-LICENSE.txt for the original license notice.

@@ -167,72 +167,37 @@ namespace NeonDash
             ceilingObject = ceilingMesh.gameObject;
         }
 
-        /// <summary>The lobby and record screens show the level open-topped; runs close it in.</summary>
+        /// <summary>Ship and inverted sections need a visible upper boundary.</summary>
         public void SetCeilingVisible(bool visible)
         {
             if (ceilingObject != null) ceilingObject.SetActive(visible);
         }
 
-        /// <summary>
-        /// Builds one masonry wall: a deep fill, three rows of offset bricks with a bevelled lip
-        /// facing the playfield, and a bright neon line marking the walkable surface.
-        /// </summary>
         static void AddWall(List<Vector3> verts, List<Color> colors, List<int> tris,
                             float x0, float x1, float surface, float depth, bool floor)
         {
             float dir = floor ? -1f : 1f;
             float far = surface + dir * depth;
-            Color voidColor = new Color(0.008f, 0.012f, 0.030f, 1f);
-
+            Color deep = new Color(0.011f, 0.044f, 0.17f);
+            Color near = new Color(0.045f, 0.29f, 0.72f);
             if (floor)
-                MeshTools.AddQuadGradient(verts, colors, tris, x0, far, x1, surface, voidColor, Palette.Track);
+                MeshTools.AddQuadGradient(verts, colors, tris, x0, far, x1, surface, deep, near);
             else
-                MeshTools.AddQuadGradient(verts, colors, tris, x0, surface, x1, far, Palette.Track, voidColor);
+                MeshTools.AddQuadGradient(verts, colors, tris, x0, surface, x1, far, near, deep);
 
-            const float block = 1f;
-            const float inset = 0.055f;
-
-            for (int row = 0; row < 3; row++)
+            float a = Mathf.Min(surface + dir * 0.20f, far);
+            float b = Mathf.Max(surface + dir * 0.20f, far);
+            for (float x = x0; x < x1 - 0.25f; x += 4f)
             {
-                float low = surface + dir * row * block;
-                float high = surface + dir * (row + 1) * block;
-                float a = Mathf.Min(low, high);
-                float b = Mathf.Max(low, high);
-
-                float fade = 1f - row * 0.30f;
-                var face = Color.Lerp(Palette.Track, new Color(0.13f, 0.17f, 0.30f, 1f), fade * 0.9f);
-                face.a = 0.96f;
-                Color bevel = Palette.Alpha(Palette.BlockEdge, 0.34f * fade);
-
-                float offset = row % 2 == 0 ? 0f : block * 0.5f;
-                for (float x = x0 - block; x < x1 + block; x += block)
-                {
-                    float bx0 = Mathf.Max(x + offset + inset, x0);
-                    float bx1 = Mathf.Min(x + offset + block - inset, x1);
-                    if (bx1 - bx0 < 0.05f) continue;
-
-                    MeshTools.AddQuad(verts, colors, tris, bx0, a + inset, bx1, b - inset, face);
-
-                    if (floor)
-                        MeshTools.AddQuad(verts, colors, tris, bx0, b - inset - 0.10f, bx1, b - inset, bevel);
-                    else
-                        MeshTools.AddQuad(verts, colors, tris, bx0, a + inset, bx1, a + inset + 0.10f, bevel);
-                }
+                float end = Mathf.Min(x + 3.86f, x1);
+                MeshTools.AddQuad(verts, colors, tris, x + 0.09f, a, end, b, new Color(0.014f, 0.08f, 0.29f, 0.58f));
+                MeshTools.AddQuadGradient(verts, colors, tris, x + 0.15f, a, end - 0.04f, b - 0.06f,
+                    new Color(0.05f, 0.21f, 0.64f, 0.12f), new Color(0.16f, 0.46f, 0.95f, 0.20f));
             }
 
-            // Bright play surface plus a soft bloom spilling into the playfield.
-            if (floor)
-            {
-                MeshTools.AddQuad(verts, colors, tris, x0, surface - 0.12f, x1, surface, Palette.TrackLine);
-                MeshTools.AddQuad(verts, colors, tris, x0, surface - 0.62f, x1, surface - 0.12f,
-                    Palette.Alpha(Palette.Cyan, 0.09f));
-            }
-            else
-            {
-                MeshTools.AddQuad(verts, colors, tris, x0, surface, x1, surface + 0.12f, Palette.TrackLine);
-                MeshTools.AddQuad(verts, colors, tris, x0, surface + 0.12f, x1, surface + 0.62f,
-                    Palette.Alpha(Palette.Cyan, 0.09f));
-            }
+            float lip = surface + dir * 0.045f;
+            MeshTools.AddQuad(verts, colors, tris, x0, Mathf.Min(surface, lip), x1, Mathf.Max(surface, lip),
+                new Color(0.77f, 0.96f, 1f));
         }
 
         void BuildTiles(Level level)
@@ -256,30 +221,31 @@ namespace NeonDash
 
         static void AddBlock(List<Vector3> verts, List<Color> colors, List<int> tris, float x, float y)
         {
-            MeshTools.AddQuad(verts, colors, tris, x, y, x + 1f, y + 1f, Palette.Block);
-            MeshTools.AddQuad(verts, colors, tris, x, y + 0.94f, x + 1f, y + 1f, Palette.BlockEdge);
-            MeshTools.AddQuad(verts, colors, tris, x, y, x + 0.06f, y + 1f, Palette.Alpha(Palette.BlockEdge, 0.45f));
-            MeshTools.AddQuad(verts, colors, tris, x + 0.94f, y, x + 1f, y + 1f, Palette.Alpha(Palette.BlockEdge, 0.45f));
-            MeshTools.AddQuad(verts, colors, tris, x + 0.22f, y + 0.22f, x + 0.78f, y + 0.28f,
-                Palette.Alpha(Palette.Cyan, 0.20f));
+            MeshTools.AddQuad(verts, colors, tris, x, y, x + 1f, y + 1f, new Color(0.59f, 0.82f, 1f));
+            MeshTools.AddQuad(verts, colors, tris, x + 0.05f, y + 0.05f, x + 0.95f, y + 0.95f,
+                new Color(0.015f, 0.045f, 0.13f));
+            MeshTools.AddQuadGradient(verts, colors, tris, x + 0.14f, y + 0.14f, x + 0.86f, y + 0.86f,
+                new Color(0.035f, 0.15f, 0.38f), new Color(0.09f, 0.39f, 0.78f));
+            MeshTools.AddQuad(verts, colors, tris, x + 0.17f, y + 0.81f, x + 0.83f, y + 0.86f,
+                new Color(0.35f, 0.63f, 0.94f));
+            MeshTools.AddQuad(verts, colors, tris, x + 0.33f, y + 0.33f, x + 0.67f, y + 0.67f,
+                new Color(0.025f, 0.10f, 0.28f));
         }
 
         static void AddSpike(List<Vector3> verts, List<Color> colors, List<int> tris, float x, float y, bool ceiling)
         {
-            if (!ceiling)
-            {
-                MeshTools.AddTriangle(verts, colors, tris, x, y, x + 1f, y, x + 0.5f, y + 1f, Palette.Spike);
-                MeshTools.AddTriangle(verts, colors, tris, x + 0.5f, y + 0.15f, x + 0.28f, y + 0.02f, x + 0.72f, y + 0.02f,
-                    Palette.Alpha(Palette.SpikeEdge, 0.22f));
-                MeshTools.AddLine(verts, colors, tris, x + 0.06f, y + 0.02f, x + 0.5f, y + 0.96f, 0.07f, Palette.SpikeEdge);
-                MeshTools.AddLine(verts, colors, tris, x + 0.94f, y + 0.02f, x + 0.5f, y + 0.96f, 0.07f, Palette.SpikeEdge);
-            }
-            else
-            {
-                MeshTools.AddTriangle(verts, colors, tris, x, y + 1f, x + 1f, y + 1f, x + 0.5f, y, Palette.Spike);
-                MeshTools.AddLine(verts, colors, tris, x + 0.06f, y + 0.98f, x + 0.5f, y + 0.04f, 0.07f, Palette.SpikeEdge);
-                MeshTools.AddLine(verts, colors, tris, x + 0.94f, y + 0.98f, x + 0.5f, y + 0.04f, 0.07f, Palette.SpikeEdge);
-            }
+            float baseY = y + (ceiling ? 1f : 0f);
+            float tipY = y + (ceiling ? 0.05f : 0.95f);
+            Color edge = new Color(0.84f, 0.96f, 1f);
+            Color glow = new Color(0.28f, 0.69f, 1f, 0.52f);
+
+            MeshTools.AddTriangle(verts, colors, tris, x + 0.03f, baseY, x + 0.97f, baseY, x + 0.5f, tipY,
+                new Color(0.009f, 0.023f, 0.07f));
+            MeshTools.AddLine(verts, colors, tris, x + 0.04f, baseY, x + 0.5f, tipY, 0.13f, glow);
+            MeshTools.AddLine(verts, colors, tris, x + 0.96f, baseY, x + 0.5f, tipY, 0.13f, glow);
+            MeshTools.AddLine(verts, colors, tris, x + 0.04f, baseY, x + 0.5f, tipY, 0.047f, edge);
+            MeshTools.AddLine(verts, colors, tris, x + 0.96f, baseY, x + 0.5f, tipY, 0.047f, edge);
+            MeshTools.AddLine(verts, colors, tris, x + 0.04f, baseY, x + 0.96f, baseY, 0.045f, edge);
         }
 
         void BuildPads(Level level)
@@ -356,43 +322,25 @@ namespace NeonDash
                 var colors = new List<Color>();
                 var tris = new List<int>();
 
-                float w = GameConstantsBridge.PortalWidth;
-                float h = GameConstantsBridge.PortalHeight;
-                float halfW = w * 0.5f;
-                float thickness = 0.14f;
+                float height = level.Ceiling;
+                float centerY = portal.Kind == PortalKind.GravityNormal ? height - 1.7f
+                    : portal.Kind == PortalKind.CubePortal ? height * 0.5f : 1.7f;
 
-                // Rectangular outline.
-                MeshTools.AddQuad(verts, colors, tris, -halfW, -thickness * 0.5f, halfW, thickness * 0.5f, color);
-                MeshTools.AddQuad(verts, colors, tris, -halfW, h - thickness * 0.5f, halfW, h + thickness * 0.5f, color);
-                MeshTools.AddQuad(verts, colors, tris, -halfW - thickness * 0.5f, 0f, -halfW + thickness * 0.5f, h, color);
-                MeshTools.AddQuad(verts, colors, tris, halfW - thickness * 0.5f, 0f, halfW + thickness * 0.5f, h, color);
-
-                // Faint fill so the full-height gate reads as a field, not just an outline.
-                MeshTools.AddQuad(verts, colors, tris, -halfW, 0f, halfW, h, Palette.Alpha(color, 0.09f));
-
-                // Horizontal rungs all the way up the gate.
-                for (float y = 0.35f; y < h - 0.2f; y += 0.62f)
-                    MeshTools.AddQuad(verts, colors, tris, -halfW + 0.14f, y, halfW - 0.14f, y + 0.14f,
-                        Palette.Alpha(color, 0.24f));
-
-                // Direction chevron at the middle of the gate.
-                bool upward = portal.Kind == PortalKind.GravityFlip;
-                bool downward = portal.Kind == PortalKind.GravityNormal;
-                float cy = h * 0.5f;
-                if (upward || downward)
+                MeshTools.AddCircle(verts, colors, tris, 0f, 0f, 0.63f, 32, Palette.Alpha(color, 0.20f));
+                MeshTools.AddRing(verts, colors, tris, 0f, 0f, 0.47f, 0.64f, 32, new Color(0.025f, 0.035f, 0.10f));
+                MeshTools.AddRing(verts, colors, tris, 0f, 0f, 0.50f, 0.59f, 32, color);
+                MeshTools.AddRing(verts, colors, tris, 0f, 0f, 0.51f, 0.535f, 32, Color.Lerp(color, Color.white, 0.65f));
+                for (int k = 0; k < verts.Count; k++)
                 {
-                    float dir = upward ? 1f : -1f;
-                    MeshTools.AddTriangle(verts, colors, tris, -0.34f, cy - dir * 0.26f, 0.34f, cy - dir * 0.26f,
-                        0f, cy + dir * 0.58f, Palette.Alpha(color, 0.95f));
+                    Vector3 v = verts[k];
+                    v.y = v.y * 2.40f + centerY;
+                    verts[k] = v;
                 }
-                else
-                {
-                    // Ship / cube portals: a diamond instead of an arrow.
-                    MeshTools.AddTriangle(verts, colors, tris, -0.3f, cy, 0f, cy + 0.5f, 0f, cy, Palette.Alpha(color, 0.85f));
-                    MeshTools.AddTriangle(verts, colors, tris, 0f, cy + 0.5f, 0.3f, cy, 0f, cy, Palette.Alpha(color, 0.85f));
-                    MeshTools.AddTriangle(verts, colors, tris, -0.3f, cy, 0f, cy, 0f, cy - 0.5f, Palette.Alpha(color, 0.85f));
-                    MeshTools.AddTriangle(verts, colors, tris, 0f, cy, 0.3f, cy, 0f, cy - 0.5f, Palette.Alpha(color, 0.85f));
-                }
+
+                // The faint rail indicates that the trigger spans every flight lane.
+                MeshTools.AddQuad(verts, colors, tris, -0.05f, 0f, 0.05f, height, Palette.Alpha(color, 0.23f));
+                for (float y = 0.35f; y < height; y += 0.52f)
+                    MeshTools.AddQuad(verts, colors, tris, -0.10f, y, 0.10f, y + 0.09f, Palette.Alpha(color, 0.45f));
 
                 GameObject go = MeshTools.CreateRenderer("Portal", root, 3);
                 go.transform.position = new Vector3(portal.X + 0.5f, portal.Y, 3f);
@@ -400,13 +348,13 @@ namespace NeonDash
 
                 Spinner spinner = new Spinner();
                 spinner.Transform = go.transform;
-                spinner.Pulse = 0.05f;
+                spinner.Pulse = 0.018f;
                 spinner.Phase = portal.X * 0.5f;
                 spinners.Add(spinner);
             }
         }
 
-        /// <summary>Multiplier gems: spinning diamonds, brighter and larger when they sit high.</summary>
+        /// <summary>Multiplier coins with a colored rim and a diamond inset.</summary>
         void BuildGems(Level level)
         {
             for (int i = 0; i < level.Gems.Count; i++)
@@ -420,10 +368,13 @@ namespace NeonDash
                 var colors = new List<Color>();
                 var tris = new List<int>();
 
-                MeshTools.AddRing(verts, colors, tris, 0f, 0f, 0.26f, 0.34f, 20, Palette.Alpha(color, 0.45f));
+                MeshTools.AddCircle(verts, colors, tris, 0f, 0f, 0.31f * scale, 24, new Color(0.03f, 0.06f, 0.14f));
+                MeshTools.AddRing(verts, colors, tris, 0f, 0f, 0.235f * scale, 0.30f * scale, 24, color);
+                MeshTools.AddRing(verts, colors, tris, 0f, 0f, 0.278f * scale, 0.29f * scale, 24,
+                    Color.Lerp(color, Color.white, 0.58f));
 
-                float h = 0.22f * scale;
-                float w = 0.15f * scale;
+                float h = 0.16f * scale;
+                float w = 0.12f * scale;
                 MeshTools.AddTriangle(verts, colors, tris, 0f, h, w, 0f, 0f, 0f, color);
                 MeshTools.AddTriangle(verts, colors, tris, w, 0f, 0f, -h, 0f, 0f, color);
                 MeshTools.AddTriangle(verts, colors, tris, 0f, -h, -w, 0f, 0f, 0f, color);

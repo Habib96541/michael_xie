@@ -165,6 +165,7 @@ namespace NeonDash.Core
 
         static string NormaliseSeed(string seed)
         {
+            if (SeedCode.TryNormalize(seed, out string code)) return code;
             if (string.IsNullOrEmpty(seed)) return "0000";
             string trimmed = seed.Trim();
             if (trimmed.Length == 0) return "0000";

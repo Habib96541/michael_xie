@@ -4,15 +4,16 @@ using UnityEngine;
 namespace NeonDash
 {
     /// <summary>
-    /// All audio is synthesised at runtime: a looping 128 BPM chiptune track and short effects
-    /// for jumps, orbs, pads, portals, death and UI clicks. No audio files to license or ship.
+    /// Plays bundled arcade effects and the run theme through the scene listener.
     /// </summary>
     public sealed class AudioDirector : MonoBehaviour
     {
-        const int SampleRate = 44100;
-
         AudioSource musicSource;
         AudioSource sfxSource;
+        AudioSource rewardSource;
+
+        static readonly int[] RewardNotes = { 0, 2, 4, 7, 9, 12, 14, 16 };
+        public static int RewardTickCount => RewardNotes.Length;
 
         AudioClip jumpClip;
         AudioClip orbClip;
@@ -20,186 +21,103 @@ namespace NeonDash
         AudioClip portalClip;
         AudioClip deathClip;
         AudioClip clickClip;
-        AudioClip multiplyClip;
+        AudioClip coinClip;
+        AudioClip highCoinClip;
+        AudioClip bestClip;
+        AudioClip clearClip;
+        AudioClip rewardTick;
+        AudioClip rewardFinish;
 
         public bool Muted { get; private set; }
+        public event Action<bool> MuteChanged;
 
         void Awake()
         {
             musicSource = gameObject.AddComponent<AudioSource>();
             musicSource.loop = true;
             musicSource.playOnAwake = false;
-            musicSource.volume = 0.34f;
-            // Synthesise the loop up front so starting a run never hitches.
-            musicSource.clip = BuildMusicLoop();
+            musicSource.volume = 0.57f;
+            musicSource.clip = LoadEffect("RunTheme");
 
             sfxSource = gameObject.AddComponent<AudioSource>();
             sfxSource.playOnAwake = false;
-            sfxSource.volume = 0.55f;
+            sfxSource.volume = 0.78f;
 
-            jumpClip = BuildJump();
-            orbClip = BuildTone("Orb", 980f, 1400f, 0.16f, 0.5f);
-            padClip = BuildTone("Pad", 520f, 1200f, 0.26f, 0.55f);
-            portalClip = BuildSweep();
-            deathClip = BuildDeath();
-            clickClip = BuildTone("Click", 720f, 480f, 0.07f, 0.35f);
-            multiplyClip = BuildTone("Multiply", 660f, 1320f, 0.3f, 0.45f);
+            rewardSource = gameObject.AddComponent<AudioSource>();
+            rewardSource.playOnAwake = false;
+            rewardSource.volume = 0.63f;
+
+            jumpClip = LoadEffect("Jump");
+            orbClip = LoadEffect("Orb");
+            padClip = LoadEffect("Pad");
+            portalClip = LoadEffect("Portal");
+            deathClip = LoadEffect("Crash");
+            clickClip = LoadEffect("UiConfirm");
+            coinClip = LoadEffect("Coin");
+            highCoinClip = LoadEffect("HighCoin");
+            bestClip = LoadEffect("Best");
+            clearClip = LoadEffect("Clear");
+            rewardTick = LoadEffect("RewardTick");
+            rewardFinish = LoadEffect("RewardFinish");
         }
 
-        public void StartMusic()
+        static AudioClip LoadEffect(string name)
         {
-            if (musicSource.clip == null) musicSource.clip = BuildMusicLoop();
-            if (!musicSource.isPlaying) musicSource.Play();
+            AudioClip clip = Resources.Load<AudioClip>("Audio/" + name);
+            if (clip == null) Debug.LogError("Missing NeonDash audio clip: " + name);
+            return clip;
         }
 
         public void RestartMusic()
         {
-            if (musicSource.clip == null) musicSource.clip = BuildMusicLoop();
             musicSource.Stop();
             musicSource.Play();
         }
 
+        public void PauseMusic() { musicSource.Pause(); }
+        public void ResumeMusic() { musicSource.UnPause(); }
         public void StopMusic() { musicSource.Stop(); }
-        public void SetMuted(bool muted) { Muted = muted; musicSource.mute = muted; sfxSource.mute = muted; }
-        public bool IsMuted { get { return Muted; } }
 
-        public void PlayJump() { Play(jumpClip, 0.4f); }
-        public void PlayOrb() { Play(orbClip, 0.55f); }
-        public void PlayPad() { Play(padClip, 0.55f); }
-        public void PlayPortal() { Play(portalClip, 0.5f); }
-        public void PlayDeath() { Play(deathClip, 0.75f); }
-        public void PlayClick() { Play(clickClip, 0.4f); }
-        public void PlayMultiply() { Play(multiplyClip, 0.5f); }
+        public void SetMuted(bool muted)
+        {
+            Muted = muted;
+            musicSource.mute = muted;
+            sfxSource.mute = muted;
+            rewardSource.mute = muted;
+            MuteChanged?.Invoke(muted);
+        }
+
+        public void PlayJump() { Play(jumpClip, 0.37f); }
+        public void PlayOrb() { Play(orbClip, 0.52f); }
+        public void PlayPad() { Play(padClip, 0.48f); }
+        public void PlayPortal() { Play(portalClip, 0.48f); }
+        public void PlayDeath() { Play(deathClip, 0.92f); }
+        public void PlayClick() { Play(clickClip, 0.86f); }
+        public void PlayCoin(bool high) { Play(high ? highCoinClip : coinClip, 0.78f); }
+        public void PlayClear() { Play(clearClip, 0.64f); }
+
+        public void PlayRewardTick(int step)
+        {
+            if (Muted || rewardTick == null) return;
+            rewardSource.pitch = Mathf.Pow(2f, RewardNotes[step] / 12f);
+            rewardSource.PlayOneShot(rewardTick, 0.69f);
+        }
+
+        public void PlayRewardFinish(bool personalBest)
+        {
+            if (Muted) return;
+            AudioClip clip = personalBest ? bestClip : rewardFinish;
+            if (clip == null) return;
+            rewardSource.pitch = 1f;
+            rewardSource.PlayOneShot(clip, 0.85f);
+        }
+
+        public void StopReward() { rewardSource.Stop(); }
 
         void Play(AudioClip clip, float volume)
         {
             if (clip == null || sfxSource == null) return;
             sfxSource.PlayOneShot(clip, volume);
-        }
-
-        // ------------------------------------------------------------------
-        // Synthesis
-        // ------------------------------------------------------------------
-        static AudioClip MakeClip(string name, float[] samples)
-        {
-            AudioClip clip = AudioClip.Create(name, samples.Length, 1, SampleRate, false);
-            clip.SetData(samples, 0);
-            return clip;
-        }
-
-        static AudioClip BuildTone(string name, float startHz, float endHz, float seconds, float gain)
-        {
-            int count = Mathf.CeilToInt(SampleRate * seconds);
-            var samples = new float[count];
-            float phase = 0f;
-            for (int i = 0; i < count; i++)
-            {
-                float t = i / (float)count;
-                float hz = Mathf.Lerp(startHz, endHz, t);
-                phase += hz / SampleRate;
-                float square = Mathf.Sign(Mathf.Sin(phase * Mathf.PI * 2f)) * 0.5f;
-                float envelope = Mathf.Pow(1f - t, 2.2f);
-                samples[i] = square * envelope * gain;
-            }
-            return MakeClip(name, samples);
-        }
-
-        static AudioClip BuildJump()
-        {
-            int count = Mathf.CeilToInt(SampleRate * 0.1f);
-            var samples = new float[count];
-            float phase = 0f;
-            for (int i = 0; i < count; i++)
-            {
-                float t = i / (float)count;
-                float hz = Mathf.Lerp(520f, 900f, Mathf.Sqrt(t));
-                phase += hz / SampleRate;
-                float square = Mathf.Sign(Mathf.Sin(phase * Mathf.PI * 2f));
-                float envelope = Mathf.Pow(1f - t, 3f);
-                samples[i] = square * envelope * 0.32f;
-            }
-            return MakeClip("Jump", samples);
-        }
-
-        static AudioClip BuildSweep()
-        {
-            int count = Mathf.CeilToInt(SampleRate * 0.3f);
-            var samples = new float[count];
-            float previous = 0f;
-            for (int i = 0; i < count; i++)
-            {
-                float t = i / (float)count;
-                float noise = UnityEngine.Random.Range(-1f, 1f);
-                previous = Mathf.Lerp(previous, noise, 0.06f + t * 0.4f);
-                float tone = Mathf.Sin(i / (float)SampleRate * Mathf.PI * 2f * Mathf.Lerp(300f, 1500f, t)) * 0.3f;
-                samples[i] = (previous * 0.7f + tone) * Mathf.Pow(1f - t, 1.6f) * 0.55f;
-            }
-            return MakeClip("Portal", samples);
-        }
-
-        static AudioClip BuildDeath()
-        {
-            int count = Mathf.CeilToInt(SampleRate * 0.55f);
-            var samples = new float[count];
-            float phase = 0f;
-            for (int i = 0; i < count; i++)
-            {
-                float t = i / (float)count;
-                float hz = Mathf.Lerp(420f, 60f, t);
-                phase += hz / SampleRate;
-                float saw = (phase % 1f) * 2f - 1f;
-                float noise = UnityEngine.Random.Range(-1f, 1f) * Mathf.Pow(1f - t, 4f);
-                samples[i] = (saw * 0.35f + noise * 0.5f) * Mathf.Pow(1f - t, 1.4f) * 0.7f;
-            }
-            return MakeClip("Death", samples);
-        }
-
-        /// <summary>Four bars of 128 BPM chiptune: kick, hats, square bass and an arpeggio.</summary>
-        static AudioClip BuildMusicLoop()
-        {
-            const float bpm = 128f;
-            const int bars = 4;
-            float beat = 60f / bpm;
-            float total = beat * 4f * bars;
-            int count = Mathf.CeilToInt(SampleRate * total);
-            var samples = new float[count];
-
-            int[] bassNotes = { 45, 45, 48, 43 };
-            int[] arpNotes = { 69, 72, 76, 72, 69, 72, 79, 76 };
-
-            for (int i = 0; i < count; i++)
-            {
-                float time = i / (float)SampleRate;
-                float sixteenth = beat * 0.25f;
-                int step = Mathf.FloorToInt(time / sixteenth);
-                float stepPhase = (time % sixteenth) / sixteenth;
-
-                // Kick on every beat.
-                float kickPhase = (time % beat) / beat;
-                float kick = Mathf.Sin(kickPhase * Mathf.PI * 2f * Mathf.Lerp(90f, 45f, kickPhase))
-                             * Mathf.Pow(1f - kickPhase, 6f) * 0.5f;
-
-                // Hat on the off-beat eighths.
-                float eighth = (time % (beat * 0.5f)) / (beat * 0.5f);
-                float hat = (UnityEngine.Random.value * 2f - 1f) * Mathf.Pow(1f - eighth, 22f) * 0.12f;
-
-                // Bass: square wave per beat.
-                int bassNote = bassNotes[(step / 16) % bassNotes.Length];
-                float bassHz = 440f * Mathf.Pow(2f, (bassNote - 69) / 12f);
-                float bass = Mathf.Sign(Mathf.Sin(time * bassHz * Mathf.PI * 2f)) * 0.10f;
-                bass *= 1f - Mathf.Clamp01(stepPhase * 0.25f);
-
-                // Arpeggio on sixteenths.
-                int arpNote = arpNotes[step % arpNotes.Length];
-                float arpHz = 440f * Mathf.Pow(2f, (arpNote - 69) / 12f);
-                float arp = Mathf.Sin(time * arpHz * Mathf.PI * 2f) * 0.16f * Mathf.Pow(1f - stepPhase, 2.4f);
-
-                float mixed = (kick + hat + bass + arp) * 0.9f;
-                // Soft clip.
-                samples[i] = (float)Math.Tanh(mixed * 1.3f) * 0.7f;
-            }
-
-            return MakeClip("Geometry Dash Theme", samples);
         }
     }
 }

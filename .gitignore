@@ -112,3 +112,6 @@ InitTestScene*.unity*
 Tests/**/bin/
 Tests/**/obj/
 Tests/CompileCheck/lib/
+
+# Handwritten project for the standalone logic tests
+!/Tests/LogicTests/LogicTests.csproj

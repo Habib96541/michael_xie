@@ -25,7 +25,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, "Build", "WebGL", "Build")
-OUT = os.path.join(ROOT, "Deliverables", "GeometryDash.html")
+OUT = os.path.join(ROOT, "Deliverables", "index.html")
 
 PRODUCT = "Geometry Dash"
 COMPANY = "Neon Dash"
@@ -86,7 +86,7 @@ PAGE = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>__PRODUCT__</title>
 <style>
   html, body {
@@ -95,10 +95,15 @@ PAGE = r"""<!DOCTYPE html>
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-tap-highlight-color: transparent;
   }
-  #unity-container { position: absolute; inset: 0; }
+  #unity-container {
+    position: fixed; inset: 0;
+    inset: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
   #unity-canvas {
     width: 100%; height: 100%; display: block; outline: none;
-    background: #06030e;
+    background: #06030e; touch-action: none;
+    -webkit-user-select: none; user-select: none;
   }
 
   /* Boot screen: neon, so the wait matches the game's look. */
@@ -292,6 +297,7 @@ __LOADER__
       companyName: "__COMPANY__",
       productName: "__PRODUCT__",
       productVersion: "__VERSION__",
+      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
       showBanner: function (message, type) {
         if (type === "error") setStatus(String(message).split("\n")[0]);
       },

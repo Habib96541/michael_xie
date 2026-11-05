@@ -45,7 +45,8 @@ namespace NeonDash
             }
 
             PlayerName = Sanitise(PlayerPrefs.GetString(NameKey, "PLAYER"), 12, "PLAYER");
-            LastSeed = Sanitise(PlayerPrefs.GetString(SeedKey, "2026"), 10, "2026");
+            LastSeed = SeedCode.TryNormalize(PlayerPrefs.GetString(SeedKey), out string code)
+                ? code : SeedCode.Generate();
             Muted = PlayerPrefs.GetInt(MuteKey, 0) == 1;
         }
 
@@ -65,7 +66,7 @@ namespace NeonDash
 
         public void SetSeed(string value)
         {
-            LastSeed = Sanitise(value, 10, "2026");
+            if (SeedCode.TryNormalize(value, out string code)) LastSeed = code;
         }
 
         public void SetMuted(bool muted)
@@ -82,17 +83,5 @@ namespace NeonDash
             return trimmed;
         }
 
-        /// <summary>Seeds are digits only so a seed is easy to type and share.</summary>
-        public static string SanitiseSeed(string value)
-        {
-            if (string.IsNullOrEmpty(value)) return "2026";
-            string digits = string.Empty;
-            for (int i = 0; i < value.Length; i++)
-            {
-                char c = value[i];
-                if (c >= '0' && c <= '9' && digits.Length < 10) digits += c;
-            }
-            return digits.Length == 0 ? "2026" : digits;
-        }
     }
 }

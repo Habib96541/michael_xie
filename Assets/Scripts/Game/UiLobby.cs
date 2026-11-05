@@ -7,105 +7,186 @@ namespace NeonDash
     /// <summary>Title screen: name, seed entry, best distance for the seed, and PLAY.</summary>
     public sealed class UiLobby : UiScreen
     {
-        Text title;
-        Text titleGhost;
-        Text seedChip;
-        Text bestText;
+        RectTransform title;
+        Text seedStatus;
         Text recordLine;
         InputField nameField;
         InputField seedField;
         RectTransform card;
-        Image cardGlow;
         readonly System.Collections.Generic.List<CanvasGroup> chips = new System.Collections.Generic.List<CanvasGroup>();
         float time;
+        bool portrait;
+        readonly System.Collections.Generic.List<(RectTransform Item, Rect Wide, Rect Tall)> placements =
+            new System.Collections.Generic.List<(RectTransform, Rect, Rect)>();
 
         protected override void Construct()
         {
-            // Backdrop shade so the 3D lobby background reads as a scene, not noise.
-            var shade = UiKit.Sprite9(Root, "Shade", new Color(0.01f, 0.02f, 0.06f, 0.62f), UiKit.Glow, false);
+            // The track stays visible behind the launch console.
+            var shade = UiKit.Sprite9(Root, "Shade", new Color(0.024f, 0.012f, 0.075f, 0.44f), UiKit.Chamfered);
             UiKit.Stretch(shade.rectTransform);
 
-            title = UiKit.Label(Root, "GEOMETRY DASH", 106, Palette.Cyan, TextAnchor.MiddleCenter, FontStyle.Bold);
-            UiKit.Place(title.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 292f), new Vector2(1300f, 150f));
-            var titleShadow = title.gameObject.AddComponent<Shadow>();
-            titleShadow.effectColor = Palette.Alpha(Palette.Magenta, 0.55f);
-            titleShadow.effectDistance = new Vector2(5f, -6f);
-
-            titleGhost = UiKit.Label(Root, "GEOMETRY DASH", 106, Palette.Alpha(Palette.Magenta, 0.22f), TextAnchor.MiddleCenter, FontStyle.Bold);
-            UiKit.Place(titleGhost.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 292f), new Vector2(1300f, 150f));
-
-            var subtitle = UiKit.Label(Root, "SEEDED 30 SECOND RUNS  /  COLLECT GEMS TO EARN THE MULTIPLIER", 22, Palette.TextDim);
-            UiKit.Place(subtitle.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 208f), new Vector2(1200f, 40f));
-
-            // ---- main card ----
-            cardGlow = UiKit.Sprite9(Root, "Card Glow", new Color(0.1f, 0.55f, 0.95f, 0.10f), UiKit.Glow, false);
-            UiKit.Place(cardGlow.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -87f), new Vector2(1080f, 760f));
-
-            var cardImage = UiKit.Sprite9(Root, "Card", Palette.Panel, UiKit.Rounded);
-            card = cardImage.rectTransform;
-            UiKit.Place(card, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -87f), new Vector2(780f, 500f));
-
-            var cardEdge = UiKit.Sprite9(card, "Card Edge", Palette.Alpha(Palette.Cyan, 0.16f), UiKit.Rounded);
-            UiKit.Place(cardEdge.rectTransform, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -6f), new Vector2(740f, 4f));
-
-            var nameLabel = UiKit.Label(card, "PLAYER", 22, Palette.TextDim, TextAnchor.MiddleLeft);
-            UiKit.Place(nameLabel.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(-260f, 150f), new Vector2(140f, 50f));
-
-            nameField = UiKit.Field(card, "YOUR NAME", App.PlayerName, out _);
-            UiKit.Place((RectTransform)nameField.transform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(60f, 150f), new Vector2(440f, 62f));
-            nameField.characterLimit = 12;
-            nameField.onValueChanged.AddListener(delegate (string value) { App.SetPlayerName(value); });
-            nameField.onEndEdit.AddListener(delegate (string value) { App.SaveProfile(); });
-
-            var seedLabel = UiKit.Label(card, "SEED", 22, Palette.TextDim, TextAnchor.MiddleLeft);
-            UiKit.Place(seedLabel.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(-260f, 64f), new Vector2(140f, 50f));
-
-            seedField = UiKit.Field(card, "SEED", App.Seed, out _);
-            UiKit.Place((RectTransform)seedField.transform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(-64f, 64f), new Vector2(250f, 62f));
-            seedField.characterLimit = 10;
-            seedField.contentType = InputField.ContentType.IntegerNumber;
-            seedField.onEndEdit.AddListener(delegate (string value) { App.SetSeed(value); });
-            seedField.onValueChanged.AddListener(delegate (string value)
+            var logoTexture = Resources.Load<Texture2D>("Brand/GeometryDashLogo");
+            if (logoTexture != null)
             {
-                if (value.Length >= 10) App.SetSeed(value);
-            });
+                title = UiKit.Container(Root, "Geometry Dash Logo");
+                var logo = title.gameObject.AddComponent<RawImage>();
+                logo.texture = logoTexture;
+                logo.uvRect = new Rect(0f, 0.21f, 1f, 0.55f);
+                logo.raycastTarget = false;
+            }
+            else
+            {
+                title = UiKit.Label(Root, "GEOMETRY DASH", 86, Palette.Cyan, TextAnchor.MiddleCenter, FontStyle.Bold).rectTransform;
+            }
+            Adapt(title, 0f, 292f, 900f, 165f, 0f, 553f, 960f, 175f);
 
-            Text randomLabel;
-            Button randomButton = UiKit.Button(card, "RANDOM", Palette.PanelSoft, out randomLabel, 22);
-            UiKit.Place((RectTransform)randomButton.transform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(210f, 64f), new Vector2(190f, 62f));
+            var subtitle = UiKit.Label(Root, "SEED CHALLENGE  /  ARCADE TIME TRIAL", 23, Palette.Text, TextAnchor.MiddleCenter, FontStyle.Bold);
+            Adapt(subtitle.rectTransform, 0f, 187f, 900f, 32f, 0f, 455f, 950f, 36f);
+
+            card = UiKit.Frame(Root, "Launch console", Palette.Cyan);
+            Put(card, 0f, -48f, 1040f, 398f);
+            var divider = UiKit.Sprite9(card, "Console divider", Palette.PanelLine, UiKit.Chamfered);
+            divider.raycastTarget = false;
+            Adapt(divider.rectTransform, 92f, 25f, 2f, 245f, 0f, -21f, 820f, 2f);
+
+            var setupHeading = UiKit.Label(card, "COURSE SETUP", 32, Palette.Cyan, TextAnchor.MiddleLeft, FontStyle.Bold);
+            Adapt(setupHeading.rectTransform, -199f, 144f, 552f, 48f, 0f, 372f, 820f, 52f);
+            var launchHeading = UiKit.Label(card, "30 SECOND RUN", 32, Palette.Text, TextAnchor.MiddleCenter, FontStyle.Bold);
+            Adapt(launchHeading.rectTransform, 297f, 144f, 352f, 48f, 0f, -75f, 820f, 48f);
+
+            var nameLabel = UiKit.Label(card, "PLAYER", 20, Palette.TextDim, TextAnchor.MiddleLeft, FontStyle.Bold);
+            Adapt(nameLabel.rectTransform, -199f, 88f, 552f, 25f, 0f, 300f, 820f, 30f);
+            nameField = UiKit.Field(card, "YOUR NAME", App.PlayerName, out _);
+            Adapt((RectTransform)nameField.transform, -199f, 46f, 552f, 54f, 0f, 235f, 820f, 88f);
+            nameField.characterLimit = 12;
+            nameField.onValueChanged.AddListener(App.SetPlayerName);
+            nameField.onEndEdit.AddListener(_ => App.SaveProfile());
+
+            var seedLabel = UiKit.Label(card, "COURSE SEED", 20, Palette.TextDim, TextAnchor.MiddleLeft, FontStyle.Bold);
+            Adapt(seedLabel.rectTransform, -199f, -8f, 552f, 25f, 0f, 167f, 820f, 30f);
+            seedField = UiKit.Field(card, "ENTER A SEED", App.Seed, out Text seedEntry);
+            seedEntry.fontSize = 24;
+            Adapt((RectTransform)seedField.transform, -323f, -48f, 304f, 54f, -192f, 103f, 436f, 88f);
+            seedField.characterLimit = 64;
+            seedField.onEndEdit.AddListener(ApplySeed);
+
+            Button randomButton = UiKit.Button(card, "NEW", Palette.PanelSoft, out Text randomLabel, 21);
+            Adapt((RectTransform)randomButton.transform, -110f, -48f, 106f, 54f, 119f, 103f, 164f, 88f);
+            UiKit.AddButtonIcon(randomLabel, IconKind.Shuffle);
             randomButton.onClick.AddListener(delegate
             {
                 App.RandomSeed();
-                seedField.text = App.Seed;
-                App.Audio.PlayClick();
+                Refresh();
+                SetSeedStatus("NEW COURSE GENERATED", Palette.Cyan);
             });
 
-            recordLine = UiKit.Label(card, "NO RECORD ON THIS SEED YET", 24, Palette.Gold);
-            UiKit.Place(recordLine.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -16f), new Vector2(700f, 40f));
+            Button copyButton = UiKit.Button(card, "COPY", Palette.PanelSoft, out Text copyLabel, 21);
+            Adapt((RectTransform)copyButton.transform, 7f, -48f, 106f, 54f, 314f, 103f, 192f, 88f);
+            UiKit.AddButtonIcon(copyLabel, IconKind.Copy);
+            copyButton.onClick.AddListener(CopySeed);
 
-            Text playLabel;
-            Button playButton = UiKit.Button(card, "PLAY", Palette.Cyan, out playLabel, 38);
-            UiKit.Place((RectTransform)playButton.transform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, -108f), new Vector2(560f, 92f));
-            playLabel.color = new Color(0.02f, 0.08f, 0.14f, 1f);
-            playButton.onClick.AddListener(delegate
+            seedStatus = UiKit.Label(card, "", 19, Palette.TextDim, TextAnchor.MiddleLeft);
+            Adapt(seedStatus.rectTransform, -199f, -94f, 552f, 27f, 0f, 30f, 820f, 33f);
+
+            Button playButton = UiKit.Button(card, "PLAY", Palette.Action, out Text playLabel, 40);
+            Adapt((RectTransform)playButton.transform, 297f, 48f, 352f, 84f, 0f, -165f, 820f, 126f);
+            UiKit.AddButtonIcon(playLabel, IconKind.Play);
+            playButton.onClick.AddListener(App.StartRun);
+
+            Button recordsButton = UiKit.Button(card, "RECORDS", Palette.PanelSoft, out Text recordsLabel, 24);
+            Adapt((RectTransform)recordsButton.transform, 262f, -48f, 282f, 54f, -65f, -285f, 690f, 91f);
+            UiKit.AddButtonIcon(recordsLabel, IconKind.Records);
+            recordsButton.onClick.AddListener(App.OpenRecords);
+
+            var soundButton = UiKit.Button(card, "", Palette.PanelSoft, out _, 20, playClick: false);
+            Adapt((RectTransform)soundButton.transform, 446f, -48f, 54f, 54f, 365f, -285f, 90f, 91f);
+            var soundIcon = UiIcon.Add(soundButton.transform, IconKind.Sound, Palette.Cyan, 28f);
+            soundButton.onClick.AddListener(delegate
             {
-                App.Audio.PlayClick();
-                App.StartRun();
+                App.ToggleMute();
+                if (!App.Audio.Muted) App.Audio.PlayClick();
             });
+            App.Audio.MuteChanged += muted => soundIcon.SetKind(muted ? IconKind.Muted : IconKind.Sound);
+            soundIcon.SetKind(App.Audio.Muted ? IconKind.Muted : IconKind.Sound);
 
-            Text recordsLabel;
-            Button recordsButton = UiKit.Button(card, "RECORDS", Palette.PanelSoft, out recordsLabel, 24);
-            UiKit.Place((RectTransform)recordsButton.transform, new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 26f), new Vector2(220f, 54f));
-            recordsButton.onClick.AddListener(delegate
-            {
-                App.Audio.PlayClick();
-                App.OpenRecords();
-            });
+            var recordStrip = UiKit.Sprite9(card, "Seed record strip", Palette.PanelSoft, UiKit.Chamfered);
+            Adapt(recordStrip.rectTransform, 0f, -147f, 950f, 49f, 0f, -386f, 820f, 62f);
+            var recordCaption = UiKit.Label(recordStrip.transform, "SEED RECORD", 19, Palette.Violet, TextAnchor.MiddleLeft, FontStyle.Bold);
+            Adapt(recordCaption.rectTransform, -376f, 0f, 150f, 30f, -315f, 0f, 150f, 30f);
+            recordLine = UiKit.Label(recordStrip.transform, "", 23, Palette.Gold, TextAnchor.MiddleLeft);
+            Adapt(recordLine.rectTransform, 85f, 0f, 746f, 34f, 71f, 0f, 610f, 34f);
 
             BuildChips();
-
-
+            RefreshLayout();
             Refresh();
+        }
+
+        void Adapt(RectTransform item, float x, float y, float w, float h, float tallX, float tallY, float tallW, float tallH)
+        {
+            placements.Add((item, new Rect(x, y, w, h), new Rect(tallX, tallY, tallW, tallH)));
+            Put(item, x, y, w, h);
+        }
+
+        void RefreshLayout()
+        {
+            bool tall = Root.rect.height > Root.rect.width * 1.35f;
+            if (tall == portrait) return;
+            portrait = tall;
+            card.sizeDelta = portrait ? new Vector2(960f, 920f) : new Vector2(1040f, 398f);
+            foreach (var placement in placements)
+            {
+                Rect frame = portrait ? placement.Tall : placement.Wide;
+                Put(placement.Item, frame.x, frame.y, frame.width, frame.height);
+            }
+            nameField.textComponent.fontSize = portrait ? 34 : 26;
+            seedField.textComponent.fontSize = portrait ? 32 : 24;
+        }
+
+        static void Put(RectTransform item, float x, float y, float width, float height)
+        {
+            var center = new Vector2(0.5f, 0.5f);
+            UiKit.Place(item, center, center, new Vector2(x, y), new Vector2(width, height));
+        }
+
+        void ApplySeed(string value)
+        {
+            string previous = App.Seed;
+            bool valid = App.SetSeed(value);
+            Refresh();
+            if (!valid) SetSeedStatus("ENTER AN ND1 CODE OR A NUMERIC SEED", Palette.Gold);
+            else if (App.Seed != previous) SetSeedStatus("SHARED COURSE LOADED", Palette.Cyan);
+        }
+
+        public void PasteSeed(string value)
+        {
+            if (!seedField.isFocused) return;
+            seedField.SetTextWithoutNotify(value);
+            seedField.DeactivateInputField(); // Commits through the same validation as typed codes.
+        }
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        [System.Runtime.InteropServices.DllImport("__Internal")]
+        static extern int NeonDash_CopySeed(string value);
+#endif
+
+        void CopySeed()
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            if (NeonDash_CopySeed(App.Seed) == 0)
+            {
+                SetSeedStatus("COPY BLOCKED BY THE BROWSER. SHARE THE CODE SHOWN ABOVE.", Palette.Gold);
+                return;
+            }
+#else
+            GUIUtility.systemCopyBuffer = App.Seed;
+#endif
+            SetSeedStatus("SEED COPIED", Palette.Cyan);
+        }
+
+        void SetSeedStatus(string message, Color color)
+        {
+            seedStatus.text = message;
+            seedStatus.color = color;
         }
 
         /// <summary>Three quick rule chips under the card: the whole game explained in one line.</summary>
@@ -117,11 +198,10 @@ namespace NeonDash
 
             for (int i = 0; i < titles.Length; i++)
             {
-                var chipImage = UiKit.Sprite9(Root, "Chip " + i, Palette.Alpha(Palette.Panel, 0.9f), UiKit.Rounded);
-                UiKit.Place(chipImage.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-                    new Vector2(offsets[i], -362f), new Vector2(250f, 46f));
+                var chipImage = UiKit.Sprite9(Root, "Chip " + i, Palette.Alpha(Palette.Panel, 0.9f), UiKit.Chamfered);
+                Adapt(chipImage.rectTransform, offsets[i], -303f, 250f, 46f, offsets[i], -560f, 250f, 46f);
 
-                var accent = UiKit.Sprite9(chipImage.transform, "Accent", accents[i], UiKit.Rounded);
+                var accent = UiKit.Sprite9(chipImage.transform, "Accent", accents[i], UiKit.Chamfered);
                 UiKit.Place(accent.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(9f, 0f), new Vector2(4f, 24f));
 
                 var label = UiKit.Label(chipImage.transform, titles[i], 17, Palette.Alpha(Palette.Text, 0.92f), TextAnchor.MiddleCenter, FontStyle.Bold);
@@ -146,17 +226,18 @@ namespace NeonDash
                 recordLine.color = Palette.Gold;
             }
             nameField.text = App.PlayerName;
-            seedField.text = App.Seed;
+            seedField.SetTextWithoutNotify(App.Seed);
+            SetSeedStatus("PASTE A SHARED SEED TO PLAY THE SAME COURSE", Palette.TextDim);
         }
 
         public override void Show()
         {
             base.Show();
+            RefreshLayout();
             Refresh();
             time = 0f;
-            UiKit.ScaleIn(title.transform, 0.5f, 0.02f);
-            UiKit.ScaleIn(titleGhost.transform, 0.5f, 0.02f);
-            UiKit.SlideIn(card, new Vector2(0f, -170f), new Vector2(0f, -52f), 0.52f, 0.05f);
+            UiKit.ScaleIn(title, 0.5f, 0.02f);
+            UiKit.SlideIn(card, new Vector2(0f, -100f), new Vector2(0f, -48f), 0.52f, 0.05f);
             Group.alpha = 1f;
             UiKit.FadeIn(Group, 0.28f);
 
@@ -172,12 +253,10 @@ namespace NeonDash
 
         void Update()
         {
+            RefreshLayout();
             time += Time.unscaledDeltaTime;
             float pulse = 1f + Mathf.Sin(time * 2.1f) * 0.012f;
-            if (title != null) title.rectTransform.localScale = new Vector3(pulse, pulse, 1f);
-            if (titleGhost != null) titleGhost.rectTransform.localScale = new Vector3(pulse * 1.01f, pulse * 1.01f, 1f);
-            if (titleGhost != null) titleGhost.color = Palette.Alpha(Palette.Magenta, 0.16f + Mathf.Sin(time * 2.1f + 1.2f) * 0.06f);
-            if (cardGlow != null) cardGlow.color = new Color(0.1f, 0.55f, 0.95f, 0.07f + Mathf.Sin(time * 1.4f) * 0.03f);
+            if (title != null) title.localScale = new Vector3(pulse, pulse, 1f);
         }
     }
 }

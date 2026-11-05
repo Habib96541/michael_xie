@@ -7,10 +7,14 @@ namespace NeonDash.Core
     public sealed class DetRandom
     {
         uint state;
+        ulong wideState;
+        readonly bool useWideState;
 
         public DetRandom(string seed)
         {
-            state = Hash(seed == null ? string.Empty : seed.Trim());
+            string text = (seed ?? string.Empty).Trim();
+            useWideState = SeedCode.TryGetState(text, out wideState);
+            state = Hash(text);
             if (state == 0u) state = 0x9E3779B9u;
         }
 
@@ -38,6 +42,14 @@ namespace NeonDash.Core
         {
             unchecked
             {
+                if (useWideState)
+                {
+                    // SplitMix64 uses all 64 bits of a share code. Legacy seeds keep xorshift32.
+                    ulong z = wideState += 0x9E3779B97F4A7C15ul;
+                    z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9ul;
+                    z = (z ^ (z >> 27)) * 0x94D049BB133111EBul;
+                    return (uint)((z ^ (z >> 31)) >> 32);
+                }
                 uint x = state;
                 x ^= x << 13;
                 x ^= x >> 17;
