@@ -11,25 +11,9 @@ using UnityEngine.UI;
 
 namespace CyberScratch.Tests
 {
-    [UnityEditor.InitializeOnLoad]
     public class CyberScratchTests
     {
-        static CyberScratchTests()
-        {
-            UnityEditor.EditorApplication.delayCall += RunSafeTests;
-        }
-
-        private static void RunSafeTests()
-        {
-            var tests = new CyberScratchTests();
-            tests.Test_TicketModel_GenerationAndWinEvaluation();
-            tests.Test_TicketModel_NearMissEvaluation();
-            tests.Test_SymbolHierarchyAndMultipliers();
-            tests.Test_ProceduralArtAndSpritesGenerated();
-            tests.Test_ProceduralAudioClipsSynthesis();
-        }
-
-        [UnityEditor.MenuItem("CyberScratch/Run Automated Tests", false, 3)]
+        [UnityEditor.MenuItem("CyberScratch/Run Tests", false, 3)]
         public static void RunAllTests()
         {
             var tests = new CyberScratchTests();
@@ -42,7 +26,7 @@ namespace CyberScratch.Tests
             tests.Test_ModalLayoutsAndBoundingBoxesContained();
             tests.Test_MainMenuSceneBootstrap_CreatesValidHierarchy();
             tests.Test_GameSceneBootstrap_CreatesValidHierarchy();
-            Debug.Log("<color=#00FFAA><b>[CyberScratch Tests]</b> All 9 test suites passed successfully! 100% verified!</color>");
+            Debug.Log("[CyberScratch] All tests passed.");
         }
 
         [Test]

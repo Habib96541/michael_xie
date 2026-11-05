@@ -29,7 +29,7 @@ namespace CyberScratch.Core
                     return;
                 }
                 ReplaceLegacyHierarchy();
-                Debug.Log("<color=#00FFAA><b>[CyberScratch]</b> Initializing MainMenuScene hierarchy...</color>");
+                Debug.Log("[CyberScratch] Initializing MainMenuScene...");
                 BuildMainMenuSceneHierarchy();
                 return;
             }
@@ -46,7 +46,7 @@ namespace CyberScratch.Core
                     return;
                 }
                 ReplaceLegacyHierarchy();
-                Debug.Log("<color=#00FFAA><b>[CyberScratch]</b> Initializing GameScene hierarchy with fitted super-board...</color>");
+                Debug.Log("[CyberScratch] Initializing GameScene...");
                 BuildGameSceneHierarchy();
                 return;
             }
@@ -63,7 +63,7 @@ namespace CyberScratch.Core
                 ReplaceLegacyHierarchy();
             }
 
-            Debug.Log("<color=#00FFAA><b>[CyberScratch]</b> Building full CyberScratch 5X fallback hierarchy...</color>");
+            Debug.Log("[CyberScratch] Initializing fallback hierarchy...");
             BuildCompleteGameHierarchy();
         }
 

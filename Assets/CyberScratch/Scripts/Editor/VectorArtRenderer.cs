@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace CyberScratch.Editor
 {
-    public static class HumanVectorArtRenderer
+    public static class VectorArtRenderer
     {
         private const string SpritesPath = "Assets/CyberScratch/Sprites";
 
-        [MenuItem("CyberScratch/Recreate All Authentic 2D Vector Assets", false, 0)]
+        [MenuItem("CyberScratch/Generate 2D Vector Assets", false, 0)]
         public static void GenerateAllVectorAssets()
         {
             if (!Directory.Exists(SpritesPath))
@@ -17,7 +17,7 @@ namespace CyberScratch.Editor
                 Directory.CreateDirectory(SpritesPath);
             }
 
-            // 1. Six High-Fidelity 2D Vector Scratch Symbols (512x512)
+            // 1. Six 2D Vector Scratch Symbols (512x512)
             SavePNG("Symbol_BronzeGear.png", RenderBronzeCog(512));
             SavePNG("Symbol_SilverIngot.png", RenderSilverIngot(512));
             SavePNG("Symbol_GoldCore.png", RenderGoldCore(512));
@@ -29,7 +29,7 @@ namespace CyberScratch.Editor
             SavePNG("Foil_CyberHex.png", RenderRealisticFoil(512), TextureWrapMode.Repeat);
             SavePNG("Brush_SoftRound.png", RenderSoftBrush(128));
 
-            // 3. Crisp UI Frames, Borders, Badges, and Buttons
+            // 3. UI Frames, Borders, Badges, and Buttons
             SavePNG("UI_CellFrame.png", RenderCellFrame(512));
             SavePNG("UI_RowBorder_Idle.png", RenderRowBorder(512, 128, new Color(0.08f, 0.75f, 0.95f), new Color(0.12f, 0.16f, 0.22f)));
             SavePNG("UI_RowBorder_Win.png", RenderRowBorder(512, 128, new Color(1.0f, 0.85f, 0.15f), new Color(0.28f, 0.20f, 0.05f)));
@@ -42,7 +42,7 @@ namespace CyberScratch.Editor
             AssetDatabase.Refresh();
             ConfigureTextureImporters();
 
-            Debug.Log("<color=#00FFAA><b>[CyberScratch]</b> All 16 authentic human-crafted 2D vector assets generated cleanly at 512x512!</color>");
+            Debug.Log("[CyberScratch] Vector assets generated successfully.");
         }
 
         private static void SavePNG(string fileName, Texture2D texture, TextureWrapMode wrap = TextureWrapMode.Clamp)

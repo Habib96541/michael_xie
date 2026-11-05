@@ -101,7 +101,7 @@ namespace CyberScratch.Editor
                 EditorGUIUtility.PingObject(canvas);
             }
 
-            Debug.Log($"<color=#00FFAA><b>[CyberScratch]</b> Successfully refreshed {sceneName} with latest fitted layout!</color>");
+            Debug.Log($"[CyberScratch] Refreshed {sceneName}.");
         }
 
         [MenuItem("CyberScratch/Setup Two Scenes (MainMenu & GameScene)", false, 1)]
@@ -145,7 +145,7 @@ namespace CyberScratch.Editor
                 EditorGUIUtility.PingObject(canvas);
             }
 
-            Debug.Log("<color=#00FFAA><b>[CyberScratch]</b> Successfully configured 2 scenes: MainMenuScene (0) and GameScene (1)!</color>");
+            Debug.Log("[CyberScratch] Configured scenes: MainMenuScene (0) and GameScene (1).");
         }
 
         [MenuItem("CyberScratch/Setup CyberScratch Scene (Legacy / Single)", false, 10)]

@@ -109,7 +109,7 @@ namespace CyberScratch.UI
 
         #endregion
 
-        #region Authentic 2D Vector Rendering Methods
+        #region Vector Rendering Methods
 
         public static Texture2D RenderBronzeCog(int size)
         {
