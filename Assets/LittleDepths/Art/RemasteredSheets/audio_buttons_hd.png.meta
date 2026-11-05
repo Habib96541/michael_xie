@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 990e0a4c8b0ef1346a56d0579565126e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6976153433089987160
+    second: audio_buttons_hd_0
+  - first:
+      213: -1167189091614900123
+    second: audio_buttons_hd_1
+  - first:
+      213: 1100209635266560668
+    second: audio_buttons_hd_2
+  - first:
+      213: -2810754098427970331
+    second: audio_buttons_hd_3
+  - first:
+      213: 8629229439514312241
+    second: audio_buttons_hd_4
+  - first:
+      213: -6449930541528071241
+    second: audio_buttons_hd_5
+  - first:
+      213: -1861686966723986775
+    second: audio_buttons_hd_6
+  - first:
+      213: 392958342932798223
+    second: audio_buttons_hd_7
+  - first:
+      213: 7750263463307412447
+    second: audio_buttons_hd_8
+  - first:
+      213: -8671639734977280200
+    second: audio_buttons_hd_9
+  - first:
+      213: -7293919934140975254
+    second: audio_buttons_hd_10
+  - first:
+      213: -9028904422083458226
+    second: audio_buttons_hd_11
+  - first:
+      213: 2854733189886847650
+    second: audio_buttons_hd_12
+  - first:
+      213: 4383139642277665149
+    second: audio_buttons_hd_13
+  - first:
+      213: -4977307243325955100
+    second: audio_buttons_hd_14
+  - first:
+      213: 1522662181572028157
+    second: audio_buttons_hd_15
+  - first:
+      213: -1854553917021505211
+    second: audio_buttons_hd_16
+  - first:
+      213: 7611674968956675269
+    second: audio_buttons_hd_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: audio_buttons_hd_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 359
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85253fd069640d060800000000000000
+      internalID: 6976153433089987160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 239
+        width: 63
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560459884bf4dcfe0800000000000000
+      internalID: -1167189091614900123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 185
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92868885dab44f00800000000000000
+      internalID: 1100209635266560668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 455
+        width: 677
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec3a3c1a023ef8d0800000000000000
+      internalID: -2810754098427970331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_4
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 55
+        width: 434
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ef793a47e21c770800000000000000
+      internalID: 8629229439514312241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_5
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 0
+        width: 542
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b3c64e785e3d76a0800000000000000
+      internalID: -6449930541528071241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_6
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 222
+        width: 629
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa31714195f926e0800000000000000
+      internalID: -1861686966723986775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_7
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 131
+        width: 53
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b190ae781147500800000000000000
+      internalID: 392958342932798223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_8
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 195
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd38026ae877e8b60800000000000000
+      internalID: 7750263463307412447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_9
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 173
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8374488fa9528a780800000000000000
+      internalID: -8671639734977280200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 98
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a67f269f67ac6ca90800000000000000
+      internalID: -7293919934140975254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 111
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4b03cae343e2b280800000000000000
+      internalID: -9028904422083458226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_12
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 95
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa29bf06bc0e9720800000000000000
+      internalID: 2854733189886847650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_13
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 78
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7994e2284a04dc30800000000000000
+      internalID: 4383139642277665149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_14
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e3e39fde6d0deab0800000000000000
+      internalID: -4977307243325955100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_15
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 43
+        width: 123
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6a58dcf25912510800000000000000
+      internalID: 1522662181572028157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_16
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 31
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549bf1fc90d4346e0800000000000000
+      internalID: -1854553917021505211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audio_buttons_hd_17
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 0
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4256e4e0a12a960800000000000000
+      internalID: 7611674968956675269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      audio_buttons_hd_0: 6976153433089987160
+      audio_buttons_hd_1: -1167189091614900123
+      audio_buttons_hd_10: -7293919934140975254
+      audio_buttons_hd_11: -9028904422083458226
+      audio_buttons_hd_12: 2854733189886847650
+      audio_buttons_hd_13: 4383139642277665149
+      audio_buttons_hd_14: -4977307243325955100
+      audio_buttons_hd_15: 1522662181572028157
+      audio_buttons_hd_16: -1854553917021505211
+      audio_buttons_hd_17: 7611674968956675269
+      audio_buttons_hd_2: 1100209635266560668
+      audio_buttons_hd_3: -2810754098427970331
+      audio_buttons_hd_4: 8629229439514312241
+      audio_buttons_hd_5: -6449930541528071241
+      audio_buttons_hd_6: -1861686966723986775
+      audio_buttons_hd_7: 392958342932798223
+      audio_buttons_hd_8: 7750263463307412447
+      audio_buttons_hd_9: -8671639734977280200
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

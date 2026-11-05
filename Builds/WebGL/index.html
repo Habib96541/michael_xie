@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Little Depths</title>
+<meta name="description" content="Cast your line, discover fish, and explore the lake in Little Depths.">
+<meta name="theme-color" content="#071f47">
+<link rel="manifest" href="game.webmanifest"><link rel="icon" type="image/png" href="app-icon.png"><link rel="apple-touch-icon" href="app-icon.png">
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none;background:#071f47}
+#game{position:fixed;inset:0;width:100%;height:100%;height:100dvh;box-sizing:border-box;background:#071f47;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#game:fullscreen{width:100%;height:100%}
+#game:-webkit-full-screen{width:100%;height:100%}
+canvas{width:100%;height:100%;display:block;touch-action:none;outline:none}
+#loading,#rotate{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:16px;background:#071f47;color:white;text-align:center;font:700 20px system-ui,sans-serif}
+#rotate,#loading-rotate{display:none}
+#rotate strong{font-size:clamp(26px,7vw,38px);color:#ffe26c}
+#rotate p,#loading-rotate{margin:0;max-width:32ch;padding:0 16px;font:500 17px/1.5 system-ui,sans-serif;color:#b9ddff}
+@media (orientation:portrait){
+  canvas{visibility:hidden}
+  #rotate{display:grid}
+  #loading-rotate{display:block}
+}
+progress{width:min(70vw,340px);height:14px;accent-color:#16d6ef}
+#error{max-width:70vw;font-size:16px;line-height:1.5}
+button{min-height:48px;border:0;border-radius:12px;background:#17d5ed;color:#071f47;padding:12px 28px;font:700 17px system-ui;cursor:pointer;touch-action:manipulation}
+#fullscreen{position:absolute;z-index:1;top:calc(8px + env(safe-area-inset-top));right:calc(8px + env(safe-area-inset-right));display:grid;place-items:center;width:48px;height:48px;padding:0;border:2px solid #4eeaff;background:#07599a;color:white;box-shadow:0 2px 4px #071f4766}
+#fullscreen:active{background:#064277}
+#fullscreen svg{width:24px;height:24px;pointer-events:none}
+#fullscreen[aria-pressed="false"] .exit,#fullscreen[aria-pressed="true"] .enter{display:none}
+button:focus-visible{outline:3px solid #ffe26c;outline-offset:2px}
+details{max-width:80vw;font:14px system-ui}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;text-align:left;max-height:30vh;overflow:auto}
+[hidden]{display:none!important}
+</style></head>
+<body><main id="game" aria-label="Little Depths">
+<canvas id="unity-canvas" tabindex="0" aria-label="Little Depths fishing game"></canvas>
+<section id="rotate" aria-label="Landscape mode">
+  <strong>Turn your device</strong><p>Rotate to landscape to play Little Depths.</p>
+</section>
+<div id="loading"><div>Little Depths</div><div id="load-status" role="status">Downloading game…</div><progress id="progress" value="0" max="1"></progress><p id="loading-rotate">Rotate to landscape to play.</p><div id="error" role="alert"></div><button id="retry" hidden>Retry loading</button><details id="error-details" hidden><summary>Loading details</summary><pre id="error-message"></pre></details></div>
+<button id="fullscreen" type="button" aria-label="Fullscreen" aria-pressed="false" title="Enter fullscreen" hidden>
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path class="enter" d="M9 4H4v5m11-5h5v5M4 15v5h5m6 0h5v-5"/>
+    <path class="exit" d="M4 9h5V4m11 5h-5V4M9 20v-5H4m11 5v-5h5"/>
+  </svg>
+</button>
+</main>
+<script src="display.landscape-controls-4.js"></script>
+<script src="Build/8359ef418e8e5967d892072da3cdf8cd.loader.js"></script><script>
+window.littleDepthsWebConfig={"dataUrl":"Build/ed6140d9ae86795e1c7d6f1bae77b44e.data.unityweb?v=landscape-controls-4","frameworkUrl":"Build/ae988f8f1af503c3150d7ff24656166a.framework.js.unityweb?v=landscape-controls-4","codeUrl":"Build/d041587d8ceab0393cc368dc99087d41.wasm.unityweb?v=landscape-controls-4","streamingAssetsUrl":"StreamingAssets","companyName":"Quiet Lake Studio","productName":"Little Depths","productVersion":"1.1","matchWebGLToCanvasSize":true};
+window.littleDepthsDataManifest={"revision":"landscape-controls-4","compressedBytes":81310695,"decodedBytes":102440824,"parts":[{"url":"Build/ed6140d9ae86795e1c7d6f1bae77b44e.data.unityweb.part-000","bytes":16777216,"sha256":"0d69750c47ff68d48abbea011a23661fc0848a29977a2348ceab9327cc05103c"},{"url":"Build/ed6140d9ae86795e1c7d6f1bae77b44e.data.unityweb.part-001","bytes":16777216,"sha256":"cd57c6b98560c8eceffdc02c87fe4fe5578b52e03976f0c77922eb5b4701ad78"},{"url":"Build/ed6140d9ae86795e1c7d6f1bae77b44e.data.unityweb.part-002","bytes":16777216,"sha256":"d358b490ac061a542dcf820cf7a3baa2380e6d113284a9833bd24e5979d596a0"},{"url":"Build/ed6140d9ae86795e1c7d6f1bae77b44e.data.unityweb.part-003","bytes":16777216,"sha256":"4b9ea70e42fb4974630d6ab6e6111f8c3f774a04bfb706e4d7be9719d087f0a7"},{"url":"Build/ed6140d9ae86795e1c7d6f1bae77b44e.data.unityweb.part-004","bytes":14201831,"sha256":"1e7d06817cf201a538b36a1df3a8735dde8447e8bee6499df4f473315dd9547d"}]};
+</script><script src="startup.landscape-controls-4.js"></script></body></html>

@@ -1,0 +1,731 @@
+{
+  "source": "Exact crops of user supplied sheets; no image generation or redrawing",
+  "sprites": [
+    {
+      "name": "ref_prizes",
+      "source": "game.jpg",
+      "rect_1024": [
+        555,
+        14,
+        1018,
+        322
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_results",
+      "source": "game.jpg",
+      "rect_1024": [
+        24,
+        364,
+        521,
+        565
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_character",
+      "source": "menus.jpg",
+      "rect_1024": [
+        26,
+        11,
+        533,
+        319
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_upgrades",
+      "source": "menus.jpg",
+      "rect_1024": [
+        548,
+        11,
+        1007,
+        319
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_pause",
+      "source": "menus.jpg",
+      "rect_1024": [
+        278,
+        363,
+        414,
+        562
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_quests",
+      "source": "menus.jpg",
+      "rect_1024": [
+        25,
+        363,
+        266,
+        562
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_stage",
+      "source": "menus.jpg",
+      "rect_1024": [
+        419,
+        363,
+        531,
+        562
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_prize_back",
+      "source": "game.jpg",
+      "rect_1024": [
+        614,
+        89,
+        684,
+        161
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_prize_front",
+      "source": "game.jpg",
+      "rect_1024": [
+        614,
+        161,
+        684,
+        232
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_retry",
+      "source": "game.jpg",
+      "rect_1024": [
+        157,
+        505,
+        274,
+        544
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_home_text",
+      "source": "game.jpg",
+      "rect_1024": [
+        282,
+        505,
+        401,
+        544
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_select",
+      "source": "menus.jpg",
+      "rect_1024": [
+        145,
+        260,
+        267,
+        299
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_back",
+      "source": "menus.jpg",
+      "rect_1024": [
+        282,
+        260,
+        403,
+        299
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_wood_patch",
+      "source": "game.jpg",
+      "rect_1024": [
+        903,
+        418,
+        992,
+        433
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_green_patch",
+      "source": "game.jpg",
+      "rect_1024": [
+        324,
+        270,
+        326,
+        284
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_white_patch",
+      "source": "game.jpg",
+      "rect_1024": [
+        175,
+        438,
+        180,
+        449
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_wood_counter",
+      "source": "game.jpg",
+      "rect_1024": [
+        882,
+        407,
+        1013,
+        447
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_coin",
+      "source": "game.jpg",
+      "rect_1024": [
+        47,
+        33,
+        87,
+        75
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_plus",
+      "source": "game.jpg",
+      "rect_1024": [
+        199,
+        31,
+        228,
+        74
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_capacity_fish",
+      "source": "game.jpg",
+      "rect_1024": [
+        259,
+        33,
+        301,
+        73
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_preview_fill",
+      "source": "menus.jpg",
+      "rect_1024": [
+        105,
+        86,
+        119,
+        123
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_color_cover",
+      "source": "menus.jpg",
+      "rect_1024": [
+        500,
+        157,
+        512,
+        249
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_character_back",
+      "source": "menus.jpg",
+      "rect_1024": [
+        60,
+        146,
+        80,
+        177
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_character_next",
+      "source": "menus.jpg",
+      "rect_1024": [
+        293,
+        145,
+        315,
+        178
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_panel_patch",
+      "source": "game.jpg",
+      "rect_1024": [
+        599,
+        110,
+        600,
+        111
+      ],
+      "exterior_alpha_removed": false
+    },
+    {
+      "name": "ref_card_white",
+      "source": "game.jpg",
+      "rect_1024": [
+        254,
+        157,
+        337,
+        297
+      ],
+      "blank_face_from_same_sheet": [
+        260,
+        180,
+        264,
+        210
+      ]
+    },
+    {
+      "name": "ref_panel",
+      "source": "game.jpg",
+      "rect_1024": [
+        555,
+        14,
+        1018,
+        322
+      ],
+      "blank_face_from_same_sheet": [
+        599,
+        110,
+        600,
+        111
+      ]
+    },
+    {
+      "name": "ref_frame_gold",
+      "source": "menus.jpg",
+      "rect_1024": [
+        574,
+        76,
+        703,
+        301
+      ],
+      "blank_face_from_same_sheet": [
+        594,
+        184,
+        595,
+        185
+      ]
+    },
+    {
+      "name": "ref_frame_silver",
+      "source": "menus.jpg",
+      "rect_1024": [
+        713,
+        76,
+        842,
+        301
+      ],
+      "blank_face_from_same_sheet": [
+        594,
+        184,
+        595,
+        185
+      ]
+    },
+    {
+      "name": "ref_frame_epic",
+      "source": "menus.jpg",
+      "rect_1024": [
+        850,
+        76,
+        980,
+        301
+      ],
+      "blank_face_from_same_sheet": [
+        594,
+        184,
+        595,
+        185
+      ]
+    },
+    {
+      "name": "ref_mountains",
+      "source": "nature.jpg",
+      "rect_1024": [
+        15,
+        30,
+        677,
+        165
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_canyon",
+      "source": "nature.jpg",
+      "rect_1024": [
+        674,
+        37,
+        1008,
+        165
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_pines",
+      "source": "nature.jpg",
+      "rect_1024": [
+        13,
+        190,
+        320,
+        329
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_pine",
+      "source": "nature.jpg",
+      "rect_1024": [
+        13,
+        197,
+        91,
+        329
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_oak",
+      "source": "nature.jpg",
+      "rect_1024": [
+        406,
+        216,
+        487,
+        329
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_gold_tree",
+      "source": "nature.jpg",
+      "rect_1024": [
+        551,
+        207,
+        650,
+        329
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_willow",
+      "source": "nature.jpg",
+      "rect_1024": [
+        749,
+        204,
+        848,
+        330
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_bushes",
+      "source": "nature.jpg",
+      "rect_1024": [
+        14,
+        374,
+        118,
+        426
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_shore_left",
+      "source": "nature.jpg",
+      "rect_1024": [
+        560,
+        375,
+        777,
+        502
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_shore_right",
+      "source": "nature.jpg",
+      "rect_1024": [
+        790,
+        439,
+        1008,
+        502
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_cloud",
+      "source": "nature.jpg",
+      "rect_1024": [
+        795,
+        372,
+        863,
+        405
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_cloud_long",
+      "source": "nature.jpg",
+      "rect_1024": [
+        912,
+        372,
+        1002,
+        405
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_rocks",
+      "source": "nature.jpg",
+      "rect_1024": [
+        13,
+        496,
+        126,
+        559
+      ],
+      "exterior_alpha_removed": true
+    },
+    {
+      "name": "ref_hud",
+      "source": "game.jpg",
+      "rect_1024": [
+        20,
+        8,
+        545,
+        94
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_dock",
+      "source": "game.jpg",
+      "rect_1024": [
+        20,
+        122,
+        545,
+        328
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_play",
+      "source": "game.jpg",
+      "rect_1024": [
+        60,
+        135,
+        246,
+        321
+      ],
+      "exterior_alpha_removed": false,
+      "complete_outline": false
+    },
+    {
+      "name": "ref_icon_play",
+      "source": "game.jpg",
+      "rect_1024": [
+        547,
+        369,
+        618,
+        439
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_pause",
+      "source": "game.jpg",
+      "rect_1024": [
+        617,
+        369,
+        688,
+        439
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_shop",
+      "source": "game.jpg",
+      "rect_1024": [
+        684,
+        368,
+        758,
+        439
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_home",
+      "source": "game.jpg",
+      "rect_1024": [
+        754,
+        369,
+        828,
+        440
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_medal",
+      "source": "game.jpg",
+      "rect_1024": [
+        616,
+        436,
+        687,
+        506
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_trophy",
+      "source": "game.jpg",
+      "rect_1024": [
+        687,
+        436,
+        758,
+        506
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_map",
+      "source": "game.jpg",
+      "rect_1024": [
+        617,
+        500,
+        687,
+        570
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_gift",
+      "source": "menus.jpg",
+      "rect_1024": [
+        678,
+        499,
+        746,
+        566
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_settings",
+      "source": "menus.jpg",
+      "rect_1024": [
+        612,
+        499,
+        681,
+        565
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_outfit",
+      "source": "menus.jpg",
+      "rect_1024": [
+        341,
+        69,
+        418,
+        144
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_hat",
+      "source": "menus.jpg",
+      "rect_1024": [
+        420,
+        68,
+        498,
+        144
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_icon_accessory",
+      "source": "menus.jpg",
+      "rect_1024": [
+        341,
+        156,
+        419,
+        230
+      ],
+      "exterior_alpha_removed": true,
+      "complete_outline": true
+    },
+    {
+      "name": "ref_button_green",
+      "source": "game.jpg",
+      "rect_1024": [
+        156,
+        502,
+        282,
+        555
+      ],
+      "blank_face_from_same_sheet": [
+        172,
+        514,
+        174,
+        545
+      ]
+    },
+    {
+      "name": "ref_button_blue",
+      "source": "game.jpg",
+      "rect_1024": [
+        280,
+        502,
+        407,
+        555
+      ],
+      "blank_face_from_same_sheet": [
+        295,
+        514,
+        297,
+        545
+      ]
+    },
+    {
+      "name": "ref_button_red",
+      "source": "menus.jpg",
+      "rect_1024": [
+        289,
+        519,
+        408,
+        557
+      ],
+      "blank_face_from_same_sheet": [
+        302,
+        528,
+        305,
+        548
+      ]
+    }
+  ]
+}

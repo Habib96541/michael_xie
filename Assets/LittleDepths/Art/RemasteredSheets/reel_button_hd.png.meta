@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 54ea0ec051b9e2a41902f9f687cfde70
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4388718119590391170
+    second: reel_button_hd_0
+  - first:
+      213: 5537732335938319810
+    second: reel_button_hd_1
+  - first:
+      213: -2728328118545504242
+    second: reel_button_hd_2
+  - first:
+      213: 913047643560387586
+    second: reel_button_hd_3
+  - first:
+      213: -4300787808929127901
+    second: reel_button_hd_4
+  - first:
+      213: -4572628003670472408
+    second: reel_button_hd_5
+  - first:
+      213: 3483239246265948216
+    second: reel_button_hd_6
+  - first:
+      213: 6549029156817638751
+    second: reel_button_hd_7
+  - first:
+      213: -5145802005982490745
+    second: reel_button_hd_8
+  - first:
+      213: -214794945666116194
+    second: reel_button_hd_9
+  - first:
+      213: -4468199570149198069
+    second: reel_button_hd_10
+  - first:
+      213: 1890820978916018282
+    second: reel_button_hd_11
+  - first:
+      213: 2567809236966508578
+    second: reel_button_hd_12
+  - first:
+      213: -8488637747345959858
+    second: reel_button_hd_13
+  - first:
+      213: -9212022375215997640
+    second: reel_button_hd_14
+  - first:
+      213: -6893461450425304363
+    second: reel_button_hd_15
+  - first:
+      213: -6709056623352617568
+    second: reel_button_hd_16
+  - first:
+      213: 4906656784958503216
+    second: reel_button_hd_17
+  - first:
+      213: -3118269227808265056
+    second: reel_button_hd_18
+  - first:
+      213: 567836162761242052
+    second: reel_button_hd_19
+  - first:
+      213: 3954266097277717142
+    second: reel_button_hd_20
+  - first:
+      213: -6555829538103700874
+    second: reel_button_hd_21
+  - first:
+      213: -5026064773349733163
+    second: reel_button_hd_22
+  - first:
+      213: -2446043846159175632
+    second: reel_button_hd_23
+  - first:
+      213: 1670496235785098987
+    second: reel_button_hd_24
+  - first:
+      213: -4572331331985016556
+    second: reel_button_hd_25
+  - first:
+      213: 1928042783018337821
+    second: reel_button_hd_26
+  - first:
+      213: -2388430868746048202
+    second: reel_button_hd_27
+  - first:
+      213: -5035697554218921592
+    second: reel_button_hd_28
+  - first:
+      213: -896052670626006105
+    second: reel_button_hd_29
+  - first:
+      213: -2639222957333288433
+    second: reel_button_hd_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: reel_button_hd_0
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 850
+        width: 34
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e729e766f142813c0800000000000000
+      internalID: -4388718119590391170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_1
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 920
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c53cc8283af9dc40800000000000000
+      internalID: 5537732335938319810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_2
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 852
+        width: 154
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08a26f0808032ad0800000000000000
+      internalID: -2728328118545504242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_3
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 866
+        width: 46
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204ac698efbcbac00800000000000000
+      internalID: 913047643560387586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_4
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 862
+        width: 47
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 322e27a36488054c0800000000000000
+      internalID: -4300787808929127901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_5
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 860
+        width: 29
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829c737be03ca80c0800000000000000
+      internalID: -4572628003670472408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_6
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 850
+        width: 82
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8389165b3a3f65030800000000000000
+      internalID: 3483239246265948216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_7
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 870
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f559ac3e153d2ea50800000000000000
+      internalID: 6549029156817638751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_8
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 865
+        width: 118
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78fcbe4d6507698b0800000000000000
+      internalID: -5145802005982490745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_9
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 894
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95950c8225e40df0800000000000000
+      internalID: -214794945666116194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_10
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 872
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0734bb1a24cdf1c0800000000000000
+      internalID: -4468199570149198069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_11
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 868
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68452e89ab8d3a10800000000000000
+      internalID: 1890820978916018282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_12
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 896
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2280b5c65e0b2a320800000000000000
+      internalID: 2567809236966508578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_13
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 850
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44d87a81fc423a80800000000000000
+      internalID: -8488637747345959858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_14
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 896
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ddc460572582080800000000000000
+      internalID: -9212022375215997640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 856
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dafc8e75518550a0800000000000000
+      internalID: -6893461450425304363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_16
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 864
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5e5131c84a4e2a0800000000000000
+      internalID: -6709056623352617568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_17
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 866
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039363e6952f71440800000000000000
+      internalID: 4906656784958503216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_18
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 864
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ace47a98aea9b4d0800000000000000
+      internalID: -3118269227808265056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_19
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 866
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c531044bfb51e700800000000000000
+      internalID: 567836162761242052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_20
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 848
+        width: 53
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69acb9b901060e630800000000000000
+      internalID: 3954266097277717142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_21
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 856
+        width: 42
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 672d055f4c30505a0800000000000000
+      internalID: -6555829538103700874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_22
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 868
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc8266c7b4df3ab0800000000000000
+      internalID: -5026064773349733163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_23
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 878
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 030f6a4e418ed0ed0800000000000000
+      internalID: -2446043846159175632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_24
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 866
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6199cc97bce2710800000000000000
+      internalID: 1670496235785098987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_25
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 850
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419f4a9f0e0db80c0800000000000000
+      internalID: -4572331331985016556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_26
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 858
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16409922b8c1ca10800000000000000
+      internalID: 1928042783018337821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_27
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 864
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d60d187c69aded0800000000000000
+      internalID: -2388430868746048202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_28
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 864
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8815a7431cb9d1ab0800000000000000
+      internalID: -5035697554218921592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_29
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 856
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abfb43f7d49093f0800000000000000
+      internalID: -896052670626006105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reel_button_hd_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 1552
+        height: 801
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ae71914b89f5bd0800000000000000
+      internalID: -2639222957333288433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      reel_button_hd_0: -4388718119590391170
+      reel_button_hd_1: 5537732335938319810
+      reel_button_hd_10: -4468199570149198069
+      reel_button_hd_11: 1890820978916018282
+      reel_button_hd_12: 2567809236966508578
+      reel_button_hd_13: -8488637747345959858
+      reel_button_hd_14: -9212022375215997640
+      reel_button_hd_15: -6893461450425304363
+      reel_button_hd_16: -6709056623352617568
+      reel_button_hd_17: 4906656784958503216
+      reel_button_hd_18: -3118269227808265056
+      reel_button_hd_19: 567836162761242052
+      reel_button_hd_2: -2728328118545504242
+      reel_button_hd_20: 3954266097277717142
+      reel_button_hd_21: -6555829538103700874
+      reel_button_hd_22: -5026064773349733163
+      reel_button_hd_23: -2446043846159175632
+      reel_button_hd_24: 1670496235785098987
+      reel_button_hd_25: -4572331331985016556
+      reel_button_hd_26: 1928042783018337821
+      reel_button_hd_27: -2388430868746048202
+      reel_button_hd_28: -5035697554218921592
+      reel_button_hd_29: -896052670626006105
+      reel_button_hd_3: 913047643560387586
+      reel_button_hd_30: -2639222957333288433
+      reel_button_hd_4: -4300787808929127901
+      reel_button_hd_5: -4572628003670472408
+      reel_button_hd_6: 3483239246265948216
+      reel_button_hd_7: 6549029156817638751
+      reel_button_hd_8: -5145802005982490745
+      reel_button_hd_9: -214794945666116194
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "asset": "Assets/LittleDepths/Art/Provided/ref_pause.png",
+  "backup": "Logs/BeforeWelcomeReelUpdate/ref_pause.png",
+  "transparent_background": true,
+  "prompt": "Use case: precise-object-edit. Edit target: the provided transparent PAUSE menu sprite. Remove ONLY the cyan gear/settings button in the left side of the empty audio-control row, including its gear symbol, blue square, dark outline and shadow. Fill that entire former gear region with the continuous smooth matching blue background gradient. Preserve absolutely everything else: the exact portrait aspect ratio and composition; complete cyan/navy rounded outer border and all corners; original blue-to-purple background; PAUSE and GAME PAUSED lettering; glossy green RESUME button; orange RESTART button; red QUIT button; all wording, fonts, outlines, button sizes, positions and shadows. Leave the audio row completely blank across its full width so two live audio buttons can be placed in Unity. No new buttons, icons, text, or decorations. Keep the full panel visible, no cropping. Genuine transparent exterior, preserve transparency."
+}

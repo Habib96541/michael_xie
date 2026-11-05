@@ -1,0 +1,2808 @@
+fileFormatVersion: 2
+guid: 09eb0cf9aa985ed42ba5af9cd0678ed0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4583918077253545967
+    second: timing_parts_hd_0
+  - first:
+      213: 272993680988358959
+    second: timing_parts_hd_1
+  - first:
+      213: -3267367118486187725
+    second: timing_parts_hd_2
+  - first:
+      213: 2448817226088993331
+    second: timing_parts_hd_3
+  - first:
+      213: -8745006345179062991
+    second: timing_parts_hd_4
+  - first:
+      213: 5199119533818677995
+    second: timing_parts_hd_5
+  - first:
+      213: -6792489748196642774
+    second: timing_parts_hd_6
+  - first:
+      213: 1733037688807555695
+    second: timing_parts_hd_7
+  - first:
+      213: 1926850150033828948
+    second: timing_parts_hd_8
+  - first:
+      213: -484535270282378745
+    second: timing_parts_hd_9
+  - first:
+      213: 2893389363884738589
+    second: timing_parts_hd_10
+  - first:
+      213: 4341096987892474774
+    second: timing_parts_hd_11
+  - first:
+      213: -4097101928007121896
+    second: timing_parts_hd_12
+  - first:
+      213: 354315436207377792
+    second: timing_parts_hd_13
+  - first:
+      213: -1635659693513362968
+    second: timing_parts_hd_14
+  - first:
+      213: 7930579241620662563
+    second: timing_parts_hd_15
+  - first:
+      213: 5840863136062778831
+    second: timing_parts_hd_16
+  - first:
+      213: 668579470312271
+    second: timing_parts_hd_17
+  - first:
+      213: 1813285222893140706
+    second: timing_parts_hd_18
+  - first:
+      213: -4098379982841946283
+    second: timing_parts_hd_19
+  - first:
+      213: -1981483658136635282
+    second: timing_parts_hd_20
+  - first:
+      213: 3439847996970858787
+    second: timing_parts_hd_21
+  - first:
+      213: -4095213873698815437
+    second: timing_parts_hd_22
+  - first:
+      213: -8033574476114603217
+    second: timing_parts_hd_23
+  - first:
+      213: 633183288897361693
+    second: timing_parts_hd_24
+  - first:
+      213: -7259131772295717370
+    second: timing_parts_hd_25
+  - first:
+      213: -8236413008454167205
+    second: timing_parts_hd_26
+  - first:
+      213: 1784405091046905433
+    second: timing_parts_hd_27
+  - first:
+      213: 5595286516127625295
+    second: timing_parts_hd_28
+  - first:
+      213: -8675764088716813452
+    second: timing_parts_hd_29
+  - first:
+      213: 3427360155130866593
+    second: timing_parts_hd_30
+  - first:
+      213: -663788956047857534
+    second: timing_parts_hd_31
+  - first:
+      213: -3366727211834505324
+    second: timing_parts_hd_32
+  - first:
+      213: -112370797714959197
+    second: timing_parts_hd_33
+  - first:
+      213: 6706793639035972082
+    second: timing_parts_hd_34
+  - first:
+      213: 3482756153199517023
+    second: timing_parts_hd_35
+  - first:
+      213: -5629785169376627719
+    second: timing_parts_hd_36
+  - first:
+      213: 4612481972030411451
+    second: timing_parts_hd_37
+  - first:
+      213: -6751663381519992402
+    second: timing_parts_hd_38
+  - first:
+      213: 3929284402679975981
+    second: timing_parts_hd_39
+  - first:
+      213: 3129182758075293736
+    second: timing_parts_hd_40
+  - first:
+      213: 972602966281672817
+    second: timing_parts_hd_41
+  - first:
+      213: 1961352302707934872
+    second: timing_parts_hd_42
+  - first:
+      213: -5278677062579857011
+    second: timing_parts_hd_43
+  - first:
+      213: 5554988225261956427
+    second: timing_parts_hd_44
+  - first:
+      213: 3601012231874725839
+    second: timing_parts_hd_45
+  - first:
+      213: 881411464472843881
+    second: timing_parts_hd_46
+  - first:
+      213: 6909060162052271074
+    second: timing_parts_hd_47
+  - first:
+      213: 6210755956205261004
+    second: timing_parts_hd_48
+  - first:
+      213: -1616389952933197769
+    second: timing_parts_hd_49
+  - first:
+      213: -8891691741245304343
+    second: timing_parts_hd_50
+  - first:
+      213: 2922332042367465059
+    second: timing_parts_hd_51
+  - first:
+      213: -8712783590511554265
+    second: timing_parts_hd_52
+  - first:
+      213: -7226034114088128391
+    second: timing_parts_hd_53
+  - first:
+      213: 8306371351667644974
+    second: timing_parts_hd_54
+  - first:
+      213: -2514188884660447953
+    second: timing_parts_hd_55
+  - first:
+      213: 1555715622513462760
+    second: timing_parts_hd_56
+  - first:
+      213: 1764562347246534488
+    second: timing_parts_hd_57
+  - first:
+      213: -6191548850499640355
+    second: timing_parts_hd_58
+  - first:
+      213: 8311560063102887448
+    second: timing_parts_hd_59
+  - first:
+      213: -6427440140185006118
+    second: timing_parts_hd_60
+  - first:
+      213: 3174234043982148229
+    second: timing_parts_hd_61
+  - first:
+      213: 6384325640011226586
+    second: timing_parts_hd_62
+  - first:
+      213: 2038339252969733126
+    second: timing_parts_hd_63
+  - first:
+      213: -6455656537351424915
+    second: timing_parts_hd_64
+  - first:
+      213: -5174108567034921423
+    second: timing_parts_hd_65
+  - first:
+      213: 4283607194139506684
+    second: timing_parts_hd_66
+  - first:
+      213: 5589642210383114358
+    second: timing_parts_hd_67
+  - first:
+      213: 6969743733926181682
+    second: timing_parts_hd_68
+  - first:
+      213: -2437661593186250070
+    second: timing_parts_hd_69
+  - first:
+      213: 7400216710910859968
+    second: timing_parts_hd_70
+  - first:
+      213: -6576195539523151859
+    second: timing_parts_hd_71
+  - first:
+      213: 7019635454550015101
+    second: timing_parts_hd_72
+  - first:
+      213: 367752402053131497
+    second: timing_parts_hd_73
+  - first:
+      213: 1987631436351969348
+    second: timing_parts_hd_74
+  - first:
+      213: 1875138650415677150
+    second: timing_parts_hd_75
+  - first:
+      213: -4142779453615460752
+    second: timing_parts_hd_76
+  - first:
+      213: -4497145173260907269
+    second: timing_parts_hd_77
+  - first:
+      213: 263873816499690371
+    second: timing_parts_hd_78
+  - first:
+      213: -2825378244889944453
+    second: timing_parts_hd_79
+  - first:
+      213: 8105997732710397930
+    second: timing_parts_hd_80
+  - first:
+      213: 3792819467679120704
+    second: timing_parts_hd_81
+  - first:
+      213: -5587856175498813911
+    second: timing_parts_hd_82
+  - first:
+      213: -7228128444260846120
+    second: timing_parts_hd_83
+  - first:
+      213: -1264979941219492942
+    second: timing_parts_hd_84
+  - first:
+      213: -7168297022583787174
+    second: timing_parts_hd_85
+  - first:
+      213: -5207915795589292966
+    second: timing_parts_hd_86
+  - first:
+      213: 8902358441489735089
+    second: timing_parts_hd_87
+  - first:
+      213: 4776603492370074761
+    second: timing_parts_hd_88
+  - first:
+      213: -7457235101907976471
+    second: timing_parts_hd_89
+  - first:
+      213: -6677698063999759306
+    second: timing_parts_hd_90
+  - first:
+      213: 8855570019994702967
+    second: timing_parts_hd_91
+  - first:
+      213: 7157521714169398546
+    second: timing_parts_hd_92
+  - first:
+      213: 4503568365875751105
+    second: timing_parts_hd_93
+  - first:
+      213: 8108201694657618451
+    second: timing_parts_hd_94
+  - first:
+      213: 4124911889572747054
+    second: timing_parts_hd_95
+  - first:
+      213: 2262796077102025448
+    second: timing_parts_hd_96
+  - first:
+      213: 4045483248643790229
+    second: timing_parts_hd_97
+  - first:
+      213: -4613247752184744091
+    second: timing_parts_hd_98
+  - first:
+      213: -5683687508846640559
+    second: timing_parts_hd_99
+  - first:
+      213: 4050977224632768562
+    second: timing_parts_hd_100
+  - first:
+      213: 2607373476039728644
+    second: timing_parts_hd_101
+  - first:
+      213: 5813051411041852295
+    second: timing_parts_hd_102
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: timing_parts_hd_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 616
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef603264395d9f30800000000000000
+      internalID: 4583918077253545967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 566
+        width: 74
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29cc357e4ed9c300800000000000000
+      internalID: 272993680988358959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 683
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331d6dfbaeaf7a2d0800000000000000
+      internalID: -3267367118486187725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_3
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 677
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33254e0fa42fbf120800000000000000
+      internalID: 2448817226088993331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_4
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 11
+        width: 380
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d9015ef0f73a680800000000000000
+      internalID: -8745006345179062991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_5
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 648
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea8e0e7babf62840800000000000000
+      internalID: 5199119533818677995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_6
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 685
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a20b14aef8a3cb1a0800000000000000
+      internalID: -6792489748196642774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_7
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 681
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f620dbf889cfc0810800000000000000
+      internalID: 1733037688807555695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_8
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 667
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45cac28a00c8dba10800000000000000
+      internalID: 1926850150033828948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_9
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 538
+        width: 124
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 702cba52db59649f0800000000000000
+      internalID: -484535270282378745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_10
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 612
+        width: 45
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d184e3feb42672820800000000000000
+      internalID: 2893389363884738589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_11
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 610
+        width: 49
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69369dad5bcae3c30800000000000000
+      internalID: 4341096987892474774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_12
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 584
+        width: 98
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814419cf08b2427c0800000000000000
+      internalID: -4097101928007121896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_13
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 552
+        width: 214
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d04911308cae400800000000000000
+      internalID: 354315436207377792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_14
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 375
+        width: 128
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e136b2cc28fc49e0800000000000000
+      internalID: -1635659693513362968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_15
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 636
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329e2ef5dc31f0e60800000000000000
+      internalID: 7930579241620662563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_16
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 642
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd22b6731aee0150800000000000000
+      internalID: 5840863136062778831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_17
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 632
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4305d9c110620000800000000000000
+      internalID: 668579470312271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_18
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 596
+        width: 65
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eab2039d451a2910800000000000000
+      internalID: 1813285222893140706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_19
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 596
+        width: 62
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55f5228ae11af17c0800000000000000
+      internalID: -4098379982841946283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_20
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 632
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e68368c7c1b5084e0800000000000000
+      internalID: -1981483658136635282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_21
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 633
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32979c4378bccbf20800000000000000
+      internalID: 3439847996970858787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_22
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 659
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3324ee2eda0ea27c0800000000000000
+      internalID: -4095213873698815437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_23
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 642
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f235b82e392038090800000000000000
+      internalID: -8033574476114603217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_24
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 626
+        width: 57
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17d074b8d489c800800000000000000
+      internalID: 633183288897361693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_25
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 627
+        width: 7
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60edf861d12624b90800000000000000
+      internalID: -7259131772295717370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_26
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 570
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b55dea7d10262bd80800000000000000
+      internalID: -8236413008454167205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_27
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 644
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956df33e9fa73c810800000000000000
+      internalID: 1784405091046905433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_28
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 642
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40f15af07376ad40800000000000000
+      internalID: 5595286516127625295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_29
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 538
+        width: 53
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b91f8078e799780800000000000000
+      internalID: -8675764088716813452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_30
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 642
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab27e3f6ed609f20800000000000000
+      internalID: 3427360155130866593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_31
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 642
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 288a0fc167fb9c6f0800000000000000
+      internalID: -663788956047857534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_32
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 643
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49786f2407bf641d0800000000000000
+      internalID: -3366727211834505324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_33
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 609
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a49217da57c07ef0800000000000000
+      internalID: -112370797714959197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_34
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 628
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f9a694d741531d50800000000000000
+      internalID: 6706793639035972082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_35
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 628
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d53c6d44c355030800000000000000
+      internalID: 3482756153199517023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_36
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 626
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f33b81673cfed1b0800000000000000
+      internalID: -5629785169376627719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_37
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 630
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb214c36ae3d20040800000000000000
+      internalID: 4612481972030411451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_38
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 610
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9fc752de54d42a0800000000000000
+      internalID: -6751663381519992402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_39
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 610
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d201933985f978630800000000000000
+      internalID: 3929284402679975981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_40
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 610
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820ea5ca3271d6b20800000000000000
+      internalID: 3129182758075293736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_41
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 596
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178d5b8ae316f7d00800000000000000
+      internalID: 972602966281672817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_42
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 604
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8960d42178f183b10800000000000000
+      internalID: 1961352302707934872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_43
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 582
+        width: 56
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d89dce0ed2f5eb6b0800000000000000
+      internalID: -5278677062579857011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_44
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 538
+        width: 45
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d673afb58471d40800000000000000
+      internalID: 5554988225261956427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_45
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 592
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc7cab0cb8d59f130800000000000000
+      internalID: 3601012231874725839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_46
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 600
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9665cd89e076b3c00800000000000000
+      internalID: 881411464472843881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_47
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 588
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ebade29c99e1ef50800000000000000
+      internalID: 6909060162052271074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_48
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 580
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc0914cd2a9013650800000000000000
+      internalID: 6210755956205261004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_49
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 602
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73808ecd6ed6199e0800000000000000
+      internalID: -1616389952933197769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_50
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 586
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e19cc6b87d5a9480800000000000000
+      internalID: -8891691741245304343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_51
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 611
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366fd0562853e8820800000000000000
+      internalID: 2922332042367465059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 580
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 721d4ba9c79f51780800000000000000
+      internalID: -8712783590511554265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_53
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 592
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9703ce62248f7bb90800000000000000
+      internalID: -7226034114088128391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_54
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 594
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a91ac3cb8264370800000000000000
+      internalID: 8306371351667644974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_55
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 584
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f251497b78ecb1dd0800000000000000
+      internalID: -2514188884660447953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_56
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 562
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8edc07bbd13079510800000000000000
+      internalID: 1555715622513462760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_57
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 535
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85fb8a31b1cfc7810800000000000000
+      internalID: 1764562347246534488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_58
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 576
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3ad7cef13331aa0800000000000000
+      internalID: -6191548850499640355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_59
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 548
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816229247d7985370800000000000000
+      internalID: 8311560063102887448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_60
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 518
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf8f2d1f352dc6a0800000000000000
+      internalID: -6427440140185006118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_61
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 549
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582f1819b052d0c20800000000000000
+      internalID: 3174234043982148229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_62
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 526
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add994f085ea99850800000000000000
+      internalID: 6384325640011226586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_63
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 532
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60cfef040c2a94c10800000000000000
+      internalID: 2038339252969733126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_64
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 506
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d647d333596e866a0800000000000000
+      internalID: -6455656537351424915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_65
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 0
+        width: 1059
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ef3900cafd138b0800000000000000
+      internalID: -5174108567034921423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_66
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 486
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf73efb2c0e627b30800000000000000
+      internalID: 4283607194139506684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_67
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 488
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6703a63a9f5629d40800000000000000
+      internalID: 5589642210383114358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_68
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 488
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23bbc2caff089b060800000000000000
+      internalID: 6969743733926181682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_69
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 455
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2558f32bfab2ed0800000000000000
+      internalID: -2437661593186250070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_70
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 451
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca50caf3e9d2b660800000000000000
+      internalID: 7400216710910859968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_71
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 449
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08d63dbff8acb4a0800000000000000
+      internalID: -6576195539523151859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_72
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 417
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cf0391141ca6160800000000000000
+      internalID: 7019635454550015101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_73
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 427
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec6ca97cd48a1500800000000000000
+      internalID: 367752402053131497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_74
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 422
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448982ca24c759b10800000000000000
+      internalID: 1987631436351969348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_75
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 422
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edeb1aaeaa4d50a10800000000000000
+      internalID: 1875138650415677150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_76
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 385
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ea67c4904e186c0800000000000000
+      internalID: -4142779453615460752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_77
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 377
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfccb64ba4ee691c0800000000000000
+      internalID: -4497145173260907269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_78
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 229
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b9df986d779a300800000000000000
+      internalID: 263873816499690371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_79
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 254
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ed73da47d3ac8d0800000000000000
+      internalID: -2825378244889944453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_80
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae733509df94e7070800000000000000
+      internalID: 8105997732710397930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_81
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 301
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d333ce53dc2a430800000000000000
+      internalID: 3792819467679120704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_82
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 291
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e9b630a62f372b0800000000000000
+      internalID: -5587856175498813911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_83
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 303
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d57fe8e97780bb90800000000000000
+      internalID: -7228128444260846120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_84
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 268
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb1e931273e17ee0800000000000000
+      internalID: -1264979941219492942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_85
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 261
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51376456d7158c90800000000000000
+      internalID: -7168297022583787174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_86
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 252
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5c11c73d24c9b7b0800000000000000
+      internalID: -5207915795589292966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_87
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 216
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd1238f5d78b8b70800000000000000
+      internalID: 8902358441489735089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_88
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 310
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ccb9b9197e94240800000000000000
+      internalID: 4776603492370074761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_89
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 313
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee73385f24928890800000000000000
+      internalID: -7457235101907976471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_90
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 254
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c0bf1adfc0453a0800000000000000
+      internalID: -6677698063999759306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_91
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 216
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774126da30e45ea70800000000000000
+      internalID: 8855570019994702967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_92
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 279
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215463da310a45360800000000000000
+      internalID: 7157521714169398546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_93
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 270
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c8e5bd5193ef7e30800000000000000
+      internalID: 4503568365875751105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_94
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 229
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 312a9417b7e168070800000000000000
+      internalID: 8108201694657618451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_95
+      rect:
+        serializedVersion: 2
+        x: 2054
+        y: 216
+        width: 105
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27d4c34281ae3930800000000000000
+      internalID: 4124911889572747054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_96
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 200
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea40d61b01176f10800000000000000
+      internalID: 2262796077102025448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_97
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 184
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595d43ca491742830800000000000000
+      internalID: 4045483248643790229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_98
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 115
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 567b8268c937affb0800000000000000
+      internalID: -4613247752184744091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_99
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 112
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1520fdcf25c7f11b0800000000000000
+      internalID: -5683687508846640559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_100
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 114
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2381f63a256f73830800000000000000
+      internalID: 4050977224632768562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_101
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 124
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40e9f1cac504f2420800000000000000
+      internalID: 2607373476039728644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: timing_parts_hd_102
+      rect:
+        serializedVersion: 2
+        x: 2091
+        y: 23
+        width: 68
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b9b30a57b1ca050800000000000000
+      internalID: 5813051411041852295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      timing_parts_hd_0: 4583918077253545967
+      timing_parts_hd_1: 272993680988358959
+      timing_parts_hd_10: 2893389363884738589
+      timing_parts_hd_100: 4050977224632768562
+      timing_parts_hd_101: 2607373476039728644
+      timing_parts_hd_102: 5813051411041852295
+      timing_parts_hd_11: 4341096987892474774
+      timing_parts_hd_12: -4097101928007121896
+      timing_parts_hd_13: 354315436207377792
+      timing_parts_hd_14: -1635659693513362968
+      timing_parts_hd_15: 7930579241620662563
+      timing_parts_hd_16: 5840863136062778831
+      timing_parts_hd_17: 668579470312271
+      timing_parts_hd_18: 1813285222893140706
+      timing_parts_hd_19: -4098379982841946283
+      timing_parts_hd_2: -3267367118486187725
+      timing_parts_hd_20: -1981483658136635282
+      timing_parts_hd_21: 3439847996970858787
+      timing_parts_hd_22: -4095213873698815437
+      timing_parts_hd_23: -8033574476114603217
+      timing_parts_hd_24: 633183288897361693
+      timing_parts_hd_25: -7259131772295717370
+      timing_parts_hd_26: -8236413008454167205
+      timing_parts_hd_27: 1784405091046905433
+      timing_parts_hd_28: 5595286516127625295
+      timing_parts_hd_29: -8675764088716813452
+      timing_parts_hd_3: 2448817226088993331
+      timing_parts_hd_30: 3427360155130866593
+      timing_parts_hd_31: -663788956047857534
+      timing_parts_hd_32: -3366727211834505324
+      timing_parts_hd_33: -112370797714959197
+      timing_parts_hd_34: 6706793639035972082
+      timing_parts_hd_35: 3482756153199517023
+      timing_parts_hd_36: -5629785169376627719
+      timing_parts_hd_37: 4612481972030411451
+      timing_parts_hd_38: -6751663381519992402
+      timing_parts_hd_39: 3929284402679975981
+      timing_parts_hd_4: -8745006345179062991
+      timing_parts_hd_40: 3129182758075293736
+      timing_parts_hd_41: 972602966281672817
+      timing_parts_hd_42: 1961352302707934872
+      timing_parts_hd_43: -5278677062579857011
+      timing_parts_hd_44: 5554988225261956427
+      timing_parts_hd_45: 3601012231874725839
+      timing_parts_hd_46: 881411464472843881
+      timing_parts_hd_47: 6909060162052271074
+      timing_parts_hd_48: 6210755956205261004
+      timing_parts_hd_49: -1616389952933197769
+      timing_parts_hd_5: 5199119533818677995
+      timing_parts_hd_50: -8891691741245304343
+      timing_parts_hd_51: 2922332042367465059
+      timing_parts_hd_52: -8712783590511554265
+      timing_parts_hd_53: -7226034114088128391
+      timing_parts_hd_54: 8306371351667644974
+      timing_parts_hd_55: -2514188884660447953
+      timing_parts_hd_56: 1555715622513462760
+      timing_parts_hd_57: 1764562347246534488
+      timing_parts_hd_58: -6191548850499640355
+      timing_parts_hd_59: 8311560063102887448
+      timing_parts_hd_6: -6792489748196642774
+      timing_parts_hd_60: -6427440140185006118
+      timing_parts_hd_61: 3174234043982148229
+      timing_parts_hd_62: 6384325640011226586
+      timing_parts_hd_63: 2038339252969733126
+      timing_parts_hd_64: -6455656537351424915
+      timing_parts_hd_65: -5174108567034921423
+      timing_parts_hd_66: 4283607194139506684
+      timing_parts_hd_67: 5589642210383114358
+      timing_parts_hd_68: 6969743733926181682
+      timing_parts_hd_69: -2437661593186250070
+      timing_parts_hd_7: 1733037688807555695
+      timing_parts_hd_70: 7400216710910859968
+      timing_parts_hd_71: -6576195539523151859
+      timing_parts_hd_72: 7019635454550015101
+      timing_parts_hd_73: 367752402053131497
+      timing_parts_hd_74: 1987631436351969348
+      timing_parts_hd_75: 1875138650415677150
+      timing_parts_hd_76: -4142779453615460752
+      timing_parts_hd_77: -4497145173260907269
+      timing_parts_hd_78: 263873816499690371
+      timing_parts_hd_79: -2825378244889944453
+      timing_parts_hd_8: 1926850150033828948
+      timing_parts_hd_80: 8105997732710397930
+      timing_parts_hd_81: 3792819467679120704
+      timing_parts_hd_82: -5587856175498813911
+      timing_parts_hd_83: -7228128444260846120
+      timing_parts_hd_84: -1264979941219492942
+      timing_parts_hd_85: -7168297022583787174
+      timing_parts_hd_86: -5207915795589292966
+      timing_parts_hd_87: 8902358441489735089
+      timing_parts_hd_88: 4776603492370074761
+      timing_parts_hd_89: -7457235101907976471
+      timing_parts_hd_9: -484535270282378745
+      timing_parts_hd_90: -6677698063999759306
+      timing_parts_hd_91: 8855570019994702967
+      timing_parts_hd_92: 7157521714169398546
+      timing_parts_hd_93: 4503568365875751105
+      timing_parts_hd_94: 8108201694657618451
+      timing_parts_hd_95: 4124911889572747054
+      timing_parts_hd_96: 2262796077102025448
+      timing_parts_hd_97: 4045483248643790229
+      timing_parts_hd_98: -4613247752184744091
+      timing_parts_hd_99: -5683687508846640559
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

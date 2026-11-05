@@ -1,0 +1,27 @@
+{
+  "projectName": "little-depths",
+  "productionBranch": "main",
+  "productionUrl": "https://little-depths-5m5.pages.dev",
+  "deploymentUrl": "https://7963a937.little-depths-5m5.pages.dev",
+  "deliveryRevision": "landscape-controls-4",
+  "outputDirectory": "Logs/CloudflareWebGL-ViewportFit",
+  "sourceScene": "Assets/Scenes/LittleDepths.unity",
+  "buildProject": "Logs/SpriteValidation",
+  "originalProjectPreserved": true,
+  "updatedAtUtc": "2026-11-05T04:42:06.7406471Z",
+  "reelSpeedMultiplier": 1.4,
+  "sceneRegenerated": false,
+  "validationReport": "Logs/WelcomeReel-Validation.txt",
+  "liveHttpVerification": "Logs/Cloudflare-Live-HTTP.json",
+  "browserVerified": true,
+  "browserConsoleErrors": 0,
+  "livePausePreview": "Logs/Previews/WelcomeReel-05-CloudflarePause.jpg",
+  "browserValidationReport": "Logs/LandscapeBrowserVerification.txt",
+  "liveLandscapePreview": "Logs/Previews/Landscape-Final-Harbor.jpg",
+  "viewportSizesChecked": [
+    "390x700 portrait",
+    "667x320 landscape",
+    "844x390 landscape"
+  ],
+  "viewportFit": true
+}

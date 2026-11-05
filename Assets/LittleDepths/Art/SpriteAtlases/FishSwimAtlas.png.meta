@@ -1,0 +1,2538 @@
+fileFormatVersion: 2
+guid: f2deaff2ea3cfc04ca5366d4a3e2a07d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6905026696084677181
+    second: FishSwimAtlas_0
+  - first:
+      213: 6620263771663273682
+    second: FishSwimAtlas_1
+  - first:
+      213: 877831509706127517
+    second: FishSwimAtlas_2
+  - first:
+      213: 8392915881129029444
+    second: FishSwimAtlas_3
+  - first:
+      213: 4466002784001893853
+    second: FishSwimAtlas_4
+  - first:
+      213: -2234935534102276709
+    second: FishSwimAtlas_5
+  - first:
+      213: 7646043368658149815
+    second: FishSwimAtlas_6
+  - first:
+      213: 2651859108848043576
+    second: FishSwimAtlas_7
+  - first:
+      213: 6451463497078194926
+    second: FishSwimAtlas_8
+  - first:
+      213: -5824476090648283630
+    second: FishSwimAtlas_9
+  - first:
+      213: -3844968454416874403
+    second: FishSwimAtlas_10
+  - first:
+      213: 5167887235030431464
+    second: FishSwimAtlas_11
+  - first:
+      213: 5111321128195018393
+    second: FishSwimAtlas_12
+  - first:
+      213: 3493438737864740926
+    second: FishSwimAtlas_13
+  - first:
+      213: -8820235857958530644
+    second: FishSwimAtlas_14
+  - first:
+      213: 8130603624625456032
+    second: FishSwimAtlas_15
+  - first:
+      213: 8248467000239587705
+    second: FishSwimAtlas_16
+  - first:
+      213: -6344287625897641277
+    second: FishSwimAtlas_17
+  - first:
+      213: -9050485016967483215
+    second: FishSwimAtlas_18
+  - first:
+      213: 7475448972979210413
+    second: FishSwimAtlas_19
+  - first:
+      213: -5549832091986441456
+    second: FishSwimAtlas_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fish_minnow_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1282
+        width: 159
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -69.5, y: 1.5}
+        - {x: -67.5, y: 4.5}
+        - {x: -61.5, y: 10.5}
+        - {x: -55.5, y: 15.5}
+        - {x: -50.5, y: 19.5}
+        - {x: -45.5, y: 22.5}
+        - {x: -41.5, y: 24.5}
+        - {x: -7.5, y: 39.5}
+        - {x: -1.5, y: 41.5}
+        - {x: 4.5, y: 42.5}
+        - {x: 13.5, y: 42.5}
+        - {x: 17.5, y: 41.5}
+        - {x: 66.5, y: 26.5}
+        - {x: 69.5, y: 23.5}
+        - {x: 69.5, y: -27.5}
+        - {x: 68.5, y: -30.5}
+        - {x: 67.5, y: -31.5}
+        - {x: 65.5, y: -32.5}
+        - {x: 12.5, y: -42.5}
+        - {x: 3.5, y: -42.5}
+        - {x: -31.5, y: -32.5}
+        - {x: -40.5, y: -29.5}
+        - {x: -52.5, y: -23.5}
+        - {x: -57.5, y: -19.5}
+        - {x: -67.5, y: -9.5}
+        - {x: -69.5, y: -6.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: e679af42bf1350b4db1a89c89ce0fdbf
+      internalID: 1283001837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_minnow_1
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1282.5
+        width: 159
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -68.5, y: 0.5}
+        - {x: -63.5, y: 6.5}
+        - {x: -59.5, y: 10.5}
+        - {x: -52.5, y: 16.5}
+        - {x: -45.5, y: 21.5}
+        - {x: -42.5, y: 23.5}
+        - {x: -12.5, y: 39.5}
+        - {x: -6.5, y: 42.5}
+        - {x: -3.5, y: 43.5}
+        - {x: 2.5, y: 44.5}
+        - {x: 5.5, y: 44.5}
+        - {x: 10.5, y: 43.5}
+        - {x: 61.5, y: 24.5}
+        - {x: 64.5, y: 21.5}
+        - {x: 66.5, y: 17.5}
+        - {x: 67.5, y: 14.5}
+        - {x: 68.5, y: 9.5}
+        - {x: 68.5, y: -16.5}
+        - {x: 67.5, y: -21.5}
+        - {x: 66.5, y: -24.5}
+        - {x: 63.5, y: -30.5}
+        - {x: 60.5, y: -33.5}
+        - {x: 12.5, y: -42.5}
+        - {x: 0.5, y: -42.5}
+        - {x: -32.5, y: -33.5}
+        - {x: -38.5, y: -31.5}
+        - {x: -46.5, y: -27.5}
+        - {x: -51.5, y: -24.5}
+        - {x: -54.5, y: -22.5}
+        - {x: -59.5, y: -18.5}
+        - {x: -61.5, y: -16.5}
+        - {x: -67.5, y: -9.5}
+        - {x: -68.5, y: -7.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 848dab08d98e41e4a97669a126d1dc5e
+      internalID: 1717292621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_minnow_2
+      rect:
+        serializedVersion: 2
+        x: 604.5
+        y: 1279
+        width: 159
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -69.5, y: 3.5}
+        - {x: -66.5, y: 7.5}
+        - {x: -59.5, y: 14.5}
+        - {x: -53.5, y: 19.5}
+        - {x: -44.5, y: 25.5}
+        - {x: -40.5, y: 27.5}
+        - {x: -8.5, y: 42.5}
+        - {x: -2.5, y: 44.5}
+        - {x: 11.5, y: 44.5}
+        - {x: 66.5, y: 28.5}
+        - {x: 68.5, y: 27.5}
+        - {x: 69.5, y: 26.5}
+        - {x: 70.5, y: 24.5}
+        - {x: 71.5, y: -16.5}
+        - {x: 71.5, y: -21.5}
+        - {x: 70.5, y: -25.5}
+        - {x: 69.5, y: -27.5}
+        - {x: 66.5, y: -29.5}
+        - {x: 8.5, y: -44.5}
+        - {x: 0.5, y: -44.5}
+        - {x: -40.5, y: -28.5}
+        - {x: -42.5, y: -27.5}
+        - {x: -55.5, y: -20.5}
+        - {x: -58.5, y: -17.5}
+        - {x: -68.5, y: -6.5}
+        - {x: -69.5, y: -4.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: ca74df897666ed14597b7fe7eabe65d1
+      internalID: -690203860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_minnow_3
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1280.5
+        width: 159
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -76.5, y: 1.5}
+        - {x: -73.5, y: 5.5}
+        - {x: -61.5, y: 17.5}
+        - {x: -57.5, y: 20.5}
+        - {x: -54.5, y: 22.5}
+        - {x: -25.5, y: 38.5}
+        - {x: -23.5, y: 39.5}
+        - {x: -17.5, y: 41.5}
+        - {x: -2.5, y: 41.5}
+        - {x: 70.5, y: 28.5}
+        - {x: 74.5, y: 26.5}
+        - {x: 75.5, y: 25.5}
+        - {x: 76.5, y: 23.5}
+        - {x: 76.5, y: 15.5}
+        - {x: 62.5, y: -14.5}
+        - {x: 61.5, y: -16.5}
+        - {x: 58.5, y: -19.5}
+        - {x: 56.5, y: -20.5}
+        - {x: -0.5, y: -40.5}
+        - {x: -11.5, y: -40.5}
+        - {x: -42.5, y: -30.5}
+        - {x: -51.5, y: -27.5}
+        - {x: -57.5, y: -24.5}
+        - {x: -62.5, y: -21.5}
+        - {x: -75.5, y: -8.5}
+        - {x: -76.5, y: -6.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 023db75480fc8074892ec736794442c4
+      internalID: -1064676025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_perch_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1146
+        width: 192
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -87, y: 1}
+        - {x: -86, y: 3}
+        - {x: -83, y: 7}
+        - {x: -77, y: 14}
+        - {x: -68, y: 23}
+        - {x: -64, y: 26}
+        - {x: -53, y: 34}
+        - {x: -22, y: 52}
+        - {x: -18, y: 54}
+        - {x: -13, y: 56}
+        - {x: -8, y: 57}
+        - {x: 1, y: 57}
+        - {x: 6, y: 56}
+        - {x: 10, y: 55}
+        - {x: 82, y: 34}
+        - {x: 84, y: 33}
+        - {x: 86, y: 31}
+        - {x: 87, y: 29}
+        - {x: 87, y: 17}
+        - {x: 86, y: -34}
+        - {x: 84, y: -38}
+        - {x: 83, y: -39}
+        - {x: 80, y: -40}
+        - {x: -5, y: -57}
+        - {x: -17, y: -57}
+        - {x: -50, y: -41}
+        - {x: -56, y: -38}
+        - {x: -66, y: -32}
+        - {x: -69, y: -30}
+        - {x: -85, y: -14}
+        - {x: -87, y: -10}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 5a57f567778143b428b1cc5c32fb5c81
+      internalID: -1266129585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_perch_1
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1148
+        width: 192
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -93, y: 0}
+        - {x: -92, y: 2}
+        - {x: -89, y: 6}
+        - {x: -85, y: 11}
+        - {x: -72, y: 24}
+        - {x: -62, y: 32}
+        - {x: -26, y: 53}
+        - {x: -22, y: 55}
+        - {x: -19, y: 56}
+        - {x: -15, y: 57}
+        - {x: -1, y: 57}
+        - {x: 4, y: 56}
+        - {x: 88, y: 33}
+        - {x: 92, y: 29}
+        - {x: 93, y: 26}
+        - {x: 93, y: -27}
+        - {x: 92, y: -31}
+        - {x: 91, y: -33}
+        - {x: 88, y: -36}
+        - {x: 85, y: -37}
+        - {x: -12, y: -57}
+        - {x: -20, y: -57}
+        - {x: -23, y: -56}
+        - {x: -54, y: -41}
+        - {x: -64, y: -36}
+        - {x: -71, y: -32}
+        - {x: -74, y: -30}
+        - {x: -91, y: -13}
+        - {x: -93, y: -9}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 50fbb534262238d49839b803373c8b1e
+      internalID: 1482207365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_perch_2
+      rect:
+        serializedVersion: 2
+        x: 589.5
+        y: 1146
+        width: 192
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -90, y: 1}
+        - {x: -89, y: 3}
+        - {x: -85, y: 8}
+        - {x: -76, y: 19}
+        - {x: -70, y: 24}
+        - {x: -60, y: 32}
+        - {x: -25, y: 52}
+        - {x: -21, y: 54}
+        - {x: -16, y: 56}
+        - {x: -13, y: 57}
+        - {x: 2, y: 57}
+        - {x: 10, y: 55}
+        - {x: 83, y: 33}
+        - {x: 85, y: 32}
+        - {x: 87, y: 30}
+        - {x: 89, y: 26}
+        - {x: 89, y: 17}
+        - {x: 88, y: -30}
+        - {x: 87, y: -34}
+        - {x: 84, y: -37}
+        - {x: 82, y: -38}
+        - {x: -10, y: -57}
+        - {x: -19, y: -57}
+        - {x: -54, y: -40}
+        - {x: -60, y: -37}
+        - {x: -72, y: -29}
+        - {x: -85, y: -16}
+        - {x: -88, y: -12}
+        - {x: -89, y: -10}
+        - {x: -90, y: -7}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 15bdb0374bcc18241b587e2c22d87dd8
+      internalID: 1682339062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_perch_3
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 1148
+        width: 192
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -91, y: 0}
+        - {x: -89, y: 3}
+        - {x: -82, y: 12}
+        - {x: -66, y: 28}
+        - {x: -58, y: 34}
+        - {x: -30, y: 51}
+        - {x: -25, y: 54}
+        - {x: -20, y: 56}
+        - {x: -15, y: 57}
+        - {x: -5, y: 57}
+        - {x: 0, y: 56}
+        - {x: 86, y: 28}
+        - {x: 88, y: 27}
+        - {x: 90, y: 25}
+        - {x: 91, y: 23}
+        - {x: 91, y: 13}
+        - {x: 90, y: -30}
+        - {x: 89, y: -32}
+        - {x: 88, y: -33}
+        - {x: 84, y: -35}
+        - {x: 25, y: -49}
+        - {x: -12, y: -57}
+        - {x: -23, y: -57}
+        - {x: -27, y: -55}
+        - {x: -58, y: -39}
+        - {x: -70, y: -32}
+        - {x: -73, y: -30}
+        - {x: -88, y: -15}
+        - {x: -90, y: -11}
+        - {x: -91, y: -8}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 529435a3a39e7094ca74e15dab94c736
+      internalID: 2110665005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_clown_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1019.5
+        width: 187
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -89.5, y: 1.5}
+        - {x: -87.5, y: 5.5}
+        - {x: -85.5, y: 8.5}
+        - {x: -70.5, y: 24.5}
+        - {x: -67.5, y: 27.5}
+        - {x: -53.5, y: 37.5}
+        - {x: -21.5, y: 56.5}
+        - {x: -15.5, y: 58.5}
+        - {x: -9.5, y: 59.5}
+        - {x: -2.5, y: 59.5}
+        - {x: 3.5, y: 58.5}
+        - {x: 7.5, y: 57.5}
+        - {x: 81.5, y: 29.5}
+        - {x: 85.5, y: 27.5}
+        - {x: 87.5, y: 24.5}
+        - {x: 88.5, y: 22.5}
+        - {x: 89.5, y: 19.5}
+        - {x: 89.5, y: 7.5}
+        - {x: 86.5, y: -22.5}
+        - {x: 85.5, y: -26.5}
+        - {x: 83.5, y: -29.5}
+        - {x: 81.5, y: -31.5}
+        - {x: 79.5, y: -32.5}
+        - {x: -7.5, y: -59.5}
+        - {x: -13.5, y: -59.5}
+        - {x: -19.5, y: -58.5}
+        - {x: -25.5, y: -55.5}
+        - {x: -64.5, y: -33.5}
+        - {x: -67.5, y: -31.5}
+        - {x: -71.5, y: -28.5}
+        - {x: -81.5, y: -19.5}
+        - {x: -85.5, y: -15.5}
+        - {x: -87.5, y: -12.5}
+        - {x: -88.5, y: -10.5}
+        - {x: -89.5, y: -7.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 634fd250bfc8c0544a126634230b2bb8
+      internalID: -1256096045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_clown_1
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1020
+        width: 187
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -90.5, y: 0.5}
+        - {x: -88.5, y: 4.5}
+        - {x: -83.5, y: 10.5}
+        - {x: -75.5, y: 19.5}
+        - {x: -73.5, y: 21.5}
+        - {x: -63.5, y: 30.5}
+        - {x: -54.5, y: 36.5}
+        - {x: -29.5, y: 52.5}
+        - {x: -21.5, y: 56.5}
+        - {x: -12.5, y: 59.5}
+        - {x: -2.5, y: 59.5}
+        - {x: 1.5, y: 58.5}
+        - {x: 7.5, y: 56.5}
+        - {x: 83.5, y: 28.5}
+        - {x: 87.5, y: 26.5}
+        - {x: 88.5, y: 25.5}
+        - {x: 90.5, y: 21.5}
+        - {x: 91.5, y: 17.5}
+        - {x: 91.5, y: 11.5}
+        - {x: 88.5, y: -21.5}
+        - {x: 87.5, y: -23.5}
+        - {x: 84.5, y: -26.5}
+        - {x: -5.5, y: -58.5}
+        - {x: -8.5, y: -59.5}
+        - {x: -16.5, y: -59.5}
+        - {x: -21.5, y: -58.5}
+        - {x: -24.5, y: -57.5}
+        - {x: -28.5, y: -55.5}
+        - {x: -64.5, y: -34.5}
+        - {x: -72.5, y: -28.5}
+        - {x: -85.5, y: -15.5}
+        - {x: -89.5, y: -9.5}
+        - {x: -90.5, y: -6.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 23ac0b7c55324b84fa1a8baf6f54a2b8
+      internalID: -1986354758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_clown_2
+      rect:
+        serializedVersion: 2
+        x: 593.5
+        y: 1020.5
+        width: 187
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -88.5, y: -0.5}
+        - {x: -86.5, y: 3.5}
+        - {x: -80.5, y: 11.5}
+        - {x: -60.5, y: 31.5}
+        - {x: -51.5, y: 37.5}
+        - {x: -28.5, y: 52.5}
+        - {x: -23.5, y: 55.5}
+        - {x: -18.5, y: 57.5}
+        - {x: -15.5, y: 58.5}
+        - {x: -11.5, y: 59.5}
+        - {x: 0.5, y: 59.5}
+        - {x: 9.5, y: 56.5}
+        - {x: 80.5, y: 29.5}
+        - {x: 82.5, y: 28.5}
+        - {x: 85.5, y: 25.5}
+        - {x: 87.5, y: 21.5}
+        - {x: 87.5, y: 6.5}
+        - {x: 85.5, y: -24.5}
+        - {x: 84.5, y: -27.5}
+        - {x: 80.5, y: -31.5}
+        - {x: 78.5, y: -32.5}
+        - {x: -3.5, y: -58.5}
+        - {x: -16.5, y: -58.5}
+        - {x: -22.5, y: -56.5}
+        - {x: -28.5, y: -53.5}
+        - {x: -61.5, y: -35.5}
+        - {x: -64.5, y: -33.5}
+        - {x: -68.5, y: -30.5}
+        - {x: -74.5, y: -25.5}
+        - {x: -80.5, y: -19.5}
+        - {x: -86.5, y: -11.5}
+        - {x: -87.5, y: -9.5}
+        - {x: -88.5, y: -6.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 305628c7f5ee39e4d8ce691885bb2665
+      internalID: 412409033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_clown_3
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 1020
+        width: 187
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -87.5, y: 0.5}
+        - {x: -86.5, y: 2.5}
+        - {x: -84.5, y: 5.5}
+        - {x: -80.5, y: 10.5}
+        - {x: -72.5, y: 19.5}
+        - {x: -67.5, y: 24.5}
+        - {x: -60.5, y: 30.5}
+        - {x: -53.5, y: 35.5}
+        - {x: -24.5, y: 54.5}
+        - {x: -20.5, y: 56.5}
+        - {x: -17.5, y: 57.5}
+        - {x: -13.5, y: 58.5}
+        - {x: 0.5, y: 58.5}
+        - {x: 79.5, y: 32.5}
+        - {x: 83.5, y: 30.5}
+        - {x: 84.5, y: 29.5}
+        - {x: 86.5, y: 25.5}
+        - {x: 87.5, y: 22.5}
+        - {x: 87.5, y: 6.5}
+        - {x: 84.5, y: -28.5}
+        - {x: 83.5, y: -31.5}
+        - {x: 82.5, y: -33.5}
+        - {x: 79.5, y: -36.5}
+        - {x: 77.5, y: -37.5}
+        - {x: -2.5, y: -58.5}
+        - {x: -16.5, y: -58.5}
+        - {x: -19.5, y: -57.5}
+        - {x: -24.5, y: -55.5}
+        - {x: -61.5, y: -34.5}
+        - {x: -69.5, y: -28.5}
+        - {x: -82.5, y: -15.5}
+        - {x: -85.5, y: -11.5}
+        - {x: -86.5, y: -9.5}
+        - {x: -87.5, y: -6.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 122491eb927536d498e05cb238c1f23d
+      internalID: -738631782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_bluefin_0
+      rect:
+        serializedVersion: 2
+        x: 90.5
+        y: 883
+        width: 184
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -88, y: -2.5}
+        - {x: -87, y: -0.5}
+        - {x: -82, y: 7.5}
+        - {x: -78, y: 13.5}
+        - {x: -70, y: 23.5}
+        - {x: -63, y: 30.5}
+        - {x: -53, y: 37.5}
+        - {x: -20, y: 57.5}
+        - {x: -12, y: 61.5}
+        - {x: -9, y: 62.5}
+        - {x: -5, y: 63.5}
+        - {x: 9, y: 63.5}
+        - {x: 15, y: 61.5}
+        - {x: 21, y: 58.5}
+        - {x: 87, y: 22.5}
+        - {x: 88, y: 21.5}
+        - {x: 89, y: 19.5}
+        - {x: 89, y: 8.5}
+        - {x: 87, y: -37.5}
+        - {x: 86, y: -39.5}
+        - {x: 84, y: -41.5}
+        - {x: 33, y: -62.5}
+        - {x: 27, y: -63.5}
+        - {x: 16, y: -63.5}
+        - {x: 9, y: -62.5}
+        - {x: 3, y: -61.5}
+        - {x: -32, y: -54.5}
+        - {x: -46, y: -50.5}
+        - {x: -51, y: -48.5}
+        - {x: -62, y: -41.5}
+        - {x: -67, y: -37.5}
+        - {x: -78, y: -26.5}
+        - {x: -84, y: -18.5}
+        - {x: -86, y: -15.5}
+        - {x: -87, y: -13.5}
+        - {x: -88, y: -10.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: c67f0c66ad4d47740b3553a2eba14946
+      internalID: -2131443976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_bluefin_1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 883
+        width: 184
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -89, y: -4.5}
+        - {x: -88, y: -1.5}
+        - {x: -81, y: 10.5}
+        - {x: -79, y: 13.5}
+        - {x: -73, y: 21.5}
+        - {x: -63, y: 31.5}
+        - {x: -59, y: 34.5}
+        - {x: -25, y: 57.5}
+        - {x: -17, y: 61.5}
+        - {x: -13, y: 62.5}
+        - {x: -8, y: 63.5}
+        - {x: 11, y: 63.5}
+        - {x: 15, y: 62.5}
+        - {x: 21, y: 59.5}
+        - {x: 87, y: 21.5}
+        - {x: 88, y: 20.5}
+        - {x: 89, y: 18.5}
+        - {x: 89, y: 7.5}
+        - {x: 82, y: -36.5}
+        - {x: 81, y: -39.5}
+        - {x: 80, y: -41.5}
+        - {x: 79, y: -42.5}
+        - {x: 77, y: -43.5}
+        - {x: 29, y: -60.5}
+        - {x: 23, y: -62.5}
+        - {x: 17, y: -63.5}
+        - {x: 7, y: -63.5}
+        - {x: -2, y: -62.5}
+        - {x: -39, y: -53.5}
+        - {x: -42, y: -52.5}
+        - {x: -50, y: -49.5}
+        - {x: -56, y: -46.5}
+        - {x: -59, y: -44.5}
+        - {x: -66, y: -39.5}
+        - {x: -73, y: -33.5}
+        - {x: -74, y: -32.5}
+        - {x: -78, y: -27.5}
+        - {x: -83, y: -20.5}
+        - {x: -85, y: -17.5}
+        - {x: -88, y: -11.5}
+        - {x: -89, y: -8.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 00cc44017ddd7e5418ea2929f377ec5d
+      internalID: -777537059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_bluefin_2
+      rect:
+        serializedVersion: 2
+        x: 598.5
+        y: 882
+        width: 184
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -86, y: -3.5}
+        - {x: -85, y: -0.5}
+        - {x: -81, y: 8.5}
+        - {x: -78, y: 13.5}
+        - {x: -76, y: 16.5}
+        - {x: -72, y: 21.5}
+        - {x: -66, y: 28.5}
+        - {x: -63, y: 31.5}
+        - {x: -59, y: 34.5}
+        - {x: -50, y: 40.5}
+        - {x: -23, y: 57.5}
+        - {x: -18, y: 60.5}
+        - {x: -14, y: 62.5}
+        - {x: -8, y: 64.5}
+        - {x: -3, y: 65.5}
+        - {x: 10, y: 65.5}
+        - {x: 15, y: 64.5}
+        - {x: 18, y: 63.5}
+        - {x: 85, y: 23.5}
+        - {x: 87, y: 19.5}
+        - {x: 87, y: 12.5}
+        - {x: 82, y: -37.5}
+        - {x: 81, y: -39.5}
+        - {x: 78, y: -42.5}
+        - {x: 8, y: -65.5}
+        - {x: -5, y: -65.5}
+        - {x: -9, y: -64.5}
+        - {x: -48, y: -48.5}
+        - {x: -50, y: -47.5}
+        - {x: -57, y: -43.5}
+        - {x: -60, y: -41.5}
+        - {x: -64, y: -38.5}
+        - {x: -75, y: -27.5}
+        - {x: -79, y: -22.5}
+        - {x: -81, y: -19.5}
+        - {x: -85, y: -11.5}
+        - {x: -86, y: -8.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 44c165ccfe7863b4c847b8d40a2eb4e5
+      internalID: -322420841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_bluefin_3
+      rect:
+        serializedVersion: 2
+        x: 848.5
+        y: 882
+        width: 184
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -85, y: -2.5}
+        - {x: -81, y: 5.5}
+        - {x: -77, y: 12.5}
+        - {x: -75, y: 15.5}
+        - {x: -72, y: 19.5}
+        - {x: -66, y: 26.5}
+        - {x: -61, y: 31.5}
+        - {x: -57, y: 34.5}
+        - {x: -48, y: 40.5}
+        - {x: -17, y: 60.5}
+        - {x: -11, y: 63.5}
+        - {x: -8, y: 64.5}
+        - {x: -2, y: 65.5}
+        - {x: 11, y: 65.5}
+        - {x: 15, y: 64.5}
+        - {x: 18, y: 63.5}
+        - {x: 82, y: 33.5}
+        - {x: 84, y: 32.5}
+        - {x: 85, y: 31.5}
+        - {x: 86, y: 29.5}
+        - {x: 86, y: 15.5}
+        - {x: 81, y: -33.5}
+        - {x: 80, y: -35.5}
+        - {x: 78, y: -37.5}
+        - {x: 76, y: -38.5}
+        - {x: 2, y: -65.5}
+        - {x: -8, y: -65.5}
+        - {x: -11, y: -64.5}
+        - {x: -44, y: -49.5}
+        - {x: -56, y: -43.5}
+        - {x: -59, y: -41.5}
+        - {x: -65, y: -36.5}
+        - {x: -75, y: -26.5}
+        - {x: -83, y: -14.5}
+        - {x: -84, y: -12.5}
+        - {x: -85, y: -9.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 874692a6fd838e7458368a2dea60b8bb
+      internalID: -1694413528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_sunfish_0
+      rect:
+        serializedVersion: 2
+        x: 86.5
+        y: 744
+        width: 187
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -89.5, y: -2.5}
+        - {x: -88.5, y: -0.5}
+        - {x: -86.5, y: 2.5}
+        - {x: -83.5, y: 6.5}
+        - {x: -77.5, y: 13.5}
+        - {x: -68.5, y: 23.5}
+        - {x: -60.5, y: 31.5}
+        - {x: -53.5, y: 37.5}
+        - {x: -48.5, y: 41.5}
+        - {x: -16.5, y: 60.5}
+        - {x: -12.5, y: 62.5}
+        - {x: -6.5, y: 64.5}
+        - {x: -2.5, y: 65.5}
+        - {x: 14.5, y: 65.5}
+        - {x: 19.5, y: 64.5}
+        - {x: 25.5, y: 62.5}
+        - {x: 77.5, y: 40.5}
+        - {x: 79.5, y: 39.5}
+        - {x: 83.5, y: 35.5}
+        - {x: 88.5, y: 25.5}
+        - {x: 89.5, y: 22.5}
+        - {x: 90.5, y: 18.5}
+        - {x: 90.5, y: 4.5}
+        - {x: 87.5, y: -25.5}
+        - {x: 86.5, y: -29.5}
+        - {x: 84.5, y: -34.5}
+        - {x: 82.5, y: -37.5}
+        - {x: 79.5, y: -40.5}
+        - {x: 77.5, y: -41.5}
+        - {x: 28.5, y: -58.5}
+        - {x: -1.5, y: -65.5}
+        - {x: -7.5, y: -65.5}
+        - {x: -11.5, y: -64.5}
+        - {x: -46.5, y: -47.5}
+        - {x: -50.5, y: -45.5}
+        - {x: -59.5, y: -40.5}
+        - {x: -65.5, y: -36.5}
+        - {x: -73.5, y: -29.5}
+        - {x: -82.5, y: -20.5}
+        - {x: -85.5, y: -16.5}
+        - {x: -87.5, y: -13.5}
+        - {x: -89.5, y: -9.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 2ea07ddf2d487684d87a6d07643665c0
+      internalID: -281519737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_sunfish_1
+      rect:
+        serializedVersion: 2
+        x: 339.5
+        y: 743.5
+        width: 187
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -86.5, y: 0.5}
+        - {x: -84.5, y: 3.5}
+        - {x: -81.5, y: 7.5}
+        - {x: -75.5, y: 14.5}
+        - {x: -66.5, y: 24.5}
+        - {x: -62.5, y: 28.5}
+        - {x: -54.5, y: 35.5}
+        - {x: -48.5, y: 40.5}
+        - {x: -23.5, y: 56.5}
+        - {x: -18.5, y: 59.5}
+        - {x: -12.5, y: 62.5}
+        - {x: -4.5, y: 64.5}
+        - {x: 12.5, y: 64.5}
+        - {x: 18.5, y: 62.5}
+        - {x: 25.5, y: 59.5}
+        - {x: 79.5, y: 34.5}
+        - {x: 81.5, y: 33.5}
+        - {x: 82.5, y: 32.5}
+        - {x: 84.5, y: 28.5}
+        - {x: 85.5, y: 25.5}
+        - {x: 85.5, y: 10.5}
+        - {x: 83.5, y: -24.5}
+        - {x: 82.5, y: -30.5}
+        - {x: 80.5, y: -35.5}
+        - {x: 76.5, y: -39.5}
+        - {x: 29.5, y: -57.5}
+        - {x: 26.5, y: -58.5}
+        - {x: -5.5, y: -65.5}
+        - {x: -12.5, y: -65.5}
+        - {x: -15.5, y: -64.5}
+        - {x: -19.5, y: -62.5}
+        - {x: -46.5, y: -46.5}
+        - {x: -54.5, y: -41.5}
+        - {x: -60.5, y: -37.5}
+        - {x: -72.5, y: -26.5}
+        - {x: -78.5, y: -20.5}
+        - {x: -82.5, y: -15.5}
+        - {x: -84.5, y: -12.5}
+        - {x: -86.5, y: -8.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 6c8a70830e348c24595cd526f2289614
+      internalID: -977165048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_sunfish_2
+      rect:
+        serializedVersion: 2
+        x: 586.5
+        y: 744
+        width: 187
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -84.5, y: -0.5}
+        - {x: -82.5, y: 3.5}
+        - {x: -80.5, y: 6.5}
+        - {x: -69.5, y: 20.5}
+        - {x: -52.5, y: 37.5}
+        - {x: -48.5, y: 40.5}
+        - {x: -45.5, y: 42.5}
+        - {x: -21.5, y: 57.5}
+        - {x: -13.5, y: 61.5}
+        - {x: -7.5, y: 63.5}
+        - {x: -3.5, y: 64.5}
+        - {x: 17.5, y: 64.5}
+        - {x: 22.5, y: 63.5}
+        - {x: 25.5, y: 62.5}
+        - {x: 30.5, y: 60.5}
+        - {x: 32.5, y: 59.5}
+        - {x: 81.5, y: 32.5}
+        - {x: 82.5, y: 31.5}
+        - {x: 84.5, y: 28.5}
+        - {x: 85.5, y: 25.5}
+        - {x: 85.5, y: 7.5}
+        - {x: 83.5, y: -24.5}
+        - {x: 82.5, y: -28.5}
+        - {x: 81.5, y: -30.5}
+        - {x: 77.5, y: -34.5}
+        - {x: 75.5, y: -35.5}
+        - {x: 4.5, y: -64.5}
+        - {x: 0.5, y: -65.5}
+        - {x: -2.5, y: -65.5}
+        - {x: -6.5, y: -64.5}
+        - {x: -9.5, y: -63.5}
+        - {x: -13.5, y: -61.5}
+        - {x: -49.5, y: -41.5}
+        - {x: -54.5, y: -38.5}
+        - {x: -64.5, y: -30.5}
+        - {x: -75.5, y: -19.5}
+        - {x: -79.5, y: -14.5}
+        - {x: -82.5, y: -10.5}
+        - {x: -84.5, y: -6.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 740a45e1eac9a2e4ca2e034123e58a78
+      internalID: 549638859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_sunfish_3
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 744
+        width: 187
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -90.5, y: 0.5}
+        - {x: -89.5, y: 2.5}
+        - {x: -86.5, y: 6.5}
+        - {x: -79.5, y: 15.5}
+        - {x: -64.5, y: 31.5}
+        - {x: -63.5, y: 32.5}
+        - {x: -57.5, y: 37.5}
+        - {x: -53.5, y: 40.5}
+        - {x: -50.5, y: 42.5}
+        - {x: -26.5, y: 56.5}
+        - {x: -16.5, y: 61.5}
+        - {x: -10.5, y: 63.5}
+        - {x: 11.5, y: 63.5}
+        - {x: 15.5, y: 62.5}
+        - {x: 24.5, y: 59.5}
+        - {x: 78.5, y: 39.5}
+        - {x: 80.5, y: 38.5}
+        - {x: 83.5, y: 35.5}
+        - {x: 86.5, y: 29.5}
+        - {x: 88.5, y: 23.5}
+        - {x: 89.5, y: 19.5}
+        - {x: 90.5, y: 13.5}
+        - {x: 90.5, y: -8.5}
+        - {x: 88.5, y: -18.5}
+        - {x: 85.5, y: -27.5}
+        - {x: 80.5, y: -37.5}
+        - {x: 77.5, y: -40.5}
+        - {x: 75.5, y: -41.5}
+        - {x: 2.5, y: -63.5}
+        - {x: -9.5, y: -63.5}
+        - {x: -13.5, y: -62.5}
+        - {x: -46.5, y: -46.5}
+        - {x: -48.5, y: -45.5}
+        - {x: -59.5, y: -39.5}
+        - {x: -62.5, y: -37.5}
+        - {x: -67.5, y: -33.5}
+        - {x: -77.5, y: -24.5}
+        - {x: -81.5, y: -20.5}
+        - {x: -85.5, y: -15.5}
+        - {x: -88.5, y: -11.5}
+        - {x: -90.5, y: -7.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 4b62394cf1269064bbe5f29127b1c43d
+      internalID: 432393350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_jelly_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 580.5
+        width: 138
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -66, y: 30.5}
+        - {x: -64, y: 38.5}
+        - {x: -63, y: 41.5}
+        - {x: -60, y: 47.5}
+        - {x: -56, y: 53.5}
+        - {x: -53, y: 57.5}
+        - {x: -46, y: 64.5}
+        - {x: -41, y: 68.5}
+        - {x: -38, y: 70.5}
+        - {x: -26, y: 76.5}
+        - {x: -18, y: 78.5}
+        - {x: -13, y: 79.5}
+        - {x: 2, y: 79.5}
+        - {x: 8, y: 78.5}
+        - {x: 16, y: 76.5}
+        - {x: 21, y: 74.5}
+        - {x: 25, y: 72.5}
+        - {x: 30, y: 69.5}
+        - {x: 35, y: 65.5}
+        - {x: 40, y: 60.5}
+        - {x: 43, y: 56.5}
+        - {x: 49, y: 47.5}
+        - {x: 50, y: 45.5}
+        - {x: 52, y: 39.5}
+        - {x: 66, y: -22.5}
+        - {x: 66, y: -29.5}
+        - {x: 65, y: -32.5}
+        - {x: 64, y: -34.5}
+        - {x: 36, y: -70.5}
+        - {x: 31, y: -75.5}
+        - {x: 29, y: -76.5}
+        - {x: 5, y: -78.5}
+        - {x: -6, y: -78.5}
+        - {x: -33, y: -76.5}
+        - {x: -35, y: -75.5}
+        - {x: -62, y: -50.5}
+        - {x: -63, y: -49.5}
+        - {x: -66, y: -43.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: e7c88e91dbaeaaf4a9617cb0417e94e8
+      internalID: -1903520043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_jelly_1
+      rect:
+        serializedVersion: 2
+        x: 370.5
+        y: 579
+        width: 138
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -63, y: -20.5}
+        - {x: -61, y: 29.5}
+        - {x: -60, y: 33.5}
+        - {x: -57, y: 42.5}
+        - {x: -53, y: 50.5}
+        - {x: -47, y: 58.5}
+        - {x: -40, y: 65.5}
+        - {x: -35, y: 69.5}
+        - {x: -32, y: 71.5}
+        - {x: -22, y: 76.5}
+        - {x: -16, y: 78.5}
+        - {x: -11, y: 79.5}
+        - {x: -4, y: 80.5}
+        - {x: 5, y: 80.5}
+        - {x: 12, y: 79.5}
+        - {x: 17, y: 78.5}
+        - {x: 23, y: 76.5}
+        - {x: 33, y: 71.5}
+        - {x: 36, y: 69.5}
+        - {x: 41, y: 65.5}
+        - {x: 43, y: 63.5}
+        - {x: 47, y: 58.5}
+        - {x: 51, y: 52.5}
+        - {x: 55, y: 44.5}
+        - {x: 56, y: 41.5}
+        - {x: 58, y: 33.5}
+        - {x: 64, y: -17.5}
+        - {x: 64, y: -27.5}
+        - {x: 61, y: -33.5}
+        - {x: 39, y: -71.5}
+        - {x: 38, y: -72.5}
+        - {x: 34, y: -74.5}
+        - {x: 7, y: -79.5}
+        - {x: -5, y: -79.5}
+        - {x: -32, y: -65.5}
+        - {x: -35, y: -62.5}
+        - {x: -61, y: -32.5}
+        - {x: -63, y: -28.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 1b5fae68122090544a62d0a3c6b82cd8
+      internalID: -1901777404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_jelly_2
+      rect:
+        serializedVersion: 2
+        x: 609.5
+        y: 579
+        width: 138
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -61, y: 29.5}
+        - {x: -60, y: 33.5}
+        - {x: -58, y: 39.5}
+        - {x: -56, y: 44.5}
+        - {x: -54, y: 48.5}
+        - {x: -50, y: 54.5}
+        - {x: -45, y: 60.5}
+        - {x: -43, y: 62.5}
+        - {x: -37, y: 67.5}
+        - {x: -31, y: 71.5}
+        - {x: -21, y: 76.5}
+        - {x: -18, y: 77.5}
+        - {x: -14, y: 78.5}
+        - {x: -9, y: 79.5}
+        - {x: 12, y: 79.5}
+        - {x: 17, y: 78.5}
+        - {x: 23, y: 76.5}
+        - {x: 31, y: 72.5}
+        - {x: 37, y: 68.5}
+        - {x: 47, y: 58.5}
+        - {x: 50, y: 54.5}
+        - {x: 53, y: 49.5}
+        - {x: 55, y: 45.5}
+        - {x: 57, y: 39.5}
+        - {x: 58, y: 35.5}
+        - {x: 59, y: 30.5}
+        - {x: 61, y: -30.5}
+        - {x: 61, y: -34.5}
+        - {x: 60, y: -38.5}
+        - {x: 47, y: -66.5}
+        - {x: 43, y: -70.5}
+        - {x: 40, y: -71.5}
+        - {x: 9, y: -80.5}
+        - {x: 4, y: -80.5}
+        - {x: -23, y: -74.5}
+        - {x: -27, y: -72.5}
+        - {x: -31, y: -68.5}
+        - {x: -58, y: -39.5}
+        - {x: -60, y: -36.5}
+        - {x: -61, y: -33.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 59dc06c587a92e841bb074507ccd11d0
+      internalID: 1540711123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_jelly_3
+      rect:
+        serializedVersion: 2
+        x: 868.5
+        y: 579.5
+        width: 138
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -63, y: 26.5}
+        - {x: -62, y: 32.5}
+        - {x: -61, y: 36.5}
+        - {x: -59, y: 42.5}
+        - {x: -55, y: 50.5}
+        - {x: -51, y: 56.5}
+        - {x: -47, y: 61.5}
+        - {x: -39, y: 68.5}
+        - {x: -36, y: 70.5}
+        - {x: -31, y: 73.5}
+        - {x: -29, y: 74.5}
+        - {x: -24, y: 76.5}
+        - {x: -21, y: 77.5}
+        - {x: -17, y: 78.5}
+        - {x: 7, y: 78.5}
+        - {x: 11, y: 77.5}
+        - {x: 17, y: 75.5}
+        - {x: 25, y: 71.5}
+        - {x: 36, y: 62.5}
+        - {x: 38, y: 60.5}
+        - {x: 42, y: 54.5}
+        - {x: 47, y: 44.5}
+        - {x: 49, y: 38.5}
+        - {x: 64, y: -16.5}
+        - {x: 64, y: -26.5}
+        - {x: 55, y: -64.5}
+        - {x: 54, y: -66.5}
+        - {x: 51, y: -69.5}
+        - {x: 47, y: -71.5}
+        - {x: 19, y: -79.5}
+        - {x: 11, y: -79.5}
+        - {x: -15, y: -78.5}
+        - {x: -19, y: -76.5}
+        - {x: -53, y: -45.5}
+        - {x: -57, y: -41.5}
+        - {x: -59, y: -37.5}
+        - {x: -60, y: -33.5}
+        - {x: -63, y: 16.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 49833c66ab935a44a9c0d591d4113d53
+      internalID: 19942081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_moonfish_0
+      rect:
+        serializedVersion: 2
+        x: 91.5
+        y: 434
+        width: 188
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -91, y: -4.5}
+        - {x: -90, y: -1.5}
+        - {x: -84, y: 7.5}
+        - {x: -74, y: 21.5}
+        - {x: -64, y: 31.5}
+        - {x: -56, y: 38.5}
+        - {x: -53, y: 40.5}
+        - {x: -44, y: 45.5}
+        - {x: -11, y: 63.5}
+        - {x: -9, y: 64.5}
+        - {x: -4, y: 66.5}
+        - {x: 2, y: 68.5}
+        - {x: 6, y: 69.5}
+        - {x: 11, y: 70.5}
+        - {x: 25, y: 70.5}
+        - {x: 30, y: 69.5}
+        - {x: 33, y: 68.5}
+        - {x: 37, y: 66.5}
+        - {x: 87, y: 33.5}
+        - {x: 89, y: 31.5}
+        - {x: 90, y: 28.5}
+        - {x: 90, y: 20.5}
+        - {x: 87, y: -39.5}
+        - {x: 86, y: -41.5}
+        - {x: 84, y: -43.5}
+        - {x: 34, y: -68.5}
+        - {x: 31, y: -69.5}
+        - {x: 25, y: -70.5}
+        - {x: 14, y: -70.5}
+        - {x: 7, y: -69.5}
+        - {x: -1, y: -67.5}
+        - {x: -40, y: -54.5}
+        - {x: -47, y: -51.5}
+        - {x: -57, y: -46.5}
+        - {x: -66, y: -40.5}
+        - {x: -70, y: -37.5}
+        - {x: -79, y: -28.5}
+        - {x: -85, y: -21.5}
+        - {x: -88, y: -17.5}
+        - {x: -91, y: -11.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 6b7872ab91dbd7747abc005d8e94d6ff
+      internalID: -283905596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_moonfish_1
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 432
+        width: 188
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -91, y: -2.5}
+        - {x: -90, y: -0.5}
+        - {x: -87, y: 4.5}
+        - {x: -83, y: 10.5}
+        - {x: -76, y: 19.5}
+        - {x: -72, y: 24.5}
+        - {x: -62, y: 34.5}
+        - {x: -57, y: 38.5}
+        - {x: -53, y: 41.5}
+        - {x: -50, y: 43.5}
+        - {x: -20, y: 59.5}
+        - {x: -10, y: 64.5}
+        - {x: -5, y: 66.5}
+        - {x: -1, y: 67.5}
+        - {x: 4, y: 68.5}
+        - {x: 24, y: 68.5}
+        - {x: 28, y: 67.5}
+        - {x: 31, y: 66.5}
+        - {x: 84, y: 40.5}
+        - {x: 88, y: 38.5}
+        - {x: 89, y: 37.5}
+        - {x: 90, y: 35.5}
+        - {x: 91, y: 32.5}
+        - {x: 91, y: -35.5}
+        - {x: 90, y: -38.5}
+        - {x: 89, y: -40.5}
+        - {x: 85, y: -44.5}
+        - {x: 83, y: -45.5}
+        - {x: 32, y: -66.5}
+        - {x: 29, y: -67.5}
+        - {x: 25, y: -68.5}
+        - {x: 5, y: -68.5}
+        - {x: 0, y: -67.5}
+        - {x: -4, y: -66.5}
+        - {x: -7, y: -65.5}
+        - {x: -45, y: -51.5}
+        - {x: -53, y: -47.5}
+        - {x: -58, y: -44.5}
+        - {x: -67, y: -38.5}
+        - {x: -84, y: -21.5}
+        - {x: -86, y: -18.5}
+        - {x: -89, y: -13.5}
+        - {x: -91, y: -9.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 97e024533f44f3249ba7f04e467851b3
+      internalID: 224019807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_moonfish_2
+      rect:
+        serializedVersion: 2
+        x: 593.5
+        y: 432
+        width: 188
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -91, y: -2.5}
+        - {x: -88, y: 3.5}
+        - {x: -85, y: 8.5}
+        - {x: -78, y: 18.5}
+        - {x: -75, y: 22.5}
+        - {x: -58, y: 39.5}
+        - {x: -54, y: 42.5}
+        - {x: -23, y: 58.5}
+        - {x: -9, y: 65.5}
+        - {x: -6, y: 66.5}
+        - {x: -2, y: 67.5}
+        - {x: 3, y: 68.5}
+        - {x: 21, y: 68.5}
+        - {x: 27, y: 67.5}
+        - {x: 31, y: 66.5}
+        - {x: 35, y: 64.5}
+        - {x: 38, y: 62.5}
+        - {x: 86, y: 29.5}
+        - {x: 89, y: 26.5}
+        - {x: 90, y: 24.5}
+        - {x: 90, y: -30.5}
+        - {x: 89, y: -33.5}
+        - {x: 88, y: -35.5}
+        - {x: 86, y: -37.5}
+        - {x: 33, y: -65.5}
+        - {x: 27, y: -67.5}
+        - {x: 20, y: -68.5}
+        - {x: 4, y: -68.5}
+        - {x: -1, y: -67.5}
+        - {x: -5, y: -66.5}
+        - {x: -11, y: -64.5}
+        - {x: -41, y: -53.5}
+        - {x: -46, y: -51.5}
+        - {x: -54, y: -47.5}
+        - {x: -59, y: -44.5}
+        - {x: -62, y: -42.5}
+        - {x: -66, y: -39.5}
+        - {x: -73, y: -33.5}
+        - {x: -78, y: -28.5}
+        - {x: -83, y: -22.5}
+        - {x: -86, y: -18.5}
+        - {x: -88, y: -15.5}
+        - {x: -90, y: -11.5}
+        - {x: -91, y: -8.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 4e4c3f49e44b2b348a3d2286fc2b9b28
+      internalID: 536915645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_moonfish_3
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 432
+        width: 188
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -90, y: -2.5}
+        - {x: -88, y: 1.5}
+        - {x: -84, y: 8.5}
+        - {x: -75, y: 20.5}
+        - {x: -70, y: 26.5}
+        - {x: -64, y: 32.5}
+        - {x: -58, y: 37.5}
+        - {x: -54, y: 40.5}
+        - {x: -51, y: 42.5}
+        - {x: -13, y: 62.5}
+        - {x: -11, y: 63.5}
+        - {x: -6, y: 65.5}
+        - {x: 0, y: 67.5}
+        - {x: 5, y: 68.5}
+        - {x: 26, y: 68.5}
+        - {x: 30, y: 67.5}
+        - {x: 84, y: 40.5}
+        - {x: 87, y: 37.5}
+        - {x: 88, y: 35.5}
+        - {x: 90, y: -28.5}
+        - {x: 90, y: -35.5}
+        - {x: 89, y: -38.5}
+        - {x: 86, y: -41.5}
+        - {x: 84, y: -42.5}
+        - {x: 32, y: -66.5}
+        - {x: 29, y: -67.5}
+        - {x: 25, y: -68.5}
+        - {x: 9, y: -68.5}
+        - {x: 3, y: -67.5}
+        - {x: -1, y: -66.5}
+        - {x: -10, y: -63.5}
+        - {x: -44, y: -51.5}
+        - {x: -54, y: -46.5}
+        - {x: -59, y: -43.5}
+        - {x: -68, y: -37.5}
+        - {x: -78, y: -27.5}
+        - {x: -84, y: -20.5}
+        - {x: -86, y: -17.5}
+        - {x: -90, y: -9.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: f0d0e81cff42a504883a23d19e159cf7
+      internalID: 375577565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_ruby_0
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 299
+        width: 191
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -90.5, y: -3}
+        - {x: -89.5, y: -1}
+        - {x: -87.5, y: 2}
+        - {x: -70.5, y: 21}
+        - {x: -62.5, y: 28}
+        - {x: -55.5, y: 34}
+        - {x: -52.5, y: 36}
+        - {x: -19.5, y: 57}
+        - {x: -11.5, y: 61}
+        - {x: -5.5, y: 63}
+        - {x: 10.5, y: 63}
+        - {x: 14.5, y: 62}
+        - {x: 17.5, y: 61}
+        - {x: 85.5, y: 30}
+        - {x: 87.5, y: 29}
+        - {x: 89.5, y: 27}
+        - {x: 90.5, y: 25}
+        - {x: 90.5, y: 19}
+        - {x: 86.5, y: -33}
+        - {x: 85.5, y: -35}
+        - {x: 83.5, y: -37}
+        - {x: 81.5, y: -38}
+        - {x: -0.5, y: -63}
+        - {x: -10.5, y: -63}
+        - {x: -14.5, y: -62}
+        - {x: -17.5, y: -61}
+        - {x: -23.5, y: -58}
+        - {x: -57.5, y: -38}
+        - {x: -62.5, y: -35}
+        - {x: -65.5, y: -33}
+        - {x: -72.5, y: -28}
+        - {x: -81.5, y: -20}
+        - {x: -84.5, y: -17}
+        - {x: -88.5, y: -12}
+        - {x: -90.5, y: -8}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 1fe2964cb7ceb33408a8641a6dc6b079
+      internalID: -129311520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_ruby_1
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 299
+        width: 191
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -92.5, y: -3}
+        - {x: -91.5, y: -1}
+        - {x: -88.5, y: 3}
+        - {x: -79.5, y: 13}
+        - {x: -65.5, y: 27}
+        - {x: -52.5, y: 37}
+        - {x: -20.5, y: 56}
+        - {x: -14.5, y: 59}
+        - {x: -8.5, y: 61}
+        - {x: -3.5, y: 62}
+        - {x: 8.5, y: 62}
+        - {x: 13.5, y: 61}
+        - {x: 88.5, y: 41}
+        - {x: 91.5, y: 39}
+        - {x: 92.5, y: 37}
+        - {x: 93.5, y: 34}
+        - {x: 93.5, y: 30}
+        - {x: 90.5, y: -36}
+        - {x: 89.5, y: -38}
+        - {x: 87.5, y: -40}
+        - {x: 85.5, y: -41}
+        - {x: -8.5, y: -62}
+        - {x: -13.5, y: -62}
+        - {x: -17.5, y: -61}
+        - {x: -20.5, y: -60}
+        - {x: -62.5, y: -36}
+        - {x: -68.5, y: -32}
+        - {x: -76.5, y: -26}
+        - {x: -87.5, y: -15}
+        - {x: -91.5, y: -10}
+        - {x: -92.5, y: -8}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: af1d94a2d0b0a9d4b926ac9b5a563c23
+      internalID: 1118851117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_ruby_2
+      rect:
+        serializedVersion: 2
+        x: 589.5
+        y: 298.5
+        width: 191
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -87.5, y: -1}
+        - {x: -85.5, y: 2}
+        - {x: -82.5, y: 6}
+        - {x: -75.5, y: 14}
+        - {x: -57.5, y: 32}
+        - {x: -52.5, y: 36}
+        - {x: -49.5, y: 38}
+        - {x: -18.5, y: 57}
+        - {x: -13.5, y: 60}
+        - {x: -8.5, y: 62}
+        - {x: -4.5, y: 63}
+        - {x: 2.5, y: 64}
+        - {x: 8.5, y: 64}
+        - {x: 13.5, y: 63}
+        - {x: 19.5, y: 61}
+        - {x: 81.5, y: 32}
+        - {x: 83.5, y: 31}
+        - {x: 85.5, y: 29}
+        - {x: 86.5, y: 27}
+        - {x: 86.5, y: 17}
+        - {x: 83.5, y: -30}
+        - {x: 81.5, y: -34}
+        - {x: 77.5, y: -36}
+        - {x: 7.5, y: -61}
+        - {x: 3.5, y: -62}
+        - {x: -3.5, y: -62}
+        - {x: -9.5, y: -61}
+        - {x: -13.5, y: -60}
+        - {x: -19.5, y: -58}
+        - {x: -53.5, y: -41}
+        - {x: -59.5, y: -37}
+        - {x: -69.5, y: -29}
+        - {x: -79.5, y: -19}
+        - {x: -83.5, y: -14}
+        - {x: -86.5, y: -10}
+        - {x: -87.5, y: -8}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 6447913a3b1a35e418c887d586f72707
+      internalID: 2134388560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_ruby_3
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 299
+        width: 191
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -91.5, y: -2}
+        - {x: -90.5, y: 0}
+        - {x: -87.5, y: 4}
+        - {x: -78.5, y: 14}
+        - {x: -67.5, y: 25}
+        - {x: -57.5, y: 34}
+        - {x: -54.5, y: 36}
+        - {x: -26.5, y: 53}
+        - {x: -21.5, y: 56}
+        - {x: -13.5, y: 60}
+        - {x: -10.5, y: 61}
+        - {x: -6.5, y: 62}
+        - {x: 12.5, y: 62}
+        - {x: 16.5, y: 61}
+        - {x: 22.5, y: 59}
+        - {x: 87.5, y: 31}
+        - {x: 89.5, y: 30}
+        - {x: 90.5, y: 29}
+        - {x: 91.5, y: 27}
+        - {x: 91.5, y: 16}
+        - {x: 88.5, y: -33}
+        - {x: 87.5, y: -35}
+        - {x: 85.5, y: -37}
+        - {x: 83.5, y: -38}
+        - {x: -13.5, y: -63}
+        - {x: -17.5, y: -63}
+        - {x: -22.5, y: -62}
+        - {x: -28.5, y: -59}
+        - {x: -60.5, y: -38}
+        - {x: -67.5, y: -33}
+        - {x: -75.5, y: -27}
+        - {x: -86.5, y: -16}
+        - {x: -91.5, y: -10}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 5fef0a482100d664287147f879d80f92
+      internalID: 664759766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_golden_0
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 156
+        width: 199
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -96.5, y: 2}
+        - {x: -95.5, y: 4}
+        - {x: -88.5, y: 13}
+        - {x: -75.5, y: 27}
+        - {x: -70.5, y: 32}
+        - {x: -64.5, y: 37}
+        - {x: -59.5, y: 41}
+        - {x: -55.5, y: 44}
+        - {x: -52.5, y: 46}
+        - {x: -27.5, y: 59}
+        - {x: -21.5, y: 62}
+        - {x: -15.5, y: 64}
+        - {x: -7.5, y: 66}
+        - {x: 12.5, y: 66}
+        - {x: 78.5, y: 44}
+        - {x: 82.5, y: 42}
+        - {x: 84.5, y: 39}
+        - {x: 88.5, y: 31}
+        - {x: 92.5, y: 21}
+        - {x: 95.5, y: 12}
+        - {x: 96.5, y: 7}
+        - {x: 96.5, y: -5}
+        - {x: 94.5, y: -13}
+        - {x: 91.5, y: -23}
+        - {x: 89.5, y: -28}
+        - {x: 86.5, y: -35}
+        - {x: 84.5, y: -39}
+        - {x: 82.5, y: -42}
+        - {x: 81.5, y: -43}
+        - {x: 79.5, y: -44}
+        - {x: 7.5, y: -66}
+        - {x: -5.5, y: -66}
+        - {x: -9.5, y: -65}
+        - {x: -18.5, y: -62}
+        - {x: -51.5, y: -46}
+        - {x: -57.5, y: -43}
+        - {x: -72.5, y: -33}
+        - {x: -79.5, y: -27}
+        - {x: -85.5, y: -21}
+        - {x: -91.5, y: -14}
+        - {x: -95.5, y: -8}
+        - {x: -96.5, y: -6}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 190af3e04566089479d1eb612b1718fb
+      internalID: 408092872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_golden_1
+      rect:
+        serializedVersion: 2
+        x: 339.5
+        y: 156
+        width: 199
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -96.5, y: 2}
+        - {x: -94.5, y: 5}
+        - {x: -89.5, y: 11}
+        - {x: -77.5, y: 24}
+        - {x: -66.5, y: 35}
+        - {x: -60.5, y: 40}
+        - {x: -56.5, y: 43}
+        - {x: -50.5, y: 47}
+        - {x: -33.5, y: 56}
+        - {x: -19.5, y: 63}
+        - {x: -16.5, y: 64}
+        - {x: -8.5, y: 66}
+        - {x: 0.5, y: 67}
+        - {x: 9.5, y: 67}
+        - {x: 14.5, y: 66}
+        - {x: 79.5, y: 41}
+        - {x: 84.5, y: 36}
+        - {x: 86.5, y: 33}
+        - {x: 88.5, y: 29}
+        - {x: 94.5, y: 11}
+        - {x: 95.5, y: 7}
+        - {x: 96.5, y: 2}
+        - {x: 96.5, y: -3}
+        - {x: 95.5, y: -8}
+        - {x: 91.5, y: -21}
+        - {x: 88.5, y: -30}
+        - {x: 87.5, y: -32}
+        - {x: 83.5, y: -39}
+        - {x: 80.5, y: -42}
+        - {x: 0.5, y: -66}
+        - {x: -10.5, y: -66}
+        - {x: -14.5, y: -65}
+        - {x: -17.5, y: -64}
+        - {x: -25.5, y: -60}
+        - {x: -56.5, y: -43}
+        - {x: -63.5, y: -39}
+        - {x: -66.5, y: -37}
+        - {x: -74.5, y: -31}
+        - {x: -89.5, y: -16}
+        - {x: -92.5, y: -12}
+        - {x: -94.5, y: -9}
+        - {x: -96.5, y: -5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 00a2e61b20242184c94604110fda9493
+      internalID: -1041594562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_golden_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 156.5
+        width: 199
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -96.5, y: 5}
+        - {x: -94.5, y: 8}
+        - {x: -85.5, y: 19}
+        - {x: -67.5, y: 37}
+        - {x: -62.5, y: 41}
+        - {x: -53.5, y: 47}
+        - {x: -32.5, y: 58}
+        - {x: -30.5, y: 59}
+        - {x: -21.5, y: 63}
+        - {x: -18.5, y: 64}
+        - {x: -10.5, y: 66}
+        - {x: -2.5, y: 67}
+        - {x: 4.5, y: 67}
+        - {x: 9.5, y: 66}
+        - {x: 77.5, y: 47}
+        - {x: 80.5, y: 44}
+        - {x: 84.5, y: 38}
+        - {x: 89.5, y: 28}
+        - {x: 91.5, y: 23}
+        - {x: 95.5, y: 11}
+        - {x: 96.5, y: 7}
+        - {x: 96.5, y: -1}
+        - {x: 95.5, y: -5}
+        - {x: 88.5, y: -26}
+        - {x: 84.5, y: -34}
+        - {x: 81.5, y: -39}
+        - {x: 78.5, y: -42}
+        - {x: 76.5, y: -43}
+        - {x: 2.5, y: -65}
+        - {x: -2.5, y: -65}
+        - {x: -8.5, y: -64}
+        - {x: -14.5, y: -62}
+        - {x: -21.5, y: -59}
+        - {x: -59.5, y: -39}
+        - {x: -66.5, y: -35}
+        - {x: -69.5, y: -33}
+        - {x: -73.5, y: -30}
+        - {x: -89.5, y: -14}
+        - {x: -92.5, y: -10}
+        - {x: -94.5, y: -7}
+        - {x: -96.5, y: -3}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: b351f83fed6d53240a60bbe7143e675a
+      internalID: 1440775784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_golden_3
+      rect:
+        serializedVersion: 2
+        x: 841.5
+        y: 156
+        width: 199
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -93.5, y: 1}
+        - {x: -92.5, y: 3}
+        - {x: -86.5, y: 10}
+        - {x: -79.5, y: 18}
+        - {x: -62.5, y: 35}
+        - {x: -56.5, y: 40}
+        - {x: -52.5, y: 43}
+        - {x: -43.5, y: 49}
+        - {x: -25.5, y: 58}
+        - {x: -10.5, y: 64}
+        - {x: -5.5, y: 65}
+        - {x: 1.5, y: 66}
+        - {x: 14.5, y: 66}
+        - {x: 76.5, y: 45}
+        - {x: 80.5, y: 41}
+        - {x: 85.5, y: 31}
+        - {x: 89.5, y: 21}
+        - {x: 90.5, y: 18}
+        - {x: 92.5, y: 10}
+        - {x: 92.5, y: 4}
+        - {x: 91.5, y: -2}
+        - {x: 85.5, y: -31}
+        - {x: 83.5, y: -35}
+        - {x: 81.5, y: -37}
+        - {x: 79.5, y: -38}
+        - {x: 0.5, y: -66}
+        - {x: -6.5, y: -66}
+        - {x: -10.5, y: -65}
+        - {x: -13.5, y: -64}
+        - {x: -27.5, y: -57}
+        - {x: -58.5, y: -40}
+        - {x: -71.5, y: -31}
+        - {x: -90.5, y: -12}
+        - {x: -93.5, y: -6}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: c9eac6aa30d5a72448f2e2e13ea44ca6
+      internalID: 395862424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_abyss_0
+      rect:
+        serializedVersion: 2
+        x: 80.5
+        y: 20.5
+        width: 203
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -94.5, y: -3}
+        - {x: -92.5, y: 1}
+        - {x: -90.5, y: 4}
+        - {x: -85.5, y: 11}
+        - {x: -78.5, y: 19}
+        - {x: -67.5, y: 30}
+        - {x: -63.5, y: 33}
+        - {x: -36.5, y: 52}
+        - {x: -31.5, y: 55}
+        - {x: -27.5, y: 57}
+        - {x: -21.5, y: 59}
+        - {x: -15.5, y: 60}
+        - {x: -7.5, y: 60}
+        - {x: -2.5, y: 59}
+        - {x: 90.5, y: 25}
+        - {x: 92.5, y: 24}
+        - {x: 94.5, y: 22}
+        - {x: 95.5, y: 20}
+        - {x: 95.5, y: 14}
+        - {x: 91.5, y: -36}
+        - {x: 90.5, y: -38}
+        - {x: 86.5, y: -40}
+        - {x: -8.5, y: -59}
+        - {x: -20.5, y: -59}
+        - {x: -51.5, y: -45}
+        - {x: -67.5, y: -37}
+        - {x: -75.5, y: -31}
+        - {x: -83.5, y: -24}
+        - {x: -88.5, y: -19}
+        - {x: -91.5, y: -15}
+        - {x: -93.5, y: -12}
+        - {x: -94.5, y: -10}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 3f2938378daaf3f4dbb1212c63ad2f44
+      internalID: -168097840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_abyss_1
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 20
+        width: 203
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -98.5, y: -3}
+        - {x: -95.5, y: 3}
+        - {x: -93.5, y: 6}
+        - {x: -90.5, y: 10}
+        - {x: -85.5, y: 16}
+        - {x: -71.5, y: 30}
+        - {x: -65.5, y: 35}
+        - {x: -62.5, y: 37}
+        - {x: -57.5, y: 40}
+        - {x: -25.5, y: 58}
+        - {x: -21.5, y: 60}
+        - {x: -18.5, y: 61}
+        - {x: -13.5, y: 62}
+        - {x: 4.5, y: 62}
+        - {x: 9.5, y: 61}
+        - {x: 93.5, y: 35}
+        - {x: 95.5, y: 34}
+        - {x: 97.5, y: 32}
+        - {x: 98.5, y: 29}
+        - {x: 98.5, y: 23}
+        - {x: 95.5, y: -35}
+        - {x: 94.5, y: -37}
+        - {x: 92.5, y: -39}
+        - {x: 90.5, y: -40}
+        - {x: -12.5, y: -62}
+        - {x: -21.5, y: -62}
+        - {x: -26.5, y: -60}
+        - {x: -54.5, y: -47}
+        - {x: -66.5, y: -41}
+        - {x: -72.5, y: -37}
+        - {x: -76.5, y: -34}
+        - {x: -92.5, y: -18}
+        - {x: -95.5, y: -14}
+        - {x: -98.5, y: -8}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: adbf89436e579df48b7a4ebde5d6cbff
+      internalID: 1132791666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_abyss_2
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 19.5
+        width: 203
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -95.5, y: -4}
+        - {x: -94.5, y: -1}
+        - {x: -90.5, y: 5}
+        - {x: -87.5, y: 9}
+        - {x: -81.5, y: 16}
+        - {x: -68.5, y: 29}
+        - {x: -62.5, y: 34}
+        - {x: -40.5, y: 50}
+        - {x: -33.5, y: 55}
+        - {x: -29.5, y: 57}
+        - {x: -23.5, y: 59}
+        - {x: -19.5, y: 60}
+        - {x: -2.5, y: 60}
+        - {x: 24.5, y: 53}
+        - {x: 87.5, y: 34}
+        - {x: 90.5, y: 33}
+        - {x: 92.5, y: 32}
+        - {x: 93.5, y: 31}
+        - {x: 94.5, y: 28}
+        - {x: 94.5, y: 22}
+        - {x: 88.5, y: -34}
+        - {x: 86.5, y: -38}
+        - {x: 85.5, y: -39}
+        - {x: 83.5, y: -40}
+        - {x: 27.5, y: -52}
+        - {x: -18.5, y: -61}
+        - {x: -24.5, y: -61}
+        - {x: -28.5, y: -60}
+        - {x: -30.5, y: -59}
+        - {x: -65.5, y: -39}
+        - {x: -71.5, y: -35}
+        - {x: -76.5, y: -31}
+        - {x: -90.5, y: -17}
+        - {x: -93.5, y: -13}
+        - {x: -94.5, y: -11}
+        - {x: -95.5, y: -8}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 3fb40cc704989f2428512e0dc71ef584
+      internalID: -1902635415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fish_abyss_3
+      rect:
+        serializedVersion: 2
+        x: 839.5
+        y: 20
+        width: 203
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -93.5, y: -3}
+        - {x: -92.5, y: -1}
+        - {x: -90.5, y: 2}
+        - {x: -83.5, y: 11}
+        - {x: -77.5, y: 18}
+        - {x: -67.5, y: 28}
+        - {x: -59.5, y: 34}
+        - {x: -34.5, y: 51}
+        - {x: -28.5, y: 55}
+        - {x: -24.5, y: 57}
+        - {x: -19.5, y: 59}
+        - {x: -15.5, y: 60}
+        - {x: 0.5, y: 60}
+        - {x: 6.5, y: 58}
+        - {x: 87.5, y: 29}
+        - {x: 89.5, y: 28}
+        - {x: 91.5, y: 26}
+        - {x: 92.5, y: 24}
+        - {x: 92.5, y: 17}
+        - {x: 89.5, y: -35}
+        - {x: 86.5, y: -38}
+        - {x: 84.5, y: -39}
+        - {x: -17.5, y: -61}
+        - {x: -21.5, y: -61}
+        - {x: -25.5, y: -60}
+        - {x: -27.5, y: -59}
+        - {x: -58.5, y: -42}
+        - {x: -63.5, y: -39}
+        - {x: -72.5, y: -33}
+        - {x: -90.5, y: -15}
+        - {x: -92.5, y: -12}
+        - {x: -93.5, y: -9}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 6d305755cf7e5cc4483cd2d997460bef
+      internalID: -831796641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 439d1e38c0602a74f88290025de34525
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fish_abyss_0: -168097840
+      fish_abyss_1: 1132791666
+      fish_abyss_2: -1902635415
+      fish_abyss_3: -831796641
+      fish_bluefin_0: -2131443976
+      fish_bluefin_1: -777537059
+      fish_bluefin_2: -322420841
+      fish_bluefin_3: -1694413528
+      fish_clown_0: -1256096045
+      fish_clown_1: -1986354758
+      fish_clown_2: 412409033
+      fish_clown_3: -738631782
+      fish_golden_0: 408092872
+      fish_golden_1: -1041594562
+      fish_golden_2: 1440775784
+      fish_golden_3: 395862424
+      fish_jelly_0: -1903520043
+      fish_jelly_1: -1901777404
+      fish_jelly_2: 1540711123
+      fish_jelly_3: 19942081
+      fish_minnow_0: 1283001837
+      fish_minnow_1: 1717292621
+      fish_minnow_2: -690203860
+      fish_minnow_3: -1064676025
+      fish_moonfish_0: -283905596
+      fish_moonfish_1: 224019807
+      fish_moonfish_2: 536915645
+      fish_moonfish_3: 375577565
+      fish_perch_0: -1266129585
+      fish_perch_1: 1482207365
+      fish_perch_2: 1682339062
+      fish_perch_3: 2110665005
+      fish_ruby_0: -129311520
+      fish_ruby_1: 1118851117
+      fish_ruby_2: 2134388560
+      fish_ruby_3: 664759766
+      fish_sunfish_0: -281519737
+      fish_sunfish_1: -977165048
+      fish_sunfish_2: 549638859
+      fish_sunfish_3: 432393350
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

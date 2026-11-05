@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 380915c742ca41d40b40cb43e3753de1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -703311559276186304
+    second: fruit_tree_hd_0
+  - first:
+      213: -5234327440243437866
+    second: fruit_tree_hd_1
+  - first:
+      213: -8216596097435227596
+    second: fruit_tree_hd_2
+  - first:
+      213: -7630087112747667712
+    second: fruit_tree_hd_3
+  - first:
+      213: -5419814854034971450
+    second: fruit_tree_hd_4
+  - first:
+      213: 2945053138671273850
+    second: fruit_tree_hd_5
+  - first:
+      213: -994353344662684965
+    second: fruit_tree_hd_6
+  - first:
+      213: 6761690251557285595
+    second: fruit_tree_hd_7
+  - first:
+      213: 4348358209790023384
+    second: fruit_tree_hd_8
+  - first:
+      213: -6192928927759226451
+    second: fruit_tree_hd_9
+  - first:
+      213: -3935434293004189538
+    second: fruit_tree_hd_10
+  - first:
+      213: -2712340961023866955
+    second: fruit_tree_hd_11
+  - first:
+      213: -890460296995772634
+    second: fruit_tree_hd_12
+  - first:
+      213: -8667153461274478682
+    second: fruit_tree_hd_13
+  - first:
+      213: -5522651080176106266
+    second: fruit_tree_hd_14
+  - first:
+      213: -5735225895589774795
+    second: fruit_tree_hd_15
+  - first:
+      213: -9133430578409639519
+    second: fruit_tree_hd_16
+  - first:
+      213: 5088534037426005426
+    second: fruit_tree_hd_17
+  - first:
+      213: 5677340666249407346
+    second: fruit_tree_hd_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fruit_tree_hd_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 1119
+        height: 1323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045bae6fcd55d36f0800000000000000
+      internalID: -703311559276186304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_1
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1146
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dec53efceeeb57b0800000000000000
+      internalID: -5234327440243437866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_2
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1113
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a238df169c8fd80800000000000000
+      internalID: -8216596097435227596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_3
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 1087
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fa367623c7c1690800000000000000
+      internalID: -7630087112747667712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_4
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1089
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c42cdc0b13f8c4b0800000000000000
+      internalID: -5419814854034971450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_5
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1000
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77862fd93eeed820800000000000000
+      internalID: 2945053138671273850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_6
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 912
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdab82eb6e85332f0800000000000000
+      internalID: -994353344662684965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_7
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 837
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bde2b45757956dd50800000000000000
+      internalID: 6761690251557285595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 717
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d610b2d0c8785c30800000000000000
+      internalID: 4348358209790023384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_9
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 692
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9aba5a3fb4e0aa0800000000000000
+      internalID: -6192928927759226451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_10
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 668
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9048908c578269c0800000000000000
+      internalID: -3935434293004189538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_11
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 619
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b74e6c3444db5ad0800000000000000
+      internalID: -2712340961023866955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_12
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 578
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6276af6e31374a3f0800000000000000
+      internalID: -890460296995772634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_13
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 554
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7ffe6f8d518b780800000000000000
+      internalID: -8667153461274478682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_14
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 526
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e40da35a1a9b53b0800000000000000
+      internalID: -5522651080176106266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_15
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 521
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53affba3f626860b0800000000000000
+      internalID: -5735225895589774795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_16
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 499
+        width: 6
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a1f339a7498f3180800000000000000
+      internalID: -9133430578409639519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_17
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 475
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5e2403fba1e9640800000000000000
+      internalID: 5088534037426005426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fruit_tree_hd_18
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 421
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27beca09147f9ce40800000000000000
+      internalID: 5677340666249407346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fruit_tree_hd_0: -703311559276186304
+      fruit_tree_hd_1: -5234327440243437866
+      fruit_tree_hd_10: -3935434293004189538
+      fruit_tree_hd_11: -2712340961023866955
+      fruit_tree_hd_12: -890460296995772634
+      fruit_tree_hd_13: -8667153461274478682
+      fruit_tree_hd_14: -5522651080176106266
+      fruit_tree_hd_15: -5735225895589774795
+      fruit_tree_hd_16: -9133430578409639519
+      fruit_tree_hd_17: 5088534037426005426
+      fruit_tree_hd_18: 5677340666249407346
+      fruit_tree_hd_2: -8216596097435227596
+      fruit_tree_hd_3: -7630087112747667712
+      fruit_tree_hd_4: -5419814854034971450
+      fruit_tree_hd_5: 2945053138671273850
+      fruit_tree_hd_6: -994353344662684965
+      fruit_tree_hd_7: 6761690251557285595
+      fruit_tree_hd_8: 4348358209790023384
+      fruit_tree_hd_9: -6192928927759226451
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

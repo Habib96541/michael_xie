@@ -1,0 +1,1651 @@
+fileFormatVersion: 2
+guid: 2d1c298885c80144a9da8387ded73b97
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4247617806873353703
+    second: collection_card_hd_0
+  - first:
+      213: -2995936305433586288
+    second: collection_card_hd_1
+  - first:
+      213: -3100719241976791716
+    second: collection_card_hd_2
+  - first:
+      213: -1383975766231494378
+    second: collection_card_hd_3
+  - first:
+      213: -2437257289797328753
+    second: collection_card_hd_4
+  - first:
+      213: -2979034419149093794
+    second: collection_card_hd_5
+  - first:
+      213: 5504931158000467737
+    second: collection_card_hd_6
+  - first:
+      213: 3136074489881609443
+    second: collection_card_hd_7
+  - first:
+      213: -7901233814976739302
+    second: collection_card_hd_8
+  - first:
+      213: 5654374363355628601
+    second: collection_card_hd_9
+  - first:
+      213: -2493195693175008475
+    second: collection_card_hd_10
+  - first:
+      213: -3583595900409443298
+    second: collection_card_hd_11
+  - first:
+      213: 4937592982502590526
+    second: collection_card_hd_12
+  - first:
+      213: -3478395068892849672
+    second: collection_card_hd_13
+  - first:
+      213: -884006173128449037
+    second: collection_card_hd_14
+  - first:
+      213: -1345281521795183985
+    second: collection_card_hd_15
+  - first:
+      213: 5941122586307051988
+    second: collection_card_hd_16
+  - first:
+      213: 6828021175157861194
+    second: collection_card_hd_17
+  - first:
+      213: -3000525369796656799
+    second: collection_card_hd_18
+  - first:
+      213: -6639722367402410471
+    second: collection_card_hd_19
+  - first:
+      213: 6554929789237094015
+    second: collection_card_hd_20
+  - first:
+      213: 2964256610699248018
+    second: collection_card_hd_21
+  - first:
+      213: 5964819567906106436
+    second: collection_card_hd_22
+  - first:
+      213: 8321781678480786999
+    second: collection_card_hd_23
+  - first:
+      213: 1435435483550885606
+    second: collection_card_hd_24
+  - first:
+      213: 3199954839055516586
+    second: collection_card_hd_25
+  - first:
+      213: 4545957305609033167
+    second: collection_card_hd_26
+  - first:
+      213: -3306164882233990778
+    second: collection_card_hd_27
+  - first:
+      213: 4172565859944950594
+    second: collection_card_hd_28
+  - first:
+      213: -5230081563942159537
+    second: collection_card_hd_29
+  - first:
+      213: 310906226479788520
+    second: collection_card_hd_30
+  - first:
+      213: -5855035494880905880
+    second: collection_card_hd_31
+  - first:
+      213: -1071788824759476340
+    second: collection_card_hd_32
+  - first:
+      213: 5021551128452993590
+    second: collection_card_hd_33
+  - first:
+      213: 4292603667578443734
+    second: collection_card_hd_34
+  - first:
+      213: -2209380465482356693
+    second: collection_card_hd_35
+  - first:
+      213: 6373678833577322422
+    second: collection_card_hd_36
+  - first:
+      213: 9178138810247021957
+    second: collection_card_hd_37
+  - first:
+      213: -2743469792306121272
+    second: collection_card_hd_38
+  - first:
+      213: 7283879409496707653
+    second: collection_card_hd_39
+  - first:
+      213: 1387559979048739213
+    second: collection_card_hd_40
+  - first:
+      213: 4828760077690955259
+    second: collection_card_hd_41
+  - first:
+      213: 8068316633777607882
+    second: collection_card_hd_42
+  - first:
+      213: 3288461911473688958
+    second: collection_card_hd_43
+  - first:
+      213: 2927324319152276642
+    second: collection_card_hd_44
+  - first:
+      213: 3910327664766706839
+    second: collection_card_hd_45
+  - first:
+      213: -1283257907687874201
+    second: collection_card_hd_46
+  - first:
+      213: -192433409331064424
+    second: collection_card_hd_47
+  - first:
+      213: 5796838831805230193
+    second: collection_card_hd_48
+  - first:
+      213: -7145627943767141870
+    second: collection_card_hd_49
+  - first:
+      213: -4411985570333842126
+    second: collection_card_hd_50
+  - first:
+      213: 7122966347356591758
+    second: collection_card_hd_51
+  - first:
+      213: 7124527168462463936
+    second: collection_card_hd_52
+  - first:
+      213: -8774171124354220170
+    second: collection_card_hd_53
+  - first:
+      213: 1980899849892487952
+    second: collection_card_hd_54
+  - first:
+      213: 4062264704026541530
+    second: collection_card_hd_55
+  - first:
+      213: -7278657700868846905
+    second: collection_card_hd_56
+  - first:
+      213: 7612877264910973356
+    second: collection_card_hd_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: collection_card_hd_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1191
+        width: 144
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed5f48f3e192fa30800000000000000
+      internalID: 4247617806873353703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_1
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1301
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0955fe8adcb4c66d0800000000000000
+      internalID: -2995936305433586288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_2
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1295
+        width: 101
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d31c9174808f4d0800000000000000
+      internalID: -3100719241976791716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_3
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1302
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611d50c8f512bcce0800000000000000
+      internalID: -1383975766231494378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_4
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1309
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f802667786f1d2ed0800000000000000
+      internalID: -2437257289797328753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_5
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 1326
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54c4f8baf758a6d0800000000000000
+      internalID: -2979034419149093794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_6
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1306
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ff899c8b1756c40800000000000000
+      internalID: 5504931158000467737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_7
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1319
+        width: 25
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4ce860223958b20800000000000000
+      internalID: 3136074489881609443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_8
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1271
+        width: 74
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18c10335bd295290800000000000000
+      internalID: -7901233814976739302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_9
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 1327
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93443ea768f587e40800000000000000
+      internalID: 5654374363355628601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_10
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 1309
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52315c00ab3666dd0800000000000000
+      internalID: -2493195693175008475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_11
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1315
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1c8c89e382844ec0800000000000000
+      internalID: -3583595900409443298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_12
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1303
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38478738aad58440800000000000000
+      internalID: 4937592982502590526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_13
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 1308
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9db2a3d124abfc0800000000000000
+      internalID: -3478395068892849672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1121
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f32d67b1116bb3f0800000000000000
+      internalID: -884006173128449037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_15
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1295
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a40826599945de0800000000000000
+      internalID: -1345281521795183985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_16
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 1297
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d1c1ebc38b137250800000000000000
+      internalID: 5941122586307051988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_17
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1294
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b2128151102ce50800000000000000
+      internalID: 6828021175157861194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_18
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1287
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16109b9d21efb56d0800000000000000
+      internalID: -3000525369796656799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_19
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 1298
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e73c38fa7fad3a0800000000000000
+      internalID: -6639722367402410471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_20
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1297
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f766a1fe9e9c7fa50800000000000000
+      internalID: 6554929789237094015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1267
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29105df9ea7232920800000000000000
+      internalID: 2964256610699248018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_22
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1233
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44ca7564bcb47c250800000000000000
+      internalID: 5964819567906106436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_23
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 736833c8858ec7370800000000000000
+      internalID: 8321781678480786999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_24
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1231
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6aa0f87f0bbe310800000000000000
+      internalID: 1435435483550885606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_25
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 1229
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa34237d8f5886c20800000000000000
+      internalID: 3199954839055516586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_26
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 1205
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc51bec751c761f30800000000000000
+      internalID: 4545957305609033167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_27
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1193
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68162917e842e12d0800000000000000
+      internalID: -3306164882233990778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_28
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1147
+        width: 71
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24be0fbda8ee7e930800000000000000
+      internalID: 4172565859944950594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_29
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1177
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b78ea17840b67b0800000000000000
+      internalID: -5230081563942159537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_30
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 111
+        width: 43
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1f8c3d09f805400800000000000000
+      internalID: 310906226479788520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_31
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 166
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865f15c1d3cbebea0800000000000000
+      internalID: -5855035494880905880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_32
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 168
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f5af11ebd3021f0800000000000000
+      internalID: -1071788824759476340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_33
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 173
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63217e0652220b540800000000000000
+      internalID: 5021551128452993590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_34
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 150
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d75d8fda44629b30800000000000000
+      internalID: 4292603667578443734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_35
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 145
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28ac352c24b651e0800000000000000
+      internalID: -2209380465482356693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_36
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 135
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b76dc3412bd37850800000000000000
+      internalID: 6373678833577322422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_37
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 123
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 585000cbe9c4f5f70800000000000000
+      internalID: 9178138810247021957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_38
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 95
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5349962cc3de9d0800000000000000
+      internalID: -2743469792306121272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_39
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 103
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54255d53bb9851560800000000000000
+      internalID: 7283879409496707653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_40
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 96
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81afb7037a914310800000000000000
+      internalID: 1387559979048739213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_41
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 77
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf56b50f4b3330340800000000000000
+      internalID: 4828760077690955259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 47
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac490bb0b3b68ff60800000000000000
+      internalID: 8068316633777607882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_43
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 37
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e719aca7fa6f2ad20800000000000000
+      internalID: 3288461911473688958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_44
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 63
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a40f6965f1ff9820800000000000000
+      internalID: 2927324319152276642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_45
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 53
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7946dc51b46444630800000000000000
+      internalID: 3910327664766706839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_46
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 37
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 761ad016bb3f03ee0800000000000000
+      internalID: -1283257907687874201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_47
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 26
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89197e175d6545df0800000000000000
+      internalID: -192433409331064424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_48
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 41
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ce0fd5432827050800000000000000
+      internalID: 5796838831805230193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_49
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 27
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21297aa8e31a5dc90800000000000000
+      internalID: -7145627943767141870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_50
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 28
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2352a1edf7a75c2c0800000000000000
+      internalID: -4411985570333842126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_51
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e865041672cd9d260800000000000000
+      internalID: 7122966347356591758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_52
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 21
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c323dc56b76fd260800000000000000
+      internalID: 7124527168462463936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_53
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 13
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f706699d1eb3680800000000000000
+      internalID: -8774171124354220170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_54
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 0
+        width: 96
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01367701be19d7b10800000000000000
+      internalID: 1980899849892487952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_55
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 11
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: addfb1bb930106830800000000000000
+      internalID: 4062264704026541530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_56
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 7
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca0d0292630dfa90800000000000000
+      internalID: -7278657700868846905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collection_card_hd_57
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 9
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca97aa5a98f56a960800000000000000
+      internalID: 7612877264910973356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      collection_card_hd_0: 4247617806873353703
+      collection_card_hd_1: -2995936305433586288
+      collection_card_hd_10: -2493195693175008475
+      collection_card_hd_11: -3583595900409443298
+      collection_card_hd_12: 4937592982502590526
+      collection_card_hd_13: -3478395068892849672
+      collection_card_hd_14: -884006173128449037
+      collection_card_hd_15: -1345281521795183985
+      collection_card_hd_16: 5941122586307051988
+      collection_card_hd_17: 6828021175157861194
+      collection_card_hd_18: -3000525369796656799
+      collection_card_hd_19: -6639722367402410471
+      collection_card_hd_2: -3100719241976791716
+      collection_card_hd_20: 6554929789237094015
+      collection_card_hd_21: 2964256610699248018
+      collection_card_hd_22: 5964819567906106436
+      collection_card_hd_23: 8321781678480786999
+      collection_card_hd_24: 1435435483550885606
+      collection_card_hd_25: 3199954839055516586
+      collection_card_hd_26: 4545957305609033167
+      collection_card_hd_27: -3306164882233990778
+      collection_card_hd_28: 4172565859944950594
+      collection_card_hd_29: -5230081563942159537
+      collection_card_hd_3: -1383975766231494378
+      collection_card_hd_30: 310906226479788520
+      collection_card_hd_31: -5855035494880905880
+      collection_card_hd_32: -1071788824759476340
+      collection_card_hd_33: 5021551128452993590
+      collection_card_hd_34: 4292603667578443734
+      collection_card_hd_35: -2209380465482356693
+      collection_card_hd_36: 6373678833577322422
+      collection_card_hd_37: 9178138810247021957
+      collection_card_hd_38: -2743469792306121272
+      collection_card_hd_39: 7283879409496707653
+      collection_card_hd_4: -2437257289797328753
+      collection_card_hd_40: 1387559979048739213
+      collection_card_hd_41: 4828760077690955259
+      collection_card_hd_42: 8068316633777607882
+      collection_card_hd_43: 3288461911473688958
+      collection_card_hd_44: 2927324319152276642
+      collection_card_hd_45: 3910327664766706839
+      collection_card_hd_46: -1283257907687874201
+      collection_card_hd_47: -192433409331064424
+      collection_card_hd_48: 5796838831805230193
+      collection_card_hd_49: -7145627943767141870
+      collection_card_hd_5: -2979034419149093794
+      collection_card_hd_50: -4411985570333842126
+      collection_card_hd_51: 7122966347356591758
+      collection_card_hd_52: 7124527168462463936
+      collection_card_hd_53: -8774171124354220170
+      collection_card_hd_54: 1980899849892487952
+      collection_card_hd_55: 4062264704026541530
+      collection_card_hd_56: -7278657700868846905
+      collection_card_hd_57: 7612877264910973356
+      collection_card_hd_6: 5504931158000467737
+      collection_card_hd_7: 3136074489881609443
+      collection_card_hd_8: -7901233814976739302
+      collection_card_hd_9: 5654374363355628601
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

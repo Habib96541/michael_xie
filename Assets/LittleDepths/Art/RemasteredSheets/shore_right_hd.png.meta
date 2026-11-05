@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: 94087a9a5b2fa46478bad289d0c75eaa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 811261329501921622
+    second: shore_right_hd_0
+  - first:
+      213: 8159725901815237757
+    second: shore_right_hd_1
+  - first:
+      213: 5646604860012599527
+    second: shore_right_hd_2
+  - first:
+      213: -3008736268760385814
+    second: shore_right_hd_3
+  - first:
+      213: -3677814507023076400
+    second: shore_right_hd_4
+  - first:
+      213: 7727790225393043604
+    second: shore_right_hd_5
+  - first:
+      213: -7306058243329716870
+    second: shore_right_hd_6
+  - first:
+      213: -364780715895226575
+    second: shore_right_hd_7
+  - first:
+      213: -7082894386981790932
+    second: shore_right_hd_8
+  - first:
+      213: 2829216375746555344
+    second: shore_right_hd_9
+  - first:
+      213: -4066209423223350573
+    second: shore_right_hd_10
+  - first:
+      213: 9092708904998627827
+    second: shore_right_hd_11
+  - first:
+      213: -3325963878400413405
+    second: shore_right_hd_12
+  - first:
+      213: 358663447161732029
+    second: shore_right_hd_13
+  - first:
+      213: -4082730563516759678
+    second: shore_right_hd_14
+  - first:
+      213: 7618597754805674258
+    second: shore_right_hd_15
+  - first:
+      213: -8447136729904640204
+    second: shore_right_hd_16
+  - first:
+      213: 2170406401325042841
+    second: shore_right_hd_17
+  - first:
+      213: 5615455611239038998
+    second: shore_right_hd_18
+  - first:
+      213: -7609286874472471097
+    second: shore_right_hd_19
+  - first:
+      213: 4805708171122720365
+    second: shore_right_hd_20
+  - first:
+      213: 2745337021019141530
+    second: shore_right_hd_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shore_right_hd_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2146
+        height: 710
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65129f481ed224b00800000000000000
+      internalID: 811261329501921622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 674
+        width: 62
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c4042c97b2d3170800000000000000
+      internalID: 8159725901815237757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_2
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 680
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e89b040435cc5e40800000000000000
+      internalID: 5646604860012599527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_3
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 690
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6f3b5fd42de36d0800000000000000
+      internalID: -3008736268760385814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_4
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 698
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d37c171137c5fcc0800000000000000
+      internalID: -3677814507023076400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_5
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 654
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498c9433440ae3b60800000000000000
+      internalID: 7727790225393043604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_6
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 639
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d8402acbaab9a90800000000000000
+      internalID: -7306058243329716870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 642
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ff6202fd900faf0800000000000000
+      internalID: -364780715895226575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_8
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 636
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b9752f41184bd90800000000000000
+      internalID: -7082894386981790932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 650
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd671dcd45634720800000000000000
+      internalID: 2829216375746555344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_10
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 658
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da1d62c21ce197c0800000000000000
+      internalID: -4066209423223350573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 641
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f96978e29acf2e70800000000000000
+      internalID: 9092708904998627827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_12
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 641
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321b92c697dc7d1d0800000000000000
+      internalID: -3325963878400413405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_13
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 635
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbbfdf1418a3af400800000000000000
+      internalID: 358663447161732029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_14
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 56
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28104f70f2a3757c0800000000000000
+      internalID: -4082730563516759678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_15
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 62
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 211e7cdfa42bab960800000000000000
+      internalID: 7618597754805674258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_16
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 59
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f01e426edb5ca80800000000000000
+      internalID: -8447136729904640204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_17
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 54
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c86396f15de1e10800000000000000
+      internalID: 2170406401325042841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_18
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 48
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61080ef502b1eed40800000000000000
+      internalID: 5615455611239038998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_19
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 50
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5a60547e1666690800000000000000
+      internalID: -7609286874472471097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_20
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 35
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e36f1be1e41b240800000000000000
+      internalID: 4805708171122720365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shore_right_hd_21
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 15
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a953396a975691620800000000000000
+      internalID: 2745337021019141530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      shore_right_hd_0: 811261329501921622
+      shore_right_hd_1: 8159725901815237757
+      shore_right_hd_10: -4066209423223350573
+      shore_right_hd_11: 9092708904998627827
+      shore_right_hd_12: -3325963878400413405
+      shore_right_hd_13: 358663447161732029
+      shore_right_hd_14: -4082730563516759678
+      shore_right_hd_15: 7618597754805674258
+      shore_right_hd_16: -8447136729904640204
+      shore_right_hd_17: 2170406401325042841
+      shore_right_hd_18: 5615455611239038998
+      shore_right_hd_19: -7609286874472471097
+      shore_right_hd_2: 5646604860012599527
+      shore_right_hd_20: 4805708171122720365
+      shore_right_hd_21: 2745337021019141530
+      shore_right_hd_3: -3008736268760385814
+      shore_right_hd_4: -3677814507023076400
+      shore_right_hd_5: 7727790225393043604
+      shore_right_hd_6: -7306058243329716870
+      shore_right_hd_7: -364780715895226575
+      shore_right_hd_8: -7082894386981790932
+      shore_right_hd_9: 2829216375746555344
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
