@@ -647,18 +647,23 @@ namespace CyberWhack.Editor
             EditorSceneManager.SaveScene(scene, ScenePath);
             AddSceneToBuildSettings(ScenePath);
 
-            PlayerSettings.WebGL.template = "APPLICATION:CyberWhack";
-            PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
+            PlayerSettings.WebGL.template = "PROJECT:CyberWhack";
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.AutoRotation;
 
-            Debug.Log("<color=#00e5ff>[CyberWhack]</color> Complete production scene with polished Cartoon UI saved at: " + ScenePath);
+            Debug.Log("<color=#00e5ff>[WhackAMole]</color> Complete production scene saved at: " + ScenePath);
         }
 
         [MenuItem("CyberWhack/3. Build WebGL Mobile Arcade")]
         public static void BuildWebGLMobile()
         {
             SetupCompleteScene();
-            string buildPath = "Builds/WebGL";
+            string buildPath = "build";
             if (!Directory.Exists(buildPath)) Directory.CreateDirectory(buildPath);
+
+            PlayerSettings.WebGL.template = "PROJECT:CyberWhack";
+            PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Disabled;
+            PlayerSettings.WebGL.decompressionFallback = true;
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.AutoRotation;
 
             BuildPlayerOptions options = new BuildPlayerOptions
             {
@@ -671,11 +676,19 @@ namespace CyberWhack.Editor
             BuildReport report = BuildPipeline.BuildPlayer(options);
             if (report.summary.result == BuildResult.Succeeded)
             {
-                Debug.Log($"<color=#00e5ff>[CyberWhack]</color> WebGL mobile build succeeded! Output: {buildPath} ({report.summary.totalSize / (1024 * 1024):F1} MB)");
+                Debug.Log($"<color=#00e5ff>[WhackAMole]</color> WebGL mobile build succeeded! Output: {buildPath} ({report.summary.totalSize / (1024 * 1024):F1} MB)");
+                if (Application.isBatchMode)
+                {
+                    EditorApplication.Exit(0);
+                }
             }
             else
             {
-                Debug.LogError($"<color=#ff0055>[CyberWhack]</color> WebGL build failed with {report.summary.totalErrors} errors!");
+                Debug.LogError($"<color=#ff0055>[WhackAMole]</color> WebGL build failed with {report.summary.totalErrors} errors!");
+                if (Application.isBatchMode)
+                {
+                    EditorApplication.Exit(1);
+                }
             }
         }
 

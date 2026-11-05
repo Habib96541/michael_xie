@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!-- Viewport width-locked portrait mode, strictly disable zoom and gesture zooming -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>CyberWhack 9X - Subterranean Arcade</title>
+  <title>Whack-a-Mole</title>
   
   <style>
     /* Zero margin, warm desert sand background */
@@ -28,11 +28,10 @@
     }
 
     #unity-container {
-      width: min(100vw, 56.25vh);
-      height: min(100vh, 177.7778vw);
+      width: 100%;
+      height: 100%;
       position: absolute;
       inset: 0;
-      margin: auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -45,9 +44,6 @@
       background: #ed973e;
       display: block;
       touch-action: none;
-      /* Safe area insets for notches & home bars */
-      padding-top: env(safe-area-inset-top, 44px);
-      padding-bottom: env(safe-area-inset-bottom, 34px);
     }
 
     #loading-cover {

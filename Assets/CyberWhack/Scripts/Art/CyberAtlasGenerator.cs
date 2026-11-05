@@ -5,10 +5,7 @@ using UnityEngine;
 namespace CyberWhack.Art
 {
     /// <summary>
-    /// Generates copyright-safe, high-contrast, cel-shaded 2D vector-style sprites
-    /// adhering to the "Industrial Subterranean Cybercore" aesthetic.
-    /// Uses deep carbon graphite (#0b0e14), electric cyan (#00e5ff), warning amber (#ffb700),
-    /// and hazard crimson (#ff0055).
+    /// Generates UI and arcade sprites for targets and HUD elements.
     /// </summary>
     public static class CyberAtlasGenerator
     {

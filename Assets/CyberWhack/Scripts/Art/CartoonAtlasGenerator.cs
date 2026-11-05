@@ -13,16 +13,7 @@ namespace CyberWhack.Art
     }
 
     /// <summary>
-    /// Generates high-resolution, vector-clean, copyright-safe cartoon assets
-    /// matching the reference screenshot from plays.org/whack-a-mole:
-    /// - Warm desert/dirt earth ground (#ed973e)
-    /// - Dark charcoal moles with beady specular eyes and terracotta snout
-    /// - Golden overclocked mole with royal crown
-    /// - Construction hard-hat mole (cracks on first hit)
-    /// - Classic cartoon round black bomb with burning fire fuse
-    /// - Layered subterranean dirt mounds with rounded mud clods
-    /// - Glossy golden Start button & green Settings gear icon
-    /// - Comic mallet strike VFX with starburst particles
+    /// Generates 2D arcade sprites and textures for moles, buttons, and HUD elements.
     /// </summary>
     public static class CartoonAtlasGenerator
     {

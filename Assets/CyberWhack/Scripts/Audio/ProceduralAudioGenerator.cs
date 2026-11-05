@@ -4,9 +4,7 @@ using UnityEngine;
 namespace CyberWhack.Audio
 {
     /// <summary>
-    /// Pure C# procedural cartoon audio synthesizer. Generates ultra-lightweight, copyright-safe,
-    /// mono-channel audio clips in memory with zero external asset dependencies.
-    /// Meets the strict <3.5 MB build size budget for mobile WebGL while delivering rich cartoon feedback.
+    /// Procedural audio generator for arcade sound effects.
     /// </summary>
     public static class ProceduralAudioGenerator
     {

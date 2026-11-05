@@ -1306,7 +1306,7 @@ namespace CyberWhack.Gameplay
 
             // ==========================================
             // 3. Main Menu Terminal UI Panel
-            // Exact Match with https://plays.org/whack-a-mole Reference
+            // Arcade stage timing configuration
             // ==========================================
             GameObject menuObj = new GameObject("MainMenuPanel", typeof(RectTransform));
             menuObj.transform.SetParent(safeAreaObj.transform, false);
