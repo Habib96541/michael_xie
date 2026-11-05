@@ -2,15 +2,17 @@
 
 Status: **Ready with validation limitations.** The Unity project and HTTP-hosted WebGL release are playable in the tested desktop browsers and touch emulation. Physical Android/iPhone browser checks and mobile hardware performance remain unverified.
 
+Current build receipt: **2026-11-05**. Full-session timing sample: **2026-10-31**. See [iPhone validation](iPhoneValidation.md) for Unity Device Simulator profiles, touch navigation, rotation and the separate stress sample.
+
 ## Build and environment
 
 - Unity **6000.3.10f1**, Universal 2D / URP 17.3.0, Input System, uGUI + TextMeshPro.
-- Release WebGL build: **Succeeded**, **0 errors**, **0 build warnings**, 102.2 seconds.
-- Distribution: **13.92 MB**, compared with the initial 59.35 MB build (about 77% smaller).
+- Release WebGL build: **Succeeded**, **0 errors**, **0 build warnings**, 152.6 seconds.
+- Distribution: **13.93 MB**, compared with the initial 59.35 MB build (about 77% smaller).
 - Gzip + decompression fallback, Disk Size optimization, high stripping, smaller IL2CPP code generation, 64 MB initial / 512 MB maximum memory.
 - Tested through **http://127.0.0.1:8187/**, never through `file://`.
-- Chrome **156.0.8078.49**: **36 checks passed**.
-- Edge **156.0.4314.50**: **36 checks passed**.
+- Chrome **156.0.8078.80**: **36 checks passed**.
+- Edge **156.0.4314.58**: **36 checks passed**.
 - **29 Editor checks passed**, including 1,000 direction samples, score thresholds, armor, duplicate destruction, all eight layouts, timed evolution, high-speed circle casts, corner normals, adjacent-brick seams and completion before transition.
 
 ## Acceptance evidence
@@ -48,7 +50,7 @@ The natural-session test used automatic paddle steering to avoid premature life 
 
 This is a measurement of this desktop automation environment, not proof of mobile hardware performance. A separate browser scenario exercised five balls and multiple simultaneous powers.
 
-The timing sample preceded the final overlay-only cleanup (clearing a lingering celebration on results and resetting the replay score display). Playing-state physics, audio, VFX and timing code are identical. The sample build receipt is retained separately; functional browser checks were repeated on the final release.
+The full-session sample is retained with its own build receipt and date above. It predates subsequent overlay and responsive-layout changes; it is not a performance measurement of the current build. Functional browser checks were repeated on the current release. See [iPhone validation](iPhoneValidation.md) for Unity Device Simulator profiles, touch navigation, rotation and the separate stress sample.
 
 ## Limitations and diagnostics
 

@@ -1,5 +1,6 @@
 """Create the handoff report from the actual saved validation receipts."""
 from pathlib import Path
+from datetime import datetime
 import json, shutil
 
 root=Path(__file__).resolve().parents[1]
@@ -16,9 +17,14 @@ evidence=root/'Docs/Validation';evidence.mkdir(exist_ok=True)
 for name in ('build.json','build-session-sample.json','chrome-qa.json','edge-qa.json','natural-session.json','high-dpi-touch.json','rules.txt'):
     shutil.copy2(results/name,evidence/name)
 size=sum(p.stat().st_size for p in (root/'Builds/BrickRush_WebGL').rglob('*') if p.is_file())
+build_date=datetime.fromtimestamp((results/'build.json').stat().st_mtime).date()
+sample_date=datetime.fromtimestamp((results/'natural-session.json').stat().st_mtime).date()
+iphone_note='See [iPhone validation](iPhoneValidation.md) for Unity Device Simulator profiles, touch navigation, rotation and the separate stress sample.' if (root/'Docs/iPhoneValidation.md').is_file() else ''
 text=f'''# Brick Rush verification
 
 Status: **Ready with validation limitations.** The Unity project and HTTP-hosted WebGL release are playable in the tested desktop browsers and touch emulation. Physical Android/iPhone browser checks and mobile hardware performance remain unverified.
+
+Current build receipt: **{build_date}**. Full-session timing sample: **{sample_date}**. {iphone_note}
 
 ## Build and environment
 
@@ -66,7 +72,7 @@ The natural-session test used automatic paddle steering to avoid premature life 
 
 This is a measurement of this desktop automation environment, not proof of mobile hardware performance. A separate browser scenario exercised five balls and multiple simultaneous powers.
 
-The timing sample preceded the final overlay-only cleanup (clearing a lingering celebration on results and resetting the replay score display). Playing-state physics, audio, VFX and timing code are identical. The sample build receipt is retained separately; functional browser checks were repeated on the final release.
+The full-session sample is retained with its own build receipt and date above. It predates subsequent overlay and responsive-layout changes; it is not a performance measurement of the current build. Functional browser checks were repeated on the current release. {iphone_note}
 
 ## Limitations and diagnostics
 

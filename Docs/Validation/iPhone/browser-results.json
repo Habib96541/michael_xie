@@ -1,0 +1,72 @@
+[
+  {
+    "device": "SE-small",
+    "orientation": "portrait",
+    "passed": true
+  },
+  {
+    "device": "SE-small",
+    "orientation": "landscape",
+    "passed": true
+  },
+  {
+    "device": "SE-2",
+    "orientation": "portrait",
+    "passed": true
+  },
+  {
+    "device": "SE-2",
+    "orientation": "landscape",
+    "passed": true
+  },
+  {
+    "device": "12-mini",
+    "orientation": "portrait",
+    "passed": true
+  },
+  {
+    "device": "12-mini",
+    "orientation": "landscape",
+    "passed": true
+  },
+  {
+    "device": "12",
+    "orientation": "portrait",
+    "passed": true
+  },
+  {
+    "device": "12",
+    "orientation": "landscape",
+    "passed": true
+  },
+  {
+    "device": "12-Pro-Max",
+    "orientation": "portrait",
+    "passed": true
+  },
+  {
+    "device": "12-Pro-Max",
+    "orientation": "landscape",
+    "passed": true
+  },
+  {
+    "device": "14-Pro",
+    "orientation": "portrait",
+    "passed": true
+  },
+  {
+    "device": "14-Pro",
+    "orientation": "landscape",
+    "passed": true
+  },
+  {
+    "device": "15-Pro-Max",
+    "orientation": "portrait",
+    "passed": true
+  },
+  {
+    "device": "15-Pro-Max",
+    "orientation": "landscape",
+    "passed": true
+  }
+]

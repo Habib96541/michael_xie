@@ -48,7 +48,8 @@ The prepared scene, configuration, materials, fonts, post-processing profile and
 - `Assets/BrickRush/Fonts/`: Rajdhani Bold and Barlow Medium with their SIL Open Font License files. All other authored art/audio/code is original to this project.
 - `Assets/BrickRush/Editor/RuleValidation.cs`: deterministic rules, layouts, swept-cast and brick-lifecycle checks. Run `BrickRush.Editor.RuleValidation.Run()` through the Editor.
 - `Tools/browser-qa.cjs`: reproducible browser checks using installed Chrome/Edge. Run `npm ci --prefix Tools`, then `node Tools/browser-qa.cjs chrome` or `edge` with the local server running.
+- `Tools/iphone-responsive-qa.cjs`: touch navigation, rotation and layout checks at seven iPhone viewport sizes in both orientations. `Tools/iphone-simulator-qa.ps1` checks the four available Unity iPhone profiles. `Tools/iphone-smoothness-qa.cjs` measures a 20-second DPR-3 multiball stress sample.
 
-See **Docs/DEPLOYMENT.md** and **Docs/QA.md** for hosting and exact verification evidence. Generated local logs and test artifacts are in `Logs/` and `TestResults/`.
+See **Docs/DEPLOYMENT.md**, **Docs/QA.md** and **Docs/iPhoneValidation.md** for hosting and exact verification evidence. Generated local logs and test artifacts are in `Logs/` and `TestResults/`.
 
 The release build applies Disk Size WebAssembly optimization, high managed stripping, smaller IL2CPP code generation, a 64 MB initial / 512 MB maximum heap, and gzip with decompression fallback. The loader handles compressed assets on ordinary static hosts. These settings are explicitly applied by the build method, including the optimization setting that Unity normally stores per machine.

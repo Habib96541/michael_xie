@@ -27,8 +27,10 @@ Brick death disables its collider and marks it dead before score, effects, or re
 
 ## Responsive presentation
 
-The arena always keeps a 9.9:14.6 aspect ratio. uGUI calculates a safe-area viewport for the camera, with editorial side panels on wide displays and a single central column on phones. The HTML wrapper also applies CSS safe-area insets and blocks page scrolling. Touch can move the paddle from the strip below the arena.
+The arena always keeps a 9.9:14.6 aspect ratio. uGUI calculates a safe-area viewport for the camera, with editorial side panels on wide desktop displays, a central portrait column on phones, and two-column menus on landscape phones. `UIManager.Responsive.cs` enlarges phone touch targets and restores each page's original geometry when changing orientation. Mobile presentation uses Unity's simulated device API plus a WebGL touch-capability hint, so a landscape phone does not accidentally select the desktop layout.
+
+Resolution, safe area, Canvas scale, root size and native render-target changes trigger layout. The camera viewport is reconciled with the arena every LateUpdate using a reused corner buffer, including when simulator orientation and the Canvas settle on different frames. The HTML wrapper applies CSS safe-area insets, blocks page scrolling, and positions mobile fullscreen controls away from Pause. Touch can move the paddle from the strip below the arena.
 
 ## Verification surface
 
-Only a URL containing `?qa=1` enables `QACommand` and the `window.brickRushState` snapshots. Normal play never enables automated steering or test commands. Browser tests use real pointer/keyboard/touch interaction for UI and input; diagnostic commands arrange powers, final-ball loss, wave clear, late-session and timer-expiry scenarios. The separate natural-session test lets the entire 90-second clock run without acceleration. This is a local test interface, not a network service.
+Only a URL containing `?qa=1` enables `QACommand` and the `window.brickRushState` snapshots. Normal play never enables automated steering or test commands. The `inspect` command publishes a layout snapshot only when requested; hierarchy inspection does not run in the gameplay loop. Browser tests use real pointer/keyboard/touch interaction for UI and input; diagnostic commands arrange powers, final-ball loss, wave clear, late-session and timer-expiry scenarios. The separate natural-session test lets the entire 90-second clock run without acceleration. This is a local test interface, not a network service.

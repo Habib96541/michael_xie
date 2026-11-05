@@ -34,6 +34,7 @@ namespace BrickRush
         SessionState beforePause;float countdown,waveDelay,reportClock,uiClock;int lastCount;SpriteRenderer shield;
 #if UNITY_WEBGL && !UNITY_EDITOR
         [DllImport("__Internal")] static extern void BrickRushReport(string json);
+        [DllImport("__Internal")] static extern void BrickRushInspect(string json);
 #endif
         void Awake()
         {
@@ -174,6 +175,13 @@ namespace BrickRush
         [UnityEngine.Scripting.Preserve] public void QACommand(string command)
         {
             if(!QA)return;
+            if(command=="inspect")
+            {
+#if UNITY_WEBGL && !UNITY_EDITOR
+                BrickRushInspect(JsonUtility.ToJson(UI.InspectLayout()));
+#endif
+                return;
+            }
             if(command=="auto")AutoPaddle=true;
             else if(command=="manual")AutoPaddle=false;
             else if(command=="expire"){Remaining=.01f;}

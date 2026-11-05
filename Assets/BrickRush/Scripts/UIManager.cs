@@ -3,16 +3,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using TMPro;
+using Screen = UnityEngine.Device.Screen;
 
 namespace BrickRush
 {
-    public sealed class UIManager : MonoBehaviour
+    public sealed partial class UIManager : MonoBehaviour
     {
         GameManager game;Canvas canvas;RectTransform root,board,hud,footer,left,right,overlay,overlayDesign;
         GameObject menuPage,pausePage,resultsPage,helpPage,settingsPage;GameObject returnPage;
         TMP_FontAsset bodyFont,displayFont;TextMeshProUGUI scoreText,timerText,livesText,comboText,toastText,countText,bestText,menuBest,resultScore,resultDetails,resultValues,resultBest,shakeLabel,reducedLabel,controlHint;
         readonly TextMeshProUGUI[] powerTexts=new TextMeshProUGUI[7];
-        UnityEngine.UI.Image timerFill;float toastLife,displayScore;int width,height;Rect safe;bool desktop;
+        UnityEngine.UI.Button pauseButton;
+        Vector2 layoutRootSize;readonly Vector3[] arenaCorners=new Vector3[4];
+        UnityEngine.UI.Image timerFill;float toastLife,displayScore,layoutCanvasScale;int width,height,renderWidth,renderHeight;Rect safe;bool desktop;
         readonly Color line=Art.Hex("23304A"),panelColor=Art.Hex("101A2E");
         public void Initialize(GameManager owner)
         {
@@ -35,14 +38,14 @@ namespace BrickRush
             timerFill=Image("Time",timerTrack.transform,Vector2.zero,new Vector2(490,2),Art.Cyan);timerFill.rectTransform.pivot=new Vector2(0,.5f);timerFill.rectTransform.anchoredPosition=new Vector2(-245,0);
             footer=Rect("Controls",root,Vector2.zero,new Vector2(500,100));
             controlHint=Label(footer,"MOVE. BOUNCE. BREAK.",new Vector2(-64,-4),new Vector2(360,24),15,Art.Muted,true);
-            Button(footer,"II",new Vector2(212,-5),new Vector2(64,56),()=>game.TogglePause(),panelColor,Art.White,22);
+            pauseButton=Button(footer,"II",new Vector2(212,-5),new Vector2(64,56),()=>game.TogglePause(),panelColor,Art.White,22);
             comboText=Label(board,"COMBO  x1",new Vector2(0,0),new Vector2(200,30),16,Art.Cyan,true);comboText.rectTransform.anchorMin=comboText.rectTransform.anchorMax=new Vector2(.5f,0);comboText.rectTransform.anchoredPosition=new Vector2(0,39);
             for(int i=0;i<7;i++)powerTexts[i]=Label(footer,"",new Vector2((i-3)*70,-47),new Vector2(70,28),10,PowerUpManager.Colors[i],true);
             toastText=Label(board,"",Vector2.zero,new Vector2(450,60),26,Art.Gold,true);toastText.raycastTarget=false;
             countText=Label(board,"3",new Vector2(0,-100),new Vector2(350,130),100,Art.White,true);countText.gameObject.SetActive(false);
             left=Rect("Editorial",root,Vector2.zero,new Vector2(280,700));right=Rect("Field notes",root,Vector2.zero,new Vector2(270,700));BuildSides();
             overlay=Rect("Overlay",board,Vector2.zero,Vector2.zero);Stretch(overlay);
-            var scrimImage=Image("Scrim",overlay,Vector2.zero,new Vector2(500,737),new Color(.025f,.045f,.10f,.88f));scrimImage.sprite=null;
+            var scrimImage=Image("Scrim",overlay,Vector2.zero,new Vector2(500,737),new Color(.025f,.045f,.10f,.94f));scrimImage.sprite=null;scrimImage.raycastTarget=true;
             overlayDesign=Rect("Pages",overlay,Vector2.zero,new Vector2(500,737));
             menuPage=Page("Main menu");BuildMenu(menuPage.transform);
             pausePage=Page("Pause");BuildPause(pausePage.transform);
@@ -50,7 +53,7 @@ namespace BrickRush
             helpPage=Page("How to play");BuildHelp(helpPage.transform);
             settingsPage=Page("Settings");BuildSettings(settingsPage.transform);
             if(EventSystem.current==null){var events=new GameObject("EventSystem");events.AddComponent<EventSystem>();events.AddComponent<InputSystemUIInputModule>().AssignDefaultActions();}
-            BuildHeader();Layout();
+            CapturePageDefaults();InitializeDeviceHint();BuildHeader();Layout();
         }
         RectTransform header;TextMeshProUGUI headerTag;
         void BuildHeader()
@@ -157,26 +160,39 @@ namespace BrickRush
             fill.rectTransform.sizeDelta=new Vector2(0,-27);handle.rectTransform.sizeDelta=new Vector2(22,-4);
             var slider=track.gameObject.AddComponent<UnityEngine.UI.Slider>();slider.fillRect=fill.rectTransform;slider.handleRect=handle.rectTransform;slider.targetGraphic=handle;slider.value=value;slider.onValueChanged.AddListener(v=>changed(v));
         }
-        void LateUpdate(){if(width!=Screen.width||height!=Screen.height||safe!=Screen.safeArea)Layout();}
+        void LateUpdate()
+        {
+            if(width!=Screen.width||height!=Screen.height||safe!=Screen.safeArea||renderWidth!=UnityEngine.Screen.width||renderHeight!=UnityEngine.Screen.height||!Mathf.Approximately(layoutCanvasScale,canvas.scaleFactor)||layoutRootSize!=root.rect.size||mobilePresentation!=IsMobilePresentation)Layout();
+            UpdateCameraViewport();
+        }
+        void UpdateCameraViewport()
+        {
+            board.GetWorldCorners(arenaCorners);
+            var viewport=new UnityEngine.Rect(arenaCorners[0].x,arenaCorners[0].y,arenaCorners[2].x-arenaCorners[0].x,arenaCorners[2].y-arenaCorners[0].y);
+            if(game.Camera.pixelRect!=viewport)game.Camera.pixelRect=viewport;
+        }
         void Layout()
         {
-            width=Screen.width;height=Screen.height;safe=Screen.safeArea;
+            width=Screen.width;height=Screen.height;safe=Screen.safeArea;if(width<=0||height<=0||safe.width<=0||safe.height<=0)return;
+            // Simulator orientation and the native render target can settle on different frames.
+            renderWidth=UnityEngine.Screen.width;renderHeight=UnityEngine.Screen.height;layoutCanvasScale=canvas.scaleFactor;
             root.anchorMin=new Vector2(safe.xMin/width,safe.yMin/height);root.anchorMax=new Vector2(safe.xMax/width,safe.yMax/height);Canvas.ForceUpdateCanvases();
-            float w=root.rect.width,h=root.rect.height;desktop=w/h>1.25f&&w>1250;
+            layoutRootSize=root.rect.size;float w=layoutRootSize.x,h=layoutRootSize.y;mobilePresentation=IsMobilePresentation;compactLandscape=mobilePresentation&&w/h>1.25f;desktop=!mobilePresentation&&w/h>1.25f&&w>1250;
             controlHint.text=desktop?"MOUSE / A D / ARROWS  -  ESC TO PAUSE":"DRAG HERE TO MOVE  -  TAP TO LAUNCH";
             float bh=Mathf.Min(h-(desktop?200:245),desktop?730:800);float bw=Mathf.Min(desktop?520:w-28,bh*9.9f/14.6f);bh=bw*14.6f/9.9f;
             float y=desktop?-22:h/2-151-bh/2;board.sizeDelta=new Vector2(bw,bh);board.anchoredPosition=new Vector2(0,y);
             float scale=bw/500;hud.anchoredPosition=new Vector2(0,y+bh/2+50*scale);hud.localScale=Vector3.one*scale;
             footer.anchoredPosition=new Vector2(0,y-bh/2-35*scale);footer.localScale=Vector3.one*scale;
-            overlayDesign.localScale=Vector3.one*scale;var scrim=overlay.GetChild(0).GetComponent<RectTransform>();scrim.sizeDelta=new Vector2(bw,bh);
+            ConfigureResponsivePages(bw,bh,scale,w,h);
             left.gameObject.SetActive(desktop);right.gameObject.SetActive(desktop);
             left.anchoredPosition=new Vector2(-bw/2-205,-10);right.anchoredPosition=new Vector2(bw/2+200,-10);
             header.anchoredPosition=new Vector2(0,h/2-35);header.localScale=Vector3.one*(desktop?Mathf.Min(1,(w-64)/1440):.75f);
             if(!desktop){header.GetChild(0).GetComponent<RectTransform>().anchoredPosition=new Vector2(-110,0);header.GetChild(1).GetComponent<RectTransform>().anchoredPosition=new Vector2(0,0);}
             else{header.GetChild(0).GetComponent<RectTransform>().anchoredPosition=new Vector2(-665,0);header.GetChild(1).GetComponent<RectTransform>().anchoredPosition=new Vector2(-552,0);}
             headerTag.gameObject.SetActive(desktop);
+            header.gameObject.SetActive(!compactLandscape);
             // Canvas to screen coordinates preserve a circular ball at every aspect ratio.
-            var corners=new Vector3[4];board.GetWorldCorners(corners);game.Camera.pixelRect=new Rect(corners[0].x,corners[0].y,corners[2].x-corners[0].x,corners[2].y-corners[0].y);
+            UpdateCameraViewport();
             for(int i=0;i<4;i++)
             {
                 var back=root.GetChild(i).GetComponent<RectTransform>();
@@ -187,6 +203,7 @@ namespace BrickRush
             }
             toastText.rectTransform.sizeDelta=new Vector2(bw-20,60);toastText.fontSize=24*scale;toastText.rectTransform.anchoredPosition=new Vector2(0,-bh*.08f);
             countText.fontSize=95*scale;
+            ConfigureTouchControls(scale,w,h);
         }
         public void Refresh()
         {
@@ -196,7 +213,8 @@ namespace BrickRush
             comboText.SetText("COMBO  x{0}",game.Score.Multiplier);comboText.color=game.Score.Multiplier>=3?Art.Gold:Art.Cyan;
             bestText.text=SaveManager.Best.ToString("00000");timerFill.rectTransform.sizeDelta=new Vector2(490*game.Remaining/game.Config.duration,2);
             menuBest.text="PERSONAL BEST / "+SaveManager.Best.ToString("00000");
-            for(int i=0;i<7;i++){bool active=game.Powers.Has((PowerKind)i);powerTexts[i].text=active?(PowerUpManager.Symbols[i]+"\n"+(i==6?"READY":Mathf.CeilToInt(game.Powers.Durations[i])+"s")):"";}
+            pauseButton.gameObject.SetActive(!overlay.gameObject.activeSelf&&(game.State==SessionState.Playing||game.State==SessionState.Countdown));
+            for(int i=0;i<7;i++){bool active=game.State!=SessionState.Menu&&game.State!=SessionState.Results&&game.Powers.Has((PowerKind)i);powerTexts[i].text=active?(PowerUpManager.Symbols[i]+(compactLandscape?"  ":"\n")+(i==6?"READY":Mathf.CeilToInt(game.Powers.Durations[i])+"s")):"";}
         }
         public void Animate(float dt)
         {

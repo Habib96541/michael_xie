@@ -1,0 +1,53 @@
+{
+    "page": "Main menu",
+    "mobile": true,
+    "landscape": false,
+    "width": 1170.0,
+    "height": 2532.0,
+    "safe": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 102.0,
+        "width": 1170.0,
+        "height": 2289.0
+    },
+    "arena": {
+        "serializedVersion": "2",
+        "x": 36.92498779296875,
+        "y": 376.1929016113281,
+        "width": 1096.150146484375,
+        "height": 1616.5447998046875
+    },
+    "buttons": [
+        {
+            "text": "LET'S RUSH   >",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 175.03988647460938,
+                "y": 792.04345703125,
+                "width": 819.9202880859375,
+                "height": 201.691650390625
+            }
+        },
+        {
+            "text": "HOW TO PLAY",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 175.03988647460938,
+                "y": 463.1984558105469,
+                "width": 394.6140441894531,
+                "height": 201.69161987304688
+            }
+        },
+        {
+            "text": "SETTINGS",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 600.3460693359375,
+                "y": 463.1984558105469,
+                "width": 394.614013671875,
+                "height": 201.69161987304688
+            }
+        }
+    ]
+}

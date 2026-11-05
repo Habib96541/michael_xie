@@ -1,0 +1,53 @@
+{
+    "page": "Pause",
+    "mobile": true,
+    "landscape": true,
+    "width": 2532.0,
+    "height": 1170.0,
+    "safe": {
+        "serializedVersion": "2",
+        "x": 141.0,
+        "y": 63.0,
+        "width": 2250.0,
+        "height": 1107.0
+    },
+    "arena": {
+        "serializedVersion": "2",
+        "x": 991.917236328125,
+        "y": 177.56251525878907,
+        "width": 548.165771484375,
+        "height": 808.40625
+    },
+    "buttons": [
+        {
+            "text": "BACK TO THE RUSH   >",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1374.08447265625,
+                "y": 772.6218872070313,
+                "width": 792.61865234375,
+                "height": 192.1500244140625
+            }
+        },
+        {
+            "text": "SETTINGS",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1374.08447265625,
+                "y": 520.4249877929688,
+                "width": 792.61865234375,
+                "height": 192.1500244140625
+            }
+        },
+        {
+            "text": "MAIN MENU",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 1374.08447265625,
+                "y": 268.2281494140625,
+                "width": 792.61865234375,
+                "height": 192.1500244140625
+            }
+        }
+    ]
+}

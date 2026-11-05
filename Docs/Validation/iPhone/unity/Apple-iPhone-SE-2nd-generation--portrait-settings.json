@@ -1,0 +1,53 @@
+{
+    "page": "Settings",
+    "mobile": true,
+    "landscape": false,
+    "width": 750.0,
+    "height": 1334.0,
+    "safe": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 750.0,
+        "height": 1334.0
+    },
+    "arena": {
+        "serializedVersion": "2",
+        "x": 38.1450309753418,
+        "y": 130.6208038330078,
+        "width": 673.7099609375,
+        "height": 993.5521850585938
+    },
+    "buttons": [
+        {
+            "text": "SCREEN SHAKE                         ON",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 123.03248596191406,
+                "y": 450.8848876953125,
+                "width": 503.93505859375,
+                "height": 123.962646484375
+            }
+        },
+        {
+            "text": "REDUCED EFFECTS                     OFF",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 123.03248596191406,
+                "y": 322.8799743652344,
+                "width": 503.93505859375,
+                "height": 123.962646484375
+            }
+        },
+        {
+            "text": "ALL SET   >",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 123.03248596191406,
+                "y": 181.40089416503907,
+                "width": 503.93505859375,
+                "height": 123.96263122558594
+            }
+        }
+    ]
+}

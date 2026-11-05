@@ -1,0 +1,33 @@
+{
+    "page": "How to play",
+    "mobile": true,
+    "landscape": false,
+    "width": 750.0,
+    "height": 1334.0,
+    "safe": {
+        "serializedVersion": "2",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 750.0,
+        "height": 1334.0
+    },
+    "arena": {
+        "serializedVersion": "2",
+        "x": 38.1450309753418,
+        "y": 130.6208038330078,
+        "width": 673.7099609375,
+        "height": 993.5521850585938
+    },
+    "buttons": [
+        {
+            "text": "GOT IT   >",
+            "rect": {
+                "serializedVersion": "2",
+                "x": 123.03248596191406,
+                "y": 170.6215362548828,
+                "width": 503.93505859375,
+                "height": 123.96263122558594
+            }
+        }
+    ]
+}

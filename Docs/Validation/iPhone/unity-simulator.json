@@ -1,0 +1,98 @@
+[
+  {
+    "device": "Apple iPhone SE (2nd generation)",
+    "orientation": "portrait",
+    "passed": true,
+    "pages": [
+      "Main menu",
+      "Pause",
+      "Settings",
+      "How to play"
+    ],
+    "pausedTimer": 90
+  },
+  {
+    "device": "Apple iPhone SE (2nd generation)",
+    "orientation": "landscape",
+    "passed": true,
+    "pages": [
+      "Main menu",
+      "Pause",
+      "Settings",
+      "How to play"
+    ],
+    "pausedTimer": 90
+  },
+  {
+    "device": "Apple iPhone 12 mini",
+    "orientation": "portrait",
+    "passed": true,
+    "pages": [
+      "Main menu",
+      "Pause",
+      "Settings",
+      "How to play"
+    ],
+    "pausedTimer": 90
+  },
+  {
+    "device": "Apple iPhone 12 mini",
+    "orientation": "landscape",
+    "passed": true,
+    "pages": [
+      "Main menu",
+      "Pause",
+      "Settings",
+      "How to play"
+    ],
+    "pausedTimer": 90
+  },
+  {
+    "device": "Apple iPhone 12",
+    "orientation": "portrait",
+    "passed": true,
+    "pages": [
+      "Main menu",
+      "Pause",
+      "Settings",
+      "How to play"
+    ],
+    "pausedTimer": 90
+  },
+  {
+    "device": "Apple iPhone 12",
+    "orientation": "landscape",
+    "passed": true,
+    "pages": [
+      "Main menu",
+      "Pause",
+      "Settings",
+      "How to play"
+    ],
+    "pausedTimer": 90
+  },
+  {
+    "device": "Apple iPhone 12 Pro Max",
+    "orientation": "portrait",
+    "passed": true,
+    "pages": [
+      "Main menu",
+      "Pause",
+      "Settings",
+      "How to play"
+    ],
+    "pausedTimer": 90
+  },
+  {
+    "device": "Apple iPhone 12 Pro Max",
+    "orientation": "landscape",
+    "passed": true,
+    "pages": [
+      "Main menu",
+      "Pause",
+      "Settings",
+      "How to play"
+    ],
+    "pausedTimer": 90
+  }
+]
