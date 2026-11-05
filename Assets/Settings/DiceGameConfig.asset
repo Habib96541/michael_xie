@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96119cca918f4c7fa4df3884f211312d, type: 3}
+  m_Name: DiceGameConfig
+  m_EditorClassIdentifier: 
+  startingBankroll: 1000
+  minBet: 10
+  maxBet: 10000
+  defaultBet: 50
+  minTarget: 2
+  maxTarget: 98
+  defaultTarget: 50
+  houseEdgePercent: 1
+  blitzDurationSeconds: 20
+  critTimeBonus: 2
+  streakTimeBonus: 2
+  feverStreakThreshold: 3
+  feverDurationSeconds: 5
+  feverMultiplierBonus: 1.5
+  critZoneWidth: 5
+  critBonusMultiplier: 3
+  masterVolume: 0.85
+  sfxVolume: 1
