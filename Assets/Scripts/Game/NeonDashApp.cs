@@ -53,6 +53,17 @@ namespace NeonDash
             Application.targetFrameRate = 60;
             QualitySettings.vSyncCount = 0;
 
+#if !UNITY_WEBGL
+            if (Application.isMobilePlatform)
+            {
+                Screen.autorotateToPortrait = false;
+                Screen.autorotateToPortraitUpsideDown = false;
+                Screen.autorotateToLandscapeLeft = true;
+                Screen.autorotateToLandscapeRight = true;
+                Screen.orientation = ScreenOrientation.AutoRotation;
+            }
+#endif
+
             SetupCamera();
 
             store = new RecordStore();

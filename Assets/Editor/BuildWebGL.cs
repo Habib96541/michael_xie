@@ -20,6 +20,12 @@ namespace NeonDash.EditorTools
 
             PlayerSettings.companyName = "Geometry Dash Studio";
             PlayerSettings.productName = "Geometry Dash";
+            PlayerSettings.bundleVersion = "1.1.0";
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.AutoRotation;
+            PlayerSettings.allowedAutorotateToPortrait = false;
+            PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
+            PlayerSettings.allowedAutorotateToLandscapeLeft = true;
+            PlayerSettings.allowedAutorotateToLandscapeRight = true;
             PlayerSettings.defaultScreenWidth = 1280;
             PlayerSettings.defaultScreenHeight = 720;
             PlayerSettings.stripEngineCode = false;

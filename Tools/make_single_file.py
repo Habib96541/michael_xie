@@ -29,7 +29,7 @@ OUT = os.path.join(ROOT, "Deliverables", "index.html")
 
 PRODUCT = "Geometry Dash"
 COMPANY = "Neon Dash"
-VERSION = "1.0"
+VERSION = "1.1.0"
 
 
 def read(name: str) -> bytes:
@@ -175,7 +175,6 @@ __VIEWPORT_STYLE__
 <body>
 <div id="unity-container">
   <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
-</div>
 
 <div id="boot">
   <div class="glow"></div>
@@ -187,6 +186,7 @@ __VIEWPORT_STYLE__
     <div class="hint" id="hint">Runs offline &mdash; no server needed</div>
     <div class="error" id="error"></div>
   </div>
+</div>
 </div>
 
 <!-- ===== payloads: base64 only, so nothing can terminate the tag early ===== -->

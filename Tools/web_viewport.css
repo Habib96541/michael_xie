@@ -20,3 +20,13 @@ html, body {
 }
 #unity-footer { display: none; }
 #unity-warning { z-index: 20; }
+
+/* Keep the game landscape even when the phone itself is held upright. */
+html.game-sideways #unity-container {
+  left: calc(var(--game-width, 100vw) - env(safe-area-inset-right, 0px));
+  right: auto;
+  width: calc(var(--game-height, 100dvh) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+  height: calc(var(--game-width, 100vw) - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+}

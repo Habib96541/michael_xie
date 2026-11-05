@@ -39,15 +39,22 @@ Built-in ImageGen. undefined
 Holding the jump button makes the cube jump again the moment it lands — the classic Geometry Dash
 "hold to buffer jumps" trick.
 
+The game opens in landscape by default. If a phone is held upright, the web player automatically
+turns the entire game sideways; no rotate prompt or fullscreen permission is needed. Holding
+the phone sideways displays the game normally. Mouse, pointer and multitouch coordinates are
+mapped into the rotated canvas so menu buttons, pause and gameplay still work. Native mobile
+builds allow the two landscape orientations and disable portrait.
+
 On iPhone and iPad, tap the course to jump and hold to chain jumps or fly. The pause button
-has its own touch target, and the HUD rearranges itself in narrow windows. Landscape gives
-the longest view of the upcoming course. The native Unity UI uses the device safe area.
+has its own touch target. The native Unity UI uses the device safe area.
 
 The portrait lobby has a compact single-column layout with full-width player and seed fields,
 separate New/Copy buttons, and larger Play/Records controls. Each screen fits its own layout
 against the actual canvas rect, independently of browser/device pixel density. Both web exports
-share `Tools/web_viewport.css` and `Tools/web_viewport.js`, which track the visible browser height
-as browser bars, the keyboard, and orientation change. CSS reserves the web safe area once.
+share `Tools/web_viewport.css` and `Tools/web_viewport.js`, which track browser bars, the keyboard,
+and physical orientation. CSS reserves the web safe area once. The sideways adapter presents
+logical landscape bounds to Unity and maps trusted input events before Unity receives them.
+The current web build is version 1.1.0.
 
 Mobile layout regression checks (Unity batch mode):
 
