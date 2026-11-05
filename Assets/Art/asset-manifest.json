@@ -1,0 +1,1548 @@
+{
+  "schemaVersion": 1,
+  "style": "Original inked elemental medallions and chamfered arcade-industrial hardware",
+  "renderScale": 2,
+  "pixelsPerUnit": 200,
+  "notes": [
+    "All sprites are standalone PNGs in Assets/Resources/Art/Sprites, loaded at runtime with Resources.Load<Sprite>(\"Art/Sprites/<name>\").",
+    "All masters are self-contained SVG with editable paths and gradients.",
+    "Only background and board_backdrop are intentionally opaque.",
+    "UI faces and central rank plaque are blank; all typography belongs in Unity.",
+    "hud_panel borders are 32 px; board_frame borders are 40 px (left,bottom,right,top).",
+    "turret_barrel points up and has a bottom-center pivot.",
+    "PNG and master GUIDs are preserved on rebuild; new assets use deterministic GUIDs."
+  ],
+  "assets": [
+    {
+      "name": "orb_fire",
+      "width": 256,
+      "height": 256,
+      "category": "orbs",
+      "source": "Assets/Art/Masters/orb_fire.svg",
+      "file": "Assets/Resources/Art/Sprites/orb_fire.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleRadius": 118,
+      "gameplaySize": [
+        48,
+        54
+      ],
+      "worldWidth": 1.04
+    },
+    {
+      "name": "orb_void",
+      "width": 256,
+      "height": 256,
+      "category": "orbs",
+      "source": "Assets/Art/Masters/orb_void.svg",
+      "file": "Assets/Resources/Art/Sprites/orb_void.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleRadius": 118,
+      "gameplaySize": [
+        48,
+        54
+      ],
+      "worldWidth": 1.04
+    },
+    {
+      "name": "orb_circuit",
+      "width": 256,
+      "height": 256,
+      "category": "orbs",
+      "source": "Assets/Art/Masters/orb_circuit.svg",
+      "file": "Assets/Resources/Art/Sprites/orb_circuit.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleRadius": 118,
+      "gameplaySize": [
+        48,
+        54
+      ],
+      "worldWidth": 1.04
+    },
+    {
+      "name": "orb_storm",
+      "width": 256,
+      "height": 256,
+      "category": "orbs",
+      "source": "Assets/Art/Masters/orb_storm.svg",
+      "file": "Assets/Resources/Art/Sprites/orb_storm.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleRadius": 118,
+      "gameplaySize": [
+        48,
+        54
+      ],
+      "worldWidth": 1.04
+    },
+    {
+      "name": "orb_solar",
+      "width": 256,
+      "height": 256,
+      "category": "orbs",
+      "source": "Assets/Art/Masters/orb_solar.svg",
+      "file": "Assets/Resources/Art/Sprites/orb_solar.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleRadius": 118,
+      "gameplaySize": [
+        48,
+        54
+      ],
+      "worldWidth": 1.04
+    },
+    {
+      "name": "orb_ice",
+      "width": 256,
+      "height": 256,
+      "category": "orbs",
+      "source": "Assets/Art/Masters/orb_ice.svg",
+      "file": "Assets/Resources/Art/Sprites/orb_ice.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visibleRadius": 118,
+      "gameplaySize": [
+        48,
+        54
+      ],
+      "worldWidth": 1.04
+    },
+    {
+      "name": "button_green",
+      "width": 192,
+      "height": 192,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/button_green.svg",
+      "file": "Assets/Resources/Art/Sprites/button_green.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "button_magenta",
+      "width": 192,
+      "height": 192,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/button_magenta.svg",
+      "file": "Assets/Resources/Art/Sprites/button_magenta.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "button_cyan",
+      "width": 192,
+      "height": 192,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/button_cyan.svg",
+      "file": "Assets/Resources/Art/Sprites/button_cyan.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "button_yellow",
+      "width": 192,
+      "height": 192,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/button_yellow.svg",
+      "file": "Assets/Resources/Art/Sprites/button_yellow.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "button_blue",
+      "width": 192,
+      "height": 192,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/button_blue.svg",
+      "file": "Assets/Resources/Art/Sprites/button_blue.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "pill_green",
+      "width": 384,
+      "height": 96,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/pill_green.svg",
+      "file": "Assets/Resources/Art/Sprites/pill_green.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "pill_magenta",
+      "width": 384,
+      "height": 96,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/pill_magenta.svg",
+      "file": "Assets/Resources/Art/Sprites/pill_magenta.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "pill_cyan",
+      "width": 384,
+      "height": 96,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/pill_cyan.svg",
+      "file": "Assets/Resources/Art/Sprites/pill_cyan.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "pill_yellow",
+      "width": 384,
+      "height": 96,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/pill_yellow.svg",
+      "file": "Assets/Resources/Art/Sprites/pill_yellow.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "pill_blue",
+      "width": 384,
+      "height": 96,
+      "category": "buttons",
+      "source": "Assets/Art/Masters/pill_blue.svg",
+      "file": "Assets/Resources/Art/Sprites/pill_blue.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "turret_base",
+      "width": 256,
+      "height": 256,
+      "category": "hardware",
+      "source": "Assets/Art/Masters/turret_base.svg",
+      "file": "Assets/Resources/Art/Sprites/turret_base.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": 1.5
+    },
+    {
+      "name": "turret_barrel",
+      "width": 128,
+      "height": 256,
+      "category": "hardware",
+      "source": "Assets/Art/Masters/turret_barrel.svg",
+      "file": "Assets/Resources/Art/Sprites/turret_barrel.png",
+      "pivot": [
+        0.5,
+        0
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "direction": "up",
+      "worldWidth": 0.78
+    },
+    {
+      "name": "chamber_ring",
+      "width": 256,
+      "height": 256,
+      "category": "hardware",
+      "source": "Assets/Art/Masters/chamber_ring.svg",
+      "file": "Assets/Resources/Art/Sprites/chamber_ring.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparentCenter": true,
+      "holeRadius": 78,
+      "worldWidth": 1.5
+    },
+    {
+      "name": "battery_full",
+      "width": 80,
+      "height": 160,
+      "category": "batteries",
+      "source": "Assets/Art/Masters/battery_full.svg",
+      "file": "Assets/Resources/Art/Sprites/battery_full.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chargeSegments": 5,
+      "worldWidth": 0.3
+    },
+    {
+      "name": "battery_empty",
+      "width": 80,
+      "height": 160,
+      "category": "batteries",
+      "source": "Assets/Art/Masters/battery_empty.svg",
+      "file": "Assets/Resources/Art/Sprites/battery_empty.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chargeSegments": 0,
+      "worldWidth": 0.3
+    },
+    {
+      "name": "battery_green",
+      "width": 80,
+      "height": 160,
+      "category": "batteries",
+      "source": "Assets/Art/Masters/battery_green.svg",
+      "file": "Assets/Resources/Art/Sprites/battery_green.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chargeSegments": 5,
+      "worldWidth": 0.3
+    },
+    {
+      "name": "battery_yellow",
+      "width": 80,
+      "height": 160,
+      "category": "batteries",
+      "source": "Assets/Art/Masters/battery_yellow.svg",
+      "file": "Assets/Resources/Art/Sprites/battery_yellow.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chargeSegments": 5,
+      "worldWidth": 0.3
+    },
+    {
+      "name": "battery_blue",
+      "width": 80,
+      "height": 160,
+      "category": "batteries",
+      "source": "Assets/Art/Masters/battery_blue.svg",
+      "file": "Assets/Resources/Art/Sprites/battery_blue.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chargeSegments": 5,
+      "worldWidth": 0.3
+    },
+    {
+      "name": "hud_panel",
+      "width": 512,
+      "height": 256,
+      "category": "frames",
+      "source": "Assets/Art/Masters/hud_panel.svg",
+      "file": "Assets/Resources/Art/Sprites/hud_panel.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "rank_badge",
+      "width": 256,
+      "height": 256,
+      "category": "frames",
+      "source": "Assets/Art/Masters/rank_badge.svg",
+      "file": "Assets/Resources/Art/Sprites/rank_badge.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "blankFace": true,
+      "worldWidth": null
+    },
+    {
+      "name": "board_frame",
+      "width": 640,
+      "height": 760,
+      "category": "frames",
+      "source": "Assets/Art/Masters/board_frame.svg",
+      "file": "Assets/Resources/Art/Sprites/board_frame.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        40,
+        40,
+        40,
+        40
+      ],
+      "transparentCenter": true,
+      "worldWidth": 8.64
+    },
+    {
+      "name": "background",
+      "width": 720,
+      "height": 1280,
+      "category": "backdrops",
+      "source": "Assets/Art/Masters/background.svg",
+      "file": "Assets/Resources/Art/Sprites/background.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque": true,
+      "worldWidth": 1
+    },
+    {
+      "name": "board_backdrop",
+      "width": 600,
+      "height": 640,
+      "category": "backdrops",
+      "source": "Assets/Art/Masters/board_backdrop.svg",
+      "file": "Assets/Resources/Art/Sprites/board_backdrop.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opaque": true,
+      "worldWidth": 1
+    },
+    {
+      "name": "icon_restart",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_restart.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_restart.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "icon_help",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_help.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_help.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "icon_sound",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_sound.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_sound.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "icon_muted",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_muted.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_muted.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "icon_pause",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_pause.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_pause.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "icon_play",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_play.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_play.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "icon_trophy",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_trophy.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_trophy.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "icon_swap",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_swap.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_swap.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "icon_close",
+      "width": 96,
+      "height": 96,
+      "category": "icons",
+      "source": "Assets/Art/Masters/icon_close.svg",
+      "file": "Assets/Resources/Art/Sprites/icon_close.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": null
+    },
+    {
+      "name": "px_white",
+      "width": 8,
+      "height": 8,
+      "category": "effects",
+      "source": "Assets/Art/Masters/px_white.svg",
+      "file": "Assets/Resources/Art/Sprites/px_white.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": 1
+    },
+    {
+      "name": "orb_ghost",
+      "width": 256,
+      "height": 256,
+      "category": "effects",
+      "source": "Assets/Art/Masters/orb_ghost.svg",
+      "file": "Assets/Resources/Art/Sprites/orb_ghost.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": 1.04
+    },
+    {
+      "name": "aim_dot",
+      "width": 32,
+      "height": 32,
+      "category": "effects",
+      "source": "Assets/Art/Masters/aim_dot.svg",
+      "file": "Assets/Resources/Art/Sprites/aim_dot.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": 1
+    },
+    {
+      "name": "vfx_ring",
+      "width": 128,
+      "height": 128,
+      "category": "effects",
+      "source": "Assets/Art/Masters/vfx_ring.svg",
+      "file": "Assets/Resources/Art/Sprites/vfx_ring.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "transparentCenter": true,
+      "worldWidth": 1.3
+    },
+    {
+      "name": "vfx_spark",
+      "width": 128,
+      "height": 128,
+      "category": "effects",
+      "source": "Assets/Art/Masters/vfx_spark.svg",
+      "file": "Assets/Resources/Art/Sprites/vfx_spark.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": 1
+    },
+    {
+      "name": "vfx_shard",
+      "width": 128,
+      "height": 128,
+      "category": "effects",
+      "source": "Assets/Art/Masters/vfx_shard.svg",
+      "file": "Assets/Resources/Art/Sprites/vfx_shard.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tintable": true,
+      "worldWidth": 0.5
+    },
+    {
+      "name": "digit_cyan_0",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_0.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_0.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_1",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_1.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_1.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_2",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_2.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_2.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_3",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_3.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_3.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_4",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_4.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_4.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_5",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_5.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_5.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_6",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_6.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_6.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_7",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_7.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_7.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_8",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_8.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_8.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_cyan_9",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_cyan_9.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_cyan_9.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "colon_cyan",
+      "width": 32,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/colon_cyan.svg",
+      "file": "Assets/Resources/Art/Sprites/colon_cyan.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_0",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_0.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_0.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_1",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_1.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_1.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_2",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_2.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_2.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_3",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_3.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_3.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_4",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_4.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_4.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_5",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_5.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_5.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_6",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_6.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_6.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_7",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_7.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_7.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_8",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_8.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_8.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_amber_9",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_amber_9.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_amber_9.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "colon_amber",
+      "width": 32,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/colon_amber.svg",
+      "file": "Assets/Resources/Art/Sprites/colon_amber.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_0",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_0.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_0.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_1",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_1.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_1.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_2",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_2.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_2.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_3",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_3.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_3.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_4",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_4.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_4.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_5",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_5.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_5.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_6",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_6.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_6.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_7",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_7.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_7.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_8",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_8.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_8.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "digit_red_9",
+      "width": 64,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/digit_red_9.svg",
+      "file": "Assets/Resources/Art/Sprites/digit_red_9.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    },
+    {
+      "name": "colon_red",
+      "width": 32,
+      "height": 96,
+      "category": "digits",
+      "source": "Assets/Art/Masters/colon_red.svg",
+      "file": "Assets/Resources/Art/Sprites/colon_red.png",
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "worldWidth": null
+    }
+  ]
+}

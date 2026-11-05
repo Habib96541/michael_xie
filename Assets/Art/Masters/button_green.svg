@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>button_green</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs><linearGradient id="body" x1=".25" y1="0" x2=".65" y2="1"><stop stop-color="#d8fbae"/><stop offset=".35" stop-color="#83cc5b"/><stop offset="1" stop-color="#347344"/></linearGradient>
+    <linearGradient id="face" x1=".2" y1="0" x2=".65" y2="1"><stop stop-color="#83cc5b"/><stop offset=".6" stop-color="#74ba51"/><stop offset="1" stop-color="#347344"/></linearGradient>
+</defs>
+<g id="outer-rim">
+    <circle cx="96" cy="96" r="88" fill="#080e19" /><circle cx="96" cy="94" r="81" fill="url(#body)" />
+    <circle cx="96" cy="91" r="71" fill="url(#face)" stroke="#0d1920" stroke-width="4"/>
+    <path d="M28.65 56.67 A77 77 0 0 1 123.59 22.11" fill="none" stroke="#d8fbae" stroke-width="3" opacity=".75"/>
+    <path d="M159.07 138.17 A77 77 0 0 1 37.89 144.52" fill="none" stroke="#347344" stroke-width="3" />
+    </g><g id="restrained-gloss">
+    <path d="M41 74 C47 47 68 28 96 27 C122 26 143 42 151 64 C117 55 80 57 41 74 Z" fill="#ffffff" opacity=".18"/>
+    <path d="M57 49 C65 41 77 36 89 35" fill="none" stroke="#d8fbae" stroke-width="4" opacity=".65"/>
+    <path d="M66 147 C84 155 108 155 126 146" fill="none" stroke="#83cc5b" stroke-width="2" opacity=".65"/>
+    </g>
+</svg>

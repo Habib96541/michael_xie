@@ -107,3 +107,9 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Freebuff Desktop
+.freebuff/
+
+# Local diagnostic dumps
+scene_inspection.txt

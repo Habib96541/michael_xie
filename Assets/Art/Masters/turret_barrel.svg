@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="256" viewBox="0 0 128 256" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>turret_barrel</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+  <linearGradient id="steel" x1="0" y1="0" x2="0.8" y2="1">
+    <stop stop-color="#879aa8"/><stop offset=".26" stop-color="#4b6171"/>
+    <stop offset=".53" stop-color="#304454"/><stop offset=".75" stop-color="#4e6270"/>
+    <stop offset="1" stop-color="#182938"/>
+  </linearGradient>
+  <linearGradient id="darkSteel" x1="0" y1="0" x2=".8" y2="1">
+    <stop stop-color="#405564"/><stop offset=".48" stop-color="#223441"/>
+    <stop offset="1" stop-color="#12212e"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#bed0d5"/><stop offset=".45" stop-color="#536d7a"/>
+    <stop offset="1" stop-color="#263c4c"/>
+  </linearGradient>
+  <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#a2f8ed"/><stop offset="1" stop-color="#27b9c4"/>
+  </linearGradient>
+</defs>
+<g id="barrel-silhouette">
+  <path d="M44 10 H84 L103 30 V79 L92 97 L96 171 L109 185 V225 L92 245 H36 L19 225 V185 L32 171 L36 97 L25 79 V30 Z" fill="url(#darkSteel)" stroke="#080e19" stroke-width="6"/>
+  </g><g id="split-steel-rails">
+  <polygon points="42,25 54,25 54,176 41,176 45,95 36,77 36,37" fill="url(#steel)" stroke="#080e19" stroke-width="3.5"/>
+  <polygon points="74,25 86,25 92,37 92,77 83,95 87,176 74,176" fill="url(#steel)" stroke="#080e19" stroke-width="3.5"/>
+  <rect x="57" y="33" width="14" height="143" fill="#091722" rx="3"/>
+  <rect x="59" y="45" width="10" height="66" fill="url(#teal)" rx="2"/>
+  <rect x="60" y="121" width="8" height="33" fill="#247c91" rx="2"/>
+  <path d="M43 41 V72 L51 90" fill="none" stroke="#9db6be" stroke-width="2.5" />
+  <path d="M85 40 V72 L77 90" fill="none" stroke="#5d7b8c" stroke-width="2.5" />
+  </g><g id="muzzle-and-collars">
+  <polygon points="40,11 88,11 99,27 93,42 35,42 29,27" fill="url(#steel)" stroke="#080e19" stroke-width="5"/>
+  <rect x="45" y="17" width="38" height="12" fill="#0a1723" rx="3" stroke="#a4bac0" stroke-width="1.4"/>
+  <rect x="52" y="20" width="24" height="5" fill="#58d2db" rx="1"/>
+  <polygon points="35,163 93,163 99,182 29,182" fill="url(#steel)" stroke="#080e19" stroke-width="4"/>
+  <rect x="43" y="168" width="42" height="5" fill="url(#teal)" rx="1.5"/>
+  <polygon points="37,184 91,184 101,195 101,221 87,237 41,237 27,221 27,195" fill="url(#steel)" stroke="#080e19" stroke-width="5"/>
+  <polygon points="46,191 82,191 90,200 90,219 80,229 48,229 38,219 38,200" fill="#1c3343" stroke="#080e19" stroke-width="3"/>
+  <rect x="52" y="199" width="24" height="16" fill="url(#teal)" rx="3" stroke="#080e19" stroke-width="3"/>
+  <g><circle cx="36" cy="206" r="3" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M34.65 207.05 L37.35 204.95" fill="none" stroke="#78929d" stroke-width="1.4" /></g><g><circle cx="92" cy="206" r="3" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M90.65 207.05 L93.35 204.95" fill="none" stroke="#78929d" stroke-width="1.4" /></g>
+  </g>
+</svg>

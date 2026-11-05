@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>orb_ghost</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+</defs>
+<g id="tintable-landing-marker"><circle cx="128" cy="128" r="112" fill="#ffffff" opacity=".16"/><circle cx="128" cy="128" r="112" fill="none" stroke="#ffffff" stroke-width="9" stroke-dasharray="24 15" opacity=".95"/><circle cx="128" cy="128" r="5" fill="#ffffff" opacity=".9"/></g>
+</svg>

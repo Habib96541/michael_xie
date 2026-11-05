@@ -1,0 +1,80 @@
+Scene Hierarchy for: Bust a Move (Assets/Scenes/Bust a Move.unity)
+============================================================
+â€¢ --- MANAGERS ---
+  â€¢ GameManager [GameController]
+  â€¢ CyberAudioSynthesizer [CyberAudioSynthesizer]
+  â€¢ CyberVFXManager [CyberVFXManager]
+â€¢ Main Camera [Camera, HUD]
+â€¢ --- ENVIRONMENT & PLAYFIELD ---
+  â€¢ CyberOrbs_Playfield
+    â€¢ OuterObsidianBackdrop [SpriteRenderer]
+    â€¢ HexGridBackdrop [SpriteRenderer]
+    â€¢ DangerThresholdLine [SpriteRenderer]
+    â€¢ Frame_TitaniumBorders
+      â€¢ LeftTitaniumFrame [SpriteRenderer]
+      â€¢ RightTitaniumFrame [SpriteRenderer]
+      â€¢ TopTitaniumFrame [SpriteRenderer]
+      â€¢ BottomTitaniumDeck [SpriteRenderer]
+      â€¢ CornerTL [SpriteRenderer]
+      â€¢ CornerTR [SpriteRenderer]
+      â€¢ CornerBL [SpriteRenderer]
+      â€¢ CornerBR [SpriteRenderer]
+    â€¢ Neon_PerimeterLighting
+      â€¢ LeftNeonStrip [SpriteRenderer]
+      â€¢ RightNeonStrip [SpriteRenderer]
+      â€¢ TopNeonStrip [SpriteRenderer]
+    â€¢ AmmoQueue_SideSlot
+      â€¢ NextOrbChamber [SpriteRenderer]
+      â€¢ NextSlotLabel [MeshRenderer, TextMesh]
+    â€¢ ShieldBattery_Tracker
+      â€¢ Sockets
+        â€¢ PowerCellSocket_0 [SpriteRenderer]
+        â€¢ PowerCellSocket_1 [SpriteRenderer]
+        â€¢ PowerCellSocket_2 [SpriteRenderer]
+        â€¢ PowerCellSocket_3 [SpriteRenderer]
+        â€¢ PowerCellSocket_4 [SpriteRenderer]
+      â€¢ Fills
+        â€¢ PowerCellFill_0 [SpriteRenderer]
+        â€¢ PowerCellFill_1 [SpriteRenderer]
+        â€¢ PowerCellFill_2 [SpriteRenderer]
+        â€¢ PowerCellFill_3 [SpriteRenderer]
+        â€¢ PowerCellFill_4 [SpriteRenderer]
+      â€¢ BatteryLabel [MeshRenderer, TextMesh]
+â€¢ --- LAUNCHER & AMMO ---
+  â€¢ BubbleShooter [BubbleShooterController]
+    â€¢ TurretBase [SpriteRenderer]
+    â€¢ RailgunBarrel [SpriteRenderer]
+    â€¢ LoadingChamber [SpriteRenderer]
+    â€¢ HolographicLaserSight
+      â€¢ LaserDot_0 [SpriteRenderer]
+      â€¢ LaserDot_1 [SpriteRenderer]
+      â€¢ LaserDot_2 [SpriteRenderer]
+      â€¢ LaserDot_3 [SpriteRenderer]
+      â€¢ LaserDot_4 [SpriteRenderer]
+      â€¢ LaserDot_5 [SpriteRenderer]
+      â€¢ LaserDot_6 [SpriteRenderer]
+      â€¢ LaserDot_7 [SpriteRenderer]
+      â€¢ LaserDot_8 [SpriteRenderer]
+      â€¢ LaserDot_9 [SpriteRenderer]
+      â€¢ LaserDot_10 [SpriteRenderer]
+      â€¢ LaserDot_11 [SpriteRenderer]
+      â€¢ LaserDot_12 [SpriteRenderer]
+      â€¢ LaserDot_13 [SpriteRenderer]
+      â€¢ LaserDot_14 [SpriteRenderer]
+      â€¢ LaserDot_15 [SpriteRenderer]
+      â€¢ LaserDot_16 [SpriteRenderer]
+      â€¢ LaserDot_17 [SpriteRenderer]
+      â€¢ LaserDot_18 [SpriteRenderer]
+      â€¢ LaserDot_19 [SpriteRenderer]
+      â€¢ LaserDot_20 [SpriteRenderer]
+      â€¢ LaserDot_21 [SpriteRenderer]
+      â€¢ LaserDot_22 [SpriteRenderer]
+      â€¢ LaserDot_23 [SpriteRenderer]
+      â€¢ LaserDot_24 [SpriteRenderer]
+      â€¢ LaserDot_25 [SpriteRenderer]
+      â€¢ LaserDot_26 [SpriteRenderer]
+      â€¢ LaserDot_27 [SpriteRenderer]
+    â€¢ GhostOrbPreview [SpriteRenderer]
+â€¢ --- GAMEPLAY MATRIX ---
+  â€¢ BubbleMatrixRoot [BubbleMatrixController]
+    â€¢ Bubbles

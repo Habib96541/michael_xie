@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="96" viewBox="0 0 64 96" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>digit_red_7</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs><linearGradient id="segment" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffc9be"/><stop offset="1" stop-color="#ec4843"/></linearGradient>
+</defs>
+<g id="led-glow"><polygon points="18,6 46,6 51,11 46,16 18,16 13,11" fill="#ec4843" stroke="#ec4843" stroke-width="6" opacity=".22"/><polygon points="49,14 54,19 54,40 49,45 44,40 44,19" fill="#ec4843" stroke="#ec4843" stroke-width="6" opacity=".22"/><polygon points="49,51 54,56 54,77 49,82 44,77 44,56" fill="#ec4843" stroke="#ec4843" stroke-width="6" opacity=".22"/></g><g id="seven-segment-digit"><polygon points="18,6 46,6 51,11 46,16 18,16 13,11" fill="url(#segment)" id="segment-a"/><polygon points="49,14 54,19 54,40 49,45 44,40 44,19" fill="url(#segment)" id="segment-b"/><polygon points="49,51 54,56 54,77 49,82 44,77 44,56" fill="url(#segment)" id="segment-c"/><polygon points="18,80 46,80 51,85 46,90 18,90 13,85" fill="#1b2c38" id="segment-d" opacity=".55"/><polygon points="15,51 20,56 20,77 15,82 10,77 10,56" fill="#1b2c38" id="segment-e" opacity=".55"/><polygon points="15,14 20,19 20,40 15,45 10,40 10,19" fill="#1b2c38" id="segment-f" opacity=".55"/><polygon points="18,43 46,43 51,48 46,53 18,53 13,48" fill="#1b2c38" id="segment-g" opacity=".55"/></g>
+</svg>

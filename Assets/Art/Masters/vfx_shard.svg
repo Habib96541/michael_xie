@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>vfx_shard</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+</defs>
+<g id="tintable-fracture"><polygon points="70,10 99,58 54,119 32,66" fill="#ffffff" opacity=".75"/><polygon points="70,10 63,62 32,66" fill="#ffffff" /><polygon points="63,62 99,58 54,119" fill="#ffffff" opacity=".4"/></g>
+</svg>

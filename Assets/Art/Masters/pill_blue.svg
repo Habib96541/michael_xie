@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="96" viewBox="0 0 384 96" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>pill_blue</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs><linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c0e3ff"/><stop offset=".4" stop-color="#629bdd"/><stop offset="1" stop-color="#305389"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#629bdd"/><stop offset=".55" stop-color="#4c88cf"/><stop offset="1" stop-color="#305389"/></linearGradient>
+</defs>
+<g id="pill-rim">
+    <rect x="3" y="3" width="378" height="90" fill="#080e19" rx="45"/><rect x="9" y="7" width="366" height="78" fill="url(#body)" rx="39"/>
+    <rect x="17" y="14" width="350" height="60" fill="url(#face)" rx="30" stroke="#0d1920" stroke-width="3.5"/>
+    <path d="M48 11 H336" fill="none" stroke="#c0e3ff" stroke-width="2.6" opacity=".7"/>
+    </g><g id="restrained-gloss">
+    <path d="M44 40 C44 27 60 20 88 20 H296 C324 20 340 27 340 40 C290 33 94 33 44 40 Z" fill="#ffffff" opacity=".17"/>
+    <path d="M60 82 H324" fill="none" stroke="#305389" stroke-width="2" opacity=".6"/>
+    </g>
+</svg>

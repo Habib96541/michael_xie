@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>rank_badge</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+  <linearGradient id="steel" x1="0" y1="0" x2="0.8" y2="1">
+    <stop stop-color="#879aa8"/><stop offset=".26" stop-color="#4b6171"/>
+    <stop offset=".53" stop-color="#304454"/><stop offset=".75" stop-color="#4e6270"/>
+    <stop offset="1" stop-color="#182938"/>
+  </linearGradient>
+  <linearGradient id="darkSteel" x1="0" y1="0" x2=".8" y2="1">
+    <stop stop-color="#405564"/><stop offset=".48" stop-color="#223441"/>
+    <stop offset="1" stop-color="#12212e"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#bed0d5"/><stop offset=".45" stop-color="#536d7a"/>
+    <stop offset="1" stop-color="#263c4c"/>
+  </linearGradient>
+  <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#a2f8ed"/><stop offset="1" stop-color="#27b9c4"/>
+  </linearGradient>
+</defs>
+<g id="octagonal-medal">
+  <polygon points="79,6 177,6 250,79 250,177 177,250 79,250 6,177 6,79" fill="#080e19" stroke="#080e19" stroke-width="5"/><polygon points="79,7 177,7 167,31 89,31" fill="#8296a2" stroke="#111e2a" stroke-width="2"/><polygon points="177,7 249,79 225,89 167,31" fill="#59717f" stroke="#111e2a" stroke-width="2"/><polygon points="249,79 249,177 225,167 225,89" fill="#314856" stroke="#111e2a" stroke-width="2"/><polygon points="249,177 177,249 167,225 225,167" fill="#263b4b" stroke="#111e2a" stroke-width="2"/><polygon points="177,249 79,249 89,225 167,225" fill="#3d5563" stroke="#111e2a" stroke-width="2"/><polygon points="79,249 7,177 31,167 89,225" fill="#526976" stroke="#111e2a" stroke-width="2"/><polygon points="7,177 7,79 31,89 31,167" fill="#3b5261" stroke="#111e2a" stroke-width="2"/><polygon points="7,79 79,7 89,31 31,89" fill="#a3b5bd" stroke="#111e2a" stroke-width="2"/>
+  <polygon points="88,33 168,33 223,88 223,168 168,223 88,223 33,168 33,88" fill="url(#darkSteel)" stroke="#080e19" stroke-width="5"/>
+  <polygon points="92,43 164,43 213,92 213,164 164,213 92,213 43,164 43,92" fill="#142533" stroke="#5b7c88" stroke-width="2"/>
+  <path d="M92 19 H164" fill="none" stroke="#b8c9cf" stroke-width="2.5" />
+  <path d="M92 237 H164" fill="none" stroke="#1e3443" stroke-width="3" />
+  <rect x="101" y="43" width="54" height="5" fill="url(#teal)" rx="2"/>
+  <polygon points="104,201 128,211 152,201 145,214 128,222 111,214" fill="#c8ac67" stroke="#080e19" stroke-width="2.5"/>
+  <g><circle cx="35" cy="86" r="3.5" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M33.425 87.225 L36.575 84.775" fill="none" stroke="#78929d" stroke-width="1.4" /></g><g><circle cx="221" cy="86" r="3.5" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M219.425 87.225 L222.575 84.775" fill="none" stroke="#78929d" stroke-width="1.4" /></g><g><circle cx="35" cy="170" r="3.5" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M33.425 171.225 L36.575 168.775" fill="none" stroke="#78929d" stroke-width="1.4" /></g><g><circle cx="221" cy="170" r="3.5" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M219.425 171.225 L222.575 168.775" fill="none" stroke="#78929d" stroke-width="1.4" /></g>
+  </g><g id="blank-central-plaque">
+  <polygon points="62,77 194,77 207,90 207,168 194,181 62,181 49,168 49,90" fill="url(#steel)" stroke="#080e19" stroke-width="4"/>
+  <polygon points="66,84 190,84 200,94 200,164 190,174 66,174 56,164 56,94" fill="#122330" stroke="#718b95" stroke-width="1.5"/>
+  </g>
+</svg>

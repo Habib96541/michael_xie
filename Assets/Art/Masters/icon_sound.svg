@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>icon_sound</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+</defs>
+<g id="tintable-symbol"><path d="M17 37 H30 L47 23 V73 L30 59 H17 Z" fill="#f4fbff" stroke="#080e19" stroke-width="3.5"/><path d="M60 34 C68 42 68 54 60 62" fill="none" stroke="#080e19" stroke-width="15" /><path d="M60 34 C68 42 68 54 60 62" fill="none" stroke="#f4fbff" stroke-width="9" /><path d="M72 24 C86 37 86 59 72 72" fill="none" stroke="#080e19" stroke-width="15" /><path d="M72 24 C86 37 86 59 72 72" fill="none" stroke="#f4fbff" stroke-width="9" /></g>
+</svg>

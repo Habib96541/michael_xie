@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>icon_trophy</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+</defs>
+<g id="tintable-symbol"><path d="M29 25 H16 V36 C16 46 24 53 34 53 M67 25 H80 V36 C80 46 72 53 62 53" fill="none" stroke="#080e19" stroke-width="15" /><path d="M29 25 H16 V36 C16 46 24 53 34 53 M67 25 H80 V36 C80 46 72 53 62 53" fill="none" stroke="#f4fbff" stroke-width="9" /><path d="M29 19 H67 V40 C67 53 58 62 48 62 C38 62 29 53 29 40 Z" fill="#f4fbff" stroke="#080e19" stroke-width="3.5"/><path d="M43 59 H53 V72 H65 V80 H31 V72 H43 Z" fill="#f4fbff" stroke="#080e19" stroke-width="3.5"/></g>
+</svg>

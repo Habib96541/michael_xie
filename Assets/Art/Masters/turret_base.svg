@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>turret_base</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+  <linearGradient id="steel" x1="0" y1="0" x2="0.8" y2="1">
+    <stop stop-color="#879aa8"/><stop offset=".26" stop-color="#4b6171"/>
+    <stop offset=".53" stop-color="#304454"/><stop offset=".75" stop-color="#4e6270"/>
+    <stop offset="1" stop-color="#182938"/>
+  </linearGradient>
+  <linearGradient id="darkSteel" x1="0" y1="0" x2=".8" y2="1">
+    <stop stop-color="#405564"/><stop offset=".48" stop-color="#223441"/>
+    <stop offset="1" stop-color="#12212e"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#bed0d5"/><stop offset=".45" stop-color="#536d7a"/>
+    <stop offset="1" stop-color="#263c4c"/>
+  </linearGradient>
+  <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#a2f8ed"/><stop offset="1" stop-color="#27b9c4"/>
+  </linearGradient>
+</defs>
+<g id="mounts"><g transform="rotate(0 128 128)"><polygon points="105,10 151,10 159,31 97,31" fill="url(#darkSteel)" stroke="#080e19" stroke-width="5"/></g><g transform="rotate(90 128 128)"><polygon points="105,10 151,10 159,31 97,31" fill="url(#darkSteel)" stroke="#080e19" stroke-width="5"/></g><g transform="rotate(180 128 128)"><polygon points="105,10 151,10 159,31 97,31" fill="url(#darkSteel)" stroke="#080e19" stroke-width="5"/></g><g transform="rotate(270 128 128)"><polygon points="105,10 151,10 159,31 97,31" fill="url(#darkSteel)" stroke="#080e19" stroke-width="5"/></g></g>
+  <g id="outer-housing"><circle cx="128" cy="128" r="111" fill="url(#darkSteel)" stroke="#080e19" stroke-width="7"/>
+  <circle cx="128" cy="128" r="100" fill="url(#steel)" stroke="#080e19" stroke-width="4"/>
+  <path d="M30.65 88.67 A105 105 0 0 1 163.91 29.33" fill="none" stroke="#90a7af" stroke-width="2.2" opacity=".7"/>
+  <circle cx="128" cy="128" r="83" fill="#13232e" stroke="#080e19" stroke-width="5"/>
+  <g transform="rotate(0 128 128)">
+    <path d="M84.85 50.16 A89 89 0 0 1 171.15 50.16" fill="none" stroke="#080e19" stroke-width="11" />
+    <path d="M84.85 50.16 A89 89 0 0 1 171.15 50.16" fill="none" stroke="url(#teal)" stroke-width="5" />
+    <polygon points="117,25 139,25 143,41 113,41" fill="#334c5c" stroke="#080e19" stroke-width="3"/>
+    <rect x="122" y="29" width="12" height="5" fill="#84e5e4" rx="1"/>
+    </g><g transform="rotate(90 128 128)">
+    <path d="M84.85 50.16 A89 89 0 0 1 171.15 50.16" fill="none" stroke="#080e19" stroke-width="11" />
+    <path d="M84.85 50.16 A89 89 0 0 1 171.15 50.16" fill="none" stroke="url(#teal)" stroke-width="5" />
+    <polygon points="117,25 139,25 143,41 113,41" fill="#334c5c" stroke="#080e19" stroke-width="3"/>
+    <rect x="122" y="29" width="12" height="5" fill="#84e5e4" rx="1"/>
+    </g><g transform="rotate(180 128 128)">
+    <path d="M84.85 50.16 A89 89 0 0 1 171.15 50.16" fill="none" stroke="#080e19" stroke-width="11" />
+    <path d="M84.85 50.16 A89 89 0 0 1 171.15 50.16" fill="none" stroke="url(#teal)" stroke-width="5" />
+    <polygon points="117,25 139,25 143,41 113,41" fill="#334c5c" stroke="#080e19" stroke-width="3"/>
+    <rect x="122" y="29" width="12" height="5" fill="#84e5e4" rx="1"/>
+    </g><g transform="rotate(270 128 128)">
+    <path d="M84.85 50.16 A89 89 0 0 1 171.15 50.16" fill="none" stroke="#080e19" stroke-width="11" />
+    <path d="M84.85 50.16 A89 89 0 0 1 171.15 50.16" fill="none" stroke="url(#teal)" stroke-width="5" />
+    <polygon points="117,25 139,25 143,41 113,41" fill="#334c5c" stroke="#080e19" stroke-width="3"/>
+    <rect x="122" y="29" width="12" height="5" fill="#84e5e4" rx="1"/>
+    </g>
+  <g><circle cx="194.47" cy="194.47" r="4" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M192.67 195.87 L196.27 193.07" fill="none" stroke="#78929d" stroke-width="1.4" /></g><g><circle cx="61.53" cy="194.47" r="4" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M59.730000000000004 195.87 L63.33 193.07" fill="none" stroke="#78929d" stroke-width="1.4" /></g><g><circle cx="61.53" cy="61.53" r="4" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M59.730000000000004 62.93 L63.33 60.13" fill="none" stroke="#78929d" stroke-width="1.4" /></g><g><circle cx="194.47" cy="61.53" r="4" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M192.67 62.93 L196.27 60.13" fill="none" stroke="#78929d" stroke-width="1.4" /></g>
+  </g><g id="recessed-socket"><circle cx="128" cy="128" r="67" fill="url(#steel)" stroke="#080e19" stroke-width="6"/>
+  <circle cx="128" cy="128" r="55" fill="#142633" stroke="#080e19" stroke-width="4"/>
+  <path d="M82.25 110.44 A49 49 0 0 1 173.1 108.85" fill="none" stroke="#3f6576" stroke-width="3" />
+  <path d="M173.75 145.56 A49 49 0 0 1 82.9 147.15" fill="none" stroke="#091722" stroke-width="3" />
+  <g transform="rotate(0 128 128)"><polygon points="119,64 137,64 134,78 122,78" fill="#627b86" stroke="#080e19" stroke-width="3"/></g><g transform="rotate(90 128 128)"><polygon points="119,64 137,64 134,78 122,78" fill="#627b86" stroke="#080e19" stroke-width="3"/></g><g transform="rotate(180 128 128)"><polygon points="119,64 137,64 134,78 122,78" fill="#627b86" stroke="#080e19" stroke-width="3"/></g><g transform="rotate(270 128 128)"><polygon points="119,64 137,64 134,78 122,78" fill="#627b86" stroke="#080e19" stroke-width="3"/></g>
+  </g>
+</svg>

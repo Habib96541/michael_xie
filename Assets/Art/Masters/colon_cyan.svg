@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="96" viewBox="0 0 32 96" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>colon_cyan</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs><linearGradient id="segment" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b9fcff"/><stop offset="1" stop-color="#3fc8da"/></linearGradient>
+</defs>
+<g id="led-glow"><rect x="10" y="24" width="12" height="12" fill="#3fc8da" rx="2" stroke="#3fc8da" stroke-width="6" opacity=".22"/><rect x="10" y="60" width="12" height="12" fill="#3fc8da" rx="2" stroke="#3fc8da" stroke-width="6" opacity=".22"/></g><g id="colon-dots"><rect x="10" y="24" width="12" height="12" fill="url(#segment)" rx="2"/><rect x="10" y="60" width="12" height="12" fill="url(#segment)" rx="2"/></g>
+</svg>

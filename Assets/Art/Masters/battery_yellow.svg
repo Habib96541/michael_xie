@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="160" viewBox="0 0 80 160" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>battery_yellow</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+  <linearGradient id="steel" x1="0" y1="0" x2="0.8" y2="1">
+    <stop stop-color="#879aa8"/><stop offset=".26" stop-color="#4b6171"/>
+    <stop offset=".53" stop-color="#304454"/><stop offset=".75" stop-color="#4e6270"/>
+    <stop offset="1" stop-color="#182938"/>
+  </linearGradient>
+  <linearGradient id="darkSteel" x1="0" y1="0" x2=".8" y2="1">
+    <stop stop-color="#405564"/><stop offset=".48" stop-color="#223441"/>
+    <stop offset="1" stop-color="#12212e"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#bed0d5"/><stop offset=".45" stop-color="#536d7a"/>
+    <stop offset="1" stop-color="#263c4c"/>
+  </linearGradient>
+  <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#a2f8ed"/><stop offset="1" stop-color="#27b9c4"/>
+  </linearGradient><linearGradient id="cell" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff0a6"/><stop offset="1" stop-color="#dbb44e"/></linearGradient>
+</defs>
+<g id="cell-housing">
+    <rect x="27" y="4" width="26" height="17" fill="url(#steel)" rx="3" stroke="#080e19" stroke-width="4"/>
+    <polygon points="18,17 62,17 71,26 71,144 62,153 18,153 9,144 9,26" fill="url(#steel)" stroke="#080e19" stroke-width="4.5"/>
+    <polygon points="21,29 59,29 63,33 63,133 59,137 21,137 17,133 17,33" fill="#101e2b" stroke="#080e19" stroke-width="3"/>
+    <rect x="23" y="36" width="34" height="13" fill="url(#cell)" rx="2" stroke="#080e19" stroke-width="1.8"/><rect x="23" y="54" width="34" height="13" fill="url(#cell)" rx="2" stroke="#080e19" stroke-width="1.8"/><rect x="23" y="72" width="34" height="13" fill="url(#cell)" rx="2" stroke="#080e19" stroke-width="1.8"/><rect x="23" y="90" width="34" height="13" fill="url(#cell)" rx="2" stroke="#080e19" stroke-width="1.8"/><rect x="23" y="108" width="34" height="13" fill="url(#cell)" rx="2" stroke="#080e19" stroke-width="1.8"/>
+    <path d="M13 37 V129" fill="none" stroke="#a8c2cb" stroke-width="2" opacity=".6"/>
+    <path d="M66 41 V128" fill="none" stroke="#11212e" stroke-width="2" />
+    <rect x="28" y="141" width="24" height="4" fill="#dbb44e" rx="1"/>
+    <path d="M22 23 H58" fill="none" stroke="#a0b5bf" stroke-width="1.6" opacity=".55"/>
+    </g>
+</svg>

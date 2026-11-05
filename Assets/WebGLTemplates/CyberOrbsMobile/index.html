@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0e14">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>{{{ PRODUCT_NAME }}}</title>
+    <style>
+      :root {
+        --bg: #0b0e14;
+        --cyan: #5ef2ff;
+        --magenta: #ff7ad9;
+        --ink: #9fb3c8;
+        --dim: #6c8098;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg);
+        color: var(--ink);
+        overflow: hidden;
+        overscroll-behavior: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        font-family: "Rajdhani", "Segoe UI", system-ui, -apple-system, sans-serif;
+      }
+
+      /* Fill the visible viewport, inset from the notch / rounded corners so the
+         board is never clipped by the phone hardware. */
+      #unity-container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+        background: radial-gradient(circle at 50% 30%, #131b2b 0%, var(--bg) 62%);
+      }
+
+      #unity-canvas {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: var(--bg);
+        outline: none;
+        touch-action: none;
+      }
+
+      #unity-loading {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding: 24px;
+        text-align: center;
+        background: radial-gradient(circle at 50% 35%, rgba(22, 32, 52, 0) 0%, var(--bg) 72%);
+        transition: opacity 0.35s ease;
+        z-index: 5;
+      }
+
+      .subtitle {
+        font-size: clamp(10px, 2.6vw, 14px);
+        font-weight: 700;
+        letter-spacing: 0.38em;
+        color: var(--magenta);
+        text-transform: uppercase;
+      }
+
+      .title {
+        font-size: clamp(30px, 9vw, 56px);
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: #ffffff;
+        text-shadow: 0 0 20px rgba(94, 242, 255, 0.55);
+      }
+
+      .track {
+        width: min(78vw, 420px);
+        height: 8px;
+        border-radius: 999px;
+        background: #1b2434;
+        box-shadow: inset 0 0 0 1px #2b3a52;
+        overflow: hidden;
+      }
+
+      .fill {
+        width: 0%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #2ad8ff, #5ef2ff 45%, #ff7ad9);
+        box-shadow: 0 0 14px rgba(94, 242, 255, 0.65);
+        transition: width 0.18s linear;
+      }
+
+      .status {
+        font-size: clamp(11px, 2.8vw, 14px);
+        letter-spacing: 0.18em;
+        color: var(--ink);
+      }
+
+      .hint {
+        max-width: 36ch;
+        font-size: clamp(10px, 2.4vw, 12px);
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+        color: var(--dim);
+      }
+
+      #unity-warning {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        font-size: 13px;
+      }
+
+      #unity-warning div {
+        padding: 10px 14px;
+        background: #ff4d6a;
+        color: #ffffff;
+      }
+
+      /* Short landscape phones: drop the optional copy so the loader still fits. */
+      @media (orientation: landscape) and (max-height: 480px) {
+        #unity-loading { gap: 10px; }
+        .title { font-size: clamp(22px, 7vh, 34px); }
+        .hint { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width={{{ WIDTH }}} height={{{ HEIGHT }}} tabindex="-1"></canvas>
+
+      <div id="unity-loading">
+        <div class="subtitle">Skill-based esports arena</div>
+        <div class="title">CYBER ORBS</div>
+        <div class="track"><div class="fill" id="unity-progress-bar-full"></div></div>
+        <div class="status" id="unity-progress-text">BOOTING CORE 0%</div>
+        <div class="hint">Drag to aim, release to fire. Tap the NEXT chamber to swap orbs.</div>
+      </div>
+
+      <div id="unity-warning"></div>
+    </div>
+
+    <script>
+      (function () {
+        var canvas = document.querySelector("#unity-canvas");
+        var loading = document.querySelector("#unity-loading");
+        var progressBar = document.querySelector("#unity-progress-bar-full");
+        var progressText = document.querySelector("#unity-progress-text");
+        var warning = document.querySelector("#unity-warning");
+
+        function unityShowBanner(msg, type) {
+          var div = document.createElement("div");
+          div.innerHTML = msg;
+          if (type === "warning") {
+            div.style.background = "#ffcf5a";
+            div.style.color = "#1a1200";
+            setTimeout(function () {
+              if (div.parentNode) warning.removeChild(div);
+            }, 5000);
+          }
+          warning.appendChild(div);
+        }
+
+        // Mobile browsers otherwise open a long-press menu or zoom over the game canvas.
+        canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+        document.addEventListener("gesturestart", function (e) { e.preventDefault(); });
+
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+        var config = {
+          arguments: [],
+          dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+          frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+#if USE_WASM
+          codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+#endif
+#if USE_THREADS
+          workerUrl: buildUrl + "/{{{ WORKER_FILENAME }}}",
+#endif
+#if SYMBOLS_FILENAME
+          symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+#endif
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
+          productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
+          productVersion: {{{ JSON.stringify(PRODUCT_VERSION) }}},
+          showBanner: unityShowBanner,
+          // Mobile GPUs pay for every extra pixel; the art is authored at 2x, so capping
+          // the render scale at 2 keeps it crisp without wasting fill rate.
+          devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2)
+        };
+
+        function hideLoader() {
+          loading.style.opacity = "0";
+          setTimeout(function () { loading.style.display = "none"; }, 400);
+        }
+
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = function () {
+          createUnityInstance(canvas, config, function (progress) {
+            var pct = Math.round(progress * 100);
+            progressBar.style.width = pct + "%";
+            progressText.textContent = "BOOTING CORE " + pct + "%";
+          }).then(function (unityInstance) {
+            window.unityInstance = unityInstance;
+            hideLoader();
+          }).catch(function (message) {
+            progressText.textContent = "FAILED TO START";
+            unityShowBanner("Could not start the game: " + message + ". Serve the Build folder over HTTP (Brotli or gzip).", "error");
+          });
+        };
+        script.onerror = function () {
+          unityShowBanner("Could not load the game loader script.", "error");
+        };
+        document.body.appendChild(script);
+      })();
+    </script>
+  </body>
+</html>

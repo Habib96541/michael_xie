@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>chamber_ring</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+  <linearGradient id="steel" x1="0" y1="0" x2="0.8" y2="1">
+    <stop stop-color="#879aa8"/><stop offset=".26" stop-color="#4b6171"/>
+    <stop offset=".53" stop-color="#304454"/><stop offset=".75" stop-color="#4e6270"/>
+    <stop offset="1" stop-color="#182938"/>
+  </linearGradient>
+  <linearGradient id="darkSteel" x1="0" y1="0" x2=".8" y2="1">
+    <stop stop-color="#405564"/><stop offset=".48" stop-color="#223441"/>
+    <stop offset="1" stop-color="#12212e"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#bed0d5"/><stop offset=".45" stop-color="#536d7a"/>
+    <stop offset="1" stop-color="#263c4c"/>
+  </linearGradient>
+  <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#a2f8ed"/><stop offset="1" stop-color="#27b9c4"/>
+  </linearGradient>
+</defs>
+<g id="hollow-steel-ring">
+  <path d="M10 128 a118 118 0 1 0 236 0 a118 118 0 1 0 -236 0 Z M49 128 a79 79 0 1 0 158 0 a79 79 0 1 0 -158 0 Z" fill="#080e19" fill-rule="evenodd"/>
+  <path d="M16 128 a112 112 0 1 0 224 0 a112 112 0 1 0 -224 0 Z M43 128 a85 85 0 1 0 170 0 a85 85 0 1 0 -170 0 Z" fill="url(#steel)" fill-rule="evenodd"/>
+  <circle cx="128" cy="128" r="88" fill="none" stroke="#080e19" stroke-width="4"/>
+  <circle cx="128" cy="128" r="108" fill="none" stroke="#9ab2bc" stroke-width="1.5" opacity=".5"/>
+  <g transform="rotate(0 128 128)">
+    <path d="M83.51 40.68 A98 98 0 0 1 172.49 40.68" fill="none" stroke="#080e19" stroke-width="12" />
+    <path d="M83.51 40.68 A98 98 0 0 1 172.49 40.68" fill="none" stroke="url(#teal)" stroke-width="6" />
+    <path d="M128 17 V42" fill="none" stroke="#080e19" stroke-width="4" /><g><circle cx="128" cy="28" r="3.5" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M126.425 29.225 L129.575 26.775" fill="none" stroke="#78929d" stroke-width="1.4" /></g>
+    </g><g transform="rotate(90 128 128)">
+    <path d="M83.51 40.68 A98 98 0 0 1 172.49 40.68" fill="none" stroke="#080e19" stroke-width="12" />
+    <path d="M83.51 40.68 A98 98 0 0 1 172.49 40.68" fill="none" stroke="url(#teal)" stroke-width="6" />
+    <path d="M128 17 V42" fill="none" stroke="#080e19" stroke-width="4" /><g><circle cx="128" cy="28" r="3.5" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M126.425 29.225 L129.575 26.775" fill="none" stroke="#78929d" stroke-width="1.4" /></g>
+    </g><g transform="rotate(180 128 128)">
+    <path d="M83.51 40.68 A98 98 0 0 1 172.49 40.68" fill="none" stroke="#080e19" stroke-width="12" />
+    <path d="M83.51 40.68 A98 98 0 0 1 172.49 40.68" fill="none" stroke="url(#teal)" stroke-width="6" />
+    <path d="M128 17 V42" fill="none" stroke="#080e19" stroke-width="4" /><g><circle cx="128" cy="28" r="3.5" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M126.425 29.225 L129.575 26.775" fill="none" stroke="#78929d" stroke-width="1.4" /></g>
+    </g><g transform="rotate(270 128 128)">
+    <path d="M83.51 40.68 A98 98 0 0 1 172.49 40.68" fill="none" stroke="#080e19" stroke-width="12" />
+    <path d="M83.51 40.68 A98 98 0 0 1 172.49 40.68" fill="none" stroke="url(#teal)" stroke-width="6" />
+    <path d="M128 17 V42" fill="none" stroke="#080e19" stroke-width="4" /><g><circle cx="128" cy="28" r="3.5" fill="#142532" stroke="#080e19" stroke-width="1.7"/><path d="M126.425 29.225 L129.575 26.775" fill="none" stroke="#78929d" stroke-width="1.4" /></g>
+    </g>
+  </g>
+</svg>

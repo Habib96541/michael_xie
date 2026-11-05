@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="640" viewBox="0 0 600 640" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>board_backdrop</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0 H0 V32" fill="none" stroke="#3b5c6e" stroke-width=".8" opacity=".18"/></pattern>
+  <pattern id="points" width="64" height="64" patternUnits="userSpaceOnUse"><circle cx="32" cy="32" r=".7" fill="#416374" opacity=".16"/></pattern>
+  <radialGradient id="vignette" cx=".5" cy=".42" r=".75"><stop offset=".3" stop-color="#08111b" stop-opacity="0"/><stop offset="1" stop-color="#08111b" stop-opacity=".3"/></radialGradient>
+</defs>
+<rect x="0" y="0" width="600" height="640" fill="#101c27" /><rect x="0" y="0" width="600" height="640" fill="url(#grid)" /><rect x="0" y="0" width="600" height="640" fill="url(#points)" /><rect x="0" y="0" width="600" height="640" fill="url(#vignette)" />
+</svg>

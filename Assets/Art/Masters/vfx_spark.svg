@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>vfx_spark</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+</defs>
+<g id="tintable-four-point-spark"><path d="M64 8 L74 48 L113 64 L75 75 L64 120 L53 77 L15 64 L53 52 Z" fill="#ffffff" /><polygon points="29,17 33,26 43,30 33,34 29,44 25,34 16,30 25,26" fill="#ffffff" opacity=".65"/></g>
+</svg>

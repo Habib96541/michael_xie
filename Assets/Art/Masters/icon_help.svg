@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>icon_help</title>
+<desc>Original Bubble Pop arcade-industrial sprite. Editable vector geometry; no embedded raster, fonts, filters, or external resources.</desc>
+<defs>
+</defs>
+<g id="tintable-symbol"><path d="M32 30 C32 17 62 14 65 31 C68 44 48 44 48 58" fill="none" stroke="#080e19" stroke-width="15" /><path d="M32 30 C32 17 62 14 65 31 C68 44 48 44 48 58" fill="none" stroke="#f4fbff" stroke-width="9" /><circle cx="48" cy="75" r="6" fill="#f4fbff" stroke="#080e19" stroke-width="3"/></g>
+</svg>
