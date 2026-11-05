@@ -1,0 +1,9 @@
+{
+  "name": "hole-arena-pocket-borough",
+  "compatibility_date": "2026-11-05",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./Builds/WebGL",
+    "not_found_handling": "404-page"
+  }
+}

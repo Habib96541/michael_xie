@@ -2,6 +2,12 @@
 
 An original, single-player, 3D city-swallowing arcade game built with Unity 6.3 LTS (6000.3.10f1), URP, the New Input System, uGUI and TextMeshPro. Compete against seven independent rivals in a two-minute match.
 
+## Play online
+
+[Play Pocket Borough on Cloudflare](https://hole-arena-pocket-borough.am-ome.workers.dev/) — open this HTTPS link on desktop or phone. No local server is required.
+
+To publish an updated WebGL build to the same Cloudflare Worker, run `npx wrangler deploy --config wrangler.jsonc --no-autoconfig` after signing into the owning Cloudflare account. Deployment configuration is in `wrangler.jsonc`; no credentials are stored in the repository.
+
 ## Repository layout
 
 | Folder | Contents |

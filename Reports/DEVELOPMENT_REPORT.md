@@ -88,7 +88,7 @@ Desktop and mobile URP assets use shared materials, instanced reusable meshes, f
 
 Validation found and corrected compile/reference issues during initial construction, a missing sliced UI sprite, a clipped button label, an edge-target reachability issue, floating-label coordinate conversion, overly sparse late matches and Unity's non-cancellable touch-cancel preventDefault warning. Earlier failure evidence is preserved in `browser-first-pass.json` and the Editor log. The final build/test receipts are separate from that history. The final Unity Console has no active compile errors or warnings.
 
-Before advertising support on specific mobile devices, run the packaged release on representative Android Chrome and iPhone Safari hardware. Test Firefox as an additional desktop browser. No online hosting account was configured; the verified static build and ZIP are ready to upload to a compatible host. Keep all build files together and serve through HTTP/HTTPS.
+Before advertising support on specific mobile devices, run the packaged release on representative Android Chrome and iPhone Safari hardware. Test Firefox as an additional desktop browser. The verified static build is now published on Cloudflare at https://hole-arena-pocket-borough.am-ome.workers.dev/ (see cloudflare-deployment.json for the live browser check). Keep all build files together and serve through HTTP/HTTPS.
 
 ## iPhone follow-up — November 5, 2026
 

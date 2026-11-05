@@ -1,0 +1,14 @@
+{
+  "url": "https://hole-arena-pocket-borough.am-ome.workers.dev/",
+  "status": 200,
+  "versionId": "249172b1-2b8b-46af-87d3-8ae951907e6f",
+  "checkedAt": "2026-11-05T05:23:06.039Z",
+  "mainMenu": true,
+  "gameplay": true,
+  "touchPause": true,
+  "viewport": {
+    "width": 844,
+    "height": 390
+  },
+  "runtimeErrors": []
+}
