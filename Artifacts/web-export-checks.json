@@ -1,0 +1,12 @@
+{
+  "templateResolved": true,
+  "bundleReferencesExist": true,
+  "javaScriptParses": true,
+  "wasmValid": true,
+  "cloudflareFileSizesPass": true,
+  "compressionHeadersPresent": true,
+  "files": 11,
+  "totalBytes": 22469464,
+  "largestAssetBytes": 12240445,
+  "wasmBytes": 30794381
+}

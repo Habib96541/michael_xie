@@ -1,0 +1,1 @@
+Slicing=True Combo=True Pause=True Resume=True ArcadeBomb=True ClassicBomb=True ThreeMisses=True ZenMisses=True Timer=True Freeze=True PausedTimer=True FastSwipe=True

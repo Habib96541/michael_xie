@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "assets": [
+    {
+      "path": "Assets/FruitNinja/Resources/Art/Orchard.png",
+      "transparent_background": false,
+      "prompt": "Use case: stylized-concept. Asset type: widescreen 16:9 background painting for a polished 2D fruit slicing arcade game in Unity. Primary request: a charming lush backyard orchard dojo with the tactile hand-painted cartoon, crooked wooden signs and cardboard craft feeling of classic Plants vs Zombies menus. No characters. NO TEXT, no UI, no lettering, no logos. Composition: a wide dark desaturated teal-green garden at twilight, softly glowing warm sunlight through trees near top center, layered broad leaves framing extreme left and right, distant little rustic garden fence, thick tree trunks framing both sides. The center 75 percent is calm unobstructed deep green garden space with subdued foliage shapes, suitable for overlaying bright fruit and menu cards. Bottom 18 percent is a beautiful honey-brown worn wooden workbench with a very subtle paper scrap and small scattered leaves at the extreme edges only. At the upper corners a string of very small amber garden lights. Rich illustrated game environment, painterly textures, exaggerated rounded shapes, thick dark contour accents, soft ambient depth, beautiful saturated moss greens and warm amber highlights. Flat front-on game camera, broad open playable center, no perspective floor dominating, no large center objects. Premium finished game art, detailed but center remains quiet."
+    },
+    {
+      "path": "Assets/FruitNinja/Resources/Art/FruitAtlas.png",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: production 2D game sprite atlas with REAL TRANSPARENT background. Create exactly 8 isolated objects arranged in a perfectly regular FOUR COLUMNS by TWO ROWS grid. Canvas wide 2:1 aspect. Every cell has equal size, each object centered in its own cell, generous empty transparent margin in each cell, objects never overlap. Read order TOP ROW: 1 whole round striped green watermelon with tiny curling stem, 2 round bright orange with two leaves, 3 shiny red apple with leaf and brown stem, 4 curved bunch of two yellow bananas. BOTTOM ROW: 5 golden pineapple with spiky green crown, 6 juicy purple plum with small leaf, 7 plump red strawberry with leafy crown, 8 cartoon round black iron bomb with short lit curved fuse and little orange sparks. All objects whole and uncut. Style: gorgeous hand-painted 2D casual arcade game sprites, thick organic dark colored outlines, rich juicy vibrant colors, charming exaggerated chunky shapes, beautiful brushed highlight and soft shading, similar tactile art feeling to classic Plants vs Zombies. Front-on views, subtly dimensional but illustrative, consistent light from upper left. Objects about 75 percent of their cell width and height, each fully visible. Absolutely NO TEXT, no cell borders, no labels, no checkerboard background, no floor or scene, no ground shadows outside object. True transparent alpha background."
+    }
+  ],
+  "fonts": [
+    { "name": "Lilita One", "source": "https://github.com/google/fonts/tree/main/ofl/lilitaone", "license": "SIL OFL 1.1" },
+    { "name": "Lato", "source": "https://github.com/google/fonts/tree/main/ofl/lato", "license": "SIL OFL 1.1" }
+  ]
+}

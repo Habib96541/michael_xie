@@ -1,0 +1,6 @@
+LaneCoverage=True HigherFruit=True OpeningMiddlePair=True RandomDelays=True OneLaunchPerBeat=True PausedLaunches=True PatternReset=True MenuClean=True HudClean=True AspectRatio=True PointerAligned=True Launches=37 PeakY=217.1 MinDelay=0.217 MaxDelay=0.783
+FirstCut=True SecondCut=True ThirdCut=True RetainedPieceShapes=True HarvestCountedOnce=True NoSameSwipeCascade=True EmptyAreaMiss=True NoFragmentMissPenalty=True
+Slicing=True Combo=True Pause=True Resume=True ArcadeBomb=True ClassicBomb=True ThreeMisses=True ZenMisses=True Timer=True Freeze=True PausedTimer=True FastSwipe=True
+ModeCard=True PauseButton=True ResumeButton=True PortraitSuspended=True LandscapeResumed=True SettingsButton=True SoundToggle=True SettingsRestored=True
+Card hit: Backyard Dojo UI/2.17 to 1 play area/Centered interface/Menu/ZEN mode card/Paper face => Playing/Zen
+Pause hit: Backyard Dojo UI/2.17 to 1 play area/Centered interface/Game/HUD/II/Paper face => Paused/Zen

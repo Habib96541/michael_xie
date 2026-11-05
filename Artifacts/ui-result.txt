@@ -1,0 +1,3 @@
+ModeCard=True PauseButton=True ResumeButton=True SettingsButton=True SoundToggle=True SettingsRestored=True
+Card hit: Backyard Dojo UI/1600 × 900 stage/Menu/ZEN mode card/Paper face => Playing/Zen
+Pause hit: Backyard Dojo UI/1600 × 900 stage/Game/HUD/II/Paper face => Paused/Zen

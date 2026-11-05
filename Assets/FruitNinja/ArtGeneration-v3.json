@@ -1,0 +1,8 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "useCase": "text-localization",
+  "path": "Assets/FruitNinja/Resources/Art/JuiceDojoLogo.png",
+  "reference": "Assets/FruitNinja/Resources/Art/DojoLogo-v2.png",
+  "transparent_background": true,
+  "prompt": "Use case: text-localization. Edit target: the attached transparent illustrated Fruit Ninja logo. Replace only the logo wording with \"JUICE\" on the top row and \"DOJO\" on the bottom row, spelled exactly J U I C E / D O J O. Keep the same playful chunky slanted lettering, orange-to-gold top row, bright lime green bottom row, cream highlights, deep brown layered cardboard outlines, painted paper texture, diagonal silver katana behind the letters, watermelon on the left, orange slice on the right, leaves and juice splashes. Adjust the lettering composition naturally for the shorter words and keep all artwork complete inside the frame. This is a game logo on a truly transparent background, no background rectangle, no additional text, no watermark. Preserve the same quality and aesthetic as the edit target."
+}

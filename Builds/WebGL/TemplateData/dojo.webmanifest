@@ -1,0 +1,13 @@
+{
+  "name": "Juice Dojo",
+  "short_name": "Juice Dojo",
+  "start_url": "../",
+  "scope": "../",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#10291f",
+  "theme_color": "#10291f",
+  "icons": [
+    { "src": "logo.png", "sizes": "1585x992", "type": "image/png" }
+  ]
+}

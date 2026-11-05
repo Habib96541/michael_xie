@@ -1,0 +1,1 @@
+PASS https://fruit-ninja-backyard-dojo.pages.dev/: portrait guidance, 2.17:1 fit at 844 × 390, 667 × 320 and 852 × 393, fullscreen on first tap, fullscreen exit, unsupported browser fallback, and zero browser errors.
