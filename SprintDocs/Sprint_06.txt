@@ -1,0 +1,82 @@
+Sprint 06: WebGL build
+Date: 2026-11-05
+Unity version: 6000.3.27f2
+
+Goals
+- Export the current Watermelon game as a playable WebGL build.
+- Validate the exported game in a browser and package a ZIP.
+
+Changes
+- Added Watermelon > Build WebGL for repeatable exports.
+- Exported only Assets/Scenes/Watermelon.unity.
+- Set the default browser canvas to 450 by 800 pixels.
+- Used the default Unity web template with compression disabled.
+- Disabled decompression fallback because the files are uncompressed.
+- Built a player without Development Build enabled.
+- Packaged index.html at the ZIP root with Build and TemplateData folders.
+- Added a README to the exported folder with hosting and rebuild instructions.
+
+Files touched
+- Assets/Editor/WatermelonWebGLBuilder.cs
+- Assets/Editor/WatermelonWebGLBuilder.cs.meta
+- ProjectSettings/ProjectSettings.asset
+- SprintDocs/Sprint_06.txt
+- Generated output: Builds/WebGL/
+- Generated package: Builds/Watermelon-WebGL.zip
+- Browser screenshot: Builds/WebGL-preview.jpg
+- Build log: Logs/WebGL-Build.log
+- Builds and Logs are excluded from Git by the existing .gitignore.
+
+Done condition
+- Unity reports a successful WebGL build.
+- The exported game loads and completes a round in a desktop browser.
+- Restart and menu navigation work in the exported player.
+- The ZIP contains the complete export with index.html at its root.
+- Status: complete.
+
+Validation
+- Read ProjectSettings/ProjectVersion.txt before implementation.
+- Verified the WebGL module is installed for the current Unity version.
+- Ran Unity in batch mode with WebGL selected and executed the build command.
+- Unity exited successfully with return code 0.
+- Build report: 61,009,122 bytes, 8 minutes 14.568 seconds.
+- No C# compiler errors or obsolete API warnings were reported.
+- Served the generated files over local HTTP with the WebAssembly MIME type.
+- All requested build files returned HTTP 200.
+- Opened the exported game in the in-app Chromium browser.
+- Confirmed the main menu appeared on launch.
+- Clicked Play and confirmed zero bands and a 1.00x multiplier.
+- Added bands and observed count, multiplier, rings, and central pressure.
+- Confirmed the watermelon burst at 18 bands with a 3.70x multiplier.
+- Confirmed fragments and the Try Again button appeared.
+- Clicked Try Again and confirmed zero bands, 1.00x, and a restored watermelon.
+- Added another band, returned to Menu, and confirmed the band was cleared.
+- Reloaded the page and confirmed the main menu appeared again.
+- No browser runtime errors were reported.
+- An initial local-server Content-Length warning was addressed in the preview
+  server. The exported game files did not require changes.
+- Verified every ZIP entry against the source file using SHA-256.
+- ZIP: 18 files, 19,367,396 bytes; unpacked: 61,010,169 bytes including README.
+- ZIP SHA-256:
+  DEE4D99EA214FBAEB2BE84B81F38CCD0EEAC4223E40AF3AB97FE4BA23DD53345
+- git diff --check passed. Existing unrelated changes were preserved.
+
+How to use
+1. Upload the ZIP contents to a static web host, keeping index.html at the root.
+2. Serve the folder over HTTP or HTTPS and open index.html in a browser.
+3. Serve .wasm files as application/wasm. No compression headers are required.
+4. To rebuild in Unity, choose Watermelon > Build WebGL.
+5. Output files are written to Builds/WebGL. Recreate the ZIP after rebuilding.
+
+Concepts learned
+- Teaching and knowledge checks remain disabled at the user's request.
+
+Limits and open questions
+- Desktop Chromium was tested; other browsers and mobile devices were not.
+- Audio clips are included, but audible playback was not independently verified.
+- The local preview server lasts only while the current tool session is alive.
+- Public hosting was not requested or configured.
+- No open questions for the approved scope.
+
+Suggested Git commit message
+Add repeatable WebGL export with portrait settings

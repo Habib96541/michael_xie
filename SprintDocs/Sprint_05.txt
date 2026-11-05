@@ -1,0 +1,68 @@
+Sprint 05: Main menu and navigation
+Date: 2026-11-05
+Unity version: 6000.3.27f2
+
+Goals
+- Open the game on a main menu with Play and Quit.
+- Start a fresh round from Play.
+- Return to the menu from gameplay and clear the current round.
+
+Changes
+- Added a menu using the existing colors, typography, and watermelon backdrop.
+- Grouped the round display and gameplay buttons separately from the menu.
+- Added Play, Quit, and an in-game Menu button.
+- Play resets the count, multiplier, deformation, fragments, and sounds.
+- Menu clears the round and restores the whole watermelon as the backdrop.
+- Band input is blocked while the menu is displayed.
+- Selected Play or Add Band when switching screens for UI navigation.
+- Quit stops Play Mode in the Editor and calls Application.Quit in builds.
+- Updated scene creation to include the menu in newly generated scenes.
+- Added Watermelon > Set Up Main Menu to configure the existing scene.
+- Extended the existing round-flow check to cover Play and Menu navigation.
+
+Files touched
+- Assets/Scripts/WatermelonGame.cs
+- Assets/Scripts/WatermelonUI.cs
+- Assets/Editor/WatermelonSceneBuilder.cs
+- Assets/Editor/WatermelonPlayModeCheck.cs
+- Assets/Scenes/Watermelon.unity
+- SprintDocs/Sprint_05.txt
+
+Done condition
+- The game displays the main menu on launch.
+- Play opens a fresh round with zero bands and a 1.00x multiplier.
+- Menu returns to the main menu and clears the current round.
+- Quit exits gameplay in the supported application context.
+- Status: complete and verified in the Unity Editor.
+
+Validation
+- Unity compiled the updated runtime and editor scripts.
+- Inspected the main menu and gameplay layout at 1080 by 1920.
+- Entered Play Mode and confirmed the menu was displayed at startup.
+- Clicked Play, added a band, then clicked Menu.
+- Confirmed the previous band was removed and the original watermelon restored.
+- Ran the extended round-flow check; all 12 rounds passed.
+- Observed burst counts: 14, 10, 14, 22, 22, 21, 14, 18, 10, 8, 10, 13.
+- Checks covered Play/Menu screen visibility, menu input blocking, sound cleanup,
+  band cleanup, multiplier reset, cooldown, bursts, physics, and restart behavior.
+- The check finishes on the main menu.
+- Clicked Quit and confirmed Unity left Play Mode.
+- The Unity Console showed zero warnings and zero errors during the check.
+- git diff --check passed.
+- No standalone build was produced; Application.Quit in a built player was not
+  exercised. The Editor-specific Quit behavior was tested.
+
+How to use
+1. Open Assets/Scenes/Watermelon.unity and press Play in Unity.
+2. Press the on-screen Play button to begin a round.
+3. Use Menu near the upper right of the game screen to return to the main menu.
+4. Use Quit on the main menu to leave the application or Editor Play Mode.
+
+Concepts learned
+- Teaching and knowledge checks remain disabled at the user's request.
+
+Open questions
+- None for the approved scope.
+
+Suggested Git commit message
+Add main menu with play and quit navigation

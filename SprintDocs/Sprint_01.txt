@@ -1,0 +1,83 @@
+Sprint 01: Playable watermelon round
+Date: 2026-11-02
+
+Goals
+- Build the approved first playable version in Unity 6000.3.6f1 using URP.
+- Add visible rubber bands one at a time and increase the multiplier.
+- Burst at a hidden random band count, then allow a clean restart.
+
+Changes
+- Added a portrait game scene with a striped 3D watermelon and display plinth.
+- Added colored rubber bands with a short placement and squash animation.
+- Added a multiplier, band counter, round status, Add Band, and Try Again.
+- A new round chooses an inclusive random burst threshold from 8 to 22 bands.
+- The multiplier starts at 1.00x and increases by 0.15x per accepted band.
+- A 0.22-second interval rejects repeated input during band placement.
+- The burst hides the whole watermelon and activates 18 physical fragments.
+- Restart removes old bands, resets fragment physics, and chooses a new threshold.
+- UI input uses InputSystemUIInputModule with the installed new Input System.
+- Added a scene creation menu and a repeatable play mode verification menu.
+- Set the Watermelon scene as the enabled scene in EditorBuildSettings.
+
+Files touched
+- Assets/Scripts/WatermelonGame.cs
+- Assets/Scripts/WatermelonVisual.cs
+- Assets/Scripts/WatermelonUI.cs
+- Assets/Editor/WatermelonSceneBuilder.cs
+- Assets/Editor/WatermelonPlayModeCheck.cs
+- Assets/Scenes/Watermelon.unity
+- Assets/Prefabs/RubberBand.prefab
+- Assets/WatermelonArt/Rubber Band.asset
+- Assets/WatermelonArt/WatermelonRind.png
+- Assets/WatermelonArt/*.mat
+- Unity-generated .meta files for the added assets and directories.
+- ProjectSettings/EditorBuildSettings.asset
+- SprintDocs/Sprint_01.txt
+
+Done condition
+- Open Assets/Scenes/Watermelon.unity and press Play.
+- Add Band adds one visible band and increases the count and multiplier.
+- The watermelon bursts at its randomly chosen threshold.
+- Try Again restores a fresh watermelon and resets the round.
+- Several complete rounds work without game script errors.
+- Status: passed in the running Unity Editor.
+
+Validation
+- Unity compiled the runtime and editor scripts without C# errors or warnings.
+- Visually inspected the portrait layout, a placed band, and burst fragments.
+- Clicked Add Band through the Unity Game view and observed 1 band and 1.15x.
+- Ran Watermelon > Check Round Flow (Play Mode).
+- All 12 rounds passed. Observed thresholds:
+  14, 8, 18, 10, 20, 22, 16, 14, 15, 21, 20, 9.
+- Checked button callbacks, multiplier display, one instance per counted band,
+  immediate duplicate input rejection, minimum and maximum burst limits,
+  fragment physics, input rejection after a burst, and restart cleanup.
+- Verification restores the previous time scale and random state afterwards.
+- git diff --check passed.
+- No standalone build or physical touchscreen device was tested.
+
+How to run
+1. Open Assets/Scenes/Watermelon.unity.
+2. Press Play.
+3. Press Add Band until the watermelon bursts.
+4. Press Try Again to start another round.
+
+Tuning
+- Select Round Controller outside Play Mode.
+- Adjust Minimum Burst Count, Maximum Burst Count, Multiplier Per Band,
+  or Band Interval in the Inspector.
+- The scene builder can recreate generated art and scene content through
+  Watermelon > Create Playable Scene. It replaces the generated scene.
+
+Concepts learned
+- Teaching and knowledge checks were disabled at the user's request.
+
+Open questions and limitations
+- The target release platform has not been selected.
+- Burst visuals use simple layered chunks rather than a fractured melon mesh.
+- The pre-existing Unity AI package reports a NoSubscription message.
+  It did not prevent compiling or playing the game.
+- Existing unrelated project edits were preserved.
+
+Suggested Git commit message
+Add playable watermelon rubber band game

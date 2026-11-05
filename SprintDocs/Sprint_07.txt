@@ -1,0 +1,43 @@
+Sprint 07: Repository delivery
+Date: 2026-11-05
+Unity version: 6000.3.27f2
+
+Goals
+- Commit the full Unity project, the WebGL export, and its ZIP package.
+- Deliver the commit to Sparktech-Ai-Agency01/michael_xie on branch Watermelon.
+
+Changes
+- Included the existing project source, settings, assets, and sprint notes.
+- Allowed the current WebGL export, package, and preview through .gitignore.
+- Kept generated Unity caches, logs, and local editor settings ignored.
+- Stored build files as regular Git objects for complete repository downloads.
+- Added a project README with setup, controls, build, and validation details.
+- Preserved all existing project changes in the delivery snapshot.
+
+Files touched
+- .gitignore
+- .gitattributes
+- README.md
+- SprintDocs/Sprint_07.txt
+- Existing project changes and generated build files included in the commit.
+
+Done condition
+- A local commit contains the complete source and distributable WebGL build.
+- The destination Watermelon branch contains that commit or its integrated form.
+- Delivery status is reported in the chat after checking the destination branch.
+
+Validation
+- Verified the current Unity version from ProjectSettings/ProjectVersion.txt.
+- Reviewed Git status, remotes, build sizes, and existing LFS configuration.
+- Checked source folders for common credential and private-key patterns.
+- The existing WebGL export and ZIP passed the Sprint 06 browser and file checks.
+- No runtime code changed in this delivery sprint.
+
+Concepts learned
+- Teaching and knowledge checks remain disabled at the user's request.
+
+Open questions
+- Destination repository access must be available to finish the push.
+
+Suggested Git commit message
+Add complete Watermelon project and WebGL build

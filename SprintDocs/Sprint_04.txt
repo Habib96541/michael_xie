@@ -1,0 +1,70 @@
+Sprint 04: Band and burst sound effects
+Date: 2026-11-02
+
+Goals
+- Play a short rubber twang for every accepted band addition.
+- Play a heavier pop and splash when the watermelon bursts.
+- Provide separate volume controls and stop lingering sounds on restart.
+
+Changes
+- Created two original synthesized WAV clips with no external audio assets.
+- BandTwang.wav is a 0.19-second rubber pluck with a short snap.
+- WatermelonBurst.wav is a 0.65-second low pop with noise and wet drop tones.
+- Added WatermelonAudio to manage playback through a cached AudioSource.
+- Added serialized Band Volume and Burst Volume controls.
+- Band audio is triggered after the cooldown guard accepts an addition.
+- The burst sound is triggered once alongside the burst visual.
+- The final band plays its band sound as well as the burst sound.
+- Restart calls AudioSource.Stop to clear ongoing sounds.
+- The AudioSource uses 2D playback, with looping and Play On Awake disabled.
+- Connected both clips on Round Controller in the saved playable scene.
+- Updated the scene builder so recreated scenes include sound effects.
+- Added Watermelon > Set Up Sound Effects to configure an existing scene.
+
+Files touched
+- Assets/Scripts/WatermelonAudio.cs and its .meta file
+- Assets/Scripts/WatermelonGame.cs
+- Assets/Editor/WatermelonSceneBuilder.cs
+- Assets/Scenes/Watermelon.unity
+- Assets/Audio.meta
+- Assets/Audio/BandTwang.wav and its .meta file
+- Assets/Audio/WatermelonBurst.wav and its .meta file
+- SprintDocs/Sprint_04.txt
+
+Done condition
+- Accepted additions trigger a band sound; rejected clicks produce no sound.
+- A burst triggers the burst sound once.
+- Restart stops the previous round's sounds.
+- The sound clips and volume controls are connected in the scene.
+- Status: implemented and checked in Unity Play Mode.
+
+Validation
+- Unity compiled the runtime and editor scripts without C# errors or warnings.
+- Confirmed scene references connect both imported clips to WatermelonAudio.
+- Confirmed the source is non-looping, 2D, and does not play on scene startup.
+- Triggered Add Band through the Game view.
+- Ran the existing round-flow check with sound enabled; all 12 rounds passed.
+- Observed burst counts: 14, 18, 19, 17, 16, 9, 18, 16, 13, 12, 20, 12.
+- No null references, PlayOneShot warnings, or audio device errors appeared.
+- Both WAV files are mono, 44.1 kHz, 16-bit PCM with nonzero RMS levels.
+- Band peak is 0.75 and burst peak is 0.90; neither WAV contains clipped samples.
+- Both files begin and end at zero to avoid discontinuities at their boundaries.
+- git diff --check passed.
+- The existing round-flow check verifies gameplay, not audible sound quality.
+- Speaker/headphone output was not captured or independently auditioned.
+- No standalone build or physical device test was run.
+
+Volume controls
+- Select Round Controller outside Play Mode.
+- Find Watermelon Audio in the Inspector.
+- Band Volume defaults to 0.45 and Burst Volume defaults to 0.65.
+- Swap Band Clip or Burst Clip to use different sound assets.
+
+Concepts learned
+- Teaching and knowledge checks remain disabled at the user's request.
+
+Open questions
+- None for the approved scope.
+
+Suggested Git commit message
+Add band placement and watermelon burst sounds

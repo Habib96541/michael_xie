@@ -18,7 +18,10 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/
+/[Bb]uilds/*
+!/Builds/WebGL/
+!/Builds/Watermelon-WebGL.zip
+!/Builds/WebGL-preview.jpg
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 *.log

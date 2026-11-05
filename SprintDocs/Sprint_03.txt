@@ -1,0 +1,61 @@
+Sprint 03: Pressure beneath the rubber band cluster
+Date: 2026-11-02
+
+Goals
+- Show a lasting indentation where rubber bands gather around the middle.
+- Deepen the indentation with each added band.
+- Tighten existing bands against the deformed surface.
+- Restore the original watermelon shape on restart.
+
+Changes
+- Replaced the whole-watermelon squash and rebound with mesh deformation.
+- Created a private runtime copy of the body mesh, keeping the source intact.
+- Reduced the mesh radius around the central band cluster with a smooth falloff.
+- Each band increases pressure toward a bounded maximum indentation.
+- Animated each tightening over 0.18 seconds and retained the resulting shape.
+- Updated all band radii as the body narrows, not just the newest band.
+- Kept bands horizontal and grouped closer around the middle.
+- Kept vertex heights unchanged so the stem and bottom remain in place.
+- Restored the original vertices and normals on restart.
+- Released the runtime mesh when its visual component is destroyed.
+- Saved the scene's pressure settings so the tested values persist.
+
+Files touched
+- Assets/Scripts/WatermelonVisual.cs
+- Assets/Scenes/Watermelon.unity
+- SprintDocs/Sprint_03.txt
+
+Done condition
+- The middle visibly narrows beneath the clustered bands.
+- Additional bands deepen the pinch while existing bands follow the surface.
+- The indentation remains between clicks.
+- Restart restores the undeformed watermelon and removes the previous bands.
+- Status: complete in the running Unity Editor.
+
+Validation
+- Compiled in Unity 6000.3.6f1 without C# errors or warnings.
+- Inspected the shape and band placement after adding one through five bands.
+- Confirmed the indentation remains after the tightening animation ends.
+- Inspected the original shape restored after round checks completed.
+- Reran the existing round-flow check; all 12 rounds passed.
+- Observed burst counts: 14, 18, 11, 13, 10, 21, 18, 18, 15, 19, 15, 19.
+- The check covered button callbacks, count and multiplier updates, cooldown,
+  burst bounds, fragment physics, input locking, and restart cleanup.
+- No game exceptions or unreadable mesh errors appeared in the Editor log.
+- git diff --check passed.
+- No standalone build or physical device test was run.
+
+Inspector controls on Watermelon Visual
+- Pressure Per Band: 0.045. Higher values deepen the pinch faster.
+- Maximum Indentation: 0.6. Limits the amount of radial compression.
+- Pressure Width: 0.35. Controls how far the pinch extends above and below center.
+- Tightening Duration: 0.18 seconds. Controls how quickly each band tightens.
+
+Concepts learned
+- Teaching and knowledge checks remain disabled at the user's request.
+
+Open questions
+- None for the approved scope.
+
+Suggested Git commit message
+Deform watermelon under rubber band pressure

@@ -1,0 +1,52 @@
+Sprint 02: Multiplier squish feedback
+Date: 2026-11-02
+
+Goals
+- Make each added band and multiplier increase visibly squish the watermelon.
+- Add a small rebound before returning to its original shape.
+- Keep the bottom planted and the bands attached during deformation.
+
+Changes
+- Replaced the subtle 6 percent pulse with a three-phase animation:
+  squash, rebound, and settle.
+- Default squash strength is 0.22 and duration is 0.32 seconds.
+- Added Squish Strength and Squish Duration to Watermelon Visual in the Inspector.
+- Width increases as height decreases to preserve the apparent volume.
+- Cached the resting transform and body bottom in Awake.
+- Adjusted the animation position so the body bottom stays fixed.
+- New bands restart the animation from its current compression.
+- Restart restores the original scale and position immediately.
+- The burst still takes priority on the final band.
+
+Files touched
+- Assets/Scripts/WatermelonVisual.cs
+- SprintDocs/Sprint_02.txt
+
+Done condition
+- Each surviving band addition triggers a visible squash and rebound.
+- The bands follow the watermelon and its base stays planted.
+- The animation settles without permanent scale or position drift.
+- Restart restores the resting shape.
+- Status: complete in the Unity Editor.
+
+Validation
+- Compiled in Unity 6000.3.6f1 without C# errors or warnings.
+- Clicked Add Band in the Game view and checked the updated multiplier.
+- Temporarily slowed the animation in Play Mode to inspect deformation,
+  band attachment, and the body bottom, then restored the default duration
+  by leaving Play Mode.
+- Reran the existing round-flow check at the default animation duration.
+- All 12 rounds passed. Burst counts:
+  14, 21, 17, 11, 22, 12, 12, 12, 14, 14, 17, 21.
+- Checked existing cooldown, band creation, multiplier display, burst,
+  fragment physics, and restart behavior through the round-flow check.
+- No standalone build or physical device test was run.
+
+Concepts learned
+- Teaching and knowledge checks remain disabled at the user's request.
+
+Open questions
+- None for the approved scope.
+
+Suggested Git commit message
+Add squash and rebound on multiplier increases
