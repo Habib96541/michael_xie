@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: b82170830af28c04a8a0f48896391deb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -286127965831567093
+    second: zombie_bucket_walk_0
+  - first:
+      213: 7996411141601514550
+    second: zombie_bucket_walk_1
+  - first:
+      213: -1469399523088916323
+    second: zombie_bucket_walk_2
+  - first:
+      213: 1344468912619671744
+    second: zombie_bucket_walk_3
+  - first:
+      213: 4643205668010109949
+    second: zombie_bucket_walk_4
+  - first:
+      213: -2878065717987391342
+    second: zombie_bucket_walk_5
+  - first:
+      213: -5933832277908784443
+    second: zombie_bucket_walk_6
+  - first:
+      213: -3128390420829302477
+    second: zombie_bucket_walk_7
+  - first:
+      213: -1056968277258069280
+    second: zombie_bucket_walk_8
+  - first:
+      213: 8685636525738108911
+    second: zombie_bucket_walk_9
+  - first:
+      213: 3431270928314395258
+    second: zombie_bucket_walk_10
+  - first:
+      213: 2347644195128472536
+    second: zombie_bucket_walk_11
+  - first:
+      213: 2871757674209062617
+    second: zombie_bucket_walk_12
+  - first:
+      213: -8946500795833007332
+    second: zombie_bucket_walk_13
+  - first:
+      213: -170909430101950890
+    second: zombie_bucket_walk_14
+  - first:
+      213: -4759815461794523901
+    second: zombie_bucket_walk_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombie_bucket_walk_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 32
+        width: 109
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09ed4c8128770cf0800000000000000
+      internalID: -286127965831567093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 31
+        width: 109
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63452250195f8fe60800000000000000
+      internalID: 7996411141601514550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 31
+        width: 111
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9028214be4ab9be0800000000000000
+      internalID: -1469399523088916323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_3
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 31
+        width: 112
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c0504c4a5388a210800000000000000
+      internalID: 1344468912619671744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_4
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 31
+        width: 112
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfba2dc44faff6040800000000000000
+      internalID: 4643205668010109949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_5
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 31
+        width: 112
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298c1276a7e0f08d0800000000000000
+      internalID: -2878065717987391342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_6
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 31
+        width: 111
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5caff766bfac6ada0800000000000000
+      internalID: -5933832277908784443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_7
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 31
+        width: 109
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3311cb7bc79b594d0800000000000000
+      internalID: -3128390420829302477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_8
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 32
+        width: 109
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ea1d2fa3f4e451f0800000000000000
+      internalID: -1056968277258069280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_9
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 32
+        width: 107
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe727c4d664998870800000000000000
+      internalID: 8685636525738108911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_10
+      rect:
+        serializedVersion: 2
+        x: 2627
+        y: 32
+        width: 105
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7aed4acab25e9f20800000000000000
+      internalID: 3431270928314395258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_11
+      rect:
+        serializedVersion: 2
+        x: 2884
+        y: 32
+        width: 103
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3f3a505f1849020800000000000000
+      internalID: 2347644195128472536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_12
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 32
+        width: 103
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9deab34b3688ad720800000000000000
+      internalID: 2871757674209062617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_13
+      rect:
+        serializedVersion: 2
+        x: 3396
+        y: 32
+        width: 103
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13cf914de4a7d380800000000000000
+      internalID: -8946500795833007332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_14
+      rect:
+        serializedVersion: 2
+        x: 3651
+        y: 32
+        width: 105
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e320267cec0adf0800000000000000
+      internalID: -170909430101950890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_walk_15
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 32
+        width: 107
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305535b5e0db1fdb0800000000000000
+      internalID: -4759815461794523901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zombie_bucket_walk_0: -286127965831567093
+      zombie_bucket_walk_1: 7996411141601514550
+      zombie_bucket_walk_10: 3431270928314395258
+      zombie_bucket_walk_11: 2347644195128472536
+      zombie_bucket_walk_12: 2871757674209062617
+      zombie_bucket_walk_13: -8946500795833007332
+      zombie_bucket_walk_14: -170909430101950890
+      zombie_bucket_walk_15: -4759815461794523901
+      zombie_bucket_walk_2: -1469399523088916323
+      zombie_bucket_walk_3: 1344468912619671744
+      zombie_bucket_walk_4: 4643205668010109949
+      zombie_bucket_walk_5: -2878065717987391342
+      zombie_bucket_walk_6: -5933832277908784443
+      zombie_bucket_walk_7: -3128390420829302477
+      zombie_bucket_walk_8: -1056968277258069280
+      zombie_bucket_walk_9: 8685636525738108911
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

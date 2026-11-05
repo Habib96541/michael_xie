@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 05c0e654c15c1d447a805c5b9a74c384
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8198817570694366556
+    second: zombie_paper_walk_0
+  - first:
+      213: -8466208498815409629
+    second: zombie_paper_walk_1
+  - first:
+      213: -7150355171914352382
+    second: zombie_paper_walk_2
+  - first:
+      213: 313937468468569102
+    second: zombie_paper_walk_3
+  - first:
+      213: -691086060596076196
+    second: zombie_paper_walk_4
+  - first:
+      213: 2673839325845093655
+    second: zombie_paper_walk_5
+  - first:
+      213: -4032148378339178488
+    second: zombie_paper_walk_6
+  - first:
+      213: 2686285499572071200
+    second: zombie_paper_walk_7
+  - first:
+      213: -4158523435766816508
+    second: zombie_paper_walk_8
+  - first:
+      213: 6675799291521248945
+    second: zombie_paper_walk_9
+  - first:
+      213: 413878187263747647
+    second: zombie_paper_walk_10
+  - first:
+      213: 1106369307300041990
+    second: zombie_paper_walk_11
+  - first:
+      213: 4189988994661273391
+    second: zombie_paper_walk_12
+  - first:
+      213: -4335760835145716039
+    second: zombie_paper_walk_13
+  - first:
+      213: -108235195738717343
+    second: zombie_paper_walk_14
+  - first:
+      213: 2365901103681150376
+    second: zombie_paper_walk_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombie_paper_walk_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 110
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55087f242d08c170800000000000000
+      internalID: 8198817570694366556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 31
+        width: 110
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 322e6b9e93cf18a80800000000000000
+      internalID: -8466208498815409629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 31
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209fa28fad5d4cc90800000000000000
+      internalID: -7150355171914352382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_3
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 31
+        width: 112
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0421c9d6745b5400800000000000000
+      internalID: 313937468468569102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_4
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 31
+        width: 112
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5162f0b3e4c866f0800000000000000
+      internalID: -691086060596076196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_5
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 31
+        width: 112
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d777343b26b1520800000000000000
+      internalID: 2673839325845093655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_6
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 31
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8080d63c96eea08c0800000000000000
+      internalID: -4032148378339178488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_7
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 31
+        width: 110
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02ba647ed6a974520800000000000000
+      internalID: 2686285499572071200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_8
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 32
+        width: 110
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4016bfcc7f4f946c0800000000000000
+      internalID: -4158523435766816508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_9
+      rect:
+        serializedVersion: 2
+        x: 2367
+        y: 32
+        width: 110
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1beade2f51435ac50800000000000000
+      internalID: 6675799291521248945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_10
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 32
+        width: 109
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36632cb4046eb500800000000000000
+      internalID: 413878187263747647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_11
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 32
+        width: 108
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6059300f50d9a5f00800000000000000
+      internalID: 1106369307300041990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_12
+      rect:
+        serializedVersion: 2
+        x: 3135
+        y: 32
+        width: 108
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fc4978ac4d52a30800000000000000
+      internalID: 4189988994661273391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_13
+      rect:
+        serializedVersion: 2
+        x: 3391
+        y: 32
+        width: 108
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bea6160e7844d3c0800000000000000
+      internalID: -4335760835145716039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_14
+      rect:
+        serializedVersion: 2
+        x: 3647
+        y: 32
+        width: 109
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1638cc5b9a87f7ef0800000000000000
+      internalID: -108235195738717343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_walk_15
+      rect:
+        serializedVersion: 2
+        x: 3903
+        y: 32
+        width: 110
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad9e9ac48e55d020800000000000000
+      internalID: 2365901103681150376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zombie_paper_walk_0: 8198817570694366556
+      zombie_paper_walk_1: -8466208498815409629
+      zombie_paper_walk_10: 413878187263747647
+      zombie_paper_walk_11: 1106369307300041990
+      zombie_paper_walk_12: 4189988994661273391
+      zombie_paper_walk_13: -4335760835145716039
+      zombie_paper_walk_14: -108235195738717343
+      zombie_paper_walk_15: 2365901103681150376
+      zombie_paper_walk_2: -7150355171914352382
+      zombie_paper_walk_3: 313937468468569102
+      zombie_paper_walk_4: -691086060596076196
+      zombie_paper_walk_5: 2673839325845093655
+      zombie_paper_walk_6: -4032148378339178488
+      zombie_paper_walk_7: 2686285499572071200
+      zombie_paper_walk_8: -4158523435766816508
+      zombie_paper_walk_9: 6675799291521248945
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

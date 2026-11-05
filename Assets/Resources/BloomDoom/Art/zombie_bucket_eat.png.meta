@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: cbcc0f067d9fdc243a67af904cc3eeb5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6442990186342604076
+    second: zombie_bucket_eat_0
+  - first:
+      213: -1433673764693754570
+    second: zombie_bucket_eat_1
+  - first:
+      213: -1094419077104619420
+    second: zombie_bucket_eat_2
+  - first:
+      213: 4585580847522791978
+    second: zombie_bucket_eat_3
+  - first:
+      213: 8632973625583499631
+    second: zombie_bucket_eat_4
+  - first:
+      213: 1823339078032650289
+    second: zombie_bucket_eat_5
+  - first:
+      213: 6674461983812065933
+    second: zombie_bucket_eat_6
+  - first:
+      213: 1383626925188375045
+    second: zombie_bucket_eat_7
+  - first:
+      213: 7788893733482813127
+    second: zombie_bucket_eat_8
+  - first:
+      213: 8936849085039213035
+    second: zombie_bucket_eat_9
+  - first:
+      213: -8484806320324108762
+    second: zombie_bucket_eat_10
+  - first:
+      213: -2977785088157364303
+    second: zombie_bucket_eat_11
+  - first:
+      213: 2890389082255675552
+    second: zombie_bucket_eat_12
+  - first:
+      213: -4961269038856709379
+    second: zombie_bucket_eat_13
+  - first:
+      213: -2778101810888174137
+    second: zombie_bucket_eat_14
+  - first:
+      213: 8582787677021706032
+    second: zombie_bucket_eat_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombie_bucket_eat_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 32
+        width: 109
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d2a8bbdf86e596a0800000000000000
+      internalID: -6442990186342604076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 31
+        width: 111
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63db1a39e419a1ce0800000000000000
+      internalID: -1433673764693754570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 31
+        width: 111
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460b4c9d5a7dfc0f0800000000000000
+      internalID: -1094419077104619420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_3
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 30
+        width: 110
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a224e614c7143af30800000000000000
+      internalID: 4585580847522791978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_4
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 30
+        width: 108
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f697834e5cb7ec770800000000000000
+      internalID: 8632973625583499631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_5
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 31
+        width: 109
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13079332b3dcd4910800000000000000
+      internalID: 1823339078032650289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_6
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 31
+        width: 110
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a97fbbfc370ac50800000000000000
+      internalID: 6674461983812065933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_7
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 31
+        width: 111
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 502e4819b51a33310800000000000000
+      internalID: 1383626925188375045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_8
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 32
+        width: 110
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c652815595b71c60800000000000000
+      internalID: 7788893733482813127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_9
+      rect:
+        serializedVersion: 2
+        x: 2371
+        y: 32
+        width: 106
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be97905b4e0160c70800000000000000
+      internalID: 8936849085039213035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_10
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 31
+        width: 104
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e97192b99ef3a80800000000000000
+      internalID: -8484806320324108762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_11
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 31
+        width: 105
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bfcce24d38cca6d0800000000000000
+      internalID: -2977785088157364303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_12
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 31
+        width: 107
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0548e6e89bc1820800000000000000
+      internalID: 2890389082255675552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_13
+      rect:
+        serializedVersion: 2
+        x: 3391
+        y: 32
+        width: 109
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfa5dc75818062bb0800000000000000
+      internalID: -4961269038856709379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_14
+      rect:
+        serializedVersion: 2
+        x: 3650
+        y: 32
+        width: 106
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5142c3f133279d0800000000000000
+      internalID: -2778101810888174137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_bucket_eat_15
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 32
+        width: 105
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0379a7f2bef2c1770800000000000000
+      internalID: 8582787677021706032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zombie_bucket_eat_0: -6442990186342604076
+      zombie_bucket_eat_1: -1433673764693754570
+      zombie_bucket_eat_10: -8484806320324108762
+      zombie_bucket_eat_11: -2977785088157364303
+      zombie_bucket_eat_12: 2890389082255675552
+      zombie_bucket_eat_13: -4961269038856709379
+      zombie_bucket_eat_14: -2778101810888174137
+      zombie_bucket_eat_15: 8582787677021706032
+      zombie_bucket_eat_2: -1094419077104619420
+      zombie_bucket_eat_3: 4585580847522791978
+      zombie_bucket_eat_4: 8632973625583499631
+      zombie_bucket_eat_5: 1823339078032650289
+      zombie_bucket_eat_6: 6674461983812065933
+      zombie_bucket_eat_7: 1383626925188375045
+      zombie_bucket_eat_8: 7788893733482813127
+      zombie_bucket_eat_9: 8936849085039213035
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 574962140998b504bbfd83d17ba5c8f8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5813789094308167987
+    second: zombie_giant_walk_0
+  - first:
+      213: 3746468353267138322
+    second: zombie_giant_walk_1
+  - first:
+      213: 4892466180211786372
+    second: zombie_giant_walk_2
+  - first:
+      213: -8923208039243912753
+    second: zombie_giant_walk_3
+  - first:
+      213: -2901860485652834340
+    second: zombie_giant_walk_4
+  - first:
+      213: -5665789862156676413
+    second: zombie_giant_walk_5
+  - first:
+      213: 6301889666016622751
+    second: zombie_giant_walk_6
+  - first:
+      213: 7499150566188560145
+    second: zombie_giant_walk_7
+  - first:
+      213: 5419450556413614003
+    second: zombie_giant_walk_8
+  - first:
+      213: 7090299632871464065
+    second: zombie_giant_walk_9
+  - first:
+      213: 4144654427758878887
+    second: zombie_giant_walk_10
+  - first:
+      213: 8665189375621081188
+    second: zombie_giant_walk_11
+  - first:
+      213: -8392399784602742006
+    second: zombie_giant_walk_12
+  - first:
+      213: -6369352843748664441
+    second: zombie_giant_walk_13
+  - first:
+      213: -2049610160974458352
+    second: zombie_giant_walk_14
+  - first:
+      213: 8388429856255042858
+    second: zombie_giant_walk_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombie_giant_walk_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 13
+        width: 145
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3314745e06abea050800000000000000
+      internalID: 5813789094308167987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_1
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 13
+        width: 147
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ffabe1e112ef330800000000000000
+      internalID: 3746468353267138322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_2
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 12
+        width: 150
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 482c22bc11885e340800000000000000
+      internalID: 4892466180211786372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_3
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 12
+        width: 150
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9e4f3c0956a2480800000000000000
+      internalID: -8923208039243912753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_4
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 12
+        width: 151
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd79be453458ab7d0800000000000000
+      internalID: -2901860485652834340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_5
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 12
+        width: 150
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2542693221f51b0800000000000000
+      internalID: -5665789862156676413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_6
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 12
+        width: 150
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9830ac234fc47750800000000000000
+      internalID: 6301889666016622751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_7
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 13
+        width: 147
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11fa6de25b5521860800000000000000
+      internalID: 7499150566188560145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_8
+      rect:
+        serializedVersion: 2
+        x: 2092
+        y: 13
+        width: 145
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b793dc4191c53b40800000000000000
+      internalID: 5419450556413614003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_9
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 14
+        width: 143
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18cd26833fdc56260800000000000000
+      internalID: 7090299632871464065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_10
+      rect:
+        serializedVersion: 2
+        x: 2606
+        y: 14
+        width: 141
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a061532e35c48930800000000000000
+      internalID: 4144654427758878887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_11
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 14
+        width: 139
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4682265b3dfe04870800000000000000
+      internalID: 8665189375621081188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_12
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 14
+        width: 138
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0350b95cd4388b80800000000000000
+      internalID: -8392399784602742006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_13
+      rect:
+        serializedVersion: 2
+        x: 3375
+        y: 14
+        width: 139
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b9c3bb5538b97a0800000000000000
+      internalID: -6369352843748664441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_14
+      rect:
+        serializedVersion: 2
+        x: 3630
+        y: 14
+        width: 141
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012161bfa625e83e0800000000000000
+      internalID: -2049610160974458352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_walk_15
+      rect:
+        serializedVersion: 2
+        x: 3885
+        y: 14
+        width: 143
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25ec5da280b96470800000000000000
+      internalID: 8388429856255042858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zombie_giant_walk_0: 5813789094308167987
+      zombie_giant_walk_1: 3746468353267138322
+      zombie_giant_walk_10: 4144654427758878887
+      zombie_giant_walk_11: 8665189375621081188
+      zombie_giant_walk_12: -8392399784602742006
+      zombie_giant_walk_13: -6369352843748664441
+      zombie_giant_walk_14: -2049610160974458352
+      zombie_giant_walk_15: 8388429856255042858
+      zombie_giant_walk_2: 4892466180211786372
+      zombie_giant_walk_3: -8923208039243912753
+      zombie_giant_walk_4: -2901860485652834340
+      zombie_giant_walk_5: -5665789862156676413
+      zombie_giant_walk_6: 6301889666016622751
+      zombie_giant_walk_7: 7499150566188560145
+      zombie_giant_walk_8: 5419450556413614003
+      zombie_giant_walk_9: 7090299632871464065
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

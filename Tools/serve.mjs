@@ -1,0 +1,7 @@
+import http from 'node:http';
+import {readFile,stat} from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(fileURLToPath(new URL('../Builds/WebGL/',import.meta.url))),port=Number(process.env.PORT||8081),previewDelay=Math.max(0,Number(process.env.GARDEN_PREVIEW_DELAY_MS)||0);
+const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.wasm':'application/wasm','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.ico':'image/x-icon','.unityweb':'application/octet-stream','.data':'application/octet-stream'};
+http.createServer(async(req,res)=>{try{const url=new URL(req.url,'http://localhost'),relative=decodeURIComponent(url.pathname).replace(/^\/+/,''),target=path.resolve(root,relative||'index.html');if(!target.startsWith(root+path.sep)){res.writeHead(403).end();return;}if(!(await stat(target)).isFile()){res.writeHead(404).end();return;}const bytes=await readFile(target);if(previewDelay&&target.includes('.wasm'))await new Promise(resolve=>setTimeout(resolve,previewDelay));res.writeHead(200,{'Content-Type':mime[path.extname(target)]||'application/octet-stream','Cache-Control':'no-cache','Cross-Origin-Opener-Policy':'same-origin','Cross-Origin-Embedder-Policy':'require-corp'});res.end(req.method==='HEAD'?undefined:bytes);}catch{res.writeHead(404).end('Not found');}}).listen(port,'127.0.0.1',()=>console.log(`Unity WebGL preview: http://localhost:${port}/`));

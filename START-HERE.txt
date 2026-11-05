@@ -1,0 +1,31 @@
+BLOOM & DOOM - CLIENT VERSION 2.1.0
+
+This is a separate Unity project with the original cartoon plants and the
+original garden-card menu, from before the papercraft asset update.
+The title-logo loading screen is included.
+
+TO PLAY IN UNITY
+1. Install/open Unity 6000.3.10f1 (Unity 6.3 LTS).
+2. Add THIS folder as a project in Unity Hub.
+3. Open Assets/Scenes/SampleScene.unity and press Play.
+
+TO PLAY THE INCLUDED WEB BUILD
+The exact previous WebGL build is in Builds/WebGL.
+Upload that folder's CONTENTS to a static web host, or install Node.js,
+open a terminal in this project folder, run:
+    node Tools/serve.mjs
+and open http://localhost:8081/ in a browser.
+WebGL needs HTTP hosting; do not double-click index.html.
+
+TO REBUILD WEBGL
+Install WebGL Build Support for the same Unity version, then choose
+Bloom & Doom > Build WebGL in Unity.
+
+VALIDATION
+The restored Unity source compiled successfully and passed all 69 native
+gameplay checks, including all six campaign days.
+The ten web files match the archived 2.1.0 deployment byte for byte.
+
+The newer working game is a different project. This delivery has no links,
+shared asset folders, account settings, or scripts that publish over it.
+Unity will generate its own Library and other caches when first opened.

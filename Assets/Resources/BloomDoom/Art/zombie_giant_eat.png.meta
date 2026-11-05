@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 2911d326f9992784e969448180d8dff9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7227802914472054417
+    second: zombie_giant_eat_0
+  - first:
+      213: -7329448971571171836
+    second: zombie_giant_eat_1
+  - first:
+      213: -5741145676859385508
+    second: zombie_giant_eat_2
+  - first:
+      213: -8616879688820346238
+    second: zombie_giant_eat_3
+  - first:
+      213: -5834034312504879276
+    second: zombie_giant_eat_4
+  - first:
+      213: 6828798646105577682
+    second: zombie_giant_eat_5
+  - first:
+      213: -6548221117771104196
+    second: zombie_giant_eat_6
+  - first:
+      213: -4222510227811765225
+    second: zombie_giant_eat_7
+  - first:
+      213: 8355736650632912936
+    second: zombie_giant_eat_8
+  - first:
+      213: -4468889784350474588
+    second: zombie_giant_eat_9
+  - first:
+      213: 1871100539098354305
+    second: zombie_giant_eat_10
+  - first:
+      213: -2600702660834197699
+    second: zombie_giant_eat_11
+  - first:
+      213: -5608430366372718803
+    second: zombie_giant_eat_12
+  - first:
+      213: 5190181325711812490
+    second: zombie_giant_eat_13
+  - first:
+      213: 8727485609640453278
+    second: zombie_giant_eat_14
+  - first:
+      213: 4438083803165660214
+    second: zombie_giant_eat_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombie_giant_eat_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 13
+        width: 145
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ec3a7c4705e4460800000000000000
+      internalID: 7227802914472054417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_1
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 13
+        width: 148
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ee5225ef0984a90800000000000000
+      internalID: -7329448971571171836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_2
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 12
+        width: 150
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59d60fbc6a5350b0800000000000000
+      internalID: -5741145676859385508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_3
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 11
+        width: 147
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282b593c391ba6880800000000000000
+      internalID: -8616879688820346238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_4
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 11
+        width: 145
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 457d4bbe3b8590fa0800000000000000
+      internalID: -5834034312504879276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_5
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 12
+        width: 146
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d89ac72034c4ce50800000000000000
+      internalID: 6828798646105577682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_6
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 12
+        width: 148
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30ca8c569b0025a0800000000000000
+      internalID: -6548221117771104196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_7
+      rect:
+        serializedVersion: 2
+        x: 1833
+        y: 13
+        width: 149
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71473d2d151a665c0800000000000000
+      internalID: -4222510227811765225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_8
+      rect:
+        serializedVersion: 2
+        x: 2091
+        y: 13
+        width: 146
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820efa1963a85f370800000000000000
+      internalID: 8355736650632912936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_9
+      rect:
+        serializedVersion: 2
+        x: 2350
+        y: 14
+        width: 142
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aefa671b605bf1c0800000000000000
+      internalID: -4468889784350474588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_10
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 13
+        width: 140
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 182dffbd60c77f910800000000000000
+      internalID: 1871100539098354305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_11
+      rect:
+        serializedVersion: 2
+        x: 2861
+        y: 12
+        width: 141
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f709685b278ebd0800000000000000
+      internalID: -2600702660834197699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_12
+      rect:
+        serializedVersion: 2
+        x: 3114
+        y: 13
+        width: 144
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2717d8eb4ada22b0800000000000000
+      internalID: -5608430366372718803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_13
+      rect:
+        serializedVersion: 2
+        x: 3369
+        y: 14
+        width: 145
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a872beeba6a370840800000000000000
+      internalID: 5190181325711812490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_14
+      rect:
+        serializedVersion: 2
+        x: 3628
+        y: 14
+        width: 143
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e94e3f8fbe14e1970800000000000000
+      internalID: 8727485609640453278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_giant_eat_15
+      rect:
+        serializedVersion: 2
+        x: 3887
+        y: 13
+        width: 141
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6349a1b74bd379d30800000000000000
+      internalID: 4438083803165660214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zombie_giant_eat_0: 7227802914472054417
+      zombie_giant_eat_1: -7329448971571171836
+      zombie_giant_eat_10: 1871100539098354305
+      zombie_giant_eat_11: -2600702660834197699
+      zombie_giant_eat_12: -5608430366372718803
+      zombie_giant_eat_13: 5190181325711812490
+      zombie_giant_eat_14: 8727485609640453278
+      zombie_giant_eat_15: 4438083803165660214
+      zombie_giant_eat_2: -5741145676859385508
+      zombie_giant_eat_3: -8616879688820346238
+      zombie_giant_eat_4: -5834034312504879276
+      zombie_giant_eat_5: 6828798646105577682
+      zombie_giant_eat_6: -6548221117771104196
+      zombie_giant_eat_7: -4222510227811765225
+      zombie_giant_eat_8: 8355736650632912936
+      zombie_giant_eat_9: -4468889784350474588
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

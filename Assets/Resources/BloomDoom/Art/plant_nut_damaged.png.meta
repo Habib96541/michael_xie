@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 1e30376385444b44dbd10db1a0facbfc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3481753369068931411
+    second: plant_nut_damaged_0
+  - first:
+      213: 1816953456896547945
+    second: plant_nut_damaged_1
+  - first:
+      213: -8181664267088172728
+    second: plant_nut_damaged_2
+  - first:
+      213: 7651619889345529079
+    second: plant_nut_damaged_3
+  - first:
+      213: -4610327382450100026
+    second: plant_nut_damaged_4
+  - first:
+      213: -94260199803889184
+    second: plant_nut_damaged_5
+  - first:
+      213: -2239966215878410606
+    second: plant_nut_damaged_6
+  - first:
+      213: 1340317458436127933
+    second: plant_nut_damaged_7
+  - first:
+      213: 990799094372378607
+    second: plant_nut_damaged_8
+  - first:
+      213: 4463229392518420070
+    second: plant_nut_damaged_9
+  - first:
+      213: -6315426714184521035
+    second: plant_nut_damaged_10
+  - first:
+      213: 6041361243578771671
+    second: plant_nut_damaged_11
+  - first:
+      213: -2911352797497734257
+    second: plant_nut_damaged_12
+  - first:
+      213: 6096619557320933760
+    second: plant_nut_damaged_13
+  - first:
+      213: -980390217525555248
+    second: plant_nut_damaged_14
+  - first:
+      213: 129741723557910947
+    second: plant_nut_damaged_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: plant_nut_damaged_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 78
+        width: 87
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3598fd6fd3ca15030800000000000000
+      internalID: 3481753369068931411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 78
+        width: 87
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c9cbbda8d173910800000000000000
+      internalID: 1816953456896547945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_2
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 78
+        width: 87
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849e3b882b3e47e80800000000000000
+      internalID: -8181664267088172728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_3
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 78
+        width: 86
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f401c4dfb3003a60800000000000000
+      internalID: 7651619889345529079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_4
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 77
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c82ec61ca3d400c0800000000000000
+      internalID: -4610327382450100026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_5
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 77
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e95b3209de11bef0800000000000000
+      internalID: -94260199803889184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_6
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 78
+        width: 85
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ef0b1389a0ae0e0800000000000000
+      internalID: -2239966215878410606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_7
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 78
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbcf65c80a3c99210800000000000000
+      internalID: 1340317458436127933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_8
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 78
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe728dfd68600cd00800000000000000
+      internalID: 990799094372378607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_9
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 78
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666942c3c7390fd30800000000000000
+      internalID: 4463229392518420070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_10
+      rect:
+        serializedVersion: 2
+        x: 2644
+        y: 78
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bae4003dd81b58a0800000000000000
+      internalID: -6315426714184521035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_11
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 78
+        width: 85
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d82353ea0a37d350800000000000000
+      internalID: 6041361243578771671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_12
+      rect:
+        serializedVersion: 2
+        x: 3156
+        y: 77
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8bce414e0cc897d0800000000000000
+      internalID: -2911352797497734257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_13
+      rect:
+        serializedVersion: 2
+        x: 3412
+        y: 77
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08140d4af2b8b9450800000000000000
+      internalID: 6096619557320933760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_14
+      rect:
+        serializedVersion: 2
+        x: 3668
+        y: 78
+        width: 86
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df0f1f9a44f462f0800000000000000
+      internalID: -980390217525555248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_damaged_15
+      rect:
+        serializedVersion: 2
+        x: 3924
+        y: 78
+        width: 86
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a95731096fecc100800000000000000
+      internalID: 129741723557910947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      plant_nut_damaged_0: 3481753369068931411
+      plant_nut_damaged_1: 1816953456896547945
+      plant_nut_damaged_10: -6315426714184521035
+      plant_nut_damaged_11: 6041361243578771671
+      plant_nut_damaged_12: -2911352797497734257
+      plant_nut_damaged_13: 6096619557320933760
+      plant_nut_damaged_14: -980390217525555248
+      plant_nut_damaged_15: 129741723557910947
+      plant_nut_damaged_2: -8181664267088172728
+      plant_nut_damaged_3: 7651619889345529079
+      plant_nut_damaged_4: -4610327382450100026
+      plant_nut_damaged_5: -94260199803889184
+      plant_nut_damaged_6: -2239966215878410606
+      plant_nut_damaged_7: 1340317458436127933
+      plant_nut_damaged_8: 990799094372378607
+      plant_nut_damaged_9: 4463229392518420070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

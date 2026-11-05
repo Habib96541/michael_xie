@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: dbfd31a45fa54a848b0fc8ad91be6714
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4971902541675304958
+    second: zombie_basic_walk_0
+  - first:
+      213: -7494592486436720741
+    second: zombie_basic_walk_1
+  - first:
+      213: 8834090697474695924
+    second: zombie_basic_walk_2
+  - first:
+      213: -1399321321600349134
+    second: zombie_basic_walk_3
+  - first:
+      213: -3970276730030978120
+    second: zombie_basic_walk_4
+  - first:
+      213: -3088418721451986006
+    second: zombie_basic_walk_5
+  - first:
+      213: -2181852187307421408
+    second: zombie_basic_walk_6
+  - first:
+      213: -2502995673365951016
+    second: zombie_basic_walk_7
+  - first:
+      213: 7648695030395827487
+    second: zombie_basic_walk_8
+  - first:
+      213: 3347381978642195545
+    second: zombie_basic_walk_9
+  - first:
+      213: -3116199432789042954
+    second: zombie_basic_walk_10
+  - first:
+      213: 1275703361976219784
+    second: zombie_basic_walk_11
+  - first:
+      213: -8115749159361449391
+    second: zombie_basic_walk_12
+  - first:
+      213: -4617589257876493577
+    second: zombie_basic_walk_13
+  - first:
+      213: 5960623339628073277
+    second: zombie_basic_walk_14
+  - first:
+      213: 6705480509897335598
+    second: zombie_basic_walk_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombie_basic_walk_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 32
+        width: 109
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef71b66f40fbff440800000000000000
+      internalID: 4971902541675304958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 31
+        width: 109
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9fa0a577dbddf790800000000000000
+      internalID: -7494592486436720741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 31
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2ef803faef89a70800000000000000
+      internalID: 8834090697474695924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_3
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 31
+        width: 112
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c81630cac949ce0800000000000000
+      internalID: -1399321321600349134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_4
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 31
+        width: 112
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb0186795eb6e8c0800000000000000
+      internalID: -3970276730030978120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_5
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 31
+        width: 112
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa33036398bb325d0800000000000000
+      internalID: -3088418721451986006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_6
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 31
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 021d12fdef088b1e0800000000000000
+      internalID: -2181852187307421408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_7
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 31
+        width: 109
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ddceae42b2934dd0800000000000000
+      internalID: -2502995673365951016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_8
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 32
+        width: 109
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15f90a0b9f952a60800000000000000
+      internalID: 7648695030395827487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_9
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 32
+        width: 107
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9542384ac2a447e20800000000000000
+      internalID: 3347381978642195545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_10
+      rect:
+        serializedVersion: 2
+        x: 2627
+        y: 32
+        width: 105
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f8d55f402901c4d0800000000000000
+      internalID: -3116199432789042954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_11
+      rect:
+        serializedVersion: 2
+        x: 2884
+        y: 32
+        width: 103
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8883d51e27534b110800000000000000
+      internalID: 1275703361976219784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_12
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 32
+        width: 103
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152f51e73211f5f80800000000000000
+      internalID: -8115749159361449391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_13
+      rect:
+        serializedVersion: 2
+        x: 3396
+        y: 32
+        width: 103
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7faac95f8070befb0800000000000000
+      internalID: -4617589257876493577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_14
+      rect:
+        serializedVersion: 2
+        x: 3651
+        y: 32
+        width: 105
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d311f6eb85368b250800000000000000
+      internalID: 5960623339628073277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_walk_15
+      rect:
+        serializedVersion: 2
+        x: 3906
+        y: 32
+        width: 107
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e236cb02ff6ae0d50800000000000000
+      internalID: 6705480509897335598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zombie_basic_walk_0: 4971902541675304958
+      zombie_basic_walk_1: -7494592486436720741
+      zombie_basic_walk_10: -3116199432789042954
+      zombie_basic_walk_11: 1275703361976219784
+      zombie_basic_walk_12: -8115749159361449391
+      zombie_basic_walk_13: -4617589257876493577
+      zombie_basic_walk_14: 5960623339628073277
+      zombie_basic_walk_15: 6705480509897335598
+      zombie_basic_walk_2: 8834090697474695924
+      zombie_basic_walk_3: -1399321321600349134
+      zombie_basic_walk_4: -3970276730030978120
+      zombie_basic_walk_5: -3088418721451986006
+      zombie_basic_walk_6: -2181852187307421408
+      zombie_basic_walk_7: -2502995673365951016
+      zombie_basic_walk_8: 7648695030395827487
+      zombie_basic_walk_9: 3347381978642195545
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

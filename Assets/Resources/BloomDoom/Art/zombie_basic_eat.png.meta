@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 438018846b9a7234299833f449f00a2b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5034694177329063104
+    second: zombie_basic_eat_0
+  - first:
+      213: -5111913816582705833
+    second: zombie_basic_eat_1
+  - first:
+      213: -5944688414439694082
+    second: zombie_basic_eat_2
+  - first:
+      213: -8943708425711529634
+    second: zombie_basic_eat_3
+  - first:
+      213: 3496219345548467593
+    second: zombie_basic_eat_4
+  - first:
+      213: -7546653665212566708
+    second: zombie_basic_eat_5
+  - first:
+      213: -4470696482118245826
+    second: zombie_basic_eat_6
+  - first:
+      213: -7321641099222683696
+    second: zombie_basic_eat_7
+  - first:
+      213: 488126032344456387
+    second: zombie_basic_eat_8
+  - first:
+      213: 132197288057169190
+    second: zombie_basic_eat_9
+  - first:
+      213: 8902428736048597636
+    second: zombie_basic_eat_10
+  - first:
+      213: -2619550720159205944
+    second: zombie_basic_eat_11
+  - first:
+      213: 1728639808045120520
+    second: zombie_basic_eat_12
+  - first:
+      213: -6609780861201438864
+    second: zombie_basic_eat_13
+  - first:
+      213: -4723425520794258158
+    second: zombie_basic_eat_14
+  - first:
+      213: 6637476060759429713
+    second: zombie_basic_eat_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombie_basic_eat_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 32
+        width: 109
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c42d68eda3ded540800000000000000
+      internalID: 5034694177329063104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 31
+        width: 111
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d2d28c775de09b0800000000000000
+      internalID: -5111913816582705833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 31
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef021f42269308da0800000000000000
+      internalID: -5944688414439694082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_3
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 30
+        width: 110
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e51dbc6929091e380800000000000000
+      internalID: -8943708425711529634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_4
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 30
+        width: 108
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98dd34498f0158030800000000000000
+      internalID: 3496219345548467593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_5
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 31
+        width: 109
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43fa12b976e44790800000000000000
+      internalID: -7546653665212566708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_6
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 31
+        width: 110
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e32e0cc7c35e4f1c0800000000000000
+      internalID: -4470696482118245826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_7
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 31
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df6ee3463e446a90800000000000000
+      internalID: -7321641099222683696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_8
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 32
+        width: 110
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cc138b4a0c26c600800000000000000
+      internalID: 488126032344456387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_9
+      rect:
+        serializedVersion: 2
+        x: 2371
+        y: 32
+        width: 106
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625eaeaabb8a5d100800000000000000
+      internalID: 132197288057169190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_10
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 31
+        width: 104
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a0862b4c7cb8b70800000000000000
+      internalID: 8902428736048597636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_11
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 31
+        width: 105
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5bacdbf7c75abd0800000000000000
+      internalID: -2619550720159205944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_12
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 31
+        width: 107
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80cf0272fbc5df710800000000000000
+      internalID: 1728639808045120520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_13
+      rect:
+        serializedVersion: 2
+        x: 3391
+        y: 32
+        width: 109
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077a9eca3575544a0800000000000000
+      internalID: -6609780861201438864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_14
+      rect:
+        serializedVersion: 2
+        x: 3650
+        y: 32
+        width: 106
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2153b0eb385037eb0800000000000000
+      internalID: -4723425520794258158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_basic_eat_15
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 32
+        width: 105
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15299b67f4d0d1c50800000000000000
+      internalID: 6637476060759429713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zombie_basic_eat_0: 5034694177329063104
+      zombie_basic_eat_1: -5111913816582705833
+      zombie_basic_eat_10: 8902428736048597636
+      zombie_basic_eat_11: -2619550720159205944
+      zombie_basic_eat_12: 1728639808045120520
+      zombie_basic_eat_13: -6609780861201438864
+      zombie_basic_eat_14: -4723425520794258158
+      zombie_basic_eat_15: 6637476060759429713
+      zombie_basic_eat_2: -5944688414439694082
+      zombie_basic_eat_3: -8943708425711529634
+      zombie_basic_eat_4: 3496219345548467593
+      zombie_basic_eat_5: -7546653665212566708
+      zombie_basic_eat_6: -4470696482118245826
+      zombie_basic_eat_7: -7321641099222683696
+      zombie_basic_eat_8: 488126032344456387
+      zombie_basic_eat_9: 132197288057169190
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

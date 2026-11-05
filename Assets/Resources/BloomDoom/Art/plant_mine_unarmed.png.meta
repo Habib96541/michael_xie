@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 15d19c0f43fe9964aae797070ff49f20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8135302871952635272
+    second: plant_mine_unarmed_0
+  - first:
+      213: -449736528385535507
+    second: plant_mine_unarmed_1
+  - first:
+      213: -6951093533648304214
+    second: plant_mine_unarmed_2
+  - first:
+      213: -4975953765390167320
+    second: plant_mine_unarmed_3
+  - first:
+      213: -3683743680195328088
+    second: plant_mine_unarmed_4
+  - first:
+      213: -1190697948571784513
+    second: plant_mine_unarmed_5
+  - first:
+      213: 1824286116148612305
+    second: plant_mine_unarmed_6
+  - first:
+      213: 4740361084878039635
+    second: plant_mine_unarmed_7
+  - first:
+      213: 5717438251305313956
+    second: plant_mine_unarmed_8
+  - first:
+      213: 7388773455622022400
+    second: plant_mine_unarmed_9
+  - first:
+      213: 570914227402945015
+    second: plant_mine_unarmed_10
+  - first:
+      213: -1071224310731915837
+    second: plant_mine_unarmed_11
+  - first:
+      213: 8851726085672562759
+    second: plant_mine_unarmed_12
+  - first:
+      213: -1374305761983890079
+    second: plant_mine_unarmed_13
+  - first:
+      213: -6705139781802285822
+    second: plant_mine_unarmed_14
+  - first:
+      213: 2128319237024304389
+    second: plant_mine_unarmed_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: plant_mine_unarmed_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 88
+        width: 82
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a4c010429991f80800000000000000
+      internalID: -8135302871952635272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_1
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 88
+        width: 82
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1101f920732c9f0800000000000000
+      internalID: -449736528385535507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 88
+        width: 83
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7c0667241c88f90800000000000000
+      internalID: -6951093533648304214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_3
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 88
+        width: 83
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2d6230a6cd1fab0800000000000000
+      internalID: -4975953765390167320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_4
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 87
+        width: 83
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a70e52e3a6b0ecc0800000000000000
+      internalID: -3683743680195328088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_5
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 87
+        width: 83
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbaa79c368ac97fe0800000000000000
+      internalID: -1190697948571784513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_6
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 87
+        width: 82
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc07b1ae8a215910800000000000000
+      internalID: 1824286116148612305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_7
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 88
+        width: 83
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35aad3b8a4529c140800000000000000
+      internalID: 4740361084878039635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_8
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 88
+        width: 82
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6a84a1ccb685f40800000000000000
+      internalID: 5717438251305313956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_9
+      rect:
+        serializedVersion: 2
+        x: 2389
+        y: 88
+        width: 82
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005af2c7f423a8660800000000000000
+      internalID: 7388773455622022400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_10
+      rect:
+        serializedVersion: 2
+        x: 2645
+        y: 88
+        width: 83
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1b199077b4ce700800000000000000
+      internalID: 570914227402945015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_11
+      rect:
+        serializedVersion: 2
+        x: 2901
+        y: 88
+        width: 83
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cdbf0c3a2f3221f0800000000000000
+      internalID: -1071224310731915837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_12
+      rect:
+        serializedVersion: 2
+        x: 3158
+        y: 87
+        width: 83
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7407299f9f5a7da70800000000000000
+      internalID: 8851726085672562759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_13
+      rect:
+        serializedVersion: 2
+        x: 3415
+        y: 87
+        width: 83
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d7d2cd03c7dece0800000000000000
+      internalID: -1374305761983890079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_14
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 87
+        width: 82
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205a550d4ee82f2a0800000000000000
+      internalID: -6705139781802285822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_mine_unarmed_15
+      rect:
+        serializedVersion: 2
+        x: 3928
+        y: 88
+        width: 83
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50dc67bd11f498d10800000000000000
+      internalID: 2128319237024304389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      plant_mine_unarmed_0: -8135302871952635272
+      plant_mine_unarmed_1: -449736528385535507
+      plant_mine_unarmed_10: 570914227402945015
+      plant_mine_unarmed_11: -1071224310731915837
+      plant_mine_unarmed_12: 8851726085672562759
+      plant_mine_unarmed_13: -1374305761983890079
+      plant_mine_unarmed_14: -6705139781802285822
+      plant_mine_unarmed_15: 2128319237024304389
+      plant_mine_unarmed_2: -6951093533648304214
+      plant_mine_unarmed_3: -4975953765390167320
+      plant_mine_unarmed_4: -3683743680195328088
+      plant_mine_unarmed_5: -1190697948571784513
+      plant_mine_unarmed_6: 1824286116148612305
+      plant_mine_unarmed_7: 4740361084878039635
+      plant_mine_unarmed_8: 5717438251305313956
+      plant_mine_unarmed_9: 7388773455622022400
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

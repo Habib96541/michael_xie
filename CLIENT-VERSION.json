@@ -1,0 +1,66 @@
+{
+  "version": "2.1.0",
+  "edition": "Original cartoon plants and original menu, before the papercraft asset update",
+  "unity": "6000.3.10f1",
+  "webglSource": "https://37c89c73.bloom-and-doom.pages.dev/",
+  "webglFiles": [
+    {
+      "path": "Build/65e1ba544c6a4110ab52c964e5a07d58.loader.js",
+      "bytes": 47866,
+      "sha256": "88d4af4d878faa2a1027938181d5e27c320bf081c04369325efc6e42984cb913"
+    },
+    {
+      "path": "Build/804381128bda6c995afad290fdf87e81.wasm.unityweb",
+      "bytes": 8563730,
+      "sha256": "d79c793864f626616dd5be14fde90b12619074a18e87b24a58ace7e1524eb62d"
+    },
+    {
+      "path": "Build/8387e4bab34ebd72209cd2f0d85a4a5b.framework.js.unityweb",
+      "bytes": 86606,
+      "sha256": "dcb36b67d99a12affaee988cb3103b05b479c373532fd2d8a8eec12bd51e73c4"
+    },
+    {
+      "path": "Build/e69728852ebe3b9e78707a6fc919b5c2.data.unityweb",
+      "bytes": 6019811,
+      "sha256": "cd19bb54066d567e02b88e9ced26d72005d00cfe0f3a861f96feeb79e7a8ee09"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3334,
+      "sha256": "212cafb2ffd1840390d57d3daf9a491529b018826cfe9bdf7553fea66a2a7b00"
+    },
+    {
+      "path": "TemplateData/bloom-doom-logo.png",
+      "bytes": 332459,
+      "sha256": "bfe9c59acf163a415c90c36a57ecb8e2064a4415d25f7a28d08ed66fedb54a35"
+    },
+    {
+      "path": "TemplateData/garden-title-license.txt",
+      "bytes": 4392,
+      "sha256": "255d5debbb80eb2ea762644311f266a279e8778f00156655a516e2b7781a63e1"
+    },
+    {
+      "path": "TemplateData/garden-title.ttf",
+      "bytes": 28092,
+      "sha256": "f5b641c45c69d772ee4eda687bc9fda411d5cad6b0b45371491da4580cbc8d59"
+    },
+    {
+      "path": "TemplateData/loading.css",
+      "bytes": 4965,
+      "sha256": "2b9dc7b7d2be03ac4f1456a1bb044760041f023e1c9fc724e7fad8c8aabc1b5c"
+    },
+    {
+      "path": "TemplateData/loading.js",
+      "bytes": 3463,
+      "sha256": "cebb4484d5843bf4e6ee580203498e22502908688c98f113dc8ed4f3e4c4372a"
+    }
+  ],
+  "validation": {
+    "unityCompiled": true,
+    "nativeGameplayChecksPassed": 69,
+    "originalPlantAtlases": 11,
+    "originalPortraits": 8,
+    "exactPreviousWebGLFiles": 10,
+    "independentProject": true
+  }
+}

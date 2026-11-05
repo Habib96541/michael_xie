@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f1df">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="Bloom & Doom. Grow a little courage. A native Unity garden-defense adventure.">
+  <title>Bloom & Doom · A backyard battle</title>
+  <link rel="preload" href="TemplateData/bloom-doom-logo.png?v=2.1.2" as="image">
+  <link rel="manifest" href="TemplateData/garden.webmanifest?v=2.1.2">
+  <link rel="apple-touch-icon" href="TemplateData/home-screen-icon.png">
+  <link rel="stylesheet" href="TemplateData/loading.css?v=2.1.2">
+</head>
+<body>
+  <canvas id="game" tabindex="0" aria-hidden="true" aria-label="Bloom and Doom garden defense game"></canvas>
+  <section id="loading" aria-labelledby="loading-title">
+    <div class="sun-haze" aria-hidden="true"></div>
+    <div class="drifting-leaf leaf-one" aria-hidden="true"></div>
+    <div class="drifting-leaf leaf-two" aria-hidden="true"></div>
+    <div class="loading-content">
+      <p class="eyebrow">HOMEGROWN HEROES. UNINVITED GUESTS.</p>
+      <h1 id="loading-title" class="sr-only">Bloom &amp; Doom</h1>
+      <img class="title-logo" src="TemplateData/bloom-doom-logo.png?v=2.1.2" width="1800" height="800" alt="Bloom and Doom: leafy green letters, cracked zombie letters, and your backyard friends">
+      <div class="loading-details">
+        <p id="caption" class="caption" aria-live="polite">Putting down roots…</p>
+        <div class="progress-row">
+          <div id="loading-meter" class="track" role="progressbar" aria-label="Loading Bloom and Doom" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="progress" class="progress-fill"></div>
+            <span class="progress-pea" aria-hidden="true"></span>
+          </div>
+          <span id="percentage" class="percentage" aria-hidden="true">0%</span>
+        </div>
+        <p class="garden-tip"><span aria-hidden="true">✦</span> Sunbuds first. A little sunshine goes a long way.</p>
+        <p id="failure" class="failure" role="alert" hidden></p>
+        <button id="retry" class="retry" type="button" hidden>LET’S TRY ANOTHER GROW <span aria-hidden="true">↻</span></button>
+      </div>
+    </div>
+    <svg class="garden-border" viewBox="0 0 1600 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42Q250 5 515 42T1080 34T1600 35V110H0Z" fill="#e5e9cf"/><path d="M0 73Q230 51 510 75T1040 66T1600 76V110H0Z" fill="#d8e1bd"/><g fill="none" stroke="#a6b781" stroke-width="2.5" stroke-linecap="round"><path d="m82 96-7-19m8 17 7-13m139 23-2-22m2 17 10-10m1130 8-4-23m5 19 9-12m129 24-9-18m8 13 6-23"/></g><g fill="#f6f1df"><circle cx="140" cy="78" r="3"/><circle cx="136" cy="82" r="3"/><circle cx="142" cy="84" r="3"/><circle cx="1420" cy="83" r="3"/><circle cx="1416" cy="87" r="3"/><circle cx="1423" cy="89" r="3"/></g><g fill="#ceb35f"><circle cx="140" cy="82" r="2.5"/><circle cx="1420" cy="87" r="2.5"/></g></svg>
+    <p class="loading-footer">GROW A LITTLE COURAGE.</p>
+  </section>
+  <section id="game-launch" aria-labelledby="launch-heading" hidden>
+    <div class="launch-panel">
+      <img class="launch-logo" src="TemplateData/bloom-doom-logo.png?v=2.1.2" width="1800" height="800" alt="Bloom and Doom">
+      <svg id="launch-rotate" viewBox="0 0 80 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+        <rect x="27" y="11" width="28" height="44" rx="5" transform="rotate(63 41 33)"/>
+        <path d="M10 29A30 30 0 0 1 39 4m-8-2 9 2-5 8"/>
+      </svg>
+      <h1 id="launch-heading" tabindex="-1">Ready to grow?</h1>
+      <p id="launch-message">Open the garden in fullscreen to play.</p>
+      <button id="launch-play" class="retry" type="button">Play fullscreen</button>
+      <p id="launch-install" hidden>To play without browser bars, choose <strong>Share → Add to Home Screen</strong> in Safari and enable <strong>Open as Web App</strong> if shown.</p>
+    </div>
+  </section>
+  <script>window.gardenBuild={dataUrl:'Build/7a4dd4b032ce3b5486d36ca530cd650e.data.unityweb',frameworkUrl:'Build/e3e8836ccf9cd2179bacee6949313613.framework.js.unityweb',codeUrl:'Build/9ab46bb12d0a244653dac293ef52586c.wasm.unityweb',loaderUrl:'Build/3e31bcbd2b479bf81c7b6c64016e9610.loader.js',version:'2.1.2'};</script>
+  <script src="TemplateData/viewport.js?v=2.1.2"></script>
+  <script src="TemplateData/loading.js?v=2.1.2"></script>
+</body>
+</html>

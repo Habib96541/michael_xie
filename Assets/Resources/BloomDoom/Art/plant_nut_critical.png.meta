@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 9c3c57ea0a1111544807d19d6bfc51d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4013034831836951408
+    second: plant_nut_critical_0
+  - first:
+      213: 6814396720591890142
+    second: plant_nut_critical_1
+  - first:
+      213: -892125865047315376
+    second: plant_nut_critical_2
+  - first:
+      213: 6967921677687158447
+    second: plant_nut_critical_3
+  - first:
+      213: 6970497183396708775
+    second: plant_nut_critical_4
+  - first:
+      213: 6571056514546958530
+    second: plant_nut_critical_5
+  - first:
+      213: 4916411797236464281
+    second: plant_nut_critical_6
+  - first:
+      213: 3610668926697247308
+    second: plant_nut_critical_7
+  - first:
+      213: -4984547052888402664
+    second: plant_nut_critical_8
+  - first:
+      213: -532790086008049943
+    second: plant_nut_critical_9
+  - first:
+      213: 8643452253031465569
+    second: plant_nut_critical_10
+  - first:
+      213: 5638870679697762298
+    second: plant_nut_critical_11
+  - first:
+      213: -8684600579290100278
+    second: plant_nut_critical_12
+  - first:
+      213: 7758193899250832386
+    second: plant_nut_critical_13
+  - first:
+      213: 2436601241264297734
+    second: plant_nut_critical_14
+  - first:
+      213: 3781545839228006326
+    second: plant_nut_critical_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: plant_nut_critical_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 78
+        width: 87
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07339e6eae921b730800000000000000
+      internalID: 4013034831836951408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 78
+        width: 87
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed6677196b9919e50800000000000000
+      internalID: 6814396720591890142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_2
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 78
+        width: 87
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05caaee90488e93f0800000000000000
+      internalID: -892125865047315376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_3
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 78
+        width: 86
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa6794529d703b060800000000000000
+      internalID: 6967921677687158447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_4
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 77
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a1c83cc14e2cb060800000000000000
+      internalID: 6970497183396708775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_5
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 77
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c08694c515113b50800000000000000
+      internalID: 6571056514546958530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_6
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 78
+        width: 85
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ab1d73b7a9a3440800000000000000
+      internalID: 4916411797236464281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_7
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 78
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c429459324cab1230800000000000000
+      internalID: 3610668926697247308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_8
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 78
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815dd5a5dd453dab0800000000000000
+      internalID: -4984547052888402664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_9
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 78
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eee3a75d362b98f0800000000000000
+      internalID: -532790086008049943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_10
+      rect:
+        serializedVersion: 2
+        x: 2644
+        y: 78
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1628df67706b3f770800000000000000
+      internalID: 8643452253031465569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_11
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 78
+        width: 85
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af720c5d10b414e40800000000000000
+      internalID: 5638870679697762298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_12
+      rect:
+        serializedVersion: 2
+        x: 3156
+        y: 77
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd034f39c91a7780800000000000000
+      internalID: -8684600579290100278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_13
+      rect:
+        serializedVersion: 2
+        x: 3412
+        y: 77
+        width: 85
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204d2772f34aaab60800000000000000
+      internalID: 7758193899250832386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_14
+      rect:
+        serializedVersion: 2
+        x: 3668
+        y: 78
+        width: 86
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60795d45beb80d120800000000000000
+      internalID: 2436601241264297734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant_nut_critical_15
+      rect:
+        serializedVersion: 2
+        x: 3924
+        y: 78
+        width: 86
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bfaa01c7efba7430800000000000000
+      internalID: 3781545839228006326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      plant_nut_critical_0: 4013034831836951408
+      plant_nut_critical_1: 6814396720591890142
+      plant_nut_critical_10: 8643452253031465569
+      plant_nut_critical_11: 5638870679697762298
+      plant_nut_critical_12: -8684600579290100278
+      plant_nut_critical_13: 7758193899250832386
+      plant_nut_critical_14: 2436601241264297734
+      plant_nut_critical_15: 3781545839228006326
+      plant_nut_critical_2: -892125865047315376
+      plant_nut_critical_3: 6967921677687158447
+      plant_nut_critical_4: 6970497183396708775
+      plant_nut_critical_5: 6571056514546958530
+      plant_nut_critical_6: 4916411797236464281
+      plant_nut_critical_7: 3610668926697247308
+      plant_nut_critical_8: -4984547052888402664
+      plant_nut_critical_9: -532790086008049943
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

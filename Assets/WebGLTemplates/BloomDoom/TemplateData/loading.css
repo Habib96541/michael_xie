@@ -1,0 +1,68 @@
+@font-face{font-family:GardenTitle;src:url('garden-title.ttf') format('truetype');font-display:swap}
+:root{color-scheme:light;--paper:#f6f1df;--ink:#415337;--leaf:#8da75d;--muted:#7c8761}
+*{box-sizing:border-box}html,body{width:100%;height:100%;padding:0;margin:0;overflow:hidden;background:var(--paper);color:var(--ink);font-family:'Trebuchet MS',Arial,sans-serif}[hidden]{display:none!important}
+#game{width:100%;height:100%;display:block;outline:none;touch-action:none}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--paper);z-index:5;isolation:isolate;overflow:hidden;transition:opacity .45s,transform .55s;background-image:radial-gradient(#8d956b18 .65px,transparent .65px);background-size:6px 6px}#loading.is-leaving{opacity:0;transform:scale(1.015);pointer-events:none}
+.loading-content{width:min(100% - 40px,1040px);text-align:center;margin-top:-20px;position:relative;z-index:2;animation:arrive .65s ease-out both}.eyebrow{font-size:10px;font-weight:800;letter-spacing:3.4px;color:#879268;margin:0 0 12px}.title-logo{display:block;width:100%;height:auto;max-height:48vh;object-fit:contain;filter:drop-shadow(0 7px 0 #66723b0b);animation:logo-breathe 5s ease-in-out infinite;user-select:none;-webkit-user-drag:none}
+.loading-details{margin:12px auto 0;max-width:460px}.caption{font-family:GardenTitle,'Trebuchet MS',sans-serif;font-size:23px;letter-spacing:.3px;margin:0 0 18px;min-height:28px;color:#637a44}.progress-row{display:flex;gap:13px;align-items:center;width:min(100%,340px);margin:0 auto}.track{height:13px;flex:1;position:relative;border:1.5px solid #afbd87;border-radius:12px;background:#e6eacf;box-shadow:0 2px 0 #9eac6e22,inset 0 2px 3px #6c814315;--progress:0%}.progress-fill{height:100%;width:var(--progress);border-radius:10px;background:repeating-linear-gradient(110deg,#8eaa5a 0 11px,#9db96b 11px 21px);box-shadow:inset 0 2px 0 #c1d48f;position:relative;min-width:0}.progress-pea{position:absolute;top:-3.5px;left:clamp(0px,calc(var(--progress) - 13px),calc(100% - 14px));width:17px;height:17px;border-radius:50%;background:#c4dc87;border:2px solid #6a8b43;box-shadow:inset 3px 3px 0 #e9f0ba;transition:left .06s linear}.percentage{font-family:GardenTitle,'Trebuchet MS',sans-serif;font-size:16px;color:#819157;min-width:41px;text-align:right}.garden-tip{font-size:12px;line-height:1.5;font-weight:600;color:#8a9275;margin:23px 0 0}.garden-tip span{color:#bdab5f;font-size:16px;vertical-align:-1px;margin-right:6px}
+.sun-haze{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 33% 36%,#fff9dc8a,transparent 55%)}.drifting-leaf{position:absolute;width:80px;height:34px;border-radius:100% 0 100% 0;background:#b8c88c25;z-index:0;transform:rotate(-30deg);animation:leaf-drift 8s ease-in-out infinite}.leaf-one{top:23%;left:8%}.leaf-two{bottom:25%;right:7%;transform:rotate(145deg);width:106px;height:43px;animation-delay:-3s}.garden-border{position:absolute;bottom:-1px;left:0;width:100%;height:100px;z-index:0}.loading-footer{position:absolute;bottom:27px;left:0;right:0;text-align:center;font-size:9px;font-weight:800;letter-spacing:3px;color:#8c9b70;margin:0;z-index:1}
+.failure{font-size:13px;line-height:1.6;margin:20px auto 10px;max-width:420px;color:#a16d4c}.retry{margin-top:10px;font-family:GardenTitle,'Trebuchet MS',sans-serif;background:#829d53;color:#fff9e8;border:1.5px solid #55733a;border-bottom-width:4px;border-radius:9px;padding:11px 19px;font-size:17px;cursor:pointer}.retry span{margin-left:8px}.retry:hover{background:#91aa61}.retry:focus-visible{outline:3px solid #d4ae50;outline-offset:4px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes logo-breathe{50%{transform:translateY(-5px) rotate(.35deg)}}@keyframes leaf-drift{50%{translate:7px -12px;rotate:8deg}}
+@media(max-width:650px){.loading-content{width:calc(100% - 20px);margin-top:-25px}.eyebrow{font-size:7px;letter-spacing:1.9px;margin-bottom:13px}.title-logo{max-height:45vh}.loading-details{max-width:calc(100% - 54px);margin-top:26px}.caption{font-size:20px;margin-bottom:18px}.progress-row{max-width:280px}.garden-tip{font-size:10px;max-width:290px;margin:20px auto 0;line-height:1.7}.garden-border{height:75px}.loading-footer{font-size:7px;letter-spacing:2px;bottom:20px}.drifting-leaf{width:43px;height:21px}.leaf-one{top:18%;left:6%}.leaf-two{width:50px;height:25px;right:5%;bottom:23%}}
+@media(max-height:520px){.loading-content{margin-top:-15px}.eyebrow{margin-bottom:0;font-size:7px}.title-logo{max-height:50vh}.loading-details{margin-top:0}.caption{font-size:19px;margin-bottom:9px}.garden-tip{margin-top:12px;font-size:10px}.garden-border{height:45px}.loading-footer{bottom:10px;font-size:7px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* Game, loading and rotate screens share the phone's usable viewport. */
+.phone-layout #game, .phone-layout #loading, .phone-layout #game-launch {
+  position: fixed;
+  inset: auto;
+  left: var(--garden-frame-left, 0px);
+  top: var(--garden-frame-top, 0px);
+  width: var(--garden-frame-width, 100%);
+  height: var(--garden-frame-height, 100%);
+}
+.phone-layout .title-logo { max-height: calc(var(--garden-frame-height) * .46); }
+.phone-layout #loading:has(.failure:not([hidden])) .title-logo {
+  max-height: calc(var(--garden-frame-height) * .24);
+}
+.retry { min-height: 48px; touch-action: manipulation; }
+.launch-blocked #game { visibility: hidden; pointer-events: none; }
+
+#game-launch {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  padding: 14px;
+  z-index: 6;
+  background: radial-gradient(ellipse at 50% 20%, #fff9dc, transparent 70%), var(--paper);
+}
+.launch-panel {
+  width: min(100%, 500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: clamp(16px, 4vh, 30px);
+  border: 1px solid #c3cda5;
+  border-radius: 22px;
+  background: #fff9e9;
+  box-shadow: 0 6px 0 #d7ddbf;
+}
+.launch-logo { width: 100%; height: auto; max-height: min(23vh, 175px); object-fit: contain; }
+#launch-rotate { width: 60px; height: 48px; color: #668247; }
+#launch-heading {
+  margin: 0;
+  font: clamp(24px, 5vw, 37px)/1.1 GardenTitle, 'Trebuchet MS', sans-serif;
+}
+#launch-heading:focus { outline: none; }
+#launch-message { margin: 0; font-size: 16px; line-height: 1.45; }
+#launch-play { width: min(100%, 280px); min-height: 56px; margin: 4px 0 0; font-size: 21px; }
+#launch-play:active { transform: translateY(2px); background: #68883e; }
+#launch-install { margin: 8px 0 0; max-width: 290px; font-size: 13px; line-height: 1.5; color: #59654c; }
+@media (max-height: 340px) {
+  .launch-panel { padding: 12px 18px; gap: 7px; }
+  #launch-message { font-size: 14px; }
+}

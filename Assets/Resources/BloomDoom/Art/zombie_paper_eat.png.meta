@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: f52a7d1967b051f4eb22ff032fda6fa7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 986326093225561176
+    second: zombie_paper_eat_0
+  - first:
+      213: 6497686626451490824
+    second: zombie_paper_eat_1
+  - first:
+      213: -445799314427460609
+    second: zombie_paper_eat_2
+  - first:
+      213: -1177002035620650179
+    second: zombie_paper_eat_3
+  - first:
+      213: 302943174134540657
+    second: zombie_paper_eat_4
+  - first:
+      213: 4710694663336917240
+    second: zombie_paper_eat_5
+  - first:
+      213: -6917511644849152605
+    second: zombie_paper_eat_6
+  - first:
+      213: 5691884144379378432
+    second: zombie_paper_eat_7
+  - first:
+      213: 1458928836706005370
+    second: zombie_paper_eat_8
+  - first:
+      213: 5574884196542438293
+    second: zombie_paper_eat_9
+  - first:
+      213: -5409279277372995843
+    second: zombie_paper_eat_10
+  - first:
+      213: -3086017336438579481
+    second: zombie_paper_eat_11
+  - first:
+      213: 5920870015329087643
+    second: zombie_paper_eat_12
+  - first:
+      213: -2959967162845541681
+    second: zombie_paper_eat_13
+  - first:
+      213: -1816152677110747524
+    second: zombie_paper_eat_14
+  - first:
+      213: 7097806682647007697
+    second: zombie_paper_eat_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombie_paper_eat_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 110
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c88632b5220bd00800000000000000
+      internalID: 986326093225561176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 31
+        width: 111
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 808827f7f8b6c2a50800000000000000
+      internalID: 6497686626451490824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 31
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3407ea2e330d9f0800000000000000
+      internalID: -445799314427460609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_3
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 30
+        width: 113
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d336be672e27aafe0800000000000000
+      internalID: -1177002035620650179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_4
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 30
+        width: 113
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1792b693635443400800000000000000
+      internalID: 302943174134540657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_5
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 31
+        width: 112
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8768586dfbf5140800000000000000
+      internalID: 4710694663336917240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_6
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 31
+        width: 110
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad532f3fcf0000a0800000000000000
+      internalID: -6917511644849152605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_7
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 31
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00b3960f872adfe40800000000000000
+      internalID: 5691884144379378432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_8
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 32
+        width: 111
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a717f681c082f3410800000000000000
+      internalID: 1458928836706005370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_9
+      rect:
+        serializedVersion: 2
+        x: 2367
+        y: 32
+        width: 110
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bd9d6c3a7fd5d40800000000000000
+      internalID: 5574884196542438293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_10
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 31
+        width: 108
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df60d4528216ee4b0800000000000000
+      internalID: -5409279277372995843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_11
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 31
+        width: 106
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee91ea35934c25d0800000000000000
+      internalID: -3086017336438579481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_12
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 31
+        width: 107
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b90b3f8a8e72b2250800000000000000
+      internalID: 5920870015329087643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_13
+      rect:
+        serializedVersion: 2
+        x: 3390
+        y: 32
+        width: 110
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fca45c74c851ce6d0800000000000000
+      internalID: -2959967162845541681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_14
+      rect:
+        serializedVersion: 2
+        x: 3647
+        y: 32
+        width: 109
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e60f633cabbc6e0800000000000000
+      internalID: -1816152677110747524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_paper_eat_15
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 32
+        width: 109
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d191937299708260800000000000000
+      internalID: 7097806682647007697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zombie_paper_eat_0: 986326093225561176
+      zombie_paper_eat_1: 6497686626451490824
+      zombie_paper_eat_10: -5409279277372995843
+      zombie_paper_eat_11: -3086017336438579481
+      zombie_paper_eat_12: 5920870015329087643
+      zombie_paper_eat_13: -2959967162845541681
+      zombie_paper_eat_14: -1816152677110747524
+      zombie_paper_eat_15: 7097806682647007697
+      zombie_paper_eat_2: -445799314427460609
+      zombie_paper_eat_3: -1177002035620650179
+      zombie_paper_eat_4: 302943174134540657
+      zombie_paper_eat_5: 4710694663336917240
+      zombie_paper_eat_6: -6917511644849152605
+      zombie_paper_eat_7: 5691884144379378432
+      zombie_paper_eat_8: 1458928836706005370
+      zombie_paper_eat_9: 5574884196542438293
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

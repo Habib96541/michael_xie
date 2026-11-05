@@ -1,0 +1,13 @@
+{
+  "id": "/",
+  "name": "Bloom & Doom",
+  "short_name": "Bloom & Doom",
+  "start_url": "../",
+  "scope": "../",
+  "display": "standalone",
+  "display_override": ["fullscreen"],
+  "orientation": "landscape",
+  "background_color": "#f6f1df",
+  "theme_color": "#f6f1df",
+  "icons": [{"src": "home-screen-icon.png", "sizes": "128x128", "type": "image/png"}]
+}
