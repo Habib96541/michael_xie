@@ -1,0 +1,74 @@
+Sprint 02: Bright arcade artwork
+Date: 2026-11-03
+Unity: 6000.3.6f1
+
+Goals
+- Replace the dark presentation with a bright arcade style.
+- Import reusable panel and button sprites from Kenney's CC0 UI Pack.
+- Create matching wheel-frame and pointer sprites with transparent backgrounds.
+- Keep all 20 outcomes readable and correctly aligned with the pointer.
+
+Changes
+- Added a light blue background, navy text, and five pastel segment colors.
+- Added a white result card with a subtle shadow and an orange glossy Spin button.
+- Imported two selected Kenney sprites instead of the entire asset pack.
+- Configured panel and button borders for sliced UI rendering.
+- Generated a gold marquee wheel frame and a coral pointer with the built-in imagegen tool.
+- Preserved the generated PNG alpha channels and copied both images into the project.
+- Positioned the pointer tip at the inner edge of the gold frame.
+- Added Tools/Spin the Wheel/Apply Bright Artwork to style the existing scene.
+- Updated scene creation to produce the same bright presentation.
+- Added Tools/Spin the Wheel/Capture Preview for a Game view screenshot during Play mode.
+
+Files touched
+- Assets/Scripts/WheelGraphic.cs.
+- Assets/Editor/WheelSceneSetup.cs.
+- Assets/Scenes/SpinTheWheel.unity.
+- Assets/Art/KenneyUI/Panel.png and Button.png, plus their import .meta files.
+- Assets/Art/KenneyUI/License.txt and its .meta file.
+- Assets/Art/BrightArcade/WheelFrame.png and Pointer.png, plus their import .meta files.
+- Assets/Art/BrightArcade/Generation.txt and its .meta file.
+- Assets/Art/Sources.txt and its .meta file.
+- New artwork folder .meta files.
+- SprintDocs/Sprint_02.txt.
+- SprintDocs/Sprint_02_Validation.txt.
+- SprintDocs/Sprint_02_Preview.png.
+
+Done condition
+- Bright artwork is visible in the saved playable scene.
+- The wheel and pointer preserve their proportions and transparent backgrounds.
+- Panel and button corners remain intact when resized.
+- All 20 labels are readable, including the selected label at the pointer.
+- The existing 40-spin validation still passes.
+
+Validation
+- Unity compiled the changed runtime and editor scripts successfully.
+- Confirmed the frame's center and outer corners have zero alpha.
+- Inspected the imported art and the composed Game view.
+- Ran 40 Play mode spins, covering all 20 outcomes twice.
+- Verified matching result text, pointer alignment, upright winning labels,
+  repeat-click protection, and button locking.
+- The same outcome checks passed with Time.timeScale set to zero.
+- Clicked the actual Spin button with the new UI sprites.
+- Saved a native Game view preview after a completed spin.
+- No standalone player build or physical device test was part of this sprint.
+
+Asset sources and prompts
+- Kenney UI Pack 2.0: https://kenney.nl/assets/ui-pack
+- Kenney assets use the CC0 license; the supplied license file is retained.
+- Asset paths and import settings: Assets/Art/Sources.txt.
+- Exact custom sprite prompts: Assets/Art/BrightArcade/Generation.txt.
+- Both generated sprites were delivered as 1254x1254 RGBA PNGs.
+
+Concepts learned
+- Learning walkthroughs and quizzes were skipped at the user's request.
+- Implemented concepts: sprite importing, alpha transparency, sliced UI images,
+  visual hierarchy, contrast, and checking artwork against gameplay geometry.
+
+Open questions
+- None blocking the approved scope.
+- The existing layout fits inside portrait and landscape viewports; a dedicated
+  portrait rearrangement was not part of this visual sprint.
+
+Suggested commit message
+Brighten the wheel with arcade UI sprites

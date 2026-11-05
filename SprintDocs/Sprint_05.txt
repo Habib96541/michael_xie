@@ -1,0 +1,60 @@
+Sprint 05: WebGL build
+Date: 2026-11-05
+Unity: 6000.3.27f2
+Status: Complete.
+
+Goals
+- Export the saved SpinTheWheel scene as a browser player.
+- Verify the exported player loads locally.
+- Package the complete build for delivery.
+
+Changes
+- Opened the project with the Web build target using the installed WebGL module.
+- Built the enabled Assets/Scenes/SpinTheWheel.unity scene using Build And Run.
+- Used the default Unity Web template, Brotli compression, and a non-development build.
+- Added hosting/run notes and copied the bundled font and asset license notices
+  into the distribution folder.
+- Created and checked a ZIP with index.html at its root.
+- No gameplay scripts were changed for this build.
+
+Files produced
+- Builds/WebGL/index.html.
+- Builds/WebGL/Build/WebGL.loader.js.
+- Builds/WebGL/Build/WebGL.framework.js.br.
+- Builds/WebGL/Build/WebGL.data.br.
+- Builds/WebGL/Build/WebGL.wasm.br.
+- Builds/WebGL/TemplateData/.
+- Builds/WebGL/Licenses/.
+- Builds/WebGL/README.txt.
+- Builds/SpinTheWheel-WebGL.zip.
+- SprintDocs/Sprint_05.txt.
+- SprintDocs/Sprint_05_Build_Manifest.txt.
+- Logs/WebGL_Editor.log: local editor/build log, excluded from Git.
+
+Done condition and evidence
+- Unity reported Build completed with a result of Succeeded in 737 seconds.
+- Chrome loaded the exported WebGL player from http://localhost:64689/.
+- Browser inspection showed a completed 20x spin and the 20x segment at the pointer.
+- HTTP checks returned 200 for index.html and Build/WebGL.wasm.br.
+- The WebAssembly response used Content-Encoding: br and Content-Type: application/wasm.
+- Verified the ZIP contains the entry page, loader, player, framework, data,
+  readme, and font license at the expected paths.
+- Archive: 16,668,875 bytes; 21 file entries.
+- SHA256: D125DB2218C4DEAE2B8DE2F5B896C0649616E611D56BE126822C5C4D8FF5F638.
+
+Concepts learned
+- Teaching and quizzes skipped at the user's request.
+- Concepts used: Web build targets, WebAssembly, compressed build delivery,
+  HTTP content headers, and browser smoke checks.
+
+Open questions and limits
+- The local preview is available while Unity's preview server remains running.
+- The build has not been uploaded to a public host.
+- Hosting must serve Brotli files with the headers listed in the bundled README.
+- The default desktop template uses a 960x600 canvas with a fullscreen control.
+- This was a Chrome smoke inspection, not a complete browser compatibility pass.
+- No physical mobile, Safari, or Firefox checks were performed.
+- Build artifacts are ignored by the existing .gitignore; deliver the ZIP separately.
+
+Commit message
+Document the verified WebGL build

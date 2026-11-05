@@ -1,0 +1,62 @@
+Sprint 03: Responsive screen layout
+Completed: 2026-11-05
+Unity: 6000.3.6f1 implementation; 6000.3.27f2 final spin and manual checks.
+Status: Complete.
+
+Goals
+- Adapt the wheel and result panel to portrait, landscape, and square screens.
+- Respect safe areas and keep controls reachable in short windows.
+- Preserve artwork proportions, pointer alignment, and readable labels.
+
+Changes
+- Added WheelResponsiveLayout with explicit Inspector references.
+- Grouped the wheel, pointer, and hub for uniform scaling.
+- Stack the wheel and panel on narrow screens; place them beside each other on wide screens.
+- Bound content width on ultrawide displays.
+- Apply safe-area anchors and clipped vertical scrolling when needed.
+- Keep the Spin button at least 44 pixels tall at the minimum UI scale.
+- Adjust multiplier label size and verify spacing between neighboring labels.
+- Recalculate layout when screen size or safe area changes.
+- Updated scene creation and artwork application for the responsive hierarchy.
+- Added actual Game view resolution validation and preview captures.
+
+Files touched
+- Assets/Scripts/WheelResponsiveLayout.cs and .meta.
+- Assets/Editor/WheelSceneSetup.cs.
+- Assets/Editor/WheelLayoutValidation.cs and .meta.
+- Assets/Scenes/SpinTheWheel.unity.
+- SprintDocs/Sprint_03.txt.
+- SprintDocs/Sprint_03_Layout_Validation.txt.
+- SprintDocs/Sprint_03_Spin_Validation.txt.
+- SprintDocs/Sprint_03_390x844.png.
+- SprintDocs/Sprint_03_1920x1080.png.
+- SprintDocs/Sprint_03_568x320.png.
+
+Done condition and evidence
+- Responsive hierarchy applied and saved in the playable scene.
+- Actual Game view checks passed at 320x568, 390x844, 1080x1920,
+  768x1024, 1024x768, 1024x1024, 1920x1080, 2560x1080,
+  568x320, and 320x320.
+- No wheel/panel overlap, text overflow, or neighboring multiplier overlap
+  in those checks. Controls were reachable through scrolling when needed.
+- Two simulated notch layouts passed safe-area anchor checks.
+- Inspected phone, desktop, and short-window preview images.
+- Final 40-spin Play mode regression passed on Unity 6000.3.27f2:
+  all outcomes twice, correct pointer/result alignment, upright winning label,
+  repeated-request protection, button locking, and unscaled-time behavior.
+- Actual scroll input revealed the footer and button in the portrait Game view.
+- Actual button click completed a normal spin; both result and pointer showed 20x.
+- Returned Unity to Edit mode after verification.
+
+Concepts learned
+- Teaching and quizzes skipped at the user's request.
+- Concepts used: RectTransform anchors, safe areas, adaptive layout,
+  uniform scaling, clipping, scrolling, and resolution regression checks.
+
+Open questions and limits
+- Physical device testing and standalone player builds were not performed.
+- Layout checks were completed on 6000.3.6f1; final spin and manual input
+  checks were repeated after the project moved to 6000.3.27f2.
+
+Commit message
+Adapt the wheel UI to screen size and safe areas

@@ -1,0 +1,30 @@
+Bright arcade artwork
+
+Kenney UI Pack 2.0
+Creator: Kenney
+Source: https://kenney.nl/assets/ui-pack
+License: Creative Commons Zero (CC0).
+The original license is preserved in KenneyUI/License.txt.
+
+Imported files
+- Assets/Art/KenneyUI/Panel.png
+  Original: PNG/Extra/Double/input_rectangle.png
+- Assets/Art/KenneyUI/Button.png
+  Original: PNG/Grey/Double/button_rectangle_depth_gloss.png
+  The Unity UI Image tints this neutral sprite orange.
+
+Custom sprites
+- Assets/Art/BrightArcade/WheelFrame.png
+- Assets/Art/BrightArcade/Pointer.png
+Created with the built-in imagegen tool for this project on 2026-11-03.
+Transparent PNG files are copied into the project without altering their alpha.
+The exact generation prompts are in BrightArcade/Generation.txt.
+
+Import settings
+- Sprite (2D and UI), Single mode, 100 pixels per unit.
+- Mipmaps disabled and texture compression disabled.
+- Non-power-of-two scaling disabled, maximum texture size 2048.
+- Panel slice borders: left 16, bottom 16, right 16, top 16 pixels.
+- Button slice borders: left 16, bottom 20, right 16, top 16 pixels.
+- The frame and pointer use simple images with their aspect ratio preserved.
+- Decorative images do not receive pointer events.

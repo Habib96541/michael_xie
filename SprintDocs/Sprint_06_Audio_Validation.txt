@@ -1,0 +1,39 @@
+Sprint 06: WebGL audio signal checks
+
+Original source files decoded in Web Audio:
+ui_click.ogg: duration 0.008707 s, peak 0.906553, RMS 0.179244.
+wheel_tick.ogg: duration 0.021769 s, peak 0.911490, RMS 0.121243.
+
+Original exported browser buffers:
+Click: duration 0.023208 s, peak 0, RMS 0.
+Tick: duration 0.023208 s, peak 0.002389, RMS 0.000335.
+Whoosh: peak 0.781076.
+Chime: peak 0.729338.
+Tick start requests were present; the decoded attack signal was almost absent.
+
+Corrected exported browser buffers:
+Click: duration 0.139292 s, peak 0.887234, RMS 0.044603.
+Tick: duration 0.162500 s, peak 0.897578, RMS 0.038156.
+Whoosh: peak 0.781076.
+Chime: peak 0.729338.
+
+Normal 4.5 second spin:
+49 tick requests after collapsing diagnostic warm-up/voice pairs.
+Mean of first ten tick gaps: 0.049280 s.
+Mean of last five tick gaps: 0.183320 s.
+Mixed output peaks by second after the click:
+0-1 s: 0.491758.
+1-2 s: 0.383919.
+2-3 s: 0.387584.
+3-4 s: 0.338774.
+4-5 s: 0.525123.
+
+PASS: click is no longer silent.
+PASS: tick recovered its attack amplitude.
+PASS: output contains ticks after the whoosh finishes.
+PASS: tick intervals increase as the wheel slows.
+PASS: result chime produces output.
+
+Method: temporary Web Audio buffer/source and mixed-output analysis around
+an actual WebGL spin. This checks browser-generated audio signals; physical
+speaker output is not measured. The QA instrumentation is not shipped.

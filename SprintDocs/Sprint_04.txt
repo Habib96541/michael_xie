@@ -1,0 +1,80 @@
+Sprint 04: Bright main menu
+Date: 2026-11-05
+Unity: 6000.3.27f2
+Status: Complete.
+
+Goals
+- Start the scene at a bright menu matching the existing wheel artwork.
+- Add Play, Quit, and a return-to-menu button.
+- Support portrait, landscape, square screens, safe areas, and short windows.
+- Preserve the last result when moving between menu and gameplay.
+
+Changes
+- Added WheelMenuController to switch the menu and game roots.
+- Registered button listeners while the controller is enabled and removed them on disable.
+- Selected Play or Spin when opening each screen for UI navigation.
+- Prevented returning to the menu during an active spin.
+- Quit stops Play mode in the Editor and calls Application.Quit in a player build.
+- Added WheelMenuLayout to position and scale menu content inside the display safe area.
+- Added vertical scrolling when the menu is taller than the available space.
+- Reused the existing gold frame, pointer, pastel wheel, panel, button, and font assets.
+- Added a reserved navigation row to the existing game layout for the Menu button.
+- Added an editor command to install and save the menu without replacing the existing game.
+- Extended existing validation to cover menu startup, navigation, layout, and preserved results.
+
+Files touched
+- Assets/Scripts/WheelMenuController.cs and .meta.
+- Assets/Scripts/WheelMenuLayout.cs and .meta.
+- Assets/Scripts/WheelResponsiveLayout.cs.
+- Assets/Editor/WheelMenuSetup.cs and .meta.
+- Assets/Editor/WheelLayoutValidation.cs.
+- Assets/Editor/WheelSceneValidation.cs.
+- Assets/Scenes/SpinTheWheel.unity.
+- SprintDocs/Sprint_04.txt.
+- SprintDocs/Sprint_04_Layout_Validation.txt.
+- SprintDocs/Sprint_04_Spin_Validation.txt.
+- SprintDocs/Sprint_04_Menu_390x844.png.
+- SprintDocs/Sprint_04_Menu_1920x1080.png.
+- SprintDocs/Sprint_04_Menu_568x320.png.
+- SprintDocs/Sprint_04_Game_390x844.png.
+- SprintDocs/Sprint_04_Game_1920x1080.png.
+- SprintDocs/Sprint_04_Game_568x320.png.
+
+Done condition
+- Saved scene starts at the main menu.
+- Play opens the wheel and Menu returns after the spin is complete.
+- Returning to gameplay preserves the last multiplier and pointer position.
+- Quit works in Editor Play mode.
+- Menu and gameplay remain usable at all tested resolutions and safe areas.
+- Existing spin behavior passes its regression checks.
+
+Validation
+- Unity compiled runtime and editor scripts successfully on 6000.3.27f2.
+- Actual Game view checks passed at 320x568, 390x844, 1080x1920,
+  768x1024, 1024x768, 1024x1024, 1920x1080, 2560x1080,
+  568x320, and 320x320.
+- Menu and game text fit their rectangles; body sections did not overlap.
+- Menu buttons retained at least 44 pixels of height and were reachable by scrolling.
+- Both screens passed portrait and landscape simulated notch insets.
+- Inspected phone, desktop, and short-window menu preview images.
+- Forty accelerated Play mode spins passed, covering every outcome twice,
+  pointer alignment, upright winning text, repeated requests, button locking,
+  and Time.timeScale = 0 behavior.
+- During the forty-spin run, checked return navigation after each spin,
+  preserved results on reopening, and blocked navigation during each spin.
+- Actual mouse input verified Play, return-to-menu, scrolling, and Quit.
+- Quit returned the editor to Edit mode; saved scene remains on the main menu.
+- Whitespace checks passed.
+
+Concepts learned
+- Teaching and quizzes skipped at the user's request.
+- Concepts used: screen visibility, button listener lifecycle, UI selection,
+  safe-area layout, scrolling, and navigation guards.
+
+Open questions and limits
+- No standalone build or physical device test was performed in this sprint.
+- Application.Quit behavior in a desktop player remains to be verified in a build.
+- No new asset downloads, packages, or project-setting changes were needed.
+
+Commit message
+Add a responsive main menu and game navigation

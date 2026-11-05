@@ -1,0 +1,87 @@
+Sprint 01: Playable multiplier wheel
+Date: 2026-11-03
+Unity: 6000.3.6f1
+Render pipeline: Universal Render Pipeline 17.3.0, 2D Renderer
+
+Goals
+- Display 20 equal segments with distinct multipliers from 0.1x to 50x.
+- Spin, slow down, and stop the selected segment beneath a fixed pointer.
+- Show the selected multiplier and allow another spin after completion.
+- Give each segment an equal 5 percent chance.
+
+Changes
+- Added a generated uGUI wheel mesh, rim, hub, labels, and pointer.
+- Added a result panel and an Input System driven Spin button.
+- Choose an integer segment index before animating the wheel clockwise.
+- Normalize the final rotation so repeated spins cannot accumulate rotation error.
+- Hide the result and lock the button during each 4.5 second spin.
+- Keep the selected label upright when it reaches the pointer.
+- Expose multipliers, spin duration, and full turns in the Inspector.
+- Validate references, segment count, multiplier range, and uniqueness at startup.
+- Imported Unity's bundled TextMesh Pro Essential Resources, including font licenses.
+- Added scene creation and Play mode validation commands under Tools/Spin the Wheel.
+- Set SpinTheWheel as the enabled scene in the project's shared build scene list.
+
+Files touched
+- Assets/Scripts/WheelController.cs and its .meta file.
+- Assets/Scripts/WheelGraphic.cs and its .meta file.
+- Assets/Scripts.meta.
+- Assets/Editor/WheelSceneSetup.cs and its .meta file.
+- Assets/Editor/WheelSceneValidation.cs and its .meta file.
+- Assets/Scenes/SpinTheWheel.unity and its .meta file.
+- Assets/Art/UI/Pointer.png and its .meta file.
+- Assets/Art.meta and Assets/Art/UI.meta.
+- Assets/TextMesh Pro/ and its .meta files: bundled TMP resources.
+- ProjectSettings/EditorBuildSettings.asset.
+- SprintDocs/Sprint_01.txt.
+- SprintDocs/Sprint_01_Validation.txt.
+
+Done condition
+- The scene compiles and runs in Unity 6000.3.6f1.
+- All 20 outcomes can land at the pointer and show the correct multiplier.
+- Repeated requests during an active spin cannot select a different outcome.
+- The button becomes available again after each spin.
+
+Validation
+- Unity compiled the runtime and editor scripts successfully.
+- Ran 40 automated Play mode spins, covering each outcome twice.
+- Checked the actual label position against the fixed pointer direction.
+- Checked label orientation, multiplier values, result text, and button locking.
+- Repeated the outcome checks with Time.timeScale set to zero.
+- Verified Input System action references after saving and reopening the scene.
+- Clicked the actual Spin button in Game view and observed a matching result.
+- Inspected the UI in 1080x1920 portrait and 1920x1080 landscape Game views.
+- The canvas fits the layout into the available viewport; portrait has more empty space.
+- No standalone player build or device test was part of this sprint.
+- See Sprint_01_Validation.txt for the recorded automated checks.
+
+Run
+1. Open Assets/Scenes/SpinTheWheel.unity.
+2. Press Play in Unity, then click SPIN.
+3. To edit values, stop Play mode and select Wheel Canvas/Game.
+4. Change the Wheel Controller's Multipliers, Spin Duration, or Full Turns.
+5. Keep exactly 20 distinct multipliers in range, including 0.1 and 50.
+
+Re-run validation
+- Stop Play mode and save any scene edits.
+- Choose Tools/Spin the Wheel/Run Sprint Validation.
+- The command runs accelerated spins in Play mode and returns to Edit mode.
+- Runtime test changes do not alter the saved 4.5 second spin duration.
+- The latest report is written to Temp/Sprint_01_validation.txt.
+
+Concepts learned
+- Learning walkthroughs and quizzes were skipped at the user's request.
+- Implemented concepts: serialized Inspector data, lifecycle methods, UI callbacks,
+  integer random selection, unscaled frame time, easing, and procedural UI geometry.
+
+Open questions
+- None blocking the approved scope.
+- Intermediate multiplier values are defaults because only the endpoints were supplied.
+
+Existing project state
+- The project had uncommitted settings and package changes before this sprint.
+- Unity AI account and network warnings were already present before implementation.
+- No pre-existing user changes were reverted and no Git commit was created.
+
+Suggested commit message
+Add a playable 20-segment multiplier wheel

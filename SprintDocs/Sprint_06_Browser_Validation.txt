@@ -1,0 +1,32 @@
+Sprint 06: Live browser viewport checks
+
+PASS: 320x568
+PASS: 390x844
+PASS: 768x1024
+PASS: 1024x768
+PASS: 1024x1024
+PASS: 1366x768
+PASS: 1920x1080
+PASS: 2560x1080
+PASS: 568x320
+PASS: 320x320
+
+Each pass verified:
+- Canvas CSS width and height match the requested browser viewport.
+- Canvas render width and height match its CSS dimensions.
+- Canvas starts at x=0, y=0.
+- Document scroll width and height do not exceed the viewport.
+
+Interaction and visual checks:
+- Phone 390x844: wheel and result panel stack; Spin and Menu are visible.
+- Phone 320x568: scroll reaches Play/Quit and the complete Spin button.
+- Short landscape 568x320: scroll reaches the complete result panel and Spin.
+- Desktop 1366x768: wheel and panel sit beside each other.
+- Menu return and Play work on the clean release page.
+- Active animation remained spinning when resized from desktop to portrait.
+- Completed 25x result matched the pointer after resizing.
+- Browser viewport override reset after checks.
+- No browser console error observed.
+
+Browser: Chromium-based in-app browser. No physical mobile device test.
+Previews are captures of the actual WebGL canvas.

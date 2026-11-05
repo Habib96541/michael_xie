@@ -1,0 +1,54 @@
+Sprint 07: Repository delivery
+Date: 2026-11-05
+Unity: 6000.3.27f2
+
+Goals
+- Publish the full Unity project and corrected WebGL build to the requested branch.
+- Preserve the destination branch's existing history.
+- Include a project README, validation reports, asset licenses, and the build ZIP.
+
+Destination
+- Repository: Sparktech-Ai-Agency01/michael_xie.
+- Branch: Spin-the-Wheel.
+- GitHub account: redowangd.
+- Existing branch parent: ad0d122ba87ef20e326e259b1502f8ad0f2d265e.
+- The destination initially contained only README.md and .gitignore.
+
+Changes
+- Added a project README with Unity version, Git LFS, build, and validation instructions.
+- Updated .gitignore to include the corrected WebGL folder and ZIP.
+- Added Brotli files to the existing Git LFS rules.
+- Included Assets, Packages, ProjectSettings, SprintDocs, Tools, and root project files.
+- Included Builds/WebGL-Responsive and Builds/SpinTheWheel-WebGL-Responsive.zip.
+- Preserved the existing origin and added the destination as the submission remote.
+- Used the new account's GitHub noreply address for the delivery commit.
+
+Files touched
+- .gitignore.
+- .gitattributes.
+- README.md.
+- SprintDocs/Sprint_07.txt.
+- The complete current Unity project and corrected build are included in the commit.
+
+Done condition
+- The requested branch contains the full project and corrected browser build.
+- Build binaries are present in LFS storage and resolve to the delivered files.
+- The remote branch head matches the local delivery commit.
+
+Validation
+- Corrected ZIP SHA256 matches the Sprint 06 verified artifact:
+  3E80F12A9B31C970392C0FDBDF0364C86FC23827F87BAAD3ED6FB0034593F218.
+- Prior game, browser viewport, and audio results are preserved in Sprint 06 reports.
+- Git staging and LFS integrity are checked for delivery.
+- Remote branch and build blob verification accompany the push.
+
+Concepts learned
+- Teaching and quizzes skipped at the user's request.
+- Concepts used: branch history, Git LFS, project packaging, and remote verification.
+
+Open questions
+- No deployment or GitHub Pages publishing was requested.
+- The game limitations and AI-package shader warnings remain documented in Sprint 06.
+
+Commit message
+Publish Spin the Wheel project and WebGL build

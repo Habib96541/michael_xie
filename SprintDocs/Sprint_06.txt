@@ -1,0 +1,91 @@
+Sprint 06: Responsive WebGL page and audible roulette ticks
+Date: 2026-11-05
+Unity: 6000.3.27f2
+Status: Complete.
+
+Goals
+- Replace the fixed desktop WebGL canvas with a page that fills the browser.
+- Restore short click and tick effects in the exported player.
+- Rebuild and verify the actual browser version.
+
+Problems found
+- The exported default template fixed the desktop canvas at 960x600.
+- The tick was assigned and requested during spins, but the browser-decoded
+  audio buffer had a peak of only 0.002389 versus 0.911490 in the OGG source.
+- The original 8.7 ms click decoded to silence in the exported build.
+- These very short effects lost their attacks during WebGL audio conversion.
+
+Changes
+- Added a persistent Responsive WebGL template under Assets/WebGLTemplates.
+- Canvas CSS fills the available browser viewport and reserves safe-area insets.
+- Enabled Unity canvas-to-render-target size matching.
+- Used one render pixel per CSS pixel so the existing minimum UI scale maps
+  consistently to visible controls on high-density displays.
+- Added padded PCM WAV variants of click and tick: 50 ms leading silence and
+  75 ms trailing silence, with DecompressOnLoad and audio preloading enabled.
+- Assigned the WAV variants to the saved scene.
+- Added Prepare Web Build and Build Web Player editor menu commands.
+- Kept the existing wheel animation and audio event timing.
+- Added asset credits, hosting instructions, and licenses to the distribution.
+
+Files touched
+- Assets/WebGLTemplates/Responsive/index.html and generated metadata.
+- Assets/WebGLTemplates/Responsive/TemplateData/style.css and metadata.
+- Assets/WebGLTemplates/Responsive/TemplateData/favicon.ico and metadata.
+- Assets/WebGLTemplates/Responsive/thumbnail.png and metadata.
+- Assets/WebGLTemplates folders and metadata.
+- Assets/Editor/WheelWebBuildSetup.cs and metadata.
+- Assets/Audio/ui_click_web.wav and metadata.
+- Assets/Audio/wheel_tick_web.wav and metadata.
+- Assets/Audio/CREDITS.md.
+- Assets/Scenes/SpinTheWheel.unity.
+- ProjectSettings/ProjectSettings.asset.
+- SprintDocs/Sprint_06.txt.
+- SprintDocs/Sprint_06_Build_Validation.txt.
+- SprintDocs/Sprint_06_Spin_Validation.txt.
+- SprintDocs/Sprint_06_Browser_Validation.txt.
+- SprintDocs/Sprint_06_Audio_Validation.txt.
+- SprintDocs/Sprint_06_Build_Manifest.txt.
+- SprintDocs/Sprint_06_Browser_390x844.png.
+- SprintDocs/Sprint_06_Browser_568x320.png.
+- SprintDocs/Sprint_06_Browser_1366x768.png.
+- Builds/WebGL-Responsive/ and Builds/SpinTheWheel-WebGL-Responsive.zip
+  are ignored build artifacts for separate delivery.
+
+Done condition and evidence
+- Successful non-development WebGL build in 2 minutes 30 seconds, zero errors.
+- Browser canvas and render target matched all ten tested viewport sizes.
+- No external page overflow at those sizes.
+- Checked the phone game and menu, short landscape scrolling, and desktop layout.
+- Checked actual Play, menu return, and scrolling in the clean release page.
+- Confirmed an active spin remains active across desktop-to-portrait resizing.
+- Confirmed the completed pointer and result matched after resizing (25x).
+- Corrected browser tick peak: 0.897578; click peak: 0.887234.
+- Tick signal remained present after the whoosh, with increasing intervals
+  as the wheel slowed. Result chime also had a healthy signal.
+- Existing forty-spin scene regression passed all outcomes twice.
+- No browser console errors were observed in the corrected release checks.
+- The diagnostic instrumentation was served only by a temporary QA helper;
+  it is absent from the shipped index, loader, and ZIP.
+- All eleven ZIP file entries were checked against source-file SHA256 hashes.
+- Archive: 16,081,064 bytes.
+- ZIP SHA256: 3E80F12A9B31C970392C0FDBDF0364C86FC23827F87BAAD3ED6FB0034593F218.
+
+Concepts learned
+- Teaching and quizzes skipped at the user's request.
+- Concepts used: browser canvas sizing, CSS safe areas, WebGL audio conversion,
+  short-transient preservation, live viewport testing, and audio signal analysis.
+
+Open questions and technical debt
+- Physical mobile devices, Safari, and Firefox were not tested.
+- High-density displays intentionally render at one pixel per CSS pixel;
+  this trades additional rendering sharpness for consistent controls and cost.
+- The build reported 345 shader warnings from the existing AI inference/Sentis
+  package: ConvGeneric (320), ScatterND (9), ConvTranspose (6), SliceSet (4),
+  GridSample (3), ScatterElements (2), and Pad (1). No game C# warning was found.
+  Package cleanup is outside this responsive/audio fix.
+- Hosting must send the Brotli headers listed in README.txt.
+- The local preview requires its local server to remain running.
+
+Commit message
+Fix WebGL resizing and short sound effects

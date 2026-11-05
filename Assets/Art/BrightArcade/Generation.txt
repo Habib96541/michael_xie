@@ -1,0 +1,15 @@
+Generation method: built-in imagegen tool.
+Date: 2026-11-03.
+Both calls requested transparent_background: true.
+These are separate asset generation calls, not a sprite sheet.
+
+WheelFrame.png
+Use case: stylized-concept. Asset type: production-ready 2D Unity casual arcade game sprite, a single circular wheel FRAME only. Primary request: cheerful polished golden prize-wheel rim, matching bright blue, orange and white casual game UI. Square 1024x1024 composition. Perfectly centered orthographic front view, strictly circular not elliptical, outer diameter 960 pixels, inner opening diameter about 860 pixels. Ring is narrow and evenly thick, warm orange-gold outer bevel, bright lemon gold front surface, soft cream reflective highlights, subtle golden inner lip, a neat evenly spaced row of small ivory marquee bulbs along the ring. Soft rounded cartoon 3D shading but crisp 2D silhouette. Lighting from upper left. The entire circular inner opening MUST be genuinely transparent, as must all space outside the ring. No wheel face, no spokes, no segments, no hub, no stand, no pointer, no extra objects, no cast shadow in the hole, no text, no numbers, no logos, no watermark. One isolated ring sprite suitable to overlay a mathematically drawn 20-segment game wheel; clean production asset, not a screenshot or scene.
+
+Pointer.png
+Use case: stylized-concept. Asset type: production-ready isolated 2D Unity casual arcade game pointer sprite. Primary request: one glossy coral-orange downward-pointing triangular pointer for a bright prize wheel. Match cheerful gold, sky blue, orange and white casual game UI. Square image, centered symmetrical front view, no perspective. Broad rounded horizontal top edge, two straight tapering sides converging at a precise tip pointing straight down at six o'clock. Coral-orange enamel face, a narrow golden-yellow beveled border, subtle soft cartoon 3D depth, clean pale highlight along upper left, no hole and no tail. Single connected compact shape occupying roughly 75% of the image height and 65% width with clear transparent margin. Completely transparent background. No wheel, no circular base, no arrow shaft, no stars, no other objects, no text, no numbers, no logos, no watermark. Crisp strong silhouette readable at 60 pixels high.
+
+Delivered files
+- Assets/Art/BrightArcade/WheelFrame.png: 1254x1254 RGBA PNG.
+- Assets/Art/BrightArcade/Pointer.png: 1254x1254 RGBA PNG.
+The generation service returned these dimensions; the PNGs were preserved unchanged.

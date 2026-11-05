@@ -1,0 +1,7 @@
+PASS: 40 spins completed, all 20 outcomes verified twice.
+PASS: labels and reported multipliers match the segment at the fixed pointer.
+PASS: the winning label is upright at the fixed pointer for every outcome.
+PASS: repeated requests during a spin do not change its selected outcome.
+PASS: button locks while spinning and unlocks after each result.
+PASS: spin completes with Time.timeScale = 0 using unscaled time.
+PASS: New Input System action references survive saving and reloading.

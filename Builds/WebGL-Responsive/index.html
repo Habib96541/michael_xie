@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Spin the Wheel</title>
+    <link rel="icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+</head>
+<body>
+    <main id="unity-container">
+        <canvas id="unity-canvas" width="960" height="600" tabindex="0" aria-label="Spin the Wheel"></canvas>
+    </main>
+    <div id="unity-loading" role="status">
+        <strong>Loading Spin the Wheel</strong>
+        <progress id="unity-progress" max="1" value="0"></progress>
+    </div>
+    <div id="unity-warning" role="alert" hidden></div>
+    <script>
+        const canvas = document.querySelector('#unity-canvas');
+        const loading = document.querySelector('#unity-loading');
+        const progress = document.querySelector('#unity-progress');
+        const warning = document.querySelector('#unity-warning');
+        const buildUrl = 'Build';
+        const config = {
+            dataUrl: buildUrl + '/WebGL-Responsive.data.br',
+            frameworkUrl: buildUrl + '/WebGL-Responsive.framework.js.br',
+            codeUrl: buildUrl + '/WebGL-Responsive.wasm.br',
+            streamingAssetsUrl: 'StreamingAssets',
+            companyName: "DefaultCompany",
+            productName: "Spin the Wheel",
+            productVersion: "1.0",
+            matchWebGLToCanvasSize: true,
+            devicePixelRatio: 1,
+            showBanner(message, type) {
+                if (type !== 'error') return;
+                warning.textContent = message;
+                warning.hidden = false;
+            }
+        };
+        const script = document.createElement('script');
+        script.src = buildUrl + '/WebGL-Responsive.loader.js';
+        script.onload = () => createUnityInstance(canvas, config, value => progress.value = value)
+            .then(() => loading.hidden = true)
+            .catch(error => {
+                loading.hidden = true;
+                warning.textContent = String(error);
+                warning.hidden = false;
+            });
+        script.onerror = () => {
+            loading.hidden = true;
+            warning.textContent = 'The game could not load. Please reload the page.';
+            warning.hidden = false;
+        };
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>
