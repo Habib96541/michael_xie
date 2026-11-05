@@ -11,7 +11,7 @@ namespace DropStack.Editor
         public static void Configure()
         {
             PlayerSettings.productName="Drop Stack";
-            PlayerSettings.bundleVersion="1.1.0";
+            PlayerSettings.bundleVersion="1.1.1";
             PlayerSettings.runInBackground=false;
             PlayerSettings.WebGL.template="PROJECT:DropStack";
             PlayerSettings.WebGL.compressionFormat=WebGLCompressionFormat.Gzip;

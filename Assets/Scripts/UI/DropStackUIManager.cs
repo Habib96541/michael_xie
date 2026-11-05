@@ -125,7 +125,13 @@ namespace DropStack.UI
             if(helpModal.activeSelf) CloseHelp(); else if(restartModal.activeSelf) CloseRestartModal();
             else if(gameManager.CurrentState==GameState.Paused) CloseSettingsModal(); else if(playing) OpenSettingsModal();
         }
-        private void StartRun() { HideModals(); gameManager.StartGame(); DropStackAudioManager.Instance?.PlayBGM(); }
+        private void StartRun()
+        {
+            ArcadeFeedback.RequestFullscreen();
+            HideModals();
+            gameManager.StartGame();
+            DropStackAudioManager.Instance?.PlayBGM();
+        }
         private void HideModals() { startModal.SetActive(false); settingsModal.SetActive(false); restartModal.SetActive(false); gameOverModal.SetActive(false); helpModal.SetActive(false); }
         private void SyncToggles()
         {
@@ -246,6 +252,8 @@ namespace DropStack.UI
             }
             Move(card,"DifficultyDescription",new Vector2(0,portrait?-240:-188)); Move(card,"MenuBest",new Vector2(0,portrait?-286:-224));
             Move(card,"Play",new Vector2(0,portrait?-367:-289)); Move(card,"Help",new Vector2(0,portrait?-455:-354));
+            playButton.GetComponent<RectTransform>().sizeDelta = portrait ? new Vector2(520, 94) : new Vector2(400, 68);
+            menuHelpButton.GetComponent<RectTransform>().sizeDelta = portrait ? new Vector2(520, 70) : new Vector2(400, 42);
         }
         private static void Move(Transform root,string child,Vector2 position) { var target=root.Find(child); if(target!=null) target.GetComponent<RectTransform>().anchoredPosition=position; }
     }

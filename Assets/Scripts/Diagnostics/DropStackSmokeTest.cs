@@ -89,7 +89,18 @@ namespace DropStack.Diagnostics
             while(piece.BoardPosition.x<before.x+2&&gm.CurrentState==GameState.Playing&&Time.realtimeSinceStartup<repeatDeadline) yield return null;
             Check(piece.BoardPosition.x>=before.x+2,$"Touch horizontal auto-repeat survives keyboard polling (state={gm.CurrentState}, from={before.x}, to={piece.BoardPosition.x})");
             ExecuteEvents.Execute(right,eventData,ExecuteEvents.pointerUpHandler);
-            Click("Controls/HardDrop"); yield return null;
+            var softDrop = hudRoot.Find("Controls/SoftDrop").gameObject;
+            int beforeTap = piece.BoardPosition.y;
+            ExecuteEvents.Execute(softDrop, eventData, ExecuteEvents.pointerDownHandler);
+            ExecuteEvents.Execute(softDrop, eventData, ExecuteEvents.pointerUpHandler);
+            Check(piece.BoardPosition.y == beforeTap - 1, "A quick soft-drop tap moves a row before the next frame");
+
+            var hardDrop = hudRoot.Find("Controls/HardDrop").gameObject;
+            eventData.eligibleForClick = true;
+            ExecuteEvents.Execute(hardDrop, eventData, ExecuteEvents.pointerDownHandler);
+            Check(!eventData.eligibleForClick, "A hard-drop press suppresses the duplicate release click");
+            ExecuteEvents.Execute(hardDrop, eventData, ExecuteEvents.pointerUpHandler);
+            yield return null;
             Check(score.CurrentScore>0&&gm.CanHold,"Hard drop scores, locks, and unlocks hold");
             visible=0; foreach(var sr in FindFirstObjectByType<ActivePieceRenderer>().GetComponentsInChildren<SpriteRenderer>()) if(sr.enabled) visible++;
             Check(visible>0,"Next active piece stays visible after lock events");
@@ -128,12 +139,20 @@ namespace DropStack.Diagnostics
             Click("PauseMenu/PauseCard/Resume"); yield return null;
             ui.OpenRestartModal(); Click("RestartModal/RestartCard/ConfirmRestart"); yield return null;
             Check(gm.CurrentState==GameState.Playing&&score.CurrentScore==0&&gm.TimeRemaining>89&&gm.HoldPiece==DropStack.Data.PolyominoType.None,"Confirmed restart resets board, score, timer, hold and pause");
-            Screen.SetResolution(660,1200,FullScreenMode.Windowed);
+            Screen.SetResolution(390,669,FullScreenMode.Windowed);
             yield return new WaitForSecondsRealtime(.6f);
             yield return Capture("05-portrait");
             var canvas=GameObject.Find("Canvas").GetComponent<RectTransform>();
             var corners=new Vector3[4]; canvas.Find("PlayfieldFrame").GetComponent<RectTransform>().GetWorldCorners(corners);
             Check(corners[0].x>=0&&corners[2].x<=Screen.width&&corners[0].y>=0&&corners[2].y<=Screen.height,"Portrait playfield fits on screen");
+            bool touchControlsFit = true;
+            foreach (RectTransform button in canvas.Find("Controls"))
+            {
+                button.GetWorldCorners(corners);
+                touchControlsFit &= corners[0].x >= 0 && corners[2].x <= Screen.width &&
+                    corners[0].y >= 0 && corners[2].y <= Screen.height && corners[2].y - corners[0].y >= 48;
+            }
+            Check(touchControlsFit, "Every gameplay button fits and is at least 48 pixels high in a compact phone viewport");
             gm.ReturnToMenu(); yield return new WaitForSecondsRealtime(.3f); yield return Capture("05b-portrait-menu");
             var card=canvas.Find("StartMenu/StartCard").GetComponent<RectTransform>(); card.GetWorldCorners(corners);
             Check(corners[0].x>=0&&corners[2].x<=Screen.width&&corners[0].y>=0&&corners[2].y<=Screen.height,"Portrait difficulty menu and its buttons fit on screen");

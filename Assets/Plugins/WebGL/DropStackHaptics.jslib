@@ -1,4 +1,7 @@
 mergeInto(LibraryManager.library, {
+  DS_RequestFullscreen: function () {
+    if (typeof window.dropStackRequestFullscreen === 'function') window.dropStackRequestFullscreen();
+  },
   DS_HapticsAvailable: function () { return typeof navigator.vibrate === 'function' ? 1 : 0; },
   DS_ReducedMotion: function () { return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : 0; },
   DS_Vibrate: function (duration) {

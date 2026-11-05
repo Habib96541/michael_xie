@@ -221,8 +221,14 @@ namespace DropStack.Game
 
         public void SetSoftDrop(bool active)
         {
-            touchSoftDrop = active && InputEnabled;
+            bool wasHeld = touchSoftDrop;
+            touchSoftDrop = active && InputEnabled && HasActivePiece && board != null && !board.IsClearingLines;
             isSoftDropping = touchSoftDrop;
+            if (touchSoftDrop && !wasHeld)
+            {
+                dropTimer = 0f;
+                DropOneCell();
+            }
         }
 
         public void ExecuteHardDrop()
@@ -319,23 +325,7 @@ namespace DropStack.Game
             if (dropTimer >= interval)
             {
                 dropTimer = 0f;
-                // Try drop 1 step
-                Vector2Int nextPos = BoardPosition + Vector2Int.down;
-                if (board.IsValidPosition(CurrentShape, nextPos, RotationIndex))
-                {
-                    BoardPosition = nextPos;
-                    isGrounded = false;
-                    if (isSoftDropping && scoreManager != null)
-                    {
-                        scoreManager.RegisterDropScore(1, false);
-                        DropStackAudioManager.Instance?.PlaySoftDrop();
-                    }
-                    OnPieceMoved?.Invoke(CurrentShape, BoardPosition, RotationIndex);
-                }
-                else
-                {
-                    isGrounded = true;
-                }
+                DropOneCell();
             }
 
             // Check grounded state
@@ -353,6 +343,21 @@ namespace DropStack.Game
             {
                 lockTimer = 0f;
             }
+        }
+
+        private void DropOneCell()
+        {
+            Vector2Int nextPosition = BoardPosition + Vector2Int.down;
+            if (!board.IsValidPosition(CurrentShape, nextPosition, RotationIndex)) return;
+
+            BoardPosition = nextPosition;
+            isGrounded = false;
+            if (isSoftDropping && scoreManager != null)
+            {
+                scoreManager.RegisterDropScore(1, false);
+                DropStackAudioManager.Instance?.PlaySoftDrop();
+            }
+            OnPieceMoved?.Invoke(CurrentShape, BoardPosition, RotationIndex);
         }
 
         private void ResetLockDelay()

@@ -4,7 +4,7 @@ A Unity 6.3 block puzzle for the browser. Play a 90-second sprint with rising sp
 
 The arcade presentation pairs glossy blocks with sharp beveled panels, a block-built logo, a subtle grid backdrop, and bold fixed-weight typography. Includes animated menus, clear/target/gear notifications, rolling scores, combo punches, a double-beat warning timer, stack-height and speed meters, synthesized sound effects and music. The HUD and menus adapt to landscape, portrait, and safe areas. Motion, screen shake, sound, music, and supported-device vibration can be changed in pause/settings; the initial motion setting respects the browser's reduced-motion preference.
 
-On iPhones the web player uses a fixed tall **1:2.17 width-to-height** frame. It fits inside the visible browser area and the notch/home-indicator safe area, with margins where needed to keep the entire game visible. It recalculates when Safari's browser bars change, the device rotates, or fullscreen changes. Compact phone viewports share this layout; desktop and full-size iPad views remain responsive.
+The web player fills the visible browser area inside the device safe areas. Tap **Let's Play** to start a run and enter fullscreen in browsers that support it. On iPhone, open the game in Safari and use **Share → Add to Home Screen → Open as Web App** to launch without the browser bars. The portrait controls span the available width and respond as soon as you press them.
 
 ## Difficulty
 
@@ -31,7 +31,7 @@ Open `Assets/Scenes/SampleScene.unity` in Unity **6000.3.10f1** and press Play. 
 
 Published on Cloudflare Pages: [Play Drop Stack](https://drop-stack.pages.dev/).
 
-Current web release: [versioned deployment](https://14914c28.drop-stack.pages.dev/), including the 1:2.17 iPhone portrait frame.
+Current web release **1.1.1** includes fullscreen on Play and larger touch controls. [Versioned deployment](https://239ece2b.drop-stack.pages.dev/).
 
 To upload a rebuilt game to the same project, run `Tools/Deploy-Cloudflare.ps1 -ProjectName drop-stack` from PowerShell. The script packages the build, includes Cloudflare's hosting headers and font licenses, and deploys `Builds/WebGL`. Cloudflare sign-in uses Wrangler and stays outside the project files.
 
@@ -49,9 +49,9 @@ The template includes the block logo, loading progress, retry/error messages, ke
 
 `Drop Stack > Run Verification Tests` runs nine groups covering shapes/randomization, board collisions, non-adjacent row collapse and buffer rows, paused controls, speed escalation, mode-specific pacing/bags/records, scoring/combos, and serialized scene references.
 
-A development player built with `DropStack.Editor.DropStackWebBuild.BuildSmokePlayer` can run with `--smoke-test`. Its 33 checks cover actual menu callbacks, all three difficulty modes, rendered pieces, hold limits, touch auto-repeat, a real perfect clear, rolling-score settlement, pause/restart/continue, popup/HUD overlap, portrait fit, timer expiry and replay. Results and screenshots are written to `Builds/Verification`. `VerifyAndBuildSmoke` rebuilds the scene, runs the editor checks, and builds this player in one step.
+A development player built with `DropStack.Editor.DropStackWebBuild.BuildSmokePlayer` can run with `--smoke-test`. Its checks cover menu callbacks, difficulty modes, touch taps and holds, compact phone controls, scoring, pause and restart, and replay. Results and screenshots are written to `Builds/Verification`. `VerifyAndBuildSmoke` rebuilds the scene, runs the editor checks, and builds this player in one step.
 
-After a release build, `node Tools/Verify-Web.cjs` checks template/bundle syntax, WebAssembly validity, logo assets, the guarded vibration bridge, and the portrait viewport across ten phone sizes with safe-area, browser-toolbar, and rotation cases.
+After a release build, `node Tools/Verify-Web.cjs` checks template and bundle syntax, WebAssembly validity, viewport resizing, fullscreen activation, and vibration.
 
 ## Fonts and assets
 

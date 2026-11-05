@@ -35,6 +35,12 @@ namespace DropStack.UI
             Handheld.Vibrate();
 #endif
         }
+        public static void RequestFullscreen()
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            DS_RequestFullscreen();
+#endif
+        }
         public static void Cancel()
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -45,6 +51,7 @@ namespace DropStack.UI
         [DllImport("__Internal")] private static extern int DS_HapticsAvailable();
         [DllImport("__Internal")] private static extern int DS_ReducedMotion();
         [DllImport("__Internal")] private static extern void DS_Vibrate(int duration);
+        [DllImport("__Internal")] private static extern void DS_RequestFullscreen();
 #endif
     }
 }

@@ -41,48 +41,57 @@ namespace DropStack.UI
 
             if (btnHardDrop != null)
             {
-                btnHardDrop.onClick.RemoveAllListeners();
-                btnHardDrop.onClick.AddListener(() => controller?.ExecuteHardDrop());
+                BindImmediatePress(btnHardDrop, () => controller?.ExecuteHardDrop());
             }
 
             if (btnRotateCW != null)
             {
-                btnRotateCW.onClick.RemoveAllListeners();
-                btnRotateCW.onClick.AddListener(() => controller?.Rotate(1));
+                BindImmediatePress(btnRotateCW, () => controller?.Rotate(1));
             }
 
             if (btnRotateCCW != null)
             {
-                btnRotateCCW.onClick.RemoveAllListeners();
-                btnRotateCCW.onClick.AddListener(() => controller?.Rotate(-1));
+                BindImmediatePress(btnRotateCCW, () => controller?.Rotate(-1));
             }
 
             if (btnHold != null)
             {
-                btnHold.onClick.RemoveAllListeners();
-                btnHold.onClick.AddListener(() => controller?.RequestHold());
+                BindImmediatePress(btnHold, () => controller?.RequestHold());
             }
 
         }
 
+        private static void BindImmediatePress(Button button, UnityEngine.Events.UnityAction action)
+        {
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(action);
+            AddTrigger(button, EventTriggerType.PointerDown, data =>
+            {
+                if (data is not PointerEventData pointer || pointer.button != PointerEventData.InputButton.Left || !button.IsInteractable()) return;
+
+                // A touch or mouse press acts immediately. Suppress the second action on release.
+                pointer.eligibleForClick = false;
+                button.onClick.Invoke();
+            });
+        }
+
         private void AddPointerDownUp(Button btn, System.Action onDown, System.Action onUp)
         {
-            EventTrigger trigger = btn.gameObject.GetComponent<EventTrigger>();
-            if (trigger == null) trigger = btn.gameObject.AddComponent<EventTrigger>();
-            trigger.triggers.Clear();
+            AddTrigger(btn, EventTriggerType.PointerDown, data =>
+            {
+                if (data is PointerEventData pointer && pointer.button == PointerEventData.InputButton.Left && btn.IsInteractable()) onDown();
+            });
+            AddTrigger(btn, EventTriggerType.PointerUp, _ => onUp());
+            AddTrigger(btn, EventTriggerType.PointerExit, _ => onUp());
+        }
 
-            // PointerDown
-            var entryDown = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
-            entryDown.callback.AddListener((data) => onDown?.Invoke());
-            trigger.triggers.Add(entryDown);
-
-            // PointerUp
-            var entryUp = new EventTrigger.Entry { eventID = EventTriggerType.PointerUp };
-            entryUp.callback.AddListener((data) => onUp?.Invoke());
-            trigger.triggers.Add(entryUp);
-            var entryExit = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
-            entryExit.callback.AddListener((data) => onUp?.Invoke());
-            trigger.triggers.Add(entryExit);
+        private static void AddTrigger(Button button, EventTriggerType type, UnityEngine.Events.UnityAction<BaseEventData> callback)
+        {
+            EventTrigger trigger = button.GetComponent<EventTrigger>();
+            if (trigger == null) trigger = button.gameObject.AddComponent<EventTrigger>();
+            var entry = new EventTrigger.Entry { eventID = type };
+            entry.callback.AddListener(callback);
+            trigger.triggers.Add(entry);
         }
     }
 }

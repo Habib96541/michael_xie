@@ -4,14 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071321">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Drop Stack">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="Drop Stack. Pick Noob, Neutral or Pro. Clear rows, chain combos and chase your best in a 90-second arcade sprint.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Drop Stack | Drop in. Stack high.</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050d17;color:#ecf6ff;font-family:system-ui,sans-serif}body{position:fixed;inset:0}#game{position:relative;width:100%;height:100%;height:100dvh}canvas{display:block;width:100%;height:100%;outline:none;touch-action:none}#loading{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 50% 45%,#102d3e,#050d17 75%);transition:opacity .25s}#loading:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(#5ce2ff05 1px,transparent 1px),linear-gradient(90deg,#5ce2ff05 1px,transparent 1px);background-size:48px 48px}.eyebrow{color:#88adbf;font-size:11px;font-weight:700;letter-spacing:.22em;margin-bottom:28px}#logo{display:block;width:min(390px,76vw);height:auto;filter:drop-shadow(0 10px 18px #00101f)}.tagline{font-size:14px;font-weight:600;color:#b0c6d4;margin:24px 0 32px}.track{width:min(300px,72vw);padding:4px;border:1px solid #285064;background:#071724;clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px)}#progress{height:10px;width:0;background:repeating-linear-gradient(90deg,#15d9fa 0,#15d9fa 17px,#0d4458 17px,#0d4458 20px);transition:width .2s}#status{font-size:11px;font-weight:650;color:#89b1c6;margin-top:14px;letter-spacing:.04em}.tiles{display:flex;gap:5px;margin-top:30px}.tiles span{display:block;width:14px;height:14px;border:2px solid #a8f1ff;background:#12aaca;box-shadow:inset -2px -2px #05677f,0 3px #023143;animation:bounce 1.5s ease-in-out infinite}.tiles span:nth-child(2){animation-delay:.1s}.tiles span:nth-child(3){animation-delay:.2s;border-color:#c5fb9b;background:#7bc82c;box-shadow:inset -2px -2px #426c19,0 3px #243c0d}.tiles span:nth-child(4){animation-delay:.3s;border-color:#ffe294;background:#e5a21b;box-shadow:inset -2px -2px #8c5b0b,0 3px #503300}@keyframes bounce{0%,60%,100%{transform:translateY(0)}25%{transform:translateY(-7px)}}#error{display:none;max-width:460px;margin:22px;text-align:center;color:#ffabbc;line-height:1.6;font-size:14px}#retry,#online{display:none;position:relative;margin-top:12px;padding:12px 26px;border:1px solid #24cde9;background:#0d3549;color:#effbff;font-size:13px;font-weight:800;text-decoration:none;cursor:pointer}#fullscreen{position:absolute;right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));width:32px;height:32px;border:1px solid #285064;background:#071724b8;color:#8fcede;z-index:1;font-size:19px;cursor:pointer;opacity:.65}#fullscreen:hover{opacity:1}button:focus-visible,a:focus-visible{outline:2px solid #15dcff;outline-offset:4px}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}@media(max-height:520px){#logo{width:230px}.tagline{margin:12px 0 18px}.eyebrow{margin-bottom:14px}.tiles{margin-top:18px}}
 #viewport{position:fixed;left:0;top:0;width:100%;height:100%;height:100dvh;display:flex;align-items:center;justify-content:center;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);overflow:hidden;background:#050d17}
-#game{flex:0 0 auto;height:100%;max-width:100%;max-height:100%;overflow:hidden}
-#fullscreen{right:10px;bottom:10px}
+#game{flex:0 0 auto;width:100%;height:100%;overflow:hidden}
+#fullscreen{right:10px;bottom:10px;width:48px;height:48px;touch-action:manipulation}
+@media(max-width:600px){#fullscreen{display:none}}
 #logo{max-width:80%}.track{max-width:78%}.tagline{padding:0 10px;text-align:center}#status{max-width:90%;text-align:center}#retry,#online{max-width:90%}
 </style>
 </head>
@@ -40,7 +44,6 @@ else{
 canvas.addEventListener('pointerdown',()=>canvas.focus());canvas.addEventListener('contextmenu',event=>event.preventDefault());
 canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();fail('Graphics were interrupted. Reload to start a fresh run.');});
 window.addEventListener('keydown',event=>{if(document.activeElement===canvas&&['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space'].includes(event.code))event.preventDefault();},{passive:false});
-document.getElementById('fullscreen').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen?.();else document.getElementById('viewport').requestFullscreen?.();};
 </script>
 </body>
 </html>
