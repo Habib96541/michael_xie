@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Screen = UnityEngine.Device.Screen;
 
 /// <summary>
 /// Round flow for Chest Shuffle 3D: place a bet, watch the three chests
@@ -57,7 +58,7 @@ public sealed class ChestShuffleGame : MonoBehaviour
     float punch;
     float cameraDistance;
     float cameraDistanceVelocity;
-    bool cameraDistanceInitialized;
+    float cameraAspect;
     int hoverChest = -1;
     string toast = string.Empty;
     float toastTime = -100f;
@@ -83,9 +84,20 @@ public sealed class ChestShuffleGame : MonoBehaviour
     public float ResultRollProgress => phase == Phase.Result ? Mathf.Clamp01(PhaseAge / Mathf.Max(0.1f, resultRollSeconds)) : 0f;
     public bool ResultReady => phase == Phase.Result && ResultRollProgress >= 1f;
     public int HoveredChest => hoverChest;
+    public bool UsesTouch { get; private set; }
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    static extern bool ChestShuffleUsesTouch();
+#endif
 
     void Awake()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        UsesTouch = ChestShuffleUsesTouch();
+#else
+        UsesTouch = UnityEngine.Device.Application.isMobilePlatform;
+#endif
         cam = Camera.main;
         hud = GetComponent<ChestHud>();
         audioFeedback = GetComponent<ChestShuffleAudio>();
@@ -103,7 +115,7 @@ public sealed class ChestShuffleGame : MonoBehaviour
         Input.simulateMouseWithTouches = true;
         phase = Phase.Idle;
         phaseStart = time;
-        Say("Choose a stake, then press PLAY.");
+        Say("Choose a stake to play.");
     }
 
     void Update()
@@ -244,7 +256,7 @@ public sealed class ChestShuffleGame : MonoBehaviour
         phase = Phase.Idle;
         phaseStart = time;
         PickAffordableBet();
-        Say("Choose a stake, then press PLAY.");
+        Say("Choose a stake to play.");
     }
 
     public void PickBySlot(int slot)
@@ -320,7 +332,7 @@ public sealed class ChestShuffleGame : MonoBehaviour
             SnapToSlots();
             phase = Phase.Picking;
             phaseStart = time;
-            Say("Pick a chest \u2014 click it or press 1, 2 or 3.");
+            Say(UsesTouch ? string.Empty : "Pick a chest \u2014 click it or press 1, 2 or 3.");
             return;
         }
 
@@ -424,11 +436,12 @@ public sealed class ChestShuffleGame : MonoBehaviour
     void UpdateHover()
     {
         int hovered = -1;
-        bool blocked = false;
         Vector2 pointer = Input.mousePosition;
         bool pointerDown = Input.GetMouseButtonDown(0);
-        if (Input.touchCount > 0)
+        bool hasTouch = Input.touchCount > 0;
+        if (hasTouch)
         {
+            pointerDown = false;
             for (int i = 0; i < Input.touchCount; i++)
             {
                 Touch touch = Input.GetTouch(i);
@@ -439,9 +452,9 @@ public sealed class ChestShuffleGame : MonoBehaviour
             }
         }
 
-        if (phase == Phase.Picking && cam != null)
+        if (phase == Phase.Picking && cam != null && (pointerDown || (!UsesTouch && !hasTouch)))
         {
-            blocked = hud != null && hud.PointerOverUi(pointer);
+            bool blocked = hud != null && hud.PointerOverUi(pointer);
             if (!blocked)
             {
                 Ray ray = cam.ScreenPointToRay(pointer);
@@ -488,22 +501,27 @@ public sealed class ChestShuffleGame : MonoBehaviour
             if (cam == null) return;
         }
 
-        float aspect = Mathf.Max(0.35f, cam.aspect);
+        float aspect = Mathf.Max(0.30f, cam.aspect);
+        bool compactLandscape = hud != null && hud.CompactLandscape;
+        bool resized = !Mathf.Approximately(aspect, cameraAspect);
+        cameraAspect = aspect;
         float targetFov = aspect < 1.05f ? 52f : 38f;
-        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFov, dt * 4f);
+        cam.fieldOfView = resized ? targetFov : Mathf.Lerp(cam.fieldOfView, targetFov, dt * 4f);
 
         float tanV = Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad);
         float tanH = tanV * aspect;
         bool showingPrizeChest = (phase == Phase.Reveal || phase == Phase.Result) && chosen >= 0;
-        float targetDistance = Mathf.Max(5.05f / Mathf.Max(0.08f, tanH), 2.0f / Mathf.Max(0.08f, tanV))
-            + (showingPrizeChest ? 5.5f : 1.0f) - (showingPrizeChest ? Mathf.Min(punch, 0.08f) : punch);
+        float targetDistance = Mathf.Max(5.05f / Mathf.Max(0.08f, tanH),
+            (compactLandscape ? 3.35f : 2f) / Mathf.Max(0.08f, tanV))
+            + (showingPrizeChest ? (UsesTouch ? 1.4f : 5.5f) : 1f)
+            - (showingPrizeChest ? Mathf.Min(punch, 0.08f) : punch);
 
         Vector3 pivot = new Vector3(0f, 0.85f, 0f);
         Vector3 direction = new Vector3(0f, 0.46f, -1f).normalized;
-        if (!cameraDistanceInitialized)
+        if (resized)
         {
             cameraDistance = targetDistance;
-            cameraDistanceInitialized = true;
+            cameraDistanceVelocity = 0f;
         }
         else
         {
@@ -512,7 +530,7 @@ public sealed class ChestShuffleGame : MonoBehaviour
                 smoothTime, Mathf.Infinity, dt);
         }
 
-        float mouseX = Screen.width > 0 ? Input.mousePosition.x / Screen.width - 0.5f : 0f;
+        float mouseX = !UsesTouch && Screen.width > 0 ? Input.mousePosition.x / Screen.width - 0.5f : 0f;
         float yaw = Mathf.Clamp(mouseX, -0.5f, 0.5f) * 3f;
         Quaternion orbit = Quaternion.Euler(0f, yaw, 0f);
         Vector3 position = pivot + orbit * (direction * cameraDistance);

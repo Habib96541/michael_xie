@@ -348,7 +348,7 @@ public static class ProjectSetup
     [MenuItem("Chest Shuffle/Build WebGL", priority = 40)]
     public static void BuildWebGL()
     {
-        Setup();
+        Validate();
 
         PlayerSettings.stripEngineCode = false;
         PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Disabled;
@@ -371,6 +371,39 @@ public static class ProjectSetup
         PatchResponsivePage(options.locationPathName);
         BuildStandaloneHtml(options.locationPathName);
         Debug.Log("WebGL build complete: " + report.summary.outputPath + " (" + report.summary.totalSize + " bytes)");
+    }
+
+    [MenuItem("Chest Shuffle/Export iOS for Device", priority = 41)]
+    public static void ExportIOSDevice() => ExportIOS(iOSSdkVersion.DeviceSDK, "Build/iOS");
+
+    [MenuItem("Chest Shuffle/Export iOS for Simulator", priority = 42)]
+    public static void ExportIOSSimulator() => ExportIOS(iOSSdkVersion.SimulatorSDK, "Build/iOS-Simulator");
+
+    static void ExportIOS(iOSSdkVersion sdk, string outputPath)
+    {
+        if (!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.iOS, BuildTarget.iOS))
+            throw new InvalidOperationException("Install iOS Build Support for Unity " + Application.unityVersion + ".");
+
+        Validate();
+        PlayerSettings.SetScriptingBackend(NamedBuildTarget.iOS, ScriptingImplementation.IL2CPP);
+        iOSSdkVersion previousSdk = PlayerSettings.iOS.sdkVersion;
+        try
+        {
+            PlayerSettings.iOS.sdkVersion = sdk;
+            var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
+            {
+                scenes = new[] { ScenePath },
+                locationPathName = outputPath,
+                target = BuildTarget.iOS
+            });
+            if (report.summary.result != BuildResult.Succeeded)
+                throw new InvalidOperationException("iOS export failed: " + report.summary.result);
+            Debug.Log("Xcode project exported to " + report.summary.outputPath);
+        }
+        finally
+        {
+            PlayerSettings.iOS.sdkVersion = previousSdk;
+        }
     }
 
     static void BuildStandaloneHtml(string outputPath)
@@ -421,8 +454,10 @@ createUnityInstance(canvas,{dataUrl,frameworkUrl,codeUrl,devicePixelRatio:dpr,st
             "      updateUnityViewport(); window.addEventListener('resize', updateUnityViewport); window.addEventListener('orientationchange', updateUnityViewport); if (window.visualViewport) { window.visualViewport.addEventListener('resize', updateUnityViewport); window.visualViewport.addEventListener('scroll', updateUnityViewport); }");
         html = html.Replace("if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {",
             "if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/i.test(navigator.userAgent))) {");
-        html = html.Replace("#unity-fullscreen-container,.unity-mobile #unity-fullscreen-container{position:absolute;inset:0;width:100vw!important;height:100vh!important}",
-            "#unity-fullscreen-container,.unity-mobile #unity-fullscreen-container{position:absolute;inset:0;width:100%!important;height:100%!important}");
+        html = html.Replace("var meta = document.createElement('meta');", "")
+            .Replace("meta.name = 'viewport';", "")
+            .Replace("meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';", "")
+            .Replace("document.getElementsByTagName('head')[0].appendChild(meta);", "");
         html = html.Replace(
             "        canvas.className = \"unity-mobile\";",
             "        canvas.className = \"unity-mobile\";\n        config.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);");
@@ -433,7 +468,7 @@ createUnityInstance(canvas,{dataUrl,frameworkUrl,codeUrl,devicePixelRatio:dpr,st
         File.AppendAllText(cssPath,
             "\nhtml,body{width:100%;height:100%;height:100dvh;margin:0;padding:0;overflow:hidden;background:#07050c;touch-action:none;overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}" +
             "#unity-container,#unity-container.unity-desktop,#unity-container.unity-mobile{position:fixed;left:var(--viewport-left,0px)!important;top:var(--viewport-top,0px)!important;right:auto!important;bottom:auto!important;width:var(--viewport-width,100vw)!important;height:var(--viewport-height,100dvh)!important;transform:none;overflow:hidden}" +
-            "#unity-fullscreen-container,.unity-mobile #unity-fullscreen-container{position:absolute;inset:0;width:100vw!important;height:100vh!important}" +
+            "#unity-fullscreen-container,.unity-mobile #unity-fullscreen-container{position:absolute;inset:0;width:100%!important;height:100%!important}" +
             "#unity-canvas,#unity-canvas.unity-mobile{position:absolute;left:env(safe-area-inset-left,0px);top:env(safe-area-inset-top,0px);width:calc(100% - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px));height:calc(100% - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));display:block;background:#07050c;outline:none;touch-action:none}" +
             "#unity-footer{display:none}#unity-warning{z-index:20}\n");
     }

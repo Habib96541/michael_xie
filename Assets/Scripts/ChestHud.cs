@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Screen = UnityEngine.Device.Screen;
 
 /// <summary>
 /// Screen-space overlay for Chest Shuffle 3D: title, animated bankroll,
@@ -42,6 +43,11 @@ public sealed class ChestHud : MonoBehaviour
     float viewH = 900f;
     float pad = 28f;
     bool portrait;
+    bool compactLandscape;
+    Vector2 safeOrigin;
+    Rect screenRect;
+    Rect lastSafeArea;
+    Vector2Int lastScreenSize;
 
     Rect titleRect, subtitleRect, balanceRect, resetRect, dockRect, playRect, statusRect, toastRect;
     Rect resultButtonRect;
@@ -60,6 +66,17 @@ public sealed class ChestHud : MonoBehaviour
     float flash;
     ChestShuffleGame.Phase observedPhase;
     bool phaseReady;
+
+    public bool CompactLandscape
+    {
+        get
+        {
+            ComputeLayout();
+            return compactLandscape;
+        }
+    }
+
+    void Awake() => game = GetComponent<ChestShuffleGame>();
 
     void Update()
     {
@@ -126,7 +143,7 @@ public sealed class ChestHud : MonoBehaviour
 
         Matrix4x4 previousMatrix = GUI.matrix;
         Color previousColor = GUI.color;
-        GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(scale, scale, 1f));
+        GUI.matrix = Matrix4x4.TRS(safeOrigin, Quaternion.identity, new Vector3(scale, scale, 1f));
         GUI.color = Color.white;
 
         DrawAtmosphere();
@@ -146,61 +163,91 @@ public sealed class ChestHud : MonoBehaviour
         GUI.matrix = previousMatrix;
     }
 
-    public bool PointerOverUi()
-    {
-        if (scale <= 0f) return false;
-        return PointerOverUi(Input.mousePosition);
-    }
-
     public bool PointerOverUi(Vector2 screenPosition)
     {
-        if (scale <= 0f) return false;
-        Vector2 point = new Vector2(screenPosition.x / scale, (Screen.height - screenPosition.y) / scale);
-        return dockRect.Contains(point) || resetRect.Contains(point) || playRect.Contains(point) || resultButtonRect.Contains(point);
+        ComputeLayout();
+        Vector2 point = HudPoint(screenPosition);
+        return dockRect.Contains(point) || resetRect.Contains(point);
     }
+
+    Vector2 HudPoint(Vector2 screenPosition) =>
+        (new Vector2(screenPosition.x, Screen.height - screenPosition.y) - safeOrigin) / scale;
 
     // ---------------------------------------------------------------- layout
 
     void ComputeLayout()
     {
-        float width = Mathf.Max(1f, Screen.width);
-        float height = Mathf.Max(1f, Screen.height);
-        portrait = width < height * 0.95f;
+        var screenSize = new Vector2Int(Screen.width, Screen.height);
+        Rect safeArea = Screen.safeArea;
+        if (safeArea.width <= 0f || safeArea.height <= 0f)
+            safeArea = new Rect(0f, 0f, Mathf.Max(1, screenSize.x), Mathf.Max(1, screenSize.y));
+        if (screenSize == lastScreenSize && safeArea == lastSafeArea) return;
+        lastScreenSize = screenSize;
+        lastSafeArea = safeArea;
 
+        float width = safeArea.width;
+        float height = safeArea.height;
+        portrait = width < height * 1.12f;
+        compactLandscape = !portrait && (game.UsesTouch || width > height * 1.95f);
         if (portrait)
         {
-            scale = Mathf.Min(width / 460f, height / 900f);
+            scale = Mathf.Min(width / 390f, height / 690f);
+            pad = 16f;
+        }
+        else if (compactLandscape)
+        {
+            scale = Mathf.Min(width / 960f, height / 440f);
             pad = 16f;
         }
         else
         {
-            scale = Mathf.Max(0.78f, Mathf.Min(width / 1440f, height / 900f));
+            scale = Mathf.Min(width / 1440f, height / 900f);
             pad = 28f;
         }
-        scale = Mathf.Max(0.15f, scale);
+        safeOrigin = new Vector2(safeArea.xMin, screenSize.y - safeArea.yMax);
+        screenRect = new Rect(-safeOrigin / scale, (Vector2)screenSize / scale);
         viewW = width / scale;
         viewH = height / scale;
 
         if (portrait)
         {
-            titleRect = new Rect(pad, 16f, viewW - pad * 2f, 42f);
-            subtitleRect = new Rect(pad, 56f, viewW - pad * 2f, 18f);
-            balanceRect = new Rect(pad, 80f, viewW - pad * 2f - 82f, 58f);
-            resetRect = new Rect(viewW - pad - 72f, 88f, 72f, 42f);
-            statusRect = new Rect(pad, balanceRect.yMax + 14f, viewW - pad * 2f, 94f);
+            titleRect = new Rect(pad, 8f, viewW - pad * 2f, 40f);
+            subtitleRect = new Rect(pad, 46f, viewW - pad * 2f, 18f);
+            balanceRect = new Rect(pad, 70f, viewW - pad * 2f - 82f, 54f);
+            resetRect = new Rect(viewW - pad - 72f, 70f, 72f, 54f);
+            statusRect = new Rect(pad, balanceRect.yMax + 15f, viewW - pad * 2f, 78f);
 
-            float dockH = 252f;
-            dockRect = new Rect(8f, viewH - dockH - 8f, viewW - 16f, dockH);
-            float inner = 16f;
+            const float dockH = 222f;
+            float dockW = Mathf.Min(viewW - 16f, 520f);
+            dockRect = new Rect((viewW - dockW) * 0.5f, viewH - dockH - 8f, dockW, dockH);
+            const float inner = 14f;
             float chipW = (dockRect.width - inner * 2f - 20f) / 3f;
             for (int i = 0; i < chipRects.Length; i++)
             {
                 int row = i / 3;
                 int column = i % 3;
-                chipRects[i] = new Rect(dockRect.x + inner + column * (chipW + 10f), dockRect.y + 48f + row * 56f, chipW, 46f);
+                float offset = row == 0 ? 0f : (chipW + 10f) * 0.5f;
+                chipRects[i] = new Rect(dockRect.x + inner + offset + column * (chipW + 10f),
+                    dockRect.y + 28f + row * 60f, chipW, 54f);
             }
-            playRect = new Rect(dockRect.x + inner, dockRect.yMax - 72f, dockRect.width - inner * 2f, 56f);
-            toastRect = new Rect(pad, dockRect.y - 52f, viewW - pad * 2f, 40f);
+            playRect = new Rect(dockRect.x + inner, dockRect.yMax - 70f, dockRect.width - inner * 2f, 60f);
+            toastRect = new Rect(dockRect.x, dockRect.y - 43f, dockRect.width, 35f);
+        }
+        else if (compactLandscape)
+        {
+            titleRect = new Rect(pad, 7f, 345f, 36f);
+            subtitleRect = new Rect(pad, 42f, 345f, 16f);
+            balanceRect = new Rect(viewW - pad - 190f, 8f, 190f, 58f);
+            resetRect = new Rect(balanceRect.x - 80f, 8f, 70f, 58f);
+            statusRect = new Rect(viewW * 0.5f - 255f, 72f, 510f, 62f);
+
+            float dockW = Mathf.Min(viewW - 24f, 1020f);
+            dockRect = new Rect((viewW - dockW) * 0.5f, viewH - 98f, dockW, 90f);
+            playRect = new Rect(dockRect.xMax - 12f - 205f, dockRect.y + 22f, 205f, 58f);
+            float chipW = (playRect.x - dockRect.x - 12f - 56f) / chipRects.Length;
+            for (int i = 0; i < chipRects.Length; i++)
+                chipRects[i] = new Rect(dockRect.x + 12f + i * (chipW + 10f), playRect.y, chipW, playRect.height);
+            toastRect = new Rect(viewW * 0.5f - 255f, dockRect.y - 34f, 510f, 28f);
         }
         else
         {
@@ -233,16 +280,18 @@ public sealed class ChestHud : MonoBehaviour
     {
         GUI.color = Color.white;
         if (vignetteTex != null)
-            GUI.DrawTexture(new Rect(0f, 0f, viewW, viewH), vignetteTex, ScaleMode.StretchToFill, true);
+            GUI.DrawTexture(screenRect, vignetteTex, ScaleMode.StretchToFill, true);
         if (topFadeTex != null)
-            GUI.DrawTexture(new Rect(0f, 0f, viewW, portrait ? 160f : 190f), topFadeTex, ScaleMode.StretchToFill, true);
+            GUI.DrawTexture(new Rect(screenRect.x, screenRect.y, screenRect.width, compactLandscape ? 110f : 190f),
+                topFadeTex, ScaleMode.StretchToFill, true);
         if (bottomFadeTex != null)
-            GUI.DrawTexture(new Rect(0f, viewH - 300f, viewW, 300f), bottomFadeTex, ScaleMode.StretchToFill, true);
+            GUI.DrawTexture(new Rect(screenRect.x, screenRect.yMax - 300f, screenRect.width, 300f),
+                bottomFadeTex, ScaleMode.StretchToFill, true);
     }
 
     void DrawHeader()
     {
-        Text(titleRect, "CHEST SHUFFLE", displayFont, portrait ? 28 : 42, Gold, TextAnchor.MiddleLeft, true);
+        Text(titleRect, "CHEST SHUFFLE", displayFont, portrait || compactLandscape ? 28 : 42, Gold, TextAnchor.MiddleLeft, true);
         Text(subtitleRect, "THREE CHESTS  \u00B7  ONE PICK  \u00B7  UP TO 10\u00D7", bodyFont, portrait ? 9 : 11, Dim, TextAnchor.MiddleLeft, false);
 
         bool pulse = balancePulse > 0.01f;
@@ -291,7 +340,7 @@ public sealed class ChestHud : MonoBehaviour
         string headline;
         string subtitle;
         Color tone;
-        int size = portrait ? 25 : 34;
+        int size = portrait || compactLandscape ? 25 : 34;
 
         bool outOfCoins = game.NeedsTopUp;
         switch (game.CurrentPhase)
@@ -303,7 +352,7 @@ public sealed class ChestHud : MonoBehaviour
                 break;
             case ChestShuffleGame.Phase.Picking:
                 headline = "PICK A CHEST";
-                subtitle = "Click any chest \u2014 or press 1, 2 or 3.";
+                subtitle = "Tap a chest or its number.";
                 tone = Teal;
                 break;
             case ChestShuffleGame.Phase.Reveal:
@@ -321,7 +370,7 @@ public sealed class ChestHud : MonoBehaviour
                 else
                 {
                     headline = "PLACE YOUR BET";
-                    subtitle = "Pick a stake, press PLAY, then choose one of three chests.";
+                    subtitle = game.UsesTouch ? "Choose a stake and tap PLAY." : "Pick a stake, press PLAY, then choose one of three chests.";
                     tone = Gold;
                 }
                 break;
@@ -331,12 +380,12 @@ public sealed class ChestHud : MonoBehaviour
         float headlineY = statusRect.y;
         if (game.CurrentPhase == ChestShuffleGame.Phase.Picking)
         {
-            // Keep the phase title above the chest badges. Their numbered prompts
-            // provide the picking instructions, so a second centered subtitle here
-            // only collides with the middle badge on wide screens.
-            headlineY = Mathf.Max(66f, statusRect.y - 34f);
+            if (!portrait && !compactLandscape) headlineY = statusRect.y - 34f;
             Text(new Rect(statusRect.x, headlineY, statusRect.width, headlineH), headline, displayFont, size, tone,
                 TextAnchor.MiddleCenter, true, true);
+            if (game.UsesTouch)
+                Text(new Rect(statusRect.x, headlineY + headlineH - 4f, statusRect.width, 22f),
+                    subtitle, bodyFont, 11, Cream, TextAnchor.MiddleCenter, true);
             return;
         }
 
@@ -367,7 +416,7 @@ public sealed class ChestHud : MonoBehaviour
         float width = Mathf.Min(portrait ? viewW - 40f : 880f, viewW - 40f);
         float headlineH = size * 1.7f;
         float height = headlineH + 30f;
-        float blockY = toastRect.y - 10f - height;
+        float blockY = portrait || compactLandscape ? statusRect.y : toastRect.y - 10f - height;
         Rect block = new Rect(viewW * 0.5f - width * 0.5f, blockY, width, height);
 
         Panel(block, new Color(0.042f, 0.03f, 0.058f, 0.92f),
@@ -382,12 +431,11 @@ public sealed class ChestHud : MonoBehaviour
     {
         float veilAlpha = 0.72f;
         GUI.color = new Color(0.025f, 0.018f, 0.04f, veilAlpha);
-        GUI.DrawTexture(new Rect(0f, 0f, viewW, viewH), Texture2D.whiteTexture, ScaleMode.StretchToFill);
+        GUI.DrawTexture(screenRect, Texture2D.whiteTexture, ScaleMode.StretchToFill);
         GUI.color = Color.white;
 
         float panelWidth = Mathf.Min(portrait ? viewW - 28f : 760f, viewW - 28f);
-        float panelHeight = portrait ? 640f : 560f;
-        if (viewH < panelHeight + 24f) panelHeight = viewH - 24f;
+        float panelHeight = compactLandscape ? 332f : portrait ? 640f : 560f;
         Rect panel = new Rect(viewW * 0.5f - panelWidth * 0.5f, viewH * 0.5f - panelHeight * 0.5f,
             panelWidth, panelHeight);
         Panel(panel, new Color(0.045f, 0.032f, 0.067f, 0.98f), new Color(1f, 0.82f, 0.48f, 0.72f), 24f);
@@ -400,7 +448,8 @@ public sealed class ChestHud : MonoBehaviour
 
         float reelWidth = portrait ? 222f : 252f;
         float reelHeight = portrait ? 218f : 224f;
-        Rect reel = new Rect(panel.center.x - reelWidth * 0.5f, panel.y + 96f, reelWidth, reelHeight);
+        float reelX = compactLandscape ? panel.x + inset : panel.center.x - reelWidth * 0.5f;
+        Rect reel = new Rect(reelX, panel.y + 96f, reelWidth, reelHeight);
         Panel(reel, new Color(0.10f, 0.065f, 0.02f, 1f), new Color(1f, 0.79f, 0.36f, 0.95f), 20f);
         Text(new Rect(reel.x + 8f, reel.y + 4f, reel.width - 16f, 24f), "MULTIPLIER", bodyFont, 11, GoldBright,
             TextAnchor.MiddleCenter, false);
@@ -469,24 +518,26 @@ public sealed class ChestHud : MonoBehaviour
         Color resultTone = MultiplierTable.ColorFor(game.MultiplierAt(game.ChosenChest));
         float resultAlpha = Mathf.Clamp01((progress - 0.78f) / 0.22f);
         resultTone.a = resultAlpha;
-        float verdictY = reel.yMax + 4f;
-        Text(new Rect(panel.x + inset, verdictY, panel.width - inset * 2f, 40f),
+        float detailX = compactLandscape ? reel.xMax + 22f : panel.x + inset;
+        float detailWidth = panel.xMax - inset - detailX;
+        float verdictY = compactLandscape ? reel.y : reel.yMax + 4f;
+        Text(new Rect(detailX, verdictY, detailWidth, 40f),
             MultiplierTable.Verdict(game.MultiplierAt(game.ChosenChest)), displayFont, portrait ? 25 : 29,
             resultTone, TextAnchor.MiddleCenter, true);
 
         Color detailColor = new Color(Cream.r, Cream.g, Cream.b, resultAlpha);
         float laneY = verdictY + 40f;
-        Text(new Rect(panel.x + inset, laneY, panel.width - inset * 2f, 30f),
+        Text(new Rect(detailX, laneY, detailWidth, 30f),
             "Lane " + game.ChosenLane + "  \u00B7  Stake " + MultiplierTable.Coins(game.Stake), bodyFont,
             portrait ? 15 : 17, detailColor, TextAnchor.MiddleCenter, true);
 
         float detailY = laneY + 40f;
-        float cellW = (panel.width - inset * 2f) / 3f;
-        ResultValueCell(new Rect(panel.x + inset, detailY, cellW, 48f), "PAYOUT", MultiplierTable.Coins(game.Payout), GoldBright, resultAlpha);
-        ResultValueCell(new Rect(panel.x + inset + cellW, detailY, cellW, 48f), "NET", (game.Net >= 0 ? "+" : "\u2212") + MultiplierTable.Coins(Mathf.Abs(game.Net)), game.Net >= 0 ? Teal : Pink, resultAlpha);
-        ResultValueCell(new Rect(panel.x + inset + cellW * 2f, detailY, cellW, 48f), "BALANCE", MultiplierTable.Coins(game.Balance), Cream, resultAlpha);
+        float cellW = detailWidth / 3f;
+        ResultValueCell(new Rect(detailX, detailY, cellW, 48f), "PAYOUT", MultiplierTable.Coins(game.Payout), GoldBright, resultAlpha);
+        ResultValueCell(new Rect(detailX + cellW, detailY, cellW, 48f), "NET", (game.Net >= 0 ? "+" : "\u2212") + MultiplierTable.Coins(Mathf.Abs(game.Net)), game.Net >= 0 ? Teal : Pink, resultAlpha);
+        ResultValueCell(new Rect(detailX + cellW * 2f, detailY, cellW, 48f), "BALANCE", MultiplierTable.Coins(game.Balance), Cream, resultAlpha);
 
-        resultButtonRect = new Rect(panel.x + inset, panel.yMax - 78f, panel.width - inset * 2f, 64f);
+        resultButtonRect = new Rect(detailX, panel.yMax - 78f, detailWidth, 64f);
         if (game.ResultReady)
         {
             bool hover = resultButtonRect.Contains(Event.current.mousePosition);
@@ -498,7 +549,7 @@ public sealed class ChestHud : MonoBehaviour
         else
         {
             resultButtonRect = new Rect();
-            Text(new Rect(panel.x + inset, panel.yMax - 74f, panel.width - inset * 2f, 44f),
+            Text(new Rect(detailX, panel.yMax - 74f, detailWidth, 44f),
                 "COUNTING YOUR PRIZE\u2026", bodyFont, portrait ? 14 : 16, Dim, TextAnchor.MiddleCenter, false);
         }
     }
@@ -515,7 +566,7 @@ public sealed class ChestHud : MonoBehaviour
     {
         Panel(dockRect, new Color(0.042f, 0.03f, 0.058f, 0.95f), new Color(1f, 0.79f, 0.38f, 0.28f), 22f);
 
-        if (portrait) DrawDockPortrait();
+        if (portrait || compactLandscape) DrawCompactDock();
         else DrawDockLandscape();
     }
 
@@ -535,10 +586,11 @@ public sealed class ChestHud : MonoBehaviour
         DrawPlayButton();
     }
 
-    void DrawDockPortrait()
+    void DrawCompactDock()
     {
-        Text(new Rect(dockRect.x + 16f, dockRect.y + 18f, 220f, 18f), "YOUR STAKE", bodyFont, 9, Dim, TextAnchor.MiddleLeft, false);
-        Text(new Rect(dockRect.xMax - 200f, dockRect.y + 18f, 184f, 18f),
+        float labelY = dockRect.y + (portrait ? 5f : 2f);
+        Text(new Rect(dockRect.x + 16f, labelY, 150f, 18f), "YOUR STAKE", bodyFont, 9, Dim, TextAnchor.MiddleLeft, false);
+        Text(new Rect(dockRect.xMax - 166f, labelY, 150f, 18f),
             "MAX 10\u00D7 = " + MultiplierTable.Coins(game.Bet * 10), bodyFont, 9, Gold, TextAnchor.MiddleRight, false);
 
         DrawStakeChips();
@@ -611,8 +663,9 @@ public sealed class ChestHud : MonoBehaviour
 
         if (canPress)
         {
-            Text(new Rect(playRect.x, playRect.yMax + 3f, playRect.width, 14f), "PRESS ENTER", bodyFont, 8,
-                new Color(Dim.r, Dim.g, Dim.b, 0.8f), TextAnchor.MiddleCenter, false);
+            if (!game.UsesTouch && !compactLandscape && !portrait)
+                Text(new Rect(playRect.x, playRect.yMax + 3f, playRect.width, 14f), "PRESS ENTER", bodyFont, 8,
+                    new Color(Dim.r, Dim.g, Dim.b, 0.8f), TextAnchor.MiddleCenter, false);
             if (GUI.Button(playRect, GUIContent.none, clickStyle))
             {
                 if (topUp) game.TopUp();
@@ -630,21 +683,28 @@ public sealed class ChestHud : MonoBehaviour
             Vector3 screen = cam.WorldToScreenPoint(game.ChestAnchor(chest));
             if (screen.z <= 0f) continue;
 
-            Vector2 point = new Vector2(screen.x / scale, (Screen.height - screen.y) / scale);
+            Vector2 point = HudPoint(screen);
             if (point.x < -160f || point.x > viewW + 160f || point.y < -160f || point.y > viewH + 160f) continue;
 
             if (game.CanPick)
             {
                 float pulse = 1f + Mathf.Sin(Time.unscaledTime * 4f + chest) * 0.03f;
-                float size = (portrait ? 42f : 50f) * pulse;
+                float size = (game.UsesTouch ? 56f : portrait ? 42f : 50f) * pulse;
                 Rect badge = new Rect(point.x - size * 0.5f, point.y - size * 0.5f, size, size);
                 DrawGlow(new Rect(badge.center.x - size, badge.center.y - size, size * 2f, size * 2f),
                     new Color(1f, 0.76f, 0.30f, 0.24f));
                 Panel(badge, new Color(0.055f, 0.042f, 0.08f, 0.95f), Gold, 24f);
                 Text(badge, (game.SlotOf(chest) + 1).ToString(), displayFont, portrait ? 18 : 22, GoldBright,
                     TextAnchor.MiddleCenter, true);
-                Text(new Rect(badge.x - 40f, badge.yMax + 2f, badge.width + 80f, 14f),
-                    "CLICK OR PRESS " + (game.SlotOf(chest) + 1), bodyFont, 8, Dim, TextAnchor.MiddleCenter, false);
+                if (game.UsesTouch)
+                {
+                    if (GUI.Button(badge, GUIContent.none, clickStyle)) game.PickBySlot(game.SlotOf(chest));
+                }
+                else
+                {
+                    Text(new Rect(badge.x - 40f, badge.yMax + 2f, badge.width + 80f, 14f),
+                        "CLICK OR PRESS " + (game.SlotOf(chest) + 1), bodyFont, 8, Dim, TextAnchor.MiddleCenter, false);
+                }
             }
             else if (game.IsRevealed(chest))
             {
@@ -686,7 +746,7 @@ public sealed class ChestHud : MonoBehaviour
     {
         if (flash <= 0f) return;
         GUI.color = new Color(1f, 0.84f, 0.44f, flash * 0.24f);
-        GUI.DrawTexture(new Rect(0f, 0f, viewW, viewH), Texture2D.whiteTexture);
+        GUI.DrawTexture(screenRect, Texture2D.whiteTexture);
         GUI.color = Color.white;
     }
 

@@ -6,11 +6,11 @@ Everything is procedural: the chests are modelled from primitives at runtime, th
 
 ## Play
 
-Open the project in Unity **6000.6.7f1**, open `Assets/Scenes/ChestShuffle3D.unity` and press Play.
+Open this folder in Unity **6000.6.7f1**, open `Assets/Scenes/ChestShuffle3D.unity` and press Play.
 
 - **Stake:** pick 10, 20, 50, 100 or 250 coins from the dock. You start with 1,000 coins.
 - **Play:** press **PLAY** (or Enter / Space). The stake is taken up front and the three chests swap places four to six times.
-- **Pick:** after the shuffle, click a chest or press **1 / 2 / 3** for its lane.
+- **Pick:** after the shuffle, tap a chest or its number. With a mouse or keyboard, click a chest or press **1 / 2 / 3** for its lane.
 - **Result:** your chest opens first, showing its multiplier. The other two open a moment later so you can see what you missed. Payout = `stake × multiplier`, rounded to whole coins.
 - **Again:** press **PLAY AGAIN** or Enter to run another round with the same stake.
 - **Bankroll:** the balance persists in `PlayerPrefs`. If it drops below 10 coins the button becomes **TOP UP +500**; the small **RESET** button restores 1,000 coins.
@@ -38,11 +38,21 @@ Each round draws three **distinct** values from this weighted pool:
 - **Picking:** hovering a chest raises it, brightens its gold trim and lights a pulsing gold ring beneath it; the lane number floats above.
 - **Reveal:** the chosen chest's lid swings 96° open, its interior light fades in, and the multiplier plate springs up over the chest. A big result punches the camera in, shakes it, and flashes gold for a 10× jackpot.
 - **Arena:** polished floor with gold inlays, stone pedestals, a walled vault with glowing strips, hanging lamps, spotlights, fog and drifting dust motes.
-- **Responsive:** the camera pulls back and the dock restacks for portrait screens; the HUD is built at a 1440×900 reference and scaled to fit.
+- **Responsive:** the HUD fits inside the screen safe area. Portrait stacks the stake controls, landscape puts them in one row, and the camera reframes when the screen rotates.
+
+## iPhone and iPad
+
+The repository includes the two Xcode exports as Git LFS archives. After cloning, run `git lfs pull`, then extract `Build/iOS-Simulator.zip` or `Build/iOS.zip` into `Build/`. Each archive contains its own project folder.
+
+Use **Window → General → Device Simulator** in Unity and select an iPhone or iPad preset to preview the layout and touch controls.
+
+On an Apple Silicon Mac with Xcode, open `Build/iOS-Simulator/Unity-iPhone.xcodeproj` and run the **Unity-iPhone** scheme on an iPhone or iPad simulator. For a physical device, open `Build/iOS/Unity-iPhone.xcodeproj`, select your development team in **Signing & Capabilities**, and select the connected device. The default bundle ID is `com.chestshufflestudio.chestshuffle3d`. Use an ID registered to your team if signing requires one.
+
+To regenerate either Xcode project, install iOS Build Support in Unity Hub, select iOS in **File → Build Profiles**, and choose **Chest Shuffle → Export iOS for Simulator** or **Chest Shuffle → Export iOS for Device**. The simulator export uses the architecture selected in iOS Player Settings. [Unity iOS build instructions](https://docs.unity.com/en-us/engine/6000.6/manual/platform-specific/iphone/ios-building-and-delivering/build-process)
 
 ## Build
 
-Choose **Chest Shuffle → Set Up Scene** to regenerate the materials, arena and scene, or **Chest Shuffle → Validate Rules** for the deterministic rule checks. **Chest Shuffle → Build WebGL** writes the regular responsive build to `Build/WebGL` and a self-contained `Build/WebGL/ChestShuffle3D.html`. Open that single HTML file directly in a modern desktop browser to play without a server. The regular multi-file WebGL build still needs to be served over HTTP.
+Choose **Chest Shuffle → Set Up Scene** to regenerate the materials, arena and scene, or **Chest Shuffle → Validate Rules** for the deterministic rule checks. **Chest Shuffle → Build WebGL** writes the regular responsive build to `Build/WebGL` and a self-contained `Build/WebGL/ChestShuffle3D.html`. Open the single HTML file in a desktop browser, or serve `Build/WebGL` over HTTP and visit `index.html` in Safari on iPhone or iPad.
 
 Batch mode:
 
