@@ -24,7 +24,7 @@ namespace com.javierquevedo.Editor
     {
         private const string SpriteFolder = "Assets/Resources/Art/Sprites";
         private const string TemplateName = "PROJECT:CyberOrbsMobile";
-        private const string BuildFolder = "Builds/WebGL";
+        private const string BuildFolder = "build";
 
         [MenuItem("CyberOrbs/Optimize WebGL Build Settings")]
         public static void Apply()
@@ -70,11 +70,23 @@ namespace com.javierquevedo.Editor
             BuildSummary summary = report.summary;
 
             if (summary.result == BuildResult.Succeeded)
+            {
                 Debug.Log("[WebGLMobileOptimizer] Build succeeded: " + BuildFolder +
                           " (" + (summary.totalSize / (1024f * 1024f)).ToString("0.0") + " MB, " +
                           summary.totalTime.TotalSeconds.ToString("0") + "s)");
+                if (Application.isBatchMode)
+                {
+                    EditorApplication.Exit(0);
+                }
+            }
             else
+            {
                 Debug.LogError("[WebGLMobileOptimizer] Build " + summary.result + ": " + summary.totalErrors + " error(s).");
+                if (Application.isBatchMode)
+                {
+                    EditorApplication.Exit(1);
+                }
+            }
         }
 
         private static void ConfigurePlayer()

@@ -260,7 +260,7 @@ namespace com.javierquevedo
             // "NEXT / SWAP" world label under side queue
             CreateWorldLabel("NextSlotLabel", new Vector3(nextPos.x, nextPos.y - 0.62f, -0.1f), "NEXT [SWAP]", 0.052f, new Color(0.55f, 0.88f, 1f, 0.85f));
 
-            // 4. 5-Cell Miss Penalty Battery Tracker (between Next Slot and Turret, like classic screenshot + Prompt #5)
+            // 4. 5-Cell Miss Penalty Battery Tracker (between Next Slot and Turret, like classic gameplay)
             float startCellX = nextPos.x + 1.15f;
             float cellSpacing = 0.56f;
             for (int i = 0; i < 5; i++)
