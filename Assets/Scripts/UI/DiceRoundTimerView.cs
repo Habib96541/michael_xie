@@ -23,8 +23,7 @@ namespace DiceGame.UI
         private int _lastTenths = -1;
         private bool _isUrgent;
 
-        // Pre-allocated char buffer to avoid string allocations on frame update
-        private readonly char[] _timeBuffer = new char[8]; // e.g. "20.0s\0"
+        private readonly char[] _timeBuffer = new char[8];
 
         private void Awake()
         {
@@ -55,13 +54,11 @@ namespace DiceGame.UI
 
         private void Update()
         {
-            // Smooth scale decay
             if (timerContainer != null && timerContainer.localScale.x > 1.0f)
             {
                 timerContainer.localScale = Vector3.Lerp(timerContainer.localScale, Vector3.one, Time.deltaTime * 6.0f);
             }
 
-            // Urgency pulse when time is low
             if (_isUrgent && urgencyOverlay != null)
             {
                 float flash = (Mathf.Sin(Time.time * 12.0f) + 1.0f) * 0.5f;
@@ -85,7 +82,7 @@ namespace DiceGame.UI
 
                 if (timerText != null)
                 {
-                    timerText.SetText(_timeBuffer, 0, 5); // "XX.Xs"
+                    timerText.SetText(_timeBuffer, 0, 5);
 
                     if (_currentRemaining <= 5.0f)
                     {
@@ -125,3 +122,4 @@ namespace DiceGame.UI
         }
     }
 }
+

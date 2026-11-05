@@ -61,7 +61,6 @@ namespace DiceGame.Effects
                 return;
             }
 
-            // Punchy scale pop
             float scale;
             if (t < 0.2f)
             {
@@ -77,10 +76,8 @@ namespace DiceGame.Effects
             }
             rectTransform.localScale = new Vector3(scale, scale, 1.0f);
 
-            // Float position
             rectTransform.anchoredPosition = _startPos + _velocity * _elapsed;
 
-            // Fade alpha near end
             float alpha = (t > 0.6f) ? Mathf.Lerp(1.0f, 0.0f, (t - 0.6f) / 0.4f) : 1.0f;
             Color c = _baseColor;
             c.a = alpha;
@@ -90,3 +87,4 @@ namespace DiceGame.Effects
         public bool IsAvailable => !_active;
     }
 }
+

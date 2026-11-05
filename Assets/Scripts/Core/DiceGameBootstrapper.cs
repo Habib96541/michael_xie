@@ -30,7 +30,6 @@ namespace DiceGame.Core
         private Sprite _tickerDotSprite;
         private readonly List<Object> _createdProceduralAssets = new List<Object>(8);
 
-        // Crouton Alpha reference palette
         private static readonly Color Carbon = new Color(0.035f, 0.045f, 0.055f);
         private static readonly Color CarbonPanel = new Color(0.07f, 0.10f, 0.13f);
         private static readonly Color CyanGlow = new Color(0.0f, 0.92f, 1.0f);
@@ -57,7 +56,6 @@ namespace DiceGame.Core
 
         private void OnDestroy()
         {
-            // Explicitly clean up all created procedural textures/assets (Rule 2)
             for (int i = 0; i < _createdProceduralAssets.Count; i++)
             {
                 if (_createdProceduralAssets[i] != null)
@@ -70,7 +68,6 @@ namespace DiceGame.Core
 
         private void GenerateProceduralSprites()
         {
-            // 1. Rounded Box Sprite (64x64, 16px corner radius, 9-sliced)
             int size = 64;
             int radius = 16;
             Texture2D texBox = new Texture2D(size, size, TextureFormat.RGBA32, false);
@@ -97,7 +94,6 @@ namespace DiceGame.Core
             _createdProceduralAssets.Add(texBox);
             _createdProceduralAssets.Add(_roundedSprite);
 
-            // 2. Circle Sprite (64x64)
             Texture2D texCircle = new Texture2D(size, size, TextureFormat.RGBA32, false);
             float cRadius = size * 0.5f;
             Vector2 center = new Vector2(cRadius, cRadius);
@@ -120,7 +116,6 @@ namespace DiceGame.Core
             _createdProceduralAssets.Add(texCircle);
             _createdProceduralAssets.Add(_circleSprite);
 
-            // 3. Octagon panel with cut corners (for sci-fi frames like reference)
             int octSize = 256;
             Texture2D octTex = new Texture2D(octSize, octSize, TextureFormat.RGBA32, false);
             float cut = octSize * 0.12f;
@@ -137,12 +132,11 @@ namespace DiceGame.Core
                     if (x >= octSize - cut && y >= octSize - cut && (x - (octSize - cut)) + (y - (octSize - cut)) > cut) inside = false;
                     if (!inside) { octTex.SetPixel(x, y, trans); continue; }
                     float edgeDist = Mathf.Min(Mathf.Min(x, octSize - 1 - x), Mathf.Min(y, octSize - 1 - y));
-                    // border ring: dark steel edge + glowing inner tint
                     Color c;
                     if (edgeDist < 6) c = new Color(0.12f, 0.16f, 0.20f, 1);
-                    else if (edgeDist < 10) c = new Color(0.0f, 0.85f, 0.95f, 0.9f); // cyan glow line like reference
+                    else if (edgeDist < 10) c = new Color(0.0f, 0.85f, 0.95f, 0.9f);
                     else if (edgeDist < 18) c = new Color(0.06f, 0.10f, 0.13f, 0.98f);
-                    else c = Color.white; // interior tinted via Image.color
+                    else c = Color.white;
                     octTex.SetPixel(x, y, c);
                 }
             }
@@ -151,7 +145,6 @@ namespace DiceGame.Core
             _createdProceduralAssets.Add(octTex);
             _createdProceduralAssets.Add(_octagonSprite);
 
-            // 4. Carbon fiber background 512x512 dark weave + vignette
             int bgW = 512, bgH = 512;
             Texture2D bgTex = new Texture2D(bgW, bgH, TextureFormat.RGBA32, false);
             for (int y = 0; y < bgH; y++)
@@ -161,11 +154,9 @@ namespace DiceGame.Core
                     float u = x / (float)bgW;
                     float v = y / (float)bgH;
                     Color baseCol = Color.Lerp(new Color(0.045f, 0.055f, 0.065f), new Color(0.02f, 0.03f, 0.04f), v);
-                    // diagonal carbon weave
                     bool weave = ((x + y) / 8) % 2 == 0;
                     float weaveLight = weave ? 0.012f : 0.0f;
                     baseCol += new Color(weaveLight, weaveLight, weaveLight);
-                    // subtle cyan / magenta glows at corners like reference
                     float d1 = Vector2.Distance(new Vector2(u, v), new Vector2(0.15f, 0.85f));
                     float d2 = Vector2.Distance(new Vector2(u, v), new Vector2(0.85f, 0.15f));
                     baseCol += CyanGlow * Mathf.Pow(Mathf.Clamp01(1 - d1 / 0.6f), 3) * 0.06f;
@@ -178,7 +169,6 @@ namespace DiceGame.Core
             _createdProceduralAssets.Add(bgTex);
             _createdProceduralAssets.Add(_bgTextureSprite);
 
-            // 5. Roll pad base (elliptical metallic) 512x256
             int padW = 512, padH = 256;
             Texture2D padTex = new Texture2D(padW, padH, TextureFormat.RGBA32, false);
             for (int y = 0; y < padH; y++)
@@ -190,10 +180,9 @@ namespace DiceGame.Core
                     float d = nx * nx + ny * ny;
                     if (d > 1.0f) { padTex.SetPixel(x, y, trans); continue; }
                     Color c;
-                    if (d > 0.92f) c = new Color(0.10f, 0.13f, 0.16f); // outer rim
+                    if (d > 0.92f) c = new Color(0.10f, 0.13f, 0.16f);
                     else if (d > 0.78f) c = Color.Lerp(new Color(0.18f, 0.22f, 0.26f), GreenNeon, 0.25f);
                     else c = new Color(0.08f, 0.12f, 0.10f);
-                    // side glow stripes
                     if (d > 0.6f && d < 0.78f && (x % 32 < 6) && Mathf.Abs(nx) > 0.3f)
                         c = GreenNeon;
                     padTex.SetPixel(x, y, c);
@@ -204,7 +193,6 @@ namespace DiceGame.Core
             _createdProceduralAssets.Add(padTex);
             _createdProceduralAssets.Add(_rollPadSprite);
 
-            // 6. Slider ring (concentric circles) 256x256
             int ringSize = 256;
             Texture2D ringTex = new Texture2D(ringSize, ringSize, TextureFormat.RGBA32, false);
             float rc = ringSize * 0.5f;
@@ -216,13 +204,13 @@ namespace DiceGame.Core
                     float r = dist / rc;
                     if (r > 1.0f) { ringTex.SetPixel(x, y, trans); continue; }
                     Color c;
-                    if (r > 0.95f) c = new Color(0.15f, 0.20f, 0.24f); // steel outer
-                    else if (r > 0.88f) c = CyanGlow; // cyan tick ring
+                    if (r > 0.95f) c = new Color(0.15f, 0.20f, 0.24f);
+                    else if (r > 0.88f) c = CyanGlow;
                     else if (r > 0.72f) c = new Color(0.10f, 0.14f, 0.16f, 0.95f);
                     else if (r > 0.68f) c = GreenNeon;
                     else if (r > 0.45f) c = new Color(0.07f, 0.10f, 0.12f, 0.98f);
                     else if (r > 0.40f) c = new Color(0.0f, 0.9f, 0.6f);
-                    else c = Color.white; // center core (tinted via color)
+                    else c = Color.white;
                     ringTex.SetPixel(x, y, c);
                 }
             }
@@ -231,7 +219,6 @@ namespace DiceGame.Core
             _createdProceduralAssets.Add(ringTex);
             _createdProceduralAssets.Add(_sliderRingSprite);
 
-            // 7. Ticker dot / ticker pill 128x64 - small gauge for LIVE TICKER wins/losses
             int tickW = 128, tickH = 64;
             Texture2D tickTex = new Texture2D(tickW, tickH, TextureFormat.RGBA32, false);
             for (int y = 0; y < tickH; y++)
@@ -277,7 +264,6 @@ namespace DiceGame.Core
 
         private void SetupGameEnvironment()
         {
-            // Configure Camera
             Camera cam = Camera.main;
             if (cam != null)
             {
@@ -285,20 +271,18 @@ namespace DiceGame.Core
                 cam.backgroundColor = Carbon;
             }
 
-            // Create Canvas
             GameObject canvasObj = new GameObject("DiceCanvas");
             Canvas canvas = canvasObj.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
 
             CanvasScaler scaler = canvasObj.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(1080, 1920); // portrait-first like reference
+            scaler.referenceResolution = new Vector2(1080, 1920);
             scaler.matchWidthOrHeight = 0.0f;
 
             canvasObj.AddComponent<GraphicRaycaster>();
             RectTransform canvasRect = canvasObj.GetComponent<RectTransform>();
 
-            // Create Screen Shake Root
             GameObject shakeRootObj = new GameObject("ShakeRoot", typeof(RectTransform));
             shakeRootObj.transform.SetParent(canvasRect, false);
             RectTransform shakeRect = shakeRootObj.GetComponent<RectTransform>();
@@ -309,7 +293,6 @@ namespace DiceGame.Core
 
             ScreenShakeController screenShake = shakeRootObj.AddComponent<ScreenShakeController>();
 
-            // Build UI Elements - reference layout order: header ticker, timer, slider arena, history dot row, controls, roll pad
             SetupBackground(canvasRect);
             shakeRootObj.transform.SetAsLastSibling();
             DiceStatsHeaderView statsHeader = SetupHeader(shakeRect);
@@ -320,12 +303,10 @@ namespace DiceGame.Core
             DiceBetControlsView betControls = SetupBetControls(shakeRect);
             DiceGameOverModalView gameOverModal = SetupGameOverModal(shakeRect);
 
-            // Effects & Audio
             FloatingTextController floatingText = SetupFloatingText(shakeRect);
             ParticleFxController particleFx = SetupParticleSystems(shakeRect);
             DiceAudioSynthesizer audioSynth = SetupAudioSynthesizer();
 
-            // Core Game Manager
             GameObject mgrObj = new GameObject("DiceGameManager");
             DiceGameManager mgr = mgrObj.AddComponent<DiceGameManager>();
 
@@ -342,7 +323,6 @@ namespace DiceGame.Core
             SetPrivateField(mgr, "gameOverModal", gameOverModal);
             SetPrivateField(mgr, "historyView", historyView);
 
-            // Responsive Layout Controller (All-device responsive)
             DiceResponsiveLayout responsiveLayout = canvasObj.AddComponent<DiceResponsiveLayout>();
             SetPrivateField(responsiveLayout, "canvasScaler", scaler);
             SetPrivateField(responsiveLayout, "safeAreaRoot", shakeRect);
@@ -388,13 +368,11 @@ namespace DiceGame.Core
             bg.type = Image.Type.Sliced;
             bg.color = new Color(0.06f, 0.09f, 0.12f, 0.98f);
 
-            // corner neon strips like reference: pink/cyan ticks at octagon corners
             CreateCornerStrip(headerRect, new Vector2(0, 1), PinkFrame);
             CreateCornerStrip(headerRect, new Vector2(1, 1), CyanGlow);
             CreateCornerStrip(headerRect, new Vector2(0, 0), CyanGlow);
             CreateCornerStrip(headerRect, new Vector2(1, 0), OrangeFrame);
 
-            // CREDITS label top-left
             GameObject creditsLabelObj = CreateUIElement("CreditsLabel", headerRect);
             RectTransform clRect = creditsLabelObj.GetComponent<RectTransform>();
             clRect.anchorMin = new Vector2(0, 1);
@@ -406,7 +384,6 @@ namespace DiceGame.Core
             creditsLabel.color = SteelText;
             creditsLabel.characterSpacing = 1.2f;
 
-            // Bankroll value below credits
             GameObject bankrollObj = CreateUIElement("BankrollContainer", headerRect);
             RectTransform bankrollRect = bankrollObj.GetComponent<RectTransform>();
             bankrollRect.anchorMin = new Vector2(0, 1);
@@ -417,7 +394,6 @@ namespace DiceGame.Core
             TextMeshProUGUI bankrollVal = CreateText("BankrollValue", bankrollRect, "1,420", 44, FontStyles.Bold, TextAlignmentOptions.MidlineLeft);
             bankrollVal.color = CyanGlow;
 
-            // Mode Badge - gear / mode button top-right
             GameObject modeBtnObj = CreateUIElement("ModeBadgeButton", headerRect);
             RectTransform modeBtnRect = modeBtnObj.GetComponent<RectTransform>();
             modeBtnRect.anchorMin = new Vector2(1.0f, 0.5f);
@@ -435,7 +411,6 @@ namespace DiceGame.Core
             TextMeshProUGUI modeText = CreateText("ModeText", modeBtnRect, "⚙", 36, FontStyles.Bold, TextAlignmentOptions.Center);
             modeText.color = SteelText;
 
-            // LIVE TICKER centered
             GameObject tickerTitleObj = CreateUIElement("TickerTitle", headerRect);
             RectTransform ttRect = tickerTitleObj.GetComponent<RectTransform>();
             ttRect.anchorMin = new Vector2(0.5f, 1);
@@ -446,7 +421,6 @@ namespace DiceGame.Core
             TextMeshProUGUI tickerTitle = CreateText("TickerTitleText", ttRect, "LIVE TICKER", 20, FontStyles.Bold, TextAlignmentOptions.Center);
             tickerTitle.color = SteelText;
 
-            // ticker pills row (History bar visual home in header for reference layout)
             GameObject tickerRow = CreateUIElement("TickerRow", headerRect);
             RectTransform tickerRect = tickerRow.GetComponent<RectTransform>();
             tickerRect.anchorMin = new Vector2(0.5f, 0.5f);
@@ -475,7 +449,6 @@ namespace DiceGame.Core
                 tickerPills[i] = new DiceHistoryView.HistoryPill { root = pillObj, background = pillBg, valueText = pillText };
             }
 
-            // Streak & Fever Container (small under ticker, keeps fever functionality visible)
             GameObject streakObj = CreateUIElement("StreakContainer", headerRect);
             RectTransform streakRect = streakObj.GetComponent<RectTransform>();
             streakRect.anchorMin = new Vector2(0.5f, 0);
@@ -487,7 +460,6 @@ namespace DiceGame.Core
             TextMeshProUGUI streakVal = CreateText("StreakValue", streakRect, "STREAK x0", 16, FontStyles.Bold, TextAlignmentOptions.Center);
             streakVal.color = new Color(1.0f, 0.84f, 0.0f, 1.0f);
 
-            // Fever Meter Bar thin
             GameObject feverBarBg = CreateUIElement("FeverBarBg", streakRect);
             RectTransform feverBarBgRect = feverBarBg.GetComponent<RectTransform>();
             feverBarBgRect.anchorMin = new Vector2(0, 1);
@@ -515,7 +487,6 @@ namespace DiceGame.Core
             feverFillImg.fillOrigin = (int)Image.OriginHorizontal.Left;
             feverFillImg.color = PinkFrame;
 
-            // Fever Active Banner (hidden by default)
             GameObject feverBanner = CreateUIElement("FeverBanner", headerRect);
             RectTransform bannerRect = feverBanner.GetComponent<RectTransform>();
             bannerRect.anchorMin = new Vector2(0.5f, 0.0f);
@@ -542,11 +513,10 @@ namespace DiceGame.Core
             SetPrivateField(view, "modeBadgeText", modeText);
             SetPrivateField(view, "buttonModeSelect", modeBtn);
 
-            // Store ticker pills on the header object for later wiring to historyView
-            headerObj.name = "StatsHeader"; // keep discoverable
+            headerObj.name = "StatsHeader";
             var factory = new GameObject("TickerPillFactory");
             factory.transform.SetParent(headerObj.transform, false);
-            factory.transform.name = "TickerPills"; // will be found by layout for history override
+            factory.transform.name = "TickerPills";
             for (int i = 0; i < tickerPills.Length; i++)
             {
                 tickerPills[i].root.transform.SetParent(tickerRow.transform, false);
@@ -619,7 +589,6 @@ namespace DiceGame.Core
             urgImg.type = Image.Type.Sliced;
             urgImg.color = new Color(1.0f, 0.1f, 0.2f, 0.35f);
 
-            // Thin spacer keeps timer functional but visually minimal like reference
             DiceRoundTimerView view = timerObj.AddComponent<DiceRoundTimerView>();
             SetPrivateField(view, "timerFillBar", fillImg);
             SetPrivateField(view, "timerText", timerText);
@@ -930,7 +899,6 @@ namespace DiceGame.Core
             winFlashText.color = GreenHot;
             winFlashObj.SetActive(false);
 
-            // Toggle Button
             GameObject toggleBtnObj = CreateUIElement("ModeToggleBtn", containerRect);
             RectTransform toggleBtnRect = toggleBtnObj.GetComponent<RectTransform>();
             toggleBtnRect.anchorMin = new Vector2(0.05f, 1.0f);
@@ -948,7 +916,6 @@ namespace DiceGame.Core
             TextMeshProUGUI toggleText = CreateText("ToggleText", toggleBtnRect, "ROLL UNDER", 16, FontStyles.Bold, TextAlignmentOptions.Center);
             toggleText.color = CyanGlow;
 
-            // Multiplier Display
             GameObject multObj = CreateUIElement("MultiplierDisplay", containerRect);
             RectTransform multRect = multObj.GetComponent<RectTransform>();
             multRect.anchorMin = new Vector2(0.38f, 1.0f);
@@ -960,7 +927,6 @@ namespace DiceGame.Core
             TextMeshProUGUI multText = CreateText("MultVal", multRect, "4.95x", 22, FontStyles.Bold, TextAlignmentOptions.Center);
             multText.color = GreenHot;
 
-            // Target Display
             GameObject targetObj = CreateUIElement("TargetDisplay", containerRect);
             RectTransform targetRect = targetObj.GetComponent<RectTransform>();
             targetRect.anchorMin = new Vector2(0.62f, 1.0f);
@@ -972,7 +938,6 @@ namespace DiceGame.Core
             TextMeshProUGUI targetText = CreateText("TargetVal", targetRect, "20", 22, FontStyles.Bold, TextAlignmentOptions.Center);
             targetText.color = Color.white;
 
-            // Win Chance Display
             GameObject chanceObj = CreateUIElement("ChanceDisplay", containerRect);
             RectTransform chanceRect = chanceObj.GetComponent<RectTransform>();
             chanceRect.anchorMin = new Vector2(0.95f, 1.0f);
@@ -984,7 +949,6 @@ namespace DiceGame.Core
             TextMeshProUGUI chanceText = CreateText("ChanceVal", chanceRect, "20.00%", 22, FontStyles.Bold, TextAlignmentOptions.Center);
             chanceText.color = Color.white;
 
-            // Quick Presets Row below Track
             GameObject presetsRow = CreateUIElement("PresetsRow", containerRect);
             RectTransform presetsRect = presetsRow.GetComponent<RectTransform>();
             presetsRect.anchorMin = new Vector2(0.05f, 0.0f);
@@ -1070,7 +1034,6 @@ namespace DiceGame.Core
             bg.color = new Color(0.09f, 0.12f, 0.17f, 0.0001f);
             bg.raycastTarget = false;
 
-            // 3-panel row: BET AMOUNT | MULTIPLIER | WIN CHANCE (cyan glow cards like reference)
             string[] panelTitles = { "BET AMOUNT", "MULTIPLIER", "WIN CHANCE" };
             string[] panelValues = { "50.00", "4.95x", "20.00%" };
             Color[] panelColors = { CyanGlow, GreenHot, Color.white };
@@ -1120,7 +1083,6 @@ namespace DiceGame.Core
                 panelValTexts[i] = valText;
             }
 
-            // Bet amount box overlays first panel (keeps existing bind but now styled inside first card)
             GameObject betBox = CreateUIElement("BetAmountBox", containerRect);
             RectTransform betBoxRect = betBox.GetComponent<RectTransform>();
             betBoxRect.anchorMin = new Vector2(0.5f, 1);
@@ -1138,7 +1100,6 @@ namespace DiceGame.Core
             TextMeshProUGUI betVal = panelValTexts[0];
             betVal.text = "50.00";
 
-            // Small 2x / 1/2 buttons inside bet panel
             GameObject quickBtnRow = CreateUIElement("QuickBtnRow", betBoxRect);
             RectTransform quickRect = quickBtnRow.GetComponent<RectTransform>();
             quickRect.anchorMin = new Vector2(0, 0);
@@ -1152,7 +1113,6 @@ namespace DiceGame.Core
             Button btnMin = CreateButton("BtnMin", quickRect, new Vector2(50, 0), new Vector2(64, 36), "MIN", 14);
             Button btnMax = CreateButton("BtnMax", quickRect, new Vector2(130, 0), new Vector2(64, 36), "MAX", 14);
 
-            // ROLL DICE mechanical pad - base ellipse
             GameObject rollPadObj = CreateUIElement("RollPadBase", containerRect);
             RectTransform padRect = rollPadObj.GetComponent<RectTransform>();
             padRect.anchorMin = new Vector2(0.5f, 0.5f);
@@ -1164,7 +1124,6 @@ namespace DiceGame.Core
             padImg.sprite = _rollPadSprite;
             padImg.color = Color.white;
 
-            // side pistons
             for (int side = -1; side <= 1; side += 2)
             {
                 GameObject piston = CreateUIElement("Piston_" + side, padRect);
@@ -1202,7 +1161,6 @@ namespace DiceGame.Core
             TextMeshProUGUI rollText = CreateText("RollText", rollRect, "ROLL DICE", 30, FontStyles.Bold, TextAlignmentOptions.Center);
             rollText.color = new Color(0.02f, 0.10f, 0.05f, 1);
 
-            // Auto Roll Button - small pill below pad
             GameObject autoBtnObj = CreateUIElement("AutoRollButton", containerRect);
             RectTransform autoRect = autoBtnObj.GetComponent<RectTransform>();
             autoRect.anchorMin = new Vector2(0.5f, 0);
@@ -1220,7 +1178,6 @@ namespace DiceGame.Core
             TextMeshProUGUI autoText = CreateText("AutoText", autoRect, "AUTO ROLL", 16, FontStyles.Bold, TextAlignmentOptions.Center);
             autoText.color = Color.white;
 
-            // ROLL OVER / ROLL UNDER label
             GameObject modeLabelObj = CreateUIElement("ModeLabel", containerRect);
             RectTransform modeLabelRect = modeLabelObj.GetComponent<RectTransform>();
             modeLabelRect.anchorMin = new Vector2(0.5f, 0);
@@ -1491,3 +1448,4 @@ namespace DiceGame.Core
         }
     }
 }
+

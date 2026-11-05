@@ -20,23 +20,19 @@ namespace DiceGame.UI
         [SerializeField] private RectTransform sliderContainer;
         [SerializeField] private RectTransform betControlsContainer;
 
-        // Modal Container (Discovered at runtime without scene serialization)
         private RectTransform _modalContainer;
 
-        // Arena Internal Children (Discovered at runtime without scene serialization)
         private RectTransform _dieLeft;
         private RectTransform _dieRight;
         private RectTransform _shadowLeft;
         private RectTransform _shadowRight;
         private RectTransform _resultNumberContainer;
 
-        // Bet Controls Internal Children (Discovered at runtime without scene serialization)
         private RectTransform _betBoxRect;
         private RectTransform _quickBtnRowRect;
         private RectTransform _rollBtnRect;
         private RectTransform _autoBtnRect;
 
-        // Slider Internal Children
         private RectTransform _sliderModeBtn;
         private RectTransform _sliderMult;
         private RectTransform _sliderTarget;
@@ -44,7 +40,6 @@ namespace DiceGame.UI
         private RectTransform _sliderTrack;
         private RectTransform _sliderPresets;
 
-        // Fever Banner
         private RectTransform _feverBanner;
 
         private int _lastWidth = -1;
@@ -159,7 +154,6 @@ namespace DiceGame.UI
                 if (fb != null) _feverBanner = fb as RectTransform;
             }
 
-            // Fix background vignette glow if present (prevent awkward stretched oval)
             Transform bg = transform.Find("Background");
             if (bg != null)
             {
@@ -236,7 +230,7 @@ namespace DiceGame.UI
             if (_isPortrait)
             {
                 canvasScaler.referenceResolution = new Vector2(1080.0f, 1920.0f);
-                canvasScaler.matchWidthOrHeight = 0.0f; // Strict width matching in portrait
+                canvasScaler.matchWidthOrHeight = 0.0f;
             }
             else
             {
@@ -1026,3 +1020,4 @@ namespace DiceGame.UI
         }
     }
 }
+

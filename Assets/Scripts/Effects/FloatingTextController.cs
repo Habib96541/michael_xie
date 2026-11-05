@@ -51,7 +51,6 @@ namespace DiceGame.Effects
 
             if (available == null && prefab != null)
             {
-                // Dynamic expansion if needed
                 available = Instantiate(prefab, container);
                 _pool.Add(available);
             }
@@ -63,3 +62,4 @@ namespace DiceGame.Effects
         }
     }
 }
+

@@ -40,7 +40,6 @@ namespace DiceGame.Effects
         private bool _isCrit;
         private Action _onRollComplete;
 
-        // Cached digit characters to avoid string allocations
         private static readonly string[] DigitStrings = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
         private void Awake()
@@ -78,7 +77,6 @@ namespace DiceGame.Effects
 
         private void Update()
         {
-            // Smoothly decay result punch back to 1.0
             if (rollResultContainer != null && rollResultContainer.localScale.x > 1.0f)
             {
                 rollResultContainer.localScale = Vector3.Lerp(rollResultContainer.localScale, Vector3.one, Time.deltaTime * 6.0f);
@@ -93,14 +91,12 @@ namespace DiceGame.Effects
             _rollTimer += Time.deltaTime;
             float t = Mathf.Clamp01(_rollTimer / _rollDuration);
 
-            // Cycle numbers during tumble
             if (t < 0.85f)
             {
                 int r1 = UnityEngine.Random.Range(0, 10);
                 int r2 = UnityEngine.Random.Range(0, 10);
                 SetDigits(r1, r2);
 
-                // Vertical tumble arc
                 float height = Mathf.Sin(t * Mathf.PI) * 45.0f;
                 float tilt = Mathf.Sin(t * 18.0f) * 16.0f;
 
@@ -118,14 +114,12 @@ namespace DiceGame.Effects
                     dieRight.localScale = Vector3.one * (1.0f + height * 0.003f);
                 }
 
-                // Shadows stay on ground and shrink when dice go high
                 float shadowScale = Mathf.Clamp01(1.0f - height * 0.015f);
                 if (shadowLeft != null) shadowLeft.localScale = new Vector3(shadowScale, shadowScale * 0.6f, 1.0f);
                 if (shadowRight != null) shadowRight.localScale = new Vector3(shadowScale, shadowScale * 0.6f, 1.0f);
             }
             else
             {
-                // Landing bounce / squash & stretch
                 float landT = (t - 0.85f) / 0.15f;
                 float squashX = 1.0f + Mathf.Sin(landT * Mathf.PI) * 0.18f;
                 float squashY = 1.0f - Mathf.Sin(landT * Mathf.PI) * 0.18f;
@@ -157,13 +151,11 @@ namespace DiceGame.Effects
 
         private void FinishRoll()
         {
-            // Set final digits
             int wholeVal = Mathf.Clamp((int)_targetValue, 0, 99);
             int tens = wholeVal / 10;
             int units = wholeVal % 10;
             SetDigits(tens, units);
 
-            // Set final result text
             if (rollResultNumberText != null)
             {
                 rollResultNumberText.text = _targetValue.ToString("F2");
@@ -171,12 +163,10 @@ namespace DiceGame.Effects
                 rollResultNumberText.color = highlight;
             }
 
-            // Tint dice backgrounds
             Color tint = _isCrit ? critColor : (_isWin ? winColor : lossColor);
             if (dieLeftBg != null) dieLeftBg.color = Color.Lerp(normalColor, tint, 0.45f);
             if (dieRightBg != null) dieRightBg.color = Color.Lerp(normalColor, tint, 0.45f);
 
-            // Pop punch on result container
             if (rollResultContainer != null)
             {
                 rollResultContainer.localScale = Vector3.one * 1.25f;
@@ -198,3 +188,4 @@ namespace DiceGame.Effects
         }
     }
 }
+

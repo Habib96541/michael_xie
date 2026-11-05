@@ -15,7 +15,7 @@ namespace DiceGame.Config
         [SerializeField] private float minTarget = 2.0f;
         [SerializeField] private float maxTarget = 98.0f;
         [SerializeField] private float defaultTarget = 50.0f;
-        [SerializeField] private float houseEdgePercent = 1.0f; // 99% RTP
+        [SerializeField] private float houseEdgePercent = 1.0f;
 
         [Header("20-Second Blitz Mode")]
         [SerializeField] private float blitzDurationSeconds = 20.0f;
@@ -35,7 +35,6 @@ namespace DiceGame.Config
         [SerializeField] private float masterVolume = 0.85f;
         [SerializeField] private float sfxVolume = 1.0f;
 
-        // Public getters for encapsulation
         public long StartingBankroll => startingBankroll;
         public long MinBet => minBet;
         public long MaxBet => maxBet;
@@ -45,7 +44,7 @@ namespace DiceGame.Config
         public float MaxTarget => maxTarget;
         public float DefaultTarget => defaultTarget;
         public float HouseEdgePercent => houseEdgePercent;
-        public float PayoutFactor => 100.0f - houseEdgePercent; // 99.0f
+        public float PayoutFactor => 100.0f - houseEdgePercent;
 
         public float BlitzDurationSeconds => blitzDurationSeconds;
         public float CritTimeBonus => critTimeBonus;
@@ -62,3 +61,4 @@ namespace DiceGame.Config
         public float SfxVolume => sfxVolume;
     }
 }
+

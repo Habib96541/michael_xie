@@ -123,14 +123,12 @@ namespace DiceGame.UI
 
         private void Update()
         {
-            // Smooth bankroll lerp without GC allocations
             if (Math.Abs(_displayedBankroll - _targetBankroll) > 0.5)
             {
                 _displayedBankroll = Mathf.Lerp((float)_displayedBankroll, (float)_targetBankroll, Time.deltaTime * 12.0f);
                 UpdateBankrollText((long)Math.Round(_displayedBankroll));
             }
 
-            // Scale return
             if (bankrollContainer != null && bankrollContainer.localScale.x > 1.0f)
             {
                 bankrollContainer.localScale = Vector3.Lerp(bankrollContainer.localScale, Vector3.one, Time.deltaTime * 8.0f);
@@ -141,7 +139,6 @@ namespace DiceGame.UI
                 streakContainer.localScale = Vector3.Lerp(streakContainer.localScale, Vector3.one, Time.deltaTime * 8.0f);
             }
 
-            // Color return
             if (_pulseTimer > 0.0f)
             {
                 _pulseTimer -= Time.deltaTime;
@@ -163,3 +160,4 @@ namespace DiceGame.UI
         }
     }
 }
+

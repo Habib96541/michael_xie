@@ -33,14 +33,12 @@ namespace DiceGame.Core
         [SerializeField] private DiceGameOverModalView gameOverModal;
         [SerializeField] private DiceHistoryView historyView;
 
-        // Runtime State
         private GameMode _currentMode = GameMode.Blitz20s;
         private long _currentBankroll;
         private long _currentBet;
         private float _currentTarget = 50.0f;
         private bool _isRollUnder = true;
 
-        // Blitz 20s State
         private float _timeRemaining;
         private bool _isRoundRunning;
         private int _totalRolls;
@@ -50,20 +48,16 @@ namespace DiceGame.Core
         private int _totalCrits;
         private long _startingRoundBankroll;
 
-        // Fever State
         private bool _isFeverActive;
         private float _feverTimer;
 
-        // Crit Zone State
         private float _critMin = 70.0f;
         private float _critMax = 75.0f;
 
-        // Roll State
         private bool _isRolling;
         private bool _isAutoRolling;
         private float _autoRollTimer;
 
-        // High Score Key
         private const string PrefsKeyHighScore = "DiceOverdrive_HighScore";
 
         private void Awake()
@@ -81,7 +75,6 @@ namespace DiceGame.Core
 
         private void OnEnable()
         {
-            // Subscribe to UI view events
             if (sliderView != null)
             {
                 sliderView.OnTargetChanged += HandleTargetChanged;
@@ -113,7 +106,6 @@ namespace DiceGame.Core
 
         private void OnDisable()
         {
-            // Unsubscribe from all events to prevent memory leaks (Rule 2)
             if (sliderView != null)
             {
                 sliderView.OnTargetChanged -= HandleTargetChanged;
@@ -218,7 +210,6 @@ namespace DiceGame.Core
 
         private void Update()
         {
-            // Zero-allocation hot loop: No string concatenation or LINQ (Rule 1)
             HandleKeyboardHotkeys();
 
             if (_currentMode == GameMode.Blitz20s && _isRoundRunning)
@@ -248,7 +239,6 @@ namespace DiceGame.Core
                 }
             }
 
-            // Fever timer
             if (_isFeverActive)
             {
                 _feverTimer -= Time.deltaTime;
@@ -263,7 +253,6 @@ namespace DiceGame.Core
                 }
             }
 
-            // Auto-roll loop
             if (_isAutoRolling && _isRoundRunning && !_isRolling)
             {
                 _autoRollTimer += Time.deltaTime;
@@ -355,7 +344,6 @@ namespace DiceGame.Core
         {
             if (_isRolling || !_isRoundRunning) return;
 
-            // Check if player has enough bankroll
             if (_currentBankroll < _currentBet)
             {
                 if (_currentBankroll <= 0)
@@ -375,14 +363,11 @@ namespace DiceGame.Core
             _isRolling = true;
             if (betControls != null) betControls.SetRollInteractable(false);
 
-            // Deduct wager
             _currentBankroll -= _currentBet;
             if (statsHeader != null) statsHeader.SetTargetBankroll(_currentBankroll, animatePulse: false, isGain: false);
 
-            // Generate roll outcome with high precision (0.01 to 99.99)
             float roll = UnityEngine.Random.Range(0.01f, 99.99f);
 
-            // Calculate Win / Loss condition
             bool isWin = _isRollUnder ? (roll < _currentTarget) : (roll > _currentTarget);
             bool isCrit = (roll >= _critMin && roll <= _critMax);
 
@@ -395,10 +380,8 @@ namespace DiceGame.Core
 
             long payout = isWin ? (long)Math.Round(_currentBet * finalMultiplier) : 0;
 
-            // Trigger rattle audio
             if (audioSynth != null) audioSynth.PlayRattle();
 
-            // Animate Dice
             if (diceRoller != null)
             {
                 diceRoller.AnimateRoll(roll, isWin, isCrit, () =>
@@ -437,7 +420,6 @@ namespace DiceGame.Core
                     statsHeader.SetStreak(_currentStreak);
                 }
 
-                // Check Fever Threshold
                 if (!_isFeverActive && _currentStreak >= config.FeverStreakThreshold)
                 {
                     TriggerFeverMode();
@@ -454,7 +436,6 @@ namespace DiceGame.Core
                         floatingText.Show("JACKPOT CRIT! +" + payout.ToString("N0"), Vector2.up * 80.0f, Color.yellow, 44.0f, 1.4f);
                     }
 
-                    // Add time bonus in blitz
                     if (_currentMode == GameMode.Blitz20s)
                     {
                         _timeRemaining += config.CritTimeBonus;
@@ -498,7 +479,6 @@ namespace DiceGame.Core
                 historyView.AddRecord(roll, isWin, isCrit);
             }
 
-            // Spawn new random crit zone every few rolls
             if (_totalRolls % 4 == 0)
             {
                 SpawnRandomCritZone();
@@ -509,7 +489,6 @@ namespace DiceGame.Core
                 betControls.SetRollInteractable(true);
             }
 
-            // Check if player busted out
             if (_currentBankroll <= 0)
             {
                 _isAutoRolling = false;
@@ -597,7 +576,6 @@ namespace DiceGame.Core
             }
         }
 
-        // Event Handlers
         private void HandleTargetChanged(float target)
         {
             _currentTarget = target;
@@ -680,3 +658,4 @@ namespace DiceGame.Core
         }
     }
 }
+

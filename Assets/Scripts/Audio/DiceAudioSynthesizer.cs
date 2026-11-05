@@ -69,7 +69,6 @@ namespace DiceGame.Audio
 
         private void OnDestroy()
         {
-            // Explicitly clean up all procedurally created AudioClip assets
             for (int i = 0; i < _allocatedClips.Count; i++)
             {
                 if (_allocatedClips[i] != null)
@@ -86,8 +85,8 @@ namespace DiceGame.Audio
 
             _clipRattle = CreateDiceRattleClip("DiceRattle", sampleRate);
             _clipDiceLand = CreateDiceLandClip("DiceLand", sampleRate);
-            _clipWinNormal = CreateChimeClip("WinNormal", sampleRate, 523.25f, 659.25f, 0.35f); // C5, E5
-            _clipWinHigh = CreateChimeClip("WinHigh", sampleRate, 659.25f, 783.99f, 0.45f); // E5, G5
+            _clipWinNormal = CreateChimeClip("WinNormal", sampleRate, 523.25f, 659.25f, 0.35f);
+            _clipWinHigh = CreateChimeClip("WinHigh", sampleRate, 659.25f, 783.99f, 0.45f);
             _clipJackpot = CreateJackpotFanfareClip("JackpotFanfare", sampleRate);
             _clipLoss = CreateLossThudClip("LossThud", sampleRate);
             _clipFever = CreateFeverIgniteClip("FeverIgnite", sampleRate);
@@ -118,7 +117,6 @@ namespace DiceGame.Audio
                 float t = (float)i / totalSamples;
                 float env = Mathf.Pow(1.0f - t, 1.8f);
 
-                // Burst pulses
                 float pulse = Mathf.Sin(t * 80.0f * Mathf.PI);
                 float noise = ((float)rng.NextDouble() * 2.0f - 1.0f);
                 float crack = (rng.NextDouble() > 0.88) ? 0.9f : 0.0f;
@@ -183,7 +181,6 @@ namespace DiceGame.Audio
             int totalSamples = (int)(sampleRate * duration);
             float[] samples = new float[totalSamples];
 
-            // 4 note fast arpeggio: C5 (523), E5 (659), G5 (784), C6 (1046)
             float[] notes = { 523.25f, 659.25f, 783.99f, 1046.50f };
             float noteDuration = 0.14f;
 
@@ -197,7 +194,7 @@ namespace DiceGame.Audio
                 float noteEnv = Mathf.Exp(-noteLocalT * 7.0f);
                 if (noteIndex == notes.Length - 1)
                 {
-                    noteEnv = Mathf.Exp(-noteLocalT * 2.5f); // Sustained finale
+                    noteEnv = Mathf.Exp(-noteLocalT * 2.5f);
                 }
 
                 float wave = Mathf.Sin(2.0f * Mathf.PI * freq * t);
@@ -224,7 +221,6 @@ namespace DiceGame.Audio
                 float env = Mathf.Exp(-t * 9.0f);
                 float freq = Mathf.Lerp(130.0f, 40.0f, t);
 
-                // Discordant low square/sine mix
                 float sine = Mathf.Sin(2.0f * Mathf.PI * freq * sec);
                 float sub = Mathf.Sin(2.0f * Mathf.PI * (freq * 0.73f) * sec);
 
@@ -338,7 +334,6 @@ namespace DiceGame.Audio
             return RegisterClip(clip);
         }
 
-        // Public Play methods
         public void PlayRattle()
         {
             if (audioSource != null && _clipRattle != null)
@@ -430,3 +425,4 @@ namespace DiceGame.Audio
         }
     }
 }
+

@@ -34,34 +34,25 @@ namespace DiceGame.Editor
         [MenuItem("DiceGame/Build Dice Overdrive Scene", false, 10)]
         public static void BuildScene()
         {
-            // Ensure TMP Essential Resources are imported
             EnsureTMPResources();
 
-            // Generate procedural UI sprites if they don't exist
             GenerateUISprites();
             GenerateAudioAssets();
 
-            // Load Font
             LoadDefaultFont();
 
-            // Create or configure Scene
             string scenePath = "Assets/Scenes/DiceOverdrive.unity";
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
-            // 1. Camera & Environment
             SetupCamera();
 
-            // 2. Event System
             SetupEventSystem();
 
-            // 3. Game Config Asset
             DiceGameConfig config = SetupConfigAsset();
 
-            // 4. Canvas & Screen Shake Hierarchy
             GameObject canvasObj = CreateCanvas(out RectTransform canvasRect);
             GameObject shakeRootObj = CreateShakeRoot(canvasRect, out RectTransform shakeRoot);
 
-            // 5. Build UI Elements
             SetupBackground(canvasRect);
             shakeRootObj.transform.SetAsLastSibling();
             DiceStatsHeaderView statsHeader = SetupHeader(shakeRoot);
@@ -72,13 +63,11 @@ namespace DiceGame.Editor
             DiceBetControlsView betControls = SetupBetControls(shakeRoot);
             DiceGameOverModalView gameOverModal = SetupGameOverModal(shakeRoot);
 
-            // 6. Effects & Audio
             FloatingTextController floatingText = SetupFloatingText(shakeRoot);
             ParticleFxController particleFx = SetupParticleSystems(shakeRoot);
             DiceAudioSynthesizer audioSynth = SetupAudioSynthesizer();
             ScreenShakeController screenShake = shakeRootObj.GetComponent<ScreenShakeController>();
 
-            // 7. Core Game Manager
             SetupGameManager(
                 config,
                 audioSynth,
@@ -93,7 +82,6 @@ namespace DiceGame.Editor
                 gameOverModal,
                 historyView);
 
-            // 8. Responsive Layout Controller (All-device responsive)
             DiceResponsiveLayout responsiveLayout = canvasObj.AddComponent<DiceResponsiveLayout>();
             SetPrivateField(responsiveLayout, "canvasScaler", canvasObj.GetComponent<CanvasScaler>());
             SetPrivateField(responsiveLayout, "safeAreaRoot", shakeRoot);
@@ -115,11 +103,9 @@ namespace DiceGame.Editor
                 eventSystem.firstSelectedGameObject = rollControl.gameObject;
             }
 
-            // Save Scene
             EditorSceneManager.SaveScene(scene, scenePath);
             Debug.Log("[DiceGame] Successfully built and saved Dice Overdrive scene at " + scenePath);
 
-            // Add to Build Settings
             AddSceneToBuildSettings(scenePath);
         }
 
@@ -540,10 +526,10 @@ namespace DiceGame.Editor
             var samples = new float[frames * 2];
             float[][] chords =
             {
-                new[] { 130.81f, 164.81f, 196.00f, 246.94f }, // Cmaj7
-                new[] { 110.00f, 130.81f, 164.81f, 196.00f }, // Am7
-                new[] { 87.31f, 110.00f, 130.81f, 164.81f },  // Fmaj7
-                new[] { 98.00f, 123.47f, 146.83f, 174.61f }   // G7
+                new[] { 130.81f, 164.81f, 196.00f, 246.94f },
+                new[] { 110.00f, 130.81f, 164.81f, 196.00f },
+                new[] { 87.31f, 110.00f, 130.81f, 164.81f },
+                new[] { 98.00f, 123.47f, 146.83f, 174.61f }
             };
             float[] arpeggio = { 523.25f, 659.25f, 783.99f, 659.25f, 587.33f, 698.46f, 880.00f, 698.46f };
 
@@ -571,7 +557,6 @@ namespace DiceGame.Editor
                 float arp = (Mathf.Sin(2.0f * Mathf.PI * arpeggio[arpIndex] * t) + Mathf.Sin(4.0f * Mathf.PI * arpeggio[arpIndex] * t) * 0.18f) * arpEnv * 0.025f;
                 float center = (pad * chordPulse + bass + arp) * 0.70f;
 
-                // A little stereo width from a quiet, slow-moving upper harmonic.
                 float width = Mathf.Sin(2.0f * Mathf.PI * 392.0f * t + Mathf.Sin(t * 0.8f) * 0.18f) * 0.018f;
                 samples[i * 2] = Mathf.Clamp(center + width, -0.8f, 0.8f);
                 samples[i * 2 + 1] = Mathf.Clamp(center - width, -0.8f, 0.8f);
@@ -640,7 +625,7 @@ namespace DiceGame.Editor
             GameObject camObj = new GameObject("Main Camera");
             Camera cam = camObj.AddComponent<Camera>();
             cam.clearFlags = CameraClearFlags.SolidColor;
-            cam.backgroundColor = new Color(0.035f, 0.045f, 0.055f, 1.0f); // carbon dark
+            cam.backgroundColor = new Color(0.035f, 0.045f, 0.055f, 1.0f);
             cam.orthographic = true;
             cam.orthographicSize = 5.0f;
             camObj.AddComponent<AudioListener>();
@@ -735,7 +720,6 @@ namespace DiceGame.Editor
             headerOutline.effectColor = new Color(0.20f, 0.27f, 0.40f, 0.55f);
             headerOutline.effectDistance = new Vector2(1.5f, -1.5f);
 
-            // Brand mark and title
             GameObject logoObj = CreateUIElement("LogoBadge", headerRect);
             RectTransform logoRect = logoObj.GetComponent<RectTransform>();
             logoRect.anchorMin = new Vector2(0.0f, 0.5f);
@@ -772,7 +756,6 @@ namespace DiceGame.Editor
             brandSub.color = new Color(0.23f, 0.91f, 0.88f, 1.0f);
             brandSub.characterSpacing = 2.0f;
 
-            // Mode Badge
             GameObject modeBtnObj = CreateUIElement("ModeBadgeButton", headerRect);
             RectTransform modeBtnRect = modeBtnObj.GetComponent<RectTransform>();
             modeBtnRect.anchorMin = new Vector2(0.0f, 0.5f);
@@ -794,7 +777,6 @@ namespace DiceGame.Editor
             modeText.fontSizeMin = 14.0f;
             modeText.fontSizeMax = 20.0f;
 
-            // Bankroll Container
             GameObject bankrollObj = CreateUIElement("BankrollContainer", headerRect);
             RectTransform bankrollRect = bankrollObj.GetComponent<RectTransform>();
             bankrollRect.anchorMin = new Vector2(0.5f, 0.5f);
@@ -814,7 +796,6 @@ namespace DiceGame.Editor
             bankrollVal.fontSizeMin = 25.0f;
             bankrollVal.fontSizeMax = 48.0f;
 
-            // Streak & Fever Container
             GameObject streakObj = CreateUIElement("StreakContainer", headerRect);
             RectTransform streakRect = streakObj.GetComponent<RectTransform>();
             streakRect.anchorMin = new Vector2(1.0f, 0.5f);
@@ -830,7 +811,6 @@ namespace DiceGame.Editor
             streakVal.fontSizeMin = 17.0f;
             streakVal.fontSizeMax = 28.0f;
 
-            // Fever Meter Bar
             GameObject feverBarBg = CreateUIElement("FeverBarBg", streakRect);
             RectTransform feverBarBgRect = feverBarBg.GetComponent<RectTransform>();
             feverBarBgRect.anchorMin = new Vector2(0.0f, 0.0f);
@@ -858,7 +838,6 @@ namespace DiceGame.Editor
             feverFillImg.fillOrigin = (int)Image.OriginHorizontal.Left;
             feverFillImg.color = new Color(1.0f, 0.35f, 0.85f, 1.0f);
 
-            // Fever Active Banner
             GameObject feverBanner = CreateUIElement("FeverBanner", headerRect);
             RectTransform bannerRect = feverBanner.GetComponent<RectTransform>();
             bannerRect.anchorMin = new Vector2(0.5f, 0.0f);
@@ -909,7 +888,6 @@ namespace DiceGame.Editor
             bg.type = Image.Type.Sliced;
             bg.color = Color.white;
 
-            // Timer Fill Bar
             GameObject fillObj = CreateUIElement("TimerFill", timerRect);
             RectTransform fillRect = fillObj.GetComponent<RectTransform>();
             fillRect.anchorMin = Vector2.zero;
@@ -924,11 +902,9 @@ namespace DiceGame.Editor
             fillImg.fillOrigin = (int)Image.OriginHorizontal.Left;
             fillImg.color = new Color(0.0f, 0.85f, 1.0f, 1.0f);
 
-            // Timer Text
             TextMeshProUGUI timerText = CreateText("TimerText", timerRect, "20.0s", 32, FontStyles.Bold, TextAlignmentOptions.Center);
             timerText.color = Color.white;
 
-            // Urgency overlay
             GameObject urgency = CreateUIElement("UrgencyPulse", timerRect);
             RectTransform urgRect = urgency.GetComponent<RectTransform>();
             urgRect.anchorMin = Vector2.zero;
@@ -960,7 +936,6 @@ namespace DiceGame.Editor
             arenaRect.anchoredPosition = new Vector2(0.0f, 155.0f);
             arenaRect.sizeDelta = new Vector2(650.0f, 230.0f);
 
-            // Arena Card Background
             Image arenaBg = arenaObj.AddComponent<Image>();
             arenaBg.sprite = _panelSprite;
             arenaBg.type = Image.Type.Sliced;
@@ -969,7 +944,6 @@ namespace DiceGame.Editor
             arenaOutline.effectColor = new Color(0.20f, 0.27f, 0.40f, 0.55f);
             arenaOutline.effectDistance = new Vector2(1.5f, -1.5f);
 
-            // Left Shadow
             GameObject shadowL = CreateUIElement("ShadowLeft", arenaRect);
             RectTransform shadowLRect = shadowL.GetComponent<RectTransform>();
             shadowLRect.anchoredPosition = new Vector2(-110.0f, -45.0f);
@@ -978,7 +952,6 @@ namespace DiceGame.Editor
             shadowLImg.sprite = _circleSprite;
             shadowLImg.color = new Color(0.0f, 0.0f, 0.0f, 0.45f);
 
-            // Right Shadow
             GameObject shadowR = CreateUIElement("ShadowRight", arenaRect);
             RectTransform shadowRRect = shadowR.GetComponent<RectTransform>();
             shadowRRect.anchoredPosition = new Vector2(110.0f, -45.0f);
@@ -987,7 +960,6 @@ namespace DiceGame.Editor
             shadowRImg.sprite = _circleSprite;
             shadowRImg.color = new Color(0.0f, 0.0f, 0.0f, 0.45f);
 
-            // Left Die Card
             GameObject dieL = CreateUIElement("DieLeft", arenaRect);
             RectTransform dieLRect = dieL.GetComponent<RectTransform>();
             dieLRect.anchoredPosition = new Vector2(-110.0f, 10.0f);
@@ -1001,7 +973,6 @@ namespace DiceGame.Editor
             TextMeshProUGUI textL = CreateText("DigitL", dieLRect, "5", 72, FontStyles.Bold, TextAlignmentOptions.Center);
             textL.color = Color.white;
 
-            // Right Die Card
             GameObject dieR = CreateUIElement("DieRight", arenaRect);
             RectTransform dieRRect = dieR.GetComponent<RectTransform>();
             dieRRect.anchoredPosition = new Vector2(110.0f, 10.0f);
@@ -1015,7 +986,6 @@ namespace DiceGame.Editor
             TextMeshProUGUI textR = CreateText("DigitR", dieRRect, "0", 72, FontStyles.Bold, TextAlignmentOptions.Center);
             textR.color = Color.white;
 
-            // Centered Result Number readout
             GameObject resultObj = CreateUIElement("ResultNumberContainer", arenaRect);
             RectTransform resultRect = resultObj.GetComponent<RectTransform>();
             resultRect.anchoredPosition = new Vector2(0.0f, -75.0f);
@@ -1107,7 +1077,6 @@ namespace DiceGame.Editor
             sliderOutline.effectColor = new Color(0.20f, 0.27f, 0.40f, 0.55f);
             sliderOutline.effectDistance = new Vector2(1.5f, -1.5f);
 
-            // Track Bar Object
             GameObject trackObj = CreateUIElement("Track", containerRect);
             RectTransform trackRect = trackObj.GetComponent<RectTransform>();
             trackRect.anchorMin = new Vector2(0.05f, 0.5f);
@@ -1121,7 +1090,6 @@ namespace DiceGame.Editor
             trackBg.type = Image.Type.Sliced;
             trackBg.color = new Color(0.15f, 0.18f, 0.25f, 1.0f);
 
-            // Win Zone Bar
             GameObject winZone = CreateUIElement("WinZone", trackRect);
             RectTransform winRect = winZone.GetComponent<RectTransform>();
             Image winImg = winZone.AddComponent<Image>();
@@ -1129,7 +1097,6 @@ namespace DiceGame.Editor
             winImg.type = Image.Type.Sliced;
             winImg.color = new Color(0.0f, 0.95f, 0.6f, 1.0f);
 
-            // Loss Zone Bar
             GameObject lossZone = CreateUIElement("LossZone", trackRect);
             RectTransform lossRect = lossZone.GetComponent<RectTransform>();
             Image lossImg = lossZone.AddComponent<Image>();
@@ -1137,7 +1104,6 @@ namespace DiceGame.Editor
             lossImg.type = Image.Type.Sliced;
             lossImg.color = new Color(0.95f, 0.22f, 0.38f, 1.0f);
 
-            // Golden Crit Zone Slice
             GameObject critZone = CreateUIElement("CritZone", trackRect);
             RectTransform critRect = critZone.GetComponent<RectTransform>();
             Image critImg = critZone.AddComponent<Image>();
@@ -1145,7 +1111,6 @@ namespace DiceGame.Editor
             critImg.type = Image.Type.Sliced;
             critImg.color = new Color(1.0f, 0.84f, 0.0f, 0.85f);
 
-            // Result Pin
             GameObject pinObj = CreateUIElement("ResultPin", trackRect);
             RectTransform pinRect = pinObj.GetComponent<RectTransform>();
             pinRect.anchorMin = new Vector2(0.5f, 0.5f);
@@ -1159,7 +1124,6 @@ namespace DiceGame.Editor
             pinImg.type = Image.Type.Sliced;
             pinImg.color = Color.white;
 
-            // Handle
             GameObject handleObj = CreateUIElement("Handle", trackRect);
             RectTransform handleRect = handleObj.GetComponent<RectTransform>();
             handleRect.anchorMin = new Vector2(0.5f, 0.5f);
@@ -1173,8 +1137,6 @@ namespace DiceGame.Editor
             handleImg.type = Image.Type.Sliced;
             handleImg.color = new Color(0.95f, 0.98f, 1.0f, 1.0f);
 
-            // Top Info Row: Multiplier, Target, Win Chance, Mode Toggle
-            // Mode Toggle Button
             GameObject toggleBtnObj = CreateUIElement("ModeToggleBtn", containerRect);
             RectTransform toggleBtnRect = toggleBtnObj.GetComponent<RectTransform>();
             toggleBtnRect.anchorMin = new Vector2(0.05f, 1.0f);
@@ -1196,7 +1158,6 @@ namespace DiceGame.Editor
             toggleText.fontSizeMin = 14.0f;
             toggleText.fontSizeMax = 20.0f;
 
-            // Multiplier Display
             GameObject multObj = CreateUIElement("MultiplierDisplay", containerRect);
             RectTransform multRect = multObj.GetComponent<RectTransform>();
             multRect.anchorMin = new Vector2(0.38f, 1.0f);
@@ -1208,7 +1169,6 @@ namespace DiceGame.Editor
             TextMeshProUGUI multText = CreateText("MultVal", multRect, "1.98x", 29, FontStyles.Bold, TextAlignmentOptions.Center);
             multText.color = new Color(1.0f, 0.84f, 0.0f, 1.0f);
 
-            // Target Display
             GameObject targetObj = CreateUIElement("TargetDisplay", containerRect);
             RectTransform targetRect = targetObj.GetComponent<RectTransform>();
             targetRect.anchorMin = new Vector2(0.62f, 1.0f);
@@ -1220,7 +1180,6 @@ namespace DiceGame.Editor
             TextMeshProUGUI targetText = CreateText("TargetVal", targetRect, "50", 29, FontStyles.Bold, TextAlignmentOptions.Center);
             targetText.color = Color.white;
 
-            // Win Chance Display
             GameObject chanceObj = CreateUIElement("ChanceDisplay", containerRect);
             RectTransform chanceRect = chanceObj.GetComponent<RectTransform>();
             chanceRect.anchorMin = new Vector2(0.95f, 1.0f);
@@ -1232,7 +1191,6 @@ namespace DiceGame.Editor
             TextMeshProUGUI chanceText = CreateText("ChanceVal", chanceRect, "50.0%", 29, FontStyles.Bold, TextAlignmentOptions.Center);
             chanceText.color = new Color(0.0f, 0.95f, 0.6f, 1.0f);
 
-            // Quick Presets Row below Track
             GameObject presetsRow = CreateUIElement("PresetsRow", containerRect);
             RectTransform presetsRect = presetsRow.GetComponent<RectTransform>();
             presetsRect.anchorMin = new Vector2(0.05f, 0.0f);
@@ -1324,7 +1282,6 @@ namespace DiceGame.Editor
             betOutline.effectColor = new Color(0.20f, 0.27f, 0.40f, 0.55f);
             betOutline.effectDistance = new Vector2(1.5f, -1.5f);
 
-            // Left Section: Bet Amount Box & Quick Bet Buttons
             GameObject betBox = CreateUIElement("BetAmountBox", containerRect);
             RectTransform betBoxRect = betBox.GetComponent<RectTransform>();
             betBoxRect.anchorMin = new Vector2(0.04f, 0.5f);
@@ -1349,7 +1306,6 @@ namespace DiceGame.Editor
             betVal.fontSizeMin = 22.0f;
             betVal.fontSizeMax = 38.0f;
 
-            // Quick Bet Stepper Buttons (1/2, 2X, MIN, MAX)
             GameObject quickBtnRow = CreateUIElement("QuickBtnRow", containerRect);
             RectTransform quickRect = quickBtnRow.GetComponent<RectTransform>();
             quickRect.anchorMin = new Vector2(0.33f, 0.5f);
@@ -1363,7 +1319,6 @@ namespace DiceGame.Editor
             Button btnMin = CreateButton("BtnMin", quickRect, new Vector2(0, -24), new Vector2(92, 38), "MIN", 16);
             Button btnMax = CreateButton("BtnMax", quickRect, new Vector2(102, -24), new Vector2(92, 38), "MAX", 16);
 
-            // Center/Right: Huge ROLL DICE Button
             GameObject rollBtnObj = CreateUIElement("RollButton", containerRect);
             RectTransform rollRect = rollBtnObj.GetComponent<RectTransform>();
             rollRect.anchorMin = new Vector2(0.60f, 0.5f);
@@ -1391,7 +1346,6 @@ namespace DiceGame.Editor
             rollText.fontSizeMin = 22.0f;
             rollText.fontSizeMax = 40.0f;
 
-            // Auto Roll Toggle Button
             GameObject autoBtnObj = CreateUIElement("AutoRollButton", containerRect);
             RectTransform autoRect = autoBtnObj.GetComponent<RectTransform>();
             autoRect.anchorMin = new Vector2(0.86f, 0.5f);
@@ -1434,11 +1388,9 @@ namespace DiceGame.Editor
             rootRect.offsetMin = Vector2.zero;
             rootRect.offsetMax = Vector2.zero;
 
-            // Semi-transparent backdrop
             Image backdrop = root.AddComponent<Image>();
             backdrop.color = new Color(0.02f, 0.03f, 0.06f, 0.88f);
 
-            // Modal Card
             GameObject cardObj = CreateUIElement("ModalCard", rootRect);
             RectTransform cardRect = cardObj.GetComponent<RectTransform>();
             cardRect.anchorMin = new Vector2(0.5f, 0.5f);
@@ -1452,12 +1404,10 @@ namespace DiceGame.Editor
             cardBg.type = Image.Type.Sliced;
             cardBg.color = Color.white;
 
-            // Header Title
             TextMeshProUGUI headerTitle = CreateText("HeaderTitle", cardRect, "BLITZ RUN COMPLETE!", 34, FontStyles.Bold, TextAlignmentOptions.Top);
             headerTitle.rectTransform.anchoredPosition = new Vector2(0.0f, -25.0f);
             headerTitle.color = Color.white;
 
-            // Rank Badge Background & Texts
             GameObject rankBadgeObj = CreateUIElement("RankBadge", cardRect);
             RectTransform rankBadgeRect = rankBadgeObj.GetComponent<RectTransform>();
             rankBadgeRect.anchoredPosition = new Vector2(0.0f, 130.0f);
@@ -1475,7 +1425,6 @@ namespace DiceGame.Editor
             rankTitle.rectTransform.anchoredPosition = new Vector2(0.0f, 65.0f);
             rankTitle.color = new Color(1.0f, 0.84f, 0.0f, 1.0f);
 
-            // Stat Rows: Final Score, Net Profit, Rolls, Win Rate, Best Streak, Crits
             TextMeshProUGUI finalScore = CreateStatRow(cardRect, "Final Bankroll:", "$5,420", new Vector2(0.0f, 25.0f));
             TextMeshProUGUI netProfit = CreateStatRow(cardRect, "Net Profit:", "+$4,420", new Vector2(0.0f, -10.0f));
             TextMeshProUGUI totalRolls = CreateStatRow(cardRect, "Total Rolls:", "38", new Vector2(0.0f, -45.0f));
@@ -1483,7 +1432,6 @@ namespace DiceGame.Editor
             TextMeshProUGUI bestStreak = CreateStatRow(cardRect, "Best Streak:", "x7", new Vector2(0.0f, -115.0f));
             TextMeshProUGUI critsHit = CreateStatRow(cardRect, "Jackpot Crits:", "3", new Vector2(0.0f, -150.0f));
 
-            // Buttons: Play Again & Endless
             Button btnPlayAgain = CreateButton("BtnPlayAgain", cardRect, new Vector2(-130.0f, -210.0f), new Vector2(240.0f, 62.0f), "PLAY AGAIN (20s)", 22);
             Image playAgainImg = btnPlayAgain.GetComponent<Image>();
             playAgainImg.sprite = _primaryButtonSprite;
@@ -1538,7 +1486,6 @@ namespace DiceGame.Editor
             containerRect.offsetMin = Vector2.zero;
             containerRect.offsetMax = Vector2.zero;
 
-            // Create prefab template
             GameObject itemObj = CreateUIElement("FloatingTextPrefab", containerRect);
             RectTransform itemRect = itemObj.GetComponent<RectTransform>();
             itemRect.sizeDelta = new Vector2(400.0f, 60.0f);
@@ -1664,7 +1611,6 @@ namespace DiceGame.Editor
             SetPrivateField(mgr, "historyView", historyView);
         }
 
-        // Helper UI creation methods
         private static GameObject CreateUIElement(string name, RectTransform parent)
         {
             GameObject obj = new GameObject(name, typeof(RectTransform));
@@ -1744,3 +1690,4 @@ namespace DiceGame.Editor
         }
     }
 }
+

@@ -43,7 +43,6 @@ namespace DiceGame.UI
         [SerializeField] private Image bgPreset75;
         [SerializeField] private Image bgPreset90;
 
-        // Events
         public event Action<float> OnTargetChanged;
         public event Action OnToggleModeRequested;
         public event Action<float> OnPresetSelected;
@@ -58,7 +57,6 @@ namespace DiceGame.UI
         private float _critMin = 70.0f;
         private float _critMax = 75.0f;
 
-        // Result Pin Animation
         private bool _isPinAnimating;
         private float _pinAnimTimer;
         private float _pinAnimDuration = 0.4f;
@@ -166,12 +164,10 @@ namespace DiceGame.UI
             _pinAnimTimer += Time.deltaTime;
             float t = Mathf.Clamp01(_pinAnimTimer / _pinAnimDuration);
 
-            // Smooth cubic out
             float curved = 1.0f - Mathf.Pow(1.0f - t, 3.0f);
             float currentX = Mathf.Lerp(_pinStartPos, _pinTargetPos, curved);
             resultPinRect.anchoredPosition = new Vector2(currentX, resultPinRect.anchoredPosition.y);
 
-            // Pop bounce
             float pop = 1.0f + Mathf.Sin(t * Mathf.PI) * 0.35f;
             resultPinRect.localScale = new Vector3(pop, pop, 1.0f);
 
@@ -223,16 +219,13 @@ namespace DiceGame.UI
             float normalizedTarget = _currentTarget / 100.0f;
             float targetPixelX = (normalizedTarget - 0.5f) * trackWidth;
 
-            // Update handle position
             if (handleRect != null)
             {
                 handleRect.anchoredPosition = new Vector2(targetPixelX, handleRect.anchoredPosition.y);
             }
 
-            // Update win/loss zone bars
             if (_isRollUnder)
             {
-                // Under target is Win (left side)
                 if (winZoneRect != null)
                 {
                     winZoneRect.anchorMin = new Vector2(0.0f, 0.0f);
@@ -254,7 +247,6 @@ namespace DiceGame.UI
             }
             else
             {
-                // Over target is Win (right side)
                 if (lossZoneRect != null)
                 {
                     lossZoneRect.anchorMin = new Vector2(0.0f, 0.0f);
@@ -308,3 +300,4 @@ namespace DiceGame.UI
         }
     }
 }
+

@@ -89,7 +89,6 @@ namespace DiceGame.UI
             if (critsHitText != null) critsHitText.text = critsHit.ToString();
             if (newRecordBadge != null) newRecordBadge.SetActive(isNewRecord);
 
-            // Compute Rank
             string rank;
             string title;
             Color rankColor;
@@ -146,7 +145,6 @@ namespace DiceGame.UI
                 rankBgImage.color = new Color(rankColor.r, rankColor.g, rankColor.b, 0.18f);
             }
 
-            // Punch pop animation
             if (cardRect != null)
             {
                 cardRect.localScale = Vector3.one * 0.8f;
@@ -167,3 +165,4 @@ namespace DiceGame.UI
         }
     }
 }
+

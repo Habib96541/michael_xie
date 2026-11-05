@@ -122,7 +122,6 @@ namespace DiceGame.Loading
                 cam.backgroundColor = new Color(0.04f, 0.06f, 0.09f, 1.0f);
             }
 
-            // Canvas
             GameObject canvasObj = new GameObject("LoadingCanvas");
             Canvas canvas = canvasObj.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -135,7 +134,6 @@ namespace DiceGame.Loading
             canvasObj.AddComponent<GraphicRaycaster>();
             RectTransform canvasRect = canvasObj.GetComponent<RectTransform>();
 
-            // Background
             GameObject bgObj = CreateUIElement("Background", canvasRect);
             RectTransform bgRect = bgObj.GetComponent<RectTransform>();
             bgRect.anchorMin = Vector2.zero;
@@ -157,7 +155,6 @@ namespace DiceGame.Loading
             glowImg.sprite = _circleSprite;
             glowImg.color = new Color(0.0f, 0.5f, 1.0f, 0.07f);
 
-            // Safe Area Root
             GameObject safeRootObj = CreateUIElement("SafeAreaRoot", canvasRect);
             RectTransform safeRootRect = safeRootObj.GetComponent<RectTransform>();
             safeRootRect.anchorMin = Vector2.zero;
@@ -165,7 +162,6 @@ namespace DiceGame.Loading
             safeRootRect.offsetMin = Vector2.zero;
             safeRootRect.offsetMax = Vector2.zero;
 
-            // Center Content
             GameObject centerObj = CreateUIElement("CenterContent", safeRootRect);
             RectTransform centerRect = centerObj.GetComponent<RectTransform>();
             centerRect.anchorMin = new Vector2(0.5f, 0.5f);
@@ -174,7 +170,6 @@ namespace DiceGame.Loading
             centerRect.anchoredPosition = Vector2.zero;
             centerRect.sizeDelta = new Vector2(900.0f, 650.0f);
 
-            // Animated Dice Icons (Dual Tumbling Dice)
             GameObject diceLeftObj = CreateUIElement("AnimatedDiceLeft", centerRect);
             RectTransform diceLeftRect = diceLeftObj.GetComponent<RectTransform>();
             diceLeftRect.anchoredPosition = new Vector2(-65.0f, 175.0f);
@@ -201,13 +196,11 @@ namespace DiceGame.Loading
             TextMeshProUGUI diceRightPip = CreateText("DicePipRight", diceRightRect, "7", 60, FontStyles.Bold, TextAlignmentOptions.Center);
             diceRightPip.color = new Color(0.0f, 0.95f, 0.6f, 1.0f);
 
-            // Title
             TextMeshProUGUI titleText = CreateText("GameTitle", centerRect, "DICE OVERDRIVE", 56, FontStyles.Bold, TextAlignmentOptions.Center);
             titleText.rectTransform.anchoredPosition = new Vector2(0.0f, 75.0f);
             titleText.rectTransform.sizeDelta = new Vector2(850.0f, 70.0f);
             titleText.color = Color.white;
 
-            // Subtitle Badge
             GameObject subtitleObj = CreateUIElement("SubtitleBadge", centerRect);
             RectTransform subRect = subtitleObj.GetComponent<RectTransform>();
             subRect.anchoredPosition = new Vector2(0.0f, 25.0f);
@@ -221,7 +214,6 @@ namespace DiceGame.Loading
             TextMeshProUGUI subText = CreateText("SubText", subRect, "20s BLITZ RUSH", 18, FontStyles.Bold, TextAlignmentOptions.Center);
             subText.color = new Color(0.0f, 0.95f, 0.6f, 1.0f);
 
-            // Progress Frame
             GameObject progFrameObj = CreateUIElement("ProgressBarFrame", centerRect);
             RectTransform frameRect = progFrameObj.GetComponent<RectTransform>();
             frameRect.anchoredPosition = new Vector2(0.0f, -50.0f);
@@ -232,7 +224,6 @@ namespace DiceGame.Loading
             frameImg.type = Image.Type.Sliced;
             frameImg.color = new Color(0.10f, 0.13f, 0.19f, 0.95f);
 
-            // Progress Fill
             GameObject progFillObj = CreateUIElement("ProgressBarFill", frameRect);
             RectTransform fillRect = progFillObj.GetComponent<RectTransform>();
             fillRect.anchorMin = Vector2.zero;
@@ -247,19 +238,16 @@ namespace DiceGame.Loading
             fillImg.fillOrigin = (int)Image.OriginHorizontal.Left;
             fillImg.color = new Color(0.0f, 0.9f, 0.6f, 1.0f);
 
-            // Percent Text
             TextMeshProUGUI percentText = CreateText("PercentText", centerRect, "0%", 20, FontStyles.Bold, TextAlignmentOptions.Center);
             percentText.rectTransform.anchoredPosition = new Vector2(0.0f, -85.0f);
             percentText.rectTransform.sizeDelta = new Vector2(200.0f, 30.0f);
             percentText.color = Color.white;
 
-            // Status Text
             TextMeshProUGUI statusText = CreateText("StatusText", centerRect, "INITIALIZING DICE ENGINE...", 16, FontStyles.Normal, TextAlignmentOptions.Center);
             statusText.rectTransform.anchoredPosition = new Vector2(0.0f, -118.0f);
             statusText.rectTransform.sizeDelta = new Vector2(750.0f, 30.0f);
             statusText.color = new Color(0.6f, 0.72f, 0.88f, 0.85f);
 
-            // Gameplay Tips Marquee
             GameObject tipsBoxObj = CreateUIElement("TipsBox", centerRect);
             RectTransform tipsBoxRect = tipsBoxObj.GetComponent<RectTransform>();
             tipsBoxRect.anchoredPosition = new Vector2(0.0f, -156.0f);
@@ -273,7 +261,6 @@ namespace DiceGame.Loading
             TextMeshProUGUI tipsText = CreateText("TipsText", tipsBoxRect, "TIP: Land in the Golden Crit Zone for a massive 3.0x Jackpot Payout!", 14, FontStyles.Italic, TextAlignmentOptions.Center);
             tipsText.color = new Color(0.85f, 0.88f, 0.95f, 0.9f);
 
-            // Start Button
             GameObject startBtnObj = CreateUIElement("StartButton", centerRect);
             RectTransform startBtnRect = startBtnObj.GetComponent<RectTransform>();
             startBtnRect.anchoredPosition = new Vector2(0.0f, -225.0f);
@@ -294,7 +281,6 @@ namespace DiceGame.Loading
             TextMeshProUGUI startText = CreateText("StartText", startBtnRect, "ENTER THE ARENA", 22, FontStyles.Bold, TextAlignmentOptions.Center);
             startText.color = new Color(0.04f, 0.15f, 0.08f, 1.0f);
 
-            // Screen Fade Overlay
             GameObject fadeObj = CreateUIElement("ScreenFadeOverlay", canvasRect);
             RectTransform fadeRect = fadeObj.GetComponent<RectTransform>();
             fadeRect.anchorMin = Vector2.zero;
@@ -308,7 +294,6 @@ namespace DiceGame.Loading
             CanvasGroup fadeGroup = fadeObj.AddComponent<CanvasGroup>();
             fadeGroup.alpha = 0.0f;
 
-            // Loading Controller
             GameObject ctrlObj = new GameObject("LoadingController");
             DiceLoadingController ctrl = ctrlObj.AddComponent<DiceLoadingController>();
             SetPrivateField(ctrl, "progressBarFill", fillImg);
@@ -371,3 +356,4 @@ namespace DiceGame.Loading
         }
     }
 }
+

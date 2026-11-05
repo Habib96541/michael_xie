@@ -42,7 +42,7 @@ namespace DiceGame.Effects
             if (_trauma > 0.001f)
             {
                 _trauma = Mathf.Max(0.0f, _trauma - Time.deltaTime * traumaDecayRate);
-                float shake = _trauma * _trauma; // Quadratic falloff
+                float shake = _trauma * _trauma;
 
                 float time = (Time.time + _timeSeed) * 28.0f;
                 float offsetX = (Mathf.PerlinNoise(time, 0.0f) * 2.0f - 1.0f) * maxTranslationShake * shake;
@@ -60,3 +60,4 @@ namespace DiceGame.Effects
         }
     }
 }
+

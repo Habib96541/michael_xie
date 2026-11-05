@@ -39,7 +39,6 @@ namespace DiceGame.Loading
         private int _lastHeight = -1;
         private Rect _lastSafeArea;
 
-        // Tips Carousel
         private float _tipTimer;
         private int _currentTipIndex;
         private static readonly string[] GameplayTips =
@@ -62,14 +61,13 @@ namespace DiceGame.Loading
 
         private static readonly string[] DigitStrings = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-        private readonly char[] _percentBuffer = new char[5]; // e.g. "100%\0"
+        private readonly char[] _percentBuffer = new char[5];
         private float _pipCycleTimer;
         private AudioClip _unlockClip;
         private AudioSource _audioSource;
 
         private void Awake()
         {
-            // Set responsive canvas scaler & safe area
             ApplyResponsiveLayout();
 
             _audioSource = gameObject.AddComponent<AudioSource>();
@@ -133,7 +131,6 @@ namespace DiceGame.Loading
                 ApplyResponsiveLayout();
             }
 
-            // Rotate the animated dice icons smoothly
             if (animatedDiceIcon != null)
             {
                 animatedDiceIcon.Rotate(0.0f, 0.0f, -140.0f * Time.deltaTime);
@@ -148,7 +145,6 @@ namespace DiceGame.Loading
                 animatedDiceIconRight.localScale = new Vector3(bounceR, bounceR, 1.0f);
             }
 
-            // Cycle numbers on dice pips during load
             _pipCycleTimer += Time.deltaTime;
             if (_pipCycleTimer >= 0.12f)
             {
@@ -159,7 +155,6 @@ namespace DiceGame.Loading
                 if (diceRightPipText != null) diceRightPipText.text = DigitStrings[r2];
             }
 
-            // Cycle tips
             _tipTimer += Time.deltaTime;
             if (_tipTimer >= 2.2f)
             {
@@ -171,7 +166,6 @@ namespace DiceGame.Loading
                 }
             }
 
-            // Pulse start button when visible
             if (_isReadyToStart && startButtonCanvasGroup != null && !_isTransitioning)
             {
                 float pulse = 1.0f + Mathf.Sin(Time.time * 5.0f) * 0.05f;
@@ -200,11 +194,9 @@ namespace DiceGame.Loading
 
         private IEnumerator LoadTargetSceneRoutine()
         {
-            // Start async scene load in background
             _asyncOperation = SceneManager.LoadSceneAsync(targetSceneName);
             if (_asyncOperation == null)
             {
-                // Fallback to scene index 1 if by name fails
                 _asyncOperation = SceneManager.LoadSceneAsync(1);
             }
 
@@ -223,11 +215,9 @@ namespace DiceGame.Loading
                 float asyncProgress = 0.0f;
                 if (_asyncOperation != null)
                 {
-                    // Unity asyncOp.progress stops at 0.9 until allowSceneActivation = true
                     asyncProgress = Mathf.Clamp01(_asyncOperation.progress / 0.9f);
                 }
 
-                // Smoothly interpolate display progress
                 float targetProgress = Mathf.Min(timeProgress, (_asyncOperation != null) ? asyncProgress : 1.0f);
                 displayProgress = Mathf.MoveTowards(displayProgress, targetProgress, Time.unscaledDeltaTime * 1.5f);
 
@@ -235,7 +225,6 @@ namespace DiceGame.Loading
                 yield return null;
             }
 
-            // Finished loading
             UpdateProgressUI(1.0f);
             _isReadyToStart = true;
 
@@ -245,7 +234,6 @@ namespace DiceGame.Loading
             }
             else
             {
-                // Reveal start button with smooth fade-in
                 if (buttonStart != null) buttonStart.gameObject.SetActive(true);
                 if (startButtonCanvasGroup != null)
                 {
@@ -323,7 +311,6 @@ namespace DiceGame.Loading
                 startButtonCanvasGroup.interactable = false;
             }
 
-            // Unmute / initialize WebAudio context (crucial for WebGL browser autoplay policy)
             AudioListener.pause = false;
             if (_audioSource != null && _unlockClip != null)
             {
@@ -335,7 +322,6 @@ namespace DiceGame.Loading
 
         private IEnumerator TransitionRoutine()
         {
-            // Smooth fade to black
             if (screenFadeCanvasGroup != null)
             {
                 float fade = 0.0f;
@@ -347,7 +333,6 @@ namespace DiceGame.Loading
                 }
             }
 
-            // Activate loaded scene
             if (_asyncOperation != null)
             {
                 _asyncOperation.allowSceneActivation = true;
@@ -472,16 +457,15 @@ namespace DiceGame.Loading
 
             if (Screen.width < Screen.height)
             {
-                // Portrait mode
                 canvasScaler.referenceResolution = new Vector2(1080, 1920);
                 canvasScaler.matchWidthOrHeight = 0.0f;
             }
             else
             {
-                // Landscape mode
                 canvasScaler.referenceResolution = new Vector2(1920, 1080);
                 canvasScaler.matchWidthOrHeight = 1.0f;
             }
         }
     }
 }
+

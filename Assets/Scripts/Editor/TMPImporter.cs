@@ -39,3 +39,4 @@ namespace DiceGame.Editor
         }
     }
 }
+

@@ -56,19 +56,16 @@ namespace DiceGame.UI
         {
             if (_records == null || _records.Length == 0) return;
 
-            // Shift older records to the right
             for (int i = _records.Length - 1; i > 0; i--)
             {
                 _records[i] = _records[i - 1];
             }
 
-            // Insert new record at front (index 0)
             _records[0].Value = rollValue;
             _records[0].IsWin = isWin;
             _records[0].IsCrit = isCrit;
             _records[0].Active = true;
 
-            // Refresh UI pills
             for (int i = 0; i < _records.Length; i++)
             {
                 if (i >= pills.Length) break;
@@ -93,3 +90,4 @@ namespace DiceGame.UI
         }
     }
 }
+
