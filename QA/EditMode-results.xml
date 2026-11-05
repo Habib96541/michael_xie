@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="42" result="Passed" total="42" passed="42" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-01 09:07:00Z" end-time="2026-11-01 09:07:03Z" duration="2.3257155">
+  <test-suite type="TestSuite" id="1000" name="Chicken Rush_ Cash Out!" fullname="Chicken Rush_ Cash Out!" runstate="Runnable" testcasecount="42" result="Passed" start-time="2026-11-01 09:07:00Z" end-time="2026-11-01 09:07:03Z" duration="2.325716" total="42" passed="42" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1053" name="ChickenRush.EditTests.dll" fullname="D:/30 games/Classic Crossy Roads/Library/ScriptAssemblies/ChickenRush.EditTests.dll" runstate="Runnable" testcasecount="42" result="Passed" start-time="2026-11-01 09:07:00Z" end-time="2026-11-01 09:07:03Z" duration="2.308765" total="42" passed="42" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="1020" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="OverhaulTests" fullname="OverhaulTests" classname="OverhaulTests" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-11-01 09:07:00Z" end-time="2026-11-01 09:07:01Z" duration="0.689332" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1010" name="DifferentLanesHaveDifferentSpeedsDirectionsAndHeadways" fullname="OverhaulTests.DifferentLanesHaveDifferentSpeedsDirectionsAndHeadways" methodname="DifferentLanesHaveDifferentSpeedsDirectionsAndHeadways" classname="OverhaulTests" runstate="Runnable" seed="492943113" result="Passed" start-time="2026-11-01 09:07:00Z" end-time="2026-11-01 09:07:00Z" duration="0.037017" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1009" name="EveryLaneHasAReachableLaunchWindow" fullname="OverhaulTests.EveryLaneHasAReachableLaunchWindow" classname="OverhaulTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-01 09:07:00Z" end-time="2026-11-01 09:07:01Z" duration="0.477312" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1006" name="EveryLaneHasAReachableLaunchWindow(&quot;EASY&quot;)" fullname="OverhaulTests.EveryLaneHasAReachableLaunchWindow(&quot;EASY&quot;)" methodname="EveryLaneHasAReachableLaunchWindow" classname="OverhaulTests" runstate="Runnable" seed="83192116" result="Passed" start-time="2026-11-01 09:07:00Z" end-time="2026-11-01 09:07:01Z" duration="0.208833" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1007" name="EveryLaneHasAReachableLaunchWindow(&quot;NORMAL&quot;)" fullname="OverhaulTests.EveryLaneHasAReachableLaunchWindow(&quot;NORMAL&quot;)" methodname="EveryLaneHasAReachableLaunchWindow" classname="OverhaulTests" runstate="Runnable" seed="647275275" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.150564" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1008" name="EveryLaneHasAReachableLaunchWindow(&quot;HARD&quot;)" fullname="OverhaulTests.EveryLaneHasAReachableLaunchWindow(&quot;HARD&quot;)" methodname="EveryLaneHasAReachableLaunchWindow" classname="OverhaulTests" runstate="Runnable" seed="730541144" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.110644" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1025" name="FullConfiguredCrossingPaysTheDisplayedProgressionOnce" fullname="OverhaulTests.FullConfiguredCrossingPaysTheDisplayedProgressionOnce" classname="OverhaulTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.007490" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1022" name="FullConfiguredCrossingPaysTheDisplayedProgressionOnce(&quot;EASY&quot;)" fullname="OverhaulTests.FullConfiguredCrossingPaysTheDisplayedProgressionOnce(&quot;EASY&quot;)" methodname="FullConfiguredCrossingPaysTheDisplayedProgressionOnce" classname="OverhaulTests" runstate="Runnable" seed="773651861" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.004741" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1023" name="FullConfiguredCrossingPaysTheDisplayedProgressionOnce(&quot;NORMAL&quot;)" fullname="OverhaulTests.FullConfiguredCrossingPaysTheDisplayedProgressionOnce(&quot;NORMAL&quot;)" methodname="FullConfiguredCrossingPaysTheDisplayedProgressionOnce" classname="OverhaulTests" runstate="Runnable" seed="337165962" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000319" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1024" name="FullConfiguredCrossingPaysTheDisplayedProgressionOnce(&quot;HARD&quot;)" fullname="OverhaulTests.FullConfiguredCrossingPaysTheDisplayedProgressionOnce(&quot;HARD&quot;)" methodname="FullConfiguredCrossingPaysTheDisplayedProgressionOnce" classname="OverhaulTests" runstate="Runnable" seed="120388566" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000202" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1021" name="NineSliceKeepsTheSameCornerWidthAtDifferentSizes" fullname="OverhaulTests.NineSliceKeepsTheSameCornerWidthAtDifferentSizes" methodname="NineSliceKeepsTheSameCornerWidthAtDifferentSizes" classname="OverhaulTests" runstate="Runnable" seed="502707809" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.062058" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1019" name="ResponsiveRegionsStaySeparateAndTouchable" fullname="OverhaulTests.ResponsiveRegionsStaySeparateAndTouchable" classname="OverhaulTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.016663" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1012" name="ResponsiveRegionsStaySeparateAndTouchable(1920,1080,Desktop)" fullname="OverhaulTests.ResponsiveRegionsStaySeparateAndTouchable(1920,1080,Desktop)" methodname="ResponsiveRegionsStaySeparateAndTouchable" classname="OverhaulTests" runstate="Runnable" seed="1463061690" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.006188" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1013" name="ResponsiveRegionsStaySeparateAndTouchable(1366,768,Desktop)" fullname="OverhaulTests.ResponsiveRegionsStaySeparateAndTouchable(1366,768,Desktop)" methodname="ResponsiveRegionsStaySeparateAndTouchable" classname="OverhaulTests" runstate="Runnable" seed="821761757" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000363" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1014" name="ResponsiveRegionsStaySeparateAndTouchable(1280,720,Desktop)" fullname="OverhaulTests.ResponsiveRegionsStaySeparateAndTouchable(1280,720,Desktop)" methodname="ResponsiveRegionsStaySeparateAndTouchable" classname="OverhaulTests" runstate="Runnable" seed="373609054" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000390" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1015" name="ResponsiveRegionsStaySeparateAndTouchable(390,844,Portrait)" fullname="OverhaulTests.ResponsiveRegionsStaySeparateAndTouchable(390,844,Portrait)" methodname="ResponsiveRegionsStaySeparateAndTouchable" classname="OverhaulTests" runstate="Runnable" seed="1441828402" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000301" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1016" name="ResponsiveRegionsStaySeparateAndTouchable(360,800,Portrait)" fullname="OverhaulTests.ResponsiveRegionsStaySeparateAndTouchable(360,800,Portrait)" methodname="ResponsiveRegionsStaySeparateAndTouchable" classname="OverhaulTests" runstate="Runnable" seed="247095548" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000275" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1017" name="ResponsiveRegionsStaySeparateAndTouchable(844,390,Landscape)" fullname="OverhaulTests.ResponsiveRegionsStaySeparateAndTouchable(844,390,Landscape)" methodname="ResponsiveRegionsStaySeparateAndTouchable" classname="OverhaulTests" runstate="Runnable" seed="1906122656" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000746" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1018" name="ResponsiveRegionsStaySeparateAndTouchable(768,1024,Tablet)" fullname="OverhaulTests.ResponsiveRegionsStaySeparateAndTouchable(768,1024,Tablet)" methodname="ResponsiveRegionsStaySeparateAndTouchable" classname="OverhaulTests" runstate="Runnable" seed="1502363525" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000652" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1011" name="SweptHitCatchesFastVerticalVehiclesButAllowsANearMiss" fullname="OverhaulTests.SweptHitCatchesFastVerticalVehiclesButAllowsANearMiss" methodname="SweptHitCatchesFastVerticalVehiclesButAllowsANearMiss" classname="OverhaulTests" runstate="Runnable" seed="2003469042" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000766" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1005" name="TrafficEscalatesAndKeepsARecoveryGap" fullname="OverhaulTests.TrafficEscalatesAndKeepsARecoveryGap" classname="OverhaulTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.053215" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1002" name="TrafficEscalatesAndKeepsARecoveryGap(&quot;EASY&quot;)" fullname="OverhaulTests.TrafficEscalatesAndKeepsARecoveryGap(&quot;EASY&quot;)" methodname="TrafficEscalatesAndKeepsARecoveryGap" classname="OverhaulTests" runstate="Runnable" seed="782194074" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.022418" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1003" name="TrafficEscalatesAndKeepsARecoveryGap(&quot;NORMAL&quot;)" fullname="OverhaulTests.TrafficEscalatesAndKeepsARecoveryGap(&quot;NORMAL&quot;)" methodname="TrafficEscalatesAndKeepsARecoveryGap" classname="OverhaulTests" runstate="Runnable" seed="328931393" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.016104" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1004" name="TrafficEscalatesAndKeepsARecoveryGap(&quot;HARD&quot;)" fullname="OverhaulTests.TrafficEscalatesAndKeepsARecoveryGap(&quot;HARD&quot;)" methodname="TrafficEscalatesAndKeepsARecoveryGap" classname="OverhaulTests" runstate="Runnable" seed="1828452684" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.013284" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1020" name="UIUsesLosslessSourcesAndExplicitNineSliceBorders" fullname="OverhaulTests.UIUsesLosslessSourcesAndExplicitNineSliceBorders" methodname="UIUsesLosslessSourcesAndExplicitNineSliceBorders" classname="OverhaulTests" runstate="Runnable" seed="1792650388" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.007048" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1026" name="RoundRulesTests" fullname="RoundRulesTests" classname="RoundRulesTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.005251" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1029" name="CashOutCannotPayTwiceOrBeChangedByCollision" fullname="RoundRulesTests.CashOutCannotPayTwiceOrBeChangedByCollision" methodname="CashOutCannotPayTwiceOrBeChangedByCollision" classname="RoundRulesTests" runstate="Runnable" seed="182285506" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000535" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1030" name="CollisionStopsTheHopAndNeverPays" fullname="RoundRulesTests.CollisionStopsTheHopAndNeverPays" methodname="CollisionStopsTheHopAndNeverPays" classname="RoundRulesTests" runstate="Runnable" seed="1800328045" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000337" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1031" name="DecimalRewardMatchesDisplayedMultiplier" fullname="RoundRulesTests.DecimalRewardMatchesDisplayedMultiplier" methodname="DecimalRewardMatchesDisplayedMultiplier" classname="RoundRulesTests" runstate="Runnable" seed="1927509535" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000324" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1035" name="FreeRefillOnlyAtZeroOutsideARound" fullname="RoundRulesTests.FreeRefillOnlyAtZeroOutsideARound" methodname="FreeRefillOnlyAtZeroOutsideARound" classname="RoundRulesTests" runstate="Runnable" seed="863427009" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000317" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1032" name="MaximumLaneCannotBeExceeded" fullname="RoundRulesTests.MaximumLaneCannotBeExceeded" methodname="MaximumLaneCannotBeExceeded" classname="RoundRulesTests" runstate="Runnable" seed="386163414" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000168" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1033" name="NextRewardUsesTheSameIntegerRoundingAsCashOut" fullname="RoundRulesTests.NextRewardUsesTheSameIntegerRoundingAsCashOut" methodname="NextRewardUsesTheSameIntegerRoundingAsCashOut" classname="RoundRulesTests" runstate="Runnable" seed="389313604" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000442" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1028" name="PreparingAndHoppingRejectCashOutAndExtraInputs" fullname="RoundRulesTests.PreparingAndHoppingRejectCashOutAndExtraInputs" methodname="PreparingAndHoppingRejectCashOutAndExtraInputs" classname="RoundRulesTests" runstate="Runnable" seed="2089379877" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000280" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1034" name="RestartClearsPreviousResultAndProgress" fullname="RoundRulesTests.RestartClearsPreviousResultAndProgress" methodname="RestartClearsPreviousResultAndProgress" classname="RoundRulesTests" runstate="Runnable" seed="213923170" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000178" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1027" name="StartDeductsStakeExactlyOnce" fullname="RoundRulesTests.StartDeductsStakeExactlyOnce" methodname="StartDeductsStakeExactlyOnce" classname="RoundRulesTests" runstate="Runnable" seed="1893042937" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000156" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1036" name="SeededRiskTests" fullname="SeededRiskTests" classname="SeededRiskTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:02Z" duration="1.488630" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1044" name="FourModesIncreasePerHopRiskAndReward" fullname="SeededRiskTests.FourModesIncreasePerHopRiskAndReward" methodname="FourModesIncreasePerHopRiskAndReward" classname="SeededRiskTests" runstate="Runnable" seed="599721331" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.002121" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1043" name="PlannedOutcomeCannotBeOverriddenByPresentationCallbacks" fullname="SeededRiskTests.PlannedOutcomeCannotBeOverriddenByPresentationCallbacks" methodname="PlannedOutcomeCannotBeOverriddenByPresentationCallbacks" classname="SeededRiskTests" runstate="Runnable" seed="1339675568" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.001440" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1041" name="RiskAndRewardsRemainInternallyConsistent" fullname="SeededRiskTests.RiskAndRewardsRemainInternallyConsistent" classname="SeededRiskTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.006892" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1037" name="RiskAndRewardsRemainInternallyConsistent(&quot;EASY&quot;)" fullname="SeededRiskTests.RiskAndRewardsRemainInternallyConsistent(&quot;EASY&quot;)" methodname="RiskAndRewardsRemainInternallyConsistent" classname="SeededRiskTests" runstate="Runnable" seed="1473123763" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.002830" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1038" name="RiskAndRewardsRemainInternallyConsistent(&quot;NORMAL&quot;)" fullname="SeededRiskTests.RiskAndRewardsRemainInternallyConsistent(&quot;NORMAL&quot;)" methodname="RiskAndRewardsRemainInternallyConsistent" classname="SeededRiskTests" runstate="Runnable" seed="1376926413" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000591" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1039" name="RiskAndRewardsRemainInternallyConsistent(&quot;HARD&quot;)" fullname="SeededRiskTests.RiskAndRewardsRemainInternallyConsistent(&quot;HARD&quot;)" methodname="RiskAndRewardsRemainInternallyConsistent" classname="SeededRiskTests" runstate="Runnable" seed="912044071" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000528" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1040" name="RiskAndRewardsRemainInternallyConsistent(&quot;HARDCORE&quot;)" fullname="SeededRiskTests.RiskAndRewardsRemainInternallyConsistent(&quot;HARDCORE&quot;)" methodname="RiskAndRewardsRemainInternallyConsistent" classname="SeededRiskTests" runstate="Runnable" seed="442190638" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.000364" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1042" name="SeededRollsHaveTheConfiguredFrequencyAndIgnoreCallOrder" fullname="SeededRiskTests.SeededRollsHaveTheConfiguredFrequencyAndIgnoreCallOrder" methodname="SeededRollsHaveTheConfiguredFrequencyAndIgnoreCallOrder" classname="SeededRiskTests" runstate="Runnable" seed="525812842" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:01Z" duration="0.002422" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1049" name="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments" fullname="SeededRiskTests.VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments" classname="SeededRiskTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:02Z" duration="1.473179" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1045" name="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments(&quot;EASY&quot;)" fullname="SeededRiskTests.VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments(&quot;EASY&quot;)" methodname="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments" classname="SeededRiskTests" runstate="Runnable" seed="1244317148" result="Passed" start-time="2026-11-01 09:07:01Z" end-time="2026-11-01 09:07:02Z" duration="0.769199" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1046" name="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments(&quot;NORMAL&quot;)" fullname="SeededRiskTests.VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments(&quot;NORMAL&quot;)" methodname="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments" classname="SeededRiskTests" runstate="Runnable" seed="753857338" result="Passed" start-time="2026-11-01 09:07:02Z" end-time="2026-11-01 09:07:02Z" duration="0.314574" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1047" name="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments(&quot;HARD&quot;)" fullname="SeededRiskTests.VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments(&quot;HARD&quot;)" methodname="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments" classname="SeededRiskTests" runstate="Runnable" seed="1837222100" result="Passed" start-time="2026-11-01 09:07:02Z" end-time="2026-11-01 09:07:02Z" duration="0.223850" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1048" name="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments(&quot;HARDCORE&quot;)" fullname="SeededRiskTests.VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments(&quot;HARDCORE&quot;)" methodname="VisibleTrafficMatchesSeededResultsAndRecyclesRoadSegments" classname="SeededRiskTests" runstate="Runnable" seed="357744969" result="Passed" start-time="2026-11-01 09:07:02Z" end-time="2026-11-01 09:07:02Z" duration="0.162819" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1050" name="SpriteAssetTests" fullname="SpriteAssetTests" classname="SpriteAssetTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-01 09:07:02Z" end-time="2026-11-01 09:07:03Z" duration="0.120169" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1051" name="BlinkHoldsForOneHundredTwentyMilliseconds" fullname="SpriteAssetTests.BlinkHoldsForOneHundredTwentyMilliseconds" methodname="BlinkHoldsForOneHundredTwentyMilliseconds" classname="SpriteAssetTests" runstate="Runnable" seed="1726560129" result="Passed" start-time="2026-11-01 09:07:02Z" end-time="2026-11-01 09:07:02Z" duration="0.009727" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1052" name="EveryExtractedSpriteHasTheSameFootPivotAndNoDownscaling" fullname="SpriteAssetTests.EveryExtractedSpriteHasTheSameFootPivotAndNoDownscaling" methodname="EveryExtractedSpriteHasTheSameFootPivotAndNoDownscaling" classname="SpriteAssetTests" runstate="Runnable" seed="1734334958" result="Passed" start-time="2026-11-01 09:07:02Z" end-time="2026-11-01 09:07:03Z" duration="0.101937" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:/Users/tahmi/AppData/LocalLow/Chicken Rush Studio/Chicken Rush_ Cash Out!\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

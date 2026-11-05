@@ -1,0 +1,62 @@
+{
+  "browser": "Chrome 156.0.8078.80",
+  "cases": [
+    {
+      "width": 375,
+      "height": 812,
+      "mode": "Portrait",
+      "dpr": 2,
+      "touch": true,
+      "status": "Passed",
+      "fpsMedian": 58.8,
+      "browserRafHz": 120,
+      "wasmHeapMiB": 132.8,
+      "firstHopLosses": 0,
+      "pooledVehicles": 36,
+      "errors": []
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "mode": "Portrait",
+      "dpr": 2,
+      "touch": true,
+      "status": "Passed",
+      "fpsMedian": 58.8,
+      "browserRafHz": 120.0,
+      "wasmHeapMiB": 132.8,
+      "firstHopLosses": 0,
+      "pooledVehicles": 36,
+      "errors": []
+    },
+    {
+      "width": 414,
+      "height": 896,
+      "mode": "Portrait",
+      "dpr": 2,
+      "touch": true,
+      "status": "Passed",
+      "fpsMedian": 58.8,
+      "browserRafHz": 120.0,
+      "wasmHeapMiB": 132.8,
+      "firstHopLosses": 0,
+      "pooledVehicles": 36,
+      "errors": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "mode": "Portrait",
+      "dpr": 2,
+      "touch": true,
+      "status": "Passed",
+      "fpsMedian": 58.8,
+      "browserRafHz": 120.0,
+      "wasmHeapMiB": 132.8,
+      "firstHopLosses": 1,
+      "pooledVehicles": 36,
+      "errors": []
+    }
+  ],
+  "touchScope": "Chrome device emulation, not physical mobile hardware"
+}

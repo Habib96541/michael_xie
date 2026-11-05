@@ -1,0 +1,16 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "mode": "Desktop",
+  "dpr": 1,
+  "touch": false,
+  "highestLane": 13,
+  "visibleLossVerified": true,
+  "status": "Passed",
+  "fpsMedian": 58.8,
+  "browserRafHz": 120.0,
+  "wasmHeapMiB": 132.8,
+  "firstHopLosses": 0,
+  "pooledVehicles": 36,
+  "errors": []
+}

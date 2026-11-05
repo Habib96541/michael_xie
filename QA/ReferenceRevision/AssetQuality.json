@@ -1,0 +1,111 @@
+{
+  "chickenFramesUnchanged": 54,
+  "nativeArcadeAssets": [
+    {
+      "file": "Barrier.png",
+      "size": [
+        541,
+        268
+      ]
+    },
+    {
+      "file": "CompactDown.png",
+      "size": [
+        286,
+        320
+      ]
+    },
+    {
+      "file": "CompactUp.png",
+      "size": [
+        279,
+        280
+      ]
+    },
+    {
+      "file": "DeliveryDown.png",
+      "size": [
+        281,
+        382
+      ]
+    },
+    {
+      "file": "DeliveryUp.png",
+      "size": [
+        282,
+        357
+      ]
+    },
+    {
+      "file": "LandingPad.png",
+      "size": [
+        637,
+        487
+      ]
+    },
+    {
+      "file": "RoadSurface.png",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "Shrub.png",
+      "size": [
+        563,
+        562
+      ]
+    },
+    {
+      "file": "Sidewalk.png",
+      "size": [
+        483,
+        635
+      ]
+    },
+    {
+      "file": "TaxiDown.png",
+      "size": [
+        280,
+        318
+      ]
+    },
+    {
+      "file": "TaxiUp.png",
+      "size": [
+        268,
+        299
+      ]
+    },
+    {
+      "file": "TruckDown.png",
+      "size": [
+        299,
+        417
+      ]
+    },
+    {
+      "file": "TruckUp.png",
+      "size": [
+        305,
+        383
+      ]
+    },
+    {
+      "file": "VanDown.png",
+      "size": [
+        287,
+        367
+      ]
+    },
+    {
+      "file": "VanUp.png",
+      "size": [
+        284,
+        346
+      ]
+    }
+  ],
+  "transparentSpriteBordersVerified": true
+}

@@ -1,0 +1,14 @@
+{
+  "width": 768,
+  "height": 1024,
+  "mode": "Tablet",
+  "dpr": 2,
+  "touch": true,
+  "status": "Passed",
+  "fpsMedian": 58.8,
+  "browserRafHz": 120,
+  "wasmHeapMiB": 132.8,
+  "firstHopLosses": 0,
+  "pooledVehicles": 36,
+  "errors": []
+}

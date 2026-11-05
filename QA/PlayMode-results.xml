@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-01 09:07:27Z" end-time="2026-11-01 09:07:31Z" duration="4.0874303">
+  <test-suite type="TestSuite" id="1010" name="Chicken Rush_ Cash Out!" fullname="Chicken Rush_ Cash Out!" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-01 09:07:27Z" end-time="2026-11-01 09:07:31Z" duration="4.087430" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1006" name="ChickenRush.PlayTests.dll" fullname="D:/30 games/Classic Crossy Roads/Library/ScriptAssemblies/ChickenRush.PlayTests.dll" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-01 09:07:27Z" end-time="2026-11-01 09:07:31Z" duration="4.076710" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="25108" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="AnimationTransitionTests" fullname="AnimationTransitionTests" classname="AnimationTransitionTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-01 09:07:27Z" end-time="2026-11-01 09:07:31Z" duration="4.073340" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1004" name="CelebrationCannotBeInterruptedByHopOrHit" fullname="AnimationTransitionTests.CelebrationCannotBeInterruptedByHopOrHit" methodname="CelebrationCannotBeInterruptedByHopOrHit" classname="AnimationTransitionTests" runstate="Runnable" seed="20537062" result="Passed" start-time="2026-11-01 09:07:27Z" end-time="2026-11-01 09:07:28Z" duration="1.386805" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1005" name="DangerReactsThenAllowsAResponsiveHop" fullname="AnimationTransitionTests.DangerReactsThenAllowsAResponsiveHop" methodname="DangerReactsThenAllowsAResponsiveHop" classname="AnimationTransitionTests" runstate="Runnable" seed="274216384" result="Passed" start-time="2026-11-01 09:07:28Z" end-time="2026-11-01 09:07:28Z" duration="0.371121" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1003" name="HitInterruptsHopAndHoldsUntilReset" fullname="AnimationTransitionTests.HitInterruptsHopAndHoldsUntilReset" methodname="HitInterruptsHopAndHoldsUntilReset" classname="AnimationTransitionTests" runstate="Runnable" seed="271140664" result="Passed" start-time="2026-11-01 09:07:28Z" end-time="2026-11-01 09:07:30Z" duration="1.382342" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1002" name="WalkHopLandAndIdle" fullname="AnimationTransitionTests.WalkHopLandAndIdle" methodname="WalkHopLandAndIdle" classname="AnimationTransitionTests" runstate="Runnable" seed="1882199865" result="Passed" start-time="2026-11-01 09:07:30Z" end-time="2026-11-01 09:07:31Z" duration="0.906253" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:/Users/tahmi/AppData/LocalLow/Chicken Rush Studio/Chicken Rush_ Cash Out!\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

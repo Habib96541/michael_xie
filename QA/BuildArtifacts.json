@@ -1,0 +1,41 @@
+{
+  "wasmMagicVerified": true,
+  "totalBytes": 16784020,
+  "files": [
+    {
+      "path": "Build/WebGL.data.unityweb",
+      "bytes": 6249341,
+      "sha256": "f40a2b58c19d0084b561ec6b3593b46cc1c80b49fbfe9aa7735952b8186a3eab"
+    },
+    {
+      "path": "Build/WebGL.framework.js.unityweb",
+      "bytes": 87857,
+      "sha256": "51435fc1b5fafac8de36953d7d7ffaaec3e8fcee8dc683c3c15a094bdc96313c"
+    },
+    {
+      "path": "Build/WebGL.loader.js",
+      "bytes": 47866,
+      "sha256": "79eea5fb6abffee936a4732c683d5b1464fa3e872283b5c620839ec7c6eba144"
+    },
+    {
+      "path": "Build/WebGL.wasm.unityweb",
+      "bytes": 10359239,
+      "sha256": "d860b1844e4525c210c53d6fe13098dbec4013bac4703da5b1b91bb1b2ea1ae0"
+    },
+    {
+      "path": "chicken.png",
+      "bytes": 34443,
+      "sha256": "35665ab2386b65317232d41fa0a6c6b31542c2e75257558b7cba9bc6232ef75d"
+    },
+    {
+      "path": "DEPLOY.txt",
+      "bytes": 630,
+      "sha256": "0ac33baf98309a067a2503ba76c723e653b4705e81e3b32a23a460c37d6e5343"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4644,
+      "sha256": "8232369473b359162b4ed9818d6b28406d8da0464eedf812ced94b59e9d13b10"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "width": 844,
+  "height": 390,
+  "mode": "Landscape",
+  "dpr": 2,
+  "touch": true,
+  "status": "Passed",
+  "fpsMedian": 60.7,
+  "browserRafHz": 120.0,
+  "wasmHeapMiB": 132.8,
+  "firstHopLosses": 0,
+  "pooledVehicles": 36,
+  "errors": []
+}

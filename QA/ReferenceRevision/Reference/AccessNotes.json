@@ -1,0 +1,15 @@
+{
+  "suppliedVideo": "https://www.youtube.com/watch?v=KQrMVcBXHFw",
+  "browserAccessible": true,
+  "inspectedSeconds": [
+    0,
+    29,
+    58,
+    116
+  ],
+  "fullVideoWatched": false,
+  "frameCaptures": "Browser tool session screenshots",
+  "localBaselineVideo": "C:/Users/tahmi/Downloads/Classic Crossy Roads.mp4",
+  "baselineSeconds": 18.63,
+  "standaloneVideoDownload": "No suitable downloadable format available in CLI; browser inspection succeeded"
+}

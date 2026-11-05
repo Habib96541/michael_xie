@@ -1,0 +1,14 @@
+{
+  "width": 1600,
+  "height": 900,
+  "mode": "Desktop",
+  "dpr": 1,
+  "touch": false,
+  "status": "Passed",
+  "fpsMedian": 58.8,
+  "browserRafHz": 120.0,
+  "wasmHeapMiB": 132.8,
+  "firstHopLosses": 0,
+  "pooledVehicles": 36,
+  "errors": []
+}
