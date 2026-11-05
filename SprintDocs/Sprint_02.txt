@@ -1,0 +1,84 @@
+Sprint 02: Shell fracture and egg spill
+Date: 2026-11-03
+
+Goals
+- Replace the two smooth shell halves with ten irregular curved shell pieces.
+- Show shell thickness, physical scattering, and an egg-white and yolk spill.
+- Preserve the existing impact sound timing and round rules.
+- Restore all fragments and spill objects on every restart.
+
+Changes
+- Added EggFracture to manage pre-created shell fragments and spill animation.
+- EggBody now records the landing contact point and starts the effect there.
+- Fragment velocities are applied in FixedUpdate. Fragments use convex mesh
+  colliders, friction, and damping to settle on the landing pad.
+- Fragment-to-fragment collision is disabled to prevent intersecting starting
+  pieces from producing an explosive launch.
+- Added original closed shell meshes with outer, inner, and broken-edge faces.
+- Added simplified convex collision meshes sampled from the visible shell
+  surfaces, with a small contact margin, and original wet spill materials.
+- Added a scene upgrade command and integrated fracture into new scene setup.
+- Reused the existing crack sound, which fires in the same landing callback.
+- No changes to crack probability, points, collection, or keyboard bindings.
+
+Files touched
+- Assets/Scripts/EggBody.cs
+- Assets/Scripts/EggFracture.cs
+- Assets/Editor/EggDropSceneBuilder.cs
+- Assets/Editor/EggDropFractureBuilder.cs
+- Assets/Scenes/EggDrop.unity
+- Assets/Art/Fracture: shell and collision meshes, spill meshes, materials,
+  and shell friction physics material.
+- Assets/Tests/Editor/EggFragmentMeshTests.cs
+- Assets/Tests/PlayMode/EggDropSceneTests.cs
+- Assets/Tests/PlayMode/EggFractureTests.cs
+- Unity-generated .meta files for new assets and folders.
+- README.md
+- ASSET_SOURCES.txt
+- SprintDocs/Sprint_02.txt
+
+Done condition
+- A failed landing reveals ten jagged, thick shell fragments at the impact.
+- Pieces tumble, contact the pad, and settle above it.
+- Egg white and yolk spread into a visible puddle with the existing crack cue.
+- Both portrait and landscape remain usable.
+- Restart hides and resets all debris, restores the intact egg, and preserves
+  the existing score rules. No fragment objects accumulate across rounds.
+- Mesh integrity and PlayMode checks pass without new game errors or obsolete
+  API warnings.
+
+Verification
+- 25 checks passed: 13 round-rule cases, 10 shell-geometry cases, and two
+  PlayMode integration checks.
+- Every render fragment has closed edges and 0.024 units of shell thickness.
+- Fragments tumble, settle, and remain above the pad. The test checks actual
+  transformed shell vertices as well as collision bounds.
+- Three repeated crack/restart cycles reuse the same ten Rigidbody objects.
+- The original complete game loop, immediate restart, keyboard shortcuts,
+  mute, audio levels, and bank preservation still pass.
+- The final PlayMode run exited with code 0, without new game exceptions,
+  C# warnings, or collider cooking errors.
+- Reviewed the rendered result at Logs/Sprint02_Fracture.png.
+- Confirmed the scene update changes only the fracture effect; 229 serialized
+  objects outside the effect are unchanged.
+- Test results: Logs/EggDrop-Sprint02-EditMode.xml and
+  Logs/EggDrop-Sprint02-PlayMode.xml.
+- Checks ran in an isolated project copy to exclude the existing Unity AI
+  package's subscription errors.
+
+Concepts used
+- Pre-fractured meshes and closed surface geometry.
+- Rigidbody physics, convex colliders, and collision filtering.
+- Reusing scene objects and restoring their state between rounds.
+- Coroutines for the spill presentation.
+- Lessons and knowledge questions skipped at the user's request.
+
+Open questions and limits
+- The spill is an animated mesh, not a fluid simulation.
+- Fragment pieces use simplified convex collision shapes.
+- No third-party assets were required.
+- Existing Unity AI package subscription errors are unrelated to this effect.
+- No next sprint has been started.
+
+Suggested commit
+Replace egg halves with shell fracture and yolk spill

@@ -1,0 +1,86 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="EggDrop.uss" />
+    <ui:VisualElement name="main-menu" class="main-menu">
+        <ui:VisualElement class="menu-brand"><ui:VisualElement class="brand-egg" /><ui:Label text="EGG DROP" class="wordmark" /></ui:VisualElement>
+        <ui:ScrollView class="menu-scroll" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Auto">
+            <ui:VisualElement class="menu-content">
+                <ui:VisualElement class="menu-story">
+                    <ui:Label text="ONE EGG. TWELVE FLOORS." class="eyebrow" />
+                    <ui:Label text="A little courage.&#10;A lot of gravity." class="menu-title" />
+                    <ui:Label text="Drop higher. Win bigger. Know when to stop." class="menu-description" />
+                    <ui:VisualElement class="menu-illustration" picking-mode="Ignore"><ui:VisualElement class="menu-orbit" /><ui:VisualElement class="menu-shadow" /><ui:VisualElement class="menu-egg"><ui:VisualElement class="menu-shine" /></ui:VisualElement><ui:Label text="HANDLE WITH COURAGE" class="eyebrow menu-stamp" /></ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement class="menu-card">
+                    <ui:VisualElement name="menu-home">
+                        <ui:Label text="HOW HIGH WILL YOU GO?" class="eyebrow menu-kicker" />
+                        <ui:Label text="Trust the shell." class="menu-card-title" />
+                        <ui:Label text="Each safe landing raises your multiplier. Collect your points before the egg cracks." class="menu-card-description" />
+                        <ui:Button name="play" text="PLAY" class="action menu-play" />
+                        <ui:Button name="settings" text="SOUND SETTINGS" class="action menu-secondary" />
+                        <ui:Button name="quit" text="QUIT" class="action menu-quiet" />
+                        <ui:Label text="SPACE to drop  /  C to collect&#10;R for a fresh egg after each round" class="menu-controls" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="menu-settings" class="menu-settings">
+                        <ui:Label text="SET THE MOOD" class="eyebrow menu-kicker" />
+                        <ui:Label text="Sound settings" class="menu-card-title" />
+                        <ui:Label text="Make yourself comfortable. Your sound preferences are saved automatically." class="menu-card-description" />
+                        <ui:Slider name="menu-music" label="Music" low-value="0" high-value="1" class="volume menu-volume" />
+                        <ui:Slider name="menu-effects" label="Effects" low-value="0" high-value="1" class="volume menu-volume" />
+                        <ui:Button name="menu-mute" text="SOUND ON  [M]" class="action menu-secondary" />
+                        <ui:Button name="settings-back" text="BACK" class="action menu-play menu-back" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:ScrollView>
+        <ui:Label text="A GAME OF KNOWING WHEN." class="eyebrow menu-footer" />
+    </ui:VisualElement>
+    <ui:VisualElement name="screen" class="screen">
+        <ui:VisualElement class="header">
+            <ui:VisualElement class="brand">
+                <ui:VisualElement class="brand-egg" />
+                <ui:Label text="EGG DROP" class="wordmark" />
+                <ui:Label text="A GAME OF KNOWING WHEN." class="tagline" />
+            </ui:VisualElement>
+            <ui:VisualElement class="bank"><ui:Label text="IN THE BANK" class="eyebrow" /><ui:Label name="bank" text="0" class="bank-value" /><ui:Label text="PTS" class="eyebrow" /></ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="play-area" picking-mode="Ignore">
+            <ui:VisualElement class="stage-copy" picking-mode="Ignore">
+                <ui:Label text="HOW HIGH IS TOO HIGH?" class="eyebrow stage-eyebrow" />
+                <ui:Label text="Trust the shell." class="stage-title" />
+                <ui:Label name="status" text="A little courage. A lot of gravity." class="stage-status" />
+            </ui:VisualElement>
+            <ui:VisualElement class="floor-badge" picking-mode="Ignore"><ui:Label text="FLOOR" class="eyebrow" /><ui:Label name="floor" text="01" class="floor-number" /><ui:Label text="OF 12" class="eyebrow" /></ui:VisualElement>
+            <ui:VisualElement class="control-panel">
+                <ui:Label name="state" text="READY WHEN YOU ARE" class="eyebrow live-state" />
+                <ui:Label text="One more floor?" class="panel-title" />
+                <ui:Label text="Every safe landing raises the stakes. Collect before your luck cracks." class="description" />
+                <ui:VisualElement class="reward-card">
+                    <ui:Label text="YOUR MULTIPLIER" class="eyebrow muted" />
+                    <ui:Label name="multiplier" text="0.00x" class="multiplier" />
+                    <ui:VisualElement class="points-row"><ui:Label name="points" text="0" class="round-points" /><ui:Label text="POINTS AT RISK" class="eyebrow muted" /></ui:VisualElement>
+                    <ui:Label name="next" text="Next landing  1.32x" class="next-reward" />
+                </ui:VisualElement>
+                <ui:VisualElement class="risk-label"><ui:Label text="CHANCE OF CRACKING" class="eyebrow muted" /><ui:Label name="chance" text="8.0%" class="risk-value" /></ui:VisualElement>
+                <ui:VisualElement class="risk-track"><ui:VisualElement name="risk-fill" class="risk-fill" /></ui:VisualElement>
+                <ui:Label text="Risk is rolled on landing. Height increases the odds." class="risk-caption" />
+                <ui:Button name="drop" text="DROP EGG   [SPACE]" class="action primary" />
+                <ui:Button name="collect" text="COLLECT 0   [C]" class="action secondary" />
+                <ui:VisualElement name="result" class="result">
+                    <ui:Label name="result-title" text="Nicely played." class="result-title" />
+                    <ui:Label name="result-description" text="Your points are safe." class="result-description" />
+                    <ui:Button name="restart" text="FRESH EGG   [R]" class="action restart" />
+                    <ui:Button name="return-menu" text="MAIN MENU" class="action return-menu" />
+                </ui:VisualElement>
+                <ui:VisualElement class="audio-settings">
+                    <ui:Button name="mute" text="SOUND ON  [M]" class="mute" />
+                    <ui:Slider name="music" label="Music" low-value="0" high-value="1" value="0.35" class="volume" />
+                    <ui:Slider name="effects" label="Effects" low-value="0" high-value="1" value="0.8" class="volume" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="footer">
+            <ui:VisualElement class="journey"><ui:Label text="THE CLIMB" class="eyebrow" /><ui:VisualElement name="history" class="history" /></ui:VisualElement>
+            <ui:Label text="ONE EGG. TWELVE FLOORS. YOUR CALL." class="eyebrow footer-note" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

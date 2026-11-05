@@ -1,0 +1,69 @@
+Sprint 04: WebGL release build
+Date: 2026-11-05
+
+Goals
+- Produce a WebGL release build of the existing game.
+- Package the player for static hosting.
+- Verify the generated player in a browser.
+
+Changes
+- Added Egg Drop > Build WebGL and a batchmode build entry point.
+- The build uses the saved EggDrop scene, gzip compression with browser
+  decompression fallback, and 128 MB initial WebAssembly memory.
+- Temporary WebGL compression and memory settings are restored after building.
+- The build report summary records the result, duration, size, and warnings.
+- Added local server and static hosting instructions to README.md.
+- Included the WebGL player and ZIP directly in Git for delivery. Other build
+  folders, Unity caches, local editor state, and logs remain ignored.
+- Fixed the WebGL page's device pixel ratio at 1 for predictable rendering
+  cost. Fullscreen behavior still needs verification in a normal browser.
+
+Files touched
+- Assets/Editor/EggDropWebGLBuilder.cs and its Unity-generated .meta
+- README.md
+- .gitignore and .gitattributes
+- SprintDocs/Sprint_04.txt
+- Builds/WebGL and Builds/EggDrop-WebGL.zip (generated, included in Git)
+- Logs/EggDrop-WebGL-Build.log and build summary (generated, ignored by Git)
+
+Done condition
+- A release WebGL player is generated without build errors.
+- The ZIP has index.html at its root and contains all referenced build files.
+- The player loads over HTTP, shows the main menu, and supports starting a
+  round, dropping, collecting or cracking, and returning to the menu.
+- Browser sound controls work after a user gesture.
+- Hosting instructions describe how to run the build.
+
+Verification
+- Release builds succeeded with zero errors and zero warnings. The first
+  compilation took about 5 minutes 46 seconds; the final incremental build
+  took about 8 seconds and applied the browser page configuration.
+- The final Unity build report recorded 17,268,334 bytes before packaging.
+- Verified all 18 ZIP entries, including index.html at the root, the loader,
+  compressed data, framework, WebAssembly module, and template assets.
+- The generated player loaded over local HTTP and displayed its main menu.
+  No browser console warnings or errors were observed during that load.
+- The embedded browser showed incorrect fullscreen scaling. Setting the
+  device pixel ratio did not resolve that embedded-browser behavior. Native
+  Chrome testing was stopped by the computer-use tool because it could not
+  reliably identify the browser URL. Complete browser gameplay, fullscreen,
+  and audible playback remain unverified.
+- Browser test coverage is partial; the browser-specific done conditions
+  above have not all been satisfied. No gameplay rules were changed here.
+- The saved project scene and runtime source match the isolated build copy.
+- The existing 23 EditMode and four PlayMode passing results are recorded
+  in Sprint_03.txt. Those unchanged game tests were not rerun for packaging.
+
+Concepts used
+- Unity BuildPipeline and BuildReport.
+- WebAssembly, WebGL asset compression, and HTTP hosting.
+- Browser user-gesture requirements for audio playback.
+- Lessons and knowledge questions skipped at the user's request.
+
+Open questions and limits
+- No hosting account or public deployment was requested.
+- Scores remain session-only, and sound settings use browser local storage.
+- No next sprint has been started.
+
+Suggested commit
+Add WebGL release build command and hosting instructions

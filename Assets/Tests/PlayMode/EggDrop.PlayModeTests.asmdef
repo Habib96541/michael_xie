@@ -1,0 +1,6 @@
+{
+  "name": "EggDrop.PlayModeTests",
+  "rootNamespace": "EggDrop.Tests",
+  "references": ["EggDrop.Runtime", "Unity.InputSystem", "Unity.InputSystem.TestFramework"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

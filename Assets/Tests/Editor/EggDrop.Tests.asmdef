@@ -1,0 +1,7 @@
+{
+  "name": "EggDrop.Tests",
+  "rootNamespace": "EggDrop.Tests",
+  "references": ["EggDrop.Runtime"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

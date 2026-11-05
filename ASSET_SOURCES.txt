@@ -1,0 +1,26 @@
+Egg Drop asset sources
+
+All game meshes, materials, interface styling, sound effects, and music added in
+Sprint 01 were created for this project. No external asset pack was required.
+
+Meshes and scene: Assets/Editor/EggDropSceneBuilder.cs
+Audio synthesis: Assets/Editor/EggDropSoundBuilder.cs
+Generated audio: Assets/Audio/*.wav (44.1 kHz, mono, 16-bit PCM source)
+
+Sounds: Drop, Landing, Success, Collect, Crack, Click, Falling, Music.
+Music is a quiet original bell and bass loop. Falling is a soft looping air sound.
+Effects have short fades to avoid clicks and use bounded sample levels.
+
+No third-party CC0 assets were downloaded. Unity template and package assets
+retain their existing licenses. The interface uses Unity's default runtime font.
+
+Sprint 02 fracture assets are also original and generated for this project.
+Generator: Assets/Editor/EggDropFractureBuilder.cs
+Assets: Assets/Art/Fracture/
+
+The shell is partitioned into ten irregular curved regions. Every render mesh
+contains an outer surface, an inner surface, and closed rim faces with 0.024
+world units of shell thickness. Simplified convex meshes sampled from the shell
+surfaces handle contact.
+The egg-white and yolk spill meshes and materials are original.
+The impact reuses the original Crack.wav; no new audio downloads were needed.

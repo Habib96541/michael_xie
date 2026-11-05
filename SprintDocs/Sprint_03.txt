@@ -1,0 +1,100 @@
+Sprint 03: Main menu and sound settings
+Date: 2026-11-05
+
+Goals
+- Open the game on a main menu with Play, Sound Settings, and Quit.
+- Match the existing cream, green, and gold interface.
+- Return from a completed round without losing the session bank.
+- Block gameplay actions while the menu is open.
+
+Changes
+- Added a same-scene title screen with an original UI Toolkit egg illustration.
+- Added a sound settings page using the existing saved music, effects, and
+  mute preferences. Menu and gameplay controls stay synchronized.
+- Play prepares a fresh egg and opens the existing game interface.
+- Added Main Menu to both collected and cracked result screens. Returning
+  resets the egg, fragments, and round while retaining banked points.
+- Drop, collect, and restart actions are ignored in the menu. Mute remains
+  available with M. Pending gameplay input is cleared during transitions.
+- Quit calls Application.Quit in the built game and is disabled in the editor.
+- Added responsive landscape and portrait styles with a scrollable menu body
+  for smaller windows. Existing round rules, crack effects, and sounds remain.
+- No scene migration or new serialized references are required.
+- Follow-up: portrait title and subtitle now have a definite full width, and
+  story labels retain their natural height. The portrait story no longer
+  grows or shrinks vertically, and scroll content cannot compress it.
+
+Files touched
+- Assets/Scripts/EggDropGame.cs
+- Assets/Scripts/EggDropUI.cs
+- Assets/UI/EggDrop.uxml
+- Assets/UI/EggDrop.uss
+- Assets/Tests/PlayMode/EggDropMenuTests.cs and its Unity-generated .meta
+- Assets/Tests/PlayMode/EggDropSceneTests.cs
+- Assets/Tests/PlayMode/EggFractureTests.cs
+- README.md
+- SprintDocs/Sprint_03.txt
+
+Done condition
+- The main menu is the first visible screen on entering Play mode.
+- Play opens a ready first-floor round without dropping the egg.
+- Menu controls open and close sound settings, synchronize sliders and mute,
+  and retain preferences across scene reloads.
+- Gameplay input cannot operate the egg behind the menu.
+- Returning after a completed round restores the egg and preserves the bank.
+- Menu actions are visible and usable in landscape and portrait.
+- Existing rule, mesh, game-loop, and fracture checks pass.
+
+Verification
+- 27 checks passed in Unity 6000.3.27f2 with Input System 1.20.1: 23 EditMode
+  rule and closed-shell cases, plus four PlayMode integration checks. The
+  unchanged rule and mesh checks retain their prior passing results; all
+  four PlayMode checks were rerun after the portrait layout correction.
+- Menu checks submit the actual Play, Sound Settings, Back, and mute buttons.
+- Space, C, R, and direct gameplay calls leave the menu egg stationary.
+- Sound changes synchronize with gameplay and survive a scene reload.
+- The existing full game loop preserves the bank when returning to the menu
+  after cracking. The fracture check still passes three crack/restart cycles.
+- Reviewed menu and settings renders at 1200x800, 800x1200, 540x960,
+  1080x1920, and 320x640. Added checks for measured wrapped-title height,
+  spacing above and below the title, and the gap before the portrait card.
+  These checks run even when preview image capture is disabled.
+- Added a separate portrait-startup check that loads the scene with a portrait
+  panel already configured. The narrower 9:16 startup render is saved at
+  Logs/Sprint03_Startup_1080x1920.png.
+- The original overlap reported in the user's Unity Game view did not recur
+  in the RenderTexture test path before the fix. After the user unlocked
+  Windows, verified the corrected main menu and Sound Settings directly in
+  the main project's 1080x1920 Game view at 0.46x scale. Neither screen has
+  overlapping title text. Returned to the main menu and left Play mode active
+  for review. The user's unsaved scene changes were not saved or discarded.
+  The stylesheet change removes unconstrained width and vertical shrinking
+  from the portrait story layout.
+- Results: Logs/EggDrop-Sprint03-EditMode.xml and
+  Logs/EggDrop-Sprint03-PlayMode.xml.
+- Preview images: Logs/Sprint03_Home_1200x800.png,
+  Logs/Sprint03_Home_800x1200.png, Logs/Sprint03_Settings_1200x800.png, and
+  Logs/Sprint03_Settings_800x1200.png.
+- Checks used an isolated project copy to exclude unrelated Unity AI package
+  subscription errors. Repaired that copy's incomplete package caches using
+  the installed editor and main project's package files. The main project's
+  package settings and scene were not changed by this sprint.
+- No game compiler errors, obsolete API warnings, or UI style warnings were
+  reported by the final runs.
+
+Concepts used
+- Separating menu visibility from the existing round state.
+- Guarding game actions and clearing pending input during screen changes.
+- Reusing saved audio preferences and existing scene objects.
+- UI Toolkit layouts, navigation events, and responsive styles.
+- Lessons and knowledge questions skipped at the user's request.
+
+Open questions and limits
+- Banked scores remain session-only, as before.
+- Quit is intentionally unavailable in the Unity editor.
+- A standalone player was not built in this sprint; its Quit path uses
+  Unity's Application.Quit API and has not been exercised in a player.
+- No next sprint has been started.
+
+Suggested commit
+Add main menu and saved sound settings

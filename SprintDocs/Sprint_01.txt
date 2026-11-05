@@ -1,0 +1,99 @@
+Sprint 01: Playable Egg Drop prototype
+Date: 2026-11-02
+
+Goals
+- Implement the drop, survive, collect, crack, and restart loop.
+- Show the floor, increasing multiplier, round points, bank, and crack chance.
+- Include original visuals and distinct, controllable sound.
+- Focus on implementation; the user opted out of the learning workflow.
+
+Changes
+- Added a 12-floor game with rising random crack risk, resolved on landing.
+- Used the new Input System for keyboard shortcuts and UI Toolkit for pointer UI.
+- Dedicated input actions capture shortcuts and consume them once in Update.
+- Added Rigidbody drops, collision-based landing, squash, lift, shell splitting,
+  yolk reveal, mild camera impact feedback, and camera framing by floor.
+- Added portrait and landscape interface layouts and a climb history.
+- Added eight original WAV assets: Click, Collect, Crack, Drop, Falling,
+  Landing, Music, and Success. Music and falling air loop separately.
+- Added independent music/effects sliders and mute. Audio settings persist.
+- Banked points persist between rounds within the current play session.
+- Added the game scene to the build scene list.
+- Kept the template scene and existing package choices.
+- Added rule tests and an integration check covering the real game scene.
+
+Files touched
+- Assets/Scripts/EggDrop.Runtime.asmdef
+- Assets/Scripts/EggDropRound.cs
+- Assets/Scripts/EggDropGame.cs
+- Assets/Scripts/EggBody.cs
+- Assets/Scripts/EggDropUI.cs
+- Assets/Scripts/EggDropAudio.cs
+- Assets/Scripts/EggDropStage.cs
+- Assets/UI/EggDrop.uxml
+- Assets/UI/EggDrop.uss
+- Assets/UI/EggDropPanelSettings.asset
+- Assets/UI Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss (Unity-generated).
+- Assets/Scenes/EggDrop.unity
+- Assets/Editor/EggDropSceneBuilder.cs
+- Assets/Editor/EggDropSoundBuilder.cs
+- Assets/Art: Egg, UpperShell, LowerShell meshes; Backdrop, Coral, Ink, Mint,
+  Moss, Platform, Sage, Shell, and Yolk materials.
+- Assets/Audio: eight WAV files listed above.
+- Assets/Tests/Editor/EggDrop.Tests.asmdef
+- Assets/Tests/Editor/EggDropRoundTests.cs
+- Assets/Tests/PlayMode/EggDrop.PlayModeTests.asmdef
+- Assets/Tests/PlayMode/EggDropSceneTests.cs
+- Assets/Tests/Editor/EggDropTestMenu.cs
+- Unity-generated .meta files for added assets and directories.
+- ProjectSettings/EditorBuildSettings.asset
+- ProjectSettings/SceneTemplateSettings.json (Unity-generated defaults).
+- ASSET_SOURCES.txt
+- README.md
+- SprintDocs/Sprint_01.txt
+
+Done condition
+- The game scene opens and plays with fully assigned references.
+- A successful physical drop increases floor, risk, and reward.
+- Collect banks points once. Crack discards uncollected points only.
+- Restart restores an intact egg and keeps the session bank.
+- Buttons and keyboard shortcuts cannot double-resolve a drop.
+- Audio cues play at appropriate moments; mute and both volume controls work.
+- Portrait and landscape layouts remain usable.
+- Game scripts compile without obsolete API warnings.
+
+Verification
+- All 13 round-rule test cases passed in the source project.
+- Audio: all eight WAV files are valid mono 44.1 kHz sources; no clipped samples.
+- All 14 checks passed: 13 round-rule cases and one PlayMode scene integration
+  check. The integration check covers physical landing, duplicate action guards,
+  collect, restart, crack, shell/yolk visibility, music, falling audio, mute,
+  independent sound levels, keyboard shortcuts, and the session bank.
+- The PlayMode run completed with Unity exit code 0 and no game exceptions,
+  C# compiler warnings, or runtime cursor warning after the style fix.
+- Visually checked 1920x1080 landscape and 1080x1920 portrait in Unity.
+- Updated camera framing after the portrait check to keep the egg below the
+  heading as floors increase.
+- Logs/EggDrop-PlayModeResults.xml contains the passing scene test result.
+- Logs/EggDrop-RulesResults.xml contains the 13 passing rule cases.
+- The scene test uses InputTestFixture so simulated keyboard events are isolated
+  from the headless runner's lack of window focus.
+- The source project's installed Unity AI package emits NoSubscription errors.
+  An isolated copy is used to separate these package errors from game checks.
+
+Concepts used
+- MonoBehaviour lifecycle, serialized private references, and Rigidbody physics.
+- Input System, UI Toolkit, simple round states, and collision notifications.
+- Coroutines for presentation and independent looping audio sources.
+- Separation of round rules from scene presentation for deterministic tests.
+- Explanations and knowledge checks intentionally skipped at the user's request.
+
+Open questions and limits
+- Risk and reward values are prototype balance values.
+- Final target platform and final art direction have not been selected.
+- Gameplay scores are not saved between application sessions.
+- No external asset pack was necessary; added visuals and audio are original.
+- No next sprint has been started.
+
+Suggested commit
+Add playable Egg Drop prototype with original audio
