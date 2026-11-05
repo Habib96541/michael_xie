@@ -1,0 +1,214 @@
+{
+  "status": "PASS",
+  "htmlPayloadReferences": [
+    "Build/WebGL_2026-11-05.loader.js",
+    "Build/WebGL_2026-11-05.data.unityweb",
+    "Build/WebGL_2026-11-05.framework.js.unityweb",
+    "Build/WebGL_2026-11-05.wasm.unityweb"
+  ],
+  "gzipPayloads": [
+    {
+      "path": "Build/WebGL_2026-11-05.data.unityweb",
+      "compressedBytes": 5799486,
+      "decompressedBytes": 13667101
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.framework.js.unityweb",
+      "compressedBytes": 88118,
+      "decompressedBytes": 441374
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.wasm.unityweb",
+      "compressedBytes": 13069952,
+      "decompressedBytes": 49416091
+    }
+  ],
+  "webAssemblyValidated": true,
+  "portraitCanvas": true,
+  "httpFileCount": 30,
+  "httpFiles": [
+    {
+      "path": "AssetLicenses.txt",
+      "bytes": 6726,
+      "sha256": "c7d033cf85306027e52d0e07d4994d32373131b737f36a801df83015e155b0d9",
+      "httpStatus": 200
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.data.unityweb",
+      "bytes": 5799486,
+      "sha256": "1653557c25c8702c8a299ec5c2423d0a7eb3d86162876c4c40d63e6edd53648a",
+      "httpStatus": 200
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.framework.js.unityweb",
+      "bytes": 88118,
+      "sha256": "6fb056f652dc94e2258052db6f5cfd72e90c3923b61dde7bdb96056e47ee7ba7",
+      "httpStatus": 200
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.loader.js",
+      "bytes": 47867,
+      "sha256": "9129c9a6d8ccb936000cbae265b6882746dcf02080f9a54c62a940a7ede33ef4",
+      "httpStatus": 200
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.wasm.unityweb",
+      "bytes": 13069952,
+      "sha256": "ff6228660ec5488a5ef16790f8799bce02adf0e8e4d9100442825367e1d90323",
+      "httpStatus": 200
+    },
+    {
+      "path": "index.html",
+      "bytes": 5655,
+      "sha256": "48f7663ba13b7a5bcb6eea88df1377adc5efa9f08bbf31d002246a84e43b4cc6",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/AjFlapChirp/PROVENANCE.txt",
+      "bytes": 2340,
+      "sha256": "da73ef5aa2b56bbdd0a7c050c1f758ea8596f3f7e3bb00325a0e68c4ec8b41a0",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/AssetLicenses.txt",
+      "bytes": 6726,
+      "sha256": "c7d033cf85306027e52d0e07d4994d32373131b737f36a801df83015e155b0d9",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/BevouliinBlueBird/bevouliin.com.txt.txt",
+      "bytes": 148,
+      "sha256": "4be0b694686deaf841c12d1f4a9ed2b73136b5ce99e7fc809709345bdb32bf08",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/BevouliinBlueBird/PROVENANCE.txt",
+      "bytes": 1119,
+      "sha256": "6acd8b4aa916150a4a4da2d703f0236d1b303043b8193537a48395cf858efe40",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/Bhu1cPipes/PROVENANCE.txt",
+      "bytes": 1064,
+      "sha256": "b4eb7ac14af52ab65f99611b58f970410058aa10bce212dc3e4951a045ad408b",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/KenneyBackgrounds/License.txt",
+      "bytes": 614,
+      "sha256": "af458fb4d38ee24841fc7a61414d67459a119cad3e277ce1e606866e8399cfa8",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/KenneyBackgrounds/PROVENANCE.txt",
+      "bytes": 960,
+      "sha256": "e058676e782414cf5cee32c53b0663cf06fabc9346f12704697186192a4f951d",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/KenneyUI/License.txt",
+      "bytes": 565,
+      "sha256": "69f7eaa5e05913b4d09cf5848f75390b5c3c9a409ef8555777803d9ca0c171fb",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/KenneyUI/PROVENANCE.txt",
+      "bytes": 982,
+      "sha256": "d8d8ebe2139885466c2538a908c824ec52a7b4d8667bda7c160c220911ec5631",
+      "httpStatus": 200
+    },
+    {
+      "path": "Licenses/Tuffy/PUBLIC_DOMAIN.txt",
+      "bytes": 489,
+      "sha256": "f94032e25fb023b1dcc080956eeee7308144814c928a4433338f9f68ae58f04a",
+      "httpStatus": 200
+    },
+    {
+      "path": "README.txt",
+      "bytes": 2194,
+      "sha256": "d423548d0ba5bf3fdf928fe25ab64f31e7e31f160f4e784c57a4cf747bccb864",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "bytes": 2305,
+      "sha256": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/fullscreen-button.png",
+      "bytes": 175,
+      "sha256": "21221581673a54b8139d408d4a3f8d2b879e86827d4b6fc53b995ff7a99ee3e9",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/MemoryProfiler.png",
+      "bytes": 665,
+      "sha256": "0ce87be20d0c24ab6cb73b57de2004da261cc2a641e69319c6ae3fe11fc85483",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "bytes": 96,
+      "sha256": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-light.png",
+      "bytes": 109,
+      "sha256": "143696c060ad43d6c30f19ff5f49000927a139a2a1e4c9f45fafaa2b90d7d2be",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "bytes": 74,
+      "sha256": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/progress-bar-full-light.png",
+      "bytes": 84,
+      "sha256": "12395ea785480c5cdf12fade6e6cbf49666d5bb1cef7240c113dbcba6bdc5c87",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/style.css",
+      "bytes": 1448,
+      "sha256": "80acab5f9147ed15876d638d776c0f9c6b4c273c01c96d82d23b6c53ea96f9cf",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/unity-logo-dark.png",
+      "bytes": 3042,
+      "sha256": "c1b72d26c096487dabc948b54bc203f8dac7ed4e3f5733918798e858acb4b159",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/unity-logo-light.png",
+      "bytes": 3077,
+      "sha256": "002990aea0d946833cadc1519d5b7e50a4570bd537a0517dd79a59d3eec84da7",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/unity-logo-title-footer.png",
+      "bytes": 1151,
+      "sha256": "9e8b3bdb67c2446d16362fe59449d892100931dbbadfe6a9d923a4142b57a79f",
+      "httpStatus": 200
+    },
+    {
+      "path": "TemplateData/webmemd-icon.png",
+      "bytes": 1670,
+      "sha256": "c56f5494640cedda273aad38d58e6ab9da625d5b3f4d875c0ff92c6192a569c2",
+      "httpStatus": 200
+    },
+    {
+      "path": "unity-build.provenance.json",
+      "bytes": 2929,
+      "sha256": "c0ba59c553461fdfa420c4362c2f569bff5ff02759398a2530dc72de4d199aa0",
+      "httpStatus": 200
+    }
+  ],
+  "browserGameplay": "NOT TESTED",
+  "serverStopped": true,
+  "checkedUtc": "2026-11-05T05:46:38.921Z"
+}

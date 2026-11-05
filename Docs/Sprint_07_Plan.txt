@@ -1,0 +1,33 @@
+Sprint 07 proposal: Support the user's revised menu title layout
+Status: code fix approved and implemented on 2026-11-02. The user prohibited PC/desktop control. No Unity execution, scene saving/reloading or runtime verification was performed; user testing remains pending.
+
+Problem and evidence
+- User reports NullReferenceException at RoundView.RefreshView line 69 after manually revising the main menu.
+- Line 69 writes titleLabel.text.
+- Live Inspector confirms Round View / Round View (Script) / Title Label is None (TMP_Text).
+- A separate Header/Title object exists. Brand, Score and Timer are currently disabled in the user's edited hierarchy.
+- The Editor title shows unsaved scene changes. The scene on disk still contains the previous layout and its original title reference.
+- Moving or renaming a referenced object normally preserves its reference; the actual failure is the unassigned titleLabel field. Do not assume that the new object's name automatically reconnects it.
+
+Recommended behavior
+- Keep the user's separate top heading static.
+- Treat the round-panel titleLabel as an optional presentation element. Update its text only when assigned.
+- Continue updating the message, action button, score and timer through their existing required references.
+- Do not assign the static top heading as the dynamic round title merely to remove the exception. The controller currently returns early in Playing, which could leave ROUND COMPLETE in a global header after restart.
+- Preserve the user's scene layout in place; do not run FlapDashProjectSetup.Create.
+
+Files to change after approval
+- Games/26_FlapDash/Assets/Scripts/RoundView.cs: guard only the intentionally optional titleLabel and explain that field with an Inspector tooltip. No broad exception swallowing or guards that hide unrelated missing required fields.
+- Games/26_FlapDash/Assets/Editor/FlapDashValidation.cs: verify Ready/Playing/Results/restart with the optional title absent and the static heading preserved.
+- Games/26_FlapDash/Assets/Scenes/FlapDash.unity: do not modify or save through automation. The user will save the edited menu in Unity.
+- SprintDocs/Sprint_07.txt and relevant handoff records: diagnosis, fix and verification.
+
+Done condition
+- Preserve the user's unsaved edits; do not perform an Editor restart or scene reload.
+- The title dereference is guarded in source. The user must verify the revised menu through Ready, Playing, Results and restart.
+- The static top heading stays intact, and existing gameplay/audio checks pass against the saved custom scene.
+- Compilation and runtime checks remain pending; do not present the Sprint 06 results as a test run of this repair.
+- No WebGL build or next sprint.
+
+Approval requirement
+The user approved the fix with an explicit instruction not to access/control their PC. Work is limited to project files. Desktop controls, Unity execution and automated scene saving are not authorized for this repair.

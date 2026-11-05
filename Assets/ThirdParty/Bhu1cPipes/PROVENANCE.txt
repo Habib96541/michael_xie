@@ -1,0 +1,16 @@
+Pipe
+Creator: bhu1c
+Source: https://opengameart.org/content/pipe
+Downloaded: 2026-11-02
+File: https://opengameart.org/sites/default/files/pipe_1.png
+Original file SHA256: 9FCD86D5B6015E63C8944BE5C4CEB9510D610341A897646909DD9DCDA6D21FD8
+
+License evidence
+The creator's OpenGameArt upload identifies bhu1c as the author and explicitly lists CC0 under License(s), linked to https://creativecommons.org/publicdomain/zero/1.0/.
+This was a single PNG download without a separate license file; preserve this record of the source-page declaration.
+
+Imported and derived files
+pipe.png is the original unchanged PNG, renamed from pipe_1.png.
+Assets/Art/PipeBody.asset references region x=848, y=0, width=328, height=500 in Unity's bottom-left texture coordinates.
+Assets/Art/PipeRim.asset references region x=786, y=525, width=454, height=280.
+No original PNG pixels were altered. These Sprite assets select regions of the imported texture. Scene rendering scales the artwork to the existing pipe shapes; the upper rim is flipped vertically. Collision shapes are separate.

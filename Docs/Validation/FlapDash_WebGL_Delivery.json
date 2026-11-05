@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "unityVersion": "6000.3.6f1",
+  "buildExitCode": 0,
+  "verifiedUtc": "2026-10-31T10:39:04.5555740Z",
+  "browserGameplay": "UNVERIFIED: Computer Use stopped because Chrome current URL could not be verified reliably",
+  "localUrl": "http://127.0.0.1:8765/",
+  "serverProcessId": 6768,
+  "canvas": "360x640",
+  "compression": "gzip with decompression fallback",
+  "wasmHeader": "00-61-73-6D-01-00-00-00",
+  "wasmGzipRead": "PASS",
+  "httpFiles": [
+    {
+      "file": "AssetLicenses.txt",
+      "status": 200,
+      "bytes": 2346
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "bytes": 5611
+    },
+    {
+      "file": "README.txt",
+      "status": 200,
+      "bytes": 2236
+    },
+    {
+      "file": "Tuffy_PublicDomain.txt",
+      "status": 200,
+      "bytes": 489
+    },
+    {
+      "file": "Build/WebGL.data.unityweb",
+      "status": 200,
+      "bytes": 4853666
+    },
+    {
+      "file": "Build/WebGL.framework.js.unityweb",
+      "status": 200,
+      "bytes": 83714
+    },
+    {
+      "file": "Build/WebGL.loader.js",
+      "status": 200,
+      "bytes": 47866
+    },
+    {
+      "file": "Build/WebGL.wasm.unityweb",
+      "status": 200,
+      "bytes": 12888579
+    },
+    {
+      "file": "TemplateData/favicon.ico",
+      "status": 200,
+      "bytes": 2305
+    },
+    {
+      "file": "TemplateData/fullscreen-button.png",
+      "status": 200,
+      "bytes": 175
+    },
+    {
+      "file": "TemplateData/MemoryProfiler.png",
+      "status": 200,
+      "bytes": 665
+    },
+    {
+      "file": "TemplateData/progress-bar-empty-dark.png",
+      "status": 200,
+      "bytes": 96
+    },
+    {
+      "file": "TemplateData/progress-bar-empty-light.png",
+      "status": 200,
+      "bytes": 109
+    },
+    {
+      "file": "TemplateData/progress-bar-full-dark.png",
+      "status": 200,
+      "bytes": 74
+    },
+    {
+      "file": "TemplateData/progress-bar-full-light.png",
+      "status": 200,
+      "bytes": 84
+    },
+    {
+      "file": "TemplateData/style.css",
+      "status": 200,
+      "bytes": 1448
+    },
+    {
+      "file": "TemplateData/unity-logo-dark.png",
+      "status": 200,
+      "bytes": 3042
+    },
+    {
+      "file": "TemplateData/unity-logo-light.png",
+      "status": 200,
+      "bytes": 3077
+    },
+    {
+      "file": "TemplateData/unity-logo-title-footer.png",
+      "status": 200,
+      "bytes": 1151
+    },
+    {
+      "file": "TemplateData/webmemd-icon.png",
+      "status": 200,
+      "bytes": 1670
+    }
+  ],
+  "zipBytes": 17329676,
+  "zipSha256": "C80B01C6920B4C98A17710518C6BD9B3F3A04C59EBB8116225A116937EB0B956"
+}

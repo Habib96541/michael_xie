@@ -1,0 +1,16 @@
+Blue Flappy Bird Sprite Sheets
+Creator: bevouliin.com
+Source: https://opengameart.org/content/game-character-blue-flappy-bird-sprite-sheets
+Downloaded: 2026-11-02
+Archive: https://opengameart.org/sites/default/files/Blue%20Bird%20Sprite%20Sheets.zip
+Archive SHA256: 0BC04C9E27E0A3962F4D1474F41D0F6EB75770E40DE2B6FB2B785D19580A8F92
+
+License evidence
+The creator's OpenGameArt upload identifies bevouliin.com as the author and explicitly lists CC0 under License(s), linked to https://creativecommons.org/publicdomain/zero/1.0/.
+The downloaded archive contains a creator note but no standalone license file. This record preserves the source-page declaration; it is not represented as an original bundled license.
+
+Imported files
+Transparent PNG/frame-1.png through frame-8.png, stored here as frame-1.png through frame-8.png.
+bevouliin.com.txt.txt, retained unchanged as the original creator note.
+All imported PNG bytes are unchanged. Unity imports them as sprites; PlayerFeedback selects the eight frames for animation and applies visual transforms.
+GIF-preview.gif is reference-only outside Assets and is not imported.

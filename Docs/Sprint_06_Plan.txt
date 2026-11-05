@@ -1,0 +1,52 @@
+Sprint 06 proposal: Bird chirp on flap
+Status: approved with the user's selected fourth source-page preview and implemented on 2026-11-02. All 30 checks pass; listening quality and user understanding remain pending. See Sprint_06.txt.
+
+Why
+The user wants a bird sound when pressing to fly. Trigger sound from the accepted flap action so keyboard, mouse and touch stay consistent, and holding the button does not repeat it.
+
+Proposed behavior
+- One soft approximately 0.206-second chirp for each accepted flap, using the fourth preview selected by the user.
+- Use a single 2D AudioSource on Player, playOnAwake false, loop false, spatialBlend 0 and initial volume 0.3.
+- Retrigger the same source on rapid presses rather than layer simultaneous voices.
+- Stop the sound when the round ends or the player resets.
+- Menu clicks and rejected input do not chirp.
+- Keep sound independent of Visual Energy, which controls decorative motion only.
+- Add exactly one active AudioListener on Main Camera; the current FlapDash scene has none.
+- Do not change movement, physics, scoring, artwork or round duration. Do not rebuild WebGL.
+
+Selected sound and evidence
+Creator: Aj_
+Pack: Bird, cricket, frog and mosquito sounds
+Creator source: https://opengameart.org/content/birdcricketfrog-and-mosquito-sounds
+The creator upload explicitly declares CC0, linked to https://creativecommons.org/publicdomain/zero/1.0/.
+Archive: https://opengameart.org/sites/default/files/birdsCrickets.zip
+Archive SHA256: 9F815B60C16F9EF8052D4C6F5BD86C4F0CE56541B05400347F7032CD06947523
+Selected entry: birdsCrickets/cricket.wav, mono PCM, 44100 Hz, 16 bit, about 0.205646 seconds.
+The source page's data-ogg-url elements were inspected in display order: bird2.ogg, bird.ogg, birdNight.ogg, cricket.ogg, cricket2.ogg, distressedMosquito.ogg, frog.ogg. The fourth from the left corresponds to cricket.wav in the archive. The user selected this sound instead of the initially proposed bird.wav excerpt.
+Selected WAV SHA256: 095BABBA62AEC4502C4768287A212844743D3182A507318E601CB43063A9D131.
+The archive contains no standalone license file. Preserve the creator-page CC0 evidence and the original selected source WAV in the project.
+Import the selected WAV unchanged, renamed FlapChirp.wav. Do not trim, fade or substitute the chosen sound. The source was synthesized by its creator with as3sfxr, rather than a field recording. The earlier staged 0.25-second bird.wav preview is superseded and will not be imported.
+
+Files to change inside Games/26_FlapDash
+- Assets/ThirdParty/AjFlapChirp/FlapChirp.wav and PROVENANCE.txt (new selected original sound, renamed without byte changes, and exact license/source/selection records).
+- Assets/Scripts/FlapPlayer.cs: serialized AudioSource reference; play only when applying an accepted flap, stop with StopPlayer.
+- Assets/Editor/FlapDashProjectSetup.cs: configure short-clip audio import, add/wire the Player AudioSource and Main Camera AudioListener.
+- Assets/Editor/FlapDashValidation.cs: check clip/listener configuration, press/hold playback behavior, menu silence and round cleanup alongside existing checks.
+- Assets/Prefabs/Player.prefab and Assets/Scenes/FlapDash.unity: generated audio component wiring.
+- Assets/ThirdParty/AssetLicenses.txt and generated metadata.
+
+Root records
+- SprintDocs/Asset_Licenses.txt, SprintDocs/Sprint_06.txt and validation evidence.
+- Relevant decision, memory, phase, requirements, design, architecture and rules updates.
+
+Done condition
+- Existing 22 checks still pass, with new checks for audio configuration and playback state on actual input.
+- Keyboard, mouse and simulated touch flap invoke the same sound; holding input does not repeat it; menu actions and Ready/Results input do not produce chirps.
+- Ending/restarting clears active sound; there is one listener and one Player audio source, without stacked voices.
+- No C# errors, obsolete APIs or new runtime exceptions.
+- Record playback-state checks separately from listening quality; let the user review volume/timbre in the Editor.
+- License/source/derivative records are inside this independent project.
+- WebGL output and ZIP remain untouched.
+
+Approval requirement
+The user selected the fourth source-page preview in response to the sound plan. This approves the flap-audio change with that selected sound. No other sprint or build is authorized.

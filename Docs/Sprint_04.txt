@@ -1,0 +1,70 @@
+Sprint 04: Sharpen Flap Dash movement and pace
+Date: 2026-11-02
+Status: implementation and Editor behavior checks complete; user play feel and understanding pending.
+
+Goals
+- Address the user's report that Flap Dash feels slow and lethargic.
+- Make the hop quicker and the course about 15 percent faster.
+- Follow the user's correction: tune first; build later.
+
+Changes
+- Flap strength 7 to 8 and gravity scale 1.5 to 2.
+- Pipe speed 2.3 to 2.65, spawn interval 1.7 to 1.48 seconds, first spawn delay 1.3 to 1.1 seconds.
+- Flap pulse 0.20 to 0.12 seconds; tilt smoothing rate 12 to 20.
+- Matched runtime defaults, Player prefab, scene course values and scene generator values.
+- Kept physics timestep 0.02, player collider radius 0.3, gap size, input bindings, fall speed cap 12, scoring and 60-second limit.
+- Validation now captures the configured gravity rather than restoring the old hardcoded value.
+- Fixed validation cleanup order: restore original Input System settings before ExitPlaymode.
+- No game build, ZIP update, new assets or other game projects.
+
+Files touched
+Inside Games/26_FlapDash:
+- Assets/Scripts/FlapPlayer.cs
+- Assets/Scripts/PipeCourse.cs
+- Assets/Scripts/PlayerFeedback.cs
+- Assets/Editor/FlapDashProjectSetup.cs
+- Assets/Editor/FlapDashValidation.cs
+- Assets/Prefabs/Player.prefab
+- Assets/Scenes/FlapDash.unity
+Root records:
+- architecture.md, decision.md, design.md, memory.md, phases.md, project_requirements.md, rules.md
+- SprintDocs/Sprint_04_Plan.txt, this record and Validation/FlapDash_Smoke04.json
+
+Done condition and evidence
+- The 17 Editor behavior checks pass with an empty failures list in Validation/FlapDash_Smoke04.json.
+- Start, keyboard/mouse/simulated-touch flap, one-time pipe scoring, course motion, collision, timeout, restart and effects intensity pass.
+- Final validation log contains no C# errors/warnings, obsolete API diagnostics, exceptions or Input System cleanup assertions.
+- Source and serialized values agree. Player scene instance inherits gravity/flap tuning from its prefab, with no overriding values.
+- The existing WebGL ZIP retains SHA256 C80B01C6920B4C98A17710518C6BD9B3F3A04C59EBB8116225A116937EB0B956. It contains Sprint 03 tuning and is not this revision.
+- Subjective responsiveness and sustained player pacing remain for user playtesting in the Editor. No measured input-latency improvement or browser playtest is claimed.
+
+Why the tuning works
+- Under ideal constant gravity, time to the apex is initial upward speed divided by gravity. The chosen pair reaches the apex about 14 percent sooner while changing theoretical hop height by about 2 percent.
+- Increasing only flap strength would make hops higher and could require changing the course. Stronger gravity keeps the motion short.
+- Pipe distance spacing remains nearly unchanged: 3.91 units before, about 3.922 units now. The same distance passes more quickly.
+- The shorter flap pulse and quicker tilt reduce the duration of decorative motion. Input still enters in Update and physics applies in FixedUpdate.
+- Serialized prefab values override script defaults, so both must be updated deliberately.
+
+Debugging lesson
+- The first run passed all gameplay checks but its log contained InputManager.get_settings assertions while leaving Play mode.
+- Reading Input System's settings getter showed that its current settings object was no longer valid during the transition. The validation helper restored settings in Finish, after the transition had begun.
+- Restore the original settings in Stop before ExitPlaymode, then destroy the temporary object during Finish. The rerun passed all 17 checks without those assertions.
+- First-run evidence is retained as FlapDash_Validation04_FirstRun.log and FlapDash_Smoke04_FirstRun.json. The JSON alone did not reveal the cleanup issue; always inspect the full log.
+
+Senior note
+- Speed affects difficulty and attainable scores. Treat this as a revised prototype challenge, and get team agreement before comparing competitive scores across tuning versions.
+
+Learn more
+- Unity concept: serialized Inspector values and prefab instance overrides.
+
+Understanding check
+1. Why did we increase gravity together with flap strength?
+2. Why was changing the default field value in FlapPlayer.cs insufficient by itself?
+
+Open questions
+- Does the tuned Editor version feel appropriately sharper and faster to the user?
+- Prior learning questions remain pending. No next sprint is authorized.
+- WebGL rebuilding is explicitly deferred.
+
+Ready-to-copy Git commit message
+Sharpen Flap Dash movement and course pacing

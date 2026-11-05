@@ -1,0 +1,62 @@
+Sprint 03 proposal: Flap Dash visual feedback
+Status: approved and implemented; see Sprint_03.txt for verification and pending user review. Sprint 02 understanding answers remain pending.
+
+Why
+The controls feel smooth and responsive to the user, but the current static shapes and instant UI transitions provide little animated feedback. Teach the separation of presentation from gameplay: animate visual children and UI without changing the player's physics or collision shape.
+
+Scope
+Only the independent Flap Dash project. Games 27-30 remain planned.
+Keep the current movement tuning, pipe sequence, scoring, collision rules, and 60-second limit.
+
+Asset requirement supplied by the user
+- Externally sourced game content must be verified CC0/public domain. Free or royalty-free labels alone are insufficient.
+- Candidate sources and current exceptions are recorded in SprintDocs/Asset_Licenses.txt. Inspect archive licenses and record exact imported files before use.
+- Replace the prototype's OFL LiberationSans font and fallback references with a verified public-domain font, such as the creator-dedicated Tuffy family.
+- Do not label Unity and its software dependencies as copyright-free; their original licenses still apply.
+
+Proposed visual direction
+- A bright neon arcade palette with a dark, readable playfield and glowing accents.
+- Flap: animated wing, brief squash/stretch, movement-based tilt, and a short fading trail.
+- Pipe passage: a compact particle burst and score pop near the successful action.
+- Round transitions: quick panel fade/scale and a brief collision burst; input and restart are never delayed by animation.
+- Button interaction: hover and press responses.
+- An effects-intensity slider on the Ready/Results screen, defaulting to full intensity at the user's request. Reduced intensity and zero intensity suppress decorative effects while retaining essential gameplay information.
+- Keep particles and trails short and outside important text and upcoming openings. Avoid repetitive full-screen flashing. Validate the style with intended players rather than claim an ADHD-specific benefit.
+
+Files to add
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Scripts/PlayerFeedback.cs
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Scripts/RoundFeedback.cs
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Scripts/ButtonFeedback.cs
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Scripts/VisualEffectsSettings.cs
+
+Existing files to change
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Scripts/FlapPlayer.cs
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Scripts/RoundView.cs
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Editor/FlapDashProjectSetup.cs
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Editor/FlapDashValidation.cs
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Editor/FlapDashPreview.cs
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Scenes/FlapDash.unity
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Prefabs/Player.prefab
+C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash/Assets/Prefabs/PipePair.prefab
+Project-owned generated sprites/materials under this game's Assets/Art and Assets/Materials, with their Unity metadata.
+The seven root project documents and SprintDocs/Sprint_03.txt will record the approved implementation and actual validation results.
+
+Implementation limits
+- Use direct Inspector references and small animation scripts. No extra animation package or shared game framework.
+- Change the player's visual child transforms, not its Rigidbody2D or collider transform.
+- Particle feedback cannot award points or change hitboxes, timing windows, or input handling.
+- Clear transient effects on restart. Repeated rounds must not accumulate objects or listeners.
+- Presentation settings do not alter the challenge or score. They remain within the current app session; persistent settings are a later save/load topic.
+
+Done condition
+- Flaps, successful passages, button actions, and results have visible, coherent animated feedback.
+- Full, reduced, and zero intensity remain playable and readable in portrait view.
+- The existing 12 behavior checks still pass; add focused checks for unchanged physics/collider transforms, intensity controls, immediate input/restart, and effect cleanup.
+- Inspect animated sequences in Unity and rendered portrait states. Static screenshots alone do not prove animation quality.
+- No compilation errors or obsolete API warnings. Inspect repeated-round behavior and obvious particle/frame-time problems.
+- User evaluates the new style and explains how presentation stays separate from gameplay.
+- Imported content has verified CC0/public-domain provenance and a project-owned license register. Audit remaining default font/fallback assets before claiming compliance.
+
+Design reference
+Microsoft XAG 117: configurable visual distractions and motion.
+https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/117

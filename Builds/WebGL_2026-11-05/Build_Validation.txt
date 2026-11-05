@@ -1,0 +1,17 @@
+Flap Dash WebGL build validation - 2026-11-05
+
+Unity 6000.3.27f2 build: SUCCESS, exit code 0.
+C# compilation errors: 0. C# compilation warnings: 0.
+HTML references the expected loader, data, framework and WebAssembly payloads.
+All three gzip-compressed payloads decompressed fully.
+WebAssembly header and WebAssembly.validate: PASS.
+Desktop browser canvas: 360 x 640 portrait.
+All 30 files present during the payload/license HTTP check returned 200 with matching lengths and bytes. The temporary local server was stopped afterward.
+Supplemental validation/manifest files are checked as part of archive packaging.
+The archive is verified by reading every entry and matching its SHA256 and byte count to the source folder.
+
+Limitations
+Browser startup, rendering, controls, gameplay, audio and phone-browser behavior have not been tested for this build.
+The build log contained an ignored LicensingClient validation diagnostic and shutdown thread-abort messages. The Editor resolved its license and completed the build successfully; this is not a claim of a clean browser Console.
+
+See README.txt for hosting and controls. Serve the extracted directory through HTTP/HTTPS.

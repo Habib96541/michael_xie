@@ -1,0 +1,127 @@
+Sprint 02: Build the first local Flap Dash round
+Date: 2026-10-31, Asia/Dhaka
+Status: implementation, behavior, rendered layout, and live GUI smoke check verified; user understanding and sustained play feedback pending.
+
+Goals
+- Create Games/26_FlapDash as an independent Unity 6000.3.6f1 URP 2D project.
+- Build one complete local round the user can explain and demonstrate.
+- Use simple direct references and five focused runtime scripts.
+
+Approved rules
+- Editor-first portrait presentation, 540 x 960 reference resolution.
+- Space, mouse click, or touch triggers one flap action through the New Input System.
+- One point per pipe passage; fixed authored gap sequence.
+- Ready, Playing, and Results states.
+- First obstacle collision or the 60-second maximum ends the round.
+- Restart from Results clears state and begins a fresh Playing round immediately.
+
+Changes
+- Created the independent Unity project and read its actual ProjectVersion.txt: 6000.3.6f1 (bbb010bdb8a3).
+- Kept direct feature packages for 2D Sprite 1.0.0, Input System 1.18.0, URP 17.3.0, and uGUI 2.0.0; removed unused template feature packages.
+- Wrote FlapPlayer, PipeCourse, PipeGate, RoundController, and RoundView.
+- Input is collected in Update and Rigidbody2D motion applied in FixedUpdate.
+- Added one-shot gate scoring, duplicate end guards, start-press suppression, and clean pipe/player reset.
+- Completed editor-only scene setup and behavior validation helpers.
+- Added an editor-only preview helper to export staged Ready, Playing, and Results layout captures at 540 x 960.
+- Generated the scene, player/pipe prefabs, input-actions asset, fonts, sprites, materials, and UI references.
+- Selected the primary menu button when the ready/results overlay opens so Enter can restart after pointer input.
+- Added a Unity .gitignore and updated the seven root documents for the approved implementation.
+
+Files touched
+- .gitignore
+- Seven root Markdown planning files
+- Games/26_FlapDash/Packages/manifest.json and packages-lock.json
+- Games/26_FlapDash/ProjectSettings/ and Unity-generated metadata
+- Games/26_FlapDash/Assets/Scripts/FlapPlayer.cs
+- Games/26_FlapDash/Assets/Scripts/PipeCourse.cs
+- Games/26_FlapDash/Assets/Scripts/PipeGate.cs
+- Games/26_FlapDash/Assets/Scripts/RoundController.cs
+- Games/26_FlapDash/Assets/Scripts/RoundView.cs
+- Games/26_FlapDash/Assets/Editor/FlapDashProjectSetup.cs
+- Games/26_FlapDash/Assets/Editor/FlapDashValidation.cs
+- Games/26_FlapDash/Assets/Editor/FlapDashPreview.cs
+- Games/26_FlapDash/Assets/Scenes/FlapDash.unity
+- Games/26_FlapDash/Assets/Prefabs/Player.prefab and PipePair.prefab
+- Games/26_FlapDash/Assets/Input/FlapControls.inputactions
+- Project-owned rendering, sprite, material, font, and UI assets required by the scene
+- SprintDocs/Sprint_02.txt and SprintDocs/Validation/ evidence
+- SprintDocs/Validation/FlapDash_Ready.png
+- SprintDocs/Validation/FlapDash_Playing.png
+- SprintDocs/Validation/FlapDash_Results.png
+
+Done condition
+- Project opens in Unity 6000.3.6f1 with its own packages and no sibling-game dependency.
+- Player and pipes stay still until Start, and a press produces a single flap rather than repeating while held.
+- Each gate awards one point once, and scoring stops when the round ends.
+- Collision and time expiry end the round once and freeze gameplay.
+- Restart restores player position, empty course, score, time, and pending input.
+- Score, timer, instructions, and results are readable in the actual portrait view.
+- Console has no compilation errors or obsolete API warnings.
+- User can explain the code's responsibilities and lifecycle choices.
+
+Verification
+- Actual project version and direct package versions were read.
+- Setup completed with FLAP_SETUP_PASS in SprintDocs/Validation/FlapDash_Setup.log.
+- SprintDocs/Validation/FlapDash_Smoke.json reports PASS for 12 checks with an empty failures list.
+- Passed checks: Ready state; start-button input suppression; one Space flap without hold-repeat; mouse action; simulated touchscreen action; actual physics passage with duplicate-score guard; pipe spawn/movement; player/pipe/score freeze; Enter restart after pointer input; real obstacle collision; timeout; restart after collision and timeout.
+- Timeout verification used an accelerated test duration; the normal scene rule remains 60 seconds.
+- Source, asset, metadata, ASCII, and local-link checks passed.
+- Current setup and validation logs have no error CS, warning CS, obsolete, or deprecated API diagnostics.
+- Final setup, 12 behavior checks, and preview capture completed successfully with exit code zero after the footer readability fix.
+- Ready, Playing, and Results were rendered at 540 x 960 through Unity's URP render-request API. All three final PNGs were inspected: title, score, timer, instructions, and results are legible and not covered by obstacles; the control hint has an opaque footer background.
+- These captures use a staged example pipe, Time.timeScale zero, and a temporary camera canvas/sorting configuration that is restored afterward. They show static layout, not a live physical-input playthrough.
+- The user unlocked Windows. A live GUI smoke check then verified the actual 1080 x 1920 portrait Game view at 0.46 scale: readable Ready/Playing/Results, mouse start and flap, falling-player ground collision, mouse restart with reset score/time/course, and spawned pipes. Console showed zero errors and warnings.
+- A short live check does not establish sustained play feel, enjoyment, or ADHD engagement. Physical touch and a full-length run were not manually tested. GUI Space/Enter attempts were not positively verified because of capture timing/focus; keyboard behavior remains covered by the separate automated checks.
+- Play mode was stopped after inspection. The Editor was left open on the FlapDash scene in portrait view for the user.
+- No standalone executable/player build or target-device performance verification was made.
+- No server verification, deterministic cross-device replay, or ADHD engagement outcome is established.
+
+Debugging notes
+- Read compilation output to find CS0104 ambiguous namespace references and qualified the intended types.
+- Asset setup initially loaded resources before a new scene reset; creating the scene first preserved the loaded references.
+- TextMesh Pro essentials import is asynchronous; setup now waits until required resources exist before authoring the scene.
+- Behavioral testing exposed missing menu selection after pointer input; RoundView now selects the primary button when an overlay opens.
+- Headless UI tests needed test-only focus routing; the normal focus configuration was restored. This is not evidence of a completed GUI visual check.
+- Initial rendered inspection revealed the control hint could overlap obstacles. Added an opaque footer to the actual scene setup. The preview-only canvas uses sorting order 100 to preserve overlay ordering in camera captures; this does not change the gameplay canvas configuration.
+
+Remaining acceptance checks
+- User feedback received: controls feel "very smooth and responsive." Retain the current movement tuning. Sustained engagement and the understanding answers remain unverified.
+- Have the user try a few natural rounds and report input responsiveness, difficulty, clarity, and play feel.
+- Keep the completed GUI smoke check and staged rendered-layout inspection distinct from sustained human playtesting and the pending user explanation.
+- Ask the understanding questions below. Do not close the full sprint or start another sprint before the required confirmation.
+
+Quickstart
+- Open C:/Users/Racy/OneDrive/Documents/ChatGPT/Skill-Based PvP Game/Games/26_FlapDash in Unity 6000.3.6f1.
+- Open Assets/Scenes/FlapDash.unity explicitly rather than relying on whichever scene the Editor opens by default.
+- Select a 9:16 Game view or 540 x 960 resolution, press Editor Play, and choose START ROUND.
+- Use Space, mouse click, or touch to flap. After collision or timeout, use PLAY AGAIN; Enter submits the selected menu button.
+
+Concepts to explain
+- Awake caches required references once before play.
+- Update reads frame input; FixedUpdate applies physics on the physics timestep.
+- A simple enum records which round actions are currently allowed.
+- A per-gate boolean prevents the same passage from awarding points twice.
+- Inspector references keep dependencies visible without searching the scene each frame.
+- Presentation displays state; RoundController owns the score and timer.
+
+Senior note
+- A fixed course and FixedUpdate do not prove server-compatible replay. Agree the team's numeric, timing, movement, and validation contract before adding competitive verification.
+
+Learn more
+- Unity Manual concept: event function execution order, especially Awake, Update, and FixedUpdate.
+- https://docs.unity.com/en-us/engine/6000.3/manual/scripting/managing-update-order/execution-order
+
+Understanding check: pending user answers
+1. Why are component and input references cached in Awake?
+2. Why do we read input in Update but apply the flap in FixedUpdate?
+3. What prevents the same pipe from awarding points twice?
+
+Open questions and later work
+- Production platform/device floor and target build format.
+- Seeded challenge, ordered input record, score-verification contract, and external service ownership.
+- Interruption and backgrounding policy for production matches.
+- Playtested movement tuning and intended-player feedback.
+- No work on games 27-30 or the next sprint is authorized by this sprint.
+
+Ready-to-copy Git commit subject
+Build the first playable Flap Dash round

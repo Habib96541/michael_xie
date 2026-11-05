@@ -1,0 +1,31 @@
+Asset sourcing register
+Status: Tuffy imported; no other outside game content imported for Sprint 03.
+
+Imported content
+Creator: Thatcher Ulrich and the contributors identified on the creator's page.
+Source: https://tulrich.com/fonts/
+Archive: https://tulrich.com/fonts/tuffy-20120614.zip
+Archive SHA256: 9cee853bca685268f3764e8c9373c761bbd0e2862df4b23742f38472da323204
+Declared status: creator's worldwide public-domain dedication with an unrestricted-use fallback.
+Files: Assets/ThirdParty/Tuffy/Tuffy.ttf, Tuffy_Bold.ttf, Tuffy_Italic.ttf, Tuffy_Bold_Italic.ttf.
+Generated derivative: Assets/ThirdParty/Tuffy/Tuffy SDF.asset and its material/atlas subassets.
+Changes: imported original font files unchanged; generated a dynamic TMP SDF for this game's text.
+Dedication/source/hash record: Assets/ThirdParty/Tuffy/PUBLIC_DOMAIN.txt.
+
+Content created in this project
+Simple circles, rectangles and radial glow textures; player/pipe visuals; scene/UI layouts; animation code. No external artwork, sound, animation package, or Kenney content was needed for this pass.
+
+Unused verified candidates
+Kenney Particle Pack: https://kenney.nl/assets/particle-pack (creator page declares CC0).
+Kenney UI Pack: https://kenney.nl/assets/ui-pack (creator page declares CC0).
+These candidates were not downloaded/imported. Inspect archive licenses before any future import.
+
+Existing content audit
+Default TextMesh Pro LiberationSans/OFL font content and EmojiOne sprite content were removed from this project's Assets. TMP default font now points to Tuffy, with fallback font and default sprite references cleared. A filename audit found no remaining Liberation/EmojiOne content under Assets.
+
+Software boundary
+Unity, URP, Input System, uGUI/TextMesh Pro and bundled shaders/code retain their software licenses. This is not a copyright-free Unity engine or a claim that all project files are public domain.
+
+Sourcing rule
+Externally sourced game content must be verified CC0/public domain using the original creator source and archive license. Record exact files, source, creator, version/hash, modifications and evidence. A free price or royalty-free label alone is insufficient. Keep a separate record inside each independent project that uses a resource.
+CC0 explanation: https://creativecommons.org/publicdomain/zero/1.0/

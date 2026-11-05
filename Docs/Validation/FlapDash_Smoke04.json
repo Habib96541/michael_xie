@@ -1,0 +1,25 @@
+{
+    "status": "PASS",
+    "unityVersion": "6000.3.6f1",
+    "completedUtc": "2026-11-02T02:59:02.0196381Z",
+    "checks": [
+        "Ready scene: player stopped, score zero, timer 60.",
+        "Start button begins a round without an automatic flap.",
+        "Space press flaps once; holding it does not auto-flap.",
+        "Mouse press reaches the same flap action.",
+        "Simulated touchscreen press reaches the flap action.",
+        "Physics passage scores one point; duplicate passage is ignored.",
+        "Authored course spawns and moves pipes during play.",
+        "Ending a round freezes the player, pipes, and score.",
+        "Enter submits Play Again after pointer input; restart clears score, timer, pipes, and pending input.",
+        "Real Rigidbody2D obstacle collision ends the round.",
+        "Timer expiry ends once at zero and freezes the score.",
+        "Restart works after both collision and timeout.",
+        "Zero visual intensity retains gameplay and suppresses decorative effects.",
+        "Reduced intensity animates the visual child without changing collider size or root transform.",
+        "Full intensity emits flap and passage particles.",
+        "Restart clears transient particles immediately and retains chosen intensity.",
+        "Zero-intensity restart preserves immediate round flow and scoring rules."
+    ],
+    "failures": []
+}

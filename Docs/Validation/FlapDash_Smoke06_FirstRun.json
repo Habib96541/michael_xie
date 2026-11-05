@@ -1,0 +1,13 @@
+{
+    "status": "FAIL",
+    "unityVersion": "6000.3.6f1",
+    "completedUtc": "2026-11-02T05:21:24.7738994Z",
+    "checks": [
+        "Imported bird frames, UI artwork and backdrop references are assigned.",
+        "Slider fill remains within the visible track bounds.",
+        "Imported pipe artwork retains the existing body and rim collision dimensions."
+    ],
+    "failures": [
+        "The short chirp is loaded before the first flap."
+    ]
+}

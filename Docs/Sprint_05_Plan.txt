@@ -1,0 +1,63 @@
+Sprint 05 proposal: Bright cartoon art replacement for Flap Dash
+Status: approved and implemented on 2026-11-02. Selected artwork is imported; 22 checks pass and Unity render evidence is available. User appearance review and understanding remain pending. See Sprint_05.txt.
+
+Why
+The user says the existing shapes and dark interface look basic. Replace placeholder artwork with a coherent, bright cartoon presentation. Teach sprite import, frame animation, sliced UI images and the separation of artwork from collider geometry.
+
+Direction
+- Bright sky with layered white clouds and green hills rather than the dark navy playfield.
+- Expressive cyan bird with a large eye, orange beak and eight authored wing-animation frames.
+- Shaded green pipe artwork with clear rims, highlights and visible edges.
+- Rounded white/light menu and HUD panels, navy text, warm yellow/orange primary buttons and clear button depth/shadows.
+- Gentle cloud parallax and restrained action-linked particles. The Visual Energy setting still controls optional motion, including new bird/background animation.
+- Stay in the existing URP 2D project and use high-resolution 2D sprites. Do not introduce a 3D pipeline, runtime art packages, shops or extra game modes.
+
+Chosen candidate sources
+- Bird: Blue Flappy Bird Sprite Sheets by bevouliin.com. Eight transparent PNG frames. Creator's OpenGameArt upload declares CC0. The archive has a creator note but no standalone license file, so preserve the source-page CC0 declaration in the project.
+  https://opengameart.org/content/game-character-blue-flappy-bird-sprite-sheets
+- Pipes: Pipe by bhu1c. The creator upload declares CC0. The PNG is transparent and was visually inspected; use its green body/rim artwork, with controlled sprite regions or derivatives for the required height.
+  https://opengameart.org/content/pipe
+- UI: Kenney UI Pack 2.0. Creator page and archive License.txt both declare CC0. Import only needed PNG artwork and its notice; keep the existing Tuffy font.
+  https://kenney.nl/assets/ui-pack
+- Background: Kenney Background Elements Redux / Remastered. Creator page and archive License.txt both declare CC0. Import selected cloud/hill/ground layers, not promotional previews or branding.
+  https://opengameart.org/content/background-elements-redux
+  https://kenney.nl/assets/background-elements-remastered
+- Exact download URLs, hashes and inspection notes are in Sprint_05_Asset_Candidates.txt.
+
+Files to change inside Games/26_FlapDash
+- Assets/ThirdParty/BevouliinBlueBird/: selected eight frame PNGs, creator note, recorded CC0 source declaration and provenance (new).
+- Assets/ThirdParty/Bhu1cPipes/: pipe artwork, recorded CC0 source declaration and provenance (new).
+- Assets/ThirdParty/KenneyUI/: selected PNG artwork, original License.txt and provenance (new).
+- Assets/ThirdParty/KenneyBackgrounds/: selected PNG layers, original License.txt and provenance (new).
+- Assets/Editor/FlapDashArtSetup.cs (new): focused import/loading helpers for sprite regions, animation frames and sliced UI borders.
+- Assets/Editor/FlapDashProjectSetup.cs: author the new scene, bird/pipe visuals, bright palette, sky layers and reskinned UI using actual imported sprites.
+- Assets/Scripts/PlayerFeedback.cs: replace the generated wing-shape animation with the real bird sprite frames; preserve squash/tilt/trail and intensity support.
+- Assets/Scripts/BackdropMotion.cs (new): simple cached layer movement controlled by round state and Visual Energy.
+- Assets/Editor/FlapDashValidation.cs: retain behavior checks and verify new art references and optional motion suppression.
+- Assets/Editor/FlapDashPreview.cs: adjust staged preview references only if the new artwork requires it.
+- Assets/Prefabs/Player.prefab, PipePair.prefab and Assets/Scenes/FlapDash.unity: generated/wired artwork and scene objects.
+- Assets/Materials and Assets/Art: only derived art/materials needed by this presentation pass; generated metadata accompanies imported assets.
+- Assets/ThirdParty/AssetLicenses.txt: exact imported files, original source and license evidence.
+
+Root records
+- SprintDocs/Asset_Licenses.txt and SprintDocs/Sprint_05.txt.
+- SprintDocs/Validation/Sprint05/: actual Unity portrait/animation previews and behavior report.
+- Relevant architecture, design, decision, memory, requirements, rules and phase records.
+
+Boundaries
+- Preserve Sprint 04 movement: flap 8, gravity scale 2, pipe speed 2.65, spawn interval 1.48 and first spawn delay 1.1.
+- Keep existing collider dimensions, gap size, one-point scoring, authored challenge order and the 60-second limit. New art lives on visual children or uses explicit collider geometry so sprite replacement cannot silently resize collision shapes.
+- No new outsourced audio or fonts. No paid, attribution-only or royalty-free-only assets.
+- No WebGL build: the user's build-later instruction remains in force. The old WebGL folder and archive keep their previous content.
+- Only game 26 changes. Games 27-30 remain independent planned projects.
+
+Done condition
+- Bird, pipes, buttons/panels and background visibly use the selected imported artwork rather than the existing placeholder circles/rectangles.
+- Capture actual Unity Ready, Playing and Results screens plus a short animation preview at portrait resolution. Inspect and adjust spacing, contrast, seams, target visibility and sprite alignment.
+- Existing behavior checks pass; new checks confirm art references, stable collider geometry and that zero Visual Energy suppresses optional new motion.
+- No C# errors, obsolete APIs or new runtime exceptions in the final verification logs.
+- License evidence and exact imported-file records are available inside the independent Unity project.
+- The user reviews the appearance in the Editor and explains the visual/collider separation before this sprint is learning-complete.
+
+Approval requirement
+The user approved this concrete art plan before implementation. This approval covers Sprint 05 only; rebuilding and later game sprints remain deferred.

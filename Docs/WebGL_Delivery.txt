@@ -1,0 +1,44 @@
+Flap Dash WebGL delivery - 2026-11-05
+Status: current build/package verified; browser gameplay pending manual review.
+
+Current delivery
+- ZIP: Games/26_FlapDash/Builds/FlapDash_WebGL_2026-11-05.zip
+- Folder: Games/26_FlapDash/Builds/WebGL_2026-11-05
+- Size: 18487707 bytes. Files: 32.
+- SHA256: FD6EBD34D117D6F6B8E2DCC2C3F9F9E396F16EC07180EEAFE54EBE55B7A43D9A
+- Unity: 6000.3.27f2; profile: Assets/Settings/Build Profiles/WebGL.asset.
+- Portrait canvas 360 x 640. Gzip with JavaScript decompression fallback.
+- Includes current art, selected frog flap sound, score/title switching, timer, larger pipe-height changes and speed progression every ten pipes.
+- Contains game 26 only. Other games and backend score verification remain unimplemented.
+
+Validation
+- Official matching Web Build Support installed after the user freed disk space.
+- Unity CLI/provenance success, exit code 0; zero C# errors/warnings.
+- HTML references, three gzip payloads and WebAssembly validation pass.
+- All 30 files at payload/license HTTP checks returned 200 with matching bytes/lengths. Temporary server was stopped.
+- All 32 final ZIP entries read fully and match source hashes and sizes.
+- Saved scene/scripts/prefabs unchanged. Unity automatically reserialized two URP assets and Player Settings; see SprintDocs/Sprint_13.txt.
+- Ignored licensing validation and shutdown thread diagnostics were logged while the build succeeded. No clean browser Console claim is made.
+- Browser gameplay, listening and mobile checks remain manual and unverified.
+- Evidence: SprintDocs/Validation/Sprint13/Delivery.json and related reports.
+
+Use
+Extract the ZIP and serve its complete directory through HTTP/HTTPS. Follow README.txt and Build_Validation.txt inside the package.
+If Python is installed, run python -m http.server 8765 --bind 127.0.0.1 in the extracted folder. Choose another port if an older server uses 8765.
+Opening index.html directly as a local file is not supported. No persistent server or browser window was opened by this task.
+
+Previous delivery
+Builds/WebGL and Builds/FlapDash_WebGL.zip are preserved historical Sprint 03 outputs, not the current game. The earlier delivery note is backed up in .validation/Sprint13/WebGL_Delivery_Previous.txt.
+
+Senior note
+Successful compilation and payload integrity do not establish browser rendering, input or sound. Test this exact dated package.
+
+Learn more
+Unity concept: Web build profiles and HTTP deployment.
+
+Understanding check
+1. Why must Build and TemplateData remain beside index.html?
+2. Which check establishes gameplay behavior rather than file integrity?
+
+Ready-to-copy Git commit message
+Refresh the Flap Dash WebGL delivery

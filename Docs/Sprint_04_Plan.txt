@@ -1,0 +1,51 @@
+Sprint 04 proposal: Sharpen Flap Dash movement and pace
+Status: tuning approved and implemented on 2026-11-02. The 17 Editor behavior checks pass; user play feel and understanding are pending. The user explicitly deferred building.
+
+Why
+The user's review says Flap Dash feels slow and lethargic and needs slightly sharper response and a faster pace.
+Teach movement tuning: increase flap velocity and gravity together to shorten the hop while keeping its height nearly unchanged. Tune presentation timing separately from physics.
+
+Starting point inspected
+- Unity 6000.3.6f1.
+- Flap speed 7, gravity scale 1.5, fall speed cap 12.
+- Pipe speed 2.3, spawn interval 1.7 seconds, first spawn delay 1.3 seconds.
+- Flap visual pulse 0.2 seconds, tilt smoothing rate 12.
+- Input sampled in Update and physics applied in FixedUpdate, timestep 0.02 seconds.
+- Player Rigidbody interpolation and continuous collision detection are already enabled.
+
+Proposed first tuning pass
+- Flap speed: 7 to 8.
+- Gravity scale: 1.5 to 2.
+- Pipe speed: 2.3 to 2.65 (about 15 percent faster).
+- Spawn interval: 1.7 to 1.48 seconds, retaining nearly the same world-space pipe spacing.
+- First spawn delay: 1.3 to 1.1 seconds.
+- Flap visual pulse: 0.2 to 0.12 seconds.
+- Tilt smoothing rate: 12 to 20.
+- Keep physics timestep, collider size, gap size, input bindings, score and 60-second round duration.
+- These are playtest candidates, not a measured latency fix. With ideal constant gravity, the new hop reaches its apex about 14 percent sooner at about 2 percent less height.
+- The faster course changes challenge timing. Record it as a new prototype tuning version. The existing WebGL files remain the previous tuning; no build or archive changes are part of this sprint after the user's correction.
+
+Files to change inside Games/26_FlapDash
+- Assets/Scripts/FlapPlayer.cs: default flap tuning.
+- Assets/Scripts/PipeCourse.cs: default course tuning.
+- Assets/Scripts/PlayerFeedback.cs: shorter visual response.
+- Assets/Editor/FlapDashProjectSetup.cs: matching authored values, including course settings.
+- Assets/Editor/FlapDashValidation.cs: restore the player's captured original gravity after temporary test overrides.
+- Assets/Prefabs/Player.prefab and Assets/Scenes/FlapDash.unity: matching serialized values and references.
+- Builds/WebGL and the existing WebGL ZIP: deferred, left unchanged.
+
+Records
+- SprintDocs/Sprint_04.txt: results, teaching notes, checks and open questions.
+- SprintDocs/Validation: new Editor behavior report. Build and archive checks deferred.
+- decision.md, memory.md, phases.md and relevant movement values in root documents: current status and tuning decision.
+
+Done condition
+- The intended serialized values are applied consistently and scene generation retains them.
+- Existing 17 behavior checks pass with no C# compilation errors or obsolete API warnings.
+- Start, flap, pipe scoring, collision, timeout, restart and effects intensity still work.
+- The existing WebGL output and ZIP remain unchanged. Rebuilding is deferred until the user requests it.
+- Distinguish any measured checks from browser playtesting; do not claim a browser playtest unless it actually runs.
+- User tries the tuned scene in the Editor and explains the velocity/gravity relationship before this sprint is learning-complete.
+
+Approval requirement
+rules.md: Before writing code, propose what changes, the exact files, and the done condition. Wait for approval.

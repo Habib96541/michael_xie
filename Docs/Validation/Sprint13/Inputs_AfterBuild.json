@@ -1,0 +1,982 @@
+[
+  {
+    "path": "Assets\\Art.meta",
+    "sha256": "19DD8EFFD2ADCF66446339DDC1F0B68F209C3CFB85D5D93D287E9170040B2433"
+  },
+  {
+    "path": "Assets\\DefaultVolumeProfile.asset",
+    "sha256": "4789B43834DD5EFB32EEC4C3B436BAF0895C9F8CF2A0624121DA8DD812EE984A"
+  },
+  {
+    "path": "Assets\\DefaultVolumeProfile.asset.meta",
+    "sha256": "037700FC76EE8E15BF57A6608BF0229B50B9BA78A1095A943FE0ADD01A6BF5C5"
+  },
+  {
+    "path": "Assets\\Editor.meta",
+    "sha256": "D49A01DCF2D171527AC5D4522CC840ED1ECA0B42E380124F05117A7857D2A419"
+  },
+  {
+    "path": "Assets\\Input.meta",
+    "sha256": "7A95812265E0D1F6DB57F33642B617985E8A4424AB6168E731F293A0AAA4338A"
+  },
+  {
+    "path": "Assets\\InputSystem_Actions.inputactions",
+    "sha256": "1C6CBB519D65ECFE19A29231735B7F54741A20AC1A8AD4F46A18E1BFB28A3C39"
+  },
+  {
+    "path": "Assets\\InputSystem_Actions.inputactions.meta",
+    "sha256": "E2DF3DE96691137DC24B37BD9009E7BE17040F3E5CD6D5401B2CD9D8AE2C9C1D"
+  },
+  {
+    "path": "Assets\\Materials.meta",
+    "sha256": "EF7EA7B374FD4177BCB8F6BFE88FB37195BEAAD96586030D6CF18063AA4F14B9"
+  },
+  {
+    "path": "Assets\\Prefabs.meta",
+    "sha256": "E7C391603B56366A9B365A7B74E93DFB2887655FCEF56E0ABF6868020C41D6B2"
+  },
+  {
+    "path": "Assets\\Scenes.meta",
+    "sha256": "A80A7B316E7D7CE80C8A01ECB374702A04E91228A0729629C894C70250BAEA5D"
+  },
+  {
+    "path": "Assets\\Scripts.meta",
+    "sha256": "EA78A1698A0329356CC3B8FF30E042CCAE1BFBEC4DECF0A535431C810F5250AA"
+  },
+  {
+    "path": "Assets\\Settings.meta",
+    "sha256": "0B5BA35DAAE66CBFCFA17BF61091AEAB7F3BED07681F8DB7BED3FB72D178C2D4"
+  },
+  {
+    "path": "Assets\\TextMesh Pro.meta",
+    "sha256": "8529D84D190A68AEB1A16E0A90308081BD30A738DBCC63C63B2A93C53B9A11B3"
+  },
+  {
+    "path": "Assets\\ThirdParty.meta",
+    "sha256": "31C90A928410C3F6CF0FAF440444C127DA7ACB56A1DD0665654BF2C6583251D6"
+  },
+  {
+    "path": "Assets\\UniversalRenderPipelineGlobalSettings.asset",
+    "sha256": "0399BE1518E59040FE26658012C06577B0AA2E907E7ACB901E37ED31FA23B13C"
+  },
+  {
+    "path": "Assets\\UniversalRenderPipelineGlobalSettings.asset.meta",
+    "sha256": "746A38B93F8F49B644FF6893456CF24DB401E5C342AAAE3864E91560D37C5422"
+  },
+  {
+    "path": "Assets\\Art\\Circle.png",
+    "sha256": "7A64BDCFA9E3A80060115E590851A021F345F20A25B6116FC9140E3ABDDB4BF5"
+  },
+  {
+    "path": "Assets\\Art\\Circle.png.meta",
+    "sha256": "4605E56F7FA27A1A1483CE7E93C7E26D3925121969B5F86A1365006545438CB4"
+  },
+  {
+    "path": "Assets\\Art\\Glow.png",
+    "sha256": "B344CDD7D378F1A7C2AAFB04FB4EC9BCB511BEB47E38EDDCCD9B145ACD57E0D5"
+  },
+  {
+    "path": "Assets\\Art\\Glow.png.meta",
+    "sha256": "DCFDEC91E10F67D9DA665852A9905A2A94FE2C89D55252A6D717D55714C2748A"
+  },
+  {
+    "path": "Assets\\Art\\PipeBody.asset",
+    "sha256": "FC8DFB928915099D9E82F17DF69B48903858EF01380E6CFF6415EABA128513D0"
+  },
+  {
+    "path": "Assets\\Art\\PipeBody.asset.meta",
+    "sha256": "6945040177DDFEE360250D419984E77A98FBD0106C3C6A88920C0C14F167CA79"
+  },
+  {
+    "path": "Assets\\Art\\PipeRim.asset",
+    "sha256": "A4CCD5D0BB2C5DACFFFD6DCBDF0403C127921A8AF5A8348EB6428C64A42D97EC"
+  },
+  {
+    "path": "Assets\\Art\\PipeRim.asset.meta",
+    "sha256": "CEB0C48415979025C4765C482CDBFB385E62B83DB19D32B9AE8BDE4E165B2E89"
+  },
+  {
+    "path": "Assets\\Art\\Square.png",
+    "sha256": "5FEB357F5823B9EE06DCA37739F72269D1FD62CD9F5DC9E14C43FF508978AA06"
+  },
+  {
+    "path": "Assets\\Art\\Square.png.meta",
+    "sha256": "B662AB8A9619DF061380118DF8EECA4B74AF29970494D2667D85CF27F6623441"
+  },
+  {
+    "path": "Assets\\Editor\\FlapDashArtSetup.cs",
+    "sha256": "22417A968345BB86C4078BDE16057AC883DA8E00828E5BB9BF0CC9148E091BCF"
+  },
+  {
+    "path": "Assets\\Editor\\FlapDashArtSetup.cs.meta",
+    "sha256": "2BE6369EF67B9AC85DCE4BABC11AA006B32F6C66967675204E7283FA9DA199F0"
+  },
+  {
+    "path": "Assets\\Editor\\FlapDashPreview.cs",
+    "sha256": "00ADDA54816190A51B9F12BEE5229C64D3D6BD5A11FF765638FCD3028F22827F"
+  },
+  {
+    "path": "Assets\\Editor\\FlapDashPreview.cs.meta",
+    "sha256": "219D2A98B5F10F8753E57D05170A21C0D307ED0AC6665D5D718763D7C0E6BE8F"
+  },
+  {
+    "path": "Assets\\Editor\\FlapDashProjectSetup.cs",
+    "sha256": "E3D12C5A612817F0B54F05E6AD5C35D9E51D5511C3D0783823798CD697A9EFD9"
+  },
+  {
+    "path": "Assets\\Editor\\FlapDashProjectSetup.cs.meta",
+    "sha256": "79B19B4D4B2D2539B0180E69BE71A33C7D6D42F1D28EDF06F9ADA303584421CB"
+  },
+  {
+    "path": "Assets\\Editor\\FlapDashValidation.cs",
+    "sha256": "D01EF3FA31A48B8DB5F10A0A6C924C6756FA322A1E108347355C21FA9893E3F1"
+  },
+  {
+    "path": "Assets\\Editor\\FlapDashValidation.cs.meta",
+    "sha256": "0A680F730BD00F7C1BF856309047E2524CA4B2C293B696AE05E264AE23DA3927"
+  },
+  {
+    "path": "Assets\\Editor\\UnityCliTemp-1b88d74ad0954da1a7aa13e1be369743.meta",
+    "sha256": "88D24C9068EA7D8D3C2B8A4D1DA577AB5D11AB0D8910404EAF20B6FF996DC62E"
+  },
+  {
+    "path": "Assets\\Input\\FlapControls.inputactions",
+    "sha256": "4A6563A0846E1022361F6D3850B4ADFFEC72DB977B39322E28DD6EAA2070FA0C"
+  },
+  {
+    "path": "Assets\\Input\\FlapControls.inputactions.meta",
+    "sha256": "23DFA3C5C5E13EEDBBEA2E5A9D03314C2661E9FF734696C9C4E501F1B0D0327A"
+  },
+  {
+    "path": "Assets\\Materials\\FlatSprite.mat",
+    "sha256": "42D470C09F0BE4377B15F3864B59597FBFD79D30F31B60E50DC73EEBD57D101D"
+  },
+  {
+    "path": "Assets\\Materials\\FlatSprite.mat.meta",
+    "sha256": "174E58A49530A9EBDD51E35AC3B5D24998B9CAE81E3B5C6BB60034424F0556DE"
+  },
+  {
+    "path": "Assets\\Materials\\Particles.mat",
+    "sha256": "1DBD272A6A426B65C7555D9364A3B257B190E59329559C09FE83C2013E68863B"
+  },
+  {
+    "path": "Assets\\Materials\\Particles.mat.meta",
+    "sha256": "089F608D10EDEED320555E933B347819599CC718F6E93D5674635763C8CE9B0B"
+  },
+  {
+    "path": "Assets\\Prefabs\\PipePair.prefab",
+    "sha256": "6BC04856C25E9E98792C4A26EBA625FE898530F588D560C98DA2D9DEEA37DB89"
+  },
+  {
+    "path": "Assets\\Prefabs\\PipePair.prefab.meta",
+    "sha256": "AE230CD022F80D6139270264AAE58F64E8126502967BCD5AAD479BA75E4758B4"
+  },
+  {
+    "path": "Assets\\Prefabs\\Player.prefab",
+    "sha256": "BE0FDF5785086E5757410307B4DB6995AB0AC6E242E1A157FEB1B2FB4B559679"
+  },
+  {
+    "path": "Assets\\Prefabs\\Player.prefab.meta",
+    "sha256": "5E18300DAFC2E45C6BB214942881670C9C91A5194F1524F536B58A4AD7F4C1DA"
+  },
+  {
+    "path": "Assets\\Scenes\\FlapDash.unity",
+    "sha256": "A36946D683D80841ACF6F68F3FAC6AFED8FAA88E3A898EB34A03FB22BD24AC98"
+  },
+  {
+    "path": "Assets\\Scenes\\FlapDash.unity.meta",
+    "sha256": "AA34E93F3D3F7291AEC67940BEF6E49C5C2BFA67366D16DC33F8D5405B9953F1"
+  },
+  {
+    "path": "Assets\\Scenes\\SampleScene.unity",
+    "sha256": "387D8216A517BE775B6ECC2AB55B97ECE687C3372322DA2BA027A96908014912"
+  },
+  {
+    "path": "Assets\\Scenes\\SampleScene.unity.meta",
+    "sha256": "204F446BC13539151C15AF875550A7FA6F791662E967572A1B4B06FD0005DAD1"
+  },
+  {
+    "path": "Assets\\Scripts\\BackdropMotion.cs",
+    "sha256": "B9106D758DDC959FF07FE6E6290F3C386E51A4FA97EDC94298BEBCD315BC2861"
+  },
+  {
+    "path": "Assets\\Scripts\\BackdropMotion.cs.meta",
+    "sha256": "2CCE7FED3CBB01C5342778A8239403E36CBE8D4D99A5CECC5385FDC53BD2FEAF"
+  },
+  {
+    "path": "Assets\\Scripts\\ButtonFeedback.cs",
+    "sha256": "8F6BBA522328F16EC3FA2BE53D752F33B88CB9C8AD0C79A2271787867CF72F81"
+  },
+  {
+    "path": "Assets\\Scripts\\ButtonFeedback.cs.meta",
+    "sha256": "31D910AC8D1A3BB336714A4C5866358AF5F1487A14AF420218138A9007EC55F1"
+  },
+  {
+    "path": "Assets\\Scripts\\FlapPlayer.cs",
+    "sha256": "DFAF12454E6A0FA5047F6D618477D792678331729A979A9C3AB7BA5EA9AC7334"
+  },
+  {
+    "path": "Assets\\Scripts\\FlapPlayer.cs.meta",
+    "sha256": "54E31633A751F7414F06C449FD52C78E9FEFBC469390F09067011E78731708E6"
+  },
+  {
+    "path": "Assets\\Scripts\\PipeCourse.cs",
+    "sha256": "4D830D3D4196B4E53BFC16001CB8594FF9A1E0A2635DB187A558469C1F9FC48F"
+  },
+  {
+    "path": "Assets\\Scripts\\PipeCourse.cs.meta",
+    "sha256": "0C7CD765CDDC1555100783810803FECE5630E4A8A0C0CC692B9E2F20D347A6C5"
+  },
+  {
+    "path": "Assets\\Scripts\\PipeGate.cs",
+    "sha256": "7A01104E1A2AC92A9E84D1FB4A67DAE6B083490709B391E35CA87D38E2722A1E"
+  },
+  {
+    "path": "Assets\\Scripts\\PipeGate.cs.meta",
+    "sha256": "D080147BFC6CD01FA8F04DEED51288C2F748A82DFD785D620242739C935B4D0F"
+  },
+  {
+    "path": "Assets\\Scripts\\PlayerFeedback.cs",
+    "sha256": "6C73A2D9DBDACF0B1B3F856249A69F1DC8321C6C74969A4A29BF00BD8EB51E6D"
+  },
+  {
+    "path": "Assets\\Scripts\\PlayerFeedback.cs.meta",
+    "sha256": "E663BBD2216143568310A48E98F4F3B51507FE606FDB13E0EAD9A03C51BA44F5"
+  },
+  {
+    "path": "Assets\\Scripts\\RoundController.cs",
+    "sha256": "D960497823A037643E727E30847204660E81E5E37069828B45C9E473E3E3898A"
+  },
+  {
+    "path": "Assets\\Scripts\\RoundController.cs.meta",
+    "sha256": "27F45C3E2008ECEA19A78CEA6C297BB7D3DED9416035E40D9648E7EEE38E6BC7"
+  },
+  {
+    "path": "Assets\\Scripts\\RoundFeedback.cs",
+    "sha256": "E11995502DD18F1B550318210ED8828CFB384D933E789BAA2C6691FD4555A3D4"
+  },
+  {
+    "path": "Assets\\Scripts\\RoundFeedback.cs.meta",
+    "sha256": "46A8FCDE21817AAD731A85C633BA615254995A3A5379451151A15C9A6B384CE7"
+  },
+  {
+    "path": "Assets\\Scripts\\RoundView.cs",
+    "sha256": "4A29F9D398026520951AAD5439A26CA8D31EE6971AAF9090559907DFBF7D2FAE"
+  },
+  {
+    "path": "Assets\\Scripts\\RoundView.cs.meta",
+    "sha256": "2C96C31992EB822DEAB4393E6A67961866ABEE15C6D8DF22DB5458D0C9368852"
+  },
+  {
+    "path": "Assets\\Scripts\\VisualEffectsSettings.cs",
+    "sha256": "DD01F1E313BB9B427CAE19659C514932258097286D5652933D9FE7C54254510F"
+  },
+  {
+    "path": "Assets\\Scripts\\VisualEffectsSettings.cs.meta",
+    "sha256": "895C9B64866CAB45EDC415F88D5D47F8C5D7F0736C83A5B69A7EB6D5BEDDF0D0"
+  },
+  {
+    "path": "Assets\\Settings\\Build Profiles.meta",
+    "sha256": "1127CD3B1375AC9F41F63EBBD5BD4728B95314FB0F8F6C6D65736297260258DD"
+  },
+  {
+    "path": "Assets\\Settings\\Lit2DSceneTemplate.scenetemplate",
+    "sha256": "CA928761BF976C878D54DF524A3742C5F1BCA53A013B4061ABD2C752C8A212AA"
+  },
+  {
+    "path": "Assets\\Settings\\Lit2DSceneTemplate.scenetemplate.meta",
+    "sha256": "D4CC0F73332C3228945AA64F9C5019F1C1950D77703728C5E9674A0367C5E4D1"
+  },
+  {
+    "path": "Assets\\Settings\\Renderer2D.asset",
+    "sha256": "900455794D0D788504847C3AA54E03A0374FD3635AFA295ED05C2F646F974705"
+  },
+  {
+    "path": "Assets\\Settings\\Renderer2D.asset.meta",
+    "sha256": "9689252004910CFAD653E8A8D09B8C96BEFB560E1FB583033630DB0F5BB76420"
+  },
+  {
+    "path": "Assets\\Settings\\Scenes.meta",
+    "sha256": "705B24F629AF6836450C9FD2085F781FE11D8633BCAA0C7B3197058B93A766E5"
+  },
+  {
+    "path": "Assets\\Settings\\UniversalRP.asset",
+    "sha256": "167D20E3285F9071DC9BCB0A4FEE7CDF8BB335DD849EC96E4B3FA39BD401F266"
+  },
+  {
+    "path": "Assets\\Settings\\UniversalRP.asset.meta",
+    "sha256": "8B7653265C1A9A054461264FC7B03BDBAFC030149949FCE5BF9E85924FB565A5"
+  },
+  {
+    "path": "Assets\\Settings\\Build Profiles\\WebGL.asset",
+    "sha256": "DEBB0713CD77860C713321FA69653D631694B5491F7E4024AB301B6E11F8E831"
+  },
+  {
+    "path": "Assets\\Settings\\Build Profiles\\WebGL.asset.meta",
+    "sha256": "70EC3B83A31CFC516C2FF93F913F5928493E023F731EBE5124B0DEDB02EC162A"
+  },
+  {
+    "path": "Assets\\Settings\\Scenes\\URP2DSceneTemplate.unity",
+    "sha256": "F6FB3E91AAA90417E2920B7F903066833B3B9AEA72DDCB5E46B91AFA729C2E90"
+  },
+  {
+    "path": "Assets\\Settings\\Scenes\\URP2DSceneTemplate.unity.meta",
+    "sha256": "E7391FF924B7DEFDF30E0B0B235F8113618481C93F567E0C699C8895A9534579"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources.meta",
+    "sha256": "167448559DB07C9857B206A0F5A0AEDCD6A6DAD900D618B35B0702D636573805"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders.meta",
+    "sha256": "C109EB7E331AFFEDB377F7051DF3D4881F8529B65F9593234585713E6E94ED30"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\LineBreaking Following Characters.txt",
+    "sha256": "3A73E5FFE2510756DD3C2E982FDC1218B4BE82C6E21ABDE88070D6860E1BC8E6"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\LineBreaking Following Characters.txt.meta",
+    "sha256": "D5A86D8B7DB6AA3CA6F4A63750EB94E0C42A64909B47D8C6C6F2565845534490"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\LineBreaking Leading Characters.txt",
+    "sha256": "62D3F4D5F64AAF885692D2D13A8313F6918E6E4C5AEB3990A43F614652BFD89C"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\LineBreaking Leading Characters.txt.meta",
+    "sha256": "6A925814D5E251A0CED6DE210DB2BACF2DE29B4F0DC2991E85C908632E9565E4"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\Style Sheets.meta",
+    "sha256": "1FDF0423552F46284FB97894F36ADCD34D32E595AAF5C7CF1CE38A2349FAAF89"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\TMP Settings.asset",
+    "sha256": "D2BEFDF8EC70250B0A90B0FEF65568D81186BFBC371927A6A24A0743881553C0"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\TMP Settings.asset.meta",
+    "sha256": "A65193B095EC3606789A3191751A837704CF52D4F461993AE7903024C6D43F45"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\Style Sheets\\Default Style Sheet.asset",
+    "sha256": "93E073CDB91B7E3D2FA31E2DD13626D7B9D2F327904BA8C3C2B97A3EECFBABAC"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Resources\\Style Sheets\\Default Style Sheet.asset.meta",
+    "sha256": "B832663CA09EC7AF8C8E816FD91A718B2AF6C21AB4F126FA818871AD53BCE763"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\SDFFunctions.hlsl",
+    "sha256": "88CF0F62E4000B71750C059D0886B19504CD1CF10F39BB61DDC11B77A882D417"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\SDFFunctions.hlsl.meta",
+    "sha256": "E1D0C5347B3C55930759F5BC0985E11611A4B2FF22EEF24523EB108687BD1642"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_Bitmap-Custom-Atlas.shader",
+    "sha256": "42892A52F22BDDE6D482CF2DA5F35E4B813063FC6FE42189EEE5562080079494"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_Bitmap-Custom-Atlas.shader.meta",
+    "sha256": "91BE1D5618A7DA33C878E20CF2BE3E13B897D4976C70BDE0CDA7A67DBD502CD2"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_Bitmap-Mobile.shader",
+    "sha256": "B50AFC7EDC8A710F8B4159149B2391E7238B5E4076CC0EA2119090ED29E13B4A"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_Bitmap-Mobile.shader.meta",
+    "sha256": "7430F3E97AE1B46F34E1CA75508705BB7B944307C41DC568EA728011F327086D"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_Bitmap.shader",
+    "sha256": "1D32F34C71276C1321AA0540A2410E15808743A38B2026923045A4DEC4A79B58"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_Bitmap.shader.meta",
+    "sha256": "3D462E6F8BA57F45DC5E6000020DB066C36ED5A1A24F74F749727812373C2325"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF Overlay.shader",
+    "sha256": "A0D318756CBA0F95A7052C387E629D0ADD3E9A4125C8333F1D1ED591AF5F17CB"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF Overlay.shader.meta",
+    "sha256": "FB8FC84B612E19C169CDF3596195B416E68D227A8987A0EAA90D8C137FB69797"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF SSD.shader",
+    "sha256": "2A991951B00B0C052363A1025F655450054325437B3D13C2623A987C8EC77C30"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF SSD.shader.meta",
+    "sha256": "BEA74D576F181A8BB04B8CF02EEDD0136540325ECB2824928A3AA52C75ADCB13"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-HDRP LIT.shadergraph",
+    "sha256": "BF68062F68B38B588ABD1C354F64E905F824D9A2C47F92EBDD70A32989EB2097"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-HDRP LIT.shadergraph.meta",
+    "sha256": "D1B70558E8B974D918E13C010DB6D375FEF815BA530BC2421AB031AA3A784EE8"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-HDRP UNLIT.shadergraph",
+    "sha256": "8A969C2D775079CCE4E1C45D5EB6D3964B27D44DC884178363050C74FD5E9742"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-HDRP UNLIT.shadergraph.meta",
+    "sha256": "8CD498CE8F6ED2E7C0560D605EB912455CD6FDAF09A4D545D9743F63B3426BD0"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile Masking.shader",
+    "sha256": "41CFF58473557BF760D03513A8C098F43A24E4EEB4C8CCD7D828C045A338A9ED"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile Masking.shader.meta",
+    "sha256": "3744D078F9A8B6D3C5D9BCA51E43F9223544FCAFAF9396E121F49EA84A0609D3"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile Overlay.shader",
+    "sha256": "FB286386D0592CE6D63EB736F180B4B0F638EC538B0855AA54767A438EBD1173"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile Overlay.shader.meta",
+    "sha256": "1EECA1536C7506F79D4D877B866A5FB88DB8F402634E091B6D78AA9D21C9D18B"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile SSD.shader",
+    "sha256": "8B30C140F6AF9134392FE6ECF4C0676DB73F873489AC52ADFB47BBD288CB51B8"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile SSD.shader.meta",
+    "sha256": "E3412891B9306B017E60CBA4AE4F6D258EE8B161D986DCDE9CEFB3D60345514D"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile-2-Pass.shader",
+    "sha256": "4BC2DB64BEFBD0E37E23539F21096AD2FCD9D61B36D2174D208A7D831A0883F7"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile-2-Pass.shader.meta",
+    "sha256": "65ECBCE6F1621F2D7DDC5E6004DDA5E55E1F58EC6E01178F3691E1E81E01DE55"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile.shader",
+    "sha256": "44C39AABC7E88E7E1FEFFC1880DF754F4ADF86B62E9512AA89E9D2D65171AFF4"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile.shader.meta",
+    "sha256": "F2112F50C72762D4E6731391495EA11F76975D677B698E9BCFDD38275EA18F9D"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Surface-Mobile.shader",
+    "sha256": "F9FAE5906DD37D89298338953294459975DE58A5421E68DD9E82A79794B95509"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Surface-Mobile.shader.meta",
+    "sha256": "95AA060F371EE503A22C0A0B018E029C0328BD82B9317FEAA784432B0A787343"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Surface.shader",
+    "sha256": "5DADB68B56429547918B392626E9AF8FD5173936D20BB43CFCA58DFA00947257"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Surface.shader.meta",
+    "sha256": "42439F5AC7491998F562E8EDE73D64C3512953EB99FB1B49E833F5D9999A7660"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-URP Lit.shadergraph",
+    "sha256": "E0148CE8E5904232A4E711376A45B7AF2A007FB9690C5A69C1CB4952A696CDBF"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-URP Lit.shadergraph.meta",
+    "sha256": "4C36ABF5F2611C9D2CB04E7DA8C30E42077503A17CB218020E171B6D3FF664F7"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-URP Unlit.shadergraph",
+    "sha256": "DC15B6819AD87A4B34ED888AE2C274624EFC0ADA902D1A9E7752D87922414DCC"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-URP Unlit.shadergraph.meta",
+    "sha256": "F1EF815E2672FD770F47EE424C64F7ECDBDC642B7475828C29DB032586AA10B6"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
+    "sha256": "10EFE6D4728474A09970B857FAF37913793E168DC13DBD4D7316B54B37615D97"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader.meta",
+    "sha256": "0897FB06D170043FFFA2D28783B347BBAEE87A3F09F08374CA44B2C3848697D6"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_Sprite.shader",
+    "sha256": "AF669BB9AE136C8099F8E0A94A6933FD2F1E1FB0A6842129939A319FAB4B8DBB"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMP_Sprite.shader.meta",
+    "sha256": "9609584C5249687F3765F0018A93DFD6445C7E35D5AEE4E87556F111C8852819"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMPro_Mobile.cginc",
+    "sha256": "D9D43DDD9810476162F21B42477D9CE2CDC4E6CC7571D354C3253AAFC6673EAD"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMPro_Mobile.cginc.meta",
+    "sha256": "2E16FA15EF884A60A402D8B696F8B09E5315CBB468BA223D256030C7FE2B0667"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMPro_Properties.cginc",
+    "sha256": "66DB1F03E8D7A413EBA79BCB6602FDB2DE710B586F34A6F2584ED6F68F028E90"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMPro_Properties.cginc.meta",
+    "sha256": "EDACE33591894D86D9A4144466FB3606E538D3341030FE22F908551755120EA5"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMPro_Surface.cginc",
+    "sha256": "244B442520282A66363D121C8D2AEEB30BB1E72CBBADBF41CE68D9100322ADE5"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMPro_Surface.cginc.meta",
+    "sha256": "247746F3A4E39DD24D1AD99E4FAE03AE8976586307948B2846529A876DCB0A63"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMPro.cginc",
+    "sha256": "14EDB7D7B88CAF2B82CAE68200ABE895E5B5B3474C3FFFBF0E9B4B09A4E2467E"
+  },
+  {
+    "path": "Assets\\TextMesh Pro\\Shaders\\TMPro.cginc.meta",
+    "sha256": "A9CF9D5431B809E36B8FFFF4377B5EBDA7D386A36D48838CD134BC09F3CAEC6C"
+  },
+  {
+    "path": "Assets\\ThirdParty\\AjFlapChirp.meta",
+    "sha256": "8B39B9BA083360296E5323B062C74E42272ECFA28D6F33FF9575CCBE5D7137FD"
+  },
+  {
+    "path": "Assets\\ThirdParty\\AssetLicenses.txt",
+    "sha256": "C7D033CF85306027E52D0E07D4994D32373131B737F36A801DF83015E155B0D9"
+  },
+  {
+    "path": "Assets\\ThirdParty\\AssetLicenses.txt.meta",
+    "sha256": "F38911E0D4F7103C8D9110665C8CAD4D9D7BD2639F7B607BACD1F9B1BABCB0E9"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird.meta",
+    "sha256": "7BE4ADA0CDD52AEF554F469D96B79A39CB1F6B5C43936B84007F18F3AE4807CB"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Bhu1cPipes.meta",
+    "sha256": "DEFA40F4C17F699FF8C5ADD8C24F06EE61612E64A1C72DE155D5070F9823612B"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds.meta",
+    "sha256": "4E24124F832E4377560EDB7B50F44413A7048BF223E6F1E4E6272E217374FA69"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI.meta",
+    "sha256": "EC27BC0CA574D7822B3D66FF2B026AEC8A830935BDE003CCA257D5DF0221853A"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy.meta",
+    "sha256": "5E3AF310CCB741BEC7E447EE32578D7AB0DEDF492265AF685CF13BE60EE3AE80"
+  },
+  {
+    "path": "Assets\\ThirdParty\\AjFlapChirp\\FlapChirp.wav",
+    "sha256": "2FFEBB3AB1A5622E9A67D1696F1472CB0EAD720076DDD6C62E3983F0BB87FA47"
+  },
+  {
+    "path": "Assets\\ThirdParty\\AjFlapChirp\\FlapChirp.wav.meta",
+    "sha256": "01A201413D0EFBD989823B94F96BF5C527342660D82D0C3F43003EA295FC723A"
+  },
+  {
+    "path": "Assets\\ThirdParty\\AjFlapChirp\\PROVENANCE.txt",
+    "sha256": "DA73EF5AA2B56BBDD0A7C050C1F758EA8596F3F7E3BB00325A0E68C4EC8B41A0"
+  },
+  {
+    "path": "Assets\\ThirdParty\\AjFlapChirp\\PROVENANCE.txt.meta",
+    "sha256": "39C2D9580F48B1952071F20DBCF9CF7A6883EE61315486CF4D1BA38AC06E44E0"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\bevouliin.com.txt.txt",
+    "sha256": "4BE0B694686DEAF841C12D1F4A9ED2B73136B5CE99E7FC809709345BDB32BF08"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\bevouliin.com.txt.txt.meta",
+    "sha256": "F86E9C3801F1CD86B7F48B76091ED278DED41A87F7C36BF09B4A2F85391806E8"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-1.png",
+    "sha256": "E5DB46B7A62269A2AED0155875716736C60EF815ECEF99B9021E7FB00F9EBB02"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-1.png.meta",
+    "sha256": "3DDF06675A425CF0860A698578CFD4091E3B6BBAFB5958E8D6E5D22218B028C6"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-2.png",
+    "sha256": "CFBED7A94CD9B5F86BFC85FEA639EB00DA4B3439E06A098608565FE3453BEC61"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-2.png.meta",
+    "sha256": "9BFE13A309873D85D80E664882D89859E35EA6777F904876775319282D939FC2"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-3.png",
+    "sha256": "A32145157C022E932B35B03A12768D70B47CD8ECCCFC19DDBB73A833A3EA2EA6"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-3.png.meta",
+    "sha256": "1D63CC60853BD823029614AED4B3D695D3291E716D16242660A6B57AFDF571FB"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-4.png",
+    "sha256": "9FE6EC0E20D4EDA7FBDF04881F7FD25778A529AA7E298E541A50A055B9AD5739"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-4.png.meta",
+    "sha256": "3EA76B49754D877AFDB3A72AE7AE122080C69D5FD639F7EE4ABAAF3686AC6341"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-5.png",
+    "sha256": "7CA671423C2B153FFFCEB17B99509CC3C1E120B6D38A9C96586A2758F1B3742F"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-5.png.meta",
+    "sha256": "34CF9F9051F8EC357963D7AA21FAC44DABDA63AC1BF33DA918DC8A0C50A781E1"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-6.png",
+    "sha256": "3B2DB323743583AD0A5A3679CA9F6025A35868D5EFF352140BEDE7215FD5734B"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-6.png.meta",
+    "sha256": "4C073B573CDB3868A88364E107885128F2210141E859A8CFEB90E5285ABE63D5"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-7.png",
+    "sha256": "D0AB8F0D5BD485B9099D9ED21AF4867FBC76C742DE1C0B25B15453A567CFFDD7"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-7.png.meta",
+    "sha256": "BD15EC6DF973C33B09E0EB6D6BA9E46192B70694D895BB4B6C96621612B2FF31"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-8.png",
+    "sha256": "B14163F6F0F142C315A29AB8A480A5F7DB0AB32A8374FB8202F0EC56B72DEEE6"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\frame-8.png.meta",
+    "sha256": "DF3A5D0388F4CC25870BA7029FEC17C6890BF63F13FDB77EEA57E434B7A17879"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\PROVENANCE.txt",
+    "sha256": "6ACD8B4AA916150A4A4DA2D703F0236D1B303043B8193537A48395CF858EFE40"
+  },
+  {
+    "path": "Assets\\ThirdParty\\BevouliinBlueBird\\PROVENANCE.txt.meta",
+    "sha256": "B11F46B876C654AC05EB8666BC9E9CF7A1C94547102855A0E5FE481B08B537AB"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Bhu1cPipes\\pipe.png",
+    "sha256": "9FCD86D5B6015E63C8944BE5C4CEB9510D610341A897646909DD9DCDA6D21FD8"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Bhu1cPipes\\pipe.png.meta",
+    "sha256": "F5DFC7222BE1FDD918B0D49DEC3615BF0D9196768614318B96324C4A5A0B8C97"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Bhu1cPipes\\PROVENANCE.txt",
+    "sha256": "B4EB7AC14AF52AB65F99611B58F970410058AA10BCE212DC3E4951A045AD408B"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Bhu1cPipes\\PROVENANCE.txt.meta",
+    "sha256": "4C2DDFEF100863E8691FD6C6B03769301AA7D67F7C46BAC4715FA4296658AF8F"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\cloudLayer1.png",
+    "sha256": "1DC6A707664A3C6173E14D746B58426369E7CDCB0809D8594CDE4EA7B08C1347"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\cloudLayer1.png.meta",
+    "sha256": "CD9EE437D658E7418F17C4A10B2041BF4F65FBC63CE6A0723D9B77D9F5168561"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\cloudLayer2.png",
+    "sha256": "DFF24CCD2CCE4DDD600ED2AFC66ED53D0C6BF4D0F2914F0D38673BBF604D6DD6"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\cloudLayer2.png.meta",
+    "sha256": "3DC0ADD308B8F9184209AD18C0524B66CF3948D5711F040EAFC207D85DAD2243"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\groundLayer1.png",
+    "sha256": "23C66DF5812B9395466644D4DCC5C7BCABE81D3EF68D1E3EE166A47971869E1F"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\groundLayer1.png.meta",
+    "sha256": "8DEE5C6BFBEEF96F5F8B08AC9CF2E7E3B8508547D73C6A9E3D74A46370DBFAC2"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\groundLayer2.png",
+    "sha256": "E1C8194F0E9562A7CCC5ABB9EEB6DBD291654705272F793EBAA04CBDCE0DD6D4"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\groundLayer2.png.meta",
+    "sha256": "DBA9506681D70B75188F62CFC4DAADA2529125A2EB71F01D48D0B80DCCAE3FA3"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\hills.png",
+    "sha256": "3AB7CEC63DF2E28379C6DFD9E64DFF358607A707A19042CBA7DD81A8A13BF5CD"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\hills.png.meta",
+    "sha256": "948EAC201F124B9B3802E4568748FE9975889D91BC638720B5DAA6FD032036EC"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\License.txt",
+    "sha256": "AF458FB4D38EE24841FC7A61414D67459A119CAD3E277CE1E606866E8399CFA8"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\License.txt.meta",
+    "sha256": "3869C30A7538842A3234C72CE8BC46DC8C12ACB28336B7DB9E2FFB8171194D04"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\PROVENANCE.txt",
+    "sha256": "E058676E782414CF5CEE32C53B0663CF06FABC9346F12704697186192A4F951D"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyBackgrounds\\PROVENANCE.txt.meta",
+    "sha256": "679E1A1D91B8636EE01788A7FE791F7F083367388CFAB437DC94A1326520A1E0"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\button_rectangle_depth_flat.png",
+    "sha256": "F0F3D52F110768BF93A10B44F4EC3C727924C25734CE85E1275464C9B02CFE18"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\button_rectangle_depth_flat.png.meta",
+    "sha256": "475CC2650D09FB42AC7D67FFE2762FF5B2D4102A7716859591E3DD03AC9273AB"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\button_rectangle_depth_gloss.png",
+    "sha256": "55E174171F9C3D5C614EE28BBC2B9F81F93AEFF00A46A198354CA652B6F709ED"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\button_rectangle_depth_gloss.png.meta",
+    "sha256": "CD02A767495D66AF6EE824E5A21A0D7931A4227B002E1FE3ABF2C185C0BED058"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\button_rectangle_depth_gradient.png",
+    "sha256": "7A4C6CD08DCFF68F50DC6DB3AA4F4992FD88434B841FC10581E915089FBA15BB"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\button_rectangle_depth_gradient.png.meta",
+    "sha256": "686F92D42CA78D5116939CDD92553361C74C5D46A10744D840406370DCBBE42E"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\License.txt",
+    "sha256": "69F7EAA5E05913B4D09CF5848F75390B5C3C9A409EF8555777803D9CA0C171FB"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\License.txt.meta",
+    "sha256": "27C1D6A5E8D8A55216BE66E5D5B507D618E5BB183E677F7B849496FFFBFAFE0C"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\PROVENANCE.txt",
+    "sha256": "D8D8EBE2139885466C2538A908C824EC52A7B4D8667BDA7C160C220911EC5631"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\PROVENANCE.txt.meta",
+    "sha256": "5559528664C4504A099C9DFB1467DC774D4D3A3B6E0D74479F47939F9D00E314"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\slide_hangle.png",
+    "sha256": "402E915D3548B4A892AF0FC3A77831431EB5469FB2C49C224493B269A1404694"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\slide_hangle.png.meta",
+    "sha256": "9A3DC8E6488C1342E8341727836206CC8EC3C8C826A81358053AACD734A94489"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\slide_horizontal_color.png",
+    "sha256": "B3566029E1A092B53138CE257AF5576AEB6C6EFBB144D707D7BF5ABC0F2EC9E8"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\slide_horizontal_color.png.meta",
+    "sha256": "5D9C9168910C65157DF56881078FB9C497CB9B828B9314A4937825B66CF8A3C5"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\slide_horizontal_grey.png",
+    "sha256": "1767133C7C59221EA6BE5586464A7FB68DEE748FC00F28E6F5E28C428524BA2B"
+  },
+  {
+    "path": "Assets\\ThirdParty\\KenneyUI\\slide_horizontal_grey.png.meta",
+    "sha256": "2A14814FAF5BC7BB090A9AC1234D25ABF85A7BCB6A6CF777FEEF35193B685951"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\PUBLIC_DOMAIN.txt",
+    "sha256": "F94032E25FB023B1DCC080956EEEE7308144814C928A4433338F9F68AE58F04A"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\PUBLIC_DOMAIN.txt.meta",
+    "sha256": "4342FFDA11F1BD6F7AC0F77DC4E357E53769681142F920BBB96ACE3B83E18544"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy SDF.asset",
+    "sha256": "783B44CF8ACE6D07969B3ADB5DF9C83109D8560DDD26993D7A7FF173D25E7EE3"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy SDF.asset.meta",
+    "sha256": "2AE054948FDF0D4C0449F688B017C762FD1BC378768F38A0A166A33A8341A076"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy_Bold_Italic.ttf",
+    "sha256": "49B937A107D72FA2CBB8DEE672C1FB052C6D50EB627D2461339AC1B697CAF620"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy_Bold_Italic.ttf.meta",
+    "sha256": "A309FB307A9C5066A777C22E3909B22247D40E2C1284EC71998F15646394FB2F"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy_Bold.ttf",
+    "sha256": "EAD68BA8BEF71D5F6411F2A585DCA28A15DC7E5B7729FD64B9FAFF05730DDFDE"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy_Bold.ttf.meta",
+    "sha256": "CB4B7C5C42873FA8F2719C6031A57E496E9320DB630124032E77AEA13AB9E69D"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy_Italic.ttf",
+    "sha256": "94313DC6018E1F9B39AEC9C9E4DD7E603320D47D7B1F30EA24E111D7B9EF2FB6"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy_Italic.ttf.meta",
+    "sha256": "668583B72540A105F421F1987632F0D64D266567EEFFB46A42E74D2BB4E8139B"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy.ttf",
+    "sha256": "B97CD5005278B24AABB69B8B6EAD98860955599558F6E8119483B575A5FDCE98"
+  },
+  {
+    "path": "Assets\\ThirdParty\\Tuffy\\Tuffy.ttf.meta",
+    "sha256": "AE8281184826715C29900A6FAADA72D2C26EA47B1E4343D7A9B9BA9532F4C283"
+  },
+  {
+    "path": "Packages\\manifest.json",
+    "sha256": "233C72BD782BC13FE9B973A71626334A5AD7052A2E0E1DA41B91B5A6ED5E9E90"
+  },
+  {
+    "path": "Packages\\packages-lock.json",
+    "sha256": "B80833976862D27AD78E8AEB004151FB4E6E5BF8291E7011CBBDEDF2C6511FA0"
+  },
+  {
+    "path": "ProjectSettings\\AudioManager.asset",
+    "sha256": "AEEDEB3243F07B61DBBE854AA08B5EF6F0B5274DD9852AD9F6129DDE3E105A31"
+  },
+  {
+    "path": "ProjectSettings\\ClusterInputManager.asset",
+    "sha256": "40E65DD214BF254955D2C8829CA8CE2130FD3510485560CE012E9A1DDD93E623"
+  },
+  {
+    "path": "ProjectSettings\\DynamicsManager.asset",
+    "sha256": "B7C9A9DC08B98990109D4346F68745E15E238DE400F96C583E53E1C83C743A78"
+  },
+  {
+    "path": "ProjectSettings\\EditorBuildSettings.asset",
+    "sha256": "1547793E389B4D2FADD6730575D6C6FB3FED8F4BB51506BC0649E97B473B77AB"
+  },
+  {
+    "path": "ProjectSettings\\EditorSettings.asset",
+    "sha256": "0B5C614BA2B24AB6BD1853F450EF8CC44B84C2D084493F8B5BBA0C9F3213F680"
+  },
+  {
+    "path": "ProjectSettings\\GraphicsSettings.asset",
+    "sha256": "BCDB6EE570B5EDC137B79E48F860495035136E494030E214FE39C151D16FE993"
+  },
+  {
+    "path": "ProjectSettings\\InputManager.asset",
+    "sha256": "7A1BB836A1008D26D0860D143E9D9DF7CA41731D30A72901B518063819C62DF2"
+  },
+  {
+    "path": "ProjectSettings\\MemorySettings.asset",
+    "sha256": "1E8379A461B10AE09F3F696911088C16875D63E87ED5F2D95DF9E1892703F9FD"
+  },
+  {
+    "path": "ProjectSettings\\MultiplayerManager.asset",
+    "sha256": "ABA89FD1A1DDAD182727AD82727E536D27372E90328A8196DA2A4560398983DD"
+  },
+  {
+    "path": "ProjectSettings\\NavMeshAreas.asset",
+    "sha256": "80106CFA7E6181A1928B142C075F3E510D527441E3D79BC83590E4AC91E7CD66"
+  },
+  {
+    "path": "ProjectSettings\\NetworkManager.asset",
+    "sha256": "46395DEF99A6B5AE38EBB19B3E18F75215A9D4172C219361521A5A51E051F386"
+  },
+  {
+    "path": "ProjectSettings\\PackageManagerSettings.asset",
+    "sha256": "95C250F18AFAA98588674A81ED278ADB21E3D6A5E0E7E9B84989BEC04DBE873A"
+  },
+  {
+    "path": "ProjectSettings\\Physics2DSettings.asset",
+    "sha256": "50E61D70BC38C632CB0E6EFE364A9C5BCFD9A8DBCF4E7B5ECFB06A2030C4518F"
+  },
+  {
+    "path": "ProjectSettings\\PresetManager.asset",
+    "sha256": "29C125923FE6E29F90190D4FCE1C82D660E7051546E2C9D02908D18C9CF2436C"
+  },
+  {
+    "path": "ProjectSettings\\ProjectSettings.asset",
+    "sha256": "41BF7233472573072BEEE54E7C1FA1E424DEF3EEC9C4FD65289B6E3B8E617CCC"
+  },
+  {
+    "path": "ProjectSettings\\ProjectVersion.txt",
+    "sha256": "7C1A2E48FA28EF903C975CA421AB4C9C1AAC3C8D11D0CC385694911006B9CE7A"
+  },
+  {
+    "path": "ProjectSettings\\QualitySettings.asset",
+    "sha256": "E7DC185B977703EC43789F2E73CF2F44F31A73BB42BD594F69D5A799D65B2883"
+  },
+  {
+    "path": "ProjectSettings\\SceneTemplateSettings.json",
+    "sha256": "BB9098B3BFCDE78D93E264B96F7B77B5430E64E8C57A7AAD7F5A5D9C3945E16A"
+  },
+  {
+    "path": "ProjectSettings\\ShaderGraphSettings.asset",
+    "sha256": "5C432C9C73FDF73FEE91C8823EA02AB98E3B7A8EDF341B5AE6901D699CCE52A7"
+  },
+  {
+    "path": "ProjectSettings\\TagManager.asset",
+    "sha256": "640DD47C9B592D74F3C4757ABA5E5B43B53EFBE9B0CCCE3859695911CC89A2AD"
+  },
+  {
+    "path": "ProjectSettings\\TimeManager.asset",
+    "sha256": "1A83E54ADBBDA7C9F4851103A0C6AB7F6448A3343D4EA5B7620452FA08416ECD"
+  },
+  {
+    "path": "ProjectSettings\\UnityConnectSettings.asset",
+    "sha256": "B7DD1E8290598F5CE86919BA1C98B42B766C8C42191A30FA2C4D12195C4ECD00"
+  },
+  {
+    "path": "ProjectSettings\\URPProjectSettings.asset",
+    "sha256": "C317FE22B9488785C0611F0642429922E5D324430D929BFFB41648130F30C218"
+  },
+  {
+    "path": "ProjectSettings\\VersionControlSettings.asset",
+    "sha256": "E199CDFA6A8F2BF33CFD47E549198F13E3EB2A5099E908FDB4E0F14D939CCC6B"
+  },
+  {
+    "path": "ProjectSettings\\VFXManager.asset",
+    "sha256": "F066C6483919961332415EE64204F74FE52F38C02E82892EB02B7A5B2E381F0E"
+  },
+  {
+    "path": "ProjectSettings\\XRSettings.asset",
+    "sha256": "EDD2BEB4A2E388312B4B7DA241AA51070434005D82C59363F1237DD2E567585F"
+  },
+  {
+    "path": "ProjectSettings\\Packages\\com.unity.dedicated-server\\MultiplayerRolesSettings.asset",
+    "sha256": "66F5310616983159B47AC6B1DFA249B1EA29385B1CECF077E5D596132FC5F0D8"
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "status": "STATIC_SOURCE_AND_DATA_REVIEW_PASS",
+  "unityVersion": "6000.3.6f1",
+  "settings": {
+    "moveSpeed": 2.65,
+    "pipesPerSpeedIncrease": 10,
+    "speedIncrease": 0.2,
+    "maximumSpeed": 3.65,
+    "acceleration": 0.2
+  },
+  "defaultsGeneratorAndSceneMatch": true,
+  "onlyFourSpeedSettingsAddedToScene": true,
+  "thresholdArithmeticReview": [
+    {
+      "pipesPassed": 0,
+      "targetSpeed": 2.65
+    },
+    {
+      "pipesPassed": 9,
+      "targetSpeed": 2.65
+    },
+    {
+      "pipesPassed": 10,
+      "targetSpeed": 2.85
+    },
+    {
+      "pipesPassed": 19,
+      "targetSpeed": 2.85
+    },
+    {
+      "pipesPassed": 20,
+      "targetSpeed": 3.05
+    },
+    {
+      "pipesPassed": 29,
+      "targetSpeed": 3.05
+    },
+    {
+      "pipesPassed": 30,
+      "targetSpeed": 3.25
+    },
+    {
+      "pipesPassed": 39,
+      "targetSpeed": 3.25
+    },
+    {
+      "pipesPassed": 40,
+      "targetSpeed": 3.45
+    },
+    {
+      "pipesPassed": 49,
+      "targetSpeed": 3.45
+    },
+    {
+      "pipesPassed": 50,
+      "targetSpeed": 3.65
+    },
+    {
+      "pipesPassed": 99,
+      "targetSpeed": 3.65
+    }
+  ],
+  "fullTierAccelerationSeconds": 1.0,
+  "sourceResetAndMovementWiringReviewed": true,
+  "validationScope": "Source/data checks and independent arithmetic review only. Unity code was not executed.",
+  "unityCompilation": "NOT RUN",
+  "unityPlaytest": "NOT RUN",
+  "webglArchiveUnchanged": true,
+  "sceneAfterSha256": "CA32ECEF22098ECA40562AC47E5FF0A67FF0F18B2FD6AD3E380CB091882D0076",
+  "checkedUtc": "2026-11-02T07:09:05.7680554Z"
+}

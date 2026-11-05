@@ -1,0 +1,65 @@
+Asset sourcing register
+Status: public-domain Tuffy, four creator-declared CC0 art sources and one creator-declared CC0 sound pack source imported. Sprint 05 adds 20 original PNG files; Sprint 06 adds one original WAV. No additional fonts.
+
+Imported content
+Creator: Thatcher Ulrich and the contributors identified on the creator's page.
+Source: https://tulrich.com/fonts/
+Archive: https://tulrich.com/fonts/tuffy-20120614.zip
+Archive SHA256: 9cee853bca685268f3764e8c9373c761bbd0e2862df4b23742f38472da323204
+Declared status: creator's worldwide public-domain dedication with an unrestricted-use fallback.
+Files: Assets/ThirdParty/Tuffy/Tuffy.ttf, Tuffy_Bold.ttf, Tuffy_Italic.ttf, Tuffy_Bold_Italic.ttf.
+Generated derivative: Assets/ThirdParty/Tuffy/Tuffy SDF.asset and its material/atlas subassets.
+Changes: imported original font files unchanged; generated a dynamic TMP SDF for this game's text.
+Dedication/source/hash record: Assets/ThirdParty/Tuffy/PUBLIC_DOMAIN.txt.
+
+Sprint 05 imported artwork
+- Blue Flappy Bird Sprite Sheets, bevouliin.com: https://opengameart.org/content/game-character-blue-flappy-bird-sprite-sheets
+  Eight original PNG frames and the creator note. The creator upload explicitly declares CC0. The archive has no separate license text; source-page evidence and archive hash are preserved in Assets/ThirdParty/BevouliinBlueBird/PROVENANCE.txt.
+  Archive SHA256: 0BC04C9E27E0A3962F4D1474F41D0F6EB75770E40DE2B6FB2B785D19580A8F92.
+- Pipe, bhu1c: https://opengameart.org/content/pipe
+  Original transparent PNG and two generated Sprite region assets referencing that texture. The creator upload explicitly declares CC0. Source-page evidence, region coordinates and source hash are in Assets/ThirdParty/Bhu1cPipes/PROVENANCE.txt.
+  PNG SHA256: 9FCD86D5B6015E63C8944BE5C4CEB9510D610341A897646909DD9DCDA6D21FD8.
+- UI Pack 2.0, Kenney: https://kenney.nl/assets/ui-pack
+  Six original PNGs for panel, footer, button and slider artwork, plus original License.txt. Source archive came from the creator's OpenGameArt mirror. Exact paths and modifications are in Assets/ThirdParty/KenneyUI/PROVENANCE.txt.
+  Archive SHA256: A8A14A234911EB648C062622915C93E79E94E97CB7F9F375A70F6617F1174318.
+- Background Elements Redux / Remastered, Kenney: https://kenney.nl/assets/background-elements-remastered
+  Five original PNG layers and original License.txt. Source archive came from the creator's OpenGameArt mirror. Exact paths are in Assets/ThirdParty/KenneyBackgrounds/PROVENANCE.txt. Scene renderers apply green tints and move paired cloud layers; original PNG bytes remain unchanged.
+  Archive SHA256: B2398079E22F9002F0A5006CBBB0728D4093DE7DC77A4226EB3DEF7B9748166D.
+- Kenney creator mirrors: https://opengameart.org/comment/26514 and https://opengameart.org/content/background-elements-redux.
+- No promotional previews, logos, other bundled fonts or sounds were imported. Sprite import settings, selected pipe regions, UI borders, tint and animation are project-authored uses of the art.
+
+Sprint 06 imported flap sound (historical; replaced in Sprint 11)
+- Creator: Aj_. Pack: Bird, cricket, frog and mosquito sounds.
+  Source: https://opengameart.org/content/birdcricketfrog-and-mosquito-sounds
+  The creator upload explicitly declares CC0. The archive contains no standalone license file; Assets/ThirdParty/AjFlapChirp/PROVENANCE.txt preserves the creator-page declaration and selection evidence.
+  Archive: https://opengameart.org/sites/default/files/birdsCrickets.zip
+  Archive SHA256: 9F815B60C16F9EF8052D4C6F5BD86C4F0CE56541B05400347F7032CD06947523.
+  User-selected fourth preview: cricket.ogg, corresponding to birdsCrickets/cricket.wav in the archive.
+  Imported as Assets/ThirdParty/AjFlapChirp/FlapChirp.wav, with original bytes unchanged. No trim, fade or pitch edits. Duration about 0.205646 seconds, mono 44100 Hz 16-bit PCM. AudioSource volume starts at 0.3.
+  WAV SHA256: 095BABBA62AEC4502C4768287A212844743D3182A507318E601CB43063A9D131.
+  The earlier proposed bird.wav excerpt was not imported. No other pack sounds are used.
+
+Sprint 11 current flap sound (replaces Sprint 06 selection)
+- The user selected the last/seventh preview from the same Aj_ creator page: frog.ogg, corresponding to birdsCrickets/frog.wav.
+- Creator source and current CC0 declaration rechecked: https://opengameart.org/content/birdcricketfrog-and-mosquito-sounds
+- Archive SHA256 remains 9F815B60C16F9EF8052D4C6F5BD86C4F0CE56541B05400347F7032CD06947523.
+- Current FlapChirp.wav is the original frog.wav, renamed without byte changes. WAV SHA256: 2FFEBB3AB1A5622E9A67D1696F1472CB0EAD720076DDD6C62E3983F0BB87FA47.
+- Duration about 0.291723 seconds, mono 44100 Hz 16-bit PCM. Volume remains 0.3; original WAV meta/GUID and all playback code are preserved.
+- The fourth-preview cricket.wav entry above describes the historical Sprint 06 selection, not the current imported file. No other sounds from the pack are currently imported.
+- Current source/selection records are in Assets/ThirdParty/AjFlapChirp/PROVENANCE.txt. Unity import/playback for this replacement has not been tested.
+Content created in this project
+Simple circles/rectangles used for particle textures and invisible boundaries; radial glow texture; scene/UI layouts; animation and gameplay code. Sprint 03 used these for placeholder characters and obstacles; Sprint 05 replaces their visible bird/pipe/UI roles with the imported artwork listed above.
+
+Unused verified candidates
+Kenney Particle Pack: https://kenney.nl/assets/particle-pack (creator page declares CC0).
+The particle candidate was not imported. The UI Pack was subsequently imported in Sprint 05 with its archive license verified. Inspect archive licenses before any future import.
+
+Existing content audit
+Default TextMesh Pro LiberationSans/OFL font content and EmojiOne sprite content were removed from this project's Assets. TMP default font now points to Tuffy, with fallback font and default sprite references cleared. A filename audit found no remaining Liberation/EmojiOne content under Assets.
+
+Software boundary
+Unity, URP, Input System, uGUI/TextMesh Pro and bundled shaders/code retain their software licenses. This is not a copyright-free Unity engine or a claim that all project files are public domain.
+
+Sourcing rule
+Externally sourced game content must be verified CC0/public domain using the original creator source and archive license. Record exact files, source, creator, version/hash, modifications and evidence. A free price or royalty-free label alone is insufficient. Keep a separate record inside each independent project that uses a resource.
+CC0 explanation: https://creativecommons.org/publicdomain/zero/1.0/

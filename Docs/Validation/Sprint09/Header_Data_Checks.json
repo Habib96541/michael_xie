@@ -1,0 +1,24 @@
+{
+  "status": "SOURCE_AND_SCENE_DATA_CHECKS_PASS",
+  "unityVersion": "6000.3.6f1",
+  "changedSceneBlockIds": [
+    "1387753739",
+    "1477727132",
+    "1477727133"
+  ],
+  "headerTitleReferenceResolves": true,
+  "scoreCenteredAtTitlePosition": true,
+  "otherSceneBlocksUnchanged": true,
+  "sourceMatchesScopedChange": true,
+  "visibilityOnStateChangeReviewed": [
+    "Ready: title visible, score hidden",
+    "Playing: title hidden, score visible",
+    "Results: title visible, score hidden",
+    "Restart: title hidden, score visible; existing score reset retained"
+  ],
+  "unityCompilation": "NOT RUN",
+  "unityPlaytest": "NOT RUN",
+  "webglArchiveUnchanged": true,
+  "sceneAfterSha256": "988864EFF2ECDF53F8F0A2D5384C1C2A5DBCD9B2B5B081D4B5D080A9CCDE0181",
+  "checkedUtc": "2026-11-02T06:34:52.9293343Z"
+}

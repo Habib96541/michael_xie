@@ -1,0 +1,88 @@
+Sprint 13: Refresh the Flap Dash WebGL build
+Date: 2026-11-05
+Status: build/package verified. Browser gameplay, listening review and user understanding pending.
+
+Goals and why
+- Deliver the current saved independent Flap Dash game as a browser build.
+- Use the current Editor version and preserve the custom scene and previous delivery.
+- The explicit build request authorized the required module installation and batch build, ending the earlier deferral. Desktop/browser control remains prohibited.
+
+Delivered files
+- Games/26_FlapDash/Builds/WebGL_2026-11-05: extracted package with index.html at its root.
+- Games/26_FlapDash/Builds/FlapDash_WebGL_2026-11-05.zip: 18487707 bytes, 32 files.
+- ZIP SHA256: FD6EBD34D117D6F6B8E2DCC2C3F9F9E396F16EC07180EEAFE54EBE55B7A43D9A.
+- Package includes README.txt, Build_Validation.txt, Build_Manifest.json, current AssetLicenses.txt, ten license/source text records and build provenance.
+- Previous Builds/WebGL and FlapDash_WebGL.zip remain intact as historical Sprint 03 output.
+
+Build setup and changes
+- Read ProjectVersion.txt and used the installed Unity 6000.3.27f2 (22188f149405), superseding the historical 6000.3.6f1 version.
+- Current Input System dependency is 1.20.1. No Editor/package downgrade was performed.
+- Installed official matching Web Build Support and used the existing WebGL profile in batch mode.
+- Preserved gzip/decompression fallback and 360 x 640 portrait canvas settings.
+- Compiled the saved scene, including title/score switching, gameplay timer, larger pipe-height variation, ten-pipe speed increases and the selected frog sound.
+- No scene generator, custom build script or desktop/browser controls were used.
+- Saved scene, all scripts and prefabs are unchanged from the fresh pre-build manifest.
+- Unity automatically reserialized Assets/DefaultVolumeProfile.asset, Assets/UniversalRenderPipelineGlobalSettings.asset and ProjectSettings/ProjectSettings.asset during the build. These changes are recorded; no manual gameplay/source rewrite was made.
+
+Storage issue and resolution
+- Initial installation aborted with code 2. C: had about 1.4 GB free, below the roughly 4.1 GiB module size plus build workspace needs.
+- The user freed space and asked to continue. The resumed preflight found 23.55 GiB free.
+- Retried the cached official signed module installer successfully, then completed the batch build.
+- No user files, caches, previous builds or other Editor installations were deleted to make space.
+
+Files touched
+- New dated build folder and ZIP.
+- Three automatic Unity-serialized files listed above; local build caches were regenerated.
+- SprintDocs/Sprint_13.txt, WebGL_Delivery.txt and Validation/Sprint13 evidence.
+- Root status, decision and handoff records.
+- No scene, script, prefab or previous build was edited.
+
+Done condition and actual verification
+- Unity CLI/provenance reports success, exit code 0; zero C# errors and warnings.
+- HTML references expected loader/data/framework/WASM files: PASS.
+- Three gzip payloads decompress fully: PASS.
+- WebAssembly version header and WebAssembly.validate: PASS.
+- Portrait canvas 360 x 640: PASS.
+- All 30 files present during payload/license HTTP checks returned 200 with matching lengths and bytes. Temporary server was stopped afterward. Supplemental validation/manifest files were checked during ZIP packaging.
+- All 32 ZIP entries were opened, read fully and matched to source SHA256 and byte counts: PASS.
+- Previous ZIP hash matches its pre-build baseline: PASS.
+- Ignored LicensingClient validation and shutdown thread-abort diagnostics were logged while Unity resolved its license and completed the build. Do not claim a clean browser Console check.
+- Browser startup, rendering, controls, scoring, timer, speed transitions, sound, restart and mobile behavior remain untested for this package. Historical behavior reports are not current runtime tests.
+- Build/package acceptance is complete. User gameplay acceptance and explanation remain pending.
+
+Evidence
+- Validation/Sprint13/Delivery.json, Unity_Build_Provenance.json and Build_Source_Review.json.
+- Validation/Sprint13/Payload_HTTP_Checks.json and Archive_Checks.json.
+- Validation/Sprint13/Inputs_AtBuild.json and Inputs_AfterBuild.json.
+- Earlier Build_Preflight.json records the resolved storage blocker, not the final status.
+- Private raw build logs and scene snapshots: .validation/Sprint13. Raw logs are not in the ZIP.
+
+Manual browser check
+1. Extract the dated ZIP completely and serve the index.html directory through HTTP/HTTPS, keeping Build and TemplateData beside it.
+2. If Python is installed, run python -m http.server 8765 --bind 127.0.0.1 there. Use another port if 8765 already serves the old build.
+3. Choose START ROUND. Check centered score, visible countdown, flap controls and the selected sound.
+4. Pass pipes, review the ten-pipe speed increase, finish a round and choose PLAY AGAIN. Check score, time and speed reset.
+5. Check Visual Energy and browser Console. Report exact errors. Check touch/mobile separately if needed.
+
+Explanation and concepts learned
+- Web Build Support supplies the matching browser toolchain; the build profile defines target/player settings.
+- IL2CPP compiles game code into WebAssembly. The loader, framework and data must travel with index.html.
+- File/ZIP/HTTP checks establish integrity and delivery; browser playtesting establishes rendering and interactions.
+
+Senior note
+- Keep the last deliverable until its replacement is verified. Pin the actual Editor version, record automatic serialization changes and separate compilation from gameplay acceptance.
+
+Learn more
+- Unity concept: build profiles, platform support modules and HTTP browser deployment.
+- https://docs.unity.com/en-us/engine/6000.3/manual/building-and-publishing/build-command-line
+
+Understanding check
+1. Why must Web Build Support match the Editor version?
+2. Why does build success still need a browser gameplay check?
+
+Open questions
+- User browser/listening results for this exact package and previous learning answers.
+- No next gameplay sprint is started. Desktop/browser control remains prohibited unless the user changes that instruction.
+
+Ready-to-copy Git commit message
+Refresh the Flap Dash WebGL delivery

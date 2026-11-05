@@ -1,0 +1,56 @@
+Sprint 01: Document the five-game assignment
+Date: 2026-10-31, Asia/Dhaka
+
+Goals
+- Create the seven requested Markdown files.
+- Explain the major components for a project demonstration.
+- Bound the assignment to games 26-30 and preserve fair competition requirements.
+- Refine the documentation to require five independent Unity projects, as subsequently confirmed by the user.
+
+Changes
+- Recorded Unity 6000.3.6f1 LTS and the selected URP 2D pipeline.
+- Defined game loops, proposed presentation choices, technical responsibilities, decisions, and future acceptance gates.
+- Distinguished the documentation from unimplemented gameplay and server integration.
+- Deferred missing availability and skill-profile details at the user's request.
+- Recorded Games/26_FlapDash, Games/27_KnifeHit, Games/28_FruitSlash, Games/29_ColorSwitch, and Games/30_BallSort as independent planned Unity project roots.
+- Replaced unresolved shared-host structure with separate assets, packages, settings, code, scenes, and builds for every game.
+- Added a future isolation check: open, play, restart, and build each project without sibling game folders.
+
+Files touched
+- architecture.md
+- decision.md
+- design.md
+- memory.md
+- phases.md
+- project_requirements.md
+- rules.md
+- SprintDocs/Sprint_01.txt
+
+Done condition
+- The seven requested files exist, agree on scope, and support a short honest demonstration.
+- Gameplay implementation has not begun.
+- The documents consistently require five independent Unity projects. No game folders or Unity scaffolds have been created by this documentation refinement.
+- User understanding check remains pending; no gameplay feature is marked learning-complete.
+
+Concepts to explain
+- Core loop: the action and reward repeated during play.
+- Separation of rules from presentation.
+- Shared seed versus score verification.
+- Adjustable feedback versus changes to competitive difficulty.
+- Independent Unity projects versus separate scenes inside one project.
+
+Open questions
+- Target platform, orientation, input devices, and external service integration. Five-project separation is resolved.
+- Exact failure, scoring, interruption, and puzzle-move rules.
+- Team command/replay contract, server environment, and acceptance criteria.
+- Schedule and first implementation sprint approval.
+
+Validation
+- Read-only repository inspection found no existing Unity project or code.
+- Content review confirmed consistent game scope, durations, planned status, and unresolved team decisions.
+- File existence, non-empty content, ASCII text, and relative-link checks passed for all eight files.
+- Independence wording and the five planned folder names passed consistency checks. No ProjectVersion.txt exists; project creation and isolation build checks remain future work.
+- No Unity build, gameplay test, or server-validation test applies to this documentation-only change.
+
+Ready-to-copy Git commit subject
+Document five independent Unity game projects

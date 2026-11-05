@@ -1,0 +1,64 @@
+Sprint 07: Allow the revised menu without a round-panel title
+Date: 2026-11-02
+Status: code fix implemented; compilation, runtime verification and user understanding pending.
+
+Goals
+- Fix the reported NullReferenceException in RoundView.RefreshView at the old line 69.
+- Preserve the user's separate static header and manually edited menu.
+- Respect the user's instruction not to access/control the PC: project-file edits only, no desktop interaction or Unity launch/control.
+
+Diagnosis
+- Before this restriction, the reported stack trace and live Inspector identified RoundView.titleLabel as None (TMP_Text).
+- The new Header/Title exists separately. The controller still tried to write to the absent round-panel title.
+- The scene has unsaved user edits. The saved scene still held the prior layout at diagnosis time; it must not be regenerated or reloaded over the edited scene.
+
+Changes
+- Marked titleLabel as optional with an Inspector tooltip.
+- Guarded only the write to the optional title. Message/button/HUD updates still use their existing required references.
+- Added regression checks that clear the optional title on the Play-mode scene instance and exercise Ready, Playing, Results and restart while checking the separate header remains unchanged.
+- Added a validation-entry safeguard that refuses to open a scene when an existing scene is dirty, protecting unsaved menu edits.
+- No scene, prefab, movement, audio, artwork, generated setup or WebGL files were edited for this repair.
+
+Files touched
+- Games/26_FlapDash/Assets/Scripts/RoundView.cs
+- Games/26_FlapDash/Assets/Editor/FlapDashValidation.cs
+- SprintDocs/Sprint_07_Plan.txt, this record and root handoff/status records
+
+Done condition and verification status
+- Source now checks titleLabel != null before writing its text.
+- Source reviewed for the specific optional-title path; required references were not broadly ignored.
+- New regression code is provided but has not been executed. If successful, it adds four checks to the prior 30-check suite.
+- No Unity compilation or gameplay checks were run, because the user requested no PC/desktop control and the current scene has unsaved edits.
+- The last executed PASS report is Sprint 06's report for the earlier code, not evidence that this repair passed.
+- The user must save the custom scene and verify start, results and restart in Unity.
+
+Manual check for the user
+1. Exit Play mode if it is active and save the edited scene with Ctrl+S.
+2. Let Unity compile the changed scripts, then clear the Console.
+3. Leave Round View / Title Label empty when using the separate static Header/Title.
+4. Enter Play mode, choose START ROUND, finish a round and choose PLAY AGAIN.
+5. Confirm that the top heading remains static and the line-69 NullReferenceException does not recur. Report any new error with its exact stack trace.
+The validation menu is optional; save first because it deliberately refuses to replace dirty scenes.
+
+Explanation
+- Inspector fields store references to specific components. An object with the same name is not automatically linked.
+- The title inside the round panel is now optional. The static header does not need to be assigned to that field.
+- Renaming or moving an assigned object normally preserves its reference. Removing/replacing it or clearing the field can leave the old slot empty.
+
+Senior note
+- Guard a genuinely optional UI element, not every missing reference. Required message/button/HUD references should still be wired correctly so configuration errors remain visible.
+
+Learn more
+- Unity concept: serialized Inspector references and optional versus required dependencies.
+
+Understanding check
+1. Why did the new object's name not automatically fill Title Label?
+2. Why should required button/message references still be assigned?
+
+Open questions
+- User compilation and Play-mode result on the saved custom scene.
+- Prior learning answers remain pending. Do not start another sprint or rebuild WebGL.
+- No desktop/PC control unless the user changes that instruction.
+
+Ready-to-copy Git commit message
+Allow menus without a round-panel title

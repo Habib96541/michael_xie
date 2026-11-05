@@ -1,0 +1,142 @@
+{
+  "checkedUtc": "2026-11-02T03:50:36.6361382Z",
+  "sources": 4,
+  "originalPngFiles": 20,
+  "files": [
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/bevouliin.com.txt.txt",
+      "bytes": 148,
+      "sha256": "4BE0B694686DEAF841C12D1F4A9ED2B73136B5CE99E7FC809709345BDB32BF08"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/frame-1.png",
+      "bytes": 37205,
+      "sha256": "E5DB46B7A62269A2AED0155875716736C60EF815ECEF99B9021E7FB00F9EBB02"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/frame-2.png",
+      "bytes": 34121,
+      "sha256": "CFBED7A94CD9B5F86BFC85FEA639EB00DA4B3439E06A098608565FE3453BEC61"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/frame-3.png",
+      "bytes": 35886,
+      "sha256": "A32145157C022E932B35B03A12768D70B47CD8ECCCFC19DDBB73A833A3EA2EA6"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/frame-4.png",
+      "bytes": 34601,
+      "sha256": "9FE6EC0E20D4EDA7FBDF04881F7FD25778A529AA7E298E541A50A055B9AD5739"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/frame-5.png",
+      "bytes": 37457,
+      "sha256": "7CA671423C2B153FFFCEB17B99509CC3C1E120B6D38A9C96586A2758F1B3742F"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/frame-6.png",
+      "bytes": 33454,
+      "sha256": "3B2DB323743583AD0A5A3679CA9F6025A35868D5EFF352140BEDE7215FD5734B"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/frame-7.png",
+      "bytes": 36037,
+      "sha256": "D0AB8F0D5BD485B9099D9ED21AF4867FBC76C742DE1C0B25B15453A567CFFDD7"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/frame-8.png",
+      "bytes": 34649,
+      "sha256": "B14163F6F0F142C315A29AB8A480A5F7DB0AB32A8374FB8202F0EC56B72DEEE6"
+    },
+    {
+      "file": "Assets/ThirdParty/BevouliinBlueBird/PROVENANCE.txt",
+      "bytes": 1119,
+      "sha256": "6ACD8B4AA916150A4A4DA2D703F0236D1B303043B8193537A48395CF858EFE40"
+    },
+    {
+      "file": "Assets/ThirdParty/Bhu1cPipes/pipe.png",
+      "bytes": 1224417,
+      "sha256": "9FCD86D5B6015E63C8944BE5C4CEB9510D610341A897646909DD9DCDA6D21FD8"
+    },
+    {
+      "file": "Assets/ThirdParty/Bhu1cPipes/PROVENANCE.txt",
+      "bytes": 1064,
+      "sha256": "B4EB7AC14AF52AB65F99611B58F970410058AA10BCE212DC3E4951A045AD408B"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyUI/button_rectangle_depth_flat.png",
+      "bytes": 786,
+      "sha256": "F0F3D52F110768BF93A10B44F4EC3C727924C25734CE85E1275464C9B02CFE18"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyUI/button_rectangle_depth_gloss.png",
+      "bytes": 748,
+      "sha256": "55E174171F9C3D5C614EE28BBC2B9F81F93AEFF00A46A198354CA652B6F709ED"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyUI/button_rectangle_depth_gradient.png",
+      "bytes": 1131,
+      "sha256": "7A4C6CD08DCFF68F50DC6DB3AA4F4992FD88434B841FC10581E915089FBA15BB"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyUI/License.txt",
+      "bytes": 565,
+      "sha256": "69F7EAA5E05913B4D09CF5848F75390B5C3C9A409EF8555777803D9CA0C171FB"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyUI/PROVENANCE.txt",
+      "bytes": 982,
+      "sha256": "D8D8EBE2139885466C2538A908C824EC52A7B4D8667BDA7C160C220911EC5631"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyUI/slide_hangle.png",
+      "bytes": 440,
+      "sha256": "402E915D3548B4A892AF0FC3A77831431EB5469FB2C49C224493B269A1404694"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyUI/slide_horizontal_color.png",
+      "bytes": 614,
+      "sha256": "B3566029E1A092B53138CE257AF5576AEB6C6EFBB144D707D7BF5ABC0F2EC9E8"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyUI/slide_horizontal_grey.png",
+      "bytes": 614,
+      "sha256": "1767133C7C59221EA6BE5586464A7FB68DEE748FC00F28E6F5E28C428524BA2B"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyBackgrounds/cloudLayer1.png",
+      "bytes": 4284,
+      "sha256": "1DC6A707664A3C6173E14D746B58426369E7CDCB0809D8594CDE4EA7B08C1347"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyBackgrounds/cloudLayer2.png",
+      "bytes": 3141,
+      "sha256": "DFF24CCD2CCE4DDD600ED2AFC66ED53D0C6BF4D0F2914F0D38673BBF604D6DD6"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyBackgrounds/groundLayer1.png",
+      "bytes": 2549,
+      "sha256": "23C66DF5812B9395466644D4DCC5C7BCABE81D3EF68D1E3EE166A47971869E1F"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyBackgrounds/groundLayer2.png",
+      "bytes": 1423,
+      "sha256": "E1C8194F0E9562A7CCC5ABB9EEB6DBD291654705272F793EBAA04CBDCE0DD6D4"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyBackgrounds/hills.png",
+      "bytes": 4242,
+      "sha256": "3AB7CEC63DF2E28379C6DFD9E64DFF358607A707A19042CBA7DD81A8A13BF5CD"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyBackgrounds/License.txt",
+      "bytes": 614,
+      "sha256": "AF458FB4D38EE24841FC7A61414D67459A119CAD3E277CE1E606866E8399CFA8"
+    },
+    {
+      "file": "Assets/ThirdParty/KenneyBackgrounds/PROVENANCE.txt",
+      "bytes": 960,
+      "sha256": "E058676E782414CF5CEE32C53B0663CF06FABC9346F12704697186192A4F951D"
+    }
+  ]
+}

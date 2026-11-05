@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "unityVersion": "6000.3.6f1",
+  "behaviorArtAudioChecks": 30,
+  "selectedPreview": 4,
+  "originalArchiveEntry": "birdsCrickets/cricket.wav",
+  "importedFile": "Games/26_FlapDash/Assets/ThirdParty/AjFlapChirp/FlapChirp.wav",
+  "waveBytesUnchanged": true,
+  "waveSha256": "095BABBA62AEC4502C4768287A212844743D3182A507318E601CB43063A9D131",
+  "durationSeconds": 0.20564625850340135,
+  "audioPreloaded": true,
+  "initialVolume": 0.3,
+  "playbackVerification": "Unity AudioSource state and playback time; speaker output not captured",
+  "webglRebuilt": false,
+  "previousWebglZipSha256": "C80B01C6920B4C98A17710518C6BD9B3F3A04C59EBB8116225A116937EB0B956",
+  "verifiedUtc": "2026-11-02T05:26:34.3539330Z"
+}

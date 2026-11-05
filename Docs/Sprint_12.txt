@@ -1,0 +1,63 @@
+Sprint 12: Show the countdown during gameplay
+Date: 2026-11-02
+Status: approved source and scene changes implemented; static checks pass. Unity compilation, visual/play checks and user understanding pending.
+
+Goals and why
+- Restore the missing gameplay timer while keeping the score centered in its header.
+- Use the existing round state to control visibility. Text content and GameObject visibility are separate concerns: updating text does not activate a disabled object.
+- Show a small countdown below the header during Playing; hide it on Ready and Results.
+
+Approved plan and done condition
+- RoundView.cs controls Timer visibility alongside Score.
+- FlapDash.unity positions the existing Timer below the score header.
+- This record explains changes and manual checks.
+- User approved before code changes. Done when the timer counts down during play, hides on menus and resets to 60 seconds on restart, with no overlap or Console errors. Runtime and learning acceptance remain pending.
+
+Diagnosis and changes
+- Timer was inactive in the saved scene. RoundView assigned its text but only activated Score during play.
+- Added timeLabel.gameObject.SetActive(round.IsPlaying) in the existing state-change branch, before its Playing early return.
+- Kept the existing text formatting, rounded-up remaining seconds, reference and countdown/reset logic.
+- Timer remains a Header child, centered at anchored position (0, -70), size (200, 32), with centered 24-point text. The header remains active, so the timer can render below its panel.
+- Initial saved text is TIME 60s. Initial Ready visibility remains inactive; RoundView activates it during Playing.
+- No new objects, fields, assets or packages. No gameplay, course, audio, prefab, generator or build changes.
+
+Files touched
+- Games/26_FlapDash/Assets/Scripts/RoundView.cs
+- Games/26_FlapDash/Assets/Scenes/FlapDash.unity
+- SprintDocs/Sprint_12.txt
+- SprintDocs/Validation/Sprint12/Timer_Data_Checks.json
+- Root status, decision and handoff records
+
+Verification
+- Unity version read from ProjectVersion.txt: 6000.3.6f1.
+- Source comparison confirms exactly one added visibility statement.
+- Scene comparison confirms only Timer's RectTransform and text component changed. Every other scene block, including Score, title, references, speed ramp and 60-second round duration, is preserved.
+- Timer's existing reference resolves; layout values and static separation from the header were reviewed. No render was produced.
+- Protected file hashes confirm RoundController, PipeCourse, Player prefab, selected frog WAV/meta and WebGL ZIP are unchanged.
+- Evidence: SprintDocs/Validation/Sprint12/Timer_Data_Checks.json. Pre-edit snapshots: .validation/Sprint12.
+- No Unity launch, compilation, gameplay check, desktop control or WebGL rebuild was performed. Historical Sprint 06 results do not validate this change.
+
+Manual checks for the user
+1. Exit Play mode. Preserve unsaved scene edits before reloading external changes; do not regenerate the scene. If merging manually, use the Timer layout values above and keep its existing Time Label assignment.
+2. Let Unity compile and check the Console. Ready should show FLAP DASH with no countdown.
+3. Choose START ROUND. Confirm the title becomes the centered score and TIME 60s appears below it, then decreases without overlapping the score.
+4. Finish a round. Confirm the timer hides on Results. Choose PLAY AGAIN and confirm it reappears at 60 seconds, while the score and speed reset.
+5. Confirm timeout still ends the round. Report visual overlap, clipping or any exact Console error. The actual countdown logic was not changed.
+
+Senior note
+- Keep presentation separate from game rules. Restore the label's visibility without adding another timer or modifying round duration. Hiding a parent would also hide its active children.
+
+Learn more
+- Unity concept: GameObject.SetActive, activeSelf and activeInHierarchy for child UI visibility.
+
+Understanding check
+1. Why did changing Timer's text fail to make it visible?
+2. Why keep the existing RoundController countdown instead of adding a second timer?
+
+Open questions
+- User compilation, countdown/layout and restart results.
+- User explanation and previous learning answers.
+- No next sprint, PC control or WebGL rebuild is started.
+
+Ready-to-copy Git commit message
+Show the countdown below the score during play

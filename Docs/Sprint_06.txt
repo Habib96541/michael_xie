@@ -1,0 +1,75 @@
+Sprint 06: Add the user-selected flap sound
+Date: 2026-11-02
+Status: implemented and playback-state checks verified; user listening review and understanding pending.
+
+Goals
+- Play a short sound on an actual flap.
+- Use the fourth preview selected by the user, without substituting a different sound.
+- Preserve the current movement and artwork; keep WebGL rebuilding deferred.
+
+Selection
+- Creator: Aj_. Source: https://opengameart.org/content/birdcricketfrog-and-mosquito-sounds
+- The source page's play-button data-ogg-url values identify the previews in display order: bird2.ogg, bird.ogg, birdNight.ogg, cricket.ogg, cricket2.ogg, distressedMosquito.ogg and frog.ogg.
+- The fourth preview is cricket.ogg; the corresponding lossless source is birdsCrickets/cricket.wav.
+- Imported as Assets/ThirdParty/AjFlapChirp/FlapChirp.wav, unchanged. No trimming, fading, pitch edits or use of the earlier proposed bird.wav excerpt.
+- Approximately 0.205646 seconds, mono, 44100 Hz, 16-bit PCM. Source/WAV hashes and the creator-page CC0 declaration are preserved in PROVENANCE.txt.
+
+Changes
+- Added a serialized AudioSource reference to FlapPlayer. The existing accepted flap branch calls Play when applying upward velocity.
+- One source restarts its assigned clip on rapid presses; no PlayOneShot voice layering or sound manager was added.
+- StopPlayer stops the sound, covering round end and player reset. The existing Playing-state guards reject menu/Ready/Results flap input.
+- Scene setup adds one 2D Player AudioSource, no autoplay, no loop, initial volume 0.3, and one AudioListener on Main Camera.
+- Audio import uses PCM, DecompressOnLoad and preloadAudioData=true so data is available before the first press.
+- Sound remains independent of Visual Energy. Visual-only preview/effect calls do not trigger the flap sound.
+
+Files touched
+Inside Games/26_FlapDash:
+- Assets/Scripts/FlapPlayer.cs
+- Assets/Editor/FlapDashProjectSetup.cs
+- Assets/Editor/FlapDashValidation.cs
+- Assets/ThirdParty/AjFlapChirp/FlapChirp.wav and PROVENANCE.txt, with generated metadata
+- Assets/Prefabs/Player.prefab and Assets/Scenes/FlapDash.unity
+- Assets/ThirdParty/AssetLicenses.txt
+- The existing scene generator also rewrites its authored scene/prefab/control/shape assets. No art or movement change was requested or introduced.
+Root records:
+- Seven root Markdown records, SprintDocs/Asset_Licenses.txt, Sprint_06_Plan.txt, this record and Sprint06 validation evidence.
+
+Done condition and evidence
+- Scene setup and graphical batch validation exited 0 on Unity 6000.3.6f1.
+- Validation/FlapDash_Smoke06.json reports PASS for 30 checks and no failures.
+- Existing 22 behavior/artwork checks remain, plus eight checks covering loaded clip/source/listener setup, menu silence, held-input non-repeat, keyboard/mouse/simulated-touch playback, rapid source retriggering, round cleanup, restart silence and sound at zero Visual Energy.
+- Rapid-input validation sends the next press while the earlier chirp is still active and checks that the source's playback time restarts against the DSP clock.
+- Final setup/validation logs contain no C# errors/warnings, obsolete API diagnostics, runtime exceptions or assertions.
+- Playback checks inspect Unity AudioSource.isPlaying and playback time. They do not capture speakers or establish a listening-quality/latency measurement. User feedback on volume/timbre remains pending.
+- The selected WAV's original bytes match the archive. The original sound and CC0 source/selection records are inside the independent project.
+- WebGL was not rebuilt. Its existing ZIP remains the Sprint 03 version, SHA256 C80B01C6920B4C98A17710518C6BD9B3F3A04C59EBB8116225A116937EB0B956.
+
+Debugging lesson
+- The first validation run failed because the sound was not loaded before the first flap.
+- Inspecting FlapChirp.wav.meta showed preloadAudioData: 0, despite choosing DecompressOnLoad. These settings serve different purposes.
+- Confirmed the current Unity 6.3 AudioImporterSampleSettings.preloadAudioData API and set it explicitly to true. The importer now records preloadAudioData: 1; the rerun passes all 30 checks.
+- The first-run report/log are retained as FlapDash_Smoke06_FirstRun.json and FlapDash_Validation06_FirstRun.log.
+
+Explanation
+- AudioSource plays the assigned clip; AudioListener receives the scene's audio for output.
+- Triggering playback from the actual flap keeps sound synchronized with accepted actions across all input devices. Reading every raw press separately could chirp on rejected/menu input.
+- Restarting one source prevents simultaneous copies from increasing loudness during fast tapping. Volume can be adjusted on the Player AudioSource in the Inspector.
+
+Senior note
+- A configured clip is not necessarily loaded, and a playing source is not proof of audible speaker output. Verify asset readiness, source/listener wiring and player listening separately.
+
+Learn more
+- Unity 6.3 AudioImporterSampleSettings.preloadAudioData:
+  https://docs.unity.com/en-us/engine/6000.3/script-reference/unityeditor/audioimportersamplesettings/preloadaudiodata
+
+Understanding check
+1. What does AudioSource do, and what does AudioListener do?
+2. Why trigger the sound from the accepted flap rather than every raw press?
+
+Open questions
+- User listening review of volume and timbre in the Editor.
+- Previous learning answers remain pending; no next sprint is authorized.
+- Browser audio behavior remains untested because rebuilding is deferred.
+
+Ready-to-copy Git commit message
+Play the selected chirp on accepted flaps

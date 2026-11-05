@@ -1,0 +1,15 @@
+{
+  "buildOutcome": "success",
+  "editor": "6000.3.27f2",
+  "exitCode": 0,
+  "changedInputFiles": [
+    "Assets\\DefaultVolumeProfile.asset",
+    "Assets\\UniversalRenderPipelineGlobalSettings.asset",
+    "ProjectSettings\\ProjectSettings.asset"
+  ],
+  "addedInputFiles": [],
+  "cSharpErrors": 0,
+  "cSharpWarnings": 0,
+  "ignoredLicensingDiagnostic": true,
+  "shutdownThreadDiagnostic": true
+}

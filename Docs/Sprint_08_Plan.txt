@@ -1,0 +1,48 @@
+Sprint 08 proposal: Larger vertical changes between pipe gaps
+Status: approved by the user and implemented. Source/data checks pass; Unity compilation, playtesting and user understanding remain pending. The saved custom menu is preserved.
+
+Why
+The user wants more challenge through larger up/down changes between consecutive pipe openings. Change the authored gap-center sequence while keeping speed and gap size stable, so the new challenge comes from vertical steering rather than several difficulty changes at once.
+
+Inspected current setup
+- Unity 6000.3.6f1.
+- Current scene gap centers: 0, 0.8, -0.5, 1.2, 0.2, -1, 0.5.
+- Current scene vertical center range: -1 to 1.2. Largest adjacent change, including loop: 1.7 units.
+- Pipe speed 2.65, spawn interval 1.48 seconds, first spawn delay 1.1 seconds.
+- Opening height 3.6, bird radius 0.3, flap speed 8, gravity scale 2 and fall-speed cap 12.
+- Runtime defaults differ from the scene's authored override; both defaults and authoring must match the new pattern.
+
+Proposed pattern
+Gap centers, in order, then repeat:
+0, 1.8, -1.8, 2.4, -2.2, 1.6, -2.6, 2.0, -1.4, 2.6, -2.0, 1.4
+
+- Start centered, then alternate upward/downward demands at varied heights.
+- Center range becomes -2.6 to 2.6; largest adjacent change is 4.6 units.
+- The wrap from the last entry back to the first is a 1.4-unit drop, so there is no flat transition at the repeat boundary.
+- Keep the sequence fixed and reset to its first entry each round.
+- Keep opening size, hitboxes, pipe speed, timing, controls, score, audio and art unchanged.
+- Center +/-2.6 plus the existing half-opening 1.8 places the opening edges within +/-4.4 world units, away from the ceiling/floor boundaries. This geometric check is not a Unity playtest or a guarantee of balanced difficulty.
+- Larger changes will require more deliberate climbing, dropping and braking. Playability and challenge level must be reviewed by the user in Unity.
+
+Files to change after approval
+- Games/26_FlapDash/Assets/Scripts/PipeCourse.cs: matching default gapCenters array only; no new generator/framework.
+- Games/26_FlapDash/Assets/Editor/FlapDashProjectSetup.cs: matching authored gapCenters values only. Do not execute this generator over the user's custom scene.
+- Games/26_FlapDash/Assets/Scenes/FlapDash.unity: patch only the PipeCourse gapCenters data in the saved custom scene. Preserve every other scene value.
+- SprintDocs/Sprint_08.txt and relevant decision/status records: exact pattern, boundaries, manual verification and open questions.
+
+User-control boundary
+- Project-file work only. No desktop/browser/computer-use controls or Unity launch/control.
+- The earlier custom-menu edits were unsaved at diagnosis, but the current saved scene now has titleLabel fileID 0 and Header/Title positioned at y=-3, matching the user's revised layout. Save any further edits before applying an external scene-file change.
+- Do not regenerate scenes, save through automation, rebuild WebGL or change another game.
+- The existing scene's serialized array overrides C# field defaults. A script-default edit alone would not update the active course.
+
+Done condition
+- Runtime defaults, generator source and the saved scene use the same 12-entry pattern.
+- The scene patch changes only the serialized gapCenters list.
+- Review data bounds, every transition and the repeat boundary in source/data.
+- Unity compilation and actual gameplay checks remain pending user testing under the no-PC-control instruction. Do not reuse earlier PASS reports as validation of this revision.
+- User tests multiple successive pipes and a restart, then confirms that the challenge is suitable.
+- No WebGL build or next sprint.
+
+Approval requirement
+rules.md requires a concrete file plan and approval before writing code. The user approved this gap-height change. Implementation and evidence are recorded in SprintDocs/Sprint_08.txt and SprintDocs/Validation/Sprint08/Course_Data_Checks.json. No PC-control permission is requested.

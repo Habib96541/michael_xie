@@ -1,0 +1,70 @@
+Sprint 08: Increase vertical variation between pipe gaps
+Date: 2026-11-02
+Status: approved configuration implemented; data checks pass. Unity compilation, gameplay balance and user understanding pending.
+
+Goals and why
+- Make consecutive pipe openings demand larger climbs and drops.
+- Tune one source of challenge: opening position. Keep opening size and movement timing stable so playtest feedback can identify the effect of this change.
+- Respect project-file-only work and deferred WebGL rebuilding.
+
+Changes
+- Replaced the saved scene's seven gap centers with this repeating sequence:
+  0, 1.8, -1.8, 2.4, -2.2, 1.6, -2.6, 2.0, -1.4, 2.6, -2.0, 1.4
+- Matched the runtime field defaults and scene-generator source to this sequence.
+- Center range is now -2.6 to 2.6 rather than -1 to 1.2. Maximum consecutive center change is 4.6 rather than 1.7 units.
+- Every transition alternates direction, including the 1.4-unit drop from the last entry back to zero.
+- Existing modulo indexing repeats the list; existing ResetCourse returns its index to zero. No logic changes were needed.
+- Opening height remains 3.6, pipe speed 2.65, spawn interval 1.48 and first delay 1.1 seconds. Bird physics, score, sound, art and round duration are unchanged.
+- Patched only gapCenters in the saved scene. The custom menu and optional title reference are preserved. No scene generator was executed.
+
+Files touched
+- Games/26_FlapDash/Assets/Scripts/PipeCourse.cs
+- Games/26_FlapDash/Assets/Editor/FlapDashProjectSetup.cs
+- Games/26_FlapDash/Assets/Scenes/FlapDash.unity
+- SprintDocs/Sprint_08_Plan.txt
+- SprintDocs/Sprint_08.txt
+- SprintDocs/Validation/Sprint08/Course_Data_Checks.json
+- Root architecture, design, requirements, decision, memory, phases and rules records
+
+Done condition and verification
+- Runtime defaults, generator source and saved scene have identical 12-entry arrays: PASS.
+- Direction alternates at every cyclic transition: PASS.
+- Scene content outside the gapCenters block matches the pre-edit snapshot exactly: PASS.
+- Opening edges remain within +/-4.4 world units at the extreme centers: data check PASS. This is a geometric bound, not a reachability or balance test.
+- Evidence: SprintDocs/Validation/Sprint08/Course_Data_Checks.json.
+- Pre-edit scene snapshot: .validation/Sprint08/FlapDash_Before.unity.
+- No Unity launch, compilation, gameplay test, desktop control or WebGL rebuild was performed.
+- The last executed behavior suite is Sprint 06's 30-check report. It does not validate Sprint 07 or this tuning.
+- Final acceptance requires the user to test several transitions, the repeat boundary and restart, and confirm suitable difficulty.
+
+Manual check for the user
+1. Exit Play mode. If Unity has no unsaved scene edits, reload the saved FlapDash scene when prompted about the external change.
+2. If you have unsaved scene edits, preserve them first and enter the 12 values above into Pipe Course / Gap Centers. Saving a stale seven-entry scene would overwrite this file change. Do not regenerate the scene.
+3. Confirm the array has 12 entries. Let Unity compile, then check the Console for errors, including the earlier optional-title error.
+4. Start a round and test climbing and falling through successive openings. Review the largest 4.6-unit changes rather than only the centered first pipe.
+5. Test the last-to-first transition when the sequence repeats. Restart and confirm the first opening returns to center zero.
+6. Confirm your revised menu is intact and report whether the steep changes feel fair. WebGL remains the old Sprint 03 build.
+
+Explanation and concepts learned
+- gapCenters is an ordered collection of vertical opening positions. Positive values raise an opening; negative values lower it.
+- A saved Unity scene stores serialized Inspector values. Changing a C# field initializer does not replace those saved values, so the actual scene array must also change.
+- The generator source needs matching values for future authoring consistency, but running it now would replace the custom scene layout.
+- Larger center changes demand more steering. A smaller opening would instead reduce clearance and precision tolerance.
+
+Senior note
+- Bounds alone do not prove a course is fair. Check whether the player can read and reach steep transitions with the current velocity and available time before accepting the difficulty.
+
+Learn more
+- Unity concept: serialization and Inspector overrides of script field defaults.
+
+Understanding check
+1. Why did we update the saved scene as well as the C# array?
+2. How does moving openings farther apart vertically differ from shrinking their height?
+
+Open questions
+- User compilation and gameplay results, especially steep changes and the repeat boundary.
+- User explanation of this change and prior learning questions.
+- No next sprint or WebGL rebuild is authorized by completing this configuration change.
+
+Ready-to-copy Git commit message
+Increase vertical variation between pipe gaps

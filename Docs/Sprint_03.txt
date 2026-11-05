@@ -1,0 +1,69 @@
+Sprint 03: Add neon feedback to Flap Dash
+Status: implementation verified; user style review and understanding pending.
+
+Goals
+- Make Flap Dash visually reactive while preserving the movement tuning the user liked.
+- Keep decorative animation separate from physics, colliders, score, and input timing.
+- Use verified public-domain outsourced content and record its provenance.
+
+Changes
+- Added PlayerFeedback: wing motion, squash/stretch, tilt, glow, trail, and flap particles.
+- Added RoundFeedback: score pop, panel entrance animation, and passage/impact particles.
+- Added ButtonFeedback: hover, selection, press, and submit responses.
+- Added VisualEffectsSettings: a Ready/Results intensity slider, retained within the app session.
+- Connected feedback using Inspector references and a reset hook in RoundController.
+- Retained flap speed 7, gravity scale 1.5, player radius 0.3, authored course, one point per pipe, and 60-second limit.
+- Replaced default LiberationSans with creator-dedicated public-domain Tuffy. Removed default font/fallback and EmojiOne content from Assets. Unity/TMP software still retains its original license.
+- Created project-owned glow art and used built-in particles; no outside art/audio/animation package was needed.
+
+Files touched
+- Assets/Scripts/PlayerFeedback.cs, RoundFeedback.cs, ButtonFeedback.cs, VisualEffectsSettings.cs (new)
+- Assets/Scripts/FlapPlayer.cs, RoundController.cs, RoundView.cs
+- Assets/Editor/FlapDashProjectSetup.cs, FlapDashValidation.cs, FlapDashPreview.cs
+- Assets/Scenes/FlapDash.unity and Assets/Prefabs/Player.prefab, PipePair.prefab
+- Assets/Art, Assets/Materials, Assets/ThirdParty/Tuffy, Assets/ThirdParty/AssetLicenses.txt and generated metadata
+- Default TMP content/settings updated as described in the license register
+- Seven root Markdown documents, SprintDocs/Asset_Licenses.txt, Sprint_03_Plan.txt, and this record
+Paths above are inside Games/26_FlapDash unless a root/SprintDocs path is stated.
+
+Done condition and evidence
+- The original 12 checks still pass, plus five checks for intensity, visual-child/collider separation, particles, and restart cleanup.
+- SprintDocs/Validation/FlapDash_Smoke03.json reports PASS for 17 checks with no failures.
+- Full, reduced (0.4), and zero intensity were exercised; zero clears decorative particles/motion while preserving round flow.
+- Setup, behavior, and render commands completed successfully. Current logs contain no C# compilation errors/warnings or obsolete/deprecated API diagnostics.
+- Ready, Playing, Results, and NoEffects portrait renders were inspected at 540 x 960. Score-pop anchoring was adjusted so enlarged text stays inside the header.
+- Live Unity Play mode showed the Ready screen correctly. Clicking the Visual Energy slider changed its label and handle to 49%; the Console showed zero warnings and errors. Play mode was then stopped for handoff.
+- A 24-frame native Unity render sequence was inspected at multiple animation phases. It shows wing/squash changes, particles and score pop. The GIF is a staged action preview, not a human playthrough or proof of gameplay skill/fairness.
+- Captures temporarily freeze simulation and change the canvas rendering mode; the helper restores these settings afterward.
+- Particle capacity is bounded at 64 per system, with two systems. Restart tests verify both are cleared. Target-device frame rate and sustained performance are not yet profiled.
+- A filename/content audit found only Tuffy font files and no remaining Liberation/EmojiOne content under Assets. Source URL, dedication, original archive hash and file list are preserved in the project.
+
+Debugging lesson
+- The first new-font setup encountered a null fallback-font list. Read the exception line and guarded the optional list before clearing it.
+- A rapid end/restart within one frame exposed a missed UI state transition. Clear effects directly at the round reset boundary rather than relying only on the next UI refresh.
+
+Concepts learned
+- Animate child visual transforms instead of the Rigidbody/collider root.
+- Use unscaled time for short presentation feedback without changing simulation time.
+- Keep settings in a single referenced component rather than introduce global/shared-game state.
+- Clear transient particles and trails when their round ends/restarts.
+- Free price, public-domain content and software licensing are separate concepts.
+
+Senior note
+- A visual-only feature can still break gameplay if it changes collider scale, blocks input, obscures targets, or leaves state after restart. Verify those boundaries explicitly.
+
+Learn more
+- Unity Manual concept: Transform parenting and local coordinates. Local scale on a visual child can change its appearance while its parent's collider stays unchanged.
+
+Understanding check: pending
+1. Why does the bird animation affect a visual child instead of the physics root?
+2. Why must effects be cleared directly during a round reset?
+
+Open questions
+- User evaluation of the new visual style and preferred intensity.
+- Sustained player testing, including feedback from intended players with ADHD; no engagement or clinical benefit is claimed.
+- Previous understanding questions remain unanswered. No next sprint is started automatically.
+- Production target, device profiling, backend and deterministic replay remain later work.
+
+Ready-to-copy Git commit subject
+Add neon feedback and adjustable visual effects to Flap Dash

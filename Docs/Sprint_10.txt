@@ -1,0 +1,88 @@
+Sprint 10: Increase course speed after every ten pipes
+Date: 2026-11-02
+Status: approved source and scene changes implemented; static review passes. Unity compilation, gameplay checks and user understanding pending.
+
+Goals and why
+- Gradually increase challenge based on successful pipe passages.
+- Group progress into ten-pipe levels, then smoothly approach each level's target instead of jumping instantly.
+- Keep difficulty logic in PipeCourse, which already owns movement. Use the existing round score without introducing events or another manager.
+
+Approved plan and done condition
+- Start at 2.65 units per second.
+- Raise the target by 0.20 after each ten passed pipes, capped at 3.65.
+- Smooth each full increase over approximately one second using acceleration 0.20 units per second squared.
+- Reset speed on round reset/start. Retain bird physics, opening sizes, authored heights, spawn timing, header behavior and scoring.
+- Update PipeCourse.cs, the scene's settings and generator defaults, and this sprint record.
+- User approved the revised ten-pipe tuning before code changes.
+- Done when thresholds, smooth movement, stopping and restart are verified in Unity and the user can explain them. Implementation/static checks are complete; runtime and learning acceptance are pending.
+
+Target table
+Pipes 0-9: 2.65
+Pipes 10-19: 2.85
+Pipes 20-29: 3.05
+Pipes 30-39: 3.25
+Pipes 40-49: 3.45
+Pipes 50 and above: 3.65
+
+Changes and explanation
+- Added serialized pipesPerSpeedIncrease (10), speedIncrease (0.2), maximumSpeed (3.65) and acceleration (0.2).
+- Kept moveSpeed as the starting speed. Added currentSpeed for the actual movement speed.
+- UpdateSpeed divides the integer score by ten. Integer division discards the remainder, so nine pipes still means level zero and ten pipes means level one.
+- Target speed is starting speed plus level times speedIncrease, limited with Mathf.Min.
+- Mathf.MoveTowards changes currentSpeed toward that target by acceleration times the physics timestep. This limits the rate of change and avoids overshooting the target.
+- FixedUpdate calculates speed before moving all active pipes with the same step. Faster pipes do not overtake older pipes due to separate per-pipe speeds.
+- BeginCourse and ResetCourse both restore currentSpeed to moveSpeed. The existing stop guard prevents updates after collision or timeout.
+- The generator source sets matching values, using a small integer-property setter consistent with its existing float setter. The generator was not executed.
+- The saved scene received only the four new speed settings. All other scene bytes are preserved after removing those four added lines.
+- Spawn interval remains 1.48 seconds, first delay 1.1 seconds, and round duration 60 seconds. Spawn timing is not scaled with speed; horizontal spacing can grow as course speed rises.
+
+Files touched
+- Games/26_FlapDash/Assets/Scripts/PipeCourse.cs
+- Games/26_FlapDash/Assets/Editor/FlapDashProjectSetup.cs
+- Games/26_FlapDash/Assets/Scenes/FlapDash.unity
+- SprintDocs/Sprint_10.txt
+- SprintDocs/Validation/Sprint10/Speed_Ramp_Review.json
+- Root status, decision and handoff records
+
+Verification performed
+- Read Unity version: 6000.3.6f1.
+- Reviewed scoped before/after diffs of both edited C# files.
+- Checked agreement between field defaults, generator assignments and scene values.
+- Reviewed threshold arithmetic at 0, 9, 10, 19, 20, 29, 30, 39, 40, 49, 50 and 99 points against the approved table.
+- Reviewed reset assignments, play-state guard and movement using currentSpeed.
+- Verified the scene differs from the snapshot only by the four new settings, preserving menu, score header, harder course and all other data.
+- Confirmed the existing WebGL ZIP hash is unchanged.
+- Evidence: SprintDocs/Validation/Sprint10/Speed_Ramp_Review.json.
+- Pre-edit snapshots: .validation/Sprint10.
+- These are static checks and arithmetic review, not execution of the Unity code. No Unity launch, compilation, runtime test, desktop control or build was performed.
+- The last executed Unity behavior suite remains Sprint 06's historical report.
+
+Manual checks for the user
+1. Exit Play mode. Preserve any unsaved scene edits before reloading external changes. Do not regenerate the custom scene.
+2. If merging into an unsaved scene manually, enter these Pipe Course values: Move Speed 2.65, Pipes Per Speed Increase 10, Speed Increase 0.2, Maximum Speed 3.65, Acceleration 0.2. Save when your edits are merged.
+3. Let Unity compile and check the Console.
+4. Start a round. Confirm the centered score header still appears and the starting pace is unchanged.
+5. Pass nine pipes: there should be no speed increase. At ten, expect a smooth increase over about one second. At nineteen, remain at that pace; at twenty, increase again.
+6. To inspect exact values, set a debugger breakpoint in UpdateSpeed and inspect round.Score, speedLevel, targetSpeed and currentSpeed. Resume after inspection.
+7. Finish a round and restart. Confirm PIPES 00 and the starting pace return, including when the previous round ended during acceleration.
+8. Verify collision/timeout still stops all pipes. Review the harder high/low pattern at increased pace and report if it feels unfair.
+9. Upper-tier/cap gameplay checks remain pending: the normal 60-second round with 1.48-second spawns can end before reaching fifty pipes. The cap does not extend the round.
+
+Senior note
+- Check difficulty as a combination of speed, vertical changes and the time between openings. A speed cap alone does not prove the hardest transitions feel fair. Keeping all active pipes on one course speed preserves their relative separation.
+
+Learn more
+- Unity concept: Mathf.MoveTowards with Time.fixedDeltaTime for a bounded rate of change in physics updates.
+
+Understanding check
+1. What does integer division return at scores nine, ten and nineteen?
+2. Why keep currentSpeed separate from targetSpeed?
+
+Open questions
+- User Unity compilation and gameplay results, including milestone transitions and restart.
+- Whether the increased pace with the current vertical pattern is suitable.
+- User understanding and earlier learning answers remain pending.
+- No next sprint, PC control or WebGL rebuild is started.
+
+Ready-to-copy Git commit message
+Increase pipe speed every ten passages

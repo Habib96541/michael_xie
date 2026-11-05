@@ -1,0 +1,18 @@
+Background Elements Redux / Background Elements Remastered
+Creator: Kenney
+Source: https://kenney.nl/assets/background-elements-remastered
+Creator-hosted mirror: https://opengameart.org/content/background-elements-redux
+Downloaded: 2026-11-02
+Archive: https://opengameart.org/sites/default/files/Background%20Elements%20Redux.zip
+Archive SHA256: B2398079E22F9002F0A5006CBBB0728D4093DE7DC77A4226EB3DEF7B9748166D
+License: CC0. The original License.txt is retained unchanged beside this record.
+
+Imported archive entries, flattened into this folder
+Backgrounds/Elements/cloudLayer1.png
+Backgrounds/Elements/cloudLayer2.png
+Backgrounds/Elements/groundLayer1.png
+Backgrounds/Elements/groundLayer2.png
+Backgrounds/Elements/hills.png
+License.txt
+
+Original PNG bytes are unchanged. Scene renderers apply green tints to hill/ground layers and arrange the scenery. BackdropMotion moves paired cloud layers. No sample images, promotional previews or logos were imported.

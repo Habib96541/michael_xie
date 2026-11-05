@@ -1,0 +1,28 @@
+{
+  "status": "BUILD_AND_PACKAGE_VERIFIED",
+  "buildDate": "2026-11-05",
+  "unityVersion": "6000.3.27f2",
+  "buildExitCode": 0,
+  "outputFolder": "Games/26_FlapDash/Builds/WebGL_2026-11-05",
+  "archive": "Games/26_FlapDash/Builds/FlapDash_WebGL_2026-11-05.zip",
+  "archiveBytes": 18487707,
+  "archiveSha256": "FD6EBD34D117D6F6B8E2DCC2C3F9F9E396F16EC07180EEAFE54EBE55B7A43D9A",
+  "archiveFileCount": 32,
+  "httpFileCount": 30,
+  "compressedPayloadCount": 3,
+  "webAssemblyValidated": true,
+  "portraitCanvas": true,
+  "cSharpErrors": 0,
+  "cSharpWarnings": 0,
+  "savedSceneAndScriptsUnchanged": true,
+  "automaticUnitySerializedChanges": [
+    "Assets\\DefaultVolumeProfile.asset",
+    "Assets\\UniversalRenderPipelineGlobalSettings.asset",
+    "ProjectSettings\\ProjectSettings.asset"
+  ],
+  "previousArchiveUnchanged": true,
+  "browserGameplay": "NOT TESTED",
+  "desktopControlUsed": false,
+  "temporaryHttpServerStopped": true,
+  "completedUtc": "2026-11-05T05:49:35.1321090Z"
+}

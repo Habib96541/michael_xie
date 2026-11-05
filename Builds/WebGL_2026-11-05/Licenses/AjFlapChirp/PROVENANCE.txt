@@ -1,0 +1,35 @@
+Last preview from Bird, cricket, frog and mosquito sounds
+Creator: Aj_
+Source: https://opengameart.org/content/birdcricketfrog-and-mosquito-sounds
+Selection date: 2026-11-02
+Selected by the user: last (seventh) preview from the left in the latest supplied screenshot. This replaces the previous fourth-preview selection from Sprint 06.
+
+Selection evidence
+The source-page play-button data-ogg-url entries occur in this order:
+1. bird2.ogg
+2. bird.ogg
+3. birdNight.ogg
+4. cricket.ogg
+5. cricket2.ogg
+6. distressedMosquito.ogg
+7. frog.ogg
+The selected preview is https://opengameart.org/sites/default/files/frog.ogg.
+The corresponding lossless archive entry is birdsCrickets/frog.wav.
+Use the user's exact selection as the flap cue even though the archive calls it frog.wav. Do not substitute another animal sound based on the game character.
+
+License evidence
+The creator's OpenGameArt upload identifies Aj_ as author and lists CC0 under License(s), linked to https://creativecommons.org/publicdomain/zero/1.0/.
+The pack contains no standalone license file; this record preserves the source-page declaration.
+The creator describes the effects as made with as3sfxr.
+
+Original archive: https://opengameart.org/sites/default/files/birdsCrickets.zip
+Archive SHA256: 9F815B60C16F9EF8052D4C6F5BD86C4F0CE56541B05400347F7032CD06947523
+Imported file: FlapChirp.wav, renamed from birdsCrickets/frog.wav without byte changes.
+WAV SHA256: 2FFEBB3AB1A5622E9A67D1696F1472CB0EAD720076DDD6C62E3983F0BB87FA47
+Format: mono, 44100 Hz, 16-bit PCM; duration approximately 0.291723 seconds.
+No trimming, fading, pitch variation or source waveform changes. Unity imports PCM with decompression on load, and an AudioSource applies a starting volume of 0.3.
+No other sounds from the pack are imported.
+
+Replacement evidence
+The live creator page was rechecked on 2026-11-02 for preview order and its CC0 link. Source-page capture, exact selection metadata and the previous WAV are retained in .validation/Sprint11. Static evidence is recorded in SprintDocs/Validation/Sprint11/Sound_Asset_Checks.json.
+The original FlapChirp.wav.meta and asset GUID 0ae780834e8e52941adbb90a47a6b676 are unchanged, preserving existing prefab/scene references and import settings. No code or scene changes were required. Unity import/playback has not been tested for this replacement.

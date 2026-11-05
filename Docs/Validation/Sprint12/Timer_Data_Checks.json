@@ -1,0 +1,23 @@
+{
+  "status": "STATIC_SOURCE_AND_SCENE_CHECKS_PASS",
+  "unityVersion": "6000.3.6f1",
+  "sourceOnlyAddsTimerPlayingVisibility": true,
+  "sceneOnlyChangesTimerRectAndText": true,
+  "existingTimerReferenceAnd60SecondDurationPreserved": true,
+  "timerAnchoredPosition": {
+    "y": -70,
+    "x": 0
+  },
+  "timerSize": {
+    "height": 32,
+    "width": 200
+  },
+  "timerFontSize": 24,
+  "layoutReviewed": "Centered below header; static rectangle separation only, no Unity render.",
+  "gameplayCourseAudioPrefabAndBuildUnchanged": true,
+  "unityCompilation": "NOT RUN",
+  "unityPlaytest": "NOT RUN",
+  "sceneAfterSha256": "F2069DB414F11A61F645B68F684304EF95D7E0A3B9FF9AB81413993DA459BC98",
+  "sourceAfterSha256": "4A29F9D398026520951AAD5439A26CA8D31EE6971AAF9090559907DFBF7D2FAE",
+  "checkedUtc": "2026-11-02T09:25:45.9234851Z"
+}

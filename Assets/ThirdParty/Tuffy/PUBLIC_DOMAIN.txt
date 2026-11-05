@@ -1,0 +1,8 @@
+Tuffy by Thatcher Ulrich
+Source: https://tulrich.com/fonts/
+Archive: https://tulrich.com/fonts/tuffy-20120614.zip
+SHA256: 9cee853bca685268f3764e8c9373c761bbd0e2862df4b23742f38472da323204
+
+Creator dedication:
+I, the copyright holder of this work, hereby release it into the public domain. This applies worldwide.
+In case this is not legally possible, I grant any entity the right to use this work for any purpose, without any conditions, unless such conditions are required by law.

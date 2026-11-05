@@ -1,0 +1,20 @@
+{
+  "status": "BLOCKED_BEFORE_BUILD",
+  "reason": "Web Build Support is absent; module installer exited 2. Available C: space is below the module installed-size requirement, before build workspace needs.",
+  "unityVersion": "6000.3.27f2",
+  "requestedDate": "2026-11-05",
+  "freeCBytes": 2039844864,
+  "moduleDownloadBytes": 930219208,
+  "moduleInstalledBytes": 4435530443,
+  "installer": "C:/Users/Racy/AppData/Roaming/UnityHub/downloads/UnitySetup-WebGL-Support-for-Editor-6000.3.27f2.exe",
+  "installerSignatureVerified": true,
+  "installerExitCode": 2,
+  "savedProjectInputsUnchanged": true,
+  "projectInputCount": 245,
+  "newBuildCreated": false,
+  "previousArchiveSha256": "C80B01C6920B4C98A17710518C6BD9B3F3A04C59EBB8116225A116937EB0B956",
+  "intendedOutput": "Games/26_FlapDash/Builds/WebGL_2026-11-05",
+  "requiredUserAction": "Free at least 15 GB on C: and reply ready.",
+  "desktopControlUsed": false,
+  "checkedUtc": "2026-11-05T05:02:08.1744591Z"
+}

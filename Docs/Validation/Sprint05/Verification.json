@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "unityVersion": "6000.3.6f1",
+  "editorBehaviorChecks": 22,
+  "csharpDiagnostics": "None",
+  "runtimeExceptions": "None observed",
+  "importedPngFiles": 20,
+  "sourceManifest": "Asset_Manifest.json",
+  "nativePortraitRenders": [
+    "Ready",
+    "Playing",
+    "Results",
+    "NoEffects"
+  ],
+  "nativeAnimationFrames": 24,
+  "preview": "Staged Unity captures; no sustained human playtest",
+  "liveGui": "Ready art, slider at 50 percent, start and ground-collision Results; Console zero warnings/errors; Play mode stopped",
+  "webglRebuilt": false,
+  "previousWebglZipSha256": "C80B01C6920B4C98A17710518C6BD9B3F3A04C59EBB8116225A116937EB0B956",
+  "verifiedUtc": "2026-11-02T03:58:08.8267707Z"
+}

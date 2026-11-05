@@ -1,0 +1,66 @@
+Sprint 11: Use the last sound preview for flaps
+Date: 2026-11-02
+Status: user-selected asset replacement implemented; static asset checks pass. Unity import/playback and user understanding pending.
+
+Goals and why
+- Replace the current flap cue with the last preview in the user's screenshot.
+- Preserve existing references by replacing the audio content while keeping the same Unity asset identity.
+- This is an asset-only edit directly requested by the user. No code was written and no gameplay settings changed.
+
+Selection and license
+- Creator: Aj_. Pack: Bird, cricket, frog and mosquito sounds.
+- Source: https://opengameart.org/content/birdcricketfrog-and-mosquito-sounds
+- Live source-page preview order: bird2.ogg, bird.ogg, birdNight.ogg, cricket.ogg, cricket2.ogg, distressedMosquito.ogg, frog.ogg.
+- Last/seventh preview: frog.ogg. Lossless archive entry: birdsCrickets/frog.wav.
+- The creator page explicitly declares CC0, linked to https://creativecommons.org/publicdomain/zero/1.0/.
+- Original archive SHA256: 9F815B60C16F9EF8052D4C6F5BD86C4F0CE56541B05400347F7032CD06947523.
+- Imported WAV SHA256: 2FFEBB3AB1A5622E9A67D1696F1472CB0EAD720076DDD6C62E3983F0BB87FA47.
+- Mono 44100 Hz, 16-bit PCM, duration 0.291723 seconds. No trimming, fading, pitch changes or waveform edits.
+
+Changes and files touched
+- Games/26_FlapDash/Assets/ThirdParty/AjFlapChirp/FlapChirp.wav: replaced cricket.wav content with the original frog.wav content.
+- Games/26_FlapDash/Assets/ThirdParty/AjFlapChirp/PROVENANCE.txt: current selection, source hash, duration and replacement evidence.
+- Games/26_FlapDash/Assets/ThirdParty/AssetLicenses.txt and SprintDocs/Asset_Licenses.txt: current sound record, retaining Sprint 06 history.
+- SprintDocs/Sprint_11.txt and SprintDocs/Validation/Sprint11/Sound_Asset_Checks.json.
+- Root status, design, decision, requirements and handoff records.
+- No scripts, .meta files, scenes, prefabs or builds were edited.
+
+Done condition and static verification
+- Source-page last-preview URL and CC0 declaration verified.
+- Selected lossless WAV matches the archive bytes/hash exactly.
+- WAV RIFF structure and PCM format parsed from the file; duration remains within the existing less-than-0.3-second short-cue expectation.
+- Existing meta/GUID 0ae780834e8e52941adbb90a47a6b676, preload/PCM import settings and source references are preserved.
+- Hashes of every C# file, the scene, Player prefab, WAV meta and WebGL archive match their pre-edit baseline.
+- Evidence: SprintDocs/Validation/Sprint11/Sound_Asset_Checks.json.
+- Original selection data, source-page capture, previous WAV and previous provenance are backed up in .validation/Sprint11.
+- Unity was not launched or controlled. No import, playback, speaker-output or WebGL test was run. Previous Sprint 06 behavior results do not validate the new sound.
+- Final acceptance: the user hears the selected last sound on accepted flaps and can explain why references still work.
+
+Manual check for the user
+1. Let Unity detect and reimport FlapChirp.wav. No scene regeneration is needed.
+2. Enter Play mode, start a round and flap. Listen for the newly selected sound at the existing volume 0.3.
+3. Confirm menu clicks do not chirp, holding input does not repeat it, rapid flaps restart one source and round end stops playback.
+4. Check the Console and report any import/playback error. Review loudness by listening; no listening-quality claim is made from the WAV format checks.
+5. WebGL still contains the old Sprint 03 build; rebuilding remains deferred.
+
+Explanation
+- Unity references imported assets through the GUID in their .meta file. Keeping that file preserves the assigned clip references while replacing its waveform content.
+- The existing FlapPlayer plays the assigned AudioSource on an accepted flap, so changing the asset changes the sound without changing input or movement code.
+
+Senior note
+- Keep the original .meta when swapping an asset in place. Replacing it can break references. File-format checks do not replace a listening check for volume, latency or feel.
+
+Learn more
+- Unity concept: asset metadata, GUIDs and asset reimporting.
+
+Understanding check
+1. Why did we keep FlapChirp.wav.meta unchanged?
+2. Why can this sound change work without editing FlapPlayer.cs?
+
+Open questions
+- User Unity import and listening result for the new cue.
+- User explanation and previous learning answers.
+- No next sprint, PC control or WebGL rebuild is started.
+
+Ready-to-copy Git commit message
+Use the last selected preview for flap audio

@@ -1,0 +1,203 @@
+{
+  "status": "PASS",
+  "archivePath": "C:\\Users\\Racy\\OneDrive\\Documents\\ChatGPT\\Skill-Based PvP Game\\Games\\26_FlapDash\\Builds\\FlapDash_WebGL_2026-11-05.zip",
+  "archiveBytes": 18487707,
+  "archiveSha256": "FD6EBD34D117D6F6B8E2DCC2C3F9F9E396F16EC07180EEAFE54EBE55B7A43D9A",
+  "archiveFileCount": 32,
+  "allEntriesReadAndMatched": true,
+  "entries": [
+    {
+      "path": "AssetLicenses.txt",
+      "bytes": 6726,
+      "sha256": "C7D033CF85306027E52D0E07D4994D32373131B737F36A801DF83015E155B0D9",
+      "matches": true
+    },
+    {
+      "path": "Build_Manifest.json",
+      "bytes": 5484,
+      "sha256": "DFF018639313F683321E050D724B73F93EE9C7E68D4124A71E6D278E29472F62",
+      "matches": true
+    },
+    {
+      "path": "Build_Validation.txt",
+      "bytes": 1170,
+      "sha256": "BA78B39709C4BC8DC661CEA0C0E30E98B07DCC90A5647A0027E1303D2CC52CB7",
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "bytes": 5655,
+      "sha256": "48F7663BA13B7A5BCB6EEA88DF1377ADC5EFA9F08BBF31D002246A84E43B4CC6",
+      "matches": true
+    },
+    {
+      "path": "README.txt",
+      "bytes": 2194,
+      "sha256": "D423548D0BA5BF3FDF928FE25AB64F31E7E31F160F4E784C57A4CF747BCCB864",
+      "matches": true
+    },
+    {
+      "path": "unity-build.provenance.json",
+      "bytes": 2929,
+      "sha256": "C0BA59C553461FDFA420C4362C2F569BFF5FF02759398A2530DC72DE4D199AA0",
+      "matches": true
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.data.unityweb",
+      "bytes": 5799486,
+      "sha256": "1653557C25C8702C8A299EC5C2423D0A7EB3D86162876C4C40D63E6EDD53648A",
+      "matches": true
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.framework.js.unityweb",
+      "bytes": 88118,
+      "sha256": "6FB056F652DC94E2258052DB6F5CFD72E90C3923B61DDE7BDB96056E47EE7BA7",
+      "matches": true
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.loader.js",
+      "bytes": 47867,
+      "sha256": "9129C9A6D8CCB936000CBAE265B6882746DCF02080F9A54C62A940A7EDE33EF4",
+      "matches": true
+    },
+    {
+      "path": "Build/WebGL_2026-11-05.wasm.unityweb",
+      "bytes": 13069952,
+      "sha256": "FF6228660EC5488A5EF16790F8799BCE02ADF0E8E4D9100442825367E1D90323",
+      "matches": true
+    },
+    {
+      "path": "Licenses/AssetLicenses.txt",
+      "bytes": 6726,
+      "sha256": "C7D033CF85306027E52D0E07D4994D32373131B737F36A801DF83015E155B0D9",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "bytes": 2305,
+      "sha256": "9C13BEB90EE8F70580D52A21D5233970D1C89E71E4A34A462C22610941C3C77F",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/fullscreen-button.png",
+      "bytes": 175,
+      "sha256": "21221581673A54B8139D408D4A3F8D2B879E86827D4B6FC53B995FF7A99EE3E9",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/MemoryProfiler.png",
+      "bytes": 665,
+      "sha256": "0CE87BE20D0C24AB6CB73B57DE2004DA261CC2A641E69319C6AE3FE11FC85483",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "bytes": 96,
+      "sha256": "BBEE7131AFE8A3365906240D89184DC86234C119467F390BC4BC6802328FDB4D",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-light.png",
+      "bytes": 109,
+      "sha256": "143696C060AD43D6C30F19FF5F49000927A139A2A1E4C9F45FAFAA2B90D7D2BE",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "bytes": 74,
+      "sha256": "3306A6244DCB3926FCA38A28E3CED589DF8FF1BEED955EB17C0BBF01C918BC62",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/progress-bar-full-light.png",
+      "bytes": 84,
+      "sha256": "12395EA785480C5CDF12FADE6E6CBF49666D5BB1CEF7240C113DBCBA6BDC5C87",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/style.css",
+      "bytes": 1448,
+      "sha256": "80ACAB5F9147ED15876D638D776C0F9C6B4C273C01C96D82D23B6C53EA96F9CF",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/unity-logo-dark.png",
+      "bytes": 3042,
+      "sha256": "C1B72D26C096487DABC948B54BC203F8DAC7ED4E3F5733918798E858ACB4B159",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/unity-logo-light.png",
+      "bytes": 3077,
+      "sha256": "002990AEA0D946833CADC1519D5B7E50A4570BD537A0517DD79A59D3EEC84DA7",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/unity-logo-title-footer.png",
+      "bytes": 1151,
+      "sha256": "9E8B3BDB67C2446D16362FE59449D892100931DBBADFE6A9D923A4142B57A79F",
+      "matches": true
+    },
+    {
+      "path": "TemplateData/webmemd-icon.png",
+      "bytes": 1670,
+      "sha256": "C56F5494640CEDDA273AAD38D58E6AB9DA625D5B3F4D875C0FF92C6192A569C2",
+      "matches": true
+    },
+    {
+      "path": "Licenses/AjFlapChirp/PROVENANCE.txt",
+      "bytes": 2340,
+      "sha256": "DA73EF5AA2B56BBDD0A7C050C1F758EA8596F3F7E3BB00325A0E68C4EC8B41A0",
+      "matches": true
+    },
+    {
+      "path": "Licenses/BevouliinBlueBird/bevouliin.com.txt.txt",
+      "bytes": 148,
+      "sha256": "4BE0B694686DEAF841C12D1F4A9ED2B73136B5CE99E7FC809709345BDB32BF08",
+      "matches": true
+    },
+    {
+      "path": "Licenses/BevouliinBlueBird/PROVENANCE.txt",
+      "bytes": 1119,
+      "sha256": "6ACD8B4AA916150A4A4DA2D703F0236D1B303043B8193537A48395CF858EFE40",
+      "matches": true
+    },
+    {
+      "path": "Licenses/Bhu1cPipes/PROVENANCE.txt",
+      "bytes": 1064,
+      "sha256": "B4EB7AC14AF52AB65F99611B58F970410058AA10BCE212DC3E4951A045AD408B",
+      "matches": true
+    },
+    {
+      "path": "Licenses/KenneyBackgrounds/License.txt",
+      "bytes": 614,
+      "sha256": "AF458FB4D38EE24841FC7A61414D67459A119CAD3E277CE1E606866E8399CFA8",
+      "matches": true
+    },
+    {
+      "path": "Licenses/KenneyBackgrounds/PROVENANCE.txt",
+      "bytes": 960,
+      "sha256": "E058676E782414CF5CEE32C53B0663CF06FABC9346F12704697186192A4F951D",
+      "matches": true
+    },
+    {
+      "path": "Licenses/KenneyUI/License.txt",
+      "bytes": 565,
+      "sha256": "69F7EAA5E05913B4D09CF5848F75390B5C3C9A409EF8555777803D9CA0C171FB",
+      "matches": true
+    },
+    {
+      "path": "Licenses/KenneyUI/PROVENANCE.txt",
+      "bytes": 982,
+      "sha256": "D8D8EBE2139885466C2538A908C824EC52A7B4D8667BDA7C160C220911EC5631",
+      "matches": true
+    },
+    {
+      "path": "Licenses/Tuffy/PUBLIC_DOMAIN.txt",
+      "bytes": 489,
+      "sha256": "F94032E25FB023B1DCC080956EEEE7308144814C928A4433338F9F68AE58F04A",
+      "matches": true
+    }
+  ],
+  "checkedUtc": "2026-11-05T05:47:49.0365433Z"
+}

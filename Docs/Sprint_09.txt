@@ -1,0 +1,75 @@
+Sprint 09: Replace the gameplay heading with the score
+Date: 2026-11-02
+Status: approved source and scene changes implemented; static checks pass. Unity compilation, playtesting and user understanding pending.
+
+Goals and why
+- Show only the score in the existing header while playing.
+- Keep FLAP DASH on the menu and restore it on Results.
+- Use the existing round state to control visibility. An assigned text reference can still point to an inactive GameObject, which explains the previously invisible score.
+
+Approved plan
+- RoundView.cs: connect a separate header-title object and switch title/score visibility with the round state.
+- FlapDash.unity: connect Header/Title and center the existing Score at its position.
+- This sprint record: explain changes and testing steps.
+- Done condition: menu title appears, starting replaces it with PIPES 00, passing pipes updates the score, Results restores the title, and restart returns to PIPES 00.
+- User approved this plan before code changes. Keep project-file-only work and deferred WebGL rebuilding.
+
+Diagnosis
+- Saved Header/Score had m_IsActive: 0, while Header/Title had m_IsActive: 1.
+- RoundView updated score text but did not control the separate header heading or enable Score.
+- The optional titleLabel controls the round-panel title, not Header/Title. It remains unassigned and guarded.
+
+Changes and explanation
+- Added one serialized GameObject reference named headerTitle, assigned to the existing Header/Title object.
+- When the round state changes, activate Score only while round.IsPlaying is true. Activate headerTitle while it is false.
+- This runs before the existing Playing early return, so starting and restarting both update header visibility.
+- Existing score formatting and updates remain PIPES followed by a two-digit minimum count. Existing RoundController resets the count on start/restart.
+- Centered Score at anchored position (0, -3), pivot (0.5, 0.5), size (408, 60), matching the existing title rectangle. Use centered, bold, size-38 text matching the title's style.
+- Retained the score's existing feedback reference so its point pulse still targets the same object.
+- Saved Ready-state visibility stays title on, score off; runtime controls the switch.
+- Timer remains disabled. No gameplay, course, audio, menu-panel or build changes were made.
+
+Files touched
+- Games/26_FlapDash/Assets/Scripts/RoundView.cs
+- Games/26_FlapDash/Assets/Scenes/FlapDash.unity
+- SprintDocs/Sprint_09.txt
+- SprintDocs/Validation/Sprint09/Header_Data_Checks.json
+- Root status and handoff records
+
+Verification and done condition
+- Source comparison confirms only the new header reference and three visibility statements were added.
+- Scene comparison confirms only the RoundView reference block, Score RectTransform and Score text blocks changed. Every other block, including Header/Title, pipe pattern and game settings, matches the pre-edit snapshot.
+- Scene references resolve to the existing header title; score position, centered pivot and text alignment checked.
+- Existing optional-title validation checks heading text, not active state, so its assertion is compatible with this visibility change. It was not executed.
+- WebGL ZIP SHA256 remains C80B01C6920B4C98A17710518C6BD9B3F3A04C59EBB8116225A116937EB0B956.
+- Evidence: SprintDocs/Validation/Sprint09/Header_Data_Checks.json.
+- Pre-edit snapshots: .validation/Sprint09/FlapDash.unity and RoundView.cs.
+- No Unity launch, compilation, playtest or desktop control was performed. The previous 30-check PASS is historical Sprint 06 evidence.
+- Final acceptance and understanding remain pending the user's checks below.
+
+Manual check for the user
+1. Exit Play mode. If there are no unsaved scene edits, reload the saved FlapDash scene to pick up external changes. Let Unity compile and check the Console.
+2. If you have unsaved edits, preserve your work before reloading. To merge manually, assign Header/Title to Round View / Header Title, and apply the Score rectangle and text settings above. Do not regenerate the scene.
+3. On Ready, confirm FLAP DASH appears and Score is hidden.
+4. Choose START ROUND. Confirm the heading disappears and PIPES 00 appears in its place.
+5. Pass a pipe. Confirm PIPES 01 appears in the header and there is no overlapping title.
+6. Finish the round. Confirm the title returns and the results panel reports the final score.
+7. Choose PLAY AGAIN. Confirm only PIPES 00 appears in the header and the harder pipe pattern remains.
+
+Senior note
+- Keep the two text objects as siblings. Disabling their shared Header parent would hide the score too. Toggle the heading child, not the entire panel.
+
+Learn more
+- Unity concept: GameObject activeSelf versus activeInHierarchy, and SetActive controlling a child UI object's visibility.
+
+Understanding check
+1. Why do we hide Header/Title instead of the whole Header object?
+2. Why can RoundView update score text even while Score is inactive?
+
+Open questions
+- User compilation, visual layout and Ready/Playing/Results/restart check results.
+- User explanation and previous learning answers remain pending.
+- No subsequent sprint, Unity control or WebGL rebuild is started.
+
+Ready-to-copy Git commit message
+Show the score in place of the title during play

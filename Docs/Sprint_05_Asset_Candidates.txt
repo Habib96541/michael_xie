@@ -1,0 +1,50 @@
+Sprint 05 staged art candidates
+Date checked: 2026-11-02
+Status: inspected sources were approved and selected files are now imported. This record preserves the candidate inspection; exact imported files and notices are in each project's Assets/ThirdParty provenance records and Validation/Sprint05/Asset_Manifest.json.
+Staging directory: .validation/ArtRefresh05 (ignored local working files).
+
+Blue bird
+Creator: bevouliin.com
+Source: https://opengameart.org/content/game-character-blue-flappy-bird-sprite-sheets
+Download: https://opengameart.org/sites/default/files/Blue%20Bird%20Sprite%20Sheets.zip
+Archive SHA256: 0BC04C9E27E0A3962F4D1474F41D0F6EB75770E40DE2B6FB2B785D19580A8F92
+License evidence: creator upload identifies the author as bevouliin.com and explicitly lists CC0.
+Archive content: Transparent PNG/frame-1.png through frame-8.png, GIF-preview.gif and bevouliin.com.txt.txt.
+The creator note only links to the creator's site; it does not contain separate license terms. Preserve the source-page license declaration rather than invent a bundled license.
+Inspected: frame-1.png is a cyan cartoon bird with dark outlines, white belly and orange beak/feet.
+Proposed import: all eight animation frames and creator/source evidence. Preview GIF is reference only.
+
+Green pipe
+Creator: bhu1c
+Source: https://opengameart.org/content/pipe
+Download: https://opengameart.org/sites/default/files/pipe_1.png
+File SHA256: 9FCD86D5B6015E63C8944BE5C4CEB9510D610341A897646909DD9DCDA6D21FD8
+License evidence: creator upload explicitly lists CC0.
+Inspected: 1920 x 1080 PNG; transparent corner alpha 0; green shaded tube/body and dark edged rim. No separate license file accompanies this single PNG download.
+Proposed import: original PNG, useful sprite regions/derived pieces and source/license evidence. Do not resize colliders to follow its transparent canvas bounds.
+
+Kenney UI Pack 2.0
+Creator: Kenney
+Source: https://kenney.nl/assets/ui-pack
+Creator mirror: https://opengameart.org/comment/26514
+Downloaded from creator mirror: https://opengameart.org/sites/default/files/kenney_ui-pack.zip
+Archive SHA256: A8A14A234911EB648C062622915C93E79E94E97CB7F9F375A70F6617F1174318
+The direct Kenney download endpoint returned HTTP 403; the creator's OpenGameArt upload supplied the archive.
+Archive License.txt: UI Pack (2.0), created/distributed by Kenney, creation date 12-06-2024, Creative Commons Zero / CC0; personal, educational and commercial use allowed, credit optional.
+Inspected: Sample.png shows matching rounded buttons, panels, sliders, stars and shadows. Full-resolution artwork has Default and Double PNG variants in Blue, Green, Grey, Red and Yellow folders.
+Examples: PNG/Yellow/Double/button_rectangle_depth_gloss.png; PNG/Grey/Double/button_rectangle_depth_flat.png; matching slider artwork.
+Proposed import: selected UI PNGs and original License.txt only. Do not import bundled fonts, audio, promotional samples or logos.
+
+Kenney background layers
+Creator: Kenney
+Source: https://kenney.nl/assets/background-elements-remastered
+Creator mirror: https://opengameart.org/content/background-elements-redux
+Download: https://opengameart.org/sites/default/files/Background%20Elements%20Redux.zip
+Archive SHA256: B2398079E22F9002F0A5006CBBB0728D4093DE7DC77A4226EB3DEF7B9748166D
+Archive License.txt: Background Elements Redux, created/distributed by Kenney, creation date 26-02-2019, Creative Commons Zero / CC0; personal, educational and commercial use allowed, credit optional.
+Inspected: Sample.png shows bright layered skies, clouds, hills and grass.
+Useful paths: Backgrounds/Elements/cloudLayer1.png, cloudLayer2.png, groundLayer1.png, groundLayer2.png, hills.png and hillsLarge.png.
+Proposed import: selected cloud/ground/hill PNGs and original License.txt. Promotional samples and logos remain outside the game.
+
+Sourcing boundary
+These are creator-declared CC0 assets. Preserve the evidence and record exact imported/derived files if the sprint is approved. Keep Unity/software dependency licensing separate; this is not a declaration that the entire Unity project is copyright-free.

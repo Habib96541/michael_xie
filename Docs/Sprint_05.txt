@@ -1,0 +1,78 @@
+Sprint 05: Replace Flap Dash placeholders with bright cartoon artwork
+Date: 2026-11-02
+Status: implementation verified; user appearance review and understanding pending.
+
+Goals
+- Replace the basic-looking bird, pipes, UI and background with the approved creator-declared CC0 art.
+- Make the presentation brighter and more animated while retaining Sprint 04 movement.
+- Keep the independent project self-contained and defer WebGL rebuilding.
+
+Changes
+- Imported eight original bird frames by bevouliin.com, the pipe PNG by bhu1c, six Kenney UI PNGs and five Kenney background PNGs.
+- Added FlapDashArtSetup for consistent sprite import, sliced UI borders and two pipe-region Sprite assets.
+- PlayerFeedback selects authored bird frames at a rate scaled by Visual Energy; its visual child still handles squash and tilt. Results freezes the frame animation; zero energy selects the neutral frame.
+- BackdropMotion moves paired cloud transforms; the green hill/ground layers are arranged and tinted in the scene.
+- Replaced the visible generated bird and pipe shapes with imported artwork. Pipe bodies and rims keep explicit BoxCollider2D sizes on parent objects.
+- Reskinned header, menu, button, slider and controls panel with imported sprites, light gradients, navy text, a yellow primary button, and shadows. The menu has a bird portrait.
+- Preserved flap strength 8, gravity scale 2, pipe speed 2.65, spawn interval 1.48, first spawn delay 1.1, timestep 0.02, player radius 0.3, pipe/gap geometry, authored course, scoring and 60-second duration.
+- Retained original Kenney License.txt files and the bird creator note. The bird and pipe downloads have source-page CC0 declarations rather than bundled licenses; per-source provenance records preserve that distinction.
+- No new audio/font packages, art frameworks, other games or WebGL builds.
+
+Files touched
+Inside Games/26_FlapDash:
+- Assets/Editor/FlapDashArtSetup.cs (new)
+- Assets/Editor/FlapDashProjectSetup.cs
+- Assets/Editor/FlapDashValidation.cs
+- Assets/Scripts/PlayerFeedback.cs
+- Assets/Scripts/BackdropMotion.cs (new)
+- Assets/Scenes/FlapDash.unity
+- Assets/Prefabs/Player.prefab and PipePair.prefab
+- Assets/Art/PipeBody.asset and PipeRim.asset (new)
+- Assets/ThirdParty/BevouliinBlueBird, Bhu1cPipes, KenneyUI and KenneyBackgrounds (new selected artwork/notices/provenance)
+- Assets/ThirdParty/AssetLicenses.txt and generated asset metadata
+- The scene generator also rewrites its existing generated control/shape/material assets as needed. No imported PNG pixels were changed.
+Root records:
+- Seven root Markdown documents, SprintDocs/Asset_Licenses.txt, Sprint_05_Plan.txt, Sprint_05_Asset_Candidates.txt, this record and Sprint05 validation/render evidence.
+- The existing FlapDashPreview helper is reused without code changes.
+
+Done condition and evidence
+- Scene setup, behavior validation and native render commands all exited 0.
+- Validation/FlapDash_Smoke05.json reports PASS for 22 checks with an empty failures list.
+- These include the original 17 checks plus assigned imported artwork, unchanged pipe collider dimensions, slider bounds, zero-energy motion suppression and active bird/cloud animation.
+- Final setup, validation and preview logs contain no C# errors/warnings, obsolete API diagnostics, runtime exceptions or cleanup assertions.
+- Validation/Sprint05 contains Ready, Playing, Results and NoEffects renders at 540 x 960, plus 24 native Unity animation frames and FlapDash_Art_Animation.gif.
+- The captured states were visually inspected for text contrast, score placement, sprite alignment, pipe seams, slider bounds and target visibility. Multiple animated frames were inspected for actual wing-pose changes.
+- Capture freezes physics and stages a pipe/score event. The animation preview is staged visual evidence, not a human playthrough or fairness/performance proof.
+- A live GUI smoke check confirmed the new Ready screen, actual Visual Energy slider interaction at 50%, round start and ground-collision Results. Unity Console showed zero warnings/errors. Play mode was stopped afterward.
+- Validation/Sprint05/Asset_Manifest.json records exact imported content hashes. All 20 imported PNG files retain their source bytes. Original source/archive hashes and transformations are recorded inside the project.
+- The WebGL archive remains the previous version, SHA256 C80B01C6920B4C98A17710518C6BD9B3F3A04C59EBB8116225A116937EB0B956. No build was performed.
+
+Debugging lesson
+- The first native render showed the slider fill wider than its track. Its RectTransform had a fixed width as well as stretched anchors driven by Slider, which added both widths. Set the fill's sizeDelta to zero; a new bounds check now detects this regression.
+- Cloud layers contained an opaque base color, so their bottom edges showed a hard seam against a different camera color. Inspecting the source pixel color identified the mismatch; matching the camera background removed it.
+- The supplied background layers are light blue by default. Renderer tints create the approved green hills without changing the original asset pixels.
+
+Explanation
+- A sprite is a Unity reference to an image or a region of one. Bird animation swaps among eight assigned sprites; the Rigidbody remains on the parent object.
+- A pipe's artwork is a child of its collision object. Its visual proportions can change without resizing the parent's explicitly configured collider.
+- Sliced UI images preserve border/corner regions while stretching their center. Keep layout anchors and sizeDelta consistent so the stretched image stays inside its track.
+- Visual Energy scales optional bird/cloud motion. The gameplay timing and collision code do not read it.
+
+Senior note
+- Imported sprite bounds include transparent padding and can differ between files. Never let new art silently redefine colliders. Preserve source notices and inspect the actual assembled scene, not only the source previews.
+
+Learn more
+- Unity concept: sliced UI sprites (nine-slice scaling), sprite borders and RectTransform anchors.
+
+Understanding check
+1. Why must the new pipe image not determine the collider dimensions?
+2. What does slicing preserve when a UI panel is stretched?
+
+Open questions
+- User review of the brighter appearance and intended-player playtesting.
+- Sustained device/browser performance and accessibility evaluation remain unmeasured. No ADHD engagement or clinical benefit is claimed.
+- WebGL rebuild remains deferred; do not present the old browser build as this version.
+- Prior learning answers remain pending. No next sprint is authorized.
+
+Ready-to-copy Git commit message
+Replace Flap Dash placeholders with bright cartoon artwork

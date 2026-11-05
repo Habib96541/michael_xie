@@ -1,0 +1,32 @@
+{
+  "status": "STATIC_ASSET_CHECKS_PASS",
+  "source": "https://opengameart.org/content/birdcricketfrog-and-mosquito-sounds",
+  "creator": "Aj_",
+  "sourceLicense": "CC0",
+  "previewOrder": [
+    "https://opengameart.org/sites/default/files/bird2.ogg",
+    "https://opengameart.org/sites/default/files/bird.ogg",
+    "https://opengameart.org/sites/default/files/birdNight.ogg",
+    "https://opengameart.org/sites/default/files/cricket.ogg",
+    "https://opengameart.org/sites/default/files/cricket2.ogg",
+    "https://opengameart.org/sites/default/files/distressedMosquito.ogg",
+    "https://opengameart.org/sites/default/files/frog.ogg"
+  ],
+  "selectedPreview": "https://opengameart.org/sites/default/files/frog.ogg",
+  "archiveEntry": "birdsCrickets/frog.wav",
+  "archiveSha256": "9F815B60C16F9EF8052D4C6F5BD86C4F0CE56541B05400347F7032CD06947523",
+  "wavSha256": "2FFEBB3AB1A5622E9A67D1696F1472CB0EAD720076DDD6C62E3983F0BB87FA47",
+  "durationSeconds": 0.2917233560090703,
+  "channels": 1,
+  "sampleRate": 44100,
+  "bitsPerSample": 16,
+  "originalWavBytesPreserved": true,
+  "originalMetaGuidAndImporterUnchanged": true,
+  "allScriptsScenePlayerPrefabAndWebGLUnchanged": true,
+  "protectedFileCount": 18,
+  "sourcePageSha256": "39EB531FBD0C3CF2469A5ACBDA0421BB240EF9441B0F4212CA756ED074C0DEA4",
+  "unityImport": "NOT RUN",
+  "unityPlayback": "NOT RUN",
+  "webglRebuilt": false,
+  "checkedUtc": "2026-11-02T09:12:05.7676329Z"
+}
