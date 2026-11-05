@@ -1,0 +1,10 @@
+{
+  "name": "Tesla Roadster Redline Run",
+  "short_name": "Roadster",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#080a0d",
+  "theme_color": "#080a0d"
+}
