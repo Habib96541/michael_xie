@@ -20,9 +20,15 @@ Double-click `Deliverables/BullRide.html` to run the packaged Unity player, or s
 
 Choose **Bull Ride → Run Logic Checks** in Unity to verify the gate timing, multiplier, unattended fall, eight-second ride, and imported hoof rig.
 
+## Deploy on Render
+
+The repository includes the compiled Unity game; Render does not need to run Unity. Use the included `render.yaml` for a Static Site on branch **Bull-Ride**. For an existing Static Site configured in the dashboard, leave **Root Directory** empty, set **Publish Directory** to `Deliverables/BullRide-WebGL`, and set **Build Command** to `echo "Using the committed Unity WebGL build"`. Deploy the latest commit. Keep the `Build` and `TemplateData` directories alongside the build's `index.html`.
+
+`Deliverables/BullRide.html` is the alternative self-contained Unity build. If your deployment copies that file to `index.html`, copy the newly generated version after each rebuild. The repository-root `index.html` is the separate prototype, not the compiled Unity player.
+
 ## iPhone and iPad
 
-The game adapts to portrait and landscape. The Unity player keeps the controls inside the device safe area. The browser build uses Safari's viewport insets and supports touch steering.
+The game adapts to portrait and landscape. The Unity player keeps the controls inside the device safe area. Both browser builds constrain their canvas to the viewport, including high-density phone screens and browser toolbar resizing, use Safari's viewport insets, and support touch steering. The loading screen is clipped to its own viewport so its decorative glow cannot expand the mobile page.
 
 Open this folder as a Unity project in Unity 6000.6.7f1. The scene is `Assets/Scenes/BullRide.unity`. To preview device sizes in the Editor, select **Simulator** in the Game view and choose an iPhone or iPad preset.
 

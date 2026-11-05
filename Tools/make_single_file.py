@@ -78,11 +78,13 @@ PAGE = r"""<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:,">
 <title>__PRODUCT__</title>
 <style>
   html, body {
     margin: 0; padding: 0; height: 100%; width: 100%;
     background: #0d121f; overflow: hidden;
+    overscroll-behavior: none;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-tap-highlight-color: transparent;
   }
@@ -90,14 +92,20 @@ PAGE = r"""<!DOCTYPE html>
     position: fixed;
     inset: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
            env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    /* Keep intrinsic canvas dimensions from expanding the mobile layout. */
+    overflow: hidden; contain: strict;
+    height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
   }
   #unity-canvas {
+    position: absolute; inset: 0;
     width: 100%; height: 100%; display: block; outline: none; touch-action: none;
     background: #0d121f;
   }
 
   #boot {
-    position: absolute; inset: 0; z-index: 10;
+    position: fixed; inset: 0; z-index: 10;
+    /* The 620px glow must not widen a phone page, even after boot is hidden. */
+    overflow: hidden;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: 26px; background: #0d121f;
     transition: opacity .55s ease, visibility .55s ease;

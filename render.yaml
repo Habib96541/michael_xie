@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bull-ride
+    runtime: static
+    branch: Bull-Ride
+    buildCommand: echo "Using the committed Unity WebGL build"
+    staticPublishPath: ./Deliverables/BullRide-WebGL
+    headers:
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache
+      - path: /Build/*
+        name: Cache-Control
+        value: no-cache

@@ -377,9 +377,10 @@ namespace BullRide.EditorTools
             {
                 File.AppendAllText(cssPath, @"
                     
-                    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #0d121f; }
+                    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; overscroll-behavior: none; background: #0d121f; }
                     #unity-container, #unity-container.unity-desktop, #unity-container.unity-mobile {
                         position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh; transform: none;
+                        overflow: hidden; contain: strict;
                     }
                     #unity-fullscreen-container, .unity-mobile #unity-fullscreen-container {
                         position: absolute;
