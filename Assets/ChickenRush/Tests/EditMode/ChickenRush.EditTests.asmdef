@@ -1,0 +1,1 @@
+{"name":"ChickenRush.EditTests","references":["ChickenRush.Runtime","Unity.ugui","Unity.TextMeshPro"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"]}

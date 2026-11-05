@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8bf477c2c4db947a116674f5d7028f, type: 3}
+  m_Name: NORMAL
+  m_EditorClassIdentifier: ChickenRush.Runtime::ChickenRush.RushDifficulty
+  displayName: MEDIUM
+  hopSeconds: 0.62
+  trafficSpeed: 2.3
+  trafficSpacing: 5.5
+  multipliers:
+  - 1.12
+  - 1.29
+  - 1.49
+  - 1.75
+  - 2.07
+  - 2.48
+  - 3
+  - 3.67
+  - 4.55
+  - 5.69
+  - 7.21
+  - 9.23
+  - 11.95
+  - 15.66
+  - 20.77
+  - 27.88
+  - 37.88
+  - 52.11
+  - 72.58
+  - 102.37
+  speedScale: 1
+  tiers:
+  - firstLane: 1
+    vehicleCount: 3
+    speed: 3.9
+    speedPerLane: 0.2
+    minGapSeconds: 0.72
+    maxGapSeconds: 1.25
+    guaranteedGapSeconds: 0.98
+  - firstLane: 4
+    vehicleCount: 4
+    speed: 4.9
+    speedPerLane: 0.2
+    minGapSeconds: 0.4
+    maxGapSeconds: 0.9
+    guaranteedGapSeconds: 0.85
+  - firstLane: 7
+    vehicleCount: 6
+    speed: 5.9
+    speedPerLane: 0.23
+    minGapSeconds: 0.18
+    maxGapSeconds: 0.52
+    guaranteedGapSeconds: 0.76
+  - firstLane: 11
+    vehicleCount: 7
+    speed: 7.1
+    speedPerLane: 0.1
+    minGapSeconds: 0.12
+    maxGapSeconds: 0.3
+    guaranteedGapSeconds: 0.72
+  successChances:
+  - 0.88
+  - 0.871
+  - 0.862
+  - 0.853
+  - 0.844
+  - 0.835
+  - 0.826
+  - 0.817
+  - 0.80799997
+  - 0.799
+  - 0.79
+  - 0.781
+  - 0.772
+  - 0.763
+  - 0.754
+  - 0.745
+  - 0.736
+  - 0.727
+  - 0.718
+  - 0.709
+  riskVersion: 3

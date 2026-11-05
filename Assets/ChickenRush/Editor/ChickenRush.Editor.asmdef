@@ -1,0 +1,1 @@
+{"name":"ChickenRush.Editor","references":["ChickenRush.Runtime","Unity.TextMeshPro","Unity.RenderPipelines.Universal.Runtime"],"includePlatforms":["Editor"]}

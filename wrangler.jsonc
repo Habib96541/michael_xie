@@ -1,0 +1,8 @@
+{
+  "name": "chicken-rush-classy-cross-roads",
+  "compatibility_date": "2026-11-05",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./Builds/WebGL"
+  }
+}

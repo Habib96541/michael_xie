@@ -1,0 +1,1 @@
+Original AI artwork generated with the built-in image-generation tool for this revision. Vehicles match the supplied chicken style. Prompts are recorded in the implementation report. Separate front/rear views; no reference-game artwork shipped. Native cuts only, 24/255 low-alpha noise cutoff, 8px transparent padding, no sprite resampling.

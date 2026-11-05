@@ -1,0 +1,282 @@
+[
+  {
+    "name": "CompactDown",
+    "sourceBox": [
+      0,
+      0,
+      320,
+      530
+    ],
+    "trim": [
+      40,
+      171,
+      310,
+      475
+    ],
+    "size": [
+      286,
+      320
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "TaxiDown",
+    "sourceBox": [
+      320,
+      0,
+      620,
+      530
+    ],
+    "trim": [
+      27,
+      171,
+      291,
+      473
+    ],
+    "size": [
+      280,
+      318
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "VanDown",
+    "sourceBox": [
+      620,
+      0,
+      925,
+      530
+    ],
+    "trim": [
+      14,
+      120,
+      285,
+      471
+    ],
+    "size": [
+      287,
+      367
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "TruckDown",
+    "sourceBox": [
+      925,
+      0,
+      1230,
+      530
+    ],
+    "trim": [
+      8,
+      78,
+      291,
+      479
+    ],
+    "size": [
+      299,
+      417
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "DeliveryDown",
+    "sourceBox": [
+      1230,
+      0,
+      1536,
+      530
+    ],
+    "trim": [
+      15,
+      111,
+      280,
+      477
+    ],
+    "size": [
+      281,
+      382
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "CompactUp",
+    "sourceBox": [
+      0,
+      530,
+      320,
+      1024
+    ],
+    "trim": [
+      43,
+      123,
+      306,
+      387
+    ],
+    "size": [
+      279,
+      280
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "TaxiUp",
+    "sourceBox": [
+      320,
+      530,
+      620,
+      1024
+    ],
+    "trim": [
+      33,
+      100,
+      285,
+      383
+    ],
+    "size": [
+      268,
+      299
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "VanUp",
+    "sourceBox": [
+      620,
+      530,
+      925,
+      1024
+    ],
+    "trim": [
+      16,
+      58,
+      284,
+      388
+    ],
+    "size": [
+      284,
+      346
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "TruckUp",
+    "sourceBox": [
+      925,
+      530,
+      1230,
+      1024
+    ],
+    "trim": [
+      6,
+      23,
+      295,
+      390
+    ],
+    "size": [
+      305,
+      383
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "DeliveryUp",
+    "sourceBox": [
+      1230,
+      530,
+      1536,
+      1024
+    ],
+    "trim": [
+      15,
+      56,
+      281,
+      397
+    ],
+    "size": [
+      282,
+      357
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "LandingPad",
+    "sourceBox": [
+      0,
+      0,
+      690,
+      565
+    ],
+    "trim": [
+      38,
+      81,
+      659,
+      552
+    ],
+    "size": [
+      637,
+      487
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "Barrier",
+    "sourceBox": [
+      695,
+      0,
+      1280,
+      560
+    ],
+    "trim": [
+      15,
+      239,
+      540,
+      491
+    ],
+    "size": [
+      541,
+      268
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "Shrub",
+    "sourceBox": [
+      0,
+      575,
+      680,
+      1240
+    ],
+    "trim": [
+      59,
+      63,
+      606,
+      609
+    ],
+    "size": [
+      563,
+      562
+    ],
+    "alphaZeroBorder": true
+  },
+  {
+    "name": "Sidewalk",
+    "sourceBox": [
+      700,
+      565,
+      1280,
+      1235
+    ],
+    "trim": [
+      37,
+      12,
+      504,
+      631
+    ],
+    "size": [
+      483,
+      635
+    ],
+    "alphaZeroBorder": true
+  }
+]

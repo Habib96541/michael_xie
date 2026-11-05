@@ -1,0 +1,13 @@
+Chicken Rush: Cash Out! 3.0
+
+Upload this entire folder to static hosting.
+Keep Build/ and chicken.png next to index.html. The .unityweb files contain gzip
+data and the loader includes a decompression fallback; custom Content-Encoding
+headers are unnecessary. Do not double-compress .unityweb files.
+
+Local play: python -m http.server 8783 --bind 127.0.0.1
+Then visit http://127.0.0.1:8783/ (not file://).
+
+Space/Right: play/hop right. C: cash out. P/Escape/gear: pause. M: sound.
+Mouse/touch buttons and road tapping are supported. Virtual coins only.
+Each hop has seeded odds. Input timing never changes those odds.

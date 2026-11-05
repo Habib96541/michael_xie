@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#132234">
+  <meta name="description" content="Chicken Rush: Cash Out! Watch the traffic. Hop right. Know when to bank your virtual coins.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='34' rx='23' ry='28' fill='%23fff0d9'/%3E%3Cpath d='M20 37Q32 48 44 37' fill='none' stroke='%23bd4f44' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <title>Chicken Rush: Cash Out!</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#132234;color:#fff3dc;font-family:Arial,sans-serif;overscroll-behavior:none}
+    #stage{position:fixed;inset:0;width:100%;height:100%;height:100dvh;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+    #unity-canvas{display:block;width:100%;height:100%;outline:none;touch-action:none;-webkit-tap-highlight-color:transparent;background:#132234}
+    #loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 40%,#294452,#132234 70%);padding:24px;z-index:2}
+    #loading img{width:96px;height:96px;object-fit:contain;animation:hop 1.6s ease-in-out infinite}
+    #loading h1{font-size:clamp(30px,5vw,48px);letter-spacing:-1.5px;margin:12px 0 2px;line-height:1;color:#fff3dc}
+    .subtitle{font-size:12px;letter-spacing:5px;color:#ffd06b;margin:8px 0 26px}.track{width:min(250px,70vw);height:5px;border-radius:5px;background:#395367;overflow:hidden}#fill{width:0;height:100%;background:#73dbb4;transition:width .2s}
+    #loading p:last-child{font-size:12px;color:#a7bcc5;margin-top:18px}#error{display:none;position:absolute;inset:15%;padding:24px;border:1px solid #526777;border-radius:16px;background:#203449;white-space:pre-wrap;overflow:auto;font-size:16px;line-height:1.5;z-index:3}
+    @keyframes hop{50%{transform:translateY(-7px) rotate(3deg)}}@media(prefers-reduced-motion:reduce){#loading img{animation:none}}
+  </style>
+</head>
+<body>
+  <main id="stage">
+    <canvas id="unity-canvas" tabindex="0" aria-label="Chicken Rush arcade game. Space or Right Arrow hops right. C cashes out. P pauses. Mouse and touch controls are inside the game."></canvas>
+    <div id="loading"><img src="chicken.png" alt=""><h1>CHICKEN RUSH</h1><p class="subtitle">CASH OUT!</p><div class="track"><div id="fill"></div></div><p>Warming up the crossing...</p></div>
+    <div id="error" role="alert"></div>
+  </main>
+  <script>
+    const canvas=document.getElementById('unity-canvas'),loading=document.getElementById('loading'),errorBox=document.getElementById('error');
+    function updateViewport(){const r=canvas.getBoundingClientRect();window.rushViewport={width:r.width,height:r.height};}
+    updateViewport();new ResizeObserver(updateViewport).observe(canvas);window.addEventListener('resize',updateViewport);
+    if(window.visualViewport)window.visualViewport.addEventListener('resize',updateViewport);
+    function fail(message){loading.style.display='none';errorBox.style.display='block';errorBox.textContent='Chicken Rush could not start.\n\n'+message+'\n\nPlease try a current browser with WebGL 2 enabled.';}
+    function banner(message,type){if(type==='error')fail(message);else console.warn(message);}
+    const probe=document.createElement('canvas');
+    if(!probe.getContext('webgl2'))fail('This browser does not provide WebGL 2.');
+    else{
+      const config={dataUrl:'Build/WebGL.data.unityweb',frameworkUrl:'Build/WebGL.framework.js.unityweb',codeUrl:'Build/WebGL.wasm.unityweb',
+        streamingAssetsUrl:'StreamingAssets',companyName:"Chicken Rush Studio",productName:"Chicken Rush Cash Out!",productVersion:"3.0.0",
+        showBanner:banner,devicePixelRatio:Math.min(window.devicePixelRatio||1,2),matchWebGLToCanvasSize:true};
+      const script=document.createElement('script');script.src='Build/WebGL.loader.js';
+      script.onerror=()=>fail('The game could not be downloaded. Check your connection and reload.');
+      script.onload=()=>createUnityInstance(canvas,config,p=>document.getElementById('fill').style.width=(p*100)+'%').then(instance=>{
+        window.unityInstance=instance;loading.style.display='none';updateViewport();canvas.focus();
+      }).catch(message=>fail(String(message)));
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
