@@ -1,0 +1,46 @@
+{
+  "_headers": {
+    "bytes": 575,
+    "sha256": "05d95f74481d4b72d12b2c84a34cec5a6b6f50c5c260ed547a0c6fbf731ade01"
+  },
+  "ASSET_CREDITS.md": {
+    "bytes": 730,
+    "sha256": "4d10ac4ba114cf2784bf41777a8bf026c38f3f50706ef7d11666ab2f97a06f22"
+  },
+  "Build/WebGL.data.gz": {
+    "bytes": 4193156,
+    "sha256": "9fe10a7809f079469dd9995a26cdd868edc65904ca727783364e98c734b941fc"
+  },
+  "Build/WebGL.framework.js.gz": {
+    "bytes": 86317,
+    "sha256": "718ba288679af3e9ead57e268df0e1dc0b62a18ab1622b62b4bfd3fd5a5680df"
+  },
+  "Build/WebGL.loader.js": {
+    "bytes": 26982,
+    "sha256": "1abd26de0901a94c36c1451fad40687b02d8fb56d24a56bac0b9bcef224c5375"
+  },
+  "Build/WebGL.wasm.gz": {
+    "bytes": 7652458,
+    "sha256": "b4d5f6c1cfab61aa4c5e32923bcc1cc4e5b14e6939b54fa9d21f51b81a5b9742"
+  },
+  "index.html": {
+    "bytes": 3878,
+    "sha256": "eb0019cb666d41fa0f5ed88d615315bd5b86452879a054f1fa809654ebcb69c5"
+  },
+  "LiberationSans-OFL.txt": {
+    "bytes": 4469,
+    "sha256": "37f8552e9a874ec10710dc0ede6a9adf168e6609fbd02a507f35629373b85a48"
+  },
+  "Play Hydraulic Press.cmd": {
+    "bytes": 50,
+    "sha256": "6aaa8d529e4d22991b79866c2f9723d8eb079023e80210230b4e062813c7d98f"
+  },
+  "README.txt": {
+    "bytes": 524,
+    "sha256": "63ca1fbcd144143a109945ca6860488389f1d1a3ff6cc05c273db7639941ed97"
+  },
+  "serve.py": {
+    "bytes": 1384,
+    "sha256": "0c7fbfb2bba2b855428837239548a4fbc6f80eec5fc757c42c5d73734e17d091"
+  }
+}

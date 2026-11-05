@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "command": "command",
+  "data": {
+    "command": "console status",
+    "parameters": {},
+    "result": {
+      "entries": [],
+      "cursor": 243,
+      "session": "7377161f9fbb4b6dbdf3f0b005e9c8d8",
+      "returned": 0,
+      "dropped": false,
+      "reset": false,
+      "counts": {
+        "error": 2,
+        "warn": 2,
+        "log": 20
+      },
+      "groundTruth": {
+        "sampledUtc": "2026-11-02T05:29:20.6787186Z",
+        "ageMs": 197,
+        "compilationFailed": false,
+        "compiling": false,
+        "consoleErrors": 0,
+        "consoleWarnings": 0,
+        "consoleLogs": 2,
+        "seeded": true
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hydraulic Press"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

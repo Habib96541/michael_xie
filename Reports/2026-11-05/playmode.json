@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "command": "command",
+  "data": {
+    "command": "test status",
+    "parameters": {},
+    "result": {
+      "status": "completed",
+      "duration": 51.52,
+      "summary": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "inconclusive": 0
+      },
+      "results": [
+        {
+          "FullName": "HydraulicPress.PlayTests.GameplayTests.EveryObjectCanDeformAndResetWithoutAllocatingNewMeshes",
+          "Status": "Passed",
+          "Duration": 1.2644993,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "HydraulicPress.PlayTests.GameplayTests.FailureRestoresMachineAndReusesBoundedPoolsAcrossTwelveRounds",
+          "Status": "Passed",
+          "Duration": 41.5814594,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "HydraulicPress.PlayTests.GameplayTests.PauseFreezesAnActivePressAndMenusPreserveItsCommittedRound",
+          "Status": "Passed",
+          "Duration": 3.0691928,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "HydraulicPress.PlayTests.GameplayTests.RapidActionsAreLockedAndCashoutCreditsOnce",
+          "Status": "Passed",
+          "Duration": 5.5301171,
+          "Message": null,
+          "StackTrace": null
+        }
+      ]
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hydraulic Press"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

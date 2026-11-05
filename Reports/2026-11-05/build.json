@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "command": "command",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "HydraulicPress.Editor.ContentBuilder.BuildWebGL(); return \"built\";"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": "built"
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hydraulic Press"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

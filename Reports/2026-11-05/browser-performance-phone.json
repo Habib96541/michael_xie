@@ -1,0 +1,244 @@
+{
+  "browser": "156.0.8078.80",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "deviceScaleFactor": 3,
+  "playerPixelRatio": 2,
+  "method": "Unity requestAnimationFrame callback intervals during six live crush/retry inputs, default graphics. Browser frame pacing, not a physical-device GPU benchmark.",
+  "timing": {
+    "callbackCount": 1588,
+    "uniqueFrameTimestamps": 794,
+    "durationSeconds": 15.8117,
+    "meanFramePacing": 50.15273500003162,
+    "p50Ms": 19.299999999999272,
+    "p95Ms": 29.600000000002183,
+    "maxMs": 239.3000000000011,
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004692) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "outcomes": [
+    {
+      "state": "Ready",
+      "navigation": "Playing",
+      "settings": false,
+      "timeScale": 1,
+      "crushed": 2,
+      "bank": 0,
+      "busy": false,
+      "width": 780,
+      "height": 1688,
+      "buttons": [
+        {
+          "name": "PauseButton",
+          "x": 0.8916666507720947,
+          "y": 0.032731056213378906,
+          "width": 0.13888894021511078,
+          "height": 0.064178466796875,
+          "interactable": true
+        },
+        {
+          "name": "Crush",
+          "x": 0.29722222685813904,
+          "y": 0.9422393441200256,
+          "width": 0.472222238779068,
+          "height": 0.06417851895093918,
+          "interactable": true
+        },
+        {
+          "name": "Collect",
+          "x": 0.75,
+          "y": 0.9422393441200256,
+          "width": 0.3777778446674347,
+          "height": 0.06417851895093918,
+          "interactable": true
+        }
+      ]
+    },
+    {
+      "state": "Ready",
+      "navigation": "Playing",
+      "settings": false,
+      "timeScale": 1,
+      "crushed": 3,
+      "bank": 0,
+      "busy": false,
+      "width": 780,
+      "height": 1688,
+      "buttons": [
+        {
+          "name": "PauseButton",
+          "x": 0.8916666507720947,
+          "y": 0.032731056213378906,
+          "width": 0.13888894021511078,
+          "height": 0.064178466796875,
+          "interactable": true
+        },
+        {
+          "name": "Crush",
+          "x": 0.29722222685813904,
+          "y": 0.9422393441200256,
+          "width": 0.472222238779068,
+          "height": 0.06417851895093918,
+          "interactable": true
+        },
+        {
+          "name": "Collect",
+          "x": 0.75,
+          "y": 0.9422393441200256,
+          "width": 0.3777778446674347,
+          "height": 0.06417851895093918,
+          "interactable": true
+        }
+      ]
+    },
+    {
+      "state": "Ready",
+      "navigation": "Playing",
+      "settings": false,
+      "timeScale": 1,
+      "crushed": 4,
+      "bank": 0,
+      "busy": false,
+      "width": 780,
+      "height": 1688,
+      "buttons": [
+        {
+          "name": "PauseButton",
+          "x": 0.8916666507720947,
+          "y": 0.032731056213378906,
+          "width": 0.13888894021511078,
+          "height": 0.064178466796875,
+          "interactable": true
+        },
+        {
+          "name": "Crush",
+          "x": 0.29722222685813904,
+          "y": 0.9422393441200256,
+          "width": 0.472222238779068,
+          "height": 0.06417851895093918,
+          "interactable": true
+        },
+        {
+          "name": "Collect",
+          "x": 0.75,
+          "y": 0.9422393441200256,
+          "width": 0.3777778446674347,
+          "height": 0.06417851895093918,
+          "interactable": true
+        }
+      ]
+    },
+    {
+      "state": "Failed",
+      "navigation": "Playing",
+      "settings": false,
+      "timeScale": 1,
+      "crushed": 4,
+      "bank": 0,
+      "busy": false,
+      "width": 780,
+      "height": 1688,
+      "buttons": [
+        {
+          "name": "Crush",
+          "x": 0.29722222685813904,
+          "y": 0.9422393441200256,
+          "width": 0.472222238779068,
+          "height": 0.06417851895093918,
+          "interactable": false
+        },
+        {
+          "name": "Collect",
+          "x": 0.75,
+          "y": 0.9422393441200256,
+          "width": 0.3777778446674347,
+          "height": 0.06417851895093918,
+          "interactable": false
+        },
+        {
+          "name": "Replay",
+          "x": 0.5,
+          "y": 0.5917752981185913,
+          "width": 0.25,
+          "height": 0.06417854130268097,
+          "interactable": true
+        }
+      ]
+    },
+    {
+      "state": "Ready",
+      "navigation": "Playing",
+      "settings": false,
+      "timeScale": 1,
+      "crushed": 1,
+      "bank": 0,
+      "busy": false,
+      "width": 780,
+      "height": 1688,
+      "buttons": [
+        {
+          "name": "PauseButton",
+          "x": 0.8916666507720947,
+          "y": 0.032731056213378906,
+          "width": 0.13888894021511078,
+          "height": 0.064178466796875,
+          "interactable": true
+        },
+        {
+          "name": "Crush",
+          "x": 0.29722222685813904,
+          "y": 0.9422393441200256,
+          "width": 0.472222238779068,
+          "height": 0.06417851895093918,
+          "interactable": true
+        },
+        {
+          "name": "Collect",
+          "x": 0.75,
+          "y": 0.9422393441200256,
+          "width": 0.3777778446674347,
+          "height": 0.06417851895093918,
+          "interactable": true
+        }
+      ]
+    },
+    {
+      "state": "Failed",
+      "navigation": "Playing",
+      "settings": false,
+      "timeScale": 1,
+      "crushed": 1,
+      "bank": 0,
+      "busy": false,
+      "width": 780,
+      "height": 1688,
+      "buttons": [
+        {
+          "name": "Crush",
+          "x": 0.29722222685813904,
+          "y": 0.9422393441200256,
+          "width": 0.472222238779068,
+          "height": 0.06417851895093918,
+          "interactable": false
+        },
+        {
+          "name": "Collect",
+          "x": 0.75,
+          "y": 0.9422393441200256,
+          "width": 0.3777778446674347,
+          "height": 0.06417851895093918,
+          "interactable": false
+        },
+        {
+          "name": "Replay",
+          "x": 0.5,
+          "y": 0.5917752981185913,
+          "width": 0.25,
+          "height": 0.06417854130268097,
+          "interactable": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "HydraulicPress.Tests",
+  "references": ["HydraulicPress.Runtime"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

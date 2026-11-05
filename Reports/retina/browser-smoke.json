@@ -1,0 +1,62 @@
+{
+  "browser": "156.0.8078.79",
+  "scenarios": [
+    {
+      "size": {
+        "name": "retina",
+        "width": 390,
+        "height": 844,
+        "touch": true,
+        "dpr": 2
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 780,
+          "height": 1688
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 780,
+          "height": 1688
+        }
+      },
+      "memory": null,
+      "resolved": {
+        "state": "Ready",
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 780,
+        "height": 1688
+      },
+      "after": {
+        "state": "Collected",
+        "crushed": 1,
+        "bank": 112,
+        "busy": false,
+        "width": 780,
+        "height": 1688
+      },
+      "restored": 112
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat"
+  ]
+}

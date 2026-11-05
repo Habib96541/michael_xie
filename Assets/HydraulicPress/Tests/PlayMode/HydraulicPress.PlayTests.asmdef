@@ -1,0 +1,5 @@
+{
+  "name": "HydraulicPress.PlayTests",
+  "references": ["HydraulicPress.Runtime"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

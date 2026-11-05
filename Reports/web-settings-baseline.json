@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "command": "command",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var t=UnityEditor.Build.NamedBuildTarget.WebGL; return new { target=UnityEditor.EditorUserBuildSettings.activeBuildTarget.ToString(),compression=UnityEditor.PlayerSettings.WebGL.compressionFormat.ToString(),fallback=UnityEditor.PlayerSettings.WebGL.decompressionFallback,stripping=UnityEditor.PlayerSettings.GetManagedStrippingLevel(t).ToString(),stripEngine=UnityEditor.PlayerSettings.stripEngineCode,generation=UnityEditor.PlayerSettings.GetIl2CppCodeGeneration(t).ToString(),exceptions=UnityEditor.PlayerSettings.WebGL.exceptionSupport.ToString(),memory=UnityEditor.PlayerSettings.WebGL.initialMemorySize,maximumMemory=UnityEditor.PlayerSettings.WebGL.maximumMemorySize,optimization=UnityEditor.WebGL.UserBuildSettings.codeOptimization.ToString()};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "target": "WebGL",
+        "compression": "Disabled",
+        "fallback": false,
+        "stripping": "Low",
+        "stripEngine": true,
+        "generation": "OptimizeSpeed",
+        "exceptions": "ExplicitlyThrownExceptionsOnly",
+        "memory": 64,
+        "maximumMemory": 512,
+        "optimization": "BuildTimes"
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hydraulic Press"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

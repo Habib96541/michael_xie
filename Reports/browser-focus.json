@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "before": {
+    "state": "Crushing",
+    "crushed": 0,
+    "bank": 0,
+    "busy": true,
+    "width": 1280,
+    "height": 720
+  },
+  "hidden": {
+    "status": {
+      "state": "Crushing",
+      "crushed": 0,
+      "bank": 0,
+      "busy": true,
+      "width": 1280,
+      "height": 720
+    },
+    "visibility": "visible"
+  },
+  "resumed": {
+    "state": "Ready",
+    "crushed": 1,
+    "bank": 0,
+    "busy": false,
+    "width": 1280,
+    "height": 720
+  },
+  "errors": []
+}

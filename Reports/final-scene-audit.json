@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "command": "command",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var g=UnityEngine.Object.FindFirstObjectByType<HydraulicPress.GameManager>(); return new {scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path,objects=g.config.objects.Length,graphics=g.config.graphics.name,renderer=g.config.rendererData.name,icons=g.hud.pressIcon!=null&&g.hud.rounded!=null&&g.hud.checkIcon!=null,activeTarget=UnityEditor.EditorUserBuildSettings.activeBuildTarget.ToString(),optimization=UnityEditor.WebGL.UserBuildSettings.codeOptimization.ToString()};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "scene": "Assets/HydraulicPress/Scenes/HydraulicPress.unity",
+        "objects": 20,
+        "graphics": "PressPipeline",
+        "renderer": "PressRenderer",
+        "icons": true,
+        "activeTarget": "WebGL",
+        "optimization": "DiskSizeLTO"
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hydraulic Press"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

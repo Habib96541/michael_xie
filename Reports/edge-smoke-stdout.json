@@ -1,0 +1,325 @@
+{
+  "browser": "156.0.4314.58",
+  "scenarios": [
+    {
+      "size": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 1440,
+          "height": 900
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "memory": null,
+      "resolved": {
+        "state": "Ready",
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 1440,
+        "height": 900
+      },
+      "after": {
+        "state": "Collected",
+        "crushed": 1,
+        "bank": 112,
+        "busy": false,
+        "width": 1440,
+        "height": 900
+      },
+      "restored": 112,
+      "failureAudit": {
+        "state": "Failed",
+        "crushed": 2,
+        "bank": 112,
+        "busy": false,
+        "width": 1440,
+        "height": 900,
+        "attempts": 3
+      }
+    },
+    {
+      "size": {
+        "name": "portrait",
+        "width": 390,
+        "height": 844,
+        "touch": true
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 390,
+          "height": 844
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "memory": null,
+      "resolved": {
+        "state": "Ready",
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 390,
+        "height": 844
+      },
+      "after": {
+        "state": "Collected",
+        "crushed": 1,
+        "bank": 112,
+        "busy": false,
+        "width": 390,
+        "height": 844
+      },
+      "restored": 112
+    },
+    {
+      "size": {
+        "name": "narrow",
+        "width": 320,
+        "height": 568,
+        "touch": true
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 320,
+          "height": 568
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 320,
+          "height": 568
+        }
+      },
+      "memory": null,
+      "resolved": {
+        "state": "Failed",
+        "crushed": 0,
+        "bank": 0,
+        "busy": false,
+        "width": 320,
+        "height": 568
+      },
+      "restored": 0
+    },
+    {
+      "size": {
+        "name": "landscape",
+        "width": 844,
+        "height": 390,
+        "touch": true
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 844,
+          "height": 390
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 844,
+          "height": 390
+        }
+      },
+      "memory": null,
+      "resolved": {
+        "state": "Ready",
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 844,
+        "height": 390
+      },
+      "after": {
+        "state": "Collected",
+        "crushed": 1,
+        "bank": 112,
+        "busy": false,
+        "width": 844,
+        "height": 390
+      },
+      "restored": 112
+    },
+    {
+      "size": {
+        "name": "square",
+        "width": 600,
+        "height": 600
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 600,
+          "height": 600
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 600,
+          "height": 600
+        }
+      },
+      "memory": null,
+      "resolved": {
+        "state": "Ready",
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 600,
+        "height": 600
+      },
+      "after": {
+        "state": "Collected",
+        "crushed": 1,
+        "bank": 112,
+        "busy": false,
+        "width": 600,
+        "height": 600
+      },
+      "restored": 112
+    },
+    {
+      "size": {
+        "name": "tablet",
+        "width": 800,
+        "height": 600,
+        "touch": true
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 800,
+          "height": 600
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 800,
+          "height": 600
+        }
+      },
+      "memory": null,
+      "resolved": {
+        "state": "Ready",
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 800,
+        "height": 600
+      },
+      "after": {
+        "state": "Collected",
+        "crushed": 1,
+        "bank": 112,
+        "busy": false,
+        "width": 800,
+        "height": 600
+      },
+      "restored": 112
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat",
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat"
+  ]
+}

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667adb575b62fd34590ac0fda3aa6c94, type: 3}
+  m_Name: Gameplay
+  m_EditorClassIdentifier: HydraulicPress.Runtime::HydraulicPress.GameplayConfig
+  basePoints: 100
+  rewardMargin: 0.04
+  animationSpeed: 1
+  fragmentBudget: 40
+  objects:
+  - {fileID: 11400000, guid: 1a75fc45cbc9dce4190b04309b143683, type: 2}
+  - {fileID: 11400000, guid: 5d6bee425b08a4545a8e56277bda20bb, type: 2}
+  - {fileID: 11400000, guid: 18334056d1c87e744b5e42416f051fb4, type: 2}
+  - {fileID: 11400000, guid: 4705d25e1985a6c45ab0c0af12d4e3f0, type: 2}
+  - {fileID: 11400000, guid: ff00dbe3df93d4d48963fe9626cd2d80, type: 2}
+  - {fileID: 11400000, guid: b7273255072e4f24a982d5bb09f5a8b2, type: 2}
+  - {fileID: 11400000, guid: 192f7d7992f555a4dbccd0124b9701c4, type: 2}
+  - {fileID: 11400000, guid: 2bc9edc242c659d4f8085e7dce4a8947, type: 2}
+  - {fileID: 11400000, guid: 6bcceba2f3e6dcf488d561a74c34d5c0, type: 2}
+  - {fileID: 11400000, guid: 98a9f3929ae205d4cb5a64411c725ea5, type: 2}
+  - {fileID: 11400000, guid: d78f0ca1ebda95144bc2928e254e3b70, type: 2}
+  - {fileID: 11400000, guid: 238d4411dd46a984ead9a0eecd6f84f2, type: 2}
+  - {fileID: 11400000, guid: 738d71aaa8dd42b46bfde05fc355d4c6, type: 2}
+  - {fileID: 11400000, guid: cb94a482752908d4b987d06388548e06, type: 2}
+  - {fileID: 11400000, guid: 3688d6462682cd94d89d21a51c3520b9, type: 2}
+  - {fileID: 11400000, guid: 417fed65a658ce04fbd2ca5e9bc6e334, type: 2}
+  - {fileID: 11400000, guid: 7db06acaf5a4036478332237cf5cf357, type: 2}
+  - {fileID: 11400000, guid: 3059426e060693d4a8745f3f2072637a, type: 2}
+  - {fileID: 11400000, guid: 0ba9ce2ae9baa8647b1a24e427611cbd, type: 2}
+  - {fileID: 11400000, guid: 9fd4a3b869673554aa4a55d9a2c9a1a1, type: 2}
+  graphics: {fileID: 11400000, guid: d8a87f678c855f347acf0e78dfa2f448, type: 2}
+  rendererData: {fileID: 11400000, guid: 983adff448983784c82b4965243b3056, type: 2}

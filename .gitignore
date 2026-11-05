@@ -107,3 +107,12 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Keep the built WebGL player in version control for branch preview/deployment.
+!/Builds/
+/Builds/*
+!/Builds/WebGL/
+!/Builds/WebGL/**
+/Tools/browser/node_modules/
+.wrangler/
+*.pid

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "command": "command",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var g=UnityEngine.Object.FindFirstObjectByType<HydraulicPress.GameManager>(); return new {play=UnityEditor.EditorApplication.isPlaying,scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path,scenes=UnityEditor.EditorBuildSettings.scenes.Select(s=>new {s.path,s.enabled}).ToArray(),pause=g.hud.pauseIcon!=null,playIcon=g.hud.playIcon!=null,homeIcon=g.hud.homeIcon!=null,objects=g.config.objects.Length,missingScripts=UnityEngine.Object.FindObjectsByType<UnityEngine.GameObject>(UnityEngine.FindObjectsInactive.Include,UnityEngine.FindObjectsSortMode.None).Sum(x=>UnityEditor.GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(x))};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "play": false,
+        "scene": "Assets/HydraulicPress/Scenes/HydraulicPress.unity",
+        "scenes": [
+          {
+            "path": "Assets/HydraulicPress/Scenes/HydraulicPress.unity",
+            "enabled": true
+          }
+        ],
+        "pause": true,
+        "playIcon": true,
+        "homeIcon": true,
+        "objects": 20,
+        "missingScripts": 0
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hydraulic Press"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

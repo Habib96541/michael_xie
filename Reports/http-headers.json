@@ -1,0 +1,18 @@
+{
+  "Server": [
+    "SimpleHTTP/0.6",
+    "Python/3.14.4"
+  ],
+  "Date": [
+    "Mon, 02 Nov 2026 05:29:21 GMT"
+  ],
+  "Cache-Control": [
+    "no-cache"
+  ],
+  "Content-Type": [
+    "application/wasm"
+  ],
+  "Last-Modified": [
+    "Mon, 02 Nov 2026 05:28:19 GMT"
+  ]
+}

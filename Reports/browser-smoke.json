@@ -1,0 +1,639 @@
+{
+  "browser": "156.0.8078.80",
+  "scenarios": [
+    {
+      "size": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "navigation": "Playing",
+          "settings": false,
+          "timeScale": 1,
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 1440,
+          "height": 900,
+          "buttons": [
+            {
+              "name": "PauseButton",
+              "x": 0.9427083134651184,
+              "y": 0.07083332538604736,
+              "width": 0.0607638880610466,
+              "height": 0.0972222238779068,
+              "interactable": true
+            },
+            {
+              "name": "Crush",
+              "x": 0.8399999737739563,
+              "y": 0.45222222805023193,
+              "width": 0.2100694477558136,
+              "height": 0.1388888955116272,
+              "interactable": true
+            },
+            {
+              "name": "Collect",
+              "x": 0.8399999737739563,
+              "y": 0.6077777743339539,
+              "width": 0.2100694477558136,
+              "height": 0.1388888955116272,
+              "interactable": false
+            }
+          ]
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "resolved": {
+        "state": "Ready",
+        "navigation": "Playing",
+        "settings": false,
+        "timeScale": 1,
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 1440,
+        "height": 900,
+        "buttons": [
+          {
+            "name": "PauseButton",
+            "x": 0.9427083134651184,
+            "y": 0.07083332538604736,
+            "width": 0.0607638880610466,
+            "height": 0.0972222238779068,
+            "interactable": true
+          },
+          {
+            "name": "Crush",
+            "x": 0.8399999737739563,
+            "y": 0.45222222805023193,
+            "width": 0.2100694477558136,
+            "height": 0.1388888955116272,
+            "interactable": true
+          },
+          {
+            "name": "Collect",
+            "x": 0.8399999737739563,
+            "y": 0.6077777743339539,
+            "width": 0.2100694477558136,
+            "height": 0.1388888955116272,
+            "interactable": true
+          }
+        ]
+      },
+      "restored": 112
+    },
+    {
+      "size": {
+        "name": "portrait",
+        "width": 390,
+        "height": 844,
+        "touch": true
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "navigation": "Playing",
+          "settings": false,
+          "timeScale": 1,
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 390,
+          "height": 844,
+          "buttons": [
+            {
+              "name": "PauseButton",
+              "x": 0.8916666507720947,
+              "y": 0.032731056213378906,
+              "width": 0.13888894021511078,
+              "height": 0.064178466796875,
+              "interactable": true
+            },
+            {
+              "name": "Crush",
+              "x": 0.29722222685813904,
+              "y": 0.9422393441200256,
+              "width": 0.472222238779068,
+              "height": 0.06417851895093918,
+              "interactable": true
+            },
+            {
+              "name": "Collect",
+              "x": 0.75,
+              "y": 0.9422393441200256,
+              "width": 0.3777778446674347,
+              "height": 0.06417851895093918,
+              "interactable": false
+            }
+          ]
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "resolved": {
+        "state": "Ready",
+        "navigation": "Playing",
+        "settings": false,
+        "timeScale": 1,
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 390,
+        "height": 844,
+        "buttons": [
+          {
+            "name": "PauseButton",
+            "x": 0.8916666507720947,
+            "y": 0.032731056213378906,
+            "width": 0.13888894021511078,
+            "height": 0.064178466796875,
+            "interactable": true
+          },
+          {
+            "name": "Crush",
+            "x": 0.29722222685813904,
+            "y": 0.9422393441200256,
+            "width": 0.472222238779068,
+            "height": 0.06417851895093918,
+            "interactable": true
+          },
+          {
+            "name": "Collect",
+            "x": 0.75,
+            "y": 0.9422393441200256,
+            "width": 0.3777778446674347,
+            "height": 0.06417851895093918,
+            "interactable": true
+          }
+        ]
+      },
+      "restored": 112
+    },
+    {
+      "size": {
+        "name": "narrow",
+        "width": 320,
+        "height": 568,
+        "touch": true
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "navigation": "Playing",
+          "settings": false,
+          "timeScale": 1,
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 320,
+          "height": 568,
+          "buttons": [
+            {
+              "name": "PauseButton",
+              "x": 0.8916667103767395,
+              "y": 0.03990602493286133,
+              "width": 0.13888892531394958,
+              "height": 0.07824728637933731,
+              "interactable": true
+            },
+            {
+              "name": "Crush",
+              "x": 0.29722219705581665,
+              "y": 0.9295774698257446,
+              "width": 0.472222238779068,
+              "height": 0.07824725657701492,
+              "interactable": true
+            },
+            {
+              "name": "Collect",
+              "x": 0.75,
+              "y": 0.9295774698257446,
+              "width": 0.3777778148651123,
+              "height": 0.07824725657701492,
+              "interactable": false
+            }
+          ]
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 320,
+          "height": 568
+        }
+      },
+      "resolved": {
+        "state": "Ready",
+        "navigation": "Playing",
+        "settings": false,
+        "timeScale": 1,
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 320,
+        "height": 568,
+        "buttons": [
+          {
+            "name": "PauseButton",
+            "x": 0.8916667103767395,
+            "y": 0.03990602493286133,
+            "width": 0.13888892531394958,
+            "height": 0.07824728637933731,
+            "interactable": true
+          },
+          {
+            "name": "Crush",
+            "x": 0.29722219705581665,
+            "y": 0.9295774698257446,
+            "width": 0.472222238779068,
+            "height": 0.07824725657701492,
+            "interactable": true
+          },
+          {
+            "name": "Collect",
+            "x": 0.75,
+            "y": 0.9295774698257446,
+            "width": 0.3777778148651123,
+            "height": 0.07824725657701492,
+            "interactable": true
+          }
+        ]
+      },
+      "restored": 112
+    },
+    {
+      "size": {
+        "name": "landscape",
+        "width": 844,
+        "height": 390,
+        "touch": true
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "navigation": "Playing",
+          "settings": false,
+          "timeScale": 1,
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 844,
+          "height": 390,
+          "buttons": [
+            {
+              "name": "PauseButton",
+              "x": 0.8375790119171143,
+              "y": 0.07083332538604736,
+              "width": 0.044924911111593246,
+              "height": 0.09722227603197098,
+              "interactable": true
+            },
+            {
+              "name": "Crush",
+              "x": 0.8399999737739563,
+              "y": 0.45222222805023193,
+              "width": 0.15531206130981445,
+              "height": 0.1388888657093048,
+              "interactable": true
+            },
+            {
+              "name": "Collect",
+              "x": 0.8399999737739563,
+              "y": 0.6077778339385986,
+              "width": 0.15531206130981445,
+              "height": 0.138888880610466,
+              "interactable": false
+            }
+          ]
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 844,
+          "height": 390
+        }
+      },
+      "resolved": {
+        "state": "Failed",
+        "navigation": "Playing",
+        "settings": false,
+        "timeScale": 1,
+        "crushed": 0,
+        "bank": 0,
+        "busy": false,
+        "width": 844,
+        "height": 390,
+        "buttons": [
+          {
+            "name": "Crush",
+            "x": 0.8399999737739563,
+            "y": 0.45222222805023193,
+            "width": 0.15531206130981445,
+            "height": 0.1388888657093048,
+            "interactable": false
+          },
+          {
+            "name": "Collect",
+            "x": 0.8399999737739563,
+            "y": 0.6077778339385986,
+            "width": 0.15531206130981445,
+            "height": 0.138888880610466,
+            "interactable": false
+          },
+          {
+            "name": "Replay",
+            "x": 0.5,
+            "y": 0.6688194274902344,
+            "width": 0.09819313138723373,
+            "height": 0.1180555522441864,
+            "interactable": true
+          }
+        ]
+      },
+      "restored": 0
+    },
+    {
+      "size": {
+        "name": "square",
+        "width": 600,
+        "height": 600
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "navigation": "Playing",
+          "settings": false,
+          "timeScale": 1,
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 600,
+          "height": 600,
+          "buttons": [
+            {
+              "name": "PauseButton",
+              "x": 0.9083333611488342,
+              "y": 0.07083332538604736,
+              "width": 0.09722229093313217,
+              "height": 0.09722229093313217,
+              "interactable": true
+            },
+            {
+              "name": "Crush",
+              "x": 0.8399999737739563,
+              "y": 0.45222222805023193,
+              "width": 0.2800000011920929,
+              "height": 0.13888885080814362,
+              "interactable": true
+            },
+            {
+              "name": "Collect",
+              "x": 0.8399999737739563,
+              "y": 0.6077777743339539,
+              "width": 0.2800000011920929,
+              "height": 0.1388889104127884,
+              "interactable": false
+            }
+          ]
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 600,
+          "height": 600
+        }
+      },
+      "resolved": {
+        "state": "Ready",
+        "navigation": "Playing",
+        "settings": false,
+        "timeScale": 1,
+        "crushed": 1,
+        "bank": 0,
+        "busy": false,
+        "width": 600,
+        "height": 600,
+        "buttons": [
+          {
+            "name": "PauseButton",
+            "x": 0.9083333611488342,
+            "y": 0.07083332538604736,
+            "width": 0.09722229093313217,
+            "height": 0.09722229093313217,
+            "interactable": true
+          },
+          {
+            "name": "Crush",
+            "x": 0.8399999737739563,
+            "y": 0.45222222805023193,
+            "width": 0.2800000011920929,
+            "height": 0.13888885080814362,
+            "interactable": true
+          },
+          {
+            "name": "Collect",
+            "x": 0.8399999737739563,
+            "y": 0.6077777743339539,
+            "width": 0.2800000011920929,
+            "height": 0.1388889104127884,
+            "interactable": true
+          }
+        ]
+      },
+      "restored": 112
+    },
+    {
+      "size": {
+        "name": "tablet",
+        "width": 800,
+        "height": 600,
+        "touch": true
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "navigation": "Playing",
+          "settings": false,
+          "timeScale": 1,
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 800,
+          "height": 600,
+          "buttons": [
+            {
+              "name": "PauseButton",
+              "x": 0.9312499761581421,
+              "y": 0.07083332538604736,
+              "width": 0.07291671633720398,
+              "height": 0.09722229093313217,
+              "interactable": true
+            },
+            {
+              "name": "Crush",
+              "x": 0.8399999737739563,
+              "y": 0.45222222805023193,
+              "width": 0.25208327174186707,
+              "height": 0.13888885080814362,
+              "interactable": true
+            },
+            {
+              "name": "Collect",
+              "x": 0.8399999737739563,
+              "y": 0.6077777743339539,
+              "width": 0.25208327174186707,
+              "height": 0.1388889104127884,
+              "interactable": false
+            }
+          ]
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 800,
+          "height": 600
+        }
+      },
+      "resolved": {
+        "state": "Failed",
+        "navigation": "Playing",
+        "settings": false,
+        "timeScale": 1,
+        "crushed": 0,
+        "bank": 0,
+        "busy": false,
+        "width": 800,
+        "height": 600,
+        "buttons": [
+          {
+            "name": "Crush",
+            "x": 0.8399999737739563,
+            "y": 0.45222222805023193,
+            "width": 0.25208327174186707,
+            "height": 0.13888885080814362,
+            "interactable": false
+          },
+          {
+            "name": "Collect",
+            "x": 0.8399999737739563,
+            "y": 0.6077777743339539,
+            "width": 0.25208327174186707,
+            "height": 0.1388889104127884,
+            "interactable": false
+          },
+          {
+            "name": "Replay",
+            "x": 0.5,
+            "y": 0.6688194274902344,
+            "width": 0.15937499701976776,
+            "height": 0.11805552244186401,
+            "interactable": true
+          }
+        ]
+      },
+      "restored": 0
+    },
+    {
+      "size": {
+        "name": "retina",
+        "width": 390,
+        "height": 844,
+        "touch": true,
+        "dpr": 2
+      },
+      "initial": {
+        "status": {
+          "state": "Ready",
+          "navigation": "Playing",
+          "settings": false,
+          "timeScale": 1,
+          "crushed": 0,
+          "bank": 0,
+          "busy": false,
+          "width": 780,
+          "height": 1688,
+          "buttons": [
+            {
+              "name": "PauseButton",
+              "x": 0.8916666507720947,
+              "y": 0.032731056213378906,
+              "width": 0.13888894021511078,
+              "height": 0.064178466796875,
+              "interactable": true
+            },
+            {
+              "name": "Crush",
+              "x": 0.29722222685813904,
+              "y": 0.9422393441200256,
+              "width": 0.472222238779068,
+              "height": 0.06417851895093918,
+              "interactable": true
+            },
+            {
+              "name": "Collect",
+              "x": 0.75,
+              "y": 0.9422393441200256,
+              "width": 0.3777778446674347,
+              "height": 0.06417851895093918,
+              "interactable": false
+            }
+          ]
+        },
+        "scroll": false,
+        "canvas": {
+          "width": 780,
+          "height": 1688
+        }
+      },
+      "resolved": {
+        "state": "Failed",
+        "navigation": "Playing",
+        "settings": false,
+        "timeScale": 1,
+        "crushed": 0,
+        "bank": 0,
+        "busy": false,
+        "width": 780,
+        "height": 1688,
+        "buttons": [
+          {
+            "name": "Crush",
+            "x": 0.29722222685813904,
+            "y": 0.9422393441200256,
+            "width": 0.472222238779068,
+            "height": 0.06417851895093918,
+            "interactable": false
+          },
+          {
+            "name": "Collect",
+            "x": 0.75,
+            "y": 0.9422393441200256,
+            "width": 0.3777778446674347,
+            "height": 0.06417851895093918,
+            "interactable": false
+          },
+          {
+            "name": "Replay",
+            "x": 0.5,
+            "y": 0.5917752981185913,
+            "width": 0.25,
+            "height": 0.06417854130268097,
+            "interactable": true
+          }
+        ]
+      },
+      "restored": 0
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "WebGL: INVALID_ENUM: getInternalformatParameter: invalid internalformat"
+  ],
+  "passed": true
+}

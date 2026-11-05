@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880e1cf93d3fa9a419c9e1e6cbc61898, type: 3}
+  m_Name: 18
+  m_EditorClassIdentifier: HydraulicPress.Runtime::HydraulicPress.CrushableObjectDefinition
+  displayName: Small safe
+  response: 2
+  prefab: {fileID: 1530216686578634340, guid: b789e452f9b52ed47a619891f9b31393, type: 3}
+  fragmentColor: {r: 0.27843136, g: 0.372549, b: 0.41960782, a: 1}
+  height: 0.85
+  resistance: 0.5

@@ -1,0 +1,160 @@
+{
+  "status": "completed",
+  "duration": 0.64,
+  "summary": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "skipped": 0,
+    "inconclusive": 0
+  },
+  "results": [
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.ActionsCannotMutateCommittedSequence",
+      "Status": "Passed",
+      "Duration": 0.0142267,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.CorruptedSaveIsRejected(\"\")",
+      "Status": "Passed",
+      "Duration": 0.0010401,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.CorruptedSaveIsRejected(\"garbage\")",
+      "Status": "Passed",
+      "Duration": 0.0001178,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.CorruptedSaveIsRejected(\"{broken\")",
+      "Status": "Passed",
+      "Duration": 0.0005221,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.CorruptedSaveIsRejected(\"{\\\"version\\\":1,\\\"bank\\\":-1}\")",
+      "Status": "Passed",
+      "Duration": 0.0002056,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.DoubleCrushAndMidAnimationCashoutAreRejected",
+      "Status": "Passed",
+      "Duration": 0.001235,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.FailureLosesUnbankedRewardAndLocksRound",
+      "Status": "Passed",
+      "Duration": 0.0006195,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.FirstSafeCashoutBanksExactly112PointsOnce",
+      "Status": "Passed",
+      "Duration": 0.0018499,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.InvalidRewardConfigIsRejected(0)",
+      "Status": "Passed",
+      "Duration": 0.0029833,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.InvalidRewardConfigIsRejected(-5)",
+      "Status": "Passed",
+      "Duration": 0.0002221,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.InvalidRewardConfigIsRejected(1000001)",
+      "Status": "Passed",
+      "Duration": 7.21E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.LifetimeScoreCannotOverflow",
+      "Status": "Passed",
+      "Duration": 0.0002697,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.MultiplierIncreasesAtEverySuccess",
+      "Status": "Passed",
+      "Duration": 0.0012807,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.SaveRoundTripPreservesProgressAndSettings",
+      "Status": "Passed",
+      "Duration": 0.0008667,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.SeedReproducesBothSequences",
+      "Status": "Passed",
+      "Duration": 0.0005906,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.SeventeenSuccessesAwardPerfectAndStopBeforeCertainFailure",
+      "Status": "Passed",
+      "Duration": 0.0105321,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.SurvivalMatchesCombinatorics(0,1)",
+      "Status": "Passed",
+      "Duration": 0.0005732,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.SurvivalMatchesCombinatorics(1,0.85d)",
+      "Status": "Passed",
+      "Duration": 0.0001562,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.SurvivalMatchesCombinatorics(2,0.715789473684211d)",
+      "Status": "Passed",
+      "Duration": 4.72E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.SurvivalMatchesCombinatorics(17,0.00087719298245614d)",
+      "Status": "Passed",
+      "Duration": 5.58E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "HydraulicPress.Tests.RoundTests.TenThousandRoundsHaveTwentyUniqueObjectsAndExactlyThreeHazards",
+      "Status": "Passed",
+      "Duration": 0.1847268,
+      "Message": null,
+      "StackTrace": null
+    }
+  ]
+}

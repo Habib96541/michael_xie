@@ -1,0 +1,68 @@
+{
+  "browser": "156.0.8078.79",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Unity requestAnimationFrame callback intervals during six live crush/retry inputs, default graphics. Browser frame pacing, not a physical-device GPU benchmark.",
+  "timing": {
+    "callbackCount": 1366,
+    "uniqueFrameTimestamps": 683,
+    "durationSeconds": 14.892,
+    "meanFramePacing": 45.79640075208165,
+    "p50Ms": 16.700000000000728,
+    "p95Ms": 41.79999999999927,
+    "maxMs": 216.69999999999982,
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004692) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "outcomes": [
+    {
+      "state": "Ready",
+      "crushed": 2,
+      "bank": 0,
+      "busy": false,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "state": "Ready",
+      "crushed": 3,
+      "bank": 0,
+      "busy": false,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "state": "Ready",
+      "crushed": 4,
+      "bank": 0,
+      "busy": false,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "state": "Failed",
+      "crushed": 4,
+      "bank": 0,
+      "busy": false,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "state": "Ready",
+      "crushed": 1,
+      "bank": 0,
+      "busy": false,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "state": "Ready",
+      "crushed": 2,
+      "bank": 0,
+      "busy": false,
+      "width": 1280,
+      "height": 720
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "command": "command",
+  "data": {
+    "command": "script eval",
+    "parameters": {
+      "code": "var g=UnityEngine.Object.FindFirstObjectByType<HydraulicPress.GameManager>();return new {play=UnityEditor.EditorApplication.isPlaying,scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene().path,compiling=UnityEditor.EditorApplication.isCompiling,editorTimeScale=UnityEngine.Time.timeScale};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "play": false,
+        "scene": "Assets/HydraulicPress/Scenes/HydraulicPress.unity",
+        "compiling": false,
+        "editorTimeScale": 1
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\30 games\\Hydraulic Press"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

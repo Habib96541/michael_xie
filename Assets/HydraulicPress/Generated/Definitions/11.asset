@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880e1cf93d3fa9a419c9e1e6cbc61898, type: 3}
+  m_Name: 11
+  m_EditorClassIdentifier: HydraulicPress.Runtime::HydraulicPress.CrushableObjectDefinition
+  displayName: Alarm clock
+  response: 2
+  prefab: {fileID: 4050996669056192646, guid: 7e137584f3c0d644987a261b3a6f6721, type: 3}
+  fragmentColor: {r: 0.8509804, g: 0.57647055, b: 0.30588233, a: 1}
+  height: 0.9
+  resistance: 0.5

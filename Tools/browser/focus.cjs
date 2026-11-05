@@ -1,0 +1,21 @@
+const {chromium}=require('playwright');
+const fs=require('fs');
+const {boot,play,tap}=require('./helpers.cjs');
+(async()=>{
+  const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+  const context=await browser.newContext({viewport:{width:1280,height:720}});
+  const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(String(e)));
+  await boot(page);await play(page);await tap(page,'Crush');
+  await page.waitForFunction(()=>window.hydraulicStatus.busy,{},{timeout:5000});
+  const before=await page.evaluate(()=>window.hydraulicStatus);
+  const other=await context.newPage();await other.goto('about:blank');await other.bringToFront();
+  await page.waitForTimeout(3200);
+  const hidden=await page.evaluate(()=>({status:window.hydraulicStatus,visibility:document.visibilityState}));
+  if(!hidden.status.busy||hidden.status.crushed!==before.crushed)throw Error('Crush advanced while tab was hidden');
+  await page.bringToFront();await page.mouse.click(640,360);
+  await page.waitForFunction(()=>!window.hydraulicStatus.busy,{},{timeout:10000});
+  const resumed=await page.evaluate(()=>window.hydraulicStatus);
+  const report={passed:true,before,hidden,resumed,errors};
+  if(errors.length)throw Error(errors.join('\n'));
+  fs.writeFileSync('Reports/'+(process.env.HP_REPORT_DIR||'.')+'/browser-focus.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});
