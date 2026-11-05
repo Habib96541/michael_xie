@@ -5,7 +5,9 @@ namespace TeslaRoadster
     internal sealed partial class RoadsterWorld
     {
         const float Tail = -2.16f;
-        readonly Transform[] vapor = new Transform[18];
+        readonly System.Random particleRandom = new(8137);
+        ParticleSystem vapor, dust, sparks;
+        float vaporEmission, nitroEmission;
 
         void PoseCar(Vector3 floor, Quaternion rotation, float distance, float centerCompensation = 1f)
         {
@@ -14,25 +16,53 @@ namespace TeslaRoadster
             vehicle.RollWheels(distance);
         }
 
-        static Mesh CreateVaporPuff()
+        void CreateParticles(Shader shader)
         {
-            var mesh = new Geometry();
-            for (int row = 0; row < 5; row++)
-            {
-                float low = Mathf.PI * (row / 5f - 0.5f);
-                float high = Mathf.PI * ((row + 1) / 5f - 0.5f);
-                for (int side = 0; side < 9; side++)
-                {
-                    float a = side * Mathf.PI * 2f / 9f;
-                    float b = (side + 1) * Mathf.PI * 2f / 9f;
-                    mesh.Quad(PuffPoint(low, a), PuffPoint(high, a), PuffPoint(high, b), PuffPoint(low, b), Color.white);
-                }
-            }
-            return mesh.ToMesh("Vapor puff");
+            var material = new Material(shader) { name = "Soft vapor and impact particles" };
+            vapor = CreateEmitter("Thruster vapor trail", material, 96, -0.07f, 1.6f);
+            dust = CreateEmitter("Impact dust", material, 48, 0.25f, 1.8f);
+            sparks = CreateEmitter("Impact sparks", material, 36, 1.1f, 0.5f);
+            var renderer = sparks.GetComponent<ParticleSystemRenderer>();
+            renderer.renderMode = ParticleSystemRenderMode.Stretch;
+            renderer.lengthScale = 1.8f;
+            renderer.velocityScale = 0.09f;
         }
 
-        static Vector3 PuffPoint(float latitude, float longitude) => new(
-            Mathf.Cos(latitude) * Mathf.Cos(longitude), Mathf.Sin(latitude), Mathf.Cos(latitude) * Mathf.Sin(longitude));
+        ParticleSystem CreateEmitter(string name, Material material, int capacity, float gravity, float endSize)
+        {
+            var particles = Group(root, name).gameObject.AddComponent<ParticleSystem>();
+            particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            var main = particles.main;
+            main.playOnAwake = false;
+            main.loop = true;
+            main.maxParticles = capacity;
+            main.gravityModifier = gravity;
+            main.cullingMode = ParticleSystemCullingMode.AlwaysSimulate;
+            var emission = particles.emission;
+            emission.enabled = false;
+            var lifetime = particles.colorOverLifetime;
+            lifetime.enabled = true;
+            var fade = new Gradient();
+            fade.SetKeys(new[] { new GradientColorKey(Color.white, 0f), new GradientColorKey(Color.white, 1f) },
+                new[] { new GradientAlphaKey(1f, 0f), new GradientAlphaKey(0.85f, 0.4f), new GradientAlphaKey(0f, 1f) });
+            lifetime.color = fade;
+            var size = particles.sizeOverLifetime;
+            size.enabled = true;
+            size.size = new ParticleSystem.MinMaxCurve(1f, AnimationCurve.EaseInOut(0f, 0.8f, 1f, endSize));
+            var renderer = particles.GetComponent<ParticleSystemRenderer>();
+            renderer.sharedMaterial = material;
+            renderer.maxParticleSize = 0.3f;
+            particles.Play();
+            return particles;
+        }
+
+        void ClearParticles()
+        {
+            vaporEmission = nitroEmission = 0f;
+            vapor.Clear();
+            dust.Clear();
+            sparks.Clear();
+        }
 
         public void ShowLanding(float x, float pulse)
         {
@@ -44,30 +74,100 @@ namespace TeslaRoadster
             }
         }
 
-        void UpdateVapor(float elapsed, float thrust, int sideJet = 0, bool driving = false)
+        void UpdateVapor(float dt, float thrust, int sideJet = 0, bool driving = false)
         {
-            for (int i = 0; i < vapor.Length; i++)
+            if (thrust < 0.05f)
             {
-                float age = (i + 1f) / vapor.Length;
-                float size = thrust * Mathf.Sin(age * Mathf.PI) * (0.13f + age * 0.64f);
-                Transform puff = vapor[i];
-                puff.gameObject.SetActive(size > 0.055f);
-                if (!puff.gameObject.activeSelf)
-                    continue;
-
-                float side = i % 2 == 0 ? -1f : 1f;
-                Vector3 offset;
+                vaporEmission = 0f;
+                return;
+            }
+            vaporEmission += dt * Mathf.Lerp(22f, 100f, thrust);
+            int count = Mathf.FloorToInt(vaporEmission);
+            vaporEmission -= count;
+            for (int i = 0; i < count; i++)
+            {
+                float side = ParticleRange(-1f, 1f) < 0f ? -1f : 1f;
+                Vector3 offset, drift;
                 if (sideJet != 0)
-                    offset = new Vector3(-sideJet * (0.83f + age * 3.2f), 0.37f - age * 0.22f, side * 0.85f - age * 1.65f);
+                {
+                    offset = new Vector3(-sideJet * 0.91f, 0.32f, ParticleRange(-0.95f, 0.85f));
+                    drift = new Vector3(-sideJet * ParticleRange(4f, 7f), ParticleRange(-0.1f, 0.7f), ParticleRange(-8f, -4f));
+                }
                 else if (driving)
-                    offset = new Vector3(side * (0.55f + age * 0.13f), 0.22f - age * 1.5f, -0.54f - age * 2.9f);
+                {
+                    offset = new Vector3(side * 0.57f, 0.20f, -0.57f);
+                    drift = Vector3.back * ParticleRange(6f, 10f) + Vector3.down * ParticleRange(0.8f, 2.9f);
+                }
                 else
-                    offset = new Vector3(side * (0.30f + age * 0.34f), 0.42f - age * 0.62f, Tail - age * 5.3f);
-                puff.localPosition = car.localPosition + car.localRotation * offset
-                    + new Vector3(Mathf.Sin(elapsed * 36f + i) * age * 0.15f, 0f, 0f);
-                puff.localScale = new Vector3(size, size * 0.78f, size * 1.7f);
-                puff.localRotation = Quaternion.Euler(i * 17f, i * 43f, i * 62f);
+                {
+                    offset = new Vector3(side * 0.39f, 0.38f, Tail);
+                    drift = car.localRotation * Vector3.back * ParticleRange(3f, 7f);
+                }
+                vapor.Emit(new ParticleSystem.EmitParams
+                {
+                    position = car.localPosition + car.localRotation * offset,
+                    velocity = drift + new Vector3(ParticleRange(-0.65f, 0.65f), ParticleRange(-0.18f, 0.6f), 0f),
+                    startSize = ParticleRange(0.26f, 0.76f),
+                    startLifetime = ParticleRange(0.36f, 0.64f),
+                    startColor = new Color32(234, 243, 255, (byte)ParticleRange(142f, 216f))
+                }, 1);
             }
         }
+
+        public void EmitNitro(float dt)
+        {
+            if (dt <= 0f)
+            {
+                nitroEmission = 0f;
+                return;
+            }
+            nitroEmission += 108f * dt;
+            int pairs = Mathf.FloorToInt(nitroEmission * 0.5f);
+            nitroEmission -= pairs * 2;
+            for (int i = 0; i < pairs; i++)
+            {
+                for (int side = -1; side <= 1; side += 2)
+                {
+                    vapor.Emit(new ParticleSystem.EmitParams
+                    {
+                        position = car.localPosition + car.localRotation * new Vector3(side * 0.54f, 0.29f, Tail),
+                        velocity = car.localRotation * Vector3.back * ParticleRange(9f, 19f) +
+                            new Vector3(ParticleRange(-0.38f, 0.38f), ParticleRange(-0.23f, 0.38f), 0f),
+                        startSize = ParticleRange(0.17f, 0.36f),
+                        startLifetime = ParticleRange(0.18f, 0.37f),
+                        startColor = new Color32(83, 210, 255, 235)
+                    }, 1);
+                }
+            }
+        }
+
+        public void BurstAt(Vector3 center, float strength)
+        {
+            for (int i = 0; i < 18; i++)
+            {
+                float angle = i * 2.39996f;
+                Vector3 radial = new(Mathf.Cos(angle), 0f, Mathf.Sin(angle));
+                dust.Emit(new ParticleSystem.EmitParams
+                {
+                    position = center + radial * ParticleRange(0.4f, 1.5f),
+                    velocity = (radial * ParticleRange(2f, 5.7f) + Vector3.up * ParticleRange(0.4f, 1.65f)) * strength,
+                    startLifetime = ParticleRange(0.38f, 0.74f),
+                    startSize = ParticleRange(0.33f, 0.77f) * strength,
+                    startColor = new Color32(232, 208, 194, 183)
+                }, 1);
+                if (i >= 12)
+                    continue;
+                sparks.Emit(new ParticleSystem.EmitParams
+                {
+                    position = center + radial * 0.72f,
+                    velocity = (radial * ParticleRange(4f, 8f) + Vector3.up * ParticleRange(1.3f, 3.4f)) * strength,
+                    startLifetime = ParticleRange(0.19f, 0.48f),
+                    startSize = ParticleRange(0.08f, 0.15f),
+                    startColor = new Color32(255, 206, 115, 255)
+                }, 1);
+            }
+        }
+
+        float ParticleRange(float min, float max) => Mathf.Lerp(min, max, (float)particleRandom.NextDouble());
     }
 }

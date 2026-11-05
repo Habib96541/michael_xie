@@ -470,6 +470,7 @@ MonoBehaviour:
   chaseCamera: {fileID: 330585545}
   surfaceShader: {fileID: 4800000, guid: 876340c75afb4c87bad42d0a70f6bd8f, type: 3}
   skyShader: {fileID: 4800000, guid: cf19743ab44d4235aa8815c997cb0c29, type: 3}
+  particleShader: {fileID: 4800000, guid: 66a6f51b8e514ef8a7ac9c8273b2f579, type: 3}
   playerVehicle: {fileID: 1569123615110873258, guid: b3e0bf82c55471140a1035c55783a08d, type: 3}
   trafficFleet: {fileID: 3252085501833051216, guid: 581b835a1a0e67f45adb29b1864ac315, type: 3}
   marineDrive: {fileID: 919132149155446097, guid: 40df68635c08b62438f6771895b31a54, type: 3}

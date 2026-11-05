@@ -90,17 +90,16 @@ namespace TeslaRoadster
             ramp.gameObject.SetActive(true);
             shadow.gameObject.SetActive(false);
             PoseRampCar(Mathf.SmoothStep(0f, StageDistance, progress));
-            UpdateVapor(0f, 0f);
         }
 
-        public void PoseLaunch(float progress)
+        public void PoseLaunch(float progress, float dt)
         {
             const float rampPortion = 0.34f;
             if (progress < rampPortion)
             {
                 float distance = Mathf.Lerp(StageDistance, LipDistance, progress / rampPortion);
                 PoseRampCar(distance);
-                UpdateVapor(progress * 2f, Mathf.InverseLerp(0.12f, rampPortion, progress) * 0.68f);
+                UpdateVapor(dt, Mathf.InverseLerp(0.12f, rampPortion, progress) * 0.68f);
                 return;
             }
 
@@ -114,7 +113,7 @@ namespace TeslaRoadster
             PoseCar(floor, rotation, LipDistance + flight * -lip.z);
             shadow.gameObject.SetActive(progress >= 0.96f);
             ramp.gameObject.SetActive(progress < 1f);
-            UpdateVapor(progress * 2f, 0.85f * Mathf.Sin(flight * Mathf.PI));
+            UpdateVapor(dt, 0.85f * Mathf.Sin(flight * Mathf.PI));
         }
 
         void PoseRampCar(float distance)

@@ -10,9 +10,13 @@ namespace TeslaRoadster
         const float ClimbDuration = 2.35f;
         const float CountdownDuration = 3f;
         const float LaunchDuration = 2.1f;
+        const float SteeringDuration = 0.42f;
         const float Gravity = 15f;
         const float MaxAltitude = 3.4f;
         const float ComboWindow = 4f;
+        const float NitroCapacity = 4f;
+        const float NitroCharge = 2f;
+        const float NitroSpeed = 18f;
         const string BankKey = "Roadster.CreditBank";
         const string BestKey = "Roadster.BestScore";
         static readonly int Grayscale = Shader.PropertyToID("_RoadsterGrayscale");
@@ -20,6 +24,7 @@ namespace TeslaRoadster
         [SerializeField] Camera chaseCamera;
         [SerializeField] Shader surfaceShader;
         [SerializeField] Shader skyShader;
+        [SerializeField] Shader particleShader;
         [SerializeField] RoadsterVehicle playerVehicle;
         [SerializeField] GameObject trafficFleet;
         [SerializeField] GameObject marineDrive;
@@ -38,7 +43,9 @@ namespace TeslaRoadster
         float elapsed, impactAt, aftermath, distance, carX, lateralVelocity;
         float rampElapsed, carHeight, verticalVelocity, sideBurst, liftBurst, landingPulse;
         float comboExpires, trickElapsed, noticeUntil, recoveryPitch, recoveryRoll;
-        bool warned, slamming, usedLift, missileCrash, newBest;
+        float turnInput, turnTime, steeringYaw, yawVelocity, roadSpeed;
+        float nitroFuel;
+        bool warned, slamming, usedLift, missileCrash, newBest, nitroActive;
         Trick trick, lastTrick;
         string notice;
 
@@ -53,8 +60,8 @@ namespace TeslaRoadster
 
             bank = PlayerPrefs.GetInt(BankKey, 0);
             best = PlayerPrefs.GetInt(BestKey, PlayerPrefs.GetInt("Roadster.BestRun", 0));
-            world = new RoadsterWorld(transform, surfaceShader, skyShader, playerVehicle, trafficFleet, marineDrive);
-            hud = new RoadsterHud(transform, BeginRun, Steer, Lift, Slam);
+            world = new RoadsterWorld(transform, surfaceShader, skyShader, particleShader, playerVehicle, trafficFleet, marineDrive);
+            hud = new RoadsterHud(transform, BeginRun, Steer, Lift, Slam, ToggleNitro);
 
             speaker = gameObject.AddComponent<AudioSource>();
             speaker.playOnAwake = false;
@@ -90,6 +97,9 @@ namespace TeslaRoadster
             lane = 0;
             carX = 0f;
             lateralVelocity = 0f;
+            turnInput = turnTime = steeringYaw = yawVelocity = roadSpeed = 0f;
+            nitroFuel = 0f;
+            nitroActive = false;
             elapsed = 0f;
             aftermath = 0f;
             distance = 0f;
@@ -111,6 +121,19 @@ namespace TeslaRoadster
 
         void OnDestroy() => Shader.SetGlobalFloat(Grayscale, 0f);
 
+        [UnityEngine.Scripting.Preserve]
+        public void PressWebControl(string coordinates)
+        {
+            int separator = coordinates.IndexOf(',');
+            if (separator < 0)
+                return;
+            var culture = System.Globalization.CultureInfo.InvariantCulture;
+            const System.Globalization.NumberStyles style = System.Globalization.NumberStyles.Float;
+            if (float.TryParse(coordinates[..separator], style, culture, out float x)
+                && float.TryParse(coordinates[(separator + 1)..], style, culture, out float y))
+                hud.PressAt(new Vector2(x, y));
+        }
+
         void ScheduleMissile()
         {
             impactAt = elapsed + Random.Range(earliestImpact, Mathf.Max(earliestImpact, latestImpact));
@@ -121,6 +144,8 @@ namespace TeslaRoadster
             if (state != RunState.Driving)
                 return;
             int nextLane = Mathf.Clamp(lane + direction, -1, 1);
+            turnInput = direction * (nextLane == lane ? 0.35f : 1f);
+            turnTime = SteeringDuration;
             if (nextLane == lane)
                 return;
             lane = nextLane;
@@ -130,7 +155,7 @@ namespace TeslaRoadster
             {
                 if (carHeight <= 0f)
                     verticalVelocity = Mathf.Max(verticalVelocity, 5.8f);
-                StartTrick(Trick.BarrelRoll, direction);
+                StartTrick(Trick.BarrelRoll, -direction);
             }
             speaker.PlayOneShot(thrusterSound, 0.26f);
         }
@@ -144,6 +169,15 @@ namespace TeslaRoadster
             verticalVelocity = Mathf.Max(verticalVelocity, 9.8f);
             StartTrick(Trick.FrontFlip, 1);
             speaker.PlayOneShot(thrusterSound, 0.34f);
+        }
+
+        void ToggleNitro()
+        {
+            if (state != RunState.Driving || nitroFuel <= 0f)
+                return;
+            nitroActive = !nitroActive;
+            if (nitroActive)
+                speaker.PlayOneShot(thrusterSound, 0.52f);
         }
 
         void Slam()
@@ -190,6 +224,8 @@ namespace TeslaRoadster
                     Lift();
                 if (keyboard.downArrowKey.wasPressedThisFrame || keyboard.sKey.wasPressedThisFrame)
                     Slam();
+                if (keyboard.leftShiftKey.wasPressedThisFrame || keyboard.rightShiftKey.wasPressedThisFrame)
+                    ToggleNitro();
             }
 
             float dt = Time.deltaTime;
@@ -221,7 +257,7 @@ namespace TeslaRoadster
             else if (state == RunState.Launch)
             {
                 rampElapsed = Mathf.Min(LaunchDuration, rampElapsed + dt);
-                world.PoseLaunch(rampElapsed / LaunchDuration);
+                world.PoseLaunch(rampElapsed / LaunchDuration, dt);
                 if (rampElapsed >= LaunchDuration)
                 {
                     state = RunState.Driving;
@@ -249,6 +285,12 @@ namespace TeslaRoadster
                 }
             }
 
+            if (state == RunState.Driving)
+            {
+                float streakBoost = nitroActive ? 1f : Mathf.Max(sideBurst / 0.46f, liftBurst / 0.43f);
+                hud.ShowSpeedLines(distance, roadSpeed, streakBoost);
+                hud.ShowNitro(nitroFuel / NitroCapacity, nitroActive);
+            }
             PlaceCamera();
         }
 
@@ -259,22 +301,33 @@ namespace TeslaRoadster
                 combo = 0;
             UpdateFlight(dt);
             float thrust = Mathf.Max(sideBurst / 0.46f, liftBurst / 0.43f);
-            float pitch = recoveryPitch + (trick == Trick.FrontFlip ? TrickAngle : Mathf.Clamp(-verticalVelocity * 0.75f, -6f, 10f));
-            float roll = recoveryRoll + (trick == Trick.BarrelRoll ? TrickAngle * trickDirection : Mathf.Clamp(-lateralVelocity * 0.70f, -13f, 13f));
-            float speed = Mathf.Lerp(24f, 48f, Mathf.Clamp01(elapsed / 24f)) + thrust * 5f;
-            float nextDistance = distance + speed * dt;
+            turnTime = Mathf.Max(0f, turnTime - dt);
+            float targetYaw = 35f * turnInput * (turnTime / SteeringDuration);
+            steeringYaw = Mathf.SmoothDamp(steeringYaw, targetYaw, ref yawVelocity, 0.085f, Mathf.Infinity, dt);
             carX = Mathf.SmoothDamp(carX, lane * RoadsterWorld.LaneWidth, ref lateralVelocity,
                 0.14f, Mathf.Infinity, dt);
-            world.PlaceCar(carX, lateralVelocity, nextDistance, carHeight, pitch, roll, thrust, elapsed, sideBurst > 0f ? sideJet : 0);
+            float pitch = recoveryPitch + (trick == Trick.FrontFlip ? TrickAngle : Mathf.Clamp(-verticalVelocity * 0.75f, -6f, 10f));
+            float roll = recoveryRoll + (trick == Trick.BarrelRoll ? TrickAngle * trickDirection : Mathf.Clamp(-lateralVelocity * 0.70f, -13f, 13f));
+            float nitroTime = nitroActive ? Mathf.Min(nitroFuel, dt) : 0f;
+            nitroFuel -= nitroTime;
+            if (nitroFuel <= 0f)
+                nitroActive = false;
+            roadSpeed = Mathf.Lerp(24f, 48f, Mathf.Clamp01(elapsed / 24f)) + thrust * 5f + NitroSpeed * nitroTime / dt;
+            float nextDistance = distance + roadSpeed * dt;
+            world.PlaceCar(carX, steeringYaw, nextDistance, carHeight, pitch, roll, thrust, dt, sideBurst > 0f ? sideJet : 0);
+            world.EmitNitro(nitroTime);
             world.ShowLanding(carX, landingPulse);
             Bounds player = world.PlayerBounds;
-            bool trafficHit = world.UpdateTraffic(dt, elapsed, speed, player);
-            int collected = world.Advance(distance, nextDistance, carX, elapsed);
+            bool trafficHit = world.UpdateTraffic(dt, elapsed, roadSpeed, player);
+            int collected = world.Advance(distance, nextDistance, carX, elapsed, out int nitroCollected);
             distance = nextDistance;
-            if (collected > 0)
-            {
-                coins += collected;
+            coins += collected;
+            if (collected > 0 || nitroCollected > 0)
                 speaker.PlayOneShot(pickupSound, 0.38f);
+            if (nitroCollected > 0)
+            {
+                nitroFuel = Mathf.Min(NitroCapacity, nitroFuel + NitroCharge * nitroCollected);
+                ShowNotice("Nitro picked up");
             }
 
             if (trafficHit)
@@ -307,7 +360,7 @@ namespace TeslaRoadster
                 }
             }
 
-            hud.UpdateDriving(Score, coins, speed, warned, combo + pendingCount,
+            hud.UpdateDriving(Score, coins, roadSpeed, warned, combo + pendingCount,
                 elapsed < noticeUntil ? notice : "");
         }
 
@@ -360,6 +413,7 @@ namespace TeslaRoadster
                 if (slamming)
                 {
                     landingPulse = 1f;
+                    world.BurstAt(new Vector3(carX, 0.08f, 0f), 1f);
                     speaker.PlayOneShot(impactSound, 0.25f);
                 }
                 slamming = false;
@@ -393,6 +447,10 @@ namespace TeslaRoadster
 
         void PlaceCamera()
         {
+            float speedFov = state == RunState.Driving ? 4f * Mathf.InverseLerp(24f, 48f, roadSpeed) : 0f;
+            if (state == RunState.Driving && nitroActive)
+                speedFov += 3f;
+            chaseCamera.fieldOfView = Mathf.Lerp(chaseCamera.fieldOfView, 47f + speedFov, 1f - Mathf.Exp(-8f * Time.deltaTime));
             Vector3 position = new(carX * 0.28f, 4.0f + carHeight * 0.24f, -10.35f);
             Vector3 look = new(carX * 0.12f, 0.22f + carHeight * 0.42f, 13.3f);
             if (state == RunState.Climbing || state == RunState.Staged || state == RunState.Countdown || state == RunState.Launch)

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <title>Tesla Roadster · Redline Run</title>
+  <style>
+    html, body {
+      margin: 0;
+      overflow: hidden;
+      background: #080a0d;
+      color: #fef6e5;
+      font-family: system-ui, sans-serif;
+    }
+
+    #unity-container {
+      position: fixed;
+      inset: 0;
+      box-sizing: border-box;
+      height: 100%;
+      height: 100dvh;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right)
+        env(safe-area-inset-bottom) env(safe-area-inset-left);
+      display: grid;
+      grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+    }
+
+    #unity-safe {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #unity-fit {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    #unity-fit.sideways {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    #unity-canvas {
+      display: block;
+      touch-action: none;
+      background: #080a0d;
+    }
+
+    #sideways-input {
+      position: absolute;
+      inset: 0;
+      touch-action: none;
+    }
+
+    #fullscreen-button {
+      position: absolute;
+      bottom: max(0.25rem, calc((100% - var(--canvas-height)) / 2 + 0.25rem));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 6px;
+      background: #152228c9;
+      color: #fef6e5;
+      touch-action: manipulation;
+      cursor: pointer;
+    }
+
+    #unity-loading-bar, #unity-warning {
+      position: absolute;
+      z-index: 1;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    #unity-progress {
+      display: block;
+      margin: 0.6rem auto 0;
+      accent-color: #bcefdb;
+    }
+
+    #unity-warning {
+      align-self: start;
+      margin-top: 1rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 0.25rem;
+      background: #152228;
+    }
+
+  </style>
+</head>
+<body>
+  <main id="unity-container">
+    <div id="unity-safe">
+    <div id="unity-fit">
+      <canvas id="unity-canvas" width="1302" height="600" tabindex="-1"
+        aria-label="Tesla Roadster Redline Run"></canvas>
+      <div id="sideways-input" aria-hidden="true" hidden></div>
+      <div id="unity-loading-bar" role="status">
+        Loading Roadster…
+        <progress id="unity-progress" value="0" max="1" aria-label="Game loading progress"></progress>
+      </div>
+      <div id="unity-warning" role="alert" hidden></div>
+      <button id="fullscreen-button" type="button" aria-label="Enter fullscreen" hidden>
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"></path>
+        </svg>
+      </button>
+    </div>
+    </div>
+  </main>
+  <script>
+    const container = document.querySelector("#unity-container");
+    const safe = document.querySelector("#unity-safe");
+    const canvas = document.querySelector("#unity-canvas");
+    const fit = document.querySelector("#unity-fit");
+    const loading = document.querySelector("#unity-loading-bar");
+    const progressBar = document.querySelector("#unity-progress");
+    const warning = document.querySelector("#unity-warning");
+    const sidewaysInput = document.querySelector("#sideways-input");
+    const fullscreenButton = document.querySelector("#fullscreen-button");
+    const mobilePortrait = window.matchMedia("(orientation: portrait) and (pointer: coarse)");
+    const widthUnits = 217;
+    const heightUnits = 100;
+    const aspect = widthUnits / heightUnits;
+
+    function fitCanvas() {
+      const available = safe.getBoundingClientRect();
+      const sideways = mobilePortrait.matches;
+      const frameWidth = sideways ? available.height : available.width;
+      const frameHeight = sideways ? available.width : available.height;
+      const width = Math.min(frameWidth, frameHeight * aspect);
+      if (width <= 0) return;
+
+      fit.classList.toggle("sideways", sideways);
+      sidewaysInput.hidden = !sideways;
+      fit.style.width = frameWidth + "px";
+      fit.style.height = frameHeight + "px";
+      fit.style.setProperty("--canvas-height", width / aspect + "px");
+      canvas.style.width = width + "px";
+      canvas.style.height = width / aspect + "px";
+      // Keep the drawing buffer at the same ratio as the displayed canvas.
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      const units = Math.max(1, Math.ceil(width * pixelRatio / widthUnits));
+      if (canvas.width !== units * widthUnits) canvas.width = units * widthUnits;
+      if (canvas.height !== units * heightUnits) canvas.height = units * heightUnits;
+    }
+
+    fitCanvas();
+    window.addEventListener("resize", fitCanvas);
+    if (window.ResizeObserver) new ResizeObserver(fitCanvas).observe(safe);
+    if (mobilePortrait.addEventListener) mobilePortrait.addEventListener("change", fitCanvas);
+    else mobilePortrait.addListener(fitCanvas);
+    if (!CSS.supports("height", "100dvh") && window.visualViewport) {
+      const viewport = window.visualViewport;
+      const fitVisibleHeight = () => {
+        if (viewport.scale !== 1) return;
+        container.style.height = viewport.height + "px";
+        fitCanvas();
+      };
+      viewport.addEventListener("resize", fitVisibleHeight);
+      fitVisibleHeight();
+    }
+
+    let warningTimer;
+    function showBanner(message, type) {
+      clearTimeout(warningTimer);
+      warning.textContent = message;
+      warning.hidden = false;
+      if (type === "error") loading.style.display = "none";
+      else warningTimer = setTimeout(() => { warning.hidden = true; }, 5000);
+    }
+
+    const config = {
+      dataUrl: "Build/" + {{{ JSON.stringify(DATA_FILENAME) }}},
+      frameworkUrl: "Build/" + {{{ JSON.stringify(FRAMEWORK_FILENAME) }}},
+      codeUrl: "Build/" + {{{ JSON.stringify(CODE_FILENAME) }}},
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
+      productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
+      productVersion: {{{ JSON.stringify(PRODUCT_VERSION) }}},
+      matchWebGLToCanvasSize: false,
+      showBanner
+    };
+
+    const loader = document.createElement("script");
+    let unity;
+    loader.src = "Build/" + {{{ JSON.stringify(LOADER_FILENAME) }}};
+    loader.onload = () => {
+      createUnityInstance(canvas, config, progress => { progressBar.value = progress; })
+        .then(instance => {
+          unity = instance;
+          loading.style.display = "none";
+        })
+        .catch(error => showBanner(String(error), "error"));
+    };
+    loader.onerror = () => showBanner("The game could not load. Refresh to try again.", "error");
+
+    sidewaysInput.addEventListener("pointerdown", event => {
+      if (!unity || event.button !== 0) return;
+      const bounds = canvas.getBoundingClientRect();
+      const x = (event.clientY - bounds.top) / bounds.height;
+      const y = (event.clientX - bounds.left) / bounds.width;
+      if (x >= 0 && x <= 1 && y >= 0 && y <= 1)
+        unity.SendMessage("Roadster Game", "PressWebControl", x.toFixed(6) + "," + y.toFixed(6));
+    });
+
+    const fullscreenRequest = container.requestFullscreen || container.webkitRequestFullscreen;
+    const standalone = window.matchMedia("(display-mode: standalone), (display-mode: fullscreen)").matches
+      || navigator.standalone === true;
+    function refreshFullscreen() {
+      const active = document.fullscreenElement || document.webkitFullscreenElement;
+      fullscreenButton.hidden = standalone || !fullscreenRequest || Boolean(active)
+        || !(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+      fitCanvas();
+    }
+    async function enterFullscreen() {
+      if (fullscreenButton.hidden) return;
+      try {
+        await fullscreenRequest.call(container);
+        if (screen.orientation && screen.orientation.lock) await screen.orientation.lock("landscape");
+      } catch {
+        // The sideways layout also works when fullscreen or orientation lock is unavailable.
+      }
+    }
+
+    let triedFullscreen = false;
+    container.addEventListener("pointerup", event => {
+      if (event.pointerType === "touch" && !triedFullscreen && !fullscreenButton.contains(event.target)) {
+        triedFullscreen = true;
+        enterFullscreen();
+      }
+    }, true);
+    fullscreenButton.addEventListener("click", enterFullscreen);
+    document.addEventListener("fullscreenchange", refreshFullscreen);
+    document.addEventListener("webkitfullscreenchange", refreshFullscreen);
+    refreshFullscreen();
+    document.body.appendChild(loader);
+  </script>
+</body>
+</html>

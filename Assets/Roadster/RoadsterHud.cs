@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -17,24 +18,33 @@ namespace TeslaRoadster
         static readonly Color Ink = new Color32(21, 34, 40, 255);
         static readonly Color Scrim = new Color32(21, 34, 40, 191);
         static readonly Color Seafoam = new Color32(188, 239, 219, 255);
+        static readonly Color NitroBlue = new Color32(108, 218, 255, 255);
         static readonly Color Dim = new Color32(231, 229, 218, 255);
 
         readonly Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
         readonly RectTransform design, staging, driving, results;
         readonly RectTransform[] bars = new RectTransform[4];
         readonly Image impactFlash;
+        readonly RoadsterSpeedLines speedLines;
         readonly Text stageHint, countdown, runScore, runCredits, runBest, runSpeed, warning, comboLabel, stuntNotice;
         readonly Text resultCause, resultScore, resultDetail, resultBest;
+        readonly CanvasGroup nitroIcon;
+        readonly Button nitroButton;
+        readonly Image nitroFill;
+        readonly GraphicRaycaster raycaster;
+        readonly List<RaycastResult> touchHits = new();
+        PointerEventData webTouch;
         readonly GameObject startButton;
         Rect lastSafeArea;
         int screenWidth, screenHeight, shownCoins, shownSpeed, shownScore, shownCombo, shownCountdown;
         string shownNotice;
 
-        public RoadsterHud(Transform parent, Action start, Action<int> steer, Action lift, Action slam)
+        public RoadsterHud(Transform parent, Action start, Action<int> steer, Action lift, Action slam, Action nitro)
         {
             var canvas = new GameObject("Roadster interface", typeof(RectTransform), typeof(Canvas), typeof(GraphicRaycaster));
             canvas.transform.SetParent(parent, false);
             canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+            raycaster = canvas.GetComponent<GraphicRaycaster>();
             var screen = canvas.GetComponent<RectTransform>();
             for (int i = 0; i < bars.Length; i++)
                 bars[i] = Box(screen, "Viewport matte", 0, 0, 0, 0, new Color32(8, 10, 13, 255)).rectTransform;
@@ -44,6 +54,7 @@ namespace TeslaRoadster
             staging = CreateRect(design, "Staging", 0, 0, Width, Height);
             driving = CreateRect(design, "Driving", 0, 0, Width, Height);
             results = CreateRect(design, "Results", 0, 0, Width, Height);
+            speedLines = new RoadsterSpeedLines(CreateRect(driving, "Speed lines", 0, 0, Width, Height));
 
             Label(staging, "Roadster", 35, 22, 185, 25, 18, Cream, bold: true, shadow: true);
             Label(staging, "Marine Drive", 33, 43, 355, 58, 40, Cream, bold: true, shadow: true);
@@ -52,7 +63,7 @@ namespace TeslaRoadster
             startButton = startArea.gameObject;
             Button(startArea, "Start", 0, 0, 251, 64, Seafoam, Ink, start, 25);
             Label(startArea, "Up to flip  /  Down to slam", 0, 72, 251, 24, 16, Cream, TextAnchor.MiddleCenter, shadow: true);
-            Label(startArea, "Arrow keys or WASD", 0, 100, 251, 20, 13, Dim, TextAnchor.MiddleCenter, shadow: true);
+            Label(startArea, "Arrows / WASD · Shift for nitro", 0, 100, 251, 20, 13, Dim, TextAnchor.MiddleCenter, shadow: true);
             countdown = Label(design, "", 551, 199, 200, 100, 80, Cream, TextAnchor.MiddleCenter, true, true);
 
             Label(driving, "Score", 31, 22, 140, 21, 16, Dim, shadow: true);
@@ -65,10 +76,20 @@ namespace TeslaRoadster
             comboLabel = Label(driving, "", 1051, 55, 220, 32, 21, Seafoam, TextAnchor.MiddleRight, true, true);
             stuntNotice = Label(driving, "", 410, 491, 482, 35, 20, Seafoam, TextAnchor.MiddleCenter, true, true);
 
-            DirectionButton(driving, "Up", 103, 379, 90f, lift);
-            DirectionButton(driving, "Left", 36, 446, 180f, () => steer(-1));
-            DirectionButton(driving, "Right", 170, 446, 0f, () => steer(1));
-            DirectionButton(driving, "Down", 103, 513, -90f, slam);
+            DirectionButton(driving, "Up", 133, 261, 90f, lift);
+            DirectionButton(driving, "Left", 24, 370, 180f, () => steer(-1));
+            DirectionButton(driving, "Right", 242, 370, 0f, () => steer(1));
+            DirectionButton(driving, "Down", 133, 479, -90f, slam);
+            var nitroArea = ClickArea(driving, "Nitro", 1126, 405, 142, 110, Scrim, nitro, instant: true);
+            nitroButton = nitroArea.GetComponent<Button>();
+            var canister = CreateRect(nitroArea, "Nitro canister icon", 45, 9, 52, 71);
+            nitroIcon = canister.gameObject.AddComponent<CanvasGroup>();
+            Box(canister, "Shoulder", 12, 16, 28, 28, NitroBlue).rectTransform.localRotation = Quaternion.Euler(0f, 0f, -9f);
+            Box(canister, "Canister body", 5, 24, 42, 43, NitroBlue);
+            Box(canister, "Valve", 18, 7, 16, 11, Cream);
+            Box(canister, "Canister stripe", 5, 41, 42, 7, Cream);
+            Box(nitroArea, "Charge track", 15, 90, 112, 7, new Color32(108, 218, 255, 60));
+            nitroFill = Box(nitroArea, "Nitro charge", 15, 90, 0, 7, NitroBlue);
 
             Box(results, "Scene dim", 0, 0, Width, Height, new Color32(15, 15, 15, 98));
             var report = CreateRect(results, "Run results", 459, 141, 384, 318);
@@ -156,11 +177,34 @@ namespace TeslaRoadster
 
         public void ShowDriving(int best)
         {
+            speedLines.SetFlow(0f, 0f, 0f);
+            ShowNitro(0f, false);
             Show(driving);
             runBest.text = $"Best {best:N0}";
             shownCoins = shownSpeed = shownScore = shownCombo = -1;
             shownNotice = null;
             UpdateDriving(0, 0, 24f, false, 0, "");
+        }
+
+        public void ShowSpeedLines(float distance, float speed, float thrust) => speedLines.SetFlow(distance, speed, thrust);
+
+        public void ShowNitro(float charge, bool boosting)
+        {
+            nitroFill.rectTransform.sizeDelta = new Vector2(112f * charge, 7f);
+            nitroButton.interactable = charge > 0f;
+            nitroIcon.alpha = charge > 0f ? 1f : 0.36f;
+            nitroFill.color = boosting ? Color.white : NitroBlue;
+        }
+
+        public void PressAt(Vector2 normalized)
+        {
+            webTouch ??= new PointerEventData(EventSystem.current);
+            webTouch.position = Vector2.Scale(normalized, new Vector2(Screen.width, Screen.height));
+            touchHits.Clear();
+            raycaster.Raycast(webTouch, touchHits);
+            if (touchHits.Count > 0 && touchHits[0].gameObject.TryGetComponent(out Button button)
+                && button.IsActive() && button.IsInteractable())
+                button.onClick.Invoke();
         }
 
         public void UpdateDriving(int score, int coins, float speed, bool lockOn, int combo, string notice)
@@ -267,11 +311,12 @@ namespace TeslaRoadster
             return label;
         }
 
-        RectTransform ClickArea(Transform parent, string title, float x, float y, float w, float h, Color fill, Action action)
+        RectTransform ClickArea(Transform parent, string title, float x, float y, float w, float h, Color fill, Action action,
+            bool instant = false)
         {
             Image image = Box(parent, title, x, y, w, h, fill);
             image.raycastTarget = true;
-            var button = image.gameObject.AddComponent<Button>();
+            Button button = instant ? image.gameObject.AddComponent<RoadsterPressButton>() : image.gameObject.AddComponent<Button>();
             button.targetGraphic = image;
             button.navigation = new Navigation { mode = Navigation.Mode.None };
             ColorBlock colors = button.colors;
@@ -290,9 +335,9 @@ namespace TeslaRoadster
 
         void DirectionButton(Transform parent, string title, float x, float y, float angle, Action action)
         {
-            const float size = 61f;
-            var area = ClickArea(parent, title, x, y, size, size, Scrim, action);
-            var arrow = Label(area, ">", 0, 0, size, size, 34, Cream, TextAnchor.MiddleCenter, true).rectTransform;
+            const float size = 104f;
+            var area = ClickArea(parent, title, x, y, size, size, Scrim, action, instant: true);
+            var arrow = Label(area, ">", 0, 0, size, size, 47, Cream, TextAnchor.MiddleCenter, true).rectTransform;
             arrow.anchorMin = arrow.anchorMax = arrow.pivot = new Vector2(0.5f, 0.5f);
             arrow.anchoredPosition = Vector2.zero;
             arrow.localRotation = Quaternion.Euler(0f, 0f, angle);

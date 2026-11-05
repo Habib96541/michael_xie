@@ -12,7 +12,7 @@ namespace TeslaRoadster
         static readonly Vector3 RotationCenter = Vector3.up * 0.56f;
         static readonly Bounds CarHitbox = new(RotationCenter, new Vector3(1.78f, 1.08f, 4.20f));
 
-        sealed class Coin
+        sealed class Pickup
         {
             public Transform model;
             public float distance, x;
@@ -24,18 +24,19 @@ namespace TeslaRoadster
         readonly Transform[] exhaust = new Transform[8];
         readonly Transform[] debris = new Transform[24];
         readonly Vector3[] debrisVelocity = new Vector3[24];
-        readonly Coin[] coins = new Coin[27];
+        readonly Pickup[] coins = new Pickup[27];
+        readonly Pickup[] nitroPickups = new Pickup[5];
         readonly Mesh cube, cylinder;
         readonly Material paint, dark, chrome, redLight, gold, brightGold, scenery, hot, smoke, shadowColor;
         readonly RoadsterVehicle vehicle;
-        float nextGroup;
+        float nextGroup, nextNitro;
         Vector3 impactPosition, lockedAim, previousMissileTip;
         Quaternion impactRotation;
         float impactDirection;
         bool blast;
-        int groupIndex, coinLane;
+        int groupIndex, coinLane, nitroGroup;
 
-        public RoadsterWorld(Transform parent, Shader shader, Shader skyShader, RoadsterVehicle playerVehicle,
+        public RoadsterWorld(Transform parent, Shader shader, Shader skyShader, Shader particleShader, RoadsterVehicle playerVehicle,
             GameObject trafficFleet, GameObject marineDrive)
         {
             this.shader = shader;
@@ -62,13 +63,15 @@ namespace TeslaRoadster
             shadow.localRotation = Quaternion.Euler(90f, 0f, 0f);
             shadow.localScale = new Vector3(1.18f, 2.28f, 0.02f);
 
-            var coldGas = Material("Cold-gas vapor", 206, 226, 249, glow: 0.32f);
-            Mesh puffMesh = CreateVaporPuff();
-            for (int i = 0; i < vapor.Length; i++)
-                vapor[i] = Model(root, "Cold-gas vapor puff", puffMesh, coldGas);
+            CreateParticles(particleShader);
 
             for (int i = 0; i < coins.Length; i++)
-                coins[i] = new Coin { model = CreateCoin() };
+                coins[i] = new Pickup { model = CreateCoin() };
+            var bottle = Material("Nitro canister", 22, 143, 242, 0.48f, 0.60f);
+            var label = Material("Nitro band", 133, 231, 255, 0.24f, 0.85f);
+            Mesh shoulder = CreateCylinder(16, 1f, 0.42f);
+            for (int i = 0; i < nitroPickups.Length; i++)
+                nitroPickups[i] = new Pickup { model = CreateNitroPickup(bottle, label, shoulder) };
 
             missile = Group(root, "Lock-on missile");
             CreateMissile();
@@ -89,10 +92,15 @@ namespace TeslaRoadster
             groupIndex = 0;
             coinLane = 0;
             nextGroup = 17f;
-            foreach (Coin coin in coins)
+            nextNitro = 36f;
+            nitroGroup = 0;
+            foreach (Pickup coin in coins)
                 coin.model.gameObject.SetActive(false);
+            foreach (Pickup nitro in nitroPickups)
+                nitro.model.gameObject.SetActive(false);
             foreach (Transform piece in debris)
                 piece.gameObject.SetActive(false);
+            ClearParticles();
             ClearMissile();
             landingRing.gameObject.SetActive(false);
             flash.gameObject.SetActive(false);
@@ -101,43 +109,27 @@ namespace TeslaRoadster
             shadow.gameObject.SetActive(true);
             ResetTraffic();
             PlaceCar(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0);
-            Advance(0f, 0f, 0f, 0f);
+            Advance(0f, 0f, 0f, 0f, out _);
         }
 
-        public void PlaceCar(float x, float velocity, float distance, float height, float pitch,
-            float roll, float thrust, float elapsed, int sideJet)
+        public void PlaceCar(float x, float yaw, float distance, float height, float pitch,
+            float roll, float thrust, float dt, int sideJet)
         {
             PoseCar(new Vector3(x, height, 0f),
-                Quaternion.Euler(pitch, velocity * 0.72f, roll - velocity * 0.22f), distance);
+                Quaternion.Euler(pitch, yaw, roll), distance);
             shadow.localPosition = new Vector3(x, 0.018f, -0.12f);
             float scale = 1f - Mathf.Clamp01(height / 4f) * 0.38f;
             shadow.localScale = new Vector3(1.18f * scale, 2.28f * scale, 0.02f);
-            UpdateVapor(elapsed, thrust, sideJet, true);
+            UpdateVapor(dt, thrust, sideJet, true);
         }
 
-        public int Advance(float previousDistance, float distance, float carX, float time)
+        public int Advance(float previousDistance, float distance, float carX, float time, out int nitroCollected)
         {
             for (int i = 0; i < road.Length; i++)
             {
                 float z = Mathf.Repeat(i * SegmentLength - distance + SegmentLength, road.Length * SegmentLength)
                     - 2f * SegmentLength;
                 road[i].localPosition = new Vector3(0f, 0f, z);
-            }
-
-            int collected = 0;
-            foreach (Coin coin in coins)
-            {
-                if (!coin.model.gameObject.activeSelf)
-                    continue;
-
-                bool crossed = coin.distance > previousDistance && coin.distance <= distance;
-                if (crossed && Mathf.Abs(coin.x - carX) < 1.24f)
-                {
-                    coin.model.gameObject.SetActive(false);
-                    collected++;
-                }
-                else if (coin.distance < distance - 6f)
-                    coin.model.gameObject.SetActive(false);
             }
 
             while (nextGroup - distance < 150f)
@@ -152,32 +144,55 @@ namespace TeslaRoadster
                         coinLane = 0;
                 }
                 for (int i = 0; i < 3; i++)
-                    SpawnCoin(nextGroup + i * CoinSpacing, coinLane * LaneWidth);
+                    SpawnPickup(coins, nextGroup + i * CoinSpacing, coinLane * LaneWidth);
                 nextGroup += Random.Range(27f, 32f);
                 groupIndex++;
             }
 
-            foreach (Coin coin in coins)
+            while (nextNitro - distance < 150f)
             {
-                if (!coin.model.gameObject.activeSelf)
-                    continue;
+                int lane = (nitroGroup + 1) % 3 - 1;
+                SpawnPickup(nitroPickups, nextNitro, lane * LaneWidth);
+                nextNitro += 66f + nitroGroup % 3 * 7f;
+                nitroGroup++;
+            }
 
-                float bob = Mathf.Sin(time * 4f + coin.distance * 0.3f) * 0.11f;
-                coin.model.localPosition = new Vector3(coin.x, 0.95f + bob, coin.distance - distance);
-                coin.model.localRotation = Quaternion.Euler(0f, time * 118f + coin.distance * 4f, 0f);
+            nitroCollected = UpdatePickups(nitroPickups, previousDistance, distance, carX, time, 1.12f, 89f);
+            return UpdatePickups(coins, previousDistance, distance, carX, time, 0.95f, 118f);
+        }
+
+        static int UpdatePickups(Pickup[] items, float previousDistance, float distance, float carX, float time, float height, float spin)
+        {
+            int collected = 0;
+            foreach (Pickup item in items)
+            {
+                if (!item.model.gameObject.activeSelf)
+                    continue;
+                bool crossed = item.distance > previousDistance && item.distance <= distance;
+                bool pickedUp = crossed && Mathf.Abs(item.x - carX) < 1.24f;
+                if (pickedUp || item.distance < distance - 6f)
+                {
+                    item.model.gameObject.SetActive(false);
+                    if (pickedUp)
+                        collected++;
+                    continue;
+                }
+                float bob = Mathf.Sin(time * 4f + item.distance * 0.3f) * 0.11f;
+                item.model.localPosition = new Vector3(item.x, height + bob, item.distance - distance);
+                item.model.localRotation = Quaternion.Euler(0f, time * spin + item.distance * 4f, 0f);
             }
             return collected;
         }
 
-        void SpawnCoin(float distance, float x)
+        static void SpawnPickup(Pickup[] items, float distance, float x)
         {
-            foreach (Coin coin in coins)
+            foreach (Pickup item in items)
             {
-                if (coin.model.gameObject.activeSelf)
+                if (item.model.gameObject.activeSelf)
                     continue;
-                coin.distance = distance;
-                coin.x = x;
-                coin.model.gameObject.SetActive(true);
+                item.distance = distance;
+                item.x = x;
+                item.model.gameObject.SetActive(true);
                 return;
             }
         }
@@ -262,7 +277,7 @@ namespace TeslaRoadster
             blast = missileHit;
             ClearMissile();
             landingRing.gameObject.SetActive(false);
-            UpdateVapor(0f, 0f);
+            BurstAt(impactPosition + Vector3.up * 0.18f, missileHit ? 1.65f : 1.25f);
             flash.gameObject.SetActive(blast);
             flash.localPosition = impactPosition + Vector3.up * 0.70f;
             flash.localScale = Vector3.one * 1.6f;
@@ -319,6 +334,26 @@ namespace TeslaRoadster
                 var mark = Block(group, "Credit mark", new Vector3(0f, 0f, side * 0.095f), new Vector3(0.25f, 0.25f, 0.021f), gold);
                 mark.localRotation = Quaternion.Euler(0f, 0f, 45f);
             }
+            return group;
+        }
+
+        Transform CreateNitroPickup(Material bottle, Material label, Mesh shoulder)
+        {
+            var group = Group(root, "Nitro pickup");
+            var body = Model(group, "Bottle body", cylinder, bottle);
+            body.localScale = new Vector3(0.30f, 0.30f, 0.69f);
+            body.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+            var top = Model(group, "Bottle shoulder", shoulder, bottle);
+            top.localPosition = Vector3.up * 0.43f;
+            top.localRotation = body.localRotation;
+            top.localScale = new Vector3(0.30f, 0.30f, 0.17f);
+            var band = Model(group, "Cyan band", cylinder, label);
+            band.localScale = new Vector3(0.306f, 0.306f, 0.15f);
+            band.localRotation = body.localRotation;
+            var cap = Model(group, "Valve", cylinder, chrome);
+            cap.localPosition = Vector3.up * 0.55f;
+            cap.localRotation = body.localRotation;
+            cap.localScale = new Vector3(0.115f, 0.115f, 0.08f);
             return group;
         }
 
